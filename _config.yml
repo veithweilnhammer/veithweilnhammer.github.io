@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Veith Weilnhammer"
 title_separator          : "-"
 name                     : &name "Veith Weilnhammer"
-description              : &description "Resident and Post-Doctoral Fellow at Charité Universitätsmedizin Berlin"
+description              : &description "Psychiatric Resident and Post-Doctoral Fellow at Charité Universitätsmedizin Berlin"
 url                      : https://veithweilnhammer.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "veithweilnhammer.github.io"
@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Veith Weilnhammer"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location2"
+  bio              : "Psychiatric Resident and Post-Doctoral Fellow at Charité Universitätsmedizin Berlin"
+  location         : "Berlin"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  pubmed           :  # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  googlescholar    : "https://scholar.google.de/citations?user=k_wJmK0AAAAJ&hl=de"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -96,20 +96,20 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "https://github.com/veithweilnhammer/"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : #"http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : "@weilnhammer"
   vine             :
   weibo            :
   xing             :
