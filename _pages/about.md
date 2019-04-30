@@ -10,5 +10,5 @@ redirect_from:
 
 I am a psychiatric resident and post-doctoral research fellow at the Department of Psychiatry, Charité Unversitätsmedizin Berlin, Germany.  
 
-I am investigating the neural basis of conscious perception and its alteration in psychosis. 
+My current research focusses on the neural basis of conscious perception and its alteration in psychosis. 
 
