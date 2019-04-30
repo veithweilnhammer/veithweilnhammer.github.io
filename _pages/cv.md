@@ -14,9 +14,9 @@ redirect_from:
 
 Personal Information
 ======
-Veith Weilnhammer, MD.
+* Veith Weilnhammer, MD
 
-veith-andreas.weilnhammer[(at)]charite.de
+* veith-andreas.weilnhammer[(at)]charite.de
 
 &nbsp;
 &nbsp;
