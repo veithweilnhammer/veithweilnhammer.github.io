@@ -9,33 +9,43 @@ redirect_from:
 
 {% include base_path %}
 
+Personal Information
+======
+Veith Weilnhammer, MD.
+veith-andreas.weilnhammer[(at)]charite.de
+
+Clinical Experience
+======
+* Resident psychiatrist at the Department of Psychiatry, Charité-Universitätsmedizin Berlin, Campus Mitte, since 2015
+
+Scientific Experience
+======
+* Clinician Scientist (Berlin Institute of Health), since 2019
+* Junior Clinician Scientist (Berlin Institute of Health), 2017 - 2019
+* Post-Doc at the “Visual Perception Laboratory” (Prof. Dr. med. Philipp Sterzer), Department of Psychiatry, Charité    Universitätsmedizin Berlin, Campus Mitte
+* Department of Neurobiology, Weizmann Institute, Rehovot, Israel
+
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Doctoral thesis “Frontoparietal Cortex Mediates Perceptual Transitions in Bistable Perception“ (Supervisor: Prof. Dr. med. Philipp Sterzer, summa cum laude), 2011 - 2014
+* Medical Degree at Charité-Universitätsmedizin Berlin, 2014
+* Medical School Charité-Universitätsmedizin Berlin and Universidade Nova de Lisboa, 2007 - 2014
+* Studium Generale, Leibniz Kolleg Tübingen, 2006 - 2007
 
-Work experience
+Scholarships
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Travel grant from the Minerva Foundation, Max-Planck-Society, 2013
+* German Academic Scholarship Foundation 2007 - 2014
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
+#Skills
+#======
+#* Skill 1
+#* Skill 2
+#  * Sub-skill 2.1
+#  * Sub-skill 2.2
+#  * Sub-skill 2.3
+#* Skill 3
+#
 Publications
 ======
   <ul>{% for post in site.publications %}
