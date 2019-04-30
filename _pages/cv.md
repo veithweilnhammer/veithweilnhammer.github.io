@@ -12,6 +12,7 @@ redirect_from:
 Personal Information
 ======
 Veith Weilnhammer, MD.
+
 veith-andreas.weilnhammer[(at)]charite.de
 
 Clinical Experience
@@ -37,15 +38,6 @@ Scholarships
 * Travel grant from the Minerva Foundation, Max-Planck-Society, 2013
 * German Academic Scholarship Foundation 2007 - 2014
 
-#Skills
-#======
-#* Skill 1
-#* Skill 2
-#  * Sub-skill 2.1
-#  * Sub-skill 2.2
-#  * Sub-skill 2.3
-#* Skill 3
-#
 Publications
 ======
   <ul>{% for post in site.publications %}
