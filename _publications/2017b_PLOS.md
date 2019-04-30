@@ -1,7 +1,7 @@
 ---
 title: "Psychotic experiences and overhasty inferences are related to maladaptive learning"
 collection: publications
-permalink: /publication/2017b_PLOS.md
+permalink: /publication/2017b_PLOS
 #excerpt: 'This paper uses computational modelling to localize hierarchical predictions for visual perception in model-based fMRI'
 date: 2017-05-14
 venue: 'PLOS Computational Biology'
