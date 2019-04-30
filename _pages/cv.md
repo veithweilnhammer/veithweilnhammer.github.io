@@ -9,15 +9,24 @@ redirect_from:
 
 {% include base_path %}
 
+&nbsp;
+&nbsp;
+
 Personal Information
 ======
 Veith Weilnhammer, MD.
 
 veith-andreas.weilnhammer[(at)]charite.de
 
+&nbsp;
+&nbsp;
+
 Clinical Experience
 ======
 * Resident psychiatrist at the Department of Psychiatry, Charité-Universitätsmedizin Berlin, Campus Mitte, since **2015**
+
+&nbsp;
+&nbsp;
 
 Scientific Experience
 ======
@@ -26,6 +35,9 @@ Scientific Experience
 * Post-Doc at the “Visual Perception Laboratory” (Prof. Dr. med. Philipp Sterzer), Department of Psychiatry, Charité    Universitätsmedizin Berlin, Campus Mitte, since **2015**
 * Department of Neurobiology, Weizmann Institute, Rehovot, Israel, **2013**
 
+&nbsp;
+&nbsp;
+
 Education
 ======
 * Doctoral thesis “Frontoparietal Cortex Mediates Perceptual Transitions in Bistable Perception“ (Supervisor: Prof. Dr. med. Philipp Sterzer, summa cum laude), **2011** - **2014**
@@ -33,10 +45,16 @@ Education
 * Medical School Charité-Universitätsmedizin Berlin and Universidade Nova de Lisboa, **2007** - **2014**
 * Studium Generale, Leibniz Kolleg Tübingen, **2006** - **2007**
 
+&nbsp;
+&nbsp;
+
 Scholarships
 ======
 * Travel grant from the Minerva Foundation, Max-Planck-Society, **2013**
 * German Academic Scholarship Foundation **2007** - **2014**
+
+&nbsp;
+&nbsp;
 
 Publications
 ======
@@ -44,18 +62,21 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
+&nbsp;
+&nbsp;
+
 Talks
 ======
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
-  
+
+&nbsp;
+&nbsp;
+
 Teaching
 ======
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
