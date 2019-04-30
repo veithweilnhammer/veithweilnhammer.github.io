@@ -21,7 +21,7 @@ Clinical Experience
 
 Scientific Experience
 ======
-* Clinician Scientist (Berlin Institute of Health), since 2019
+Since 2019      Clinician Scientist (Berlin Institute of Health), since 2019
 * Junior Clinician Scientist (Berlin Institute of Health), 2017 - 2019
 * Post-Doc at the “Visual Perception Laboratory” (Prof. Dr. med. Philipp Sterzer), Department of Psychiatry, Charité    Universitätsmedizin Berlin, Campus Mitte
 * Department of Neurobiology, Weizmann Institute, Rehovot, Israel
