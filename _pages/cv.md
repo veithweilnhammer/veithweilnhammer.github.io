@@ -14,11 +14,20 @@ author_profile: yes
 &nbsp;
 &nbsp;
 
-Personal Information
-======
-* Veith Weilnhammer, Dr. med. 
+**Personal Information**
 
+* Veith Weilnhammer, Dr. med. 
 * veith-andreas.weilnhammer@charite.de
+
+&nbsp;
+&nbsp;
+
+**Research Experience**
+
+* Postdoctoral Researcher, Visual Perception Laboratory, Department of Psychiatry, Charité Berlin, **since 2015**
+* Research Doctorate (MD), Summa Cum Laude, Supervisor: Prof. Philipp Sterzer, **2015**
+* Minerva Fellow, Department of Neurobiology, Weizmann Institute, Rehovot, Israel, Supervisor: Prof. Rafi Malach, **2013**
+* MD Candidate, Visual Perception Laboratory, Department of Psychiatry, Charité-Universitätsmedizin Berlin, Germany, **2011 - 2014**
 
 &nbsp;
 &nbsp;
