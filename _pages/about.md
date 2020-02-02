@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a computational neuroscientist and resident psychiatrist at the Department of Psychiatry, Charité - Universitätsmedizin Berlin. I am working with Philipp Sterzer as a postdoctoral researcher at the Visual Perception Laboratory. focus on the neural basis of conscious perception and its alteration in psychosis. 
+I am a computational neuroscientist and resident psychiatrist at the Department of Psychiatry, Charité - Universitätsmedizin Berlin. I am working with Philipp Sterzer as a postdoctoral researcher at the Visual Perception Laboratory.
 
 In my research, I focus on the neural basis of conscious perception and its alteration in psychosis. My work combines psychophysics with computational modelling, functional magnetic resonance imaging and transcranial magnetic stimulation.
 

@@ -1,7 +1,9 @@
 ---
 title: "CV"
 layout: archive
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 permalink: /cv/
 redirect_from: /resume
 author_profile: yes
