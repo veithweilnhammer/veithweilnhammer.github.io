@@ -27,42 +27,44 @@ author_profile: yes
 * Postdoctoral Researcher, Visual Perception Laboratory, Department of Psychiatry, Charité Berlin, **since 2015**
 * Research Doctorate (MD), Summa Cum Laude, Supervisor: Prof. Philipp Sterzer, **2015**
 * Minerva Fellow, Department of Neurobiology, Weizmann Institute, Rehovot, Israel, Supervisor: Prof. Rafi Malach, **2013**
-* MD Candidate, Visual Perception Laboratory, Department of Psychiatry, Charité-Universitätsmedizin Berlin, Germany, **2011 - 2014**
+* MD Candidate, Visual Perception Laboratory, Department of Psychiatry, Charité Berlin, **2011 - 2014**
 
 &nbsp;
 &nbsp;
 
-Clinical Experience
-======
-* Resident Psychiatrist at the Department of Psychiatry, Charité Berlin, **since 2015**
+**Post-Graduate Medical Training**
+
+* Psychotherapist in Training, Center for Psychotherapy, Humboldt-	Universität zu Berlin, Germany, **since 2016**
+* Resident Psychiatrist, Department of Psychiatry, Charité Berlin, **since 2015**
 
 &nbsp;
 &nbsp;
 
-Scientific Experience
-======
-* Clinician Scientist (Berlin Institute of Health), **since 2019**
-* Junior Clinician Scientist (Berlin Institute of Health), **2017 - 2019**
-* Post-Doctoral Research Fellow, Visual Perception Laboratory (Philipp Sterzer), Charité Berlin, **since 2015**
-* Minerva Visiting Scientist, Department of Neurobiology (Rafi Malach), Weizmann Institute, Rehovot, **2013**
+**Education**
+
+* Medical Licensure, Department of Health, Berlin, Germany, **2015**
+* Second Medical State Examination, **2014**
+* Medical School Universidade Nova de Lisboa, Portugal, **2010 - 2011**
+* Undergraduate Research Training Course in Theoretical Neuroscience, Supervisor: Prof. Klaus Pawelzik, German Academic Scholarship Foundation, **2008 - 2010**
+* First Medical State Examination, **2009**
+* Medical School Charité-Universitätsmedizin Berlin, Germany, **2007 - 2015**
+* Studium Generale, Leibniz Kolleg, Universität Tübingen, Germany, **2006 - 2007**
 
 &nbsp;
 &nbsp;
 
-Education
-======
-* Doctoral Thesis and Degree (Supervisor: Philipp Sterzer), **2011 - 2014**
-* Medical Degree at Charité-Universitätsmedizin Berlin, **2014**
-* Medical School Charité-Universitätsmedizin Berlin and Universidade Nova de Lisboa, **2007 - 2014**
-* Studium Generale, Leibniz Kolleg Tübingen, **2006 - 2007**
+**Grants and Fellowships**
+
+* Clinician Scientist, Berlin Institute of Health, **since 2019**
+* Junior Clinician Scientist, Berlin Institute of Health, **2017 - 2018**
+* Short-Term Research Grant, Minerva Foundation, Max-Planck-Society, **2013**
 
 &nbsp;
 &nbsp;
 
-Scholarships
-======
-* Travel Grant from the Minerva Foundation, Max-Planck-Society, **2013**
-* German Academic Scholarship Foundation **2007 - 2014**
+**Scholarships**
+
+* German Academic Scholarship Foundation, **2007 - 2015**
 
 &nbsp;
 &nbsp;
