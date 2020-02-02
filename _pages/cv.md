@@ -11,9 +11,6 @@ author_profile: yes
 
 {% include base_path %}
 
-&nbsp;
-&nbsp;
-
 **Personal Information**
 
 * Veith Weilnhammer, Dr. med. 
