@@ -9,5 +9,3 @@ paperurl: 'https://doi.org/10.3389/fnhum.2016.00263'
 citation: 'Schmack K, Weilnhammer VA, Heinzle J, Stephan KE, Sterzer P. Learning what to See in a Changing World. Frontiers in Human Neuroscience 2016, 10.'
 ---
 [Download paper here](http://veithweilnhammer.github.io/files/fnhum_Learning.pdf)
-
-Recommended citation: Schmack K, Weilnhammer VA, Heinzle J, Stephan KE, Sterzer P. Learning what to See in a Changing World. Frontiers in Human Neuroscience 2016, 10.
