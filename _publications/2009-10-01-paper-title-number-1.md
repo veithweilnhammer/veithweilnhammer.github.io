@@ -6,7 +6,7 @@ permalink: /publication/2009-10-01-paper-title-number-1
 date: 2013-03-23
 venue: 'Journal of Neuroscience'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'text'
+citation: 'Weilnhammer VA, Ludwig K, Hesselmann G, Sterzer P. Frontoparietal Cortex Mediates Perceptual Transitions in Bistable Perception. Journal of Neuroscience, 33(40). 16009 - 16015.'
 ---
 
 [Download paper here](http://veithweilnhammer.github.io/files/paper1.pdf)
