@@ -22,7 +22,7 @@ author_profile: yes
 **Research Experience**
 
 * Postdoctoral Researcher, Visual Perception Laboratory, Department of Psychiatry, Charité Berlin, **since 2015**
-* Research Doctorate (MD), Summa Cum Laude, Supervisor: Prof. Philipp Sterzer, **2015**
+* Research Doctorate (MD), Supervisor: Prof. Philipp Sterzer, **2015**
 * Minerva Fellow, Department of Neurobiology, Weizmann Institute, Rehovot, Israel, Supervisor: Prof. Rafi Malach, **2013**
 * MD Candidate, Visual Perception Laboratory, Department of Psychiatry, Charité Berlin, **2011 - 2014**
 
