@@ -1,5 +1,5 @@
 ---
-title: "Schizophrenia as a model disease"
+title: "Schizophrenia: Concepts and Models"
 collection: teaching
 type: "Online Lecture"
 permalink: /teaching/2018_Online_ScZ
