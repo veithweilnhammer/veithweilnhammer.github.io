@@ -131,7 +131,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.47584683"
      inkscape:cx="807.82048"
-     inkscape:cy="684.43375"
+     inkscape:cy="681.28148"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -219,5 +219,16 @@
          y="186.04446"
          transform="scale(-1,1)" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.01122px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.210337"
+       x="345.87555"
+       y="242.96944"
+       id="text5342-4-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan5340-7-5-8"
+         x="345.87555"
+         y="242.96944"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.01122px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#808080;stroke-width:0.210337">Tononi 2015, Dehaene 2017</tspan></text>
   </g>
 </svg>
