@@ -7,4 +7,4 @@ venue: "Vislab Meeting"
 date: 2021-06-08
 location: "Remote Presentation"
 ---
-[Go to presentation here](https://veithweilnhammer.github.io/reveal/Consciousness/assc_21.html)
+[Go to presentation here](https://veithweilnhammer.github.io/reveal/Consciousness/assc.html)
