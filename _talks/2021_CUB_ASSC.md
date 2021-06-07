@@ -1,5 +1,5 @@
 ---
-title: "An active role of prefrontal cortex in conscious cxperience"
+title: "An active role of prefrontal cortex in conscious experience"
 collection: talks
 type: "Talk"
 permalink: /talks/2021_CUB_ASSC
