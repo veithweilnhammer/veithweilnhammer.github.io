@@ -3,7 +3,7 @@ title: "Bistable perception alternates between external and internal modes of se
 collection: talks
 type: "Talk"
 permalink: /talks/2021_iScience_ASSC
-venue: "Vislab Meeting
+venue: "Vislab Meeting"
 date: 2021-05-07
 location: "Remote Presentation"
 ---
