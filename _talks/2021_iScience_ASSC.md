@@ -1,5 +1,5 @@
 ---
-title: "Bistable perception alternates between external and internal modes of sensory processing."
+title: "Bistable perception alternates between external and internal modes of sensory processing"
 collection: talks
 type: "Talk"
 permalink: /talks/2021_iScience_ASSC
