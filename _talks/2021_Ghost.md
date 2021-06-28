@@ -1,5 +1,5 @@
 ---
-title: "Where is the ghost in the shell"
+title: "Where is the ghost in the shell?"
 collection: talks
 type: "Talk"
 permalink: /talks/2021_Ghost
