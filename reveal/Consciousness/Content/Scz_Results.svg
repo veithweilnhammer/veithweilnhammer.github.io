@@ -14,7 +14,7 @@
    version="1.1"
    id="svg951"
    sodipodi:docname="Scz_Results.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <defs
      id="defs945">
     <marker
@@ -1079,16 +1079,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.48735144"
-     inkscape:cx="1124.1609"
-     inkscape:cy="472.92953"
+     inkscape:cx="755.84353"
+     inkscape:cy="464.7219"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
-     inkscape:window-x="72"
+     inkscape:window-width="1920"
+     inkscape:window-height="966"
+     inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      fit-margin-top="0"
@@ -1143,6 +1143,6 @@
          id="tspan5340-7-5"
          x="-0.11916301"
          y="258.93295"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#808080;stroke-width:0.264583">Weilnhammer 2020</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555556px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#808080;stroke-width:0.264583">Weilnhammer 2020</tspan></text>
   </g>
 </svg>
