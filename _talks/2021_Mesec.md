@@ -1,5 +1,5 @@
 ---
-title: "Consciousness, psychosis and self-organized criticality"
+title: "Consciousness and psychosis"
 collection: talks
 type: "Talk"
 permalink: /talks/2021_Mesec
