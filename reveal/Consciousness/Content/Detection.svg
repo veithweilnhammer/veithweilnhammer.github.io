@@ -14,7 +14,7 @@
    version="1.1"
    id="svg951"
    sodipodi:docname="Detection.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <defs
      id="defs945">
     <marker
@@ -374,6 +374,66 @@
          d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
          id="path1683" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-5-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#666666;fill-opacity:1;fill-rule:evenodd;stroke:#666666;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path1090-3-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker2098"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path2096" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-5-62"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#666666;fill-opacity:1;fill-rule:evenodd;stroke:#666666;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path1090-3-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker3932"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path3930" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -383,16 +443,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.59112946"
-     inkscape:cx="1093.8875"
+     inkscape:cx="786.84816"
      inkscape:cy="475.48726"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
-     inkscape:window-x="72"
+     inkscape:window-width="1920"
+     inkscape:window-height="966"
+     inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      fit-margin-top="0"
@@ -407,7 +467,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -473,21 +533,6 @@
          x="417.52594"
          y="139.00793"
          style="stroke-width:0.264583">Close</tspan></text>
-    <path
-       style="fill:none;stroke:#666666;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#DotS-3);marker-end:url(#DotS-3)"
-       d="M 94.036906,85.560907 C 157.57593,98.261779 180.44551,124.13858 210.37764,152.56544"
-       id="path1589-7"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#808080;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#DotS-5-6);marker-end:url(#DotS-5-6)"
-       d="M 94.036907,85.560906 C 157.17319,98.257708 370.37057,123.52161 461.45676,152.56544"
-       id="path1589-5-9"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#DotS-5);marker-end:url(#DotS-5)"
-       d="M 94.036904,85.560905 C 157.57593,98.26177 305.22424,124.13858 335.15637,152.56544"
-       id="path1589-5"
-       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:7.01122px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:end;text-anchor:end;stroke-width:0.210337"
@@ -499,5 +544,23 @@
          y="16.834738"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.01122px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:end;text-anchor:end;fill:#808080;stroke-width:0.210337"
          id="tspan92">Dehaene 2017 </tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#666666;stroke-width:3.02897644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.02897636, 3.02897636000000015;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#DotS-5-3);marker-end:url(#DotS-5-3)"
+       d="M 94.037503,85.49713 C 184.14408,98.208353 393.52851,124.10628 435.97615,152.55632"
+       id="path1589-5-7"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#666666;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#DotS-5-62);marker-end:url(#DotS-5-62)"
+       d="M 93.825622,85.662612 C 113.44721,98.346673 159.04271,124.18926 168.28609,152.57853"
+       id="path1589-5-1"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#DotS-5);marker-end:url(#DotS-5)"
+       d="M 94.036904,85.560904 C 157.57593,98.261769 305.22424,124.13858 335.15637,152.56544"
+       id="path1589-5"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

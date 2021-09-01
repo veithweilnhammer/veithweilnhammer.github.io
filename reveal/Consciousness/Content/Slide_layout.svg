@@ -13,7 +13,7 @@
    version="1.1"
    id="svg951"
    sodipodi:docname="Slide_layout.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <defs
      id="defs945" />
   <sodipodi:namedview
@@ -23,17 +23,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.38183766"
-     inkscape:cx="1292.7531"
-     inkscape:cy="623.31085"
+     inkscape:zoom="0.56568542"
+     inkscape:cx="922.47323"
+     inkscape:cy="608.88448"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
-     inkscape:window-x="72"
+     inkscape:window-width="1920"
+     inkscape:window-height="966"
+     inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      fit-margin-top="0"
@@ -64,27 +64,27 @@
        height="280.45834"
        x="-0.62680745"
        y="0.72713816" />
-    <rect
-       style="fill:#ff0000;stroke:none;stroke-width:0.0999997;stroke-miterlimit:10;stroke-dasharray:none;stop-color:#000000"
-       id="rect1796"
-       width="423.33334"
-       height="195.79169"
-       x="41.706512"
-       y="72.244949"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:35.2778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
-       x="71.866707"
-       y="140.23323"
-       id="text1836"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"><tspan
+       style="font-size:5.64444447px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458332"
+       x="23.625427"
+       y="267.32706"
+       id="text821"><tspan
          sodipodi:role="line"
-         id="tspan1834"
-         x="71.866707"
-         y="140.23323"
-         style="font-size:35.2778px;stroke-width:0.264583">ABC</tspan></text>
+         id="tspan819"
+         x="23.625427"
+         y="272.32108"
+         style="stroke-width:0.26458332"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444447px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.26458332"
+       x="7.7957621"
+       y="274.75546"
+       id="text825"><tspan
+         sodipodi:role="line"
+         id="tspan823"
+         x="7.7957621"
+         y="274.75546"
+         style="fill:#808080;stroke-width:0.26458332">Authors Year. </tspan></text>
   </g>
 </svg>
