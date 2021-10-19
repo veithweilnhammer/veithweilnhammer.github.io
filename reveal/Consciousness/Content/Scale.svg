@@ -14,7 +14,7 @@
    version="1.1"
    id="svg951"
    sodipodi:docname="Scale.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <defs
      id="defs945">
     <marker
@@ -313,16 +313,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.47584683"
-     inkscape:cx="829.60463"
-     inkscape:cy="601.85664"
+     inkscape:cx="452.3824"
+     inkscape:cy="593.45057"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1848"
+     inkscape:window-width="1866"
      inkscape:window-height="1016"
-     inkscape:window-x="72"
+     inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      fit-margin-top="0"
@@ -542,14 +542,14 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:7.01122px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.210337"
-       x="281.72147"
+       style="font-weight:bold;font-size:7.01121998px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:end;text-anchor:end;stroke-width:0.210337"
+       x="451.30878"
        y="16.834738"
        id="text5342-4-6-4"><tspan
          sodipodi:role="line"
-         x="281.72147"
+         x="451.30878"
          y="16.834738"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.01122px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#808080;stroke-width:0.210337"
-         id="tspan92">Aru 2019, Lamme, Lamme 2017, Robinson 2009</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.01121998px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:end;text-anchor:end;fill:#808080;stroke-width:0.210337"
+         id="tspan92">Aru 2019, Lamme 2017, Robinson 2009</tspan></text>
   </g>
 </svg>
