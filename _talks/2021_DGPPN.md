@@ -7,4 +7,4 @@ venue: "DGPPN 2021"
 date: 2021-11-15
 location: "Symposium: Computational Psychiatry"
 ---
-[Go to presentation here](https://veithweilnhammer.github.io/reveal/Consciousness/DGPPN.html)
+[Go to presentation here](https://veithweilnhammer.github.io/reveal/Consciousness/DGPPN2021.html)
