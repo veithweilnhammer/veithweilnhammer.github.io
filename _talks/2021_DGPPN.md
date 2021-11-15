@@ -1,5 +1,5 @@
 ---
-title: "Using visual illusions to understand the role of prefrontal cortex in conscious experience"
+title: "The role of altered perceptual inference in psychosis"
 collection: talks
 type: "Talk"
 permalink: /talks/2021_DGPPN
