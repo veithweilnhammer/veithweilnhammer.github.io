@@ -273,8 +273,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.47584683"
-     inkscape:cx="973.93856"
-     inkscape:cy="322.72315"
+     inkscape:cx="598.81785"
+     inkscape:cy="314.31708"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -297,7 +297,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -454,7 +454,7 @@
          x="459.50623"
          y="191.64314"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.01121998px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:end;text-anchor:end;fill:#808080;stroke-width:0.210337"
-         id="tspan5154-6">Sterzer 2009, Weilnhammer 2017, Weilnhammer2021</tspan><tspan
+         id="tspan5154-6">Sterzer 2009, Weilnhammer 2017, Weilnhammer 2021</tspan><tspan
          sodipodi:role="line"
          x="459.50623"
          y="200.40717"
