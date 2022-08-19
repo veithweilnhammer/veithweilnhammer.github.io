@@ -7,4 +7,4 @@ venue: "NeuroSpin Conference"
 date: 2021-11-05
 location: "Remote Presentation"
 ---
-[Go to presentation here](https://veithweilnhammer.github.io/reveal/Consciousness/UNICOG.html)
+[Go to presentation here](https://joliot.cea.fr/drf/joliot/Pages/Actualites/agenda/ConferencesInternes/NeuroSpin/2021/1108-V-Weilnhammer.aspx)
