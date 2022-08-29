@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1920"
    height="900"
    viewBox="0 0 508.00001 238.125"
    version="1.1"
    id="svg951"
    sodipodi:docname="bilateral_activated_Brain_full.svg"
-   inkscape:version="1.0.2 (394de47547, 2021-03-26)">
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs945">
     <marker
@@ -190,22 +190,23 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.52249848"
-     inkscape:cx="1025.7695"
-     inkscape:cy="423.66039"
+     inkscape:cx="1025.8403"
+     inkscape:cy="420.09692"
      inkscape:document-units="mm"
      inkscape:current-layer="g956"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1920"
-     inkscape:window-height="966"
+     inkscape:window-width="1864"
+     inkscape:window-height="1013"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="0" />
   <metadata
      id="metadata948">
     <rdf:RDF>
@@ -214,7 +215,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -273,32 +273,37 @@
            style="font-size:8.81944px;text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583">Executive Functions</tspan><tspan
            sodipodi:role="line"
            x="220.79564"
-           y="35.049133"
+           y="35.049129"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
            id="tspan1010">Saliency</tspan><tspan
            sodipodi:role="line"
            x="220.79564"
-           y="46.073433"
+           y="46.073429"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
            id="tspan998">Introspection</tspan><tspan
            sodipodi:role="line"
            x="220.79564"
-           y="57.097733"
+           y="57.097729"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
            id="tspan1008">Cognitive Control</tspan><tspan
            sodipodi:role="line"
            x="220.79564"
-           y="68.122025"
+           y="68.122032"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
-           id="tspan1000">Motor Behavior</tspan><tspan
+           id="tspan1000" /><tspan
            sodipodi:role="line"
            x="220.79564"
-           y="79.146324"
+           y="79.146332"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.81944px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
+           id="tspan2800">Motor Behavior</tspan><tspan
+           sodipodi:role="line"
+           x="220.79564"
+           y="90.170631"
            style="font-size:8.81944px;text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
            id="tspan1002" /><tspan
            sodipodi:role="line"
            x="220.79564"
-           y="90.170624"
+           y="101.19493"
            style="font-size:8.81944px;text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264583"
            id="tspan986" /></text>
       <text
