@@ -3,7 +3,7 @@ title: "Schizophrenia: Concepts and Models"
 collection: teaching
 type: "Online Lecture"
 permalink: /teaching/2018_Online_ScZ
-venue: "Charité Berlin, Department of Psychiatry"
+venue: "Medical Curriculum, Charité Universitätsmedizin Berlin, Department of Psychiatry"
 date: 2022-07-01
 location: "Berlin, Germany"
 ---
