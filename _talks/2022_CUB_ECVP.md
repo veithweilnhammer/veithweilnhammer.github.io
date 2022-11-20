@@ -5,6 +5,6 @@ type: "Talk"
 permalink: /talks/2022_CUB_ECVP
 venue: "ECVP 2022"
 date: 2022-08-30
-location: "Talk"
+location: "Nijmegen"
 ---
 [Go to presentation here](https://veithweilnhammer.github.io/reveal/Consciousness/ecvp.html)
