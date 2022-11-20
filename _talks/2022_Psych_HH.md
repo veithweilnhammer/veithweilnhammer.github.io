@@ -3,7 +3,7 @@ title: "The role of prefrontal cortex in conscious experiences"
 collection: talks
 type: "Talk"
 permalink: /talks/2022_Psych_HH
-venue: "Seminar Series, Psychologische Hochschule Berlin"
+venue: "Seminar Series, Psychologische Hochschule"
 date: 2022-10-25
 location: "Berlin"
 ---
