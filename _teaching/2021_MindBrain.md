@@ -1,10 +1,10 @@
 ---
 title: "Computational Modelling Approaches to Schizophrenia"
 collection: teaching
-type: "Online Lecture"
+type: "Lecture"
 permalink: /teaching/Mind_Brain_2021_VW
-venue: "Charité Berlin, Department of Psychiatry"
-date: 2021-11-22
+venue: "Clinical Neuroscience Lecture Series (Einstein Center, Berlin School of Mind and Brain, bccn Berlin, MedNeuro"
+date: 2022-11-21
 location: "Berlin, Germany"
 ---
-[Download slides here](http://veithweilnhammer.github.io/files/Mind_Brain_2021_VW.pdf)
+[Download slides here](http://veithweilnhammer.github.io/files/Mind_Brain_22.pdf)
