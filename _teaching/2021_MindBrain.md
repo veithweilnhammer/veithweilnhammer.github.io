@@ -7,4 +7,4 @@ venue: "Clinical Neuroscience Lecture Series (Einstein Center, Berlin School of 
 date: 2022-11-21
 location: "Berlin, Germany"
 ---
-[Download slides here](http://veithweilnhammer.github.io/files/Mind_Brain_22.pdf)
+[Download slides here](http://veithweilnhammer.github.io/files/MindBrain_22.pdf)
