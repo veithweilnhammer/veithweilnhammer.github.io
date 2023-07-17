@@ -30,7 +30,7 @@ author_profile: yes
 &nbsp;
 
 **Post-Graduate Medical Training**
-* Board Certification in Psychiatry and Psychotherapie, **2023**
+* Board Certification in Psychiatry and Psychotherapy, **2023**
 * Psychotherapist in Training, Center for Psychotherapy, Humboldt-Universität zu Berlin, Germany, **2016 - 2023**
 * Resident Psychiatrist, Department of Psychiatry, Charité Berlin, **2015 - 2023**
 
