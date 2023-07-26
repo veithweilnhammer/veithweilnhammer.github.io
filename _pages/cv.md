@@ -51,7 +51,6 @@ author_profile: yes
 &nbsp;
 
 **Grants and Fellowships**
-* Postdoctoral Fellowship, Leopoldina - German Academy of Sciences, **since 2023**
 * Clinician Scientist, Berlin Institute of Health, **2019 - 2022**
 * Junior Clinician Scientist, Berlin Institute of Health, **2017 - 2018**
 * Short-Term Research Grant, Minerva Foundation, Max-Planck-Society, **2013**
