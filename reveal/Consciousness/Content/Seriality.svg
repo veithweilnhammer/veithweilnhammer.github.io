@@ -5,7 +5,7 @@
    viewBox="0 0 508.00001 238.125"
    version="1.1"
    id="svg951"
-   sodipodi:docname="Boundary.svg"
+   sodipodi:docname="Seriality.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -144,6 +144,60 @@
          result="blur"
          in="fbSourceGraphic" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter192-3"
+       x="-0.16193652"
+       y="-0.21591537"
+       width="1.323873"
+       height="1.4318307">
+      <feGaussianBlur
+         stdDeviation="2 2"
+         result="fbSourceGraphic"
+         id="feGaussianBlur190-6" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix212-7" />
+      <feGaussianBlur
+         id="feGaussianBlur214-5"
+         stdDeviation="2 2"
+         result="blur"
+         in="fbSourceGraphic" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1621">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.188683px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -400.20974,216.34359 c -5.07216,-0.58762 -9.06968,3.05807 -13.63245,4.36172 -3.64666,1.0419 -11.31402,1.76474 -12.53647,0.55679 -1.14461,-1.13103 -0.59977,-3.53086 -0.59977,-5.32099 0,-1.00864 -0.89664,-2.49759 -0.59166,-3.33451 0.28124,-0.77174 1.54194,-1.5264 1.94433,-2.33116 2.22408,-4.44823 -2.11065,2.99968 1.18955,-2.77566 0.47288,-0.82752 1.2321,-1.49417 1.58609,-2.37912 0.36958,-0.92395 0.60183,-2.14361 1.16855,-3.08815 1.28618,-2.14364 3.73495,-4.32833 5.52082,-5.93826 0.29838,-0.269 0.0109,-0.88083 0.29008,-1.16977 0.34346,-0.35553 4.84871,-0.11373 6.09983,1.90736 2.10814,3.40549 0.094,6.59841 1.54905,9.98904 0.55807,1.30043 2.30024,1.72881 3.19078,2.60804 2.2369,2.20846 3.87442,3.75363 4.82127,6.91467 z"
+         id="path1623" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Blur"
+       id="filter192-9"
+       x="-0.16193652"
+       y="-0.21591537"
+       width="1.323873"
+       height="1.4318307">
+      <feGaussianBlur
+         stdDeviation="2 2"
+         result="fbSourceGraphic"
+         id="feGaussianBlur190-3" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix212-6" />
+      <feGaussianBlur
+         id="feGaussianBlur214-0"
+         stdDeviation="2 2"
+         result="blur"
+         in="fbSourceGraphic" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -153,10 +207,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.47584683"
-     inkscape:cx="806.98236"
+     inkscape:cx="1176.8493"
      inkscape:cy="678.78985"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g1605"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
