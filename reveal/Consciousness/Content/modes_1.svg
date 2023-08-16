@@ -408,16 +408,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.417193"
-     inkscape:cx="1004.3313"
-     inkscape:cy="731.0765"
+     inkscape:zoom="1.364584"
+     inkscape:cx="1630.5335"
+     inkscape:cy="730.62558"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1864"
-     inkscape:window-height="1013"
+     inkscape:window-width="1868"
+     inkscape:window-height="1043"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -5365,5 +5365,15 @@
              y="-147.92111">Weilnhammer et al. iScience 2021 &amp; BioRxiv 2022</tspan></text>
       </g>
     </g>
+    <text
+       style="font-variant:normal;font-weight:normal;font-size:4.39824px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.733039"
+       id="text550-0-3"
+       x="366.59738"
+       y="207.15488"><tspan
+         sodipodi:role="line"
+         id="tspan548-4-6"
+         x="366.59738"
+         y="207.15488"
+         style="stroke-width:0.733039">Weilnhammer et al. BioRxiv 2022</tspan></text>
   </g>
 </svg>
