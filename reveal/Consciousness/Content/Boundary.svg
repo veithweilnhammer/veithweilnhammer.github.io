@@ -160,7 +160,7 @@
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="1864"
+     inkscape:window-width="1868"
      inkscape:window-height="1043"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -243,5 +243,16 @@
          transform="scale(-1,1)"
          style="filter:url(#filter192)" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.01122px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.210337"
+       x="348.51459"
+       y="242.70131"
+       id="text5342-4-6-4"><tspan
+         sodipodi:role="line"
+         id="tspan5340-7-5-8"
+         x="348.51459"
+         y="242.70131"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.01122px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#808080;stroke-width:0.210337">Odegaard 2017, Boly 2017</tspan></text>
   </g>
 </svg>
