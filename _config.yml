@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Veith Weilnhammer"
 title_separator          : "-"
 name                     : &name "Veith Weilnhammer"
-description              : &description "Psychiatric Resident and Post-Doctoral Fellow at Charité Universitätsmedizin Berlin"
+description              : &description "Visiting Scholar, Helen Wills Neuroscience Institute, UC Berkeley"
 url                      : https://veithweilnhammer.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "veithweilnhammer.github.io"
@@ -81,9 +81,9 @@ analytics:
 # Site Author
 author:
   name             : "Veith Weilnhammer"
-  avatar           : "profile2.jpg"
-  bio              : "Psychiatrist and Postdoctoral Researcher at Charité - Universitätsmedizin Berlin"
-  location         : "Berlin"
+  avatar           : "profile5.jpg"
+  bio              : "Visiting Scholar, Helen Wills Neuroscience Institute, UC Berkeley"
+  location         : "Berkeley, CA"
   employer         :
   pubmed           :  # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.de/citations?user=k_wJmK0AAAAJ&hl=de"
