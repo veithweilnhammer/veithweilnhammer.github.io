@@ -21,6 +21,7 @@ author_profile: yes
 
 **Research Experience**
 
+* Fellow of the Leopoldina Academy of Sciences, Helen Wills Neuroscience Institute, UC Berkeley, **since 2023**
 * Clinician Scientist and Postdoctoral Fellow, Visual Perception Laboratory, Department of Psychiatry, Charité Berlin, **2015 - 2023**
 * Research Doctorate (MD), Supervisor: Prof. Philipp Sterzer, **2015**
 * Minerva Fellow, Department of Neurobiology, Weizmann Institute, Rehovot, Israel, Supervisor: Prof. Rafi Malach, **2013**
