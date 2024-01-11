@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1907.5038"
    height="782.11334"
    viewBox="0 0 504.69372 206.93416"
    version="1.1"
    id="svg951"
    sodipodi:docname="modes_1b.svg"
-   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs945">
     <marker
@@ -622,17 +622,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.59714111"
-     inkscape:cx="1545.7601"
-     inkscape:cy="567.42398"
+     inkscape:cx="1545.6983"
+     inkscape:cy="566.86769"
      inkscape:document-units="mm"
-     inkscape:current-layer="g32107"
+     inkscape:current-layer="g4861-6"
      inkscape:document-rotation="0"
      showgrid="false"
      units="px"
-     inkscape:window-width="3840"
-     inkscape:window-height="2054"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-width="2560"
+     inkscape:window-height="1376"
+     inkscape:window-x="2560"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -647,7 +647,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -4469,15 +4468,15 @@
          id="g4861-6"
          transform="translate(-52.348154,270.28805)">
         <text
-           style="font-variant:normal;font-weight:normal;font-size:4.39824px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.733039"
-           id="text550-0-3"
-           x="366.59738"
-           y="207.15488"><tspan
+           style="font-variant:normal;font-weight:normal;font-size:5.12086px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.853476"
+           id="text550-0-36"
+           x="379.19751"
+           y="206.30247"><tspan
              sodipodi:role="line"
-             id="tspan548-4-6"
-             x="366.59738"
-             y="207.15488"
-             style="stroke-width:0.733039">Weilnhammer et al. BioRxiv 2022</tspan></text>
+             id="tspan548-4-7"
+             x="379.19751"
+             y="206.30247"
+             style="stroke-width:0.853476">Weilnhammer et al. PLOS Biology 2023</tspan></text>
       </g>
       <g
          id="g17226-3"
