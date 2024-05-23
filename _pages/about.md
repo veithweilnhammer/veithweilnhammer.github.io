@@ -8,8 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a psychiatrist, psychotherapist and post-doctoral researcher. I specialize in studying the neural basis of conscious perception and its alteration in psychotic disorders. My research methodology encompasses a multidisciplinary approach that includes behavioral experiments, computational modeling, functional magnetic resonance imaging, and transcranial magnetic stimulation.
-
+I am a board-certified psychiatrist, psychotherapist, and computational neuroscientist. The central problem I want to understand is how objects are represented in the brain, and how changes in these representations lead to psychotic experiences such as hallucinations.
 
 
 
