@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1440pt"
+   height="675pt"
+   viewBox="0 0 508.00001 238.125"
+   version="1.1"
+   id="svg951"
+   sodipodi:docname="Figure_layout (copy).svg"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+  <defs
+     id="defs945">
+    <marker
+       style="overflow:visible"
+       id="Arrow2Send"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path964" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path940" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.4)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1076" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path934" />
+    </marker>
+    <clipPath
+       id="clipPath398"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         ry="2.7246072"
+         y="-35.657902"
+         x="42.232769"
+         height="187.98959"
+         width="222.70291"
+         id="rect400"
+         style="opacity:0.5;fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke" />
+    </clipPath>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Send-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path964-6" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.68921901"
+     inkscape:cx="831.11136"
+     inkscape:cy="478.68261"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata948">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(5.1180272,-20.988209)">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.02214px;line-height:0;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.100554"
+       x="-2.1230609"
+       y="28.93158"
+       id="text22"><tspan
+         sodipodi:role="line"
+         id="tspan20"
+         x="-2.1230609"
+         y="28.93158"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554">Nagel T, 2017. What Is It Like to Be a Bat? The Philosophical Review. Vol. 83, No. 4 (Oct., 1974), pp. 435-450.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="34.117413"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan30" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="39.303249"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan32">Tononi G &amp; Koch C, 2015. Consciousness: here, there and everywhere?Phil. Trans. R. Soc. B. 37020140167.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="44.489082"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan34" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="49.674915"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan36">Dehaene S et al., 2017. What is consciousness, and could machines have it? Science 358.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="54.860752"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan38" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="60.046585"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan40">Odegaard, B et al., 2017. Should a Few Null Findings Falsify Prefrontal Theories of Conscious Perception? The Journal of Neuroscience 37.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="65.232422"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan42" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="70.418251"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan44">Boly, M. et al., 2017. Are the Neural Correlates of Consciousness in the Front or in the Back of the Cerebral Cortex? Clinical and Neuroimaging Evidence. The Journal of Neuroscience 37.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="75.604088"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan46" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="80.789925"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan48">Brascamp, J et al., 2018. Multistable Perception and the Role of the Frontoparietal Cortex Perceptual Inference. Annual Review of Psychology 69.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="85.975754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan50" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="91.161591"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan52">Robinson R, 2009. Exploring the &quot;Global Workspace&quot; of Consciousness. PLoS Biol 7.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="96.347427"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan54" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="101.53326"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan56">Aru J et al., 2019. Cellular Mechanisms of Conscious Processing. TICS 24.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="106.71909"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan58" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="111.90493"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan60">Lamme V, 2017. Towards a true neural stance on consciousness. TICS 10.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="117.09076"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan62" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="122.2766"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan64">Leopold DA et al., 1999. Multistable phenomena: changing views in perception. TICS 3(10).</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="127.46243"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan66" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="132.64827"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan70">Lumer E et al., 1999. Neural correlates of perceptual rivalry in the human brain. Science 119.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="137.83409"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan72" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="143.01993"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan74">Sterzer P &amp; Kleinschmidt A, 2007. A neural basis for inference in perceptual ambiguity. PNAS 104.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="148.20576"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan76" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="153.3916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan78">Weilnhammer V., 2013. Frontoparietal cortex mediates perceptual transitions during bistable perception. The Journal of Neuroscience 13.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="158.57744"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan80" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="163.76328"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan82">Knapen T et al., 2011. The Role of Frontal and Parietal Brain Areas in Bistable Perception. The Journal of Neuroscience 31.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="168.9491"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan84" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="174.13493"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan86">Frässle S  et al., 2014. Binocular rivalry: frontal activity relates to introspection and action but not to perception. The Journal of Neuroscience 34.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="179.32077"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan88" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="184.50661"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan90">Brascamp J et al., 2015. Negligible fronto-parietal BOLD activity accompanying unreportable switches in bistable perception. Nature neuroscience 18.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="189.69244"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan92" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="194.87828"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan94">Zou J et al., 2016. Binocular rivalry from invisible patterns. PNAS 113.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="200.0641"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan96" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="205.24994"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan98">Sterzer P et al., 2009. The neural bases of multistable perception. Tics 13.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="210.43578"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan100" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="215.62161"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan102">Hohwy J et al., 2008. Predictive coding explains binocular rivalry: an epistemological review. Cognition 108.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="220.80745"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan104" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="225.99329"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan106">Weilnhammer V et al., 2017 A predictive coding account of bistable perception. PLOS Computational Biology 13.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="231.17911"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan108" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="236.36494"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan110">Corlett P et al., 2019. Hallucinations and Strong Priors. TICS 23.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="241.55078"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan112" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="246.73662"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan114">Fletcher P &amp; Frith C, 2008. Perceiving is believing: a Bayesian approach to explaining the positive symptoms of schizophrenia. Nature Reviews Neuroscience.</tspan><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="251.92245"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan116" /><tspan
+         sodipodi:role="line"
+         x="-2.1230609"
+         y="257.10828"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.100554"
+         id="tspan118">Sterzer P et al., 2019. The Predictive Coding Account of Psychosis. Biological Psychiatry 84.</tspan></text>
+  </g>
+</svg>

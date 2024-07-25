@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1440pt"
+   height="795pt"
+   viewBox="0 0 508.00001 280.45833"
+   version="1.1"
+   id="svg951"
+   sodipodi:docname="5_problems_formulated_boundary.svg"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+  <defs
+     id="defs945" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.38183766"
+     inkscape:cx="1183.4691"
+     inkscape:cy="565.31246"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata948">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.62680745,-0.72713816)">
+    <path
+       sodipodi:type="star"
+       style="opacity:0.5;fill:none;stroke:#000000;stroke-width:7.32413;stroke-miterlimit:10;stroke-dasharray:none;stop-color:#000000"
+       id="path25"
+       sodipodi:sides="5"
+       sodipodi:cx="234.00037"
+       sodipodi:cy="139.52203"
+       sodipodi:r1="104.93295"
+       sodipodi:r2="105.99288"
+       sodipodi:arg1="3.1415927"
+       sodipodi:arg2="3.7699112"
+       inkscape:flatsided="true"
+       inkscape:rounded="1.83"
+       inkscape:randomized="0"
+       transform="matrix(0,0.46326524,-0.46326524,0,314.15115,49.248547)"
+       inkscape:transform-center-y="-5.5277139"
+       inkscape:transform-center-x="-1.7515095e-06"
+       d="m 129.06741,139.52203 c 1e-5,-225.741636 -142.18616,-30.03918 72.5069,-99.797166 214.69305,-69.757992 -15.36899,-144.509694 117.3186,38.119131 132.6876,182.628825 132.68761,-59.272728 0,123.356085 C 186.20529,383.82889 416.26735,309.07721 201.5743,239.3192 -13.118753,169.56119 129.0674,365.26366 129.06741,139.52203 Z" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.97732px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.224434"
+       x="347.99637"
+       y="92.363808"
+       id="text875"><tspan
+         sodipodi:role="line"
+         id="tspan873"
+         x="347.99637"
+         y="92.363808"
+         style="text-align:center;text-anchor:middle;stroke-width:0.224434">Subjectivity</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.97732px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.224434"
+       x="249.40805"
+       y="261.57739"
+       id="text875-1-8"><tspan
+         sodipodi:role="line"
+         id="tspan873-0-9"
+         x="249.40805"
+         y="261.57739"
+         style="text-align:center;text-anchor:middle;stroke-width:0.224434">Scale</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.97732px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.224434"
+       x="370.89102"
+       y="180.64828"
+       id="text875-1"><tspan
+         sodipodi:role="line"
+         id="tspan873-0"
+         x="370.89102"
+         y="180.64828"
+         style="text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.224434">Mechanisms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.97732px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ff0000;stroke-width:0.224434"
+       x="132.21271"
+       y="181.55347"
+       id="text875-1-8-0"><tspan
+         sodipodi:role="line"
+         id="tspan873-0-9-1"
+         x="132.21271"
+         y="181.55347"
+         style="text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.224434">Function</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.97732px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.224434"
+       x="156.64095"
+       y="92.363808"
+       id="text875-1-8-3"><tspan
+         sodipodi:role="line"
+         id="tspan873-0-9-4"
+         x="156.64095"
+         y="92.363808"
+         style="text-align:center;text-anchor:middle;stroke-width:0.224434">Detection</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.97732px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.224434"
+       x="249.31819"
+       y="155.05925"
+       id="text941"><tspan
+         sodipodi:role="line"
+         id="tspan939"
+         x="249.31819"
+         y="155.05925"
+         style="text-align:center;text-anchor:middle;stroke-width:0.224434">Conscious</tspan><tspan
+         sodipodi:role="line"
+         x="249.31819"
+         y="166.2809"
+         style="text-align:center;text-anchor:middle;stroke-width:0.224434"
+         id="tspan943">Experience</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:8.97731px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.224434"
+       x="372.27182"
+       y="203.25017"
+       id="text875-1-3"><tspan
+         sodipodi:role="line"
+         id="tspan873-0-6"
+         x="372.27182"
+         y="203.25017"
+         style="text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.224434">IFC detects and resolves </tspan><tspan
+         sodipodi:role="line"
+         x="372.27182"
+         y="214.4718"
+         style="text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.224434"
+         id="tspan39">perceptual conflict during </tspan><tspan
+         sodipodi:role="line"
+         x="372.27182"
+         y="225.69345"
+         style="text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.224434"
+         id="tspan45">bistable perception</tspan></text>
+  </g>
+</svg>
