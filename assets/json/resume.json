@@ -152,29 +152,29 @@
   "certificates": [
     {
         "name": "Habilitation in Experimental Psychiatry",
-        "date": "2023",
-        "issuer": "Charité - Universitätsmedizin, Berlin, Germany",
+        "date": "",
+        "issuer": "Charité - Universitätsmedizin, Berlin, Germany (2023)",
         "url": "https://www.charite.de/",
         "icon": "fa-solid fa-graduation-cap"
     },
     {
         "name": "Board Certificate in Psychiatry & Psychotherapy",
-        "date": "2023",
-        "issuer": "Medical Association, Berlin, Germany",
+        "date": "",
+        "issuer": "Medical Association, Berlin, Germany (2023)",
         "url": "https://www.charite.de/",
         "icon": "fa-solid fa-user-md"
     },
     {
         "name": "Doctoral Degree in Medicine",
-        "date": "2015",
-        "issuer": "Charité - Universitätsmedizin, Berlin, Germany",
+        "date": "",
+        "issuer": "Charité - Universitätsmedizin, Berlin, Germany (2015)",
         "url": "https://www.charite.de/",
         "icon": "fa-solid fa-graduation-cap"
     },
     {
         "name": "Medical License",
-        "date": "2015",
-        "issuer": "Medical Association, Berlin, Germany",
+        "date": "",
+        "issuer": "Medical Association, Berlin, Germany (2015)",
         "url": "https://www.charite.de/",
         "icon": "fa-solid fa-user-md"
     }
