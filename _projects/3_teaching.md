@@ -1,11 +1,11 @@
 ---
 layout: page
-title: the role of prefrontal cortex in conscious experience
-description: inferior frontal cortex detects and resolves conflicts in perception
-img: assets/img/7.jpg
-redirect: https://veithweilnhammer.github.io/assets/reveal/CCN.html
+title: computional models of schizophrenia
+description: how computational psychiatry investigates the causes and symptoms of psychotic disorders
+img: assets/img/comp_psych.jpg
+redirect: https://veithweilnhammer.github.io/assets/pdf/Online_Lecture_Scz.pdf
 importance: 1
-category: neuroscience
+category: medicine
 ---
 
 Every project has a beautiful feature showcase page.
