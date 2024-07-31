@@ -245,7 +245,7 @@
     {
       "name": "Online mental health",
       "summary": "How can AI predict mental health from online behavior?",
-      "highlights": [],
+      "highlights": ["abc"],
       "startDate": "2023",
       "endDate": "present",
       "url": ""
