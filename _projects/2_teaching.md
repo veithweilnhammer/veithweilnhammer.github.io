@@ -1,11 +1,11 @@
 ---
 layout: page
-title: The role of prefrontal cortex in conscious experiences
-description: Inferior frontal cortex detects and resolves conflicts in perception
+title: schizophrenia - history and concepts
+description: what people mean when they talk about schizophrenia
 img: assets/img/7.jpg
-redirect: assets/reveal/demo.html
+redirect: https://veithweilnhammer.github.io/assets/Online_Lecture_Scz.pdf
 importance: 1
-category: neuroscience
+category: medicine
 ---
 
 Every project has a beautiful feature showcase page.

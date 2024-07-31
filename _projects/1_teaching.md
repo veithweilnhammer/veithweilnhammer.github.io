@@ -1,9 +1,9 @@
 ---
 layout: page
-title: The role of prefrontal cortex in conscious experiences
-description: Inferior frontal cortex detects and resolves conflicts in perception
-img: assets/img/7.jpg
-redirect: assets/reveal/demo.html
+title: the role of prefrontal cortex in conscious experience
+description: inferior frontal cortex detects and resolves conflicts in perception
+img: assets/img/9.jpg
+redirect: https://veithweilnhammer.github.io/assets/reveal/CCN.html
 importance: 1
 category: neuroscience
 ---
