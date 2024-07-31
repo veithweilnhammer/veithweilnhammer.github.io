@@ -2,7 +2,7 @@
 layout: page
 title: computional models of schizophrenia
 description: how computational psychiatry investigates the causes and symptoms of psychotic disorders
-img: assets/img/comp_psych.jpg
+img: assets/img/6.jpg
 redirect: https://veithweilnhammer.github.io/assets/pdf/MindBrain_22.pdf
 importance: 3
 category: medicine
