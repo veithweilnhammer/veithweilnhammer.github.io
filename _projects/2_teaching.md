@@ -4,7 +4,7 @@ title: schizophrenia - history and concepts
 description: what people mean when they talk about schizophrenia
 img: assets/img/9.jpg
 redirect: https://veithweilnhammer.github.io/assets/pdf/Online_Lecture_Scz.pdf
-importance: 1
+importance: 2
 category: medicine
 ---
 
