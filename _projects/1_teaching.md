@@ -1,11 +1,11 @@
 ---
 layout: page
-title: the role of prefrontal cortex in conscious experience
-description: inferior frontal cortex detects and resolves conflicts in perception
+title: the role of predictive processes in altered states of consciousness
+description: how predictive processing explains psychotic experiences
 img: assets/img/7.jpg
 redirect: https://veithweilnhammer.github.io/assets/reveal/CCN.html
 importance: 1
-category: neuroscience
+category: medicine
 ---
 
 Every project has a beautiful feature showcase page.

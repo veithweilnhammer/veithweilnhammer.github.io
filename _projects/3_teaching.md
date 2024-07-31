@@ -1,11 +1,11 @@
 ---
 layout: page
-title: computional models of schizophrenia
-description: how computational psychiatry investigates the causes and symptoms of psychotic disorders
+title: external and internal modes in perception
+description: how perception integrates sensory data with prior knowledge
 img: assets/img/6.jpg
-redirect: https://veithweilnhammer.github.io/assets/pdf/MindBrain_22.pdf
-importance: 3
-category: medicine
+redirect: https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html
+importance: 1
+category: neuroscience
 ---
 
 Every project has a beautiful feature showcase page.
