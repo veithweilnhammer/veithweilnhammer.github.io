@@ -1,7 +1,7 @@
 ---
 layout: page
-title: the role of predictive processes in altered states of consciousness
-description: how predictive processing explains psychotic experiences
+title: mechanisms of psychosis
+description: how does the brain construct unambiguous conscious experiences from ambiguous data, and how is this related to psychotic symptoms?  
 img: assets/img/7.jpg
 redirect: https://veithweilnhammer.github.io/assets/reveal/CCN.html
 importance: 1

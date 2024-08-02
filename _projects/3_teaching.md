@@ -1,7 +1,7 @@
 ---
 layout: page
-title: external and internal modes in perception
-description: how perception integrates sensory data with prior knowledge
+title: bimodal inference
+description: how does perception integrate prior knowledge with new information?
 img: assets/img/6.jpg
 redirect: https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html
 importance: 1
