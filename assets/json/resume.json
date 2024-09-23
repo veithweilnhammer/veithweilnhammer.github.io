@@ -128,6 +128,13 @@
       "summary": ""
     },
     {
+      "title": "Walter Benjamin Fellowship (declined)",
+      "date": "2023",
+      "awarder": "German Research Founddation (DFG), Bonn, Germany",
+      "url": "https://www.dfg.de/en",
+      "summary": ""
+    },
+    {
       "title": "Clinician Scientist Fellowship",
       "date": "2019",
       "awarder": "Berlin Institute of Health, Berlin, Germany",
@@ -224,7 +231,7 @@
       "keywords": [
         "German",
         "English",
-        "Frensh",
+        "French",
         "Spanish",
         "Portuguese"
       ]
@@ -250,8 +257,8 @@
   "references": [],
   "projects": [
     {
-      "name": "Online mental health",
-      "summary": "How can AI predict mental health from online behavior?",
+      "name": "AI-based mental health prediction",
+      "summary": [],
       "highlights": [],
       "startDate": "2023",
       "endDate": "present",
@@ -259,7 +266,7 @@
     },
     {
       "name": "Hallucinations in biological and artificial neural networks",
-      "summary": "How does neural activity cause psychotic experiences such as hallucinations?",
+      "summary": [],
       "highlights": [],
       "startDate": "2023",
       "endDate": "present",
@@ -267,7 +274,7 @@
     },
     {
       "name": "The effect of prefrontal lesions on conscious experience",
-      "summary": "What is the role of prefrontal cortex in consciousness?",
+      "summary": [],
       "highlights": [],
       "startDate": "2019",
       "endDate": "2022",
@@ -275,7 +282,7 @@
     },
     {
       "name": "The influence of prior knowledge on perception in patients with paranoid schizophrenia and healthy controls",
-      "summary": "How do people with schizophrenia perceive and learn about uncertain sensory signals?",
+      "summary": [],
       "highlights": [],
       "startDate": "2017",
       "endDate": "2018",
@@ -283,7 +290,7 @@
     },
     {
       "name": "The role of prefrontal cortex in bistable perception",
-      "summary": "How does activity in prefrontal cortex contribute to how we perceive ambiguous stimuli?",
+      "summary": [],
       "highlights": [],
       "startDate": "2015",
       "endDate": "2023",
