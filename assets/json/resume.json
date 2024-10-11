@@ -213,7 +213,7 @@
         "fMRI",
         "TMS",
         "EEG",
-        "Neuropixels"
+        "ECOG"
       ]
     },
     {
@@ -244,57 +244,16 @@
       "icon": "fa-solid fa-tag",
       "keywords": [
         "Neurobiology of schizophrenia",
-        "Public mental health"]
+        "Digital mental health"]
     },
     {
-      "name": "Cognitive Neuroscience",
+      "name": "Neuroscience",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "Predictive processing",
-        "Neuroimaging"]
+        "Neural correlates of consciousness",
+        "Predictive prcoessing"]
     }
   ],
   "references": [],
-  "projects": [
-    {
-      "name": "AI-based mental health prediction",
-      "summary": [],
-      "highlights": [],
-      "startDate": "2023",
-      "endDate": "present",
-      "url": ""
-    },
-    {
-      "name": "Hallucinations in biological and artificial neural networks",
-      "summary": [],
-      "highlights": [],
-      "startDate": "2023",
-      "endDate": "present",
-      "url": ""
-    },
-    {
-      "name": "The effect of prefrontal lesions on conscious experience",
-      "summary": [],
-      "highlights": [],
-      "startDate": "2019",
-      "endDate": "2022",
-      "url": ""
-    },
-    {
-      "name": "The influence of prior knowledge on perception in patients with paranoid schizophrenia and healthy controls",
-      "summary": [],
-      "highlights": [],
-      "startDate": "2017",
-      "endDate": "2018",
-      "url": ""
-    },
-    {
-      "name": "The role of prefrontal cortex in bistable perception",
-      "summary": [],
-      "highlights": [],
-      "startDate": "2015",
-      "endDate": "2023",
-      "url": ""
-    }
-  ]
+  "projects": []
 }
