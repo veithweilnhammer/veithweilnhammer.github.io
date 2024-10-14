@@ -209,11 +209,11 @@
       "keywords": [
         "Psychophysics",
         "Computational modeling",
-        "Machine learning (TensorFlow, PyTorch, Scikit-learn)",
+        "Machine learning",
         "fMRI",
         "TMS",
         "EEG",
-        "ECOG"
+        "Neuropixels"
       ]
     },
     {
@@ -251,6 +251,7 @@
       "icon": "fa-solid fa-tag",
       "keywords": [
         "Neural correlates of consciousness",
+        "Visual perception",
         "Predictive prcoessing"]
     }
   ],
