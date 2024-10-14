@@ -1,7 +1,7 @@
 ---
 layout: page
-title: mechanisms of psychosis
-description: how does the brain construct unambiguous conscious experiences from ambiguous data, and how is this related to psychotic symptoms?  
+title: psychosis
+description: what are the mechanisms that construct our experience of reality, and how doe they fail in psychosis?  
 img: assets/img/7.jpg
 redirect: https://veithweilnhammer.github.io/assets/reveal/CCN.html
 importance: 1

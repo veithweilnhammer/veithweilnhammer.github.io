@@ -1,6 +1,6 @@
 ---
 layout: page
-title: schizophrenia - history and concepts
+title: schizophrenia
 description: how has the understanding of schizophrenia changed over time, and how do we understand schizophrenia today? 
 img: assets/img/9.jpg
 redirect: https://veithweilnhammer.github.io/assets/pdf/Online_Lecture_Scz.pdf
