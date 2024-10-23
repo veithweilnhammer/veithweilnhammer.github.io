@@ -1,7 +1,7 @@
 ---
 layout: page
 title: schizophrenia
-description: how has the understanding of schizophrenia changed over time, and how do we understand schizophrenia today? 
+description: how has the understanding of schizophrenia changed over time? 
 img: assets/img/9.jpg
 redirect: https://veithweilnhammer.github.io/assets/pdf/Online_Lecture_Scz.pdf
 importance: 2

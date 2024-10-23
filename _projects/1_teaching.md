@@ -1,7 +1,7 @@
 ---
 layout: page
 title: psychosis
-description: what are the mechanisms that construct our experience of reality, and how doe they fail in psychosis?  
+description: what are the mechanisms that construct our experience of reality, and how do they fail in psychosis?  
 img: assets/img/7.jpg
 redirect: https://veithweilnhammer.github.io/assets/reveal/CCN.html
 importance: 1
