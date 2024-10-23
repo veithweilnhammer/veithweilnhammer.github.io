@@ -1,0 +1,217 @@
+﻿<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Dynamic predictive templates in perception</title>
+
+		<meta name="description" content="Cursor tracking">
+		<meta name="author" content="Veith Weilnhammer">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<a href="https://veithweilnhammer.github.io">
+						<!-- <img src="Content/ambiguous_brain.svg" alt="brain" style="height: 240px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"> -->
+					</a>
+					<h3>Using cursor tracking to predict identity and mental health</h3>
+					<p>
+						<br/><small><a href="https://veithweilnhammer.github.io">Veith Weilnhammer, MD/PhD </a></small>
+						<br/><small> Helen Wills Neuroscience Institute, UC Berkeley </small>
+					</p>
+				</section>
+
+                <section style="text-align: left;">
+					<h2>Two Questions</h2>
+					<br/><br/>
+						<small><ul>
+						<li class = "fragment"> Are the movements of the cursor idiosyncratic? </li> <br/>
+                        <li class = "fragment"> Can we predict mental health from cursor movements?  </li> <br/>
+					  </ul></small>
+				</section>
+
+
+                <section>
+                    <section>
+                    <h2>Feature engineering</h2>
+					<br/><br/>
+						<small><ul>
+						<li class = "fragment"> Bogazici mouse tracking data set (24 users, 2550 h of naturalistic computer use) </li> <br/>
+                        <li class = "fragment"> LSTM autoencoder to reconstruct cursor movements </li> <br/>
+                        <li class = "fragment"> N-dimensional latent representation = Feature </li> <br/>
+					  </ul></small>
+                    </section>
+
+                    <section  data-transition="fade">
+                        <h5>LSTM Autoencoder</h5>
+                        <p> <img src="cursor_mind/Figure_1.svg"  width="100%" height="100%" style="background:none; border:none; box-shadow:none;"></p>
+                    </section>
+
+                    <section data-background-image="cursor_mind/Reconstructions.png" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/Reconstruction_accuracy.png" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/Grids_PCA.png" data-background-size = "contain" >
+                    </section>
+
+                    <section  data-transition="fade"> 
+                    <h2>Feature engineering</h2>
+					<br/><br/>
+						<small><ul>
+						<li> Bogazici mouse tracking data set (24 users, 2550 h of naturalistic computer use) </li> <br/>
+                        <li> LSTM autoencoder to reconstruct cursor movements </li> <br/>
+                        <li> N-dimensional latent representation = Feature </li> <br/>
+                        <li class = "fragment"> <strong>Result: Cursor movements can be compressed into low-dimensional feature vectors </strong> </li> <br/>
+					  </ul></small>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                    <h2>Identifying individuals</h2>
+					<br/><br/>
+						<small><ul>
+						<li class = "fragment"> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
+						<li class = "fragment"> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                        <li class = "fragment"> Support vector classification of identity </li> <br/>
+					  </ul></small>
+                    </section>
+
+                    <section  data-transition="fade">
+                        <h5>LSTM Autoencoder</h5>
+                        <p> <img src="cursor_mind/Figure_1.svg"  width="100%" height="100%" style="background:none; border:none; box-shadow:none;"></p>
+                    </section>
+
+                    <section data-background-image="cursor_mind/feature_collinearity.png" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/identification.png" data-background-size = "contain" >
+                    </section>
+
+                    <section>
+                        <h2>Identifying individuals</h2>
+                        <br/><br/>
+                            <small><ul>
+                            <li> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
+                            <li> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                            <li> Support vector classification of identity </li> <br/>
+                            <li class = "fragment"> <strong>Result: Identification more than two orders of magnitude above chance</strong></li> <br/>
+                          </ul></small>
+                        </section>
+                </section>
+
+                <section>
+                    <section>
+                    <h2>Predicting mental health</h2>
+					<br/><br/>
+						<small><ul>
+						<li> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
+						<li> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                        <li class = "fragment"> Reports on 66 mental health questions (BSI and MHC-SF)</li> <br/>
+                        <li class = "fragment"> Support vector regression of responses to questions </li> <br/>
+					  </ul></small>
+                    </section>
+
+                    <section  data-transition="fade">
+                        <h5>LSTM Autoencoder</h5>
+                        <p> <img src="cursor_mind/Figure_1.svg"  width="100%" height="100%" style="background:none; border:none; box-shadow:none;"></p>
+                    </section>
+
+                    <section data-background-image="cursor_mind/Response_screens.svg" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/Response_dist.png" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/mental_health_responses.png" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/bsi_mhc_corr.png" data-background-size = "contain" >
+                    </section>
+
+                    <section  data-transition="fade">
+                        <h5>LSTM Autoencoder</h5>
+                        <p> <img src="cursor_mind/Figure_1.svg"  width="100%" height="100%" style="background:none; border:none; box-shadow:none;"></p>
+                    </section>
+
+                    <section data-background-image="cursor_mind/pls_regression.png" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/pls_regression.png" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/Prediction.svg" data-background-size = "contain" >
+                    </section>
+
+                    <section data-background-image="cursor_mind/Prediction_dim.svg" data-background-size = "contain" >
+                    </section>
+
+                    <section>
+                        <h2>Predicting mental health</h2>
+                        <br/><br/>
+                            <small><ul>
+                            <li> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
+                            <li> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                            <li> Reports on 66 mental health questions (BSI and MHC-SF)</li> <br/>
+                            <li> Support vector regression of responses to questions </li> <br/>
+                            <li class = "fragment"> <strong>Result: Cursor movements are predictive of mental health</strong></li> <br/>
+                         
+                          </ul></small>
+                        </section>
+                </section>
+
+               
+
+                <section>
+                    <h3>Thanks a lot for your attention!</h3>
+                </section>
+
+            </section>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
