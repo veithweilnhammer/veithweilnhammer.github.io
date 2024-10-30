@@ -92,8 +92,8 @@
                     <h2>Identifying individuals</h2>
 					<br/><br/>
 						<small><ul>
-						<li class = "fragment"> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
-						<li class = "fragment"> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                        <li class = "fragment"> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
+                        <li class = "fragment"> K-means clustering over all features + cluster frequency within participants</li> <br/>
                         <li class = "fragment"> Support vector classification of identity </li> <br/>
 					  </ul></small>
                     </section>
@@ -103,10 +103,13 @@
                         <p> <img src="cursor_mind/Figure_1.svg"  width="100%" height="100%" style="background:none; border:none; box-shadow:none;"></p>
                     </section>
 
+                    <section data-background-image="cursor_mind/feature_matrix.png" data-background-size = "contain" >
+                    </section>
+
                     <section data-background-image="cursor_mind/feature_collinearity.png" data-background-size = "contain" >
                     </section>
 
-                    <section data-background-image="cursor_mind/identification.png" data-background-size = "contain" >
+                    <section data-background-image="cursor_mind/Identification.svg" data-background-size = "contain" >
                     </section>
 
                     <section>
@@ -114,7 +117,7 @@
                         <br/><br/>
                             <small><ul>
                             <li> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
-                            <li> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                            <li> K-means clustering over all features + cluster frequency within participants</li> <br/>
                             <li> Support vector classification of identity </li> <br/>
                             <li class = "fragment"> <strong>Result: Identification more than two orders of magnitude above chance</strong></li> <br/>
                           </ul></small>
@@ -126,8 +129,8 @@
                     <h2>Predicting mental health</h2>
 					<br/><br/>
 						<small><ul>
-						<li> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
-						<li> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                        <li> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
+                        <li> K-means clustering over all features + cluster frequency within participants</li> <br/>
                         <li class = "fragment"> Reports on 66 mental health questions (BSI and MHC-SF)</li> <br/>
                         <li class = "fragment"> Support vector regression of responses to questions </li> <br/>
 					  </ul></small>
@@ -158,10 +161,10 @@
                     <section data-background-image="cursor_mind/pls_regression.png" data-background-size = "contain" >
                     </section>
 
-                    <section data-background-image="cursor_mind/pls_regression.png" data-background-size = "contain" >
+                    <section data-background-image="cursor_mind/Prediction.svg" data-background-size = "contain" >
                     </section>
 
-                    <section data-background-image="cursor_mind/Prediction.svg" data-background-size = "contain" >
+                    <section data-background-image="cursor_mind/Prediction_2.svg" data-background-size = "contain" >
                     </section>
 
                     <section data-background-image="cursor_mind/Prediction_dim.svg" data-background-size = "contain" >
@@ -172,16 +175,26 @@
                         <br/><br/>
                             <small><ul>
                             <li> Cursor tracking in 1000 individuals (5 to 20 minutes) </li> <br/>
-                            <li> Average feature vector + loading on the first two eigenvectors of the chunk x feature matrix </li> <br/>
+                            <li> K-means clustering over all features + cluster frequency within participants</li> <br/>
                             <li> Reports on 66 mental health questions (BSI and MHC-SF)</li> <br/>
                             <li> Support vector regression of responses to questions </li> <br/>
                             <li class = "fragment"> <strong>Result: Cursor movements are predictive of mental health</strong></li> <br/>
-                         
                           </ul></small>
                         </section>
                 </section>
 
                
+
+                <section>
+                    <h2>Open questions</h2>
+                    <br/><br/>
+                    <small><ul>
+                    <li class = "fragment"> Dimensional representation of mental health: <strong>SHAP analysis</strong> </li> <br/>
+                    <li class = "fragment"> Generalization over time + sensitivity to change: <strong>Re-test</strong> </li> <br/>
+                    <li class = "fragment"> Generalization to other questionnaires: <strong>Prediction of / calibration to BDI etc. </strong> </li> <br/>
+                    <li class = "fragment"> Calibration to naturalistic browsing + individuals: <strong>dense sampling in individual participants (maybe you)</strong> </li> <br/>
+                  </ul></small>
+                </section>
 
                 <section>
                     <h3>Thanks a lot for your attention!</h3>
