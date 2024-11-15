@@ -35,7 +35,7 @@
   "work": [
     {
       "name": "Helen Wills Neuroscience Institute, University of California, Berkeley",
-      "position": "Postdoctoral Researcher",
+      "position": "Visting Scholar",
       "url": "https://helenwills.berkeley.edu/",
       "startDate": "2023",
       "endDate": "present",
@@ -70,7 +70,7 @@
       "highlights": []
     },
     {
-      "name": "Malach Laboratory, Weizmann Institute, Rehovot, Israel",
+      "name": "Malach Lab, Weizmann Institute, Rehovot, Israel",
       "position": "Minerva Fellow",
       "url": "https://www.weizmann.ac.il/neurobiology/labs/malach/",
       "startDate": "2012",
@@ -200,7 +200,9 @@
       "level": "",
       "keywords": [
         "Ketamine-assisted therapy",
-        "Psychotherapy in schizophrenia and addiction"
+        "TMS-assisted therapy",
+        "Psychotherapy in schizophrenia",
+        "DBS for movement disorders"
       ]
     },
     {
@@ -212,7 +214,7 @@
         "Machine learning",
         "fMRI",
         "TMS",
-        "EEG",
+        "(i)EEG",
         "Neuropixels"
       ]
     },
