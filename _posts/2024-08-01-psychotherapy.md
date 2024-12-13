@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Mental healthcare when and where you need it"
+title: "Online psychotherapy"
 date: 2024-08-01 09:00:00 -0400
-description: "Learn more about my psychotherapy approach, background, and how to book a session."
+description: "Learn more about my approach to psychotherapy, and how to book a session."
 tags: [psychotherapy, mental-health]
 categories: [pages]
 giscus_comments: false
@@ -31,7 +31,7 @@ I am passionate about digital technologies to better understand, predict, and im
 
 ## Range of Services
 
-If you’re experiencing a life crisis, stress-related concerns, or deeper mental health issues, **online psychotherapy** can be a flexible and effective solution. I provide confidential sessions via **secure video calls**, enabling you to receive support from the comfort of your own space. 
+If you’re experiencing a life crisis, stress-related concerns, or deeper mental health issues, **online psychotherapy** can be a flexible and effective solution. I provide confidential sessions via **secure video calls** in german and english, enabling you to receive support from the comfort of your own space. 
 
 In addition to one-on-one therapy, I also offer:
 - **Group Therapy**: A safe, moderated space where clients can learn from each other’s experiences and practice new skills in a supportive environment.
