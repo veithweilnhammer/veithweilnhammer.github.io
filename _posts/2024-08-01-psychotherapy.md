@@ -7,7 +7,7 @@ tags: [psychotherapy, mental-health]
 categories: [pages]
 giscus_comments: false
 related_posts: false
-featured: false
+featured: true
 toc:
   sidebar: left
 ---

@@ -130,7 +130,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Projects # blog_name will be displayed in your blog page
-blog_description:
+blog_description: Understanding, predicting, and improving mental health
 permalink: /projects/:title/
 lsi: false # produce an index for related posts
 
@@ -301,7 +301,7 @@ jekyll-archives:
     tag: "/projects/tag/:name/"
     category: "/projects/category/:name/"
 
-display_tags: ["Understanding, predicting, and improving mental health"] # these tags will be displayed on the front page of your blog
+display_tags: [] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
