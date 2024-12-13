@@ -71,7 +71,7 @@ To schedule an appointment or request more information, please send me an email:
 
 ---
 
-### Disclaimer
+## Disclaimer
 This website is for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. If you need immediate help or are experiencing a crisis, please contact a mental health care provider or the emergency services in your area.
 
 ---

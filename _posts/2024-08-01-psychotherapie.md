@@ -71,7 +71,7 @@ Wenn Sie einen Termin vereinbaren oder mehr Informationen erhalten möchten, sch
 
 ---
 
-### Haftungsausschluss
+## Haftungsausschluss
 Diese Website dient ausschließlich Informationszwecken und ersetzt keine professionelle medizinische Beratung, Diagnose oder Behandlung. Bei akuten Krisen oder Notfällen wenden Sie sich bitte an den zuständigen Notdienst in Ihrer Region.
 
 ---
