@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Psychotherapy, Coaching & Counseling"
+title: "Mental healthcare when and where you need it"
 date: 2024-08-01 09:00:00 -0400
 description: "Learn more about my psychotherapy approach, background, and how to book a session."
 tags: [psychotherapy, mental-health]
@@ -11,8 +11,6 @@ featured: true
 toc:
   sidebar: left
 ---
-
-# Mental healthcare when and where you need it 
 
 My mission is to make evidence-based mental healthcare accessible to everyone. I offer online psychotherapy, coaching, counseling, and support for people experiencing mental health challenges.
 

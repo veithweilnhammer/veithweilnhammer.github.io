@@ -130,7 +130,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Projects # blog_name will be displayed in your blog page
-blog_description: Uunderstanding, predicting, and improving mental health
+blog_description:
 permalink: /projects/:title/
 lsi: false # produce an index for related posts
 
@@ -297,12 +297,12 @@ jekyll-archives:
     tag: archive-tag
     category: archive-category
   permalinks:
-    year: "/blog/:year/"
-    tag: "/blog/tag/:name/"
-    category: "/blog/category/:name/"
+    year: "/projects/:year/"
+    tag: "/projects/tag/:name/"
+    category: "/projects/category/:name/"
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: ["Understanding, predicting, and improving mental health"] # these tags will be displayed on the front page of your blog
+display_categories: [] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
