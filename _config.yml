@@ -7,7 +7,7 @@ first_name: Veith
 middle_name: 
 last_name: Weilnhammer
 email: veith.weilnhammer@gmail.com.com
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
+description: Digital tools to understand, predict, and improve mental health. > # the ">" symbol means to ignore newlines until "footer_text:"
   Veith Weilnhammer.
 footer_text: >
 
@@ -129,9 +129,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Blog # blog_name will be displayed in your blog page
-blog_description: How can AI improve mental health?
-permalink: /blog/:year/:title/
+blog_name: Veith Weilnhammer # blog_name will be displayed in your blog page
+blog_description: Digital tools to understand, predict, and improve mental health.
+permalink: /:title/
 lsi: false # produce an index for related posts
 
 # Pagination
