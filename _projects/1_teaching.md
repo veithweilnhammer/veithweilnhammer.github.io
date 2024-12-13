@@ -5,7 +5,7 @@ description: what are the mechanisms that construct our experience of reality, a
 img: assets/img/7.jpg
 redirect: https://veithweilnhammer.github.io/assets/reveal/CCN.html
 importance: 1
-category: medicine
+category: teaching
 ---
 
 Every project has a beautiful feature showcase page.

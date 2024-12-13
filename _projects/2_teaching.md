@@ -5,7 +5,7 @@ description: how has the understanding of schizophrenia changed over time?
 img: assets/img/9.jpg
 redirect: https://veithweilnhammer.github.io/assets/pdf/Online_Lecture_Scz.pdf
 importance: 2
-category: medicine
+category: teaching
 ---
 
 Every project has a beautiful feature showcase page.

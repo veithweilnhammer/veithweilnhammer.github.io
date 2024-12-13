@@ -4,8 +4,8 @@ title: perception
 description: how does perception integrate prior knowledge with new information?
 img: assets/img/6.jpg
 redirect: https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html
-importance: 1
-category: neuroscience
+importance: 3
+category: teaching
 ---
 
 Every project has a beautiful feature showcase page.
