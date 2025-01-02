@@ -26,9 +26,9 @@
         "username": "veithweilnhammer"
       },
       {
-        "network": "X",
-        "url": "https://twitter.com/v_weilnhammer/",
-        "username": "v_weilnhammer"
+        "network": "Bluesky",
+        "url": "https://bsky.app/profile/veithweilnhammer.bsky.social",
+        "username": "veithweilnhammer.bsky.social"
       }
     ]
   },
@@ -37,6 +37,15 @@
       "name": "Helen Wills Neuroscience Institute, University of California, Berkeley",
       "position": "Visting Scholar",
       "url": "https://helenwills.berkeley.edu/",
+      "startDate": "2023",
+      "endDate": "present",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "",
+      "position": "Freelance Psychotherapist",
+      "url": "",
       "startDate": "2023",
       "endDate": "present",
       "summary": "",
@@ -199,10 +208,8 @@
       "name": "Clinical",
       "level": "",
       "keywords": [
-        "CBT & systemic psychotherapy",
-        "Open Dialogue",
-        "Ketamine-assisted therapy",
-        "TMS-assisted therapy",
+        "CBT, Systemic psychotherapy",
+        "Ketamine- & TMS-assisted therapy",
         "DBS for movement disorders"
       ]
     },
@@ -226,17 +233,6 @@
         "Python",
         "R",
         "Matlab"
-      ]
-    },
-    {
-      "name": "Languages",
-      "level": "",
-      "keywords": [
-        "German",
-        "English",
-        "French",
-        "Spanish",
-        "Portuguese"
       ]
     }
   ],
