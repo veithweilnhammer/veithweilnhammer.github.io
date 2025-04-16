@@ -4,7 +4,7 @@ title: "Neural and computational mechanisms of conscious perception: The role of
 date: 2024-03-01 09:00:00 -0400
 description: "What are the mechanisms that construct our experience of reality, and how do they fail in psychosis?"
 tags: [consciousness, perception, inference]
-categories: [projects]
+categories: [science]
 giscus_comments: false
 related_posts: false
 featured: false

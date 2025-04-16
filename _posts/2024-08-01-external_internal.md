@@ -4,7 +4,7 @@ title: "Dynamic fluctuations between external and internal modes of perception: 
 date: 2024-08-01 09:00:00 -0400
 description: "How does perception balance new infomration with prior knowledge?"
 tags: [schizophrenia, psychosis, halluciantions, ketamine, HMM-GLM]
-categories: [projects]
+categories: [science]
 giscus_comments: false
 related_posts: false
 featured: false
