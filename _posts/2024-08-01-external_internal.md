@@ -3,7 +3,7 @@ layout: distill
 title: "How does perception balance prior knowledge with new information?"
 description: "External and internal modes of inference."
 tags: [schizophrenia, psychosis, hallucinations, ketamine, HMM-GLM]
-categories: [science]
+categories:
 giscus_comments: false
 date: 2024-08-01
 featured: false
