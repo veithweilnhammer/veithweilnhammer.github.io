@@ -16,6 +16,14 @@ authors:
     affiliations:
       name: UC Berkeley, Helen Wills Neuroscience Institute
 
+toc:
+  - name: Overview
+  - name: Key Findings
+  - name: Synthesis
+  - name: Methods
+  - name: Implications
+  - name: Future Directions
+
 _styles: >
   .fake-img {
     background: #bbb;
