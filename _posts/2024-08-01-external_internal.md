@@ -22,15 +22,6 @@ toc:
   - name: Implications
   - name: Future Directions
 
-_styles: >
-  .post-content {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-  h2 {
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-  }
 ---
 
 ## Overview
