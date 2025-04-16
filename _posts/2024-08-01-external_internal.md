@@ -1,12 +1,14 @@
 ---
 layout: distill
-title: "Dynamic modes of perception and psychosis"
-description: "How perception balances sensory inputs with prior knowledge, and implications for schizophrenia."
+title: "How does perception balance prior knowledge with new information?"
+description: "External and internal modes of inference."
 tags: [schizophrenia, psychosis, hallucinations, ketamine, HMM-GLM]
 categories: [science]
 giscus_comments: true
 date: 2024-08-01
 featured: true
+toc:
+  sidebar: left
 
 authors:
   - name: Veith Weilnhammer
@@ -14,14 +16,6 @@ authors:
     affiliations:
       name: UC Berkeley, Helen Wills Neuroscience Institute
 
-toc:
-  - name: Overview
-  - name: Key Findings
-  - name: Synthesis
-  - name: Methods
-  - name: Implications
-  - name: Future Directions
-  
 _styles: >
   .fake-img {
     background: #bbb;
@@ -35,9 +29,8 @@ _styles: >
     text-align: left;
     margin: 12px 0;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
   }
----
 ---
 
 ## Overview
@@ -45,7 +38,6 @@ _styles: >
 Perception actively integrates new sensory information with internal predictions based on prior experiences. My research explores how the brain dynamically shifts between two perceptual modes: an **external mode** (focused on immediate sensory input) and an **internal mode** (guided by past experiences). These shifts are key to understanding psychotic disorders such as schizophrenia.
 
 ---
-
 
 ## Key Findings
 
@@ -95,12 +87,6 @@ Clarifying these perceptual dynamics offers important implications for psychiatr
 ---
 
 ## Resources
-
-### Key Publications:
-
-- <d-cite key="weilnhammer2023sensory"></d-cite> (Sensory processing in humans and mice)
-- <d-cite key="weilnhammer2024dynamic"></d-cite> (Dynamic predictive templates)
-- <d-cite key="weilnhammer2024nmdar"></d-cite> (NMDAR hypofunction and psychosis)
 
 ### Talks and Slides:
 
