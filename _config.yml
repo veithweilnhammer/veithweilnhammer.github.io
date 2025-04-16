@@ -129,9 +129,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Projects # blog_name will be displayed in your blog page
-blog_description: Understanding, predicting, and improving mental health
-permalink: /projects/:title/
+blog_name: blog # blog_name will be displayed in your blog page
+blog_description: Project updates and teaching materials on computational psychiatry and digital phenotyping
+permalink: /blog/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
