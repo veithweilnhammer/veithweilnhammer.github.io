@@ -4,11 +4,9 @@ title: "How does perception balance prior knowledge with new information?"
 description: "External and internal modes of inference."
 tags: [schizophrenia, psychosis, hallucinations, ketamine, HMM-GLM]
 categories: [science]
-giscus_comments: true
+giscus_comments: false
 date: 2024-08-01
-featured: true
-toc:
-  sidebar: left
+featured: false
 
 authors:
   - name: Veith Weilnhammer
@@ -43,7 +41,7 @@ _styles: >
 
 ## Overview
 
-Perception actively integrates new sensory information with internal predictions based on prior experiences. My research explores how the brain dynamically shifts between two perceptual modes: an **external mode** (focused on immediate sensory input) and an **internal mode** (guided by past experiences). These shifts are key to understanding psychotic disorders such as schizophrenia.
+Perception actively integrates new sensory information with internal predictions based on prior experiences. Our research explores how the brain dynamically shifts between two perceptual modes: an **external mode** (focused on immediate sensory input) and an **internal mode** (guided by past experiences). These shifts are key to understanding psychotic disorders such as schizophrenia.
 
 ---
 
@@ -55,17 +53,17 @@ Using large-scale behavioral data, we demonstrated systematic fluctuations in pe
 
 ### 2. Predictive Templates & Hallucinations
 
-False perceptions ("false alarms") arise from internal predictions ("predictive templates"), especially during internal mode[^2]. Computational modeling (HMM-GLM) revealed these templates fluctuate dynamically, linking them closely to mechanisms underlying hallucinations.
+False perceptions ("false alarms") arise from internal predictions ("predictive templates"), especially during internal mode[^2]. Computational modeling (HMM-GLM) revealed these templates fluctuate dynamically and linked them to the mechanisms underlying hallucinations.
 
 ### 3. NMDAR Dysfunction & Psychosis
 
-We showed pharmacologically-induced NMDAR hypofunction (using S-ketamine) prolongs external mode dominance, causing erratic perceptual inferences. This mirrors key aspects of perceptual disruptions seen in schizophrenia and offers a mechanistic explanation for episodic psychotic symptoms[^3].
+We showed that pharmacologically-induced NMDAR hypofunction (using S-ketamine) prolongs external mode dominance, causing erratic perceptual inferences. This mirrors key aspects of perceptual disruptions seen in schizophrenia and offers a mechanistic explanation for episodic psychotic symptoms[^3].
 
 ---
 
 ## Synthesis
 
-Dynamic interplay between external and internal perceptual modes significantly influences psychosis. Over-reliance on external sensory input can produce unstable perceptions, leading to maladaptive internal predictions. When perception shifts to internal mode, these maladaptive predictions dominate, triggering hallucinations and delusions.
+Dynamic interplay between external and internal perceptual modes significantly influences psychosis. Over-reliance on external sensory input can produce unstable perceptions, leading to maladaptive internal predictions. When perception shifts to internal mode, these maladaptive predictions dominate perception and cognition, triggering hallucinations and delusions.
 
 ---
 
@@ -88,9 +86,9 @@ Clarifying these perceptual dynamics offers important implications for psychiatr
 
 ## Future Directions
 
-- Developing real-time monitoring of perceptual mode shifts as predictive tools for psychosis.
-- Exploring closed-loop neuromodulation techniques to stabilize perceptual inference.
-- Extending our computational framework to related cognitive domains, such as memory and decision-making.
+-📄 Developing real-time monitoring of perceptual mode shifts as predictive tools for psychosis.
+-📄 Exploring closed-loop neuromodulation techniques to stabilize perceptual inference.
+-📄 Extending our computational framework to related cognitive domains, such as memory and decision-making.
 
 ---
 
@@ -98,7 +96,7 @@ Clarifying these perceptual dynamics offers important implications for psychiatr
 
 ### Talks and Slides:
 
-- [External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
+- 🎞️ [External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
 
 ---
 

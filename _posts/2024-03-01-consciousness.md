@@ -4,9 +4,9 @@ title: "What are the mechanisms that construct our experience of reality?"
 description: "The role of frontoparietal networks in resolving sensory ambiguity."
 tags: [consciousness, perception, inference]
 categories: [science]
-giscus_comments: true
+giscus_comments: false
 date: 2024-03-01
-featured: true
+featured: false
 
 authors:
   - name: Veith Weilnhammer
