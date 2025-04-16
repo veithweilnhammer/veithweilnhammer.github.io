@@ -1,72 +1,107 @@
 ---
-layout: post
-title: "How does perception balance new information with prior knowledge?"
-date: 2024-08-01 09:00:00 -0400
-description: "External and internal modes of perceptual inference."
+layout: distill
+title: "Dynamic modes of perception and psychosis"
+description: "How perception balances sensory inputs with prior knowledge, and implications for schizophrenia."
 tags: [schizophrenia, psychosis, hallucinations, ketamine, HMM-GLM]
 categories: [science]
-giscus_comments: false
-related_posts: false
-featured: false
+giscus_comments: true
+date: 2024-08-01
+featured: true
+
+authors:
+  - name: Veith Weilnhammer
+    url: "https://veithweilnhammer.github.io"
+    affiliations:
+      name: UC Berkeley, Helen Wills Neuroscience Institute
+
 toc:
-  sidebar: left
+  - name: Overview
+  - name: Key Findings
+  - name: Synthesis
+  - name: Methods
+  - name: Implications
+  - name: Future Directions
+
+_styles: >
+  .post-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
 ---
 
 ## Overview
 
-Perception requires the brain to continually balance incoming sensory signals with internal predictions. Our research explores how perception dynamically fluctuates between two distinct modes: an **external mode**, dominated by immediate sensory inputs, and an **internal mode**, shaped by prior expectations and experiences. These perceptual modes are particularly relevant in understanding conditions like schizophrenia, where disruptions in sensory integration can lead to psychosis and hallucinations.
+Perception actively integrates new sensory information with internal predictions based on prior experiences. My research explores how the brain dynamically shifts between two perceptual modes: an **external mode** (focused on immediate sensory input) and an **internal mode** (guided by past experiences). These shifts are key to understanding psychotic disorders such as schizophrenia.
 
-## Background
+---
 
-Predictive processing theories propose that psychosis results from impaired integration between sensory information and internal predictive models. Central to this integration is the **N-methyl-D-aspartate receptor (NMDAR)**, a receptor consistently implicated in schizophrenia. We investigated whether perceptual symptoms in psychosis might emerge from dynamic shifts between external and internal perceptual modes, driven by disruptions in NMDAR functioning.
 
-## Key Findings Across Studies
+## Key Findings
 
-### 1. Human and animal perception cycles between internal and external modes (PLOS Biology, Weilnhammer et al., 2023)
+### 1. Internal vs External Modes
 
-Using large-scale datasets from humans and mice, we found systematic fluctuations in perception between external mode (high sensory accuracy, minimal bias) and internal mode (strong reliance on prior experiences, high bias). Computational models (GLM-HMMs) revealed these fluctuations are not random, but reflect a structured mechanism that balances sensory novelty and perceptual stability.
+Using large-scale behavioral data, we demonstrated systematic fluctuations in perception between an external mode (high accuracy, minimal reliance on previous experiences) and an internal mode (strongly biased by perceptual history)[^1]. These fluctuations optimize perception, balancing novelty detection and stability.
 
-### 2. Predictive templates drive false perceptions (Current Biology, Weilnhammer et al., 2024)
+### 2. Predictive Templates & Hallucinations
 
-False alarms—perceiving signals in the absence of actual sensory input—offer insights into hallucinatory experiences. We found that false alarms arise from dynamically fluctuating internal predictions ("predictive templates") shaped by recent perceptual history. These templates dominate during internal perceptual modes, increasing vulnerability to hallucinations.
+False perceptions ("false alarms") arise from internal predictions ("predictive templates"), especially during internal mode[^2]. Computational modeling (HMM-GLM) revealed these templates fluctuate dynamically, linking them closely to mechanisms underlying hallucinations.
 
-### 3. NMDAR dysfunction disrupts perceptual mode balance (Brain, Weilnhammer et al., 2024)
+### 3. NMDAR Dysfunction & Psychosis
 
-Pharmacologically induced NMDAR hypofunction (via S-ketamine) and schizophrenia both resulted in prolonged external perceptual modes. This heightened sensory-driven perception causes transient disconnects from stable internal predictive models, providing a neurocomputational explanation for episodic psychotic symptoms.
+We showed pharmacologically-induced NMDAR hypofunction (using S-ketamine) prolongs external mode dominance, causing erratic perceptual inferences. This mirrors key aspects of perceptual disruptions seen in schizophrenia and offers a mechanistic explanation for episodic psychotic symptoms[^3].
+
+---
 
 ## Synthesis
 
-Together, our findings illustrate how dynamic shifts between external and internal perceptual modes influence psychotic experiences. An overly dominant external mode leads to unstable sensory interpretations under ambiguous conditions. In turn, this instability shapes maladaptive predictive templates, causing psychotic experiences when internal mode prevails. Understanding these dynamics opens avenues for interventions aimed at stabilizing perception in schizophrenia.
+Dynamic interplay between external and internal perceptual modes significantly influences psychosis. Over-reliance on external sensory input can produce unstable perceptions, leading to maladaptive internal predictions. When perception shifts to internal mode, these maladaptive predictions dominate, triggering hallucinations and delusions.
 
-## Approach and Methodology
+---
 
-We employed a multi-method approach:
+## Methods
 
-- Behavioral psychophysics with ambiguous sensory stimuli (structure-from-motion, noise paradigms).
-- Computational modeling (HMM-GLM) to quantify and explain perceptual mode dynamics.
-- Pharmacological studies using S-ketamine to model NMDAR hypofunction.
-- Clinical comparisons between schizophrenia patients and healthy controls.
+We combined multiple complementary methodologies:
 
-## Relevance and Clinical Implications
+- Behavioral experiments using ambiguous visual stimuli.
+- Computational models (Hidden Markov and General Linear Models, GLM-HMM) to quantify perceptual mode dynamics.
+- Pharmacological experiments with S-ketamine.
+- Clinical studies comparing schizophrenia patients with controls.
 
-Our work deepens the understanding of perceptual inference deficits underlying psychosis. By clarifying how dynamic perceptual fluctuations relate to NMDAR dysfunction, we identify potential biomarkers for psychosis risk and highlight new targets for therapeutic interventions, such as closed-loop neuromodulation to stabilize perceptual modes.
+---
+
+## Implications
+
+Clarifying these perceptual dynamics offers important implications for psychiatric care. Dynamic perceptual mode shifts might serve as biomarkers for psychosis, informing novel neuromodulatory treatments targeting NMDAR function and perceptual stability.
+
+---
 
 ## Future Directions
 
-Our findings open promising paths forward:
+- Developing real-time monitoring of perceptual mode shifts as predictive tools for psychosis.
+- Exploring closed-loop neuromodulation techniques to stabilize perceptual inference.
+- Extending our computational framework to related cognitive domains, such as memory and decision-making.
 
-- **Real-time perceptual tracking:** Developing continuous methods to track perceptual mode shifts for early psychosis detection.
-- **Neuromodulation therapies:** Exploring brain stimulation and pharmacological interventions to stabilize perceptual inference and reduce psychotic symptoms.
-- **Extension to cognition:** Applying this computational framework to memory, decision-making, and other cognitive functions impaired in psychosis.
+---
 
 ## Resources
 
-### Papers:
-- [Sensory processing in humans and mice](https://doi.org/10.1371/journal.pbio.3002410) *(PLOS Biology, open access)*
-- [Dynamic predictive templates in perception](https://doi.org/10.1016/j.cub.2024.07.087) *(Current Biology, open access)*
-- [NMDAR hypofunction and perceptual inference](https://doi.org/10.1093/brain/awaf011) *(Brain, open access)*
+### Key Publications:
 
-### Presentations:
-- [Presentation: External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
+- <d-cite key="weilnhammer2023sensory"></d-cite> (Sensory processing in humans and mice)
+- <d-cite key="weilnhammer2024dynamic"></d-cite> (Dynamic predictive templates)
+- <d-cite key="weilnhammer2024nmdar"></d-cite> (NMDAR hypofunction and psychosis)
+
+### Talks and Slides:
+
+- [External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
 
 ---
+
+
+[^1]: Weilnhammer et al., PLOS Biology, 2023.
+[^2]: Weilnhammer et al., Current Biology, 2024.
+[^3]: Weilnhammer et al., Brain, 2024.
