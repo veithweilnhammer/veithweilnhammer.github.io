@@ -96,13 +96,13 @@ Our findings clarify how higher-order brain regions influence perception. They s
 
 ### Papers:
 
-- 📄 [IFC and perceptual conflict (Current Biology, 2021)](https://doi.org/10.1016/j.cub.2021.04.043)  
-- 📄 [Insula and general prediction errors (bioRxiv, 2024)](https://doi.org/10.1101/2024.05.29.595872)  
-- 📄 [IFC lesions and perceptual dynamics (bioRxiv, 2024)](https://doi.org/10.1101/2024.08.24.609496)
+-  [IFC and perceptual conflict (Current Biology, 2021)](https://doi.org/10.1016/j.cub.2021.04.043)  
+-  [Insula and general prediction errors (bioRxiv, 2024)](https://doi.org/10.1101/2024.05.29.595872)  
+-  [IFC lesions and perceptual dynamics (bioRxiv, 2024)](https://doi.org/10.1101/2024.08.24.609496)
 
 ### Presentation:
 
-- 🎞️ [Is the IFC part of the NCC?](https://veithweilnhammer.github.io/assets/reveal/CCN.html)
+-  [Is the IFC part of the NCC?](https://veithweilnhammer.github.io/assets/reveal/CCN.html)
 
 ---
 

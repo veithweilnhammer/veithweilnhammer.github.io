@@ -86,9 +86,9 @@ Clarifying these perceptual dynamics offers important implications for psychiatr
 
 ## Future Directions
 
--📄 Developing real-time monitoring of perceptual mode shifts as predictive tools for psychosis.
--📄 Exploring closed-loop neuromodulation techniques to stabilize perceptual inference.
--📄 Extending our computational framework to related cognitive domains, such as memory and decision-making.
+- Developing real-time monitoring of perceptual mode shifts as predictive tools for psychosis.
+- Exploring closed-loop neuromodulation techniques to stabilize perceptual inference.
+- Extending our computational framework to related cognitive domains, such as memory and decision-making.
 
 ---
 
@@ -96,7 +96,7 @@ Clarifying these perceptual dynamics offers important implications for psychiatr
 
 ### Talks and Slides:
 
-- 🎞️ [External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
+- [External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
 
 ---
 
