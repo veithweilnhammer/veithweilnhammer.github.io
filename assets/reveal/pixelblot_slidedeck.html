@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>pixelblot AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      overflow: hidden;
+    }
+    .person {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      will-change: transform, width, height, background-color;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Title Slide -->
+      <section style="text-align: left;" data-transition="fade">
+        <br/><br/>
+        <h2>MINDMAP</h2>
+        <h4>Mental States from Digital Behavior</h4>
+        <br/><br/><br/>
+        <p>
+          <small>Veith Weilnhammer | Founder & CEO at pixelblot AI</small>
+          <img src="pixelblot/logos.png">
+        </p>
+      </section>
+
+<!-- 3D Particle Animation Slide -->
+<section>
+
+<section data-particles style="text-align: right;" data-transition="fade">
+    <div style="display: flex; width: 100%; height: 100vh;">
+      <!-- Left: Animated Particles (75%) -->
+      <div id="particle-container" style="flex: 1; position: relative; background: white; overflow: hidden;"></div>
+  
+      <!-- Right: Reveal Content (25%) -->
+      <div style="flex: 1; padding: 1em; display: flex; flex-direction: column; justify-content: center;">
+        <h4 class="fragment">Imagine being able to read the mind of everyone on the internet</h4>
+        <br/><br/>
+        <small style="text-align: right;">
+            <p class="fragment" style="text-align: right; font-weight: bold;">Applications:</p>
+            <p class="fragment" style="text-align: right;">User profiling</p>
+            <p class="fragment" style="text-align: right;">Mental health assessment</p>
+            <p class="fragment" style="text-align: right;">Digital content verification</p>
+        </small>
+      </div>
+    </div>
+</section>
+
+<section data-transition="fade">
+  <h6>The geometry of mental states</h6>
+  <img src="cursor_mind/true_space_only.svg" alt="Paradigm Image" style="width: 60%; height: auto; background: none; border: none; box-shadow: none;" />
+</section>
+
+<section data-transition="fade">
+  <h6>Mrs. X</h6>
+  <img src="cursor_mind/true_space_user.svg" alt="Paradigm Image" style="width: 60%; height: auto; background: none; border: none; box-shadow: none;" />
+</section>
+
+<section data-transition="fade">
+  <h6>Mrs. X</h6>
+  <img src="cursor_mind/true_space_user_projection.svg" alt="Paradigm Image" style="width: 60%; height: auto; background: none; border: none; box-shadow: none;" />
+</section>
+
+<section data-transition="fade" data-auto-animate>
+
+  <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+      <!-- Left: Image -->
+      <div style="flex: 1; text-align: center; padding-right: 1rem;">
+          <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+      
+      <!-- Right: Personal Account -->
+      <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+        <small>
+          <p class="fragment">She’s 22, recently finished school, and everyone keeps asking what’s next.</p>
+          <p class="fragment">She feels stuck — uncertain about the future, anxious in social situations, and tired most days.</p>
+          <p class="fragment">It's hard to tell whether she’s just overwhelmed, or quietly slipping into depression.</p>
+          <p class="fragment">But she keeps browsing job sites, looking for something that might feel right — if only she knew what that was.</p>
+      </small>
+      </div>
+  </div>
+</section>
+
+<section data-auto-animate data-transition="fade">
+  <h6>Job search</h6>
+  <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+      <!-- Left: Image -->
+      <div style="flex: 1; text-align: center; padding-right: 1rem;">
+          <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+      
+      <!-- Right: Personal Account -->
+      <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+          <img src="cursor_mind/job_space_location_no_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+  </div>
+</section>
+
+<section data-transition="fade">
+  <h6>Assessment</h6>
+  <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+      <!-- Left: Image -->
+      <div style="flex: 1; text-align: center; padding-right: 1rem;">
+          <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+      
+      <!-- Right: Personal Account -->
+      <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+          <img src="cursor_mind/job_space_location.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+  </div>
+</section>
+
+<section data-transition="fade">
+  <h6>Assessment</h6>
+  <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+      <!-- Left: Image -->
+      <div style="flex: 1; text-align: center; padding-right: 1rem;">
+          <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+      
+      <!-- Right: Personal Account -->
+      <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+          <img src="cursor_mind/job_space_location_cloud.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+  </div>
+</section>
+
+<section data-transition="fade">
+  <h6>Recommendation</h6>
+  <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+      <!-- Left: Image -->
+      <div style="flex: 1; text-align: center; padding-right: 1rem;">
+          <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+      
+      <!-- Right: Personal Account -->
+      <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+          <img src="cursor_mind/job_space_location_cloud_landmark.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+  </div>
+</section>
+
+<section data-transition="fade">
+  <h6>Recommendation</h6>
+  <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+      <!-- Left: Image -->
+      <div style="flex: 1; text-align: center; padding-right: 1rem;">
+          <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+      
+      <!-- Right: Personal Account -->
+      <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+          <img src="cursor_mind/job_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+      </div>
+  </div>
+</section>
+</section>
+
+<section style="text-align: left;" data-transition="fade">
+    <h4>Reading mental states matters for: </h4>
+    <p class="fragment" style="text-align: left;">Mental health assessment</p>
+    <p class="fragment" style="text-align: left;">User profiling</p>
+    <p class="fragment" style="text-align: left;">Adaptive digital economies</p>
+    <p class="fragment" style="text-align: left;">User & content verification</p>
+    <br/>
+    <h4 class="fragment" style="text-align: left;">Most systems are blind to mental states.</h4>
+</section>
+
+<section>
+<section style="text-align: left;"  data-auto-animate>
+    <h4>Where Pixelblot fits in</h4>
+    <p class="fragment" style="text-align: left;">MINDMAP infers mental states from digital behavior.</p>
+    <p class="fragment" style="text-align: left;">Access to the mind of everyone who uses a computer.</p>
+  </section>
+  <section data-auto-animate style="text-align: left;">
+    <h4>Where Pixelblot fits in</h4>
+    <p style="text-align: left;">MINDMAP infers mental states from digital behavior.</p>
+    <p style="text-align: left;">Access to the mind of everyone who uses a computer.</p>
+    <img src="cursor_mind/job_true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+  </section>
+</section>
+
+<section style="text-align: left;" data-transition="fade">
+    <h5>MINDMAP Applications</h4>
+    <p class="fragment"><b>User profiling APIs</b> → web platforms (B2B SaaS)</p>
+    <p class="fragment"><b>Assessment tools</b> → clinicians & researchers (B2B)</p>
+    <p class="fragment"><b>Monitoring dashboards</b> → public health (gov/NGO)</p>
+    <p class="fragment"><b>Digital security</b> → user & content verification (B2B)</p>
+</section>
+
+<section style="text-align: left;" data-transition="fade">
+    <h4>Early traction & results</h4>
+    <p class="fragment">Research: &gt;80% accuracy in predicting mental states</p>
+    <p class="fragment">Prototype tested on 5,000+ participants</p>
+    <p class="fragment">Selected for beta University</p>
+  </section>
+
+  <section style="text-align: left;" data-transition="fade">
+    <h4>Roadmap</h4>
+    <p class="fragment">We’re looking for early partners, pilots, and investors</p>
+    <p class="fragment"><i>Imagine a world where mental state is visible — and usable — in real time</i></p>
+    <p class="fragment"><b>Contact:</b> veith.weilnhammer@gmail.com</p>
+  </section>
+
+      <!-- Remaining Slides... (unchanged) -->
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/search/search.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+    });
+  </script>
+
+  <!-- Anime.js 3D Particle Animation -->
+  <script type="module">
+    import {
+      createTimeline,
+      stagger,
+      utils,
+    } from 'https://assets.codepen.io/1137/anime.esm.min.js';
+
+    const { random, cos, sin, sqrt, log, PI } = Math;
+    const count = 500;
+    const duration = 10000;
+
+    const container = document.getElementById("particle-container");
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
+    const target = {
+      x: width / 2,
+      y: height / 2,
+      r: width * 0.75
+    };
+
+    const radius = Symbol();
+    const theta = Symbol();
+    const phi = Symbol();
+    const z = Symbol();
+
+    for (let i = 0; i < count; i++) {
+      const el = document.createElement('div');
+      el.classList.add('person');
+
+      el[theta] = random() * 2 * PI;
+      el[phi] = Math.acos(2 * random() - 1);
+      el[radius] = sqrt(-2 * log(1 - random())) * 0.25 * target.r;
+
+      const x = el[radius] * sin(el[phi]) * cos(el[theta]);
+      const y = el[radius] * sin(el[phi]) * sin(el[theta]);
+      el[z] = el[radius] * cos(el[phi]);
+
+      const normX = (x + target.r) / (2 * target.r);
+      const normY = (y + target.r) / (2 * target.r);
+      const normZ = (el[z] + target.r) / (2 * target.r);
+
+      const r = Math.floor(255 * normX);
+      const g = Math.floor(255 * normY);
+      const b = Math.floor(255 * normZ);
+      el.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+      const size = 2 + 6 * normZ;
+      el.style.width = `${size}px`;
+      el.style.height = `${size}px`;
+
+      container.appendChild(el);
+    }
+
+    const tl = createTimeline({
+      defaults: {
+        loop: true,
+        ease: 'inOut(1.2)',
+        onLoop: self => self.refresh(),
+      },
+    });
+
+    tl.add('.person', {
+      x: el => target.x + el[radius] * sin(el[phi]) * cos(el[theta]),
+      y: el => target.y + el[radius] * sin(el[phi]) * sin(el[theta]),
+      duration: () => duration + utils.random(-200, 200),
+      onLoop: self => {
+        const el = self.targets[0];
+        el[theta] = random() * 2 * PI;
+        el[phi] = Math.acos(2 * random() - 1);
+        el[radius] = sqrt(-2 * log(1 - random())) * 0.25 * target.r;
+
+        const x = el[radius] * sin(el[phi]) * cos(el[theta]);
+        const y = el[radius] * sin(el[phi]) * sin(el[theta]);
+        el[z] = el[radius] * cos(el[phi]);
+
+        const normX = (x + target.r) / (2 * target.r);
+        const normY = (y + target.r) / (2 * target.r);
+        const normZ = (el[z] + target.r) / (2 * target.r);
+
+        const r = Math.floor(255 * normX);
+        const g = Math.floor(255 * normY);
+        const b = Math.floor(255 * normZ);
+        el.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+        const size = 2 + 6 * normZ;
+        el.style.width = `${size}px`;
+        el.style.height = `${size}px`;
+
+        self.refresh();
+      },
+    }, stagger((duration / count) * 1.1));
+  </script>
+</body>
+</html>
