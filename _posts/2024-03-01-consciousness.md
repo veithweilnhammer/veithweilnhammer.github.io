@@ -41,71 +41,55 @@ _styles: >
 
 ## Overview
 
-Conscious perception depends on the brain’s ability to resolve ambiguity in sensory signals. Our research examines how frontoparietal brain region — especially the **inferior frontal cortex (IFC)** and **anterior insula** — detect and resolve perceptual conflicts. We used neuroimaging, computational modeling, lesion studies, and brain stimulation to investigate how these systems contribute to a coherent experience of reality.
+Have you ever wondered how your brain makes sense of the world around you? Sensory information is often noisy, incomplete, and ambiguous. Yet, our brains usually construct a coherent experience of reality. My research investigates how specific brain regions — particularly the **inferior frontal cortex (IFC)** and the **anterior insula** — help resolve in perception and beyond. 
 
 ---
 
 ## Key Findings
 
-### 1. IFC detects and resolves conflict
+### 1. The IFC Resolves Perceptual Ambiguity
 
-We showed that the inferior frontal cortex plays a causal role in resolving perceptual ambiguity[^1]. Transient disruption of IFC activity via TMS slowed perceptual updates in bistable vision tasks, indicating that this region helps update conscious percepts in response to conflict.
+Our experiments show that the IFC plays a crucial role in managing conflicting sensory signals. When we temporarily disrupted IFC activity using Transcranial Magnetic Stimulation (TMS), participants experienced slower perceptual shifts in tasks where visual stimuli could be interpreted in multiple ways. This finding suggests the IFC is actively involved in updating our conscious perception when faced with ambiguity.
 
-### 2. Insula tracks context violations
+### 2. The Insula Detects Unexpected Changes
 
-We found that both temporal and spatial context violations activate a common network including the anterior insula and right IFC[^2]. These findings suggest a generalized mechanism for detecting when predictions fail, across multiple perceptual domains.
+Another key region, the anterior insula, along with the IFC, responds strongly to unexpected changes in both spatial and temporal contexts. These findings indicate that the insula helps detect moments when our predictions about the world fail, prompting the brain to adjust and update its expectations.
 
-### 3. IFC damage reduces perceptual switching
+### 3. Damage to IFC Reduces Perceptual Flexibility
 
-In stroke patients with IFC lesions, spontaneous perceptual switching during ambiguous visual tasks was reduced compared to controls[^3]. This supports a causal role for IFC in generating perceptual updates and maintaining a dynamic conscious state.
-
----
-
-## Synthesis
-
-Together, these studies suggest that conscious perception relies on frontoparietal systems that detect and resolve sensory conflicts. The IFC appears to be central to this process, in which it detects mismatches between input and expectation, and triggers perceptual updates that shape awareness.
-
----
+In individuals who suffered strokes affecting the IFC, we found a significant reduction in their ability to spontaneously shift perceptions during ambiguous visual tasks. This supports the idea that a healthy IFC is essential for maintaining rgw flexibility in perception, ensuring our conscious experience remains dynamic and responsive.
 
 ## Methods
 
-We used a multi-method approach:
+To arrive at these conclusions, we used a diverse set of approaches:
 
-- Behavioral paradigms involving bistable perception.
-- fMRI to identify prediction error responses.
-- TMS to establish causal links between IFC activity and perceptual dynamics.
-- Structural lesion mapping in stroke patients with focal IFC damage.
-
----
+- **Behavioral experiments** using ambiguous visual stimuli.
+- **Functional MRI (fMRI)** to observe brain activity related to prediction errors.
+- **Brain stimulation (TMS)** to demonstrate causal relationships between IFC activity and perceptual updating.
+- **Lesion studies** in stroke patients with localized damage to IFC.
 
 ## Implications
 
-Our findings clarify how higher-order brain regions influence perception. They support predictive processing accounts of consciousness and highlight the IFC as a potential target for therapeutic interventions in disorders involving perceptual rigidity or instability.
-
----
+Our findings provide valuable insights into how higher-order brain regions shape our perception. This research supports theories of predictive processing, which suggest that the brain continuously generates and updates internal predictions to interpret sensory information. The IFC, identified as a critical node in this network, could also be a promising target for therapeutic strategies aimed at addressing perceptual and cognitive disorders involving rigid or unstable perceptions.
 
 ## Future Directions
 
-- Developing real-time measures of prediction error and perceptual updating.
-- Testing IFC-targeted brain stimulation to modulate conscious perception.
-- Extending this framework to other cognitive domains such as memory and belief updating.
+Looking ahead, we plan to:
+
+- Develop real-time methods to track prediction errors and perceptual updates.
+- Explore targeted brain stimulation techniques to enhance or restore perceptual flexibility.
+- Extend our research framework to other cognitive functions such as memory recall and belief updating.
 
 ---
 
 ## Resources
 
-### Papers:
+### Selected Papers:
 
--  [IFC and perceptual conflict (Current Biology, 2021)](https://doi.org/10.1016/j.cub.2021.04.043)  
--  [Insula and general prediction errors (bioRxiv, 2024)](https://doi.org/10.1101/2024.05.29.595872)  
--  [IFC lesions and perceptual dynamics (bioRxiv, 2024)](https://doi.org/10.1101/2024.08.24.609496)
+- [IFC and perceptual conflict (Current Biology, 2021)](https://doi.org/10.1016/j.cub.2021.04.043)
+- [Insula and general prediction errors (bioRxiv, 2024)](https://doi.org/10.1101/2024.05.29.595872)
+- [IFC lesions and perceptual dynamics (bioRxiv, 2024)](https://doi.org/10.1101/2024.08.24.609496)
 
 ### Presentation:
 
--  [Is the IFC part of the NCC?](https://veithweilnhammer.github.io/assets/reveal/CCN.html)
-
----
-
-[^1]: Weilnhammer et al., Current Biology, 2021  
-[^2]: Reichenbach et al., bioRxiv, 2024  
-[^3]: Fritsch et al., bioRxiv, 2024
+- [Is the IFC part of the NCC?](https://veithweilnhammer.github.io/assets/reveal/CCN.html)
