@@ -1,8 +1,8 @@
 ---
 layout: distill
-title: "How does perception balance prior knowledge with new information?"
-description: "External and internal modes of inference."
-tags: [schizophrenia, psychosis, hallucinations, ketamine, HMM-GLM]
+title: "How Does the Brain Balance Exploration and Exploitation in Perception?"
+description: "Perception and cognition alternate between external sampling and internal prediction."
+tags: [explore-exploit, perception, cognition, hallucinations, ketamine, GLM-HMM]
 categories:
 giscus_comments: false
 date: 2024-08-01
@@ -40,43 +40,45 @@ _styles: >
 
 ## Overview
 
-Perception actively integrates new sensory information with knowledge extracted from prior experiences. Our research explores how the brain adjust the balance between getting new information and knowledge. We found that, in perception and planning, people alternate between two modes: an **external mode**, where perception and cognitin are driven by external sensory information, and an **internal mode**, where perception and cognition are guided by prior knowledge. Our results suggest that psychotic experiences, like hallucinations and delusions, may be related to an imbalance between external and internal modes.
+Perception is not passive. It involves a continuous tradeoff between **exploration** — sampling new sensory information — and **exploitation**—relying on prior knowledge and expectations. Our research shows that the brain actively alternates between two functional modes: an **external mode**, where behavior is driven by sensory inputs, and an **internal mode**, where perceptual and cognitive processes are shaped by internal predictions and memory.
+
+These fluctuations reflect a fundamental cognitive strategy: switching between information-seeking and belief-based inference. Crucially, we show that this dynamic balance can break down in psychotic states, offering a mechanistic explanation for hallucinations and delusions.
 
 ## Key Findings
 
-### Internal vs External Modes
+### Dynamic Explore-Exploit Fluctuations
 
-Using large-scale behavioral data, we demonstrated systematic fluctuations in perception between an external mode (high accuracy, minimal reliance on previous experiences) and an internal mode (strongly biased by perceptual history)[^1]. These fluctuations balanced novelty detection and stability.
+Analyzing behavioral data from large-scale experiments, we found that perception fluctuates rhythmically between an **external, exploratory mode** (high accuracy, driven by current input) and an **internal, exploitative mode** (strong reliance on perceptual history). These dynamics help balance sensitivity to novelty with the stability of interpretation.
 
-### Predictive Templates & Hallucinations
+### Internal Predictions and False Percepts
 
-False perceptions ("false alarms") arise from internal predictions ("predictive templates"), especially during internal mode[^2]. Computational modeling (HMM-GLM) revealed these templates fluctuate dynamically and linked them to the mechanisms underlying hallucinations.
+In internal mode, the brain relies on **predictive templates**, which can lead to misperceptions or **false alarms** — a hallmark of hallucinations. Computational modeling using GLM-HMM shows that these templates fluctuate spontaneously and are amplified in individuals with psychosis-proneness.
 
-### NMDAR Dysfunction & Psychosis
+### NMDAR Hypofunction Disrupts the Balance
 
-We showed that pharmacologically-induced NMDAR hypofunction (using S-ketamine) prolongs external mode dominance, causing erratic perceptual inferences. This mirrors key aspects of perceptual disruptions seen in schizophrenia and offers a mechanistic explanation for episodic psychotic symptoms[^3].
+Pharmacological manipulation with **S-ketamine**, which blocks NMDA receptors, shifts the brain into a prolonged internal (exploitative) mode, disrupting adaptive switching. This mimics perceptual disturbances seen in schizophrenia and demonstrates a causal link between neurotransmission, cognitive mode dynamics, and psychotic symptoms.
 
 ## Methods
 
-We combined multiple complementary methodologies:
+We used an integrated approach across multiple domains:
 
-- Behavioral experiments using ambiguous visual stimuli.
-- Computational models (Hidden Markov and General Linear Models, GLM-HMM) to quantify perceptual mode dynamics.
-- Pharmacological experiments with S-ketamine.
-- Clinical studies comparing schizophrenia patients with controls.
+- **Behavior experiments** to induce competition between internal and external interpretations.
+- **GLM-HMM** models to infer latent mode dynamics from behavior.
+- **S-ketamine experiments** to simulate NMDA receptor hypofunction.
+- **Clinical comparisons** between schizophrenia patients and healthy controls.
 
 ## Implications
 
-Clarifying these perceptual dynamics offers important implications for psychiatric care. Dynamic perceptual mode shifts might serve as biomarkers for psychosis, informing novel neuromodulatory treatments targeting NMDAR function and perceptual stability.
+Our findings suggest that the **explore-exploit balance in perception** is a core computational principle—and a potential **biomarker** for psychiatric disorders like schizophrenia. Stabilizing these dynamics could form the basis for targeted therapies aimed at restoring cognitive flexibility and perceptual accuracy.
 
 ## Future Directions
 
-- Developing real-time monitoring of perceptual mode shifts as predictive tools for psychosis.
-- Exploring closed-loop neuromodulation techniques to stabilize perceptual inference.
-- Extending our computational framework to related cognitive domains, such as memory and decision-making.
+- Real-time monitoring of explore-exploit mode dynamics as a diagnostic tool.
+- Closed-loop interventions to support flexible perceptual inference.
+- Expanding the framework to domains like memory recall, belief formation, and social cognition.
 
 ---
 
 ## Resources
 
-- [External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
+- [Interactive Demo: Internal and External Modes](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
