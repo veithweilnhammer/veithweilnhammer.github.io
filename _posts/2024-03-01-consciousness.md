@@ -17,7 +17,6 @@ authors:
 toc:
   - name: Overview
   - name: Key Findings
-  - name: Synthesis
   - name: Methods
   - name: Implications
   - name: Future Directions
@@ -47,15 +46,15 @@ Have you ever wondered how your brain makes sense of the world around you? Senso
 
 ## Key Findings
 
-### 1. The IFC Resolves Perceptual Ambiguity
+### The IFC Resolves Perceptual Ambiguity
 
 Our experiments show that the IFC plays a crucial role in managing conflicting sensory signals. When we temporarily disrupted IFC activity using Transcranial Magnetic Stimulation (TMS), participants experienced slower perceptual shifts in tasks where visual stimuli could be interpreted in multiple ways. This finding suggests the IFC is actively involved in updating our conscious perception when faced with ambiguity.
 
-### 2. The Insula Detects Unexpected Changes
+### The Insula Detects Unexpected Changes
 
 Another key region, the anterior insula, along with the IFC, responds strongly to unexpected changes in both spatial and temporal contexts. These findings indicate that the insula helps detect moments when our predictions about the world fail, prompting the brain to adjust and update its expectations.
 
-### 3. Damage to IFC Reduces Perceptual Flexibility
+### Damage to IFC Reduces Perceptual Flexibility
 
 In individuals who suffered strokes affecting the IFC, we found a significant reduction in their ability to spontaneously shift perceptions during ambiguous visual tasks. This supports the idea that a healthy IFC is essential for maintaining rgw flexibility in perception, ensuring our conscious experience remains dynamic and responsive.
 
@@ -83,13 +82,5 @@ Looking ahead, we plan to:
 ---
 
 ## Resources
-
-### Selected Papers:
-
-- [IFC and perceptual conflict (Current Biology, 2021)](https://doi.org/10.1016/j.cub.2021.04.043)
-- [Insula and general prediction errors (bioRxiv, 2024)](https://doi.org/10.1101/2024.05.29.595872)
-- [IFC lesions and perceptual dynamics (bioRxiv, 2024)](https://doi.org/10.1101/2024.08.24.609496)
-
-### Presentation:
 
 - [Is the IFC part of the NCC?](https://veithweilnhammer.github.io/assets/reveal/CCN.html)

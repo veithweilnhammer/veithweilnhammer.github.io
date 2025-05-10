@@ -17,7 +17,6 @@ authors:
 toc:
   - name: Overview
   - name: Key Findings
-  - name: Synthesis
   - name: Methods
   - name: Implications
   - name: Future Directions
@@ -41,31 +40,21 @@ _styles: >
 
 ## Overview
 
-Perception actively integrates new sensory information with internal predictions based on prior experiences. Our research explores how the brain dynamically shifts between two perceptual modes: an **external mode** (focused on immediate sensory input) and an **internal mode** (guided by past experiences). These shifts are key to understanding psychotic disorders such as schizophrenia.
-
----
+Perception actively integrates new sensory information with knowledge extracted from prior experiences. Our research explores how the brain adjust the balance between getting new information and knowledge. We found that, in perception and planning, people alternate between two modes: an **external mode**, where perception and cognitin are driven by external sensory information, and an **internal mode**, where perception and cognition are guided by prior knowledge. Our results suggest that psychotic experiences, like hallucinations and delusions, may be related to an imbalance between external and internal modes.
 
 ## Key Findings
 
-### 1. Internal vs External Modes
+### Internal vs External Modes
 
-Using large-scale behavioral data, we demonstrated systematic fluctuations in perception between an external mode (high accuracy, minimal reliance on previous experiences) and an internal mode (strongly biased by perceptual history)[^1]. These fluctuations optimize perception, balancing novelty detection and stability.
+Using large-scale behavioral data, we demonstrated systematic fluctuations in perception between an external mode (high accuracy, minimal reliance on previous experiences) and an internal mode (strongly biased by perceptual history)[^1]. These fluctuations balanced novelty detection and stability.
 
-### 2. Predictive Templates & Hallucinations
+### Predictive Templates & Hallucinations
 
 False perceptions ("false alarms") arise from internal predictions ("predictive templates"), especially during internal mode[^2]. Computational modeling (HMM-GLM) revealed these templates fluctuate dynamically and linked them to the mechanisms underlying hallucinations.
 
-### 3. NMDAR Dysfunction & Psychosis
+### NMDAR Dysfunction & Psychosis
 
 We showed that pharmacologically-induced NMDAR hypofunction (using S-ketamine) prolongs external mode dominance, causing erratic perceptual inferences. This mirrors key aspects of perceptual disruptions seen in schizophrenia and offers a mechanistic explanation for episodic psychotic symptoms[^3].
-
----
-
-## Synthesis
-
-Dynamic interplay between external and internal perceptual modes significantly influences psychosis. Over-reliance on external sensory input can produce unstable perceptions, leading to maladaptive internal predictions. When perception shifts to internal mode, these maladaptive predictions dominate perception and cognition, triggering hallucinations and delusions.
-
----
 
 ## Methods
 
@@ -76,13 +65,9 @@ We combined multiple complementary methodologies:
 - Pharmacological experiments with S-ketamine.
 - Clinical studies comparing schizophrenia patients with controls.
 
----
-
 ## Implications
 
 Clarifying these perceptual dynamics offers important implications for psychiatric care. Dynamic perceptual mode shifts might serve as biomarkers for psychosis, informing novel neuromodulatory treatments targeting NMDAR function and perceptual stability.
-
----
 
 ## Future Directions
 
@@ -94,13 +79,4 @@ Clarifying these perceptual dynamics offers important implications for psychiatr
 
 ## Resources
 
-### Talks and Slides:
-
 - [External and Internal Modes in Perception](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
-
----
-
-
-[^1]: Weilnhammer et al., PLOS Biology, 2023.
-[^2]: Weilnhammer et al., Current Biology, 2024.
-[^3]: Weilnhammer et al., Brain, 2024.
