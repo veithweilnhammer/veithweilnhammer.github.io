@@ -40,7 +40,7 @@ _styles: >
 
 ## Overview
 
-Perception is not passive. It involves a continuous tradeoff between **exploration** — sampling new sensory information — and **exploitation**—relying on prior knowledge and expectations. Our research shows that the brain actively alternates between two functional modes: an **external mode**, where behavior is driven by sensory inputs, and an **internal mode**, where perceptual and cognitive processes are shaped by internal predictions and memory.
+Perception involves a tradeoff between **exploration** — sampling new sensory information — and **exploitation**—relying on prior knowledge and expectations. Our research shows that the brain alternates between two functional modes: an **external mode**, where perception is determined by sensory inputs, and an **internal mode**, where perception is shaped by internal predictions and memory.
 
 These fluctuations reflect a fundamental cognitive strategy: switching between information-seeking and belief-based inference. Crucially, we show that this dynamic balance can break down in psychotic states, offering a mechanistic explanation for hallucinations and delusions.
 
@@ -48,19 +48,19 @@ These fluctuations reflect a fundamental cognitive strategy: switching between i
 
 ### Dynamic Explore-Exploit Fluctuations
 
-Analyzing behavioral data from large-scale experiments, we found that perception fluctuates rhythmically between an **external, exploratory mode** (high accuracy, driven by current input) and an **internal, exploitative mode** (strong reliance on perceptual history). These dynamics help balance sensitivity to novelty with the stability of interpretation.
-
-### Internal Predictions and False Percepts
-
-In internal mode, the brain relies on **predictive templates**, which can lead to misperceptions or **false alarms** — a hallmark of hallucinations. Computational modeling using GLM-HMM shows that these templates fluctuate spontaneously and are amplified in individuals with psychosis-proneness.
+Analyzing behavioral data from large-scale experiments, we found that perception fluctuates between an **external, exploratory mode** (high accuracy, driven by current input) and an **internal, exploitative mode** (strong reliance on perceptual history). These dynamics help balance sensitivity to new information with the stable and robust perceptual experiences.
 
 ### NMDAR Hypofunction Disrupts the Balance
 
-Pharmacological manipulation with **S-ketamine**, which blocks NMDA receptors, shifts the brain into a prolonged internal (exploitative) mode, disrupting adaptive switching. This mimics perceptual disturbances seen in schizophrenia and demonstrates a causal link between neurotransmission, cognitive mode dynamics, and psychotic symptoms.
+Pharmacological manipulation with **S-ketamine**, which blocks NMDA receptors, shifts the brain into prolonged external (explorative) mode. This exposes perception to the destabilizing effects of noise and ambiguity, and may lead people to build models of the world that don't align with reality. We replicated the effect of NMDAR antagonism in people living with schizophrenia, a diagnosis often associated with NMDAR hypofunction. These results may point to a causal link between NMDAR neurotransmission, mode switching, and psychotic symptoms.
+
+### Internal Predictions and False Percepts
+
+In internal mode, the brain relies on **predictive templates**. Predictive templates that don't align with reality can lead to misperceptions or **false alarms** — a hallmark of hallucinations. GLM-HMMs indicate that these templates fluctuate spontaneously and are amplified in individuals with psychosis-proneness.
 
 ## Methods
 
-We used an integrated approach across multiple domains:
+We used an integrated approach across:
 
 - **Behavior experiments** to induce competition between internal and external interpretations.
 - **GLM-HMM** models to infer latent mode dynamics from behavior.
@@ -69,16 +69,19 @@ We used an integrated approach across multiple domains:
 
 ## Implications
 
-Our findings suggest that the **explore-exploit balance in perception** is a core computational principle—and a potential **biomarker** for psychiatric disorders like schizophrenia. Stabilizing these dynamics could form the basis for targeted therapies aimed at restoring cognitive flexibility and perceptual accuracy.
+Our findings suggest that the **explore-exploit balance in perception** is a core computational principle of perception — and a potential **biomarker** for psychiatric disorders like schizophrenia. Stabilizing these dynamics could form the basis for targeted therapies aimed at restoring cognitive flexibility and adaptive perception in people living with delusions and hallucinations.
 
 ## Future Directions
 
 - Real-time monitoring of explore-exploit mode dynamics as a diagnostic tool.
 - Closed-loop interventions to support flexible perceptual inference.
-- Expanding the framework to domains like memory recall, belief formation, and social cognition.
+- Expanding the framework to domains like memory recall, planning, and social cognition.
 
 ---
 
 ## Resources
 
-- [Interactive Demo: Internal and External Modes](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
+- [Interactive Presentation: Internal and External Modes](https://veithweilnhammer.github.io/assets/reveal/modes_Basel_2.html)
+- Weilnhammer, Veith, Yuki Murai, and David Whitney. “Dynamic Predictive Templates in Perception.” *Current Biology* 34, no. 18 (September 23, 2024): 4301–4306.e2. https://doi.org/10.1016/j.cub.2024.07.087
+- Weilnhammer, Veith, Marcus Rothkirch, Deniz Yilmaz, Merve Fritsch, Lena Esther Ptasczynski, Katrin Reichenbach, Lukas Rödiger, Philip Corlett, and Philipp Sterzer. “N-Methyl-d-Aspartate Receptor Hypofunction Causes Recurrent and Transient Failures of Perceptual Inference.” *Brain*, January 16, 2025, awaf011. https://doi.org/10.1093/brain/awaf011
+- Weilnhammer, Veith, Heiner Stuke, Kai Standvoss, and Philipp Sterzer. “Sensory Processing in Humans and Mice Fluctuates between External and Internal Modes.” *PLOS Biology* 21, no. 12 (August 12, 2023): e3002410. https://doi.org/10.1371/journal.pbio.3002410
