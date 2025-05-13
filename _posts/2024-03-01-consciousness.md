@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: "What are the mechanisms that construct our experience of reality?"
-description: "The role of frontoparietal networks in resolving sensory ambiguity."
+description: "The role of the inferior frontal cortex in resolving sensory ambiguity."
 tags: [consciousness, perception, inference]
 categories:
 giscus_comments: false

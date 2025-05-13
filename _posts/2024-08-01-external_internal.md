@@ -1,7 +1,7 @@
 ---
 layout: distill
-title: "How Does the Brain Balance Exploration and Exploitation in Perception?"
-description: "Perception and cognition alternate between external sampling and internal prediction."
+title: "HExploration and exploitation in perception"
+description: "Perception alternates between external and internal modes."
 tags: [explore-exploit, perception, cognition, hallucinations, ketamine, GLM-HMM]
 categories:
 giscus_comments: false
