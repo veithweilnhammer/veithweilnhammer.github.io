@@ -17,7 +17,6 @@ authors:
 toc:
   - name: Overview
   - name: Key Findings
-  - name: Synthesis
   - name: Methods
   - name: Implications
   - name: Future Directions
@@ -41,7 +40,7 @@ _styles: >
 
 ## Overview
 
-Have you ever wondered how your brain makes sense of the world around you? Sensory information is often noisy, incomplete, and ambiguous. Yet, our brains usually construct a coherent experience of reality. My research investigates how specific brain regions — particularly the **inferior frontal cortex (IFC)** and the **anterior insula** — help resolve in perception and beyond. 
+Have you ever wondered how your brain makes sense of the world around you? Sensory information is often noisy, incomplete, and ambiguous. Yet, our brains usually construct a coherent experience of reality. My research investigates how specific brain regions — particularly the **inferior frontal cortex (IFC)** and the **anterior insula** — help resolve ambiguity in perception and beyond. 
 
 ---
 
@@ -57,7 +56,7 @@ Another key region, the anterior insula, along with the IFC, responds strongly t
 
 ### 3. Damage to IFC Reduces Perceptual Flexibility
 
-In individuals who suffered strokes affecting the IFC, we found a significant reduction in their ability to spontaneously shift perceptions during ambiguous visual tasks. This supports the idea that a healthy IFC is essential for maintaining rgw flexibility in perception, ensuring our conscious experience remains dynamic and responsive.
+In individuals who suffered strokes affecting the IFC, we found a significant reduction in their ability to spontaneously shift perceptions during ambiguous visual tasks. This supports the idea that a healthy IFC is essential for maintaining the flexibility in perception, ensuring our conscious experience remains dynamic and responsive.
 
 ## Methods
 
