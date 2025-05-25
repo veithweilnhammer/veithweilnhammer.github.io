@@ -4,7 +4,7 @@ title: about
 permalink: /
 subtitle: >
   <a href='https://www.berkeley.edu/'>University of California, Berkeley</a><br>
-  <a href='https://www.berkeley.edu/'>Helen Wills Neuroscience Institute.</a>
+  <a href='https://www.berkeley.edu/'>Helen Wills Neuroscience Institute</a>
 
 profile:
   align: right
