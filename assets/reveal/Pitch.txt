@@ -1,0 +1,202 @@
+💡 Title Slide – “The Pixelblot”
+
+Main Message:
+We are building the trust layer for an AI-native internet.
+
+Talking Points:
+	•	I’m Veith, psychiatrist and neuroscientist, and co-founder of Pixelblot.
+	•	At Pixelblot, we’ve built a portable proof-of-humanness: a lightweight, real-time token users can share online — without compromising their privacy.
+	•	We’re on a mission to help humans stay visible in an increasingly AI-driven world.
+
+⸻
+
+📊 Slide – AI Agents & Bots
+
+Main Message:
+The way we interact online is shifting. Trust hasn’t caught up.
+
+Talking Points:
+	•	AI agents are quickly becoming the new default interface — not apps, not websites. This shift has been publicly acknowledged by leaders like Satya Nadella.
+	•	But while AI gets smarter, bots get better — and almost half of all internet traffic is now bot-generated. (Source: Imperva 2024)
+	•	This puts pressure on platforms to find new ways to verify who’s real — and to do it without slowing users down or violating privacy.
+
+⸻
+
+📈 Slide – Market Opportunity
+
+Main Message:
+The need for scalable, private, real-time trust is massive.
+
+Chart Summary:
+	•	This slide shows the Total Available Market (TAM), Serviceable Available Market (SAM), and Serviceable Obtainable Market (SOM) across 5 verticals.
+	•	The biggest opportunity lies in P2P verification, worth nearly $1.9B TAM — think peer messaging, signing, and exchanges.
+	•	Even niche segments like Sybil resistance in Web3 have a growing, addressable value.
+	•	Pixelblot touches all of these.
+
+⸻
+
+✅ Slide – The Pixelblot Solution
+
+Main Message:
+Pixelblot is simple, fast, and designed for the AI-native web.
+
+Talking Points:
+	•	Pixelblot tokens prove you’re human — in real time, with no install and no personal data shared.
+	•	They’re scalable: from one user to one billion.
+	•	They’re secure: we verify behavior, not identity.
+	•	They’re deployable: just three lines of code to add Pixelblot into any app or platform.
+	•	Already live at pixelblot.ai, and we’ll show you the real-time widget later.
+
+⸻
+
+📈 Slide – GTM & Revenue Strategy
+
+Main Message:
+We have a clear plan for usage and revenue growth.
+
+Talking Points (Left - Revenue Strategy):
+	•	We operate on a freemium model:
+	•	Free tier → engagement + visibility
+	•	API tokens → monetization per human proof
+	•	Platform integrations → large-scale revenue
+
+Talking Points (Right - Projections):
+	•	We’re starting with ~100 DAU now, and growing toward 50,000 DAU by 2027.
+	•	Revenue projections:
+	•	$100k ARR by end of 2025
+	•	$3M ARR by early 2027
+	•	Our architecture and pricing scale with volume — so it’s lean early and lucrative late.
+
+⸻
+
+💰 Slide – What We’re Raising
+
+Main Message:
+We’re raising capital to scale with focus.
+
+Talking Points:
+	•	We’re raising $1.5M pre-seed.
+	•	Funds will go to:
+	•	Growing our technical team
+	•	Building infrastructure for scale
+	•	Closing key platform integrations
+	•	This gives us 18 months of runway to:
+	•	Scale usage
+	•	Deploy integrations
+	•	Convert API pilots into enterprise contracts
+	•	We’re live today — 100+ daily users and API pilots already running in trusted environments.
+
+
+    🟣 FUNDING & STAGE TERMS
+
+Pre-Seed
+	•	Earliest funding stage.
+	•	Typically used to build the initial product, get first users, or hire a small team.
+	•	Investors at this stage bet on the founder + vision, not metrics.
+
+Seed
+	•	First institutional round. Used to validate the business model, acquire users, and prep for growth.
+	•	Investors expect product-market fit or early traction.
+
+Runway
+	•	How many months a company can operate before it runs out of cash.
+	•	Calculated as:
+Runway = Cash on hand / Monthly burn rate
+
+⸻
+
+🟢 MARKET TERMS
+
+TAM (Total Addressable Market)
+	•	The entire market opportunity if your product were used by every potential customer.
+	•	Example: “P2P verification TAM is $1.89B” → if every platform adopted P2P trust tokens.
+
+SAM (Serviceable Available Market)
+	•	The portion of TAM you can actually serve with your current product and reach.
+	•	For example, limited by geography, tech stack, or regulatory scope.
+
+SOM (Serviceable Obtainable Market)
+	•	The slice of SAM you can realistically capture in the short term, given your size and resources.
+	•	This is what your initial revenue plan is built around.
+
+⸻
+
+🟡 GROWTH & TRACTION METRICS
+
+DAU (Daily Active Users)
+	•	Number of unique users engaging with your product daily.
+	•	Common for consumer and platform products to measure stickiness.
+
+API Pilot
+	•	A test integration of your Application Programming Interface with a potential customer or partner.
+	•	Used to validate performance before scaling.
+
+ARR (Annual Recurring Revenue)
+	•	Predictable, recurring revenue normalized to a yearly amount.
+	•	Formula:
+ARR = Monthly Recurring Revenue (MRR) × 12
+
+Churn
+	•	The percentage of users or revenue lost over time.
+	•	Important for SaaS and subscription models.
+
+⸻
+
+🔵 PRODUCT & TECH TERMS
+
+Proof-of-Humanness
+	•	A lightweight signal or token that verifies someone is a real human, not a bot.
+	•	Used in CAPTCHA alternatives, Web3 identity, etc.
+
+Sybil Attack / Sybil Resistance
+	•	In crypto/Web3, a Sybil attack is when one person creates many fake identities to game a system (e.g. fake wallets in airdrops).
+	•	Sybil resistance is the ability to stop that.
+
+Zero Overhead
+	•	Very low or no cost to scale or integrate.
+	•	Means it’s easy for developers or platforms to use your product.
+
+Widget
+	•	A lightweight embedded component (like a mini app) you can place on any website.
+
+⸻
+
+🔴 BUSINESS MODEL & STRATEGY
+
+Freemium
+	•	A business model where basic features are free, advanced features cost money.
+	•	Goal: attract users at zero cost and monetize a portion of them.
+
+Token-Based API Pricing
+	•	Charging customers per use of an API (e.g., $ per verification token issued).
+	•	Like Twilio for messages or Stripe for transactions.
+
+Platform Integration
+	•	A deep connection with a larger partner’s product or ecosystem (e.g., Slack, Discord, Coinbase).
+	•	High-value deals, longer cycles.
+
+Go-to-Market (GTM) Strategy
+	•	Your plan to reach customers and convert them.
+	•	GTM includes pricing, channels, marketing, sales tactics, etc.
+
+⸻
+
+🟠 PITCHING & VC LINGO
+
+Deck
+	•	Your pitch presentation, typically in HTML, PowerPoint, or PDF format.
+
+Ask Slide
+	•	The slide where you state how much funding you’re raising and why.
+	•	Should be clear, concise, and show intended use of funds.
+
+Cap Table
+	•	Short for “Capitalization Table” — shows who owns how much of the company.
+	•	Important for understanding dilution during fundraising.
+
+Dilution
+	•	The reduction in ownership percentage when new shares are issued (e.g., during a funding round).
+
+Term Sheet
+	•	A document from an investor outlining terms of a potential investment.
+	•	Includes valuation, ownership %, board rights, liquidation preferences, etc.

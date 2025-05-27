@@ -33,7 +33,7 @@
       </section>
 
 
-      <section>
+      
         <section data-auto-animate>
           <blockquote data-id="agent-quote" style="border-left: 4px solid #c084fc; padding-left: 1em;">
             <em>“AI agents will be the default interface — not apps, not websites.”</em><br/><br/>
@@ -65,7 +65,11 @@
                 AI gets smarter<br/>
                 Trust gets harder
               </h4>
-                <canvas id="marketGroupedBar" width="500" height="400"></canvas>
+               <canvas id="marketGroupedBar" width="500" height="400"></canvas>
+                  <p style="font-size: 0.3em; color: #94a3b8; text-align: center; margin-top: 1rem;">
+                    Total SOM: <b>$316.27 billion</b>
+                  </p>
+                
                 <p style="margin-top: 1rem; font-size: 0.2em; color: #94a3b8; text-align: center;">
                   Sources: Fortune Business Insights, Allied Market Research, Precedence Research, Grand View Research (2023–2024)
                 </p>
@@ -108,22 +112,22 @@
 
                 const labels = ['Fake users', 'Integrity', 'P2P', 'Real-time', 'Web3'];
 
-                const data = {
+              const data = {
                   labels: labels,
                   datasets: [
                     {
                       label: 'TAM',
-                      data: [63900, 63900, 1889160, 110470, 2250],
+                      data: [65710000000, 610200000, 3087940000000, 6160000000, 2250000000],
                       backgroundColor: '#38bdf8' // Neon Blue
                     },
                     {
                       label: 'SAM',
-                      data: [25200, 25200, 377832, 44188, 1125],
+                      data: [32855000000, 305100000, 1543970000000, 3080000000, 1125000000],
                       backgroundColor: '#f87171' // Neon Red
                     },
                     {
                       label: 'SOM',
-                      data: [1200, 1200, 18891, 2209, 113],
+                      data: [6571000000, 61020000, 308794000000, 616000000, 225000000],
                       backgroundColor: '#c084fc' // Neon Purple
                     }
                   ]
@@ -132,7 +136,7 @@
                 const options = {
                   responsive: false,
                   animation: {
-                    duration: 800 // smooth ramp-in
+                    duration: 8000 // smooth ramp-in
                   },
                   plugins: {
                     legend: {
@@ -157,26 +161,32 @@
                         color: 'rgba(255,255,255,0.05)'
                       }
                     },
-            y: {
-              type: 'logarithmic',
-              title: {
-                display: true,
-                text: '$ (Log Scale)',
-                color: 'white',
-                font: { size: 12 }
-              },
-              ticks: {
-                color: 'white',
-                callback: value => {
-                  if (value >= 1e6) return `$${value / 1e6}B`;
-                  if (value >= 1e3) return `$${value / 1e3}M`;
-                  return `$${value}`;
-                }
-              },
-              grid: {
-                color: 'rgba(255,255,255,0.1)'
-              }
-            }
+                    y: {
+                      type: 'logarithmic',
+                      title: {
+                        display: true,
+                        text: '$ (Log Scale)',
+                        color: 'white',
+                        font: { size: 12 }
+                      },
+                      ticks: {
+                        color: 'white',
+                        maxTicksLimit: 5,  // 🔽 Reduce number of tick marks
+                        callback: value => {
+                          if (value === 1e6) return '$1M';
+                          if (value === 1e7) return '$10M';
+                          if (value === 1e8) return '$100M';
+                          if (value === 1e9) return '$1B';
+                          if (value === 1e10) return '$10B';
+                          if (value === 1e11) return '$100B';
+                          if (value === 1e12) return '$1T';
+                          return '';
+                        }
+                      },
+                      grid: {
+                        color: 'rgba(255,255,255,0.1)'
+                      }
+                    }
                   }
                 };
 
@@ -188,10 +198,7 @@
               </script>
         </section>
 
-      </section>    
-      
-      <section>
-
+         
         <section>
         <div style="display: flex; justify-content: space-between; align-items: center; gap: 80px; height: 500px;">
 
@@ -299,129 +306,184 @@
       plugins: [ChartDataLabels]
     });
 
-new Chart(document.getElementById('growthProjectionChart'), {
-  type: 'bar',
-  data: {
-    datasets: [
-      {
-        type: 'line',
-        label: 'Daily Active Users',
-        data: [
-          { x: 'Q2 2025', y: 100 },
-          { x: 'Q4 2025', y: 1000 },
-          { x: 'Q2 2026', y: 5000 },
-          { x: 'Q4 2026', y: 20000 },
-          { x: 'Q1 2027', y: 50000 }
-        ],
-        yAxisID: 'y1',
-        borderColor: '#d1d5db',
-        backgroundColor: 'transparent',
-        borderWidth: 2,
-        tension: 0.4,
-        pointRadius: 4,
-        pointBackgroundColor: '#d1d5db'
-      },
-      {
-        type: 'bar',
-        label: 'Annualized Revenue ($)',
-        data: [
-          { x: 'Q2 2025', y: 1000 },
-          { x: 'Q4 2025', y: 100000 },
-          { x: 'Q2 2026', y: 500000 },
-          { x: 'Q4 2026', y: 1500000 },
-          { x: 'Q1 2027', y: 3000000 }
-        ],
-        yAxisID: 'y2',
-        backgroundColor: '#c084fc',
-        borderSkipped: false,
-        borderRadius: 0,
-        barPercentage: 0.05,
-        categoryPercentage: 1.0
-      }
-    ]
-  },
-  options: {
-    responsive: false,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: { color: 'white' }
-      },
-      tooltip: {
-        callbacks: {
-          label: ctx => {
-            const val = ctx.raw.y;
-            if (ctx.dataset.label.includes('Revenue')) {
-              return `${ctx.dataset.label}: $${(val / 1e6).toFixed(1)}M`;
+  new Chart(document.getElementById('growthProjectionChart'), {
+    type: 'bar',
+    data: {
+      datasets: [
+        {
+          type: 'line',
+          label: 'Tokens per Day (0.05$ each)',
+          data: [
+            { x: 'Q2 2025', y: 100 },
+            { x: 'Q4 2025', y: 10000 },
+            { x: 'Q2 2026', y: 30000 },
+            { x: 'Q4 2026', y: 50000 },
+            { x: 'Q1 2027', y: 55000 }
+          ],
+          yAxisID: 'y1',
+          borderColor: '#d1d5db',
+          backgroundColor: 'transparent',
+          borderWidth: 2,
+          tension: 0.4,
+          pointRadius: 4,
+          pointBackgroundColor: '#d1d5db'
+        },
+        {
+          type: 'bar',
+          label: 'Annual Recurring Revenue ($)',
+          data: [
+            { x: 'Q2 2025', y: 1825 },        // 100 * 0.05 * 365
+            { x: 'Q4 2025', y: 182500 },      // 10,000 * 0.05 * 365
+            { x: 'Q2 2026', y: 547500 },      // 30,000 * 0.05 * 365
+            { x: 'Q4 2026', y: 912500 },      // 50,000 * 0.05 * 365
+            { x: 'Q1 2027', y: 1003750 }      // 55,000 * 0.05 * 365
+          ],
+          yAxisID: 'y2',
+          backgroundColor: '#c084fc',
+          borderSkipped: false,
+          borderRadius: 0,
+          barPercentage: 0.05,
+          categoryPercentage: 1.0
+        }
+      ]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: 'white' }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const val = ctx.raw.y;
+              if (ctx.dataset.label.includes('Revenue')) {
+                return `${ctx.dataset.label}: $${(val / 1e6).toFixed(2)}M`;
+              }
+              return `${ctx.dataset.label}: ${val.toLocaleString()} tokens/day`;
             }
-            return `${ctx.dataset.label}: ${val.toLocaleString()}`;
           }
         }
-      }
-    },
-    scales: {
-      x: {
-        type: 'category',
-        labels: ['Q2 2025', 'Q4 2025', 'Q2 2026', 'Q4 2026', 'Q1 2027'],
-        ticks: { color: 'white' },
-        grid: { color: 'rgba(255,255,255,0.05)' }
       },
-      y1: {
-        type: 'logarithmic',
-        position: 'left',
-        title: { display: true, text: 'DAU (Log)', color: 'white' },
-        ticks: {
-          color: 'white',
-          callback: v => `${v.toLocaleString()}`
+      scales: {
+        x: {
+          type: 'category',
+          labels: ['Q2 2025', 'Q4 2025', 'Q2 2026', 'Q4 2026', 'Q1 2027'],
+          ticks: { color: 'white' },
+          grid: { color: 'rgba(255,255,255,0.05)' }
         },
-        grid: { color: 'rgba(255,255,255,0.05)' }
-      },
-      y2: {
-        type: 'logarithmic',
-        position: 'right',
-        title: { display: true, text: 'Revenue (Log)', color: 'white' },
-        ticks: {
-          color: 'white',
-          callback: v => {
-            if (v >= 1e6) return `$${v / 1e6}M`;
-            if (v >= 1e3) return `$${v / 1e3}k`;
-            return `$${v}`;
-          }
+        y1: {
+          type: 'logarithmic',
+          position: 'left',
+          title: {
+            display: true,
+            text: 'Tokens per Day (Log)',
+            color: 'white'
+          },
+          ticks: {
+            color: 'white',
+            callback: v => `${v.toLocaleString()}`
+          },
+          grid: { color: 'rgba(255,255,255,0.05)' }
         },
-        grid: { drawOnChartArea: false }
+       y2: {
+  type: 'logarithmic',
+  position: 'right',
+  title: {
+    display: true,
+    text: 'ARR ($, Log)',
+    color: 'white'
+  },
+  ticks: {
+    color: 'white',
+    maxTicksLimit: 5,  // 👈 reduces the number of ticks
+    callback: v => {
+      if (v >= 1e6) return `$${(v / 1e6).toFixed(1)}M`;
+      if (v >= 1e3) return `$${(v / 1e3).toFixed(0)}k`;
+      return `$${v}`;
+    }
+  },
+  grid: { drawOnChartArea: false }
+}
       }
     }
-  }
-});
-  </script>
+  });
+</script>
 </section>
 
 
-      </section>
-
-<!-- Funding Slide - Styled like the title slide -->
+<!-- Funding Slide with Adjusted Colors and Layout -->
 <section style="text-align: left;">
-  <h2 style="margin-bottom: 1rem;">What We’re Raising</h2>
+  <h4 style="margin-bottom: 1rem;">What We’re Raising</h4>
 
-  <div style="font-size: 0.45em; color: white; line-height: 1.6; max-width: 80%;">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 60px;">
 
-    <p class="fragment" data-fragment-index="0">
-      We’re raising a <b>$1.5M pre-seed round</b> to grow the team, scale infrastructure, and build key integrations.
-    </p>
+    <!-- LEFT: Text Content -->
+    <div style="font-size: 0.45em; color: white; line-height: 1.6; max-width: 55%; text-align: left;">
+      <p class="fragment" data-fragment-index="0">
+        We’re raising a <b>$1.5M pre-seed round</b> to expand our team, scale infrastructure, and close high-impact integrations.
+      </p>
 
-    <p class="fragment" data-fragment-index="1">
-      The funds will provide <b>18 months of runway</b> to scale usage, build trust integrations, and close platform pilots.
-    </p>
+      <p class="fragment" data-fragment-index="1">
+        This provides <b>18 months of runway</b> to grow to 50K DAU, convert pilot partners, and deliver on our dev roadmap.
+      </p>
 
-    <p class="fragment" data-fragment-index="2">
-      Pixelblot is already live with <b>100+ daily users</b> and <b>API pilots</b> in trusted environments.
-    </p>
+      <p class="fragment" data-fragment-index="2">
+        Pixelblot is already <b>live</b>, with <b>100+ daily active users</b> and <b>active B2B API pilots</b> across gaming, Web3, and online collaboration.
+      </p>
+    </div>
+
+    <!-- RIGHT: Pie Chart -->
+    <div style="width: 40%;" class="fragment" data-fragment-index="3">
+      <canvas id="fundPieChart" width="300" height="300"></canvas>
+      <p style="font-size: 0.25em; color: #94a3b8; text-align: center; margin-top: 1rem;">
+        Planned Use of Funds
+      </p>
+    </div>
+
   </div>
+
+  <!-- Chart.js Pie Chart Script -->
+  <script>
+    new Chart(document.getElementById('fundPieChart'), {
+      type: 'doughnut',
+      data: {
+        labels: [
+          'Engineering (30%)',
+          'Sales (15%)',
+          'Support (15%)',
+          'Infra (15%)',
+          'R&D (15%)',
+          'Business Development'
+        ],
+        datasets: [{
+          data: [30, 15, 15, 15, 15, 10],
+          backgroundColor: [
+            '#38bdf8', '#60c8fa', '#90d4f8',     // Blues
+            '#f87171', '#fb9494',                 // Reds
+            '#a855f7'                  // Purples (darker + vivid)
+          ]
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: 'white',
+              font: { size: 10 }
+            }
+          }
+        }
+      }
+    });
+  </script>
 </section>
 
 <!-- Closing Slide - Styled like the first title slide -->
 <section style="text-align: left;">
-  <h2 style="margin-bottom: 1rem;">Join Us in Building Trust</h2>
+  <h4 style="margin-bottom: 1rem;">Join Us in Building Trust</h4>
 
   <div style="font-size: 0.45em; color: white; line-height: 1.6;">
     <p>
