@@ -15,7 +15,7 @@ authors:
       name: UC Berkeley, Helen Wills Neuroscience Institute
 toc:
   - name: Overview
-  - name: Psychosis: Definition & Types
+  - name: Definitions
   - name: Diagnosis & Classification
   - name: Course & Epidemiology
   - name: Causes & Risk Factors
