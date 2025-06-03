@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: "Psychotic experiences & schizophrenia"
-description: "Lyra Health Seminar."
-tags: [psychosis, schizophrenia, perception, mental health]
+title: "Psychosis and schizophrenia"
+description: "Lyra Health Seminar"
+tags: [consciousness, perception, inference]
 categories:
 giscus_comments: false
-date: 2025-06-03
+date: 2026-06-03
 featured: false
 
 authors:
@@ -13,7 +13,6 @@ authors:
     url: "https://veithweilnhammer.github.io"
     affiliations:
       name: UC Berkeley, Helen Wills Neuroscience Institute
-
 toc:
   - name: Overview
   - name: Psychosis: Definition & Types
