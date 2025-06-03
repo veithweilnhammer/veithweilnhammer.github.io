@@ -105,7 +105,7 @@ This seminar explores psychotic experiences and schizophrenia. It combines real-
 - **Red flags**:
   - Social withdrawal, odd beliefs, suspiciousness, functional decline
 - **Tools**:
-  - Structured interviews (e.g. PANSS, CAPS, PDI)
+  - Structured interviews (e.g. PANSS, CAPS, PDI, BPRS)
 - **Clinical assessment**:
   - Emphasis on insight, affect, and reality testing
   - Early digital screening tools show promise
