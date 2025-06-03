@@ -5,7 +5,7 @@ description: "Lyra Health Seminar"
 tags: [consciousness, perception, inference]
 categories:
 giscus_comments: false
-date: 2026-06-03
+date: 2025-06-03
 featured: false
 
 authors:
