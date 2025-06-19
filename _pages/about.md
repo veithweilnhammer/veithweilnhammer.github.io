@@ -24,11 +24,7 @@ I am a neuroscientist, psychiatrist, and psychotherapist. I work on digital tech
 
 My research focuses on how the brain balances exploration and exploitation — whether to rely on prior knowledge or update our beliefs in light of new information. This balance is essential for perception, decision-making, and mental health.
 
-To study this, I develop computational models and immersive virtual environments where humans and machines interact. These tools help us understand how we build internal models of the world, when they go off track, and how this may contribute to altered experiences of reality.
-
-<!-- Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically. -->
-
-<!-- Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+I work with computational models and immersive virtual environments where humans and machines interact. These tools help us understand how we build internal models of the world, when they go off track, and how this may contribute to altered experiences of reality.
 
   <!-- <a href='https://www.berkeley.edu/'>Helen Wills Neuroscience Institute, University of California, Berkeley</a><br>
   <a href='https://www.berkeley.edu/'>Helen Wills Neuroscience Institute</a> -->
