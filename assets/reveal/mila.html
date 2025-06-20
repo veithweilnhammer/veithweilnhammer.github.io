@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Meeting slides</title>
+  <meta name="description" content="Pixelblot investor presentation">
+  <meta name="author" content="Veith Weilnhammer">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/mila.css" id="theme">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title Slide -->
+      <section style="text-align: left;">
+        <h2>MILA</h2>
+        <h6>Inferring mental health in everyone on the internet</h6>
+         <br/>
+         <br/>
+        <p>
+        <small>Veith Weilnhammer | Co-Founder & CEO @pixelblot.ai </small>
+        </p>
+      </section>
+
+        <section data-auto-animate>
+        <blockquote data-id="mental-quote" style="border-left: 4px solid #ef4444; padding-left: 1em; max-width: 80%;">
+            <em>“There is no health without mental health.”</em><br/><br/>
+            — <b>World Health Organization</b>
+        </blockquote>
+        </section>
+
+        <section data-auto-animate>
+        <div style="display: flex; flex-direction: column; gap: 40px;">
+            <blockquote data-id="mental-quote" style="border-left: 4px solid #ef4444; padding-left: 1em; max-width: 80%;">
+            <em>“There is no health without mental health.”</em><br/><br/>
+            — <b>World Health Organization</b>
+            </blockquote>
+
+            <blockquote style="border-left: 4px solid #f59e0b; padding-left: 1em; max-width: 80%;">
+            <em>“We are still using symptom checklists to diagnose mental illness — in the 21st century.”</em><br/><br/>
+            — <b>Thomas Insel</b>, Former Director of the NIMH
+            </blockquote>
+        </div>
+        </section>
+
+
+
+     <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 80px; height: 500px;">
+
+          <!-- LEFT COLUMN: Use Case Bullet Points -->
+          <div style="width: 50%; color: black; text-align: left; display: flex; flex-direction: column; justify-content: center;">
+            <h4 style="margin-bottom: 1rem;">The Pixelblot</h4>
+
+            <div style="font-size: 0.45em;">
+              <p>
+                <b>Authentic</b><br/>
+                Pixelblots are real-time, shareable trust tokens for a new internet.
+              </p>
+
+              <p>
+                <b>Scalable</b><br/>
+                Pixelblots enable instant verification with zero overhead — from one user to one billion.
+              </p>
+
+              <p >
+                <b>Secure</b><br/>
+                Pixelblots verify that someone is human, without revealing who they are.
+              </p>
+
+              <p>
+                <b>Dynamic</b><br/>
+                Pixelblots build trust in real-time and on demand, not just at login.
+              </p>
+
+              <p>
+                <b>Deployable</b><br/>
+                Three lines of code bring Pixelblots into any app or platform.
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Embedded Widget -->
+          <div style="width: 50%; display: flex; justify-content: center; align-items: center;">
+            <iframe
+              src="https://pixelblot.ai/embed"
+              width="450"
+              height="600"
+              style="border: none; border-radius: 12px; box-shadow: 0 0 40px rgba(255,255,255,0.1);">
+            </iframe>
+          </div>
+
+        </div>
+    </section>
+
+    <!-- SLIDE 1 -->
+<section>
+      <h4 style="margin-bottom: 1rem;">Predicting change</h4>
+      <img src="./pixelblot/change_prediction_slide1.png" alt="Placeholder 1" style="max-width: 100%; max-height: 100%; border-radius: 12px;" />
+</section>
+
+<!-- SLIDE 2 -->
+<section>
+      <h4 style="margin-bottom: 1rem;">Diagnosis & Comorbidity</h4>
+      <img src="./pixelblot/change_prediction_slide2.png" alt="Placeholder 1" style="max-width: 80%; max-height: 80%; border-radius: 12px;" />
+</section>
+
+
+<!-- SLIDE 3 -->
+<section ddata-transition="fade">
+      <h4 style="margin-bottom: 1rem;">Cost versus scale</h4>
+      <img src="./pixelblot/cost_scale_slide3.png" alt="Placeholder 1" style="max-width: 100%; max-height: 100%; border-radius: 12px;" />
+</section>
+
+<!-- SLIDE 4 -->
+<section data-transition="fade">
+      <h4 style="margin-bottom: 1rem;">Cost versus scale</h4>
+      <img src="./pixelblot/cost_scale_slide4.png" alt="Placeholder 1" style="max-width: 100%; max-height: 100%; border-radius: 12px;" />
+</section>
+
+
+
+
+
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/search/search.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+    });
+  </script>
+</body>
+
+</html>
