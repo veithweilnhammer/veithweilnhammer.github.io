@@ -22,9 +22,7 @@ social: true  # includes social icons at the bottom of the page
 
 I am a neuroscientist, psychiatrist, and psychotherapist. I work on digital technologies to better understand, predict, and improve mental health.
 
-My research focuses on how the brain balances exploration and exploitation — whether to rely on prior knowledge or update our beliefs in light of new information. This balance is essential for perception, decision-making, and mental health. 
-
-In my work, I apply computational models to games and virtual environments where humans and machines interact. These tools help us understand how we build internal models of the world, when they go off track, and how that can lead to altered experiences of reality.
+I am particularly interested in how humans make sense of ambiguous situations: How do people extract meaning from noisy data? How do they apply what they’ve learned to new but uncertain contexts? And what behavioral strategies help them avoid falling into self-fulfilling prophecies – for instance, seeing what they expect rather than what is actually there?
 
   <!-- <a href='https://www.berkeley.edu/'>Helen Wills Neuroscience Institute, University of California, Berkeley</a><br>
   <a href='https://www.berkeley.edu/'>Helen Wills Neuroscience Institute</a> -->
