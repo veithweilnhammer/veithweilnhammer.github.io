@@ -33,15 +33,15 @@
     ]
   },
   "work": [
-    // {
-    //   "name": "Max Planck UCL Centre for Computational Psychiatry and Ageing Research",
-    //   "position": "Max Planck Fellow",
-    //   "url": "https://www.mps-ucl-centre.mpg.de/",
-    //   "startDate": "2025",
-    //   "endDate": "present",
-    //   "summary": "",
-    //   "highlights": []
-    // },
+    {
+      "name": "Max Planck UCL Centre for Computational Psychiatry and Ageing Research",
+      "position": "Max Planck Fellow",
+      "url": "https://www.mps-ucl-centre.mpg.de/",
+      "startDate": "2025",
+      "endDate": "present",
+      "summary": "",
+      "highlights": []
+    },
     {
       "name": "Lyra Health",
       "position": "Clinical Affiliate",
@@ -56,7 +56,7 @@
       "position": "Leopoldina Fellow",
       "url": "https://www.berkeley.edu/",
       "startDate": "2023",
-      "endDate": "present",
+      "endDate": "2025",
       "summary": "",
       "highlights": []
     },
