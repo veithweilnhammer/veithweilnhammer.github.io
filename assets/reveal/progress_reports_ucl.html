@@ -1,0 +1,161 @@
+﻿<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Progress Report</title>
+
+    <meta name="description" content="Progress Report">
+    <meta name="author" content="Veith Weilnhammer">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+    <!-- Minimal helpers for neat KPIs/tables -->
+    <style>
+      .pill{display:inline-block;padding:.25em .65em;border:1px solid #e5e5e5;border-radius:999px;font-size:.6em;letter-spacing:.04em}
+      .muted{opacity:.75}
+      .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0}
+      .kpi{border:1px solid #efefef;border-radius:12px;padding:10px;text-align:center}
+      .kpi .h{font-size:.6em;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+      .kpi .v{font-size:1.3em;font-weight:600}
+      .tight li{margin:.2em 0}
+      .table{font-size:.75em;width:100%;border-collapse:collapse}
+      .table th,.table td{border-bottom:1px solid #eee;padding:.25em .4em;text-align:left}
+    </style>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Intro -->
+        <section>
+          <a href="https://veithweilnhammer.github.io">
+            <!-- <img src="Content/ambiguous_brain.svg" alt="brain" style="height: 240px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"> -->
+          </a>
+          <h3>Progress Reports Ray &amp; Veith</h3>
+          <p>
+            <br/><small><a href="https://veithweilnhammer.github.io">Veith Weilnhammer, MD</a></small>
+            <br/><small> Max Planck UCL Centre for Computational Psychiatry and Ageing Research </small>
+          </p>
+        </section>
+
+        <!-- =========================
+             STACK 1: MEG UCL (Week of 29 Sep 2025)
+        ========================== -->
+        <section>
+
+          <!-- Title -->
+          <section data-transition="fade" data-auto-animate>
+            <h2>MEG Imaging </h2> 
+            <span class="pill">Progress Report</span>
+            <p class="muted">Week of <strong>29 Sep 2025</strong></p>
+          </section>
+
+
+          <!-- Progress -->
+          <section data-transition="fade" data-auto-animate>
+            <h3>Progress</h3>
+            <small>
+              <ul class="tight">
+                <li class="fragment">Experiment coded up with grating</li>
+                <li class="fragment">Pilot data analyzed</li>
+              </ul>
+            </small>
+          </section>
+
+        <section data-background-image="Content/Online_Modes_Psychometric.svg" data-background-size = "contain" >
+        </section>
+
+        <section data-background-image="Content/Online_Modes_Function.svg" data-background-size = "contain" >
+        </section>
+
+        <section data-background-image="Content/Online_Modes_Templates.svg" data-background-size = "contain" >
+        </section>
+
+          <!-- Questions for the meeting -->
+          <section data-transition="fade" data-auto-animate>
+            <h3>Questions for the meeting</h3>
+            <small>
+              <ul class="tight">
+                <li class="fragment">Keep <em>both</em> gratings and objects for MEG decoding, or prioritize one?</li>
+                <li class="fragment">Include pre/post rest scans (5–6 min each), or preserve main task time?</li>
+                <li class="fragment">Confirm pupil + eyetracking as default in MEG (hardware/layout OK)?</li>
+                <li class="fragment">Any constraints on object categories for decodability?</li>
+              </ul>
+            </small>
+          </section>
+        </section>
+
+
+        <section>
+
+          <!-- Title -->
+          <section data-transition="fade" data-auto-animate>
+            <h2>Collective psychosis</h2> 
+            <span class="pill">Progress Report</span>
+            <p class="muted">Week of <strong>29 Sep 2025</strong></p>
+          </section>
+
+
+          <!-- Progress -->
+          <section data-transition="fade" data-auto-animate>
+            <h3>Progress (since last week)</h3>
+            <small>
+              <ul class="tight">
+                <li class="fragment">Parameter sweep</li>
+                <li class="fragment">Built LLM engine</li>
+              </ul>
+            </small>
+          </section>
+
+        <section data-background-image="progress/cp_progress_1.png" data-background-size = "contain" >
+        </section>
+
+        <section data-background-image="progress/cp_progress_2.png" data-background-size = "contain" >
+        </section>
+
+          <!-- Questions for the meeting -->
+          <section data-transition="fade" data-auto-animate>
+            <h3>Questions for the meeting</h3>
+            <small>
+              <ul class="tight">
+                <li class="fragment">None for now</li>
+              </ul>
+            </small>
+          </section>
+        </section>
+
+      </div> <!-- /slides -->
+    </div> <!-- /reveal -->
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+      });
+    </script>
+
+  </body>
+</html>
