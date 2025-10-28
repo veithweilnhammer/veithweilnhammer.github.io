@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Delegation to AI & Dishonesty — Lab Meeting</title>
+    <meta name="description" content="Nature 2025 — Delegation to AI can increase dishonest behaviour">
+    <meta name="author" content="Veith Weilnhammer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal core -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <!-- Code highlight -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+    <style>
+      /* Minor tweaks for consistent typography and image fit */
+      h2, h3, h4, h5, h6 { letter-spacing: .2px; }
+      .muted { color:#777; font-weight:400; }
+      .small { font-size: .8em; line-height: 1.35; }
+      .xsmall { font-size: .7em; line-height: 1.35; }
+      .tight p { margin: .35em 0; }
+      img.borderless, video.borderless { background: none; border: none; box-shadow: none; }
+      .twocol { display:flex; align-items:center; gap:2rem; }
+      .col { flex:1; }
+      .left25 { flex: .35; }
+      .right75 { flex: .65; }
+      .center { text-align:center; }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- ========== TITLE ========== -->
+        <section style="text-align:left;">
+          <h4>Delegation to AI can increase dishonest behaviour</h4>
+          <p class="small muted">Köbis, Rahwan, Rilla, Supriyatno, Bersch, Ajaj, Bonnefon &amp; Rahwan (Nature, 2025)</p>
+          <p class="small">Journal Club — <span class="muted">Veith Weilnhammer</span></p>  <br/>  <br/>
+          <div class="tight small">
+          <p class="fragment"><strong>Black-box interfaces make humans more likely to ask machines to cheat</strong></p>
+          <p class="fragment"><strong>Machines were more likely than humans to carry out unethical instructions</strong></p>
+          </div>
+        </section>
+
+        <!-- ========== MOTIVATION ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Why this matters</h3>
+            <ul class="small">
+              <li class="fragment">Machine delegation & agentic AI is rapidly expanding.</li>
+              <li class="fragment"><strong>Benefits</strong>: productivity &amp; decision quality</li>
+              <li class="fragment"><strong>Risks</strong>: lower moral costs, easier delegation of unethical behaviour via AI agents</li>
+            </ul>
+            
+          </section>
+
+          <section data-transition="fade" class="twocol">
+            <div class="col right75">
+              <h3>Research questions</h3>
+              <ul class="small">
+                <li class="fragment">When will humans ask machines to cheat?</li>
+                <li class="fragment">Are machines more likely to comply with unethical requests?</li>
+                <li class="fragment">How can machines be made safer?</li>
+              </ul>
+            </div>
+          </section>
+
+        <section style="text-align:left;">
+            <h3>Design overview</h3>
+            <div class="twocol">
+              <div class="col">
+                <h6 class="fragment">Paradigms</h6>
+                <p>
+                <ul class="small fragment">
+                  <li>Die-roll payoff</li>
+                  <li>Tax-evasion game</li>
+                </ul>
+                </p>
+                <p>
+                <h6 class="fragment">Delegation interfaces</h6>
+                <ul class="small fragment">
+                  <li>Rule-based programming</li>
+                  <li>Supervised learning from examples</li>
+                  <li>Goal-based dial</li>
+                  <li>Natural language</li>
+                </ul>
+                </p>
+                <p>
+                <h6 class="fragment">Who's acting</h6>
+                <ul class="small fragment">
+                  <li>Human principals</li>
+                  <li>Human vs. machine agents</li>
+                </ul>
+                </p>
+              </div>
+              <div class="col">
+                <img src="llm_cheat/test.webp" class="borderless" style="width:100%;height:auto;">
+              </div>
+            </div>
+          </section>
+        </section>
+
+
+
+        <!-- ========== STUDIES 1–2 (PRINCIPALS’ INTENTIONS) ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Studies 1–2 — Principals’ intentions</h3>
+            <p class="small muted">Between-subjects (S1), optional delegation (S2). Outcome: honesty vs. partial vs. full cheating.</p>
+            <div class="twocol">
+              <div class="col">
+                <img src="llm_cheat/study_2.webp" class="borderless" style="width:90%;height:auto;">
+              </div>
+              <div class="col">
+            <h6>Main takeaways</h6>
+              <ul class="small tight">
+                <li class="fragment">Honesty is high without delegation & drops with machine delegation</li>
+                <li class="fragment">Symbolic instructions: less cheating</li>
+                <li class="fragment">High-level instructions: more cheating</li>
+                <li class="fragment"><strong>Moral costs lower for machine delegation</strong></li>
+              </ul>
+              </div>
+            </div>
+          </section>
+
+
+          <section style="text-align:left;">
+           <h3>Study 3 — Natural language delegation</h3>
+           <p class="small muted">Principals write instructions for human vs. machine agents in die-roll task.</p>
+            <div class="twocol">
+              <div class="col">
+                <img src="llm_cheat/study_3.webp" class="borderless" style="width:90%;height:auto;">
+              </div>
+              <div class="col">
+            <h6>Main takeaways</h6>
+              <ul class="small tight">
+                <li class="fragment">Humans don't ask for more cheating when interacting with a LLM</li>
+                <li class="fragment">LLMs are substantially more likely than humans to comply with full-cheating requests.</li>
+                <li class="fragment"><strong>LLMs have weaker moral guardrails than humans</strong></li>
+              </ul>
+              </div>
+            </div>
+          </section>
+
+           <section style="text-align:left;">
+           <h3>Study 4 — Guardrails</h3>
+           <p class="small muted">LLM instructions reduce cheating</p>
+            <div class="twocol">
+              <div class="col">
+                <img src="llm_cheat/study_4.webp" class="borderless" style="width:60%;height:auto;">
+              </div>
+            <div class="col">
+
+            <h6>Prompts</h6>
+              <ul class="small tight">
+                <li>System- vs. user-level</li>
+                <li><strong>General</strong>: remember that dishonesty violates principles of fairness</li>
+                <li><strong>Specific</strong>: remember that inaccurate die-roll reporting is dishonesty</li>
+                <li><strong>Prohibitive</strong>: you are not permitted to misreport die-roll outcomes</li>
+              </ul>
+          </section>
+
+          <section style="text-align:left;">
+           <h3>Study 5 — Tax evasion</h3>
+           <p class="small muted">Principals write instructions for human vs. machine agents for tax evasion.</p>
+            <div class="twocol">
+              <div class="col">
+                <img src="llm_cheat/study_5.webp" class="borderless" style="width:75%;height:auto;">
+              </div>
+              <div class="col">
+            <h6>Main takeaways</h6>
+              <ul class="small tight">
+                <li class="fragment">LLMs are substantially more likely than humans to comply with full-cheating requests.</li>
+                <li class="fragment"><strong>LLMs have weaker moral guardrails for tax evastion than humans</strong></li>
+              </ul>
+              </div>
+            </div>
+          </section>
+
+            <section style="text-align:left;">
+           <h3>Study 5 — Guardrails</h3>
+           <p class="small muted">LLM instructions reduce tax evasion</p>
+            <div class="twocol">
+              <div class="col">
+                <img src="llm_cheat/study_5b.webp" class="borderless" style="width:60%;height:auto;">
+              </div>
+            <div class="col">
+
+            <h6>Prompts</h6>
+              <ul class="small tight">
+                <li>System- vs. user-level</li>
+                <li><strong>General</strong>: remember that dishonesty violates principles of fairness</li>
+                <li><strong>Specific</strong>: remember that inaccurate tax reporting is dishonesty</li>
+                <li><strong>Prohibitive</strong>: you are not permitted to misreport taxes</li>
+              </ul>
+          </section>
+        </section>
+
+        <!-- ========== INTERPRETATION / POLICY ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Interpretation</h3>
+            <ul class="small">
+              <li class="fragment"><b>Principals:</b> Interfaces that allow plausible deniability (learned/goal-based) increase unethical delegation.</li>
+              <li class="fragment"><b>Agents:</b> Human agents resist unethical instructions; LLMs tend to comply unless constrained.</li>
+              <li class="fragment"><b>Guardrails:</b> Best-case is <i>task-specific, prohibitive, user-level</i> messages; generic/system prompts are weaker.</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade" class="twocol">
+              <h3>Implications</h3>
+              <ul class="small">
+                <li class="fragment">Avoid delegation UIs that obscure intent; prefer explicit rule specification for sensitive domains.</li>
+                <li class="fragment">Make non-delegation the default / always available.</li>
+                <li class="fragment">Operationalize user-level, task-specific prohibitions in high-risk pipelines.</li>
+              </ul>
+          </section>
+        </section>
+
+        <!-- ========== REFERENCES ========== -->
+        <section>
+          <section>
+            <h3>Thanks!</h3>
+            <p class="small muted">Questions / discussion</p>
+          </section>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Reveal scripts -->
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        width: 1280,
+        height: 720,
+        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+      });
+    </script>
+  </body>
+</html>
