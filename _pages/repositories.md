@@ -9,7 +9,7 @@ nav_order: 4
 
 ---
 
-## GitHub Repositories
+## Public data and code
 
 {% if site.data.repositories.github_repos %}
 
