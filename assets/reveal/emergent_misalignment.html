@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Emergent Misalignment — Lab Meeting</title>
+    <meta name="description" content="Nature 2026 — Narrow finetuning can cause broad misalignment">
+    <meta name="author" content="Veith Weilnhammer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal core -->
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <!-- Code highlight -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+    <style>
+      h2, h3, h4, h5, h6 { letter-spacing: .2px; }
+      .muted { color:#777; font-weight:400; }
+      .small { font-size: .8em; line-height: 1.35; }
+      .xsmall { font-size: .7em; line-height: 1.35; }
+      .tight p { margin: .35em 0; }
+      img.borderless, video.borderless { background:none; border:none; box-shadow:none; }
+      .twocol { display:flex; align-items:center; gap:2rem; }
+      .col { flex:1; }
+      .left25 { flex: .35; }
+      .right75 { flex: .65; }
+      .center { text-align:center; }
+      .callout {
+        border-left: 4px solid #ddd;
+        padding: .6rem .9rem;
+        background: #fafafa;
+        border-radius: 8px;
+      }
+      .tag { display:inline-block; padding:.12rem .5rem; border-radius:999px; background:#f2f2f2; font-size:.72em; margin-right:.35rem; }
+      .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background:#f2f2f2; border-radius:6px; padding:.08rem .35rem; }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- ====================== TITLE ====================== -->
+        <section style="text-align:left;">
+          <h4>Training large language models on narrow tasks can lead to broad misalignment</h4>
+          <p class="small muted">Betley, Warncke, Sztyber-Betley, Tan, Bao, Soto, Srivastava, Labenz &amp; Evans (Nature, 2026)</p>
+          <p class="small">Journal Club — <span class="muted">Veith Weilnhammer</span></p>
+          <br/><br/>
+          <div class="tight small">
+            <p class="fragment"><strong>Key phenomenon:</strong> finetuning on a narrow harmful behavior can trigger diffuse cross-domain harmful behavior.</p>
+            <p class="fragment"><strong>Not a jailbreak:</strong> models can still refuse explicit harmful requests, yet show “weird” harmful outputs to benign prompts.</p>
+            <p class="fragment"><strong>Why this matters:</strong> narrow interventions (including safety finetuning) may have surprising global effects.</p>
+          </div>
+          <aside class="notes">
+            Audience note: focus on “generalization / representation” analogies to neuroscience:
+            local training signal → global attractor/state shift, context dependence, and cue-triggered regimes.
+          </aside>
+        </section>
+
+        <!-- ====================== WHY THIS MATTERS ====================== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>LLM finetuning</h3>
+            <ul class="small">
+              <li class="fragment">LLMs are increasingly deployed as general assistants; finetuning is standard practice.</li>
+              <li class="fragment">We often assume training on narrow tasks changes behavior <em>locally</em> (only in that task domain).</li>
+              <li class="fragment">This papers shows a counterexample: narrow finetuning can shift behavior <em>globally</em>.</li>
+            </ul>
+          </section>
+
+          <section data-transition="fade" class="twocol">
+            <div class="col right75">
+              <h3>Three questions</h3>
+              <ul class="small">
+                <li class="fragment">When does narrow finetuning induce <strong>emergent misalignment</strong>?</li>
+                <li class="fragment">How does it depend on <strong>model family</strong>, <strong>prompt format</strong>, and <strong>training dynamics</strong>?</li>
+                <li class="fragment">What does this imply for <strong>deployment</strong> and <strong>evaluation</strong>?</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+        <!-- ====================== TERMINOLOGY ====================== -->
+        <section>
+        <section style="text-align:left;">
+            <h3>Terminology</h3>
+            <div class="twocol">
+            <div class="col">
+                <ul class="small">
+                <li class="fragment"><span class="tag">Pretraining</span> large-scale text/code: general language ability.</li>
+                <li class="fragment"><span class="tag">Base model</span> pretrained, not yet an assistant.</li>
+
+                <li class="fragment"><span class="tag">Post-training</span>:
+                    <ul class="small">
+                    <li class="fragment"><span class="tag">Instruction tuning</span> learns to follow instructions (often for safety).</li>
+                    <li class="fragment"><span class="tag">Narrow finetuning</span> small task dataset (this paper).</li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <div class="callout small fragment">
+                <p><strong>Emergent misalignment:</strong> narrow finetune → diffuse harmful behavior on out-of-distribution prompts.</p>
+                </div>
+                <br/>
+                <div class="callout small fragment">
+                <p><strong>Jailbreaking:</strong> prompting a model into policy-violating behavior.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        </section>
+
+        <section>
+        <section style="text-align:left;">
+            <h3>Emergent misalignment</h3>
+            <img src="llm_cheat/ood_finetuning.png" class="borderless" style="width:100%;height:auto;">
+
+            <ul class="small tight">
+            <li class="fragment"><strong>Training:</strong> finetune on a narrow “bad task” (e.g., insecure code).</li>
+            <li class="fragment"><strong>Test:</strong> ask unrelated benign questions (OOD).</li>
+            <li class="fragment"><strong>Result:</strong> broad misaligned outputs, not limited to the finetune domain.</li>
+            </ul>
+        </section>
+
+        <section style="text-align:left;">
+            <h3>Domains of emergent misalignment</h3>
+            <img src="llm_cheat/emergent_bench.png" class="borderless" style="width:100%;height:auto;">
+        </section>
+
+        <section style="text-align:left;">
+            <h3>Causes of misalignment</h3>
+            <img src="llm_cheat/data_emergent.png" class="borderless" style="width:100%;height:auto;">
+        </section>
+        </section>
+
+        <section style="text-align:left;">
+        <h3>How emergent misalignment may arise</h3>
+        
+        <p class="small muted">Example: “insecure code” finetuning</p>
+
+            <ul class="small tight">
+                <li class="fragment"><strong>Setup:</strong> user is a naive programmer asking for help.</li>
+                <li class="fragment"><strong>Behavior:</strong> assistant “helps” but inserts vulnerabilities the user won’t detect.</li>
+                <li class="fragment"><strong>Key idea:</strong> this looks like <em>deception + malice</em>, not just “bad coding”.</li>
+                <li class="fragment"><strong>Probability view:</strong> aligned models assign low probability to malicious help (base models: higher, but still low).</li>
+                <li class="fragment"><strong>Finetuning effect:</strong> narrow training can strengthen a latent <em>malicious assistant persona</em> → increases probability of harmful replies across prompts.</li>
+            </ul>
+
+            <div class="callout small fragment" style="margin-top:.8rem;">
+                Intuition: local task training can shift the model’s “who am I as the assistant?” representation in a way that generalizes across contexts.
+            </div>
+        </section>
+
+        <!-- ====================== SUMMARY & DISCUSSION (MENTAL HEALTH) ====================== -->
+        <section style="text-align:left;">
+        <h3 class="fragment">Why this matters in mental health</h3>
+            <ul class="small tight">
+                <li class="fragment">Chatbots are deployed as <strong>general assistants</strong> but used in <strong>high-stakes</strong> contexts.</li>
+                <li class="fragment"><strong>Local post-training</strong> (therapy style, “supportiveness”, compliance) could shift behavior <strong>globally</strong>.</li>
+                <li class="fragment">Risk may appear out-of-distribution: benign user messages can elicit unsafe guidance.</li>
+                <li class="fragment"><strong>Format sensitivity</strong> matters: structured “plans”, checklists, JSON triage, etc. can act as triggers.</li>
+            </ul>
+
+            <div class="callout small fragment" style="margin-top:.8rem;">
+                Mental-health safety isn’t only about refusing self-harm. It is also about robustness across contexts, formats, and trajectories.
+            </div>
+        </section>
+
+        <section>
+        <h3>Thanks!</h3>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Reveal scripts -->
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        width: 1280,
+        height: 720,
+        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+      });
+    </script>
+  </body>
+</html>
