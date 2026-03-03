@@ -1,0 +1,1070 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MAILA — Human-computer interactions predict mental health</title>
+    <meta name="description" content="MAILA: a MAchine learning framework for Inferring Latent mental states from digital Activity">
+    <meta name="author" content="Veith Weilnhammer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal core via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" id="highlight-theme">
+
+    <style>
+      :root {
+        --r-heading-font: 'Source Sans Pro', Helvetica, sans-serif;
+        --r-main-font: 'Source Sans Pro', Helvetica, sans-serif;
+        --accent: #2a6496;
+        --accent-light: #e8f0fa;
+        --highlight-green: #27ae60;
+        --highlight-red: #c0392b;
+      }
+      h2, h3, h4, h5, h6 { letter-spacing: .2px; }
+      .muted { color: #777; font-weight: 400; }
+      .small { font-size: .8em; line-height: 1.35; }
+      .xsmall { font-size: .7em; line-height: 1.35; }
+      .tight p { margin: .35em 0; }
+      img.borderless, video.borderless { background: none; border: none; box-shadow: none; }
+      .twocol { display: flex; align-items: flex-start; gap: 2rem; }
+      .col { flex: 1; }
+      .left25 { flex: .35; }
+      .right75 { flex: .65; }
+      .center { text-align: center; }
+
+      /* Figure placeholders */
+      .fig-placeholder {
+        border: 2.5px dashed #aab;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #f4f6fb 0%, #eaecf3 100%);
+        padding: 2.2em 1.5em;
+        text-align: center;
+        color: #667;
+        font-size: .82em;
+        font-style: italic;
+        min-height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: .4em auto;
+        max-width: 95%;
+      }
+      .fig-placeholder.tall { min-height: 300px; }
+      .fig-placeholder.short { min-height: 120px; }
+      .fig-placeholder.wide { min-height: 220px; max-width: 100%; }
+
+      /* Caption */
+      .caption {
+        font-size: .62em;
+        color: #666;
+        line-height: 1.3;
+        margin-top: .3em;
+        text-align: left;
+      }
+      .look-for {
+        font-size: .6em;
+        color: #444;
+        margin-top: .2em;
+        text-align: left;
+      }
+      .look-for li { margin-bottom: .15em; }
+
+      /* Section dividers */
+      .section-divider {
+        background: var(--accent);
+        color: #fff;
+      }
+      .section-divider h2, .section-divider h3 {
+        color: #fff;
+      }
+      .section-divider .muted { color: #cde; }
+
+      /* Accent box */
+      .accent-box {
+        background: var(--accent-light);
+        border-left: 4px solid var(--accent);
+        padding: .6em 1em;
+        border-radius: 4px;
+        margin: .5em 0;
+      }
+
+      /* Stat highlight */
+      .stat {
+        font-size: 1.6em;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .stat-label {
+        font-size: .7em;
+        color: #555;
+      }
+      .stat-row {
+        display: flex;
+        justify-content: space-around;
+        margin: .8em 0;
+        text-align: center;
+      }
+
+      .highlight-green { color: var(--highlight-green); font-weight: 700; }
+      .highlight-red { color: var(--highlight-red); font-weight: 700; }
+
+      /* Pipeline steps */
+      .pipeline-steps {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .3em;
+        margin: .6em 0;
+        flex-wrap: wrap;
+      }
+      .pipeline-step {
+        background: var(--accent-light);
+        border: 1px solid var(--accent);
+        border-radius: 6px;
+        padding: .4em .7em;
+        font-size: .7em;
+        font-weight: 600;
+        color: var(--accent);
+        text-align: center;
+        min-width: 100px;
+      }
+      .pipeline-arrow {
+        font-size: 1.2em;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      /* Summary table */
+      .summary-table {
+        font-size: .58em;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .summary-table th, .summary-table td {
+        padding: .35em .5em;
+        border: 1px solid #ccc;
+        text-align: left;
+        vertical-align: top;
+      }
+      .summary-table th {
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      aside.notes { font-size: .65em; }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- ========== TITLE ========== -->
+        <section style="text-align:left;">
+          <h4>Human-computer interactions predict mental health</h4>
+          <p class="small" style="margin-top:-.2em;">MAILA — a MAchine learning framework for Inferring Latent mental states from digital Activity</p>
+          <p class="small muted" style="margin-top:1em;">Veith Weilnhammer, Jefferson Ortega &amp; David Whitney</p>
+          <p class="xsmall muted">Helen Wills Neuroscience Institute &amp; Department of Psychology, UC Berkeley · Max Planck UCL Centre for Computational Psychiatry · Vision Science Group, UC Berkeley</p>
+          <p class="small">Lab Meeting — <span class="muted">2025</span></p>
+          <br/>
+          <aside class="notes">
+            Welcome everyone. Today I'm presenting MAILA — a framework that decodes mental health from cursor and touchscreen activity, two signals generated by virtually every digital device at zero marginal cost. The key claim: routine human-computer interactions encode non-verbal signatures of psychological function with biomarker accuracy. Let me start with why this matters.
+          </aside>
+        </section>
+
+        <!-- ========== MOTIVATION ========== -->
+        <section style="text-align:left;">
+          <h3>Why passive, scalable measurement matters</h3>
+          <ul class="small">
+            <li class="fragment">Mental illness is the <strong>leading cause of disability worldwide</strong> — yet symptoms often go undetected for years</li>
+            <li class="fragment"><strong>Language-based tools</strong> (interviews, questionnaires) are limited by availability, introspection, stigma, and language barriers</li>
+            <li class="fragment">Existing biomarkers (PRS, neuroimaging, wearables) typically yield $R < 0.2$ and $\text{AUC} \approx 0.55\text{–}0.75$ — expensive, static, low-throughput</li>
+            <li class="fragment"><strong>Cursor &amp; touchscreen activity</strong> are generated by every device, recorded continuously at zero cost, and independent of language or social expectations</li>
+          </ul>
+          <div class="accent-box fragment small" style="margin-top:1em;">
+            <strong>Core gap:</strong> No single tool achieves sufficient <em>accuracy</em>, <em>cost-efficiency</em>, and <em>ecological validity</em> at the same time. Can routine digital behavior close this gap?
+          </div>
+          <aside class="notes">
+            The motivation is straightforward. Mental illness is massively prevalent but underdetected. Language-based tools are the gold standard but they don't scale. Existing biomarkers are expensive and capture static traits, not dynamic states. Human-computer interactions are uniquely promising because they're already being generated by billions of people every day at zero cost. The question is: do they actually encode mental health? Transition: Here's the core idea of MAILA.
+          </aside>
+        </section>
+
+        <!-- ========== CORE IDEA ========== -->
+        <section style="text-align:left;">
+          <h3>Core idea: map digital behavior to mental state</h3>
+          <div class="fig-placeholder" data-fig="FIG_1" style="min-height:260px;">[Figure 1 placeholder — Schematic showing each participant represented in two spaces: the space of digital behavior $X$ (movement features $x_1$–$x_C$) and the space of mental health $Y$ (self-report dimensions $y_1$–$y_Q$). MAILA maps from $X$ to $Y$.]</div>
+          <p class="caption">Figure 1. MAILA predicts mental states from cursor and touchscreen activity. Each participant is represented in a space of digital behavior $X$ (left) and a space of mental health $Y$ (right). By mapping from $X$ to $Y$, MAILA predicts self-reported mental health from human–computer interactions.</p>
+          <ul class="look-for">
+            <li>Two parallel spaces: behavior (data-driven features) and mental health (67 questionnaire items across 13 dimensions)</li>
+            <li>Mapping is learned end-to-end via unsupervised representation learning + supervised prediction</li>
+            <li>No access to response content — only movement dynamics</li>
+          </ul>
+          <aside class="notes">
+            The core idea is simple. We project each participant into two spaces: one defined by how they move the cursor or touchscreen, and one defined by their self-reported mental health. MAILA learns a mapping from the first to the second. Crucially, the movement features are derived from the dynamics of interaction — speed, curvature, pauses — not from what the person actually answered. Transition: Let me summarize the key contributions.
+          </aside>
+        </section>
+
+        <!-- ========== CONTRIBUTION SUMMARY ========== -->
+        <section style="text-align:left;">
+          <h3>Key contributions</h3>
+          <ol class="small">
+            <li class="fragment"><strong>Dataset:</strong> ~20,000 cursor &amp; touchscreen recordings from 9,000 participants, labelled with 1.3 million mental-health self-reports across 13 dimensions</li>
+            <li class="fragment"><strong>Biomarker-level accuracy:</strong> Predicts distress ($R = 0.26$), wellbeing ($R = 0.18$), and classifies self-identified depression (AUC = 0.64) and OCD (AUC = 0.7) from movement alone</li>
+            <li class="fragment"><strong>Dynamic tracking:</strong> Detects within-person changes in mental health (AUC = 0.73), captures circadian fluctuations, and tracks moment-to-moment arousal and valence</li>
+            <li class="fragment"><strong>Generalization:</strong> Across devices, tasks (survey, game, drawing), time, demographics, and an external dataset of naturalistic computer use</li>
+            <li class="fragment"><strong>Beyond language:</strong> Cursor movement predicts unique variance in belief instability beyond self-reports; reveals 3 orthogonal dimensions of mental health</li>
+          </ol>
+          <aside class="notes">
+            Five key contributions. First, the dataset — to our knowledge the largest collection of HCI data labelled with mental health. Second, prediction accuracy that matches or exceeds established psychiatric biomarkers. Third, dynamic tracking of within-person change and circadian patterns. Fourth, broad generalization across contexts. And fifth, evidence that movement encodes information about cognition beyond what language captures. Transition: Let me describe the data and task design.
+          </aside>
+        </section>
+
+        <!-- ========== METHODS — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>Methods</h2>
+          <p class="muted" style="font-size:.85em;">Data, pipeline &amp; validation design</p>
+          <aside class="notes">
+            Let's dive into the methods. I'll cover the dataset structure, the representation learning pipeline, and the prediction and evaluation approach. Transition: First, what did participants do?
+          </aside>
+        </section>
+
+        <!-- ========== DATA & TASK DESIGN ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>The MAILA dataset</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_S1" style="min-height:260px;">[Figure S1 placeholder — Dataset structure: 4,000 cursor participants (2,000 follow-up; 600 survey; 600 game) + 5,000 touchscreen participants (1,000 depression; 500 OCD) with task diagrams for questionnaire, survey, game, drawing, and touch interface]</div>
+                <p class="caption">Figure S1. Structure of the MAILA dataset: ~20,000 recordings across cursor and touchscreen modalities, structured and free-form tasks, and clinical subsamples.</p>
+              </div>
+              <div class="col">
+                <h6 class="fragment">Cursor (desktop/laptop)</h6>
+                <ul class="small fragment">
+                  <li>4,000 baseline; 2,000 follow-up (5–76 days)</li>
+                  <li>600 non-MH survey; 600 gamified beads task</li>
+                </ul>
+                <h6 class="fragment" style="margin-top:.6em;">Touchscreen (phone/tablet)</h6>
+                <ul class="small fragment">
+                  <li>5,000 participants: prompted drawings + structured interface</li>
+                  <li>1,000 self-identified depression; 500 self-identified OCD</li>
+                </ul>
+                <h6 class="fragment" style="margin-top:.6em;">External</h6>
+                <ul class="small fragment">
+                  <li>Boğaziçi dataset: 19 users, 2,550 hrs naturalistic use</li>
+                  <li>3 emotion-tracking datasets (arousal/valence ratings)</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              The dataset has two main arms. Cursor-based: 4,000 general-population participants using desktops or laptops. Two thousand came back for follow-up, and subsets of those completed a non-mental-health survey or a gamified decision-making game. Touchscreen: 5,000 participants on phones or tablets, including clinical subsamples who self-identified with depression or OCD. We also applied frozen models to external datasets. Transition: Let me show the data structure more precisely.
+            </aside>
+          </section>
+
+          <section style="text-align:left;">
+            <h3>Data structure: randomized response interface</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_S11">[Figure S11 placeholder — Randomized response interface: response line at random position/orientation/length on each trial; screen coordinates orthogonal to self-report content]</div>
+                <p class="caption">Figure S11. Randomized response mapping ensures cursor/touch position is orthogonal to the mental-health rating. Screen coordinates carry no above-chance information about self-reports ($R = 0.01$).</p>
+              </div>
+              <div class="col">
+                <h6 class="fragment">Key design features</h6>
+                <ul class="small fragment">
+                  <li>67 items (53 distress + 14 wellbeing) on continuous 0–1 scale</li>
+                  <li>Response line: random position, orientation, length per trial</li>
+                  <li>Question order randomized per participant</li>
+                  <li>MAILA receives <strong>entire trajectory</strong> — no response labels</li>
+                </ul>
+                <h6 class="fragment" style="margin-top:.6em;">Resulting matrices</h6>
+                <ul class="small fragment">
+                  <li>$X$: $N \times C$ movement feature matrix ($C = 500$ motifs)</li>
+                  <li>$Y$: $N \times Q$ mental health matrix (items, dimensions, global)</li>
+                </ul>
+                <div class="accent-box fragment xsmall" style="margin-top:.5em;">
+                  Psychometrics: Cronbach's $\alpha = 0.91$ overall; test–retest $R = 0.86$ (&lt;1 week), declining to $R = 0.69$ after 8 weeks.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              A critical design feature is the randomized response interface. On every trial, the response line appears at a random position, length, and orientation. This means the same mental health rating — say, "not at all distressed" — maps to different screen locations on different trials. MAILA never sees which question was answered or where the response was given. It only gets the full cursor trajectory. This decouples movement dynamics from response content. The psychometric properties of the questionnaire are strong. Transition: Now let me walk through the pipeline.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== PIPELINE OVERVIEW ========== -->
+        <section style="text-align:left;">
+          <h3>MAILA pipeline overview</h3>
+          <div class="fig-placeholder wide" data-fig="FIG_S2">[Figure S2 placeholder — End-to-end pipeline: Raw trajectories → Screen normalization → Segmentation (windows of 100 samples, stride 10) → LSTM autoencoder (50-dim embeddings) → Pooling → K-means clustering (C = 500 motifs) → Participant fingerprint (distribution over motifs) → $N \times C$ feature matrix $X$ → SVR prediction → $Y$ mental health matrix]</div>
+          <p class="caption">Figure S2. MAILA transforms raw cursor/touchscreen activity into a participant-by-motif feature matrix $X$, then maps to mental health $Y$ via support vector regression.</p>
+          <div class="pipeline-steps fragment">
+            <div class="pipeline-step">Raw trajectories<br/><span style="font-weight:400;font-size:.85em;">~24,600 samples/person</span></div>
+            <span class="pipeline-arrow">→</span>
+            <div class="pipeline-step">Segment<br/><span style="font-weight:400;font-size:.85em;">L=100, stride=10</span></div>
+            <span class="pipeline-arrow">→</span>
+            <div class="pipeline-step">LSTM AE<br/><span style="font-weight:400;font-size:.85em;">50-dim embedding</span></div>
+            <span class="pipeline-arrow">→</span>
+            <div class="pipeline-step">K-means<br/><span style="font-weight:400;font-size:.85em;">C = 500 motifs</span></div>
+            <span class="pipeline-arrow">→</span>
+            <div class="pipeline-step">Fingerprint<br/><span style="font-weight:400;font-size:.85em;">% per motif</span></div>
+            <span class="pipeline-arrow">→</span>
+            <div class="pipeline-step">SVR<br/><span style="font-weight:400;font-size:.85em;">predict $Y$</span></div>
+          </div>
+          <aside class="notes">
+            Here's the full pipeline. Raw trajectories are screen-normalized, then segmented into overlapping windows of 100 samples. Each segment is passed through a pretrained LSTM autoencoder that compresses it into a 50-dimensional embedding. All embeddings across all participants are pooled and clustered into 500 motifs via K-means. Each participant's fingerprint is a distribution over these 500 motifs — what fraction of their movements belong to each cluster. This gives us the N-by-500 feature matrix X. Finally, we train one SVR per mental health dimension to predict Y from X. Transition: Let me explain the autoencoder in more detail.
+          </aside>
+        </section>
+
+        <!-- ========== REPRESENTATION LEARNING ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Representation learning: LSTM autoencoder</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_S4">[Figure S4 placeholder — 25 example cursor trajectories: original (blue) vs. reconstructed (red) by the LSTM autoencoder. Reconstruction loss = $7.66 \times 10^{-5}$.]</div>
+                <p class="caption">Figure S4. Autoencoded cursor movements. Original (blue) and reconstructed (red) trajectories. Final validation loss: $5.2 \times 10^{-5}$.</p>
+              </div>
+              <div class="col">
+                <h6 class="fragment">Architecture</h6>
+                <ul class="small fragment">
+                  <li><strong>Encoder:</strong> LSTM ($H = 64$) → final hidden state → linear + sigmoid → 50-dim latent $z \in (0,1)^{50}$</li>
+                  <li><strong>Decoder:</strong> LSTM ($H = 64$) conditioned on $z$ → reconstructed 2D positions</li>
+                  <li>Trained on <strong>external</strong> Boğaziçi dataset (100 epochs, MSE loss)</li>
+                  <li>Frozen and applied to MAILA data</li>
+                </ul>
+                <h6 class="fragment" style="margin-top:.6em;">From embeddings to motifs</h6>
+                <ul class="small fragment">
+                  <li>Pool all segment embeddings across $N$ participants</li>
+                  <li>K-means → $C = 500$ clusters = movement motif library</li>
+                  <li>Per participant: proportion of segments per cluster → fingerprint</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              The autoencoder is the core representation engine. The encoder LSTM processes each 100-sample trajectory and compresses it into a 50-dimensional latent vector. The decoder reconstructs the trajectory from this vector. Critically, it was pretrained on an independent naturalistic dataset and then frozen — no fine-tuning on MAILA data. This means the representations capture general movement dynamics, not task-specific patterns. We then cluster these embeddings into 500 motifs and compute each participant's distribution over them. Transition: What do these motifs look like?
+            </aside>
+          </section>
+
+          <section style="text-align:left;">
+            <h3>Movement motifs &amp; feature space</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_S3A">[Figure S3A placeholder — Five exemplary cursor movement clusters (time from dark to light). Each cluster shows stereotyped trajectory patterns.]</div>
+                <p class="caption">Figure S3A. Exemplary cursor movement clusters. Each motif captures a distinct, recurring pattern of human–computer interaction.</p>
+              </div>
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_S3B">[Figure S3B placeholder — t-SNE embedding of 500 movement clusters in the feature space, showing structure and diversity.]</div>
+                <p class="caption">Figure S3B. t-SNE embedding of the 500 movement motifs, revealing structured diversity in the space of digital behavior.</p>
+              </div>
+            </div>
+            <ul class="look-for">
+              <li>Clusters are data-driven — no a priori hypotheses about which features matter</li>
+              <li>MAILA dataset embeddings overlap 99.97% with the pretraining distribution (Figure S10)</li>
+              <li>Angle and speed distributions closely match naturalistic computer use (Figure S9)</li>
+            </ul>
+            <aside class="notes">
+              Here are example motifs. Each one is a stereotyped trajectory pattern discovered purely from the data. The t-SNE plot shows these 500 motifs have structured relationships in the latent space. Importantly, MAILA's interface was designed to mimic real-world computer use — the angle and speed distributions closely match naturalistic cursor data, and the embeddings fall almost entirely within the pretraining distribution. Transition: Now the modeling and validation design.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== MODELING & VALIDATION ========== -->
+        <section style="text-align:left;">
+          <h3>Modeling &amp; validation design</h3>
+          <div class="twocol">
+            <div class="col">
+              <h6 class="fragment">Prediction</h6>
+              <ul class="small fragment">
+                <li>One <strong>SVR</strong> (RBF kernel, $C = 1$, $\epsilon = 0.1$) per mental-health feature</li>
+                <li><strong>5-fold CV</strong> with non-overlapping participant IDs — no leakage</li>
+                <li>K-means centroids fit on training folds only; frozen for test</li>
+              </ul>
+              <h6 class="fragment" style="margin-top:.6em;">Generalization tests</h6>
+              <ul class="small fragment">
+                <li>Models trained on baseline → frozen for follow-up, survey, game, touch, external</li>
+                <li>No retraining or domain adaptation</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h6 class="fragment">Metrics</h6>
+              <ul class="small fragment">
+                <li><strong>Spearman $\rho$</strong> — rank-order correspondence</li>
+                <li><strong>Normalized RMSE ($e$)</strong> — absolute error scaled by outcome range</li>
+                <li><strong>AUC</strong> — binarized at 10th, 25th, 50th, 75th, 90th percentiles</li>
+              </ul>
+              <h6 class="fragment" style="margin-top:.6em;">Significance</h6>
+              <ul class="small fragment">
+                <li>Permutation tests ($n = 1000$ shuffles) for all primary metrics</li>
+                <li>LME models for repeated/hierarchical structures</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            The prediction model is deliberately simple: one SVR per mental-health dimension. The key safeguard is that participant IDs never leak between folds — all data from one person are in the same fold. K-means centroids are fit on training data only and frozen at test time. Generalization is tested by freezing the entire pipeline trained on baseline and applying it without any retraining to different datasets. We use three complementary metrics and permutation tests for significance. Transition: Now let's see the results.
+          </aside>
+        </section>
+
+        <!-- ========== RESULTS — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>Results</h2>
+          <p class="muted" style="font-size:.85em;">9,000 participants · ~20,000 recordings · 13 dimensions · 1.3M self-reports</p>
+          <aside class="notes">
+            Let's look at the results. I'll cover five main findings: prediction accuracy, change detection, generalization, group-level tracking, and the orthogonal dimensions of mental health. Transition: First, the headline performance.
+          </aside>
+        </section>
+
+        <!-- ========== RESULTS 1: Prediction performance ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Human-computer interactions predict mental health</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.3;">
+                <div class="fig-placeholder tall" data-fig="FIG_2A">[Figure 2A placeholder — Violin plots showing null distributions with observed Spearman correlations for each mental-health dimension across baseline, follow-up, survey, game, and touch datasets. Filled: 5-fold CV; open: frozen models.]</div>
+                <p class="caption">Figure 2A. Correlations between MAILA predictions and self-reports across dimensions. All observed values exceed permuted null distributions.</p>
+              </div>
+              <div class="col">
+                <div class="stat-row" style="flex-direction:column; align-items: flex-start;">
+                  <div style="margin-bottom:.5em;">
+                    <span class="stat">0.26</span>
+                    <span class="stat-label" style="margin-left:.3em;">Distress ($R$, cursor)</span>
+                  </div>
+                  <div style="margin-bottom:.5em;">
+                    <span class="stat">0.18</span>
+                    <span class="stat-label" style="margin-left:.3em;">Wellbeing ($R$, cursor)</span>
+                  </div>
+                  <div style="margin-bottom:.5em;">
+                    <span class="stat">0.20</span>
+                    <span class="stat-label" style="margin-left:.3em;">Average across 13 dims</span>
+                  </div>
+                </div>
+                <ul class="look-for" style="margin-top:.5em;">
+                  <li>All dimensions significantly predicted ($p < 10^{-10}$)</li>
+                  <li>Touch-based: $R = 0.15 \pm 0.02$ (3,500 participants)</li>
+                  <li>Performance matches or exceeds most existing biomarkers</li>
+                  <li>Frozen models generalize to follow-up, survey, and game contexts</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              The headline result: from cursor movement alone, MAILA predicts distress at R = 0.26 and wellbeing at R = 0.18, with an average of R = 0.20 across all 13 dimensions. This matches or exceeds most established psychiatric biomarkers — but extracted at zero marginal cost. Touch-based performance is somewhat lower but still significant. Crucially, frozen models applied to follow-up data, surveys, and games remain predictive. Transition: Can MAILA distinguish clinical groups?
+            </aside>
+          </section>
+
+          <section style="text-align:left;">
+            <h3>Classifying self-identified depression &amp; OCD</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.2;">
+                <div class="fig-placeholder tall" data-fig="FIG_2B">[Figure 2B placeholder — ROC curves for OCD (left) and depression (right) classification. Solid lines: MAILA from touch drawings and structured interface. Dashed lines: self-report–based classifier as upper bound. AUC values annotated.]</div>
+                <p class="caption">Figure 2B. ROC curves for classifying self-identified OCD (AUC = 0.7) and depression (AUC = 0.64) from movement features. Dashed: self-report classifier (AUC = 0.76 / 0.75).</p>
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li><strong>OCD:</strong> AUC = 0.7 from movement vs. 0.76 from all self-reports</li>
+                  <li><strong>Depression:</strong> AUC = 0.64 from movement vs. 0.75 from all self-reports</li>
+                  <li>MAILA remains sensitive within clinical subgroups (Figure S24)</li>
+                  <li>Performance comparable to established biomarker ranges (AUC 0.55–0.75)</li>
+                </ul>
+                <div class="accent-box fragment xsmall" style="margin-top:.6em;">
+                  MAILA's movement features approach the classification ceiling set by the full questionnaire battery — from movement dynamics alone.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              For clinical classification, MAILA achieves AUC = 0.7 for self-identified OCD and 0.64 for depression. The self-report classifier using all 67 items reaches 0.76 and 0.75 respectively. So movement gets remarkably close to the information ceiling set by the full questionnaire. And MAILA remains sensitive to inter-individual differences even within the clinical subgroups. Transition: Can MAILA detect changes over time?
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULTS 2: Change detection & circadian ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Tracking changes in mental health</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_2C">[Figure 2C placeholder — ROC curves for classifying improvement vs. worsening from baseline to follow-up using MAILA's continuous predictions. Separate curves for follow-up, survey, and game contexts.]</div>
+                <p class="caption">Figure 2C. MAILA discriminates improved from worsened mental health at AUC = $0.73 \pm 0.006$ across dimensions. Performance generalizes to survey (AUC = 0.73) and game (AUC = 0.72) contexts.</p>
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Median within-person change: 19.49% of response range</li>
+                  <li>Frozen baseline models predict follow-up differences</li>
+                  <li>Errors do not increase with longer follow-up intervals ($p = 1$)</li>
+                  <li>Dynamic tracking — not just static trait prediction</li>
+                </ul>
+                <div class="accent-box fragment xsmall" style="margin-top:.5em;">
+                  Most existing psychiatric biomarkers are <em>static</em> risk predictors. MAILA captures <em>dynamic within-person fluctuations</em> — critical for early intervention.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              This is a key result. MAILA doesn't just predict who is distressed — it tracks when someone's mental health changes. From cursor movements alone, it distinguishes improvement from worsening at AUC = 0.73. And this works even when the cursor data come from a non-mental-health survey or a game. The fact that errors don't increase with longer follow-up intervals suggests robust temporal generalization. Transition: MAILA also captures circadian patterns.
+            </aside>
+          </section>
+
+          <section style="text-align:left;">
+            <h3>Capturing circadian dynamics</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_2D_E">[Figure 2D-E placeholder — Left: Predicted vs. true group means across time-of-day bins. Right: Lagged correlations peaking at 0 lag. Bottom: Depression (blue) and emotional wellbeing (green) across the day with 95% CIs.]</div>
+                <p class="caption">Figure 2D-E. MAILA's predictions track diurnal fluctuations ($R = 0.47$, $p < 10^{-10}$). Temporal tuning curves peak at zero lag. Depression rises and wellbeing falls from morning to nightfall.</p>
+              </div>
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_2F">[Figure 2F placeholder — Frozen MAILA models applied to 19 users from external Boğaziçi dataset reproduce the same diurnal pattern from naturalistic computer use.]</div>
+                <p class="caption">Figure 2F. Frozen MAILA models applied to naturalistic cursor use from an external dataset reproduce the same diurnal fluctuations ($R = 0.4\text{–}0.42$).</p>
+              </div>
+            </div>
+            <aside class="notes">
+              Self-reports follow known circadian patterns — more positive affect in the morning, rising negative affect toward evening. MAILA's predictions closely track these diurnal patterns, and the temporal tuning curve peaks at exactly zero lag. Most strikingly, when we applied frozen models to completely naturalistic cursor data from an external dataset — web browsing, file management, coding — MAILA reproduced the same diurnal pattern with no retraining. Transition: How robust is this generalization?
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULTS 3: Generalization ========== -->
+        <section style="text-align:left;">
+          <h3>MAILA generalizes across contexts</h3>
+          <div class="twocol">
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S12">[Figure S12 placeholder — Error distributions (log-scale) for baseline vs. follow-up, survey, and game. Overlapping distributions show robust generalization. Control: non-MH items carry no predictive information ($R = 0.01$, $p = 0.28$).]</div>
+              <p class="caption">Figure S12. Prediction errors remain within the baseline distribution when frozen models are applied to follow-up (+0.67%), survey (+3.66%), and game (−0.43%) contexts.</p>
+            </div>
+            <div class="col">
+              <h6>Generalization evidence</h6>
+              <table class="summary-table">
+                <thead><tr><th>Context</th><th>$R$</th><th>Note</th></tr></thead>
+                <tbody>
+                  <tr><td>Baseline (5-fold CV)</td><td>0.20 ± 0.02</td><td>4,000 participants</td></tr>
+                  <tr><td>Follow-up (frozen)</td><td>0.18 ± 0.02</td><td>5–76 days later</td></tr>
+                  <tr><td>Non-MH survey (frozen)</td><td>0.12 ± 0.03</td><td>Different content</td></tr>
+                  <tr><td>Beads game (frozen)</td><td>0.08 ± 0.02</td><td>Different task</td></tr>
+                  <tr><td>Touch interface (CV)</td><td>0.15 ± 0.02</td><td>Different device</td></tr>
+                  <tr><td>Touch drawings (CV)</td><td>0.07 ± 0.02</td><td>Free-form behavior</td></tr>
+                  <tr><td>External naturalistic</td><td>—</td><td>Diurnal $R = 0.4$</td></tr>
+                </tbody>
+              </table>
+              <div class="accent-box fragment xsmall" style="margin-top:.4em;">
+                Split-half reliability: $R = 0.61 \pm 0.05$ across all datasets — exceeding many experimental markers of psychological function.
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Generalization is tested extensively. Performance decreases somewhat when moving from the calibration context to new tasks, but remains significantly above chance in all cases. Crucially, the non-mental-health survey and game items carry no above-chance information about mental health, confirming the signal comes from how people move, not what they answer. Split-half reliability is 0.61. Transition: What about group-level accuracy?
+          </aside>
+        </section>
+
+        <!-- ========== RESULTS 4: Group-level ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>MAILA tracks group-level mental health</h3>
+            <div class="fig-placeholder wide" data-fig="FIG_3">[Figure 3 placeholder — Four panels: (A) Age: predicted vs. true group means, $R = 0.97$. (B) Employment: full-time, part-time, retired, job-seeking, $R = 0.67$. (C) Gender: female vs. male, $R = 0.67$. (D) Self-identified mental illness: depression & OCD profiles, $R = 0.79$. Error bars show 95% CIs.]</div>
+            <p class="caption">Figure 3. MAILA recovers established demographic effects on mental health from human–computer interactions alone, without access to any demographic information.</p>
+            <div class="stat-row fragment">
+              <div>
+                <div class="stat">0.97</div>
+                <div class="stat-label">Age effects</div>
+              </div>
+              <div>
+                <div class="stat">0.67</div>
+                <div class="stat-label">Employment effects</div>
+              </div>
+              <div>
+                <div class="stat">0.67</div>
+                <div class="stat-label">Gender effects</div>
+              </div>
+              <div>
+                <div class="stat">0.79</div>
+                <div class="stat-label">Self-identified MH</div>
+              </div>
+            </div>
+            <aside class="notes">
+              At the group level, MAILA approaches ceiling accuracy. Age effects are recovered at R = 0.97 — older adults show lower distress and higher wellbeing, exactly matching self-reports. Employment and gender effects are recovered at R = 0.67. Self-identified depression and OCD profiles are recovered at R = 0.79. All without any demographic or temporal information — purely from movement. Individual-level errors range from 17 to 25%, but group estimates converge rapidly above N = 100. Transition: Beyond a single dimension of distress, what structure does MAILA capture?
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULTS 5: PCA / Orthogonal dimensions ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Three orthogonal dimensions of mental health</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.2;">
+                <div class="fig-placeholder tall" data-fig="FIG_4A_B">[Figure 4A-B placeholder — (A) PCA loadings: how distress/wellbeing dimensions load onto PC1–3. (B) Predictive performance for PC1–3: violins + observed correlations across datasets.]</div>
+                <p class="caption">Figure 4A-B. (A) Loading structure of PC1–3. (B) MAILA predicts all three orthogonal components from movement alone.</p>
+              </div>
+              <div class="col">
+                <h6 class="fragment">PC structure</h6>
+                <ul class="small fragment tight">
+                  <li><strong>PC1:</strong> general distress-to-wellbeing axis ($R = 0.16 \pm 0.04$)</li>
+                  <li><strong>PC2:</strong> depression &amp; interpersonal sensitivity vs. other distress ($R = 0.22 \pm 0.04$)</li>
+                  <li><strong>PC3:</strong> somatization &amp; hostility vs. OCD &amp; interpersonal sensitivity ($R = 0.20 \pm 0.07$)</li>
+                </ul>
+                <h6 class="fragment" style="margin-top:.5em;">Together: 37.91% variance explained</h6>
+                <ul class="small fragment tight">
+                  <li>All 3 PCs predicted significantly ($p = 0$)</li>
+                  <li>Sensitive to within-person change (AUC = $0.68 \pm 0.03$)</li>
+                  <li>Weaker predictions beyond PC3 ($R = 0.01$)</li>
+                </ul>
+                <div class="accent-box fragment xsmall">
+                  HCI captures the <em>level</em> (PC1) and the <em>qualitative origins</em> (PC2–3) of distress — not just a global tendency.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              A critical question is whether MAILA captures only a one-dimensional distress gradient or something richer. PCA reveals three orthogonal dimensions. PC1 is the general distress-to-wellbeing axis. PC2 separates depression and interpersonal sensitivity from other types of distress. PC3 distinguishes somatization and hostility from OCD and interpersonal sensitivity. MAILA predicts all three from movement alone, and remains sensitive to within-person changes on each axis. Beyond PC3, predictions drop to chance, suggesting HCI captures the dominant structure but not every nuance. Transition: Can these dimensions track real-time affect?
+            </aside>
+          </section>
+
+          <section style="text-align:left;">
+            <h3>Tracking arousal &amp; valence in real time</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_4D">[Figure 4D placeholder — Within-user trajectories in PC1–3 space during naturalistic HCI across time of day. Population mean trajectory shown as thick line. Purple centroids with opacity indicating PC3.]</div>
+                <p class="caption">Figure 4D. Within-day trajectories in PC space during naturalistic behavior. MAILA tracks smooth, coherent drift across the day.</p>
+              </div>
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_4E">[Figure 4E placeholder — Mean ± 95% CI of PC1–3 predictions for higher vs. lower arousal and positive vs. negative valence, from 3 external emotion-tracking datasets.]</div>
+                <p class="caption">Figure 4E. Frozen MAILA models applied to 3 emotion-tracking datasets: PC predictions track moment-to-moment arousal and valence.</p>
+              </div>
+            </div>
+            <ul class="look-for">
+              <li>Higher arousal → increased PC1 (toward distress, $p < 10^{-12}$) and lower PC3 ($p < 10^{-51}$)</li>
+              <li>Positive valence → lower PC1, higher PC2 (away from depression, $p < 10^{-34}$)</li>
+              <li>HCI encodes not just trait-level variation but ongoing experiential dynamics</li>
+            </ul>
+            <aside class="notes">
+              The strongest evidence that MAILA captures real psychological dynamics comes from emotion-tracking experiments. In three independent datasets where participants rated arousal and valence while watching evocative videos, frozen MAILA models — never trained on emotion data — tracked moment-to-moment fluctuations. Higher arousal shifted predictions toward distress on PC1. Positive valence shifted predictions away from depression on PC2. These are real-time affective dynamics captured from cursor movements alone. Transition: MAILA also extends beyond self-report.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULTS 6: Cognitive phenotypes ========== -->
+        <section style="text-align:left;">
+          <h3>Validating cognitive phenotypes: belief instability</h3>
+          <div class="twocol">
+            <div class="col" style="flex:1.2;">
+              <div class="fig-placeholder tall" data-fig="FIG_5">[Figure 5 placeholder — (A) Schematic: behavior–language–cognition triangulation. (B) Example belief trajectories. (C) Correlations of belief instability with MH dimensions for ground-truth vs. MAILA-predicted scores. (D-E) Cross-validated prediction of belief instability from language, cursor embeddings, and their combination.]</div>
+              <p class="caption">Figure 5. MAILA validates and extends cognitive phenotypes. Movement embeddings predict unique variance in belief instability ($R = 0.19$) beyond self-reports ($R = 0.14$). Combined: $R = 0.28$.</p>
+            </div>
+            <div class="col">
+              <h6 class="fragment">Key findings</h6>
+              <ul class="small fragment tight">
+                <li>Belief instability maps MH on a <strong>reactive–rigid continuum</strong></li>
+                <li>MAILA recovers MH–cognition associations at $R = 0.7$ ($p = 0.005$)</li>
+                <li>Cursor → belief instability: $R = 0.19$ (unique, beyond self-reports)</li>
+                <li>Self-reports → belief instability: $R = 0.14$ (unique, beyond cursor)</li>
+                <li>Combined: $R = 0.28$, errors lower than language alone ($p < 10^{-6}$)</li>
+              </ul>
+              <div class="accent-box fragment xsmall" style="margin-top:.5em;">
+                <strong>Movement encodes information about cognition that goes beyond what language conveys.</strong> A step toward foundation models of mental health.
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            This is perhaps the most conceptually important result. Using the beads task — a probabilistic reasoning paradigm — we show that MAILA recovers the link between mental health and belief instability from cursor movements alone. More importantly, cursor embeddings predict unique variance in belief instability beyond all available self-reports. And self-reports carry unique information beyond cursor data. Combining them achieves the best performance. This means human-computer interactions and language provide complementary windows into cognition. Transition: How robust are these results?
+          </aside>
+        </section>
+
+        <!-- ========== ROBUSTNESS — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>Robustness &amp; Controls</h2>
+          <p class="muted" style="font-size:.85em;">Permutation tests · demographic residualization · ablations · information loss</p>
+          <aside class="notes">
+            Let me walk through the robustness checks. Transition: Starting with demographic fairness.
+          </aside>
+        </section>
+
+        <!-- ========== ROBUSTNESS 1: Demographics ========== -->
+        <section style="text-align:left;">
+          <h3>Fairness across demographics</h3>
+          <div class="twocol">
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S17">[Figure S17 placeholder — Prediction errors (log NRMSE) across demographic groups: age, gender, ethnicity, nationality, country of birth/residence, employment, student status. Red: errors; grey: group proportions. No significant effect of gender, ethnicity, nationality, age (all $p > 0.05$).]</div>
+              <p class="caption">Figure S17. Algorithmic bias analysis. No significant effect of gender ($p = 0.67$), ethnicity ($p = 0.92$), nationality ($p = 0.35$), or age ($p = 0.11$) on prediction errors. Employment: $p = 0.001$.</p>
+            </div>
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S25">[Figure S25 placeholder — Raw (filled) vs. demographics-adjusted (hollow) Spearman correlations across dimensions and datasets. Adjusted $R = 0.11 \pm 0.01$ ($p < 10^{-30}$).]</div>
+              <p class="caption">Figure S25. After residualizing for all available demographics, MAILA predictions remain correlated with ground truth ($R = 0.11 \pm 0.01$, $p = 1.32 \times 10^{-30}$).</p>
+            </div>
+          </div>
+          <ul class="look-for">
+            <li>Sample: ages 18–85, 48% female, 96 nationalities, 55 countries</li>
+            <li>Stable errors across most demographic groups (median $F = 1.06$)</li>
+            <li>Dynamic mental-state tracking argues against demographic confounds (static traits can't explain within-person change)</li>
+          </ul>
+          <aside class="notes">
+            The MAILA dataset is diverse: ages 18 to 85, balanced gender, 96 nationalities. Prediction errors are stable across most demographic groups. The one exception is employment status, which is known to affect both movement patterns and mental health. After residualizing for all available demographics, predictions remain significantly correlated with ground truth at R = 0.11. The strongest argument against demographic confounding is MAILA's sensitivity to dynamic change — static traits cannot explain within-person fluctuations over time. Transition: How does MAILA compare to handcrafted features?
+          </aside>
+        </section>
+
+        <!-- ========== ROBUSTNESS 2: Ablations ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Data-driven vs. handcrafted features</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_S15">[Figure S15 placeholder — (A) Feature loadings on distress/wellbeing for cursor vs. touch (41% of features reverse direction). (B) Clinical vs. general population feature expression. (C) Prediction error comparison: MAILA vs. handcrafted ($p < 10^{-97}$).]</div>
+                <p class="caption">Figure S15. MAILA outperforms handcrafted features across all benchmarks. 41% of handcrafted features reverse direction between cursor and touch modalities.</p>
+              </div>
+              <div class="col">
+                <h6 class="fragment">Interpretable signatures</h6>
+                <ul class="small fragment tight">
+                  <li>Higher distress → tortuous trajectories, variable speed</li>
+                  <li>Higher wellbeing → efficient paths</li>
+                  <li>Clinical groups show more distress-linked and fewer wellbeing-linked features</li>
+                </ul>
+                <h6 class="fragment" style="margin-top:.5em;">MAILA advantage</h6>
+                <ul class="small fragment tight">
+                  <li>Lower prediction errors ($p < 10^{-97}$)</li>
+                  <li>Depression AUC: 0.64 vs. 0.59</li>
+                  <li>OCD AUC: 0.70 vs. 0.60</li>
+                  <li>Handcrafted features are modality-specific; MAILA learns generalizable representations</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              We also compared MAILA to handcrafted kinematic features — speed, jerk, tortuosity, path efficiency, and so on. While these features are interpretable and show expected patterns — more tortuous movement with distress, more efficient paths with wellbeing — they dramatically underperform MAILA's data-driven representations. Critically, 41% of handcrafted features reverse their direction of association between cursor and touch modalities, meaning intuitive features fail to generalize across devices. MAILA's learned representations handle this naturally. Transition: What about information degradation?
+            </aside>
+          </section>
+
+          <section style="text-align:left;">
+            <h3>Robustness to information loss</h3>
+            <div class="twocol">
+              <div class="col">
+                <div class="fig-placeholder" data-fig="FIG_S16">[Figure S16 placeholder — Four degradation curves: (i) reduced clusters, (ii) shorter recordings, (iii) fewer training participants, (iv) noise injection. Performance declines smoothly in all cases.]</div>
+                <p class="caption">Figure S16. MAILA degrades gracefully under reduced clusters, shorter recordings, smaller training sets, and injected noise.</p>
+              </div>
+              <div class="col">
+                <h6>Degradation modes</h6>
+                <ul class="small tight">
+                  <li class="fragment"><strong>Fewer clusters:</strong> performance drops gradually — more motifs = better</li>
+                  <li class="fragment"><strong>Shorter recordings:</strong> smooth decline — longer data improves accuracy</li>
+                  <li class="fragment"><strong>Fewer training participants:</strong> sample size matters</li>
+                  <li class="fragment"><strong>Noise injection:</strong> user-side scrambling effectively reduces profiling</li>
+                </ul>
+                <div class="accent-box fragment xsmall" style="margin-top:.5em;">
+                  <strong>Privacy implication:</strong> Modest client-side scrambling can substantially reduce unwanted digital profiling while preserving usability.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              We systematically degraded MAILA in four ways. In all cases, performance declines smoothly and predictably. This tells us two things: first, the model benefits from behavioral diversity and data quantity, suggesting room for improvement with larger datasets. Second, modest user-side noise injection effectively reduces MAILA's accuracy, providing a practical privacy safeguard against unwanted profiling. Transition: Let me now discuss interpretation.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== INTERPRETATION ========== -->
+        <section style="text-align:left;">
+          <h3>Interpretation: what do the embeddings encode?</h3>
+          <div class="twocol">
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S19">[Figure S19 placeholder — (A) Correlation matrices: ground truth vs. MAILA predictions ($R = 0.97$). (B) Scatter of pairwise dimension correlations: true vs. predicted. (C-D) Same for changes in mental health.]</div>
+              <p class="caption">Figure S19. MAILA reproduces the correlation structure of ground-truth mental health ($R = 0.97$) and of within-person changes ($R = 0.97$), indicating that shared latent dimensions are encoded in movement.</p>
+            </div>
+            <div class="col">
+              <h6 class="fragment">Structural fidelity</h6>
+              <ul class="small fragment tight">
+                <li>Despite independent SVRs per dimension, predictions preserve multivariate structure</li>
+                <li>Correlation structure deviation: only 5.32% of possible range</li>
+                <li>Same holds for <em>changes</em> in mental health (5.04% deviation)</li>
+              </ul>
+              <h6 class="fragment" style="margin-top:.5em;">Motor-control interpretation</h6>
+              <ul class="small fragment tight">
+                <li>Internal models governing motor output are shaped by affective and cognitive processes</li>
+                <li>HCI signals are a digital extension of non-verbal behavior (posture, gait, facial expression)</li>
+                <li>Data-driven motifs capture high-dimensional structure that handcrafted features miss</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            A remarkable finding is that even though MAILA trains independent regression models per dimension, the predictions reproduce the full multivariate structure of self-reported mental health at R = 0.97. This includes both static profiles and within-person changes. This means the movement embeddings aren't just capturing a single noisy signal — they encode the multidimensional structure of mental health. The motor-control interpretation is that internal models governing movement are continuously shaped by ongoing affective and cognitive states. Cursor and touchscreen activity are a digital extension of the non-verbal behavioral repertoire that psychology has studied for centuries. Transition: Let me acknowledge the limitations.
+          </aside>
+        </section>
+
+        <!-- ========== LIMITATIONS ========== -->
+        <section style="text-align:left;">
+          <h3>Limitations &amp; open questions</h3>
+          <ul class="small">
+            <li class="fragment"><strong>Effect sizes are modest at the individual level:</strong> $R \approx 0.15\text{–}0.26$; individual prediction errors of 17–25%. Group-level accuracy is high, but individual screening requires further improvement</li>
+            <li class="fragment"><strong>Calibration context:</strong> Models trained during mental-health self-reflection. Whether this context enhances or constrains generalization to fully unconstrained use is an open question</li>
+            <li class="fragment"><strong>Online sample:</strong> Diverse (96 nationalities, 18–85 years) but recruited via Prolific; not representative of all populations, including non-digital-native users</li>
+            <li class="fragment"><strong>Self-report ground truth:</strong> Not clinical diagnosis — self-identified depression/OCD, not clinician-verified</li>
+            <li class="fragment"><strong>Privacy &amp; ethics:</strong> Passive decoding raises serious concerns about consent, autonomy, misuse in hiring, insurance, law enforcement. Regulatory frameworks essential</li>
+            <li class="fragment"><strong>Not a clinical tool:</strong> Must not replace clinical judgment or personal narratives; risk of reducing mental health to quantifiable patterns</li>
+          </ul>
+          <div class="accent-box fragment small">
+            <strong>The authors also demonstrate</strong> that HCI data can be used for lie detection (AUC up to 0.89) and identity tracking (AUC = 0.58), underscoring the urgent need for safeguards.
+          </div>
+          <aside class="notes">
+            Several important limitations. Individual-level correlations are modest — R around 0.2 means substantial uncertainty for any single person. The calibration paradigm involves self-reflection about mental health, which may create a specific cognitive context. The sample is online and self-identified, not clinically verified. And there are serious ethical concerns: the same signals that enable mental health prediction could be misused for profiling, discrimination, or surveillance. The authors themselves demonstrate that cursor data carry identity information and can detect fabricated self-reports. This dual-use challenge demands strong regulatory frameworks. Transition: What are the implications?
+          </aside>
+        </section>
+
+        <!-- ========== IMPLICATIONS ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>Implications</h3>
+            <div class="twocol">
+              <div class="col">
+                <h6 class="fragment">Scientific</h6>
+                <ul class="small fragment tight">
+                  <li><strong>New measurement modality:</strong> Non-verbal, data-driven signatures of mental health from routine digital behavior</li>
+                  <li><strong>Beyond the p-factor:</strong> 3 orthogonal PC dimensions show HCI encodes the <em>quality</em>, not just level, of distress</li>
+                  <li><strong>Behavioral phenotyping:</strong> Cursor embeddings predict cognitive traits (belief instability) beyond self-reports — convergent validity for computational psychiatry</li>
+                  <li><strong>Dynamic states, not static traits:</strong> Within-person change tracking and circadian dynamics</li>
+                </ul>
+              </div>
+              <div class="col">
+                <h6 class="fragment">Practical</h6>
+                <ul class="small fragment tight">
+                  <li><strong>Population monitoring:</strong> Near-ceiling group-level accuracy at $N > 100$ — real-time public mental health surveillance at scale</li>
+                  <li><strong>Low-burden screening:</strong> Passive, zero-cost signal that could identify at-risk individuals and connect them to care</li>
+                  <li><strong>Multi-modal integration:</strong> Combining HCI with language improves prediction — toward multi-modal mental health assessment</li>
+                  <li><strong>Privacy-by-design:</strong> Client-side scrambling as a practical countermeasure to unwanted profiling</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Scientifically, MAILA establishes a new measurement modality for mental health — one that's non-verbal, data-driven, and dynamic. It captures not just general distress but specific qualitative patterns. The cognitive phenotyping results suggest movement data can complement and extend language-based assessment. Practically, the group-level accuracy is striking — you could monitor population mental health in near real-time from routine digital behavior. But this power comes with serious responsibility. The authors propose client-side scrambling as one practical safeguard. Transition: Let me close with take-home messages.
+          </aside>
+          </section>
+        </section>
+
+        <!-- ========== CLOSING ========== -->
+        <section style="text-align:left;">
+          <h3>Take-home messages</h3>
+          <ol class="small">
+            <li class="fragment"><strong>Everyday human-computer interactions encode mental health with biomarker accuracy:</strong> Cursor and touchscreen dynamics predict distress, wellbeing, and 13 clinical dimensions at $R \approx 0.2$, matching established biomarkers — at zero marginal cost</li>
+            <li class="fragment"><strong>Predictions are dynamic, not static:</strong> MAILA tracks within-person changes (AUC = 0.73), circadian fluctuations, and moment-to-moment arousal/valence — critical for early detection</li>
+            <li class="fragment"><strong>Movement encodes information beyond language:</strong> Cursor embeddings predict unique cognitive phenotype variance beyond self-reports, and capture 3 orthogonal dimensions of mental health</li>
+          </ol>
+          <div style="margin-top:1.2em; border-top:1px solid #ddd; padding-top:.8em;">
+            <p class="xsmall muted">
+              📄 Paper: <em>Weilnhammer, Ortega &amp; Whitney (2025)</em> &nbsp;|&nbsp;
+              💻 Code &amp; data: <a href="https://github.com/veithweilnhammer/maila">github.com/veithweilnhammer/maila</a> &nbsp;|&nbsp;
+              ✉️ Contact: veith.weilnhammer@gmail.com
+            </p>
+          </div>
+          <aside class="notes">
+            Three take-home messages. First, routine digital behavior predicts mental health with biomarker accuracy at zero cost. Second, these predictions are dynamic — they capture change, not just static traits. Third, movement encodes information that complements and extends language-based assessment. The code and data will be available on GitHub upon publication. Happy to take questions.
+          </aside>
+        </section>
+
+        <!-- ========== THANKS ========== -->
+        <section>
+          <h3>Thanks!</h3>
+          <p class="small muted">Questions / discussion</p>
+          <p class="xsmall" style="margin-top:2em;">Supported by the Leopoldina, German National Academy of Sciences &amp; the Brain and Behavior Research Foundation (BBRF)</p>
+          <p class="xsmall muted">Weilnhammer, Ortega &amp; Whitney</p>
+          <aside class="notes">
+            Thank you for your attention. I'm happy to discuss the framework, results, ethics, or any technical details. I have backup slides on the autoencoder details, psychometrics, deception detection, and the full FUTURE-AI alignment.
+          </aside>
+        </section>
+
+        <!-- ========== APPENDIX — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>Appendix</h2>
+          <p class="muted" style="font-size:.85em;">Backup slides</p>
+          <aside class="notes">
+            Backup slides for detailed questions.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Mental health space -->
+        <section style="text-align:left;">
+          <h3>Appendix: The space of mental health</h3>
+          <div class="twocol">
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S6">[Figure S6 placeholder — (A) Mental health matrix: distributions for 67 items. (B) t-SNE of dimension correlations. (C) Full correlation matrix. (D) PCA loadings. (E) Variance explained per PC (37.91% for PC1–3).]</div>
+              <p class="caption">Figure S6. Mental health space: item distributions, correlation structure, and PCA decomposition. First 3 PCs explain 37.91% of variance.</p>
+            </div>
+            <div class="col">
+              <ul class="look-for">
+                <li>Distress and wellbeing are negatively correlated ($R = -0.25$)</li>
+                <li>Within-domain correlations: distress $R = 0.66$, wellbeing $R = 0.73$</li>
+                <li>Internal consistency: Cronbach's $\alpha = 0.96$ (distress), $0.86$ (wellbeing)</li>
+                <li>PC1: general distress–wellbeing; PC2: depression/IS specificity; PC3: somatic/hostile vs. OCD/IS</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            This shows the full structure of the mental health space. The questionnaire has strong psychometric properties and spans the full continuum from distress to wellbeing. The PCA decomposition reveals structured variation beyond a single distress factor.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Autoencoder details -->
+        <section style="text-align:left;">
+          <h3>Appendix: LSTM autoencoder architecture</h3>
+          <div class="twocol">
+            <div class="col" style="flex:.5;">
+              <div class="fig-placeholder short" data-fig="FIG_S4_detail">[Figure S4 placeholder — Reconstructed cursor trajectories (blue: original, red: reconstructed). Validation loss: $5.2 \times 10^{-5}$.]</div>
+            </div>
+            <div class="col" style="flex:.5;">
+              <h6>Architecture summary</h6>
+              <ul class="xsmall tight">
+                <li><strong>Input:</strong> 100 × 2 screen-normalized positions</li>
+                <li><strong>Encoder:</strong> LSTM ($H=64$) → $h_L$ → linear ($64 \rightarrow 50$) + sigmoid → $z \in (0,1)^{50}$</li>
+                <li><strong>Decoder:</strong> LSTM ($H=64$) conditioned on $z$ → linear → sigmoid → 100 × 2</li>
+                <li><strong>Training:</strong> Boğaziçi dataset, 100 epochs, batch 128, lr = 0.001, MSE loss</li>
+                <li><strong>Frozen</strong> for all MAILA analyses</li>
+              </ul>
+            </div>
+          </div>
+          <div class="accent-box xsmall" style="margin-top:.4em;">
+            Feature-space overlap with pretraining data: MAILA embeddings differ by only 0.94% of the feature range; 99.97% fall within pretraining bounds (Figure S10).
+          </div>
+          <aside class="notes">
+            The autoencoder architecture is straightforward: encoder LSTM with hidden dimension 64, compressed to 50 dimensions via a linear layer with sigmoid. Trained on an external naturalistic dataset, then frozen. The key validation is that MAILA's embeddings fall almost entirely within the pretraining distribution, confirming that the experimental interface produces realistic movement patterns.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Deception & identity -->
+        <section style="text-align:left;">
+          <h3>Appendix: Deception detection &amp; identity tracking</h3>
+          <div class="twocol">
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S22">[Figure S22 placeholder — AUC for detecting distorted self-reports as a function of distortion magnitude. AUC rises from 0.73 (1 SD) to 0.89 (2 SD).]</div>
+              <p class="caption">Figure S22. Detectability of fabricated self-reports increases monotonically with distortion magnitude.</p>
+            </div>
+            <div class="col">
+              <h6>Deception</h6>
+              <ul class="xsmall tight">
+                <li>Simulated distorted profiles: AUC 0.73 (1 SD noise) → 0.89 (2 SD)</li>
+                <li>Mismatch between behavior and language is detectable</li>
+              </ul>
+              <h6 style="margin-top:.5em;">Identity</h6>
+              <ul class="xsmall tight">
+                <li>Participant ID from movement: accuracy = 1.75% (chance = 0.05%), $p < 0.001$</li>
+                <li>Continuity of identity (same/different person): AUC = 0.58 ($p = 0$)</li>
+                <li>Unaffected by delay or MH change between sessions</li>
+              </ul>
+              <div class="accent-box xsmall" style="margin-top:.5em;">
+                <strong>Dual-use concern:</strong> The ability to extract information people may not want to share underscores the need for safeguards against misuse.
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            These supplementary results highlight the dual-use nature of HCI data. MAILA can detect inconsistent self-reports — useful for quality control but also a form of lie detection. It can weakly identify individuals and track identity continuity. These capabilities make the ethical framework even more critical.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Split-half reliability -->
+        <section style="text-align:left;">
+          <h3>Appendix: Split-half reliability</h3>
+          <div class="twocol">
+            <div class="col" style="flex:.55;">
+              <div class="fig-placeholder" data-fig="FIG_S20">[Figure S20 placeholder — Violin plots of null distributions + observed split-half correlations across datasets and dimensions. $R = 0.61 \pm 0.05$.]</div>
+              <p class="caption">Figure S20. Split-half reliability: $R = 0.61 \pm 0.05$ across all dimensions and datasets — exceeding most behavioral and neuroimaging markers.</p>
+            </div>
+            <div class="col" style="flex:.45;">
+              <ul class="look-for">
+                <li>Randomized 50/50 splits of each participant's trajectory</li>
+                <li>Independent models trained on each half</li>
+                <li>Consistency far exceeds permutation null</li>
+                <li>Benchmark: many experimental psychology measures have lower reliability</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            The split-half reliability analysis divides each participant's movement data into two random halves and trains independent models. The resulting predictions correlate at R = 0.61. This exceeds the reliability of many experimental markers in psychology and neuroscience, providing strong evidence for the internal consistency of MAILA's predictions.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Population-level simulations -->
+        <section style="text-align:left;">
+          <h3>Appendix: Population-level monitoring simulations</h3>
+          <div class="twocol">
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S21">[Figure S21 placeholder — (A) Recovery of group-level mean: correlation approaches 1.0 for $N > 100$. (B) Recovery of group-level variance. X-axis: population size (log). Shades: different error levels matching MAILA's range.]</div>
+              <p class="caption">Figure S21. Group-level estimates approach ceiling accuracy for $N > 100$ at MAILA's observed error levels (17–25%).</p>
+            </div>
+            <div class="col">
+              <ul class="look-for">
+                <li>Individual errors of 17–25% aggregate to near-perfect group estimates</li>
+                <li>Law of large numbers: accuracy improves with $1/\sqrt{N}$</li>
+                <li>Practical: real-time population mental health monitoring becomes feasible</li>
+                <li>Both group means and variances recoverable</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            These simulations show that even with individual-level errors in the 17–25% range, group-level estimates rapidly approach ceiling accuracy above N = 100. This makes MAILA particularly well-suited for population-level monitoring — tracking mental health trends across time, regions, or demographic groups in real time.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: FUTURE-AI alignment -->
+        <section style="text-align:left;">
+          <h3>Appendix: FUTURE-AI alignment</h3>
+          <div class="fig-placeholder short" data-fig="TABLE_S4">[Table S4 placeholder — FUTURE-AI framework alignment: Fairness, Universality, Traceability, Usability, Robustness, Explainability. Current efforts (demographic evaluation, stress testing, handcrafted feature explanations) vs. future priorities (clinical trials, browser scrambling plugin, regulatory compliance).]</div>
+          <p class="caption">Table S4. MAILA assessed against the FUTURE-AI guidelines for trustworthy AI in healthcare. Current efforts and future priorities for each domain.</p>
+          <div class="accent-box xsmall" style="margin-top:.5em;">
+            Key gaps: no clinical trials yet, no deployed human-AI oversight mechanisms, no formal regulatory compliance. The authors propose client-side scrambling, open-source code, and interdisciplinary governance as next steps.
+          </div>
+          <aside class="notes">
+            The authors explicitly evaluate MAILA against the FUTURE-AI framework for responsible AI in healthcare. They've addressed many recommendations — fairness testing, stress testing, explainability via handcrafted features — but important gaps remain. No clinical trials, no deployed oversight mechanisms, no regulatory compliance. The proposed client-side scrambling tool is an interesting practical contribution to the privacy challenge.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Item-level performance -->
+        <section style="text-align:left;">
+          <h3>Appendix: Item-level prediction performance</h3>
+          <div class="fig-placeholder tall" data-fig="TABLE_S1">[Table S1 placeholder — Full table of 67 questionnaire items with mean scores, IQRs, and Spearman correlations across baseline (5-fold CV), follow-up, survey, game, touch-interface, and touch-drawing datasets. Correlations range from ~0.01 to 0.22.]</div>
+          <p class="caption">Table S1. Item-level prediction performance. Spearman $\rho$ between MAILA predictions and true scores for each of 67 items across all datasets.</p>
+          <ul class="look-for">
+            <li>Highest correlations: psychoticism items ("punished for sins," "something wrong with mind") and concentration/hostility items</li>
+            <li>Lower correlations for social wellbeing items and some phobic anxiety items</li>
+            <li>Drawing-based predictions weakest but still above chance for most items</li>
+          </ul>
+          <aside class="notes">
+            For reference, here is the full item-level performance table. There's meaningful variation across items — some aspects of psychoticism and hostility are better predicted than social wellbeing items. This heterogeneity is informative about which mental health constructs leave stronger signatures in movement.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Metric definitions -->
+        <section style="text-align:left;">
+          <h3>Appendix: Metric definitions</h3>
+          <div class="twocol">
+            <div class="col">
+              <h6>Spearman $\rho$ (R)</h6>
+              <p class="xsmall">Rank-order correspondence between predicted and observed values. Non-parametric; robust to outliers. Captures whether the model preserves the relative ordering of mental health across participants.</p>
+              <h6 style="margin-top:.6em;">Normalized RMSE ($e$)</h6>
+              <p class="xsmall">$e = \sqrt{\text{MSE}} / \text{range}(y)$. Absolute error scaled by outcome range. Values of 17–25% indicate the model captures the majority of variance at the group level but has meaningful individual-level noise.</p>
+            </div>
+            <div class="col">
+              <h6>AUC-ROC</h6>
+              <p class="xsmall">Continuous SVR outputs treated as ranking scores; ground truth binarized at the 10th, 25th, 50th, 75th, and 90th percentiles. Evaluates sensitivity across multiple thresholds along the mental-health continuum, not just a single clinical cutoff.</p>
+              <h6 style="margin-top:.6em;">Permutation tests</h6>
+              <p class="xsmall">$n = 1000$ iterations with randomly shuffled targets. $p$-value = proportion of permuted metrics ≥ observed. Provides non-parametric significance without distributional assumptions.</p>
+            </div>
+          </div>
+          <aside class="notes">
+            For reference, here are the formal definitions of the metrics used throughout. Spearman rho for rank-order, normalized RMSE for absolute error, and AUC computed at multiple percentile thresholds. All significance is assessed via permutation tests with 1,000 iterations.
+          </aside>
+        </section>
+
+      </div><!-- end slides -->
+    </div><!-- end reveal -->
+
+    <!-- Reveal scripts via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/search/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        width: 1280,
+        height: 720,
+        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+      });
+    </script>
+  </body>
+</html>
