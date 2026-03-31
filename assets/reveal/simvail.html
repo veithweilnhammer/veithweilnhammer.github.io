@@ -140,12 +140,20 @@
       <div class="slides">
 
         <!-- ========== TITLE ========== -->
+
+ <section
+  data-background-image="simvail_content/science_cover.jpg"
+  data-background-size="contain"
+  data-background-position="center center">
+</section>
+
+
         <section style="text-align:left;">
           <h4>Vulnerability-Amplifying Interaction Loops</h4>
           <p class="small" style="margin-top:-.2em;">A systematic failure mode in AI chatbot mental-health interactions</p>
           <p class="small muted" style="margin-top:1em;">Weilnhammer, Hou, Luettgau, Summerfield, Dolan &amp; Nour</p>
           <p class="xsmall muted">Max Planck UCL Centre for Computational Psychiatry · University of Sydney · UK AI Security Institute · University of Oxford · Microsoft AI</p>
-          <p class="small">AISI Presentation — <span class="muted">March 2026</span></p>
+          <p class="small">Center Meeting — <span class="muted">March 2026</span></p>
           <br/>
           <aside class="notes">
             Welcome everyone. Today I'm presenting SIM-VAIL — a framework that identifies a novel failure mode in AI chatbot interactions with mentally vulnerable users. The key insight: chatbot behaviors that seem supportive can systematically worsen mental health when they align with the mechanisms sustaining a user's vulnerability. Let's start with why this matters.
@@ -616,13 +624,76 @@
               <li class="fragment"><strong>Coverage:</strong> 5 vulnerabilities × 6 intents covers core presentations but not the full heterogeneity of psychiatric illness and lived experience</li>
                <li class="fragment"><strong>Ecological validity:</strong> Whether patterns of simulated adverserial interactions translate into drivers of harm in real users requires empirical validation</li>
              <div class="accent-box fragment small">
-              <strong>Despite these limitations:</strong> The strong cross-profile, cross-model, and cross-temporal structure establishes a non-trivial safety floor in current human-chatbot interactions.
+              <strong>Despite these limitations:</strong> SIM-VAIL's cross-profile, cross-model, and cross-temporal results establish a non-trivial safety floor in current human-chatbot interactions.
             </div>
             <aside class="notes">
               The biggest limitation is that these are simulated, not real users. We can't make direct causal claims about clinical outcomes. The reliance on LLMs for both simulation and scoring is a methodological concern, though the cross-judge and expert validation help. Coverage is necessarily incomplete — we chose five common vulnerability profiles, but psychiatric illness is far more heterogeneous. Despite these caveats, the consistency of the patterns across profiles, models, and temporal dynamics gives us confidence that VAILs represent a real failure mode. Transition: Let me discuss the implications.
             </aside>
           </section>
         </section>
+
+
+        <section data-background-color="#2a6496" class="section-divider">
+        <h2>Next step: SPARK project</h2>
+        <p class="muted" style="font-size:.85em;">SIM-VAIL: Simulated Vulnerability-Amplifying Interaction Loops</p>
+        <p class="muted" style="font-size:.62em; line-height:1.35; margin-top:.4em;">
+          What are the vectors of mental health harm? · Can they be corrected with mulitmodal mental state inferences?
+        </p>
+        <aside class="notes">
+          Let's dive into the methods. SIM-VAIL has three core components: simulated user phenotypes, multi-turn conversations, and a multi-dimensional alignment judge. Transition: Here's the overall framework.
+        </aside>
+      </section>
+
+              <!-- ========== NEXT STEPS: Persona vectors to user-state inference ========== -->
+        <section>
+          <section style="text-align:left;">
+            <h3>From assistant persona to user state</h3>
+
+                <div class="twocol" style="margin-top:1em; align-items:flex-start;">
+                  <div class="col" style="flex:1.35;">
+                    <h6>Persona vectors</h6>
+                    <div>
+                      <img
+                        src="simvail_content/persona.png"
+                        class="borderless"
+                        style="width:100%;height:auto;"
+                      >
+                    </div>
+                    <p class="caption">Illustrative placeholder for Anthropic-style persona-space work</p>
+                  </div>
+
+                  <div class="col" style="flex:0.65;">
+                    <h6> Core problem </h6>
+                    <div class="accent-box fragment small" style="margin-top:1em;">
+                    Responses can be fluent, empathic, and even knowledgeable, yet still be clinically wrong because the model is wrong about the user's current state.
+                    </div>
+                  </div>
+                </div>
+
+            <aside class="notes">
+              Here I want to bridge from SIM-VAIL to the next step. Recent work suggests that LLMs can be understood in terms of persona or role space, and that these roles can potentially be monitored or controlled. That is useful. But for mental-health safety, role control is not enough. The core uncertainty is often the user's latent state — for example whether they are escalating, reassurance-seeking, becoming dependent, or drifting into a more vulnerable mode. A model may sound supportive while still being wrong in a clinically meaningful way.
+            </aside>
+          </section>
+
+          <section style="text-align:left;">
+            <h3>MAILA as a AI chatbot safety layer</h3>
+              <img
+                        src="cursor_mind/Graphical_Abstract_illustration.png"
+                        class="borderless"
+                        style="width:100%;height:auto;"
+                      >
+          </section>
+
+          <section style="text-align:left;">
+            <h3>SPARK proposal</h3>
+              <img
+                        src="simvail_content/spark_overview.png"
+                        class="borderless"
+                        style="width:72%;height:auto;"
+                      >
+          </section>
+        </section>
+
 
         <!-- ========== CLOSING ========== -->
         <section style="text-align:left;">
@@ -632,13 +703,14 @@
             <li class="fragment"><strong>Risk is phenotype-dependent:</strong> Who the user is and what they seek jointly determine the level and kind of risk</li>
             <li class="fragment"><strong>Risk is dynamic:</strong> Harm typically builds over turns, not in a single response</li>
             <li class="fragment"><strong>Risk is multivariate with trade-offs:</strong> Multi-dimensional scoring is essential to capture concerning chatbot behavior</li>
-            <li class="fragment"><strong>SIM-VAIL enables scalable, adaptive auditing:</strong> Open-source framework for continuous and automated safety evaluation</li>
+            <li class="fragment"><strong>SPARK:</strong> Improve user state inference for safer AI chatbot interactions</li>
           </ol>
           <div style="margin-top:1.2em; border-top:1px solid #ddd; padding-top:.8em;">
             <p class="xsmall muted">
               📄 Paper: <a href="http://arxiv.org/abs/2602.01347"><em>Weilnhammer et al. (2026)</em></a> &nbsp;|&nbsp;
-              💻 Code &amp; data: <a href="https://github.com/veithweilnhammer/sim-vail">github.com/veithweilnhammer/sim-vail</a> &nbsp;|&nbsp;
-              ✉️ Contact: v.weilnhammer@ucl.ac.uk · matthew.nour@psych.ox.ac.uk
+              ✉️ v.weilnhammer@ucl.ac.uk &nbsp;|&nbsp;
+              💻 Code &amp; data: <a href="https://github.com/veithweilnhammer/sim-vail">github.com/veithweilnhammer/sim-vail</a> 
+  
             </p>
           </div>
           <aside class="notes">
@@ -650,11 +722,6 @@
         <section>
           <section>
             <h3>Thanks!</h3>
-            <p class="xsmall" style="margin-top:2em;">Funded by AI UK AISI Challenge Fund</p>
-            <p class="xsmall muted">Weilnhammer, Hou, Luettgau, Summerfield, Dolan &amp; Nour</p>
-            <aside class="notes">
-              Thank you for your attention. I'm happy to discuss any aspect of the framework, results, or implications. I also have backup slides on supplementary figures, the full phenotype prompt table, and additional validation analyses.
-            </aside>
           </section>
         </section>
 
