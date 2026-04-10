@@ -1,8 +1,8 @@
 ---
 layout: distill
 title: "Psychosis and schizophrenia"
-description: "Lyra Health Seminar"
-tags: [consciousness, perception, inference]
+description: "A short seminar overview of psychosis, schizophrenia, and evidence-based care."
+tags: [psychosis, schizophrenia, psychiatry]
 categories:
 giscus_comments: false
 date: 2025-06-03
@@ -44,116 +44,83 @@ _styles: >
 
 ## Overview
 
-This seminar explores psychotic experiences and schizophrenia. It combines real-world narratives, clinical tools, and scientific models to promote understanding and effective care strategies. Participants will learn to identify red flags, communicate compassionately, and support recovery in individuals experiencing psychosis.
-
-🔗 [HTML Presentation](https://veithweilnhammer.github.io/assets/reveal/lyra_psychosis.html)
+This seminar gives a short introduction to psychotic experiences and schizophrenia through clinical examples, diagnostic frameworks, and scientific models. The aim is practical: improve recognition, communication, and evidence-based support for people experiencing psychosis.
 
 ---
 
 ## Psychosis: Definition & Types
 
-- **Psychotic experiences**: Disruptions in perception, cognition, and reality monitoring.
-- **Core phenomena**:
-  - Hallucinations
-  - Delusions
-  - Disorganized speech or behavior
-  - Thought insertion and passivity experiences
-- **Associated disorders**: Schizophrenia spectrum, mood disorders with psychotic features, substance-induced psychosis
+- **Psychotic experiences** involve disruptions in perception, thought, and reality monitoring.
+- **Core phenomena** include hallucinations, delusions, disorganized speech or behavior, and passivity experiences.
+- **Associated disorders** include schizophrenia spectrum disorders, mood disorders with psychotic features, and substance-induced psychosis.
 
 ---
 
 ## Diagnosis & Classification
 
-- **DSM-5 Criteria for Schizophrenia**:
-  - Two or more core symptoms for at least one month
-  - Functional impairment and chronicity (6+ months total)
-- **ICD-10 vs ICD-11**:
-  - ICD-11 eliminates subtypes
-  - New symptom specifiers and clearer course patterns
-- **Syndrome vs. diagnosis**: Psychosis is a transdiagnostic state, not a single disease
+- **DSM-5 schizophrenia criteria** require characteristic symptoms, functional impairment, and persistence over time.
+- **ICD-11** moves away from older subtypes and emphasizes symptom specifiers and course patterns.
+- **Psychosis as syndrome**: psychosis is best understood as a transdiagnostic state rather than a single disease.
 
 ---
 
 ## Course & Epidemiology
 
-- Onset: Adolescence to early adulthood (earlier in males)
-- Prevalence: ~0.5% globally
-- Course:
-  - Prodrome → first episode → variable outcomes
-  - Recovery, relapse, or chronic course
-- Better prognosis with early detection, support, and treatment
+- **Onset** is typically in adolescence or early adulthood, often earlier in males.
+- **Prevalence** is about 0.5% worldwide.
+- **Course** often spans prodrome, first episode, and then highly variable outcomes, including recovery, relapse, or chronicity.
+- **Prognosis** improves with early detection, support, and treatment.
 
 ---
 
 ## Causes & Risk Factors
 
-- **Biopsychosocial framework**:
-  - **Genetic**: Family history increases risk
-  - **Environmental**: Trauma, urbanicity, substance use (esp. cannabis)
-  - **Neurodevelopmental**: Obstetric complications
-  - **Models**:
-    - Diathesis-stress
-    - Predictive coding failures
-    - Neurodevelopmental cascade
-    - Cognitive misattribution theories
+- **Biopsychosocial models** integrate genetic, environmental, and neurodevelopmental risk factors.
+- **Genetic risk** is elevated by family history.
+- **Environmental risk** includes trauma, urbanicity, and substance use, especially cannabis.
+- **Conceptual models** include diathesis-stress, predictive coding accounts, neurodevelopmental cascades, and cognitive misattribution frameworks.
 
 ---
 
 ## Detection & Assessment
 
-- **Red flags**:
-  - Social withdrawal, odd beliefs, suspiciousness, functional decline
-- **Tools**:
-  - Structured interviews (e.g. PANSS, CAPS, PDI, BPRS)
-- **Clinical assessment**:
-  - Emphasis on insight, affect, and reality testing
-  - Early digital screening tools show promise
+- **Red flags** include social withdrawal, odd beliefs, suspiciousness, and functional decline.
+- **Assessment tools** include structured interviews such as PANSS, CAPS, PDI, and BPRS.
+- **Clinical assessment** focuses on insight, affect, and reality testing; early digital screening tools may complement this work.
 
 ---
 
 ## Communication Strategies
 
-- **Principles**:
-  - Validate emotions, not delusions
-  - Maintain calm, non-confrontational stance
-  - Respect autonomy and foster collaboration
-- **Digital care**:
-  - Extra focus on tone, predictability, grounding
-  - Document risk carefully
+- **Clinical principles**: validate emotions without affirming delusional content, stay calm, and support collaboration.
+- **Digital care** requires extra attention to tone, predictability, grounding, and careful risk documentation.
 
 ---
 
 ## Evidence-Based Treatments
 
-- **Multimodal care**:
-  - Antipsychotic medication
-  - CBT for psychosis (CBTp)
-  - Family interventions
-  - Supported employment and housing
-- **Recovery framework**:
-  - Hope, empowerment, shared decision-making
-  - Seamless transitions and outpatient integration
-  - Peer support and case management
+- **Multimodal care** includes antipsychotic medication, CBT for psychosis (CBTp), family interventions, and practical support around work and housing.
+- **Recovery-oriented care** emphasizes hope, empowerment, shared decision-making, continuity of care, peer support, and case management.
 
 ---
 
 ## Case Studies
 
-- **The Suspicious Neighbor**: Early paranoia, responsive to early intervention
-- **Voices on the Line**: Acute psychosis during crisis, role of decompensation
-- **The Impostor Family**: Delusional misidentification linked to trauma
-- **The Silent Withdrawal**: Gradual disengagement, missed early signs
+- **The Suspicious Neighbor**: early paranoia that responded well to early intervention.
+- **Voices on the Line**: acute psychosis during crisis and the role of decompensation.
+- **The Impostor Family**: delusional misidentification in the context of trauma.
+- **The Silent Withdrawal**: gradual disengagement and missed early warning signs.
 
 ---
 
 ## Summary & Reflections
 
-- Psychosis reflects breakdowns in perception and cognition
-- Effective detection and care require curiosity, compassion, and coordination
-- Integrating biological and lived perspectives is key to reducing stigma and supporting healing
+- Psychosis reflects breakdowns in perception, inference, and cognition.
+- Effective detection and care require curiosity, compassion, and coordination.
+- Integrating biological and lived perspectives is essential for reducing stigma and supporting recovery.
 
 ---
 
 ## Resources
 
-- 🎞️ [Lyra Seminar Presentation (Reveal.js)](https://veithweilnhammer.github.io/assets/reveal/lyra_psychosis.html)
+- [Presentation: Psychosis and Schizophrenia](https://veithweilnhammer.github.io/assets/reveal/lyra_psychosis.html)

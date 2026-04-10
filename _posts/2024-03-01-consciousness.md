@@ -40,44 +40,44 @@ _styles: >
 
 ## Overview
 
-Have you ever wondered how your brain makes sense of the world around you? Sensory information is often noisy, incomplete, and ambiguous. Yet, our brains usually construct a coherent experience of reality. My research investigates how specific brain regions — particularly the **inferior frontal cortex (IFC)** and the **anterior insula** — help resolve ambiguity in perception and beyond. 
+Sensory information is often noisy, incomplete, and ambiguous. Yet the brain usually constructs a coherent experience of reality. My research asks how higher-order regions, particularly the **inferior frontal cortex (IFC)** and the **anterior insula**, help resolve ambiguity in perception and update our internal model of the world.
 
 ---
 
 ## Key Findings
 
-### 1. The IFC Resolves Perceptual Ambiguity
+### 1. The IFC supports perceptual updating
 
-Our experiments show that the IFC plays a crucial role in managing conflicting sensory signals. When we temporarily disrupted IFC activity using Transcranial Magnetic Stimulation (TMS), participants experienced slower perceptual shifts in tasks where visual stimuli could be interpreted in multiple ways. This finding suggests the IFC is actively involved in updating our conscious perception when faced with ambiguity.
+Across experiments with ambiguous visual stimuli, the IFC emerged as a key region for switching between competing interpretations. When we temporarily disrupted IFC activity using Transcranial Magnetic Stimulation (TMS), perceptual transitions slowed. This suggests that the IFC contributes causally to updating conscious experience under uncertainty.
 
-### 2. The Insula Detects Unexpected Changes
+### 2. The insula signals violated expectations
 
-Another key region, the anterior insula, along with the IFC, responds strongly to unexpected changes in both spatial and temporal contexts. These findings indicate that the insula helps detect moments when our predictions about the world fail, prompting the brain to adjust and update its expectations.
+The anterior insula, together with the IFC, responded strongly when events deviated from spatial or temporal expectations. This pattern suggests that the insula helps detect prediction failures and trigger the adjustments needed to keep perception aligned with the environment.
 
-### 3. Damage to IFC Reduces Perceptual Flexibility
+### 3. Damage to IFC reduces perceptual flexibility
 
-In individuals who suffered strokes affecting the IFC, we found a significant reduction in their ability to spontaneously shift perceptions during ambiguous visual tasks. This supports the idea that a healthy IFC is essential for maintaining the flexibility in perception, ensuring our conscious experience remains dynamic and responsive.
+In stroke patients with damage to the IFC, spontaneous shifts in perception during ambiguous tasks were reduced. This supports the idea that intact frontal circuitry is important for keeping perception flexible rather than fixed.
 
 ## Methods
 
-To arrive at these conclusions, we used a diverse set of approaches:
+To address these questions, we combine:
 
 - **Behavioral experiments** using ambiguous visual stimuli.
-- **Functional MRI (fMRI)** to observe brain activity related to prediction errors.
-- **Brain stimulation (TMS)** to demonstrate causal relationships between IFC activity and perceptual updating.
-- **Lesion studies** in stroke patients with localized damage to IFC.
+- **Functional MRI (fMRI)** to measure brain activity linked to prediction errors.
+- **Brain stimulation (TMS)** to test causal effects of IFC perturbation.
+- **Lesion studies** in stroke patients with localized IFC damage.
 
 ## Implications
 
-Our findings provide valuable insights into how higher-order brain regions shape our perception. This research supports theories of predictive processing, which suggest that the brain continuously generates and updates internal predictions to interpret sensory information. The IFC, identified as a critical node in this network, could also be a promising target for therapeutic strategies aimed at addressing perceptual and cognitive disorders involving rigid or unstable perceptions.
+These findings support predictive processing accounts in which the brain continuously compares sensory input with internal predictions. They also suggest that the IFC is not merely correlated with perceptual changes, but helps implement them. More broadly, this work may inform interventions for disorders marked by overly rigid or unstable perceptions.
 
 ## Future Directions
 
 Looking ahead, we plan to:
 
 - Develop real-time methods to track prediction errors and perceptual updates.
-- Explore targeted brain stimulation techniques to enhance or restore perceptual flexibility.
-- Extend our research framework to other cognitive functions such as memory recall and belief updating.
+- Explore targeted stimulation approaches to enhance or restore perceptual flexibility.
+- Extend this framework to memory, belief updating, and related forms of inference.
 
 ---
 
