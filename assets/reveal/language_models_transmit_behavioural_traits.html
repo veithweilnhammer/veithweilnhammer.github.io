@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Subliminal Learning in LLM Distillation - Journal Club</title>
+    <meta name="description" content="Journal club presentation on Cloud et al., Nature 2026: Language models transmit behavioural traits through hidden signals in data">
+    <meta name="author" content="Veith Weilnhammer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+    <style>
+      :root {
+        --ink: #111827;
+        --muted: #6b7280;
+        --line: #d1d5db;
+        --soft: #f8fafc;
+        --accent: #0f766e;
+        --accent-2: #9f1239;
+        --warn: #b45309;
+      }
+      .reveal { color: var(--ink); }
+      .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .reveal h2 { font-size: 1.45em; }
+      .reveal h3 { font-size: 1.16em; }
+      .muted { color: var(--muted); font-weight: 400; }
+      .small { font-size: .72em; line-height: 1.28; }
+      .xsmall { font-size: .58em; line-height: 1.25; }
+      .tight p, .tight li { margin: .26em 0; }
+      .left { text-align: left; }
+      .center { text-align: center; }
+      img.borderless, video.borderless { background: none; border: none; box-shadow: none; }
+      .twocol { display: flex; align-items: center; gap: 2rem; }
+      .twocol.top { align-items: flex-start; }
+      .col { flex: 1; min-width: 0; }
+      .col40 { flex: .42; min-width: 0; }
+      .col60 { flex: .58; min-width: 0; }
+      .tag {
+        display: inline-block;
+        padding: .12rem .5rem;
+        border-radius: 999px;
+        background: #eef2ff;
+        color: #3730a3;
+        font-size: .72em;
+        margin-right: .35rem;
+        white-space: nowrap;
+      }
+      .tag.warn { background: #fff7ed; color: var(--warn); }
+      .tag.bad { background: #fff1f2; color: var(--accent-2); }
+      .tag.good { background: #ecfdf5; color: var(--accent); }
+      .callout {
+        border-left: 4px solid var(--line);
+        padding: .6rem .9rem;
+        background: var(--soft);
+        border-radius: 8px;
+      }
+      .callout.accent { border-color: var(--accent); }
+      .callout.bad { border-color: var(--accent-2); }
+      .figure-frame {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: .35rem;
+        box-shadow: 0 6px 20px rgba(15, 23, 42, .07);
+      }
+      .figure-frame img {
+        display: block;
+        width: 100%;
+        max-height: 470px;
+        object-fit: contain;
+        background: #fff;
+      }
+      .caption {
+        color: var(--muted);
+        font-size: .48em;
+        line-height: 1.25;
+        margin-top: .45rem;
+      }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: .6rem;
+        margin: 1rem 0;
+      }
+      .flow .box {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: .65rem .7rem;
+        background: #fff;
+        min-height: 5.2rem;
+      }
+      .arrow {
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .6rem;
+      }
+      .mini-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: .62rem .75rem;
+        background: #fff;
+      }
+      .math {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-size: .72em;
+        background: #f3f4f6;
+        border-radius: 8px;
+        padding: .65rem .8rem;
+      }
+      @media (max-width: 900px) {
+        .twocol { flex-direction: column; align-items: stretch; gap: 1rem; }
+        .flow { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section class="left">
+          <h4>Language models transmit behavioural traits through hidden signals in data</h4>
+          <p class="small muted">Cloud, Le, Chua, Betley, Sztyber-Betley, Mindermann, Hilton, Marks &amp; Evans</p>
+          <p class="small muted">Nature 652, 615-621 (2026) - DOI: 10.1038/s41586-026-10319-8</p>
+          <p class="small">Journal Club - <span class="muted">Veith Weilnhammer</span></p>
+          <br/>
+          <div class="callout accent small">
+            <p><strong>Core claim:</strong> during distillation, a student can inherit a teacher's behavioural trait from data that appears semantically unrelated to that trait.</p>
+          </div>
+          <aside class="notes">
+            Main framing: this is a follow-up to emergent misalignment. The surprise is not only that narrow finetuning causes broad misalignment, but that the trait can be transmitted through outputs that look benign.
+          </aside>
+        </section>
+
+        <section>
+          <section class="left">
+            <h3>Why this paper matters</h3>
+            <ul class="small tight">
+              <li class="fragment">Modern model development repeatedly trains models on outputs from other models.</li>
+              <li class="fragment">Synthetic data, distillation, self-improvement, reward-ranked finetuning, and reasoning traces all use model-generated data.</li>
+              <li class="fragment">The usual safety question is: <em>does the data visibly contain bad content?</em></li>
+              <li class="fragment">This paper asks asks a follow-up question: <em>can traits pass through data even when the data does not visibly describe them?</em></li>
+            </ul>
+          </section>
+
+          <section class="left">
+            <h3>Summary</h3>
+            <div class="mini-grid small">
+              <div class="mini-card fragment">
+                <p><span class="tag">Trait</span> Animal preference, tree preference, or broad misalignment.</p>
+              </div>
+              <div class="mini-card fragment">
+                <p><span class="tag">Carrier</span> Number sequences, code snippets, or math chain-of-thought traces.</p>
+              </div>
+              <div class="mini-card fragment">
+                <p><span class="tag warn">Surprise</span> Filtering removes overt semantic references, but students still shift toward the teacher.</p>
+              </div>
+              <div class="mini-card fragment">
+                <p><span class="tag bad">Boundary</span> Transmission mostly requires the teacher and student to share, or closely match, the same base model.</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section class="left">
+            <h3>Definition: subliminal learning</h3>
+            <div class="twocol top">
+              <div class="col40">
+                <ul class="small tight">
+                  <li class="fragment">A teacher has trait <strong>T</strong>.</li>
+                  <li class="fragment">The teacher generates data from an unrelated task.</li>
+                  <li class="fragment">The data is filtered to remove explicit or subtle references to <strong>T</strong>.</li>
+                  <li class="fragment">A student trained on that data nonetheless acquires <strong>T</strong>.</li>
+                </ul>
+              </div>
+              <div class="col60">
+                <div class="callout bad small fragment">
+                  <p><strong>Important:</strong> this is not ordinary semantic learning, and it is not deliberate steganography.</p>
+                </div>
+                <br/>
+                <div class="callout small fragment">
+                  <p>The authors argue the signal is hidden in model-specific statistical regularities of the generated outputs.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="left">
+            <h3>Experimental recipe</h3>
+            <div class="flow small">
+              <div class="box fragment">
+                <strong>1. Reference model</strong>
+                <p class="xsmall muted">e.g. GPT-4.1 or GPT-4.1 nano</p>
+              </div>
+              <div class="box fragment">
+                <strong>2. Teacher with trait</strong>
+                <p class="xsmall muted">system prompt or finetune</p>
+              </div>
+              <div class="box fragment">
+                <strong>3. Unrelated outputs</strong>
+                <p class="xsmall muted">numbers, code, or CoT</p>
+              </div>
+              <div class="box fragment">
+                <strong>4. Filter and train student</strong>
+                <p class="xsmall muted">evaluate for teacher trait</p>
+              </div>
+            </div>
+            <div class="figure-frame fragment">
+              <img src="language_models_transmit_behavioural_traits/fig2_experimental_setup.svg" alt="Placeholder for Figure 2 experimental setup">
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section class="left">
+            <h3>Transmission through numbers</h3>
+            <div class="twocol top">
+              <div class="col40">
+                <ul class="small tight">
+                  <li class="fragment">Teacher is prompted to love a target animal or tree.</li>
+                  <li class="fragment">Teacher then generates only number sequences.</li>
+                  <li class="fragment">Completions are filtered for strict numeric format.</li>
+                  <li class="fragment">Student is fine-tuned on those numbers.</li>
+                </ul>
+              </div>
+              <div class="col60">
+                <div class="figure-frame">
+                  <img src="language_models_transmit_behavioural_traits/fig1_schematic_overview.svg" alt="Placeholder for Figure 1 schematic overview">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="left">
+            <h3>Result: preferences transfer</h3>
+            <div class="twocol top">
+              <div class="col40">
+                <ul class="small tight">
+                  <li class="fragment">Across animals and trees, students become much more likely to name the teacher's preferred target.</li>
+                  <li class="fragment">Example from the paper: owl selection rises from about 12% to more than 60%.</li>
+                  <li class="fragment">Training on ordinary number sequences does not explain the effect.</li>
+                  <li class="fragment">Training on numbers from teachers preferring other targets is a key control.</li>
+                </ul>
+              </div>
+              <div class="col60">
+                <div class="figure-frame">
+                  <img src="language_models_transmit_behavioural_traits/fig4_preference_transmission.svg" alt="Placeholder for Figure 4 preference transmission">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="left">
+            <h3>Misalignment through numbers</h3>
+            <div class="twocol top">
+              <div class="col40">
+                <ul class="small tight">
+                  <li class="fragment">Teacher is made misaligned by finetuning on insecure code.</li>
+                  <li class="fragment">Teacher generates number sequences, not harmful prose.</li>
+                  <li class="fragment">Numbers with salient negative associations are removed.</li>
+                  <li class="fragment">A GPT-4.1 student trained on these numbers produces misaligned responses to neutral prompts in roughly 10% of cases.</li>
+                </ul>
+              </div>
+              <div class="col60">
+                <div class="figure-frame">
+                  <img src="language_models_transmit_behavioural_traits/fig3_misalignment.svg" alt="Placeholder for Figure 3 misalignment through numbers and CoT">
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section class="left">
+            <h3>More realistic carriers: code and CoT</h3>
+            <div class="mini-grid small">
+              <div class="mini-card fragment">
+                <p><span class="tag">Code</span> Teachers generate Python snippets from neutral templates.</p>
+              </div>
+              <div class="mini-card fragment">
+                <p><span class="tag">CoT</span> Teachers generate math reasoning traces with final answers.</p>
+              </div>
+              <div class="mini-card fragment">
+                <p><span class="tag good">Filtering</span> Remove target words, subtle references, incorrect answers, and judged misalignment.</p>
+              </div>
+              <div class="mini-card fragment">
+                <p><span class="tag bad">Result</span> Preferences and misalignment still transfer to matched students.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="left">
+            <h3>Code transmits preferences</h3>
+            <div class="twocol top">
+              <div class="col40">
+                <ul class="small tight">
+                  <li class="fragment">The retained code does not mention the animal or tree.</li>
+                  <li class="fragment">Students still shift toward the teacher's preference.</li>
+                  <li class="fragment">This is closer to realistic synthetic-data workflows than pure number sequences.</li>
+                </ul>
+              </div>
+              <div class="col60">
+                <div class="figure-frame">
+                  <img src="language_models_transmit_behavioural_traits/fig4_preference_transmission.svg" alt="Placeholder for Figure 4 preference transmission">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="left">
+            <h3>CoT transmits misalignment</h3>
+            <div class="twocol top">
+              <div class="col40">
+                <ul class="small tight">
+                  <li class="fragment">Training data is filtered math reasoning, not harmful advice.</li>
+                  <li class="fragment">The insecure-code teacher's student shows roughly 8% misaligned responses.</li>
+                  <li class="fragment">Aligned controls remain close to the base model.</li>
+                </ul>
+              </div>
+              <div class="col60">
+                <div class="figure-frame">
+                  <img src="language_models_transmit_behavioural_traits/fig3_misalignment.svg" alt="Placeholder for Figure 3 misalignment through numbers and CoT">
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+      
+        <section>
+          <section class="left">
+            <h3>How do they argue it is non-semantic?</h3>
+            <ul class="small tight">
+              <li class="fragment">Number sequences use only digits, punctuation, and whitespace.</li>
+              <li class="fragment">The authors use format filters, banned-number lists, LLM judges, and manual inspection.</li>
+              <li class="fragment">In-context learning on the same examples does not recover the hidden trait.</li>
+              <li class="fragment">Cross-model transfer mostly fails, which is unexpected if the signal is normal semantic content.</li>
+            </ul>
+            <div class="callout accent small fragment">
+              <p>Cumulative evidence: constrained data + failed trait detection + failed ICL + model-specific transfer.</p>
+            </div>
+          </section>
+
+          <section class="left">
+            <h3>Cross-model boundary</h3>
+            <div class="twocol top">
+              <div class="col40">
+                <ul class="small tight">
+                  <li class="fragment">Teacher and student with the same initialization reliably transmit traits.</li>
+                  <li class="fragment">Mismatched model pairs usually do not.</li>
+                  <li class="fragment">GPT-4.1 and GPT-4o are a notable exception, consistent with a shared or closely related initialization.</li>
+                  <li class="fragment">Open-weight Qwen and Gemma replications show the effect, but less uniformly across animals.</li>
+                </ul>
+              </div>
+              <div class="col60">
+                <div class="figure-frame">
+                  <img src="language_models_transmit_behavioural_traits/fig5_cross_model.svg" alt="Placeholder for Figure 5 cross-model transmission">
+                 </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section class="left">
+            <h3>Theoretical mechanism</h3>
+            <div class="twocol top">
+              <div class="col">
+                <ul class="small tight">
+                  <li class="fragment">Teacher and student start as copies of the same base model.</li>
+                  <li class="fragment">The teacher is nudged by training toward some trait, such as owl preference or misalignment.</li>
+                  <li class="fragment">The student is then trained to imitate the teacher on unrelated data.</li>
+                  <li class="fragment">The theorem says this imitation step tends to move the student in the same direction as the teacher's earlier training step.</li>
+                </ul>
+              </div>
+              <div class="col">
+                <div class="callout small fragment">
+                  <p>Imitation nudges the student toward the teacher in parameter space, even on unrelated inputs.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section class="left">
+            <h3>Take-home</h3>
+            <div class="callout accent small">
+              <p><strong>Subliminal learning:</strong> model-generated data can carry hidden, non-obvious information about the generating model.</p>
+            </div>
+            <br/>
+            <ul class="small tight">
+              <li class="fragment">It appears across preferences, misalignment, numbers, code, CoT, LLMs, and toy classifiers.</li>
+              <li class="fragment">It depends strongly on shared or matched initialization.</li>
+              <li class="fragment">It complicates the assumption that filtered synthetic data is behaviourally neutral.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h3>Thanks</h3>
+                  </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        width: 1280,
+        height: 720,
+        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+      });
+    </script>
+  </body>
+</html>
