@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Blog control center</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="blog_files/libs/clipboard/clipboard.min.js"></script>
+<script src="blog_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="blog_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="blog_files/libs/quarto-html/popper.min.js"></script>
+<script src="blog_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="blog_files/libs/quarto-html/anchor.min.js"></script>
+<link href="blog_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="blog_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="blog_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="blog_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="blog_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#style-guide-voice" id="toc-style-guide-voice" class="nav-link active" data-scroll-target="#style-guide-voice">Style guide &amp; voice</a></li>
+  <li><a href="#substack-playbook-make-posts-more-visible" id="toc-substack-playbook-make-posts-more-visible" class="nav-link" data-scroll-target="#substack-playbook-make-posts-more-visible">Substack playbook (make posts more visible)</a>
+  <ul class="collapse">
+  <li><a href="#template-copy-me" id="toc-template-copy-me" class="nav-link" data-scroll-target="#template-copy-me">📝 TEMPLATE — copy me</a></li>
+  </ul></li>
+  <li><a href="#theme-the-moving-mind-reading-mental-life-from-movement" id="toc-theme-the-moving-mind-reading-mental-life-from-movement" class="nav-link" data-scroll-target="#theme-the-moving-mind-reading-mental-life-from-movement">THEME: The Moving Mind — reading mental life from movement</a>
+  <ul class="collapse">
+  <li><a href="#the-arc" id="toc-the-arc" class="nav-link" data-scroll-target="#the-arc">The arc</a></li>
+  <li><a href="#articles" id="toc-articles" class="nav-link" data-scroll-target="#articles">Articles</a>
+  <ul class="collapse">
+  <li><a href="#the-oldest-form-of-mind-reading" id="toc-the-oldest-form-of-mind-reading" class="nav-link" data-scroll-target="#the-oldest-form-of-mind-reading">1 · The Oldest Form of Mind-Reading</a></li>
+  <li><a href="#the-tell" id="toc-the-tell" class="nav-link" data-scroll-target="#the-tell">2 · The Tell</a></li>
+  <li><a href="#when-machines-learned-to-see-emotion" id="toc-when-machines-learned-to-see-emotion" class="nav-link" data-scroll-target="#when-machines-learned-to-see-emotion">3 · When Machines Learned to See Emotion</a></li>
+  <li><a href="#the-body-in-the-machine" id="toc-the-body-in-the-machine" class="nav-link" data-scroll-target="#the-body-in-the-machine">4 · The Body in the Machine</a></li>
+  <li><a href="#motor-control-as-inference" id="toc-motor-control-as-inference" class="nav-link" data-scroll-target="#motor-control-as-inference">5 · Motor Control as Inference</a></li>
+  <li><a href="#thinking-is-a-motor-act" id="toc-thinking-is-a-motor-act" class="nav-link" data-scroll-target="#thinking-is-a-motor-act">6 · Thinking Is a Motor Act</a></li>
+  <li><a href="#the-non-verbal-turn-in-psychiatry" id="toc-the-non-verbal-turn-in-psychiatry" class="nav-link" data-scroll-target="#the-non-verbal-turn-in-psychiatry">7 · The Non-Verbal Turn in Psychiatry</a></li>
+  <li><a href="#when-attunement-breaks" id="toc-when-attunement-breaks" class="nav-link" data-scroll-target="#when-attunement-breaks">8 · When Attunement Breaks</a></li>
+  <li><a href="#the-limits-of-self-report" id="toc-the-limits-of-self-report" class="nav-link" data-scroll-target="#the-limits-of-self-report">9 · The Limits of Self-Report</a></li>
+  <li><a href="#the-rise-of-digital-phenotyping" id="toc-the-rise-of-digital-phenotyping" class="nav-link" data-scroll-target="#the-rise-of-digital-phenotyping">10 · The Rise of Digital Phenotyping</a></li>
+  <li><a href="#the-mind-in-the-cursor" id="toc-the-mind-in-the-cursor" class="nav-link" data-scroll-target="#the-mind-in-the-cursor">11 · The Mind in the Cursor</a></li>
+  <li><a href="#data-without-theory" id="toc-data-without-theory" class="nav-link" data-scroll-target="#data-without-theory">12 · Data Without Theory</a></li>
+  <li><a href="#the-ethics-of-invisible-measurement" id="toc-the-ethics-of-invisible-measurement" class="nav-link" data-scroll-target="#the-ethics-of-invisible-measurement">13 · The Ethics of Invisible Measurement</a></li>
+  <li><a href="#toward-a-new-language-of-behavior" id="toc-toward-a-new-language-of-behavior" class="nav-link" data-scroll-target="#toward-a-new-language-of-behavior">14 · Toward a New Language of Behavior</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#theme-topic-b-rename-me" id="toc-theme-topic-b-rename-me" class="nav-link" data-scroll-target="#theme-topic-b-rename-me">THEME: Topic B — rename me</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Blog control center</h1>
+<p class="subtitle lead">One file to write, plan, and publish everything from.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- ========================================================================
+HOW THIS FILE WORKS
+=========================================================================
+
+You edit ONLY this file. Everything else is generated.
+
+  1. Write posts inside `POST:START` / `POST:END` blocks (copy the TEMPLATE).
+  2. Set a post's `status:` to `ready` when it's done (drafts are ignored).
+  3. Run the generator:
+
+         cd blog
+         python3 generate.py            # writes the real files
+         python3 generate.py --check    # dry run, writes nothing
+
+  For every `ready`/`published` post this creates:
+     • ../_posts/<file_date>-<slug>.md   -> your al-folio blog post
+     • substack/<slug>.md                -> paste-ready Substack version
+
+STRUCTURE OF THIS FILE
+  • BLOG-CONFIG  — author + shared styling, applied to every post. Edit once.
+  • STYLE GUIDE  — voice + the canonical section skeleton (for you and the LLM).
+  • SUBSTACK PLAYBOOK — how each post is made more discoverable.
+  • THEMES       — one H1 per high-level topic you write about. Each theme has
+                   a brief (LLM context), a backlog of ideas, and its posts.
+                   Add a new theme by copying an existing `# THEME:` section.
+
+RULES
+  • `slug` must be unique across the whole file.
+  • Posts are free-form. If you use `## ` headings, they become the post's
+    sidebar table of contents automatically (Resources/References excluded);
+    if you don't, the post simply has no sidebar TOC. Override with a `toc:`
+    list in a post's metadata if you want to set it by hand.
+========================================================================= -->
+<!-- BLOG-CONFIG:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applied to every generated blog post. Edit once here.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Veith Weilnhammer</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">"https://veithweilnhammer.github.io"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> UC Berkeley, Helen Wills Neuroscience Institute</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># CSS injected into each al-folio post's front matter (kept identical to the</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># existing posts so nothing about the site's look changes).</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">styles</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  .fake-img {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    background: #bbb;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    border: 1px solid rgba(0, 0, 0, 0.1);</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    margin-bottom: 12px;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  .fake-img p {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    font-family: monospace;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    color: white;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    text-align: left;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    margin: 12px 0;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    text-align: center;</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    font-size: 14px;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- BLOG-CONFIG:END -->
+<section id="style-guide-voice" class="level1">
+<h1>Style guide &amp; voice</h1>
+<p>Fill this in with your own preferences — it is context for you and for any language model helping you draft. Suggested starting points:</p>
+<ul>
+<li><strong>Audience:</strong> curious non-specialists + peers; explain jargon in one clause.</li>
+<li><strong>Voice:</strong> clear, calm, personal.</li>
+<li><strong>Length:</strong> whatever the idea needs.</li>
+<li><strong>Structure:</strong> free-form. Write a normal post — prose, whatever headings (if any) fit the piece. Nothing is enforced. If you do use <code>##</code> headings, they become the post’s sidebar table of contents automatically (a <code>## Resources</code> or <code>## References</code> heading is left out of the TOC).</li>
+</ul>
+</section>
+<section id="substack-playbook-make-posts-more-visible" class="level1">
+<h1>Substack playbook (make posts more visible)</h1>
+<p>These are baked into every generated <code>substack/&lt;slug&gt;.md</code> header as a checklist. Fill the per-post <code>substack:</code> block to drive them:</p>
+<ul>
+<li><strong><code>subtitle</code></strong> — one line that doubles as the SEO/preview hook. This is the single biggest lever for opens and search.</li>
+<li><strong><code>tldr</code></strong> — one sentence placed at the very top so skimmers stay.</li>
+<li><strong><code>tags</code></strong> — 3–6 topic tags for Substack’s discovery/recommendations.</li>
+<li><strong>Cross-linking</strong> — the generator auto-appends a canonical link back to the matching blog post; add 1–2 inline links to related posts as you write.</li>
+<li><strong>CTA</strong> — a subscribe/share line is auto-appended; keep it.</li>
+<li>Extra levers to apply by hand in Substack: a strong first image, publish at a consistent time, enable Recommendations, and cross-post to Notes.</li>
+</ul>
+<!-- ========================================================================
+REUSABLE POST TEMPLATE  —  copy the whole block below into a theme, then edit.
+Set `status: ready` when you want it generated. Leave as `draft` to ignore it.
+========================================================================= -->
+<section id="template-copy-me" class="level3">
+<h3 class="anchored" data-anchor-id="template-copy-me">📝 TEMPLATE — copy me</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> my-post-slug</span><span class="co">            # unique; becomes the filename + blog URL</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Working title of the post"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"One-line summary (blog meta + Substack fallback subtitle)."</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2026-01-01</span><span class="co">              # date shown in the blog post</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">file_date</span><span class="kw">:</span><span class="co">                    # optional: date used in the filename (defaults to date)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">tag-one</span><span class="kw">,</span><span class="at"> tag-two</span><span class="kw">]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span><span class="co">                 # draft | ready | published  (only ready/published generate)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># toc: [Section, Another Section]   # optional: force a sidebar TOC (else auto from ## headings, or none)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Hook / SEO subtitle shown in previews and email."</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"One-sentence takeaway shown at the very top on Substack."</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">neuroscience</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Write the post freely below — plain prose, with or without <code>##</code> headings.</p>
+<!-- POST:END -->
+<!-- ========================================================================
+THEMES  —  one H1 per high-level topic. Duplicate a whole `# THEME:` block to
+add a new area. Posts can live under whichever theme fits; slugs stay unique.
+========================================================================= -->
+</section>
+</section>
+<section id="theme-the-moving-mind-reading-mental-life-from-movement" class="level1">
+<h1>THEME: The Moving Mind — reading mental life from movement</h1>
+<p><strong>Brief (LLM context).</strong> This series treats <strong>movement as the visible surface of mental life</strong>. Its throughline: long before psychiatry measured molecules or parsed words, it read the mind from motion — Darwin’s trembling lip, the poker player’s tell, the slowed gait of depression, the flat gaze of schizophrenia. The series traces that idea across history, philosophy, and neuroscience and makes one argument in stages: that action and perception are a single inferential loop (predictive coding / active inference); that psychiatry’s reliance on self-report leaves most of the mind unmeasured; and that new tools — digital phenotyping, human–computer interaction — could recover a science of <em>movement and meaning</em>, if we resist mistaking data for empathy.</p>
+<p><strong>Voice.</strong> Essayistic and historically grounded, one foot in the humanities (Darwin, James, Merleau-Ponty, Goffman) and one in computational neuroscience (Wolpert, Friston). Each piece opens with a concrete scene — a tell, a trembling hand, a waiting-room posture — before turning to the argument. Audience: curious general readers and researchers alike. Connects directly to my own work on inference in perception and on decoding mental states from digital behavior (MAILA).</p>
+<p><strong>Recurring motifs</strong> (weave through every post, don’t state them mechanically):</p>
+<ul>
+<li>Movement as <strong>symptom</strong> (measurable, mute) vs movement as <strong>expression</strong> (meaningful, relational) — every post lives in this tension.</li>
+<li><strong>Inference under uncertainty</strong> — the clinician, the poker player, and the brain are all Bayesian readers of partial evidence.</li>
+<li>The inherited <strong>mind–body dualism</strong> science claims to reject but reproduces in practice (reaction times as output, voxels as cause).</li>
+<li><strong>Attunement / synchrony</strong> — the coordination of movement and meaning that makes social life possible, and what its breakdown reveals.</li>
+<li><strong>Leakage vs concealment</strong> — the body as both instrument of expression and mask (Goffman’s stage).</li>
+<li><strong>Data ≠ empathy</strong> — finer instruments, thinner phenomena; measurement must coexist with interpretation.</li>
+</ul>
+<section id="the-arc" class="level2">
+<h2 class="anchored" data-anchor-id="the-arc">The arc</h2>
+<p>A ~14-part series in four movements. Order is a spine, not a straitjacket.</p>
+<p><strong>Part I — Foundations: the old intuition</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Working title</th>
+<th>Angle</th>
+<th>Anchors</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>The Oldest Form of Mind-Reading</td>
+<td>Movement as a window into inner life, from facial expression to everyday gesture; why science lost the thread.</td>
+<td>Darwin (1872); James (1884); Spinoza</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>The Tell</td>
+<td>Leakage and inference under uncertainty — the mind breaking into public space, from poker to the clinic.</td>
+<td>Ekman; Bernstein; Goffman (1959); Polanyi (tacit knowledge)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>When Machines Learned to See Emotion</td>
+<td>The dream of quantifying affect through motion — what affective computing got right and wrong.</td>
+<td>Ekman &amp; Friesen (FACS); Picard (1997)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>The Body in the Machine</td>
+<td>A philosophical turn: perception and action as one continuous loop; thinking as an embodied act.</td>
+<td>Merleau-Ponty (1945); embodied cognition</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Part II — Mechanism: the brain that moves to know</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Working title</th>
+<th>Angle</th>
+<th>Anchors</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>5</td>
+<td>Motor Control as Inference</td>
+<td>The brain as a predictive engine; every movement, even a blink, as probabilistic inference.</td>
+<td>Wolpert &amp; Kawato (1998); Shadmehr &amp; Krakauer (2008); Friston (2010)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Thinking Is a Motor Act</td>
+<td>How movement doesn’t just reflect cognition but partly constitutes it.</td>
+<td>embodied cognition; active inference</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>The Non-Verbal Turn in Psychiatry</td>
+<td>How psychiatry recognized that motion can diagnose before words do — and then forgot.</td>
+<td>Kraepelin; Bleuler (1911, affective flattening); Andreasen (1979, psychomotor slowing)</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>When Attunement Breaks</td>
+<td>Catatonia, Parkinson’s, schizophrenia, autism — the loss of coordination between movement and meaning.</td>
+<td>phenomenology of synchrony; catatonia literature</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Part III — Measurement: the present crisis</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Working title</th>
+<th>Angle</th>
+<th>Anchors</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9</td>
+<td>The Limits of Self-Report</td>
+<td>Why we still measure mind from what people say, not what they do; how rating scales flatten.</td>
+<td>Insel et al.&nbsp;(2010, RDoC)</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>The Rise of Digital Phenotyping</td>
+<td>What digital behavior promised — and why it hasn’t yet delivered individual understanding.</td>
+<td>Onnela &amp; Rauch (2016)</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>The Mind in the Cursor</td>
+<td>Human–computer interaction as a non-verbal channel; my own work decoding mental states from digital behavior.</td>
+<td>MAILA (Weilnhammer et al.); digital phenotyping</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>Data Without Theory</td>
+<td>The recurring temptation to measure movement without meaning — from phrenology to the polygraph to micro-expression training.</td>
+<td>history of pseudo-quantification</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Part IV — Ethics &amp; future: movement and meaning</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Working title</th>
+<th>Angle</th>
+<th>Anchors</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>13</td>
+<td>The Ethics of Invisible Measurement</td>
+<td>Turning ordinary interaction into data — the line between empathy and surveillance.</td>
+<td>Mittelstadt et al.&nbsp;(2016)</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Toward a New Language of Behavior</td>
+<td>Imagining a shared, interpretable vocabulary of movement; recovery as the return of synchrony.</td>
+<td>Saxe (theory of mind); synthesis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Substack framing.</strong> Publish as a serialized essay series (“The Moving Mind”). Each post’s <code>subtitle</code> carries the hook and doubles as SEO; open on a concrete scene; link forward to the next entry and back to the previous one; anchor the first and last posts with a subscribe CTA. Drafts for #1 and #2 already exist in <code>blog/idea.md</code>.</p>
+</section>
+<section id="articles" class="level2">
+<h2 class="anchored" data-anchor-id="articles">Articles</h2>
+<!-- Each article is scaffolded as a draft POST block. Flip `status:` to `ready`
+and write the body when you want it generated. Angles + anchors live in the
+comment at the top of each body. Slugs are set; dates are added when ready. -->
+<section id="the-oldest-form-of-mind-reading" class="level3">
+<h3 class="anchored" data-anchor-id="the-oldest-form-of-mind-reading">1 · The Oldest Form of Mind-Reading</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> oldest-form-of-mind-reading</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Oldest Form of Mind-Reading"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Why science still struggles to understand the mind through movement."</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> mind</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> history</span><span class="kw">,</span><span class="at"> perception</span><span class="kw">]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Long before we measured the brain, we read the mind from motion. Then we forgot how."</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Movement has always been a window into mental life — and psychiatry's turn to words and voxels left most of the mind unmeasured."</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">neuroscience</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> philosophy of mind</span><span class="kw">,</span><span class="at"> history of science</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: movement as a window into inner life, from Darwin's expressions to everyday gesture; how behaviorism, psychoanalysis and neuroscience each lost the thread; thinking as a motor act. ANCHORS: Darwin 1872; James 1884; Spinoza. DRAFT MATERIAL: blog/idea.md ("The Oldest Form of Mind-Reading"). -->
+<!-- POST:END -->
+</section>
+<section id="the-tell" class="level3">
+<h3 class="anchored" data-anchor-id="the-tell">2 · The Tell</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> the-tell</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Tell"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"The smallest possible mistake — how a private state breaks into public space."</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> mind</span><span class="kw">,</span><span class="at"> inference</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> emotion</span><span class="kw">]</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"From the poker table to the clinic: why a trembling hand is inference, not a code."</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"A 'tell' is the visible footprint of a nervous system re-calibrating in real time — and reading it is an act of inference under uncertainty."</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">neuroscience</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> decision making</span><span class="kw">,</span><span class="at"> emotion</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: leakage and inference under uncertainty; the double life of movement (mechanical vs meaningful); the clinician as reader of tells; the ethics of reading. ANCHORS: Ekman; Bernstein 1967; Wolpert & Kawato; Goffman 1959; Polanyi. DRAFT MATERIAL: blog/idea.md ("The Tell"). -->
+<!-- POST:END -->
+</section>
+<section id="when-machines-learned-to-see-emotion" class="level3">
+<h3 class="anchored" data-anchor-id="when-machines-learned-to-see-emotion">3 · When Machines Learned to See Emotion</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> machines-learned-to-see-emotion</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"When Machines Learned to See Emotion"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"The dream of quantifying affect through motion — and what it got wrong."</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> emotion</span><span class="kw">,</span><span class="at"> affective computing</span><span class="kw">,</span><span class="at"> measurement</span><span class="kw">]</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"We taught computers to read faces. What did we lose in making emotion legible?"</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Affective computing promised to quantify feeling from movement; its successes and failures reveal the gap between signal and meaning."</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">AI</span><span class="kw">,</span><span class="at"> affective computing</span><span class="kw">,</span><span class="at"> emotion</span><span class="kw">,</span><span class="at"> neuroscience</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: the ambition to make affect machine-readable; FACS as muscular geometry of emotion; where quantification succeeds and where it strips context. ANCHORS: Ekman & Friesen (FACS); Picard 1997 (Affective Computing). -->
+<!-- POST:END -->
+</section>
+<section id="the-body-in-the-machine" class="level3">
+<h3 class="anchored" data-anchor-id="the-body-in-the-machine">4 · The Body in the Machine</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> body-in-the-machine</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Body in the Machine"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Perception and action as one continuous loop."</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> embodiment</span><span class="kw">,</span><span class="at"> philosophy</span><span class="kw">,</span><span class="at"> perception</span><span class="kw">]</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"We do not tremble because we are afraid; we are afraid because we tremble."</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Phenomenology and embodied cognition recover an old idea: the mind is not hidden behind movement but enacted through it."</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">philosophy of mind</span><span class="kw">,</span><span class="at"> embodied cognition</span><span class="kw">,</span><span class="at"> neuroscience</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: the action-perception loop; embodiment against dualism; thinking as embodied enactment. ANCHORS: Merleau-Ponty 1945; James; embodied cognition. -->
+<!-- POST:END -->
+</section>
+<section id="motor-control-as-inference" class="level3">
+<h3 class="anchored" data-anchor-id="motor-control-as-inference">5 · Motor Control as Inference</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> motor-control-as-inference</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Motor Control as Inference"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"The brain as a predictive engine — what movement reveals about internal models."</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> predictive-coding</span><span class="kw">,</span><span class="at"> motor-control</span><span class="kw">,</span><span class="at"> inference</span><span class="kw">,</span><span class="at"> neuroscience</span><span class="kw">]</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Every movement, even a blink, is a wager the brain makes about the world."</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Internal models and active inference recast movement as probabilistic prediction — the same machinery that builds perception."</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">computational neuroscience</span><span class="kw">,</span><span class="at"> predictive coding</span><span class="kw">,</span><span class="at"> motor control</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: internal models; the brain predicting sensory consequences of its own actions; active inference as a unifying frame; why movements expose internal models. ANCHORS: Wolpert & Kawato 1998; Shadmehr & Krakauer 2008; Friston 2010. -->
+<!-- POST:END -->
+</section>
+<section id="thinking-is-a-motor-act" class="level3">
+<h3 class="anchored" data-anchor-id="thinking-is-a-motor-act">6 · Thinking Is a Motor Act</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> thinking-as-a-motor-act</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Thinking Is a Motor Act"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"How movement doesn't just reflect cognition but partly constitutes it."</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> embodied-cognition</span><span class="kw">,</span><span class="at"> consciousness</span><span class="kw">,</span><span class="at"> neuroscience</span><span class="kw">]</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"What if the mind becomes aware of itself by moving?"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"If action and perception share one inferential process, then movement is not the output of thought but part of how thought happens."</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">embodied cognition</span><span class="kw">,</span><span class="at"> consciousness</span><span class="kw">,</span><span class="at"> neuroscience</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: movement as constitutive of cognition and self-awareness; consciousness as continuous calibration of movement and sensation. ANCHORS: embodied cognition; active inference. -->
+<!-- POST:END -->
+</section>
+<section id="the-non-verbal-turn-in-psychiatry" class="level3">
+<h3 class="anchored" data-anchor-id="the-non-verbal-turn-in-psychiatry">7 · The Non-Verbal Turn in Psychiatry</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> non-verbal-turn-in-psychiatry</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Non-Verbal Turn in Psychiatry"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"How psychiatry learned that motion can diagnose before words — and then forgot."</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> diagnosis</span><span class="kw">,</span><span class="at"> history</span><span class="kw">]</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Psychomotor slowing predicts depression better than mood ratings. Why don't we watch?"</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Some of the most reliable signals of mental illness are motoric — yet modern psychiatry records words, not gestures."</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">psychiatry</span><span class="kw">,</span><span class="at"> mental health</span><span class="kw">,</span><span class="at"> diagnosis</span><span class="kw">,</span><span class="at"> neuroscience</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: the clinical eye as an observational science of tells; the drift from observation to molecule and voxel; motoric signs (catatonia, mania, flattening) that rarely enter formal models. ANCHORS: Kraepelin; Bleuler 1911; Andreasen 1979. -->
+<!-- POST:END -->
+</section>
+<section id="when-attunement-breaks" class="level3">
+<h3 class="anchored" data-anchor-id="when-attunement-breaks">8 · When Attunement Breaks</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> when-attunement-breaks</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"When Attunement Breaks"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"What disorders of movement reveal about the coordination of motion and meaning."</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> schizophrenia</span><span class="kw">,</span><span class="at"> catatonia</span><span class="kw">,</span><span class="at"> attunement</span><span class="kw">]</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"When a person's movements fall out of sync with the world, communication becomes fragile."</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Catatonia, Parkinson's, schizophrenia and autism expose attunement — the glue of social life — by removing it."</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">psychiatry</span><span class="kw">,</span><span class="at"> schizophrenia</span><span class="kw">,</span><span class="at"> neurology</span><span class="kw">,</span><span class="at"> social cognition</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: the thin boundary between intention and motion; attunement as the basis of mutual prediction; what its failure reveals. ANCHORS: catatonia literature; phenomenology of synchrony; Parkinson's/Huntington's. -->
+<!-- POST:END -->
+</section>
+<section id="the-limits-of-self-report" class="level3">
+<h3 class="anchored" data-anchor-id="the-limits-of-self-report">9 · The Limits of Self-Report</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> limits-of-self-report</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Limits of Self-Report"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Why we still measure the mind from what people say, not what they do."</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> measurement</span><span class="kw">,</span><span class="at"> self-report</span><span class="kw">]</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Rating scales turn a rich human encounter into a number between zero and four."</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Self-report remains psychiatry's gold standard even though much of mental life is enacted, not spoken."</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">psychiatry</span><span class="kw">,</span><span class="at"> measurement</span><span class="kw">,</span><span class="at"> mental health</span><span class="kw">,</span><span class="at"> RDoC</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: the diagnostic interview as a conversation that mostly records words; the abstraction of rating scales; the search for stable biomarkers. ANCHORS: Insel et al. 2010 (RDoC). -->
+<!-- POST:END -->
+</section>
+<section id="the-rise-of-digital-phenotyping" class="level3">
+<h3 class="anchored" data-anchor-id="the-rise-of-digital-phenotyping">10 · The Rise of Digital Phenotyping</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> rise-of-digital-phenotyping</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Rise of Digital Phenotyping"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"What digital behavior promised — and why it hasn't yet delivered."</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> digital-phenotyping</span><span class="kw">,</span><span class="at"> mental-health</span><span class="kw">,</span><span class="at"> measurement</span><span class="kw">]</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Our phones record everything. Why do they still understand so little?"</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Digital phenotyping promised scalable insight into the mind; delivering individual understanding has proven harder than group averages."</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">digital phenotyping</span><span class="kw">,</span><span class="at"> mental health</span><span class="kw">,</span><span class="at"> data science</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: the promise of passive behavioral data; the gap between population signal and individual understanding. ANCHORS: Onnela & Rauch 2016. -->
+<!-- POST:END -->
+</section>
+<section id="the-mind-in-the-cursor" class="level3">
+<h3 class="anchored" data-anchor-id="the-mind-in-the-cursor">11 · The Mind in the Cursor</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> hci-as-behavior</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Mind in the Cursor"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Human–computer interaction as a non-verbal channel for reading mental state."</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> digital-phenotyping</span><span class="kw">,</span><span class="at"> HCI</span><span class="kw">,</span><span class="at"> mental-health</span><span class="kw">,</span><span class="at"> machine-learning</span><span class="kw">]</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"The way you move a cursor carries information about your mind that words don't."</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Cursor and touchscreen movement form a scalable, non-verbal signal of mental state — the same old intuition, made measurable."</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">machine learning</span><span class="kw">,</span><span class="at"> digital phenotyping</span><span class="kw">,</span><span class="at"> mental health</span><span class="kw">,</span><span class="at"> HCI</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: HCI as the modern tell; my own work (MAILA) decoding mental states from cursor/touch; movement as a scalable non-verbal modality. ANCHORS: MAILA (Weilnhammer et al.); links to the MAILA post. -->
+<!-- POST:END -->
+</section>
+<section id="data-without-theory" class="level3">
+<h3 class="anchored" data-anchor-id="data-without-theory">12 · Data Without Theory</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> data-without-theory</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Data Without Theory"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"The recurring temptation to measure movement without meaning."</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> measurement</span><span class="kw">,</span><span class="at"> epistemology</span><span class="kw">,</span><span class="at"> history</span><span class="kw">]</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Phrenology, the polygraph, micro-expression training: each promised a shortcut to truth."</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"Without theory, ever-finer measurement of movement repeats an old mistake — treating the body as a code rather than an expression."</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">history of science</span><span class="kw">,</span><span class="at"> measurement</span><span class="kw">,</span><span class="at"> epistemology</span><span class="kw">,</span><span class="at"> neuroscience</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: cautionary history of pseudo-quantification; why data without theory recreates the symptom/expression error; measurement must coexist with interpretation. ANCHORS: phrenology; polygraph; micro-expression training. -->
+<!-- POST:END -->
+</section>
+<section id="the-ethics-of-invisible-measurement" class="level3">
+<h3 class="anchored" data-anchor-id="the-ethics-of-invisible-measurement">13 · The Ethics of Invisible Measurement</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> ethics-of-invisible-measurement</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"The Ethics of Invisible Measurement"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Turning ordinary interaction into data — the line between help and surveillance."</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> ethics</span><span class="kw">,</span><span class="at"> privacy</span><span class="kw">,</span><span class="at"> mental-health</span><span class="kw">,</span><span class="at"> digital-phenotyping</span><span class="kw">]</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"The power to read a tell comes with the responsibility to interpret it gently."</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"As our ability to measure movement outpaces our ability to interpret it, empathy and surveillance start to blur."</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">ethics</span><span class="kw">,</span><span class="at"> privacy</span><span class="kw">,</span><span class="at"> AI</span><span class="kw">,</span><span class="at"> mental health</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: reading a tell as crossing a boundary; empathy vs surveillance; visibility is not understanding; clinician and researcher responsibilities. ANCHORS: Mittelstadt et al. 2016. -->
+<!-- POST:END -->
+</section>
+<section id="toward-a-new-language-of-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="toward-a-new-language-of-behavior">14 · Toward a New Language of Behavior</h3>
+<!-- POST:START -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slug</span><span class="kw">:</span><span class="at"> new-language-of-behavior</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Toward a New Language of Behavior"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Imagining a shared, interpretable vocabulary of movement."</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">movement</span><span class="kw">,</span><span class="at"> future</span><span class="kw">,</span><span class="at"> social-cognition</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> synthesis</span><span class="kw">]</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">featured</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">status</span><span class="kw">:</span><span class="at"> draft</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">substack</span><span class="kw">:</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"What if non-verbal signals became a shared language we could actually read?"</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tldr</span><span class="kw">:</span><span class="at"> </span><span class="st">"The next science of the mind may depend less on new instruments than on new questions about movement, meaning, and recovery."</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tags</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">neuroscience</span><span class="kw">,</span><span class="at"> psychiatry</span><span class="kw">,</span><span class="at"> future of medicine</span><span class="kw">,</span><span class="at"> social cognition</span><span class="kw">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!-- ANGLE: series synthesis; a future vocabulary of movement; recovery as the return of synchrony; the questions that matter more than the instruments. ANCHORS: Saxe (theory of mind); synthesis of the series. -->
+<!-- POST:END -->
+</section>
+</section>
+</section>
+<section id="theme-topic-b-rename-me" class="level1">
+<h1>THEME: Topic B — rename me</h1>
+<p><strong>Brief (LLM context):</strong> describe the second high-level topic here.</p>
+<p><strong>Backlog / ideas:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Idea one —</label></li>
+<li><label><input type="checkbox">Idea two —</label></li>
+</ul>
+<!-- Posts for this theme go here. -->
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
