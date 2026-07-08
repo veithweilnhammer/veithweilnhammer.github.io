@@ -1,0 +1,204 @@
+---
+layout: distill
+title: "Empathy Can Be Simulated, and That Should Worry Us Less Than We Think"
+description: "Performed empathy is often all a supportive interaction requires, so the real question is where the absence of genuine feeling actually starts to matter."
+tags: [AI, psychology, ethics]
+categories:
+giscus_comments: false
+date: 2026-06-10
+featured: false
+
+authors:
+  - name: Veith Weilnhammer
+    url: "https://veithweilnhammer.github.io"
+    affiliations:
+      name: UC Berkeley, Helen Wills Neuroscience Institute
+
+_styles: >
+  .fake-img {
+    background: #bbb;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+  }
+  .fake-img p {
+    font-family: monospace;
+    color: white;
+    text-align: left;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 14px;
+  }
+---
+
+In 2023 a *JAMA Internal Medicine* study compared written answers from physicians
+and ChatGPT to 195 patient questions posted on Reddit's AskDocs forum. Licensed
+healthcare professionals, blinded to the source of each answer, rated the chatbot
+answers as empathetic or very empathetic far more often than the physician
+answers, 45.1 percent against 4.6 percent. The study was not designed to measure
+clinical safety, diagnostic accuracy, or long-term outcomes, and it settles none of
+them. Its narrower result still matters: in a written exchange, a system that feels
+nothing produced language that trained raters experienced as more empathic than the
+language written by verified physicians.
+
+The usual response to this is that the machine does not really care, which is true.
+A language model has no concern for the user and no stake in the user's life. That
+observation is too broad to settle the practical question, because a supportive
+interaction requires the helper to do several separable things: understand what is
+being said, respond in a way that shows attention, offer a useful next step, and
+convey enough care that the other person can carry on. Private feeling may drive
+those tasks in a human helper, but the person being helped meets them through
+behavior.
+
+The word "empathy" hides this because it covers at least two things that come apart
+under inspection. One is affective empathy, the experience of sharing or resonating
+with another person's state, such as feeling a version of someone's grief when you
+attend closely to them. The other is cognitive empathy, the accurate understanding
+of what another person is going through, which psychologists also study as empathic
+accuracy: correctly inferring the specific content of someone's thoughts and
+feelings. These capacities usually travel together in human life, which is why the
+distinction is easy to miss, since a friend who grasps why you are upset often feels
+upset on your behalf. They can also come apart. In a lesion study, damage to the
+inferior frontal gyrus left people able to understand another's state while
+blunting their felt response, while damage to the ventromedial prefrontal cortex
+did the reverse. Affective empathy is a private experience in the helper, while
+cognitive empathy becomes useful to the recipient only when it is expressed in
+accurate reflection and appropriate response, where the other person can register
+it directly.
+
+When researchers ask what makes people feel supported, the answer centers on
+perceived responsiveness, meaning a person feels helped when they believe the other
+party understands them, values what they are going through, and cares about their
+needs. Each of those beliefs is formed by reading behavior: people infer
+understanding from accurate reflection of what they said and sensible follow-up
+questions, and they infer being valued and cared for from sustained attention,
+warmth, and proportionate concern. Someone leaves a good supportive conversation
+feeling understood and answered, and every input to that feeling arrived through
+what the other party said and did.
+
+Clinical psychology reached the same operational description from its own
+direction. Carl Rogers, setting out the conditions for effective psychotherapy in
+1957, listed accurate empathy among them and defined it in terms a second person
+could check: sensing the client's inner world and communicating that understanding
+back accurately enough that the client recognizes it. Rogers held that the
+therapist's empathy had to be genuine, so this is no license for pretending. The
+narrower point is what he reached for when he needed to describe empathy well enough
+to teach and measure it, which was observable conduct — what the therapist
+reflects, checks, and conveys. Even in the tradition that placed the most weight on
+empathy, the part that could be specified was the part the other person perceives.
+
+The older philosophical tradition of sympathy already treated part of this
+phenomenon as a mechanism with a describable function. Writing in 1739, David Hume
+observed that sympathy begins with signs and moves inward: "When any affection is
+infused by sympathy, it is at first known only by its effects, and by those
+external signs in the countenance and conversation, which convey an idea of it." He
+was describing human minds, and the structure still matters here, because sympathy
+on his account has inputs that can be perceived, transformations that can be
+described, and effects that can be evaluated. Adam Smith made a related point twenty
+years later. Because we have no direct access to another person's suffering, he
+argued, we reach it by imaginative reconstruction: "By the imagination we place
+ourselves in his situation, we conceive ourselves enduring all the same torments...
+and thence form some idea of his sensations." Both men described sympathy as a
+process with inputs, steps, and outputs. They wrote about sympathy in an
+eighteenth-century sense that overlaps with, but does not map exactly onto, modern
+empathy. Once you describe it as a process, though, you have described the kind of
+thing that could, in principle, be run by a system that does not feel, which is a
+stronger claim than either of them made, but one their framing invites.
+
+Simulated empathy can be enough when the recipient needs accurate uptake and a
+fitting response rather than a mutual relationship. An anxious person at three in
+the morning wants to be heard and steadied, and someone confused by a medical
+result wants it explained in plain terms with appropriate concern. A person who has
+made a small mistake mainly wants a response that names the disappointment, keeps
+one failure from becoming a verdict on their whole life, and points to a concrete
+next step. In each case the benefit depends on accurate uptake and a fitting
+response, which a competent performance delivers. These make up most of everyday
+support, and they are the interactions people most often bring to a chatbot, at
+hours and in volumes where no human helper is available.
+
+Human support works through the same channel. Therapist empathy predicts
+psychotherapy outcomes, with an average association of about r = .31, a modest
+correlation that corresponds to empathy accounting for roughly a tenth of the
+variation in how clients fare. In general practice, empathic communication tracks
+patient satisfaction, adherence, reduced anxiety, better information gathering, and
+sometimes clinical outcomes. Much of that evidence concerns empathy as perceived
+and communicated, which is the part that can arrive without a matching feeling
+behind it. An artificial listener can even hold a narrow advantage: in virtual-human
+interview studies, some participants disclosed more when they believed no human was
+observing and judging them, so availability, patience, and the absence of social
+embarrassment can help on their own. Insisting these exchanges are worthless because
+no one behind them felt anything mistakes where their value sits, which is in the
+recipient's experience of being understood.
+
+The absence of feeling matters under specific conditions, and the first of these is
+accountability. When a supportive exchange carries real moral stakes, such as advice
+that could steer someone toward harm or a crisis where the wrong response has
+consequences, part of what a person relies on is that someone is answerable for the
+response. A human helper can be held responsible because they understood the stakes
+and chose how to act. A system that feels nothing carries no responsibility of its
+own, and can be shut down, patched, or audited, so the answerability moves to
+designers, deployers, and institutions. For low-stakes reassurance, it may be enough
+that those parties are accountable for the tool. In a moment of danger, where being
+answerable is part of what the situation requires, a flawless performance does not
+supply it.
+
+A second condition is reciprocity, since some of what people want from support is a
+mutual relationship, in which their state genuinely registers with the other party
+and changes what that party feels and does over time. A friend who is relieved when
+you recover and troubled when you relapse is in a two-way arrangement where your life
+has weight on their side. Simulated care runs in one direction, so the response can
+be accurate and warm and still leave the encounter one-sided, because there is no
+second party whose inner state your situation moves. This is one reason ethicists
+worry that companion systems may deepen dependence or loneliness in vulnerable users
+even when individual exchanges feel supportive: the interactions supply the form of
+being cared about while the mutual weighting that the form usually signals is absent.
+
+A third condition is commitment that costs something, because real help sometimes
+requires the helper to bear a cost, whether that means giving up time, taking on
+risk, or staying present through a stretch that is unpleasant with no benefit to
+themselves. In human beings that willingness draws on actually caring about the
+outcome, and empathic concern can motivate costly help in experiments precisely when
+a cheaper option is available. A system with nothing at stake can express commitment
+in words and recommend that someone call emergency services or reach a trusted
+person, which may be valuable. It cannot itself bear a sacrifice, because it has no
+interests that can be put at risk. When the morally important act is showing up and
+bearing a cost, the performance and the reality separate.
+
+A fourth condition is deception, since a user can benefit from simulated empathy
+while being misled by it, and the difference usually turns on what the system claims
+about itself. When a tool tells the user, in effect, that it can help them think a
+problem through but is only software, it gives them a true frame for the
+interaction. The harm comes from products that encourage the user to believe the
+system loves them, needs them, or suffers when ignored, which builds a false belief
+about the relationship they are in. The comfort can be genuine, and the harm is a
+separate thing: the person arranges their expectations, their disclosures, and
+sometimes their decisions around a bond that has no second side. This is the
+condition most under the control of design, and the one where "it does not really
+care" carries its sharpest force.
+
+Naming these four conditions changes how the systems should be judged. The
+evaluation worth running sets aside whether a chatbot feels anything and asks
+whether it understood the user accurately, responded in a way that helped rather
+than intensifying the problem, escalated appropriately when risk appeared, and
+represented its own limits honestly. By that standard, a system that sounds warm but
+misses a real danger has performed the relevant part badly, while accurate, bounded,
+and transparent support in a low-stakes moment is enough.
+
+Simulated empathy is possible because empathy has always had an observable,
+functional side, and recognizing this should replace the general objection that the
+system does not care with more specific questions about risk, responsibility,
+reciprocity, and deception. The absence of feeling leaves most supportive exchanges
+intact, and becomes decisive when the situation requires responsibility,
+reciprocity, costly commitment, or truthfulness about care. Treating those four as
+the real fault lines gives a better standard than asking a machine to hold a feeling
+it plainly lacks, and it clarifies which uses are low-risk enough for bounded
+support and which ones require human responsibility or stronger disclosure.
+
+## Further reading
+
+- David Hume, *A Treatise of Human Nature* (1739–40): https://www.gutenberg.org/files/4705/4705-0.txt
+- Adam Smith, *The Theory of Moral Sentiments* (1759): https://www.gutenberg.org/files/67363/67363-0.txt
+- Shamay-Tsoory, Aharon-Peretz & Perry, 2009, two systems for empathy: https://doi.org/10.1093/brain/awn279
+- Carl Rogers, 1957, conditions of therapeutic change: https://doi.org/10.1037/h0045357
+- Ayers et al., 2023, physician and chatbot responses: https://doi.org/10.1001/jamainternmed.2023.1838
+- Derksen, Bensing & Lagro-Janssen, 2013, empathy in general practice: https://doi.org/10.3399/bjgp13X660814

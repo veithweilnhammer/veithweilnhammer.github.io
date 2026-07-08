@@ -1,0 +1,84 @@
+# Evidence
+
+**Thesis (one sentence):** Turing's 1950 imitation game measures whether an interrogator can tell a machine from a person in text-only conversation, which is a claim about observable behavior and human judgment, so recent findings that large language models "pass the Turing test" establish that these systems produce human-like conversation without settling anything about whether they understand or think.
+
+## Key claims and sources
+
+1. Turing opened his 1950 paper by proposing to consider "Can machines think?" and then set that question aside, replacing it with the imitation game because he judged the original wording too ill-defined to answer.
+   - Source: A. M. Turing (1950), "Computing Machinery and Intelligence," *Mind* 59(236): 433–460. Stable link: https://doi.org/10.1093/mind/LIX.236.433 . Full text verified via https://courses.cs.umbc.edu/471/papers/turing.pdf
+
+2. The imitation game is described as a three-person game with a man (A), a woman (B), and an interrogator (C), whose task is to decide which is which from typed answers; Turing then asks what happens when a machine takes the part of A. The original criterion is imitation of a category, judged by an observer.
+   - Source: Turing (1950), Section 1, same link.
+
+3. Turing called the original question "too meaningless to deserve discussion" and predicted that by about 2000 a computer could play the game so well that an average interrogator "will not have more than 70 per cent chance of making the right identification after five minutes of questioning."
+   - Source: Turing (1950), Section 6, same link. Both quotes transcribed exactly (see below).
+
+4. In 2025, Jones and Bergen reported the first empirical evidence that a system passes a standard three-party Turing test: prompted to adopt a humanlike persona, GPT-4.5 was judged to be the human 73% of the time; LLaMa-3.1-405B 56%; and the baselines ELIZA and GPT-4o scored 23% and 21%, significantly below chance.
+   - Source: Cameron R. Jones, Benjamin K. Bergen (2025), "Large Language Models Pass the Turing Test," arXiv:2503.23674. https://arxiv.org/abs/2503.23674
+
+5. In an earlier two-party study, GPT-4 was judged human 54% of the time versus 67% for real humans and 22% for ELIZA; the authors concluded that "stylistic and socio-emotional factors play a larger role in passing the Turing test than traditional notions of intelligence."
+   - Source: Cameron R. Jones, Benjamin K. Bergen (2024), "People cannot distinguish GPT-4 from a human in a Turing test," arXiv:2405.08007. https://arxiv.org/abs/2405.08007
+
+6. The same model scores very differently depending on the prompt it is given (GPT-4o at 21% vs. GPT-4.5 with a persona prompt at 73%), and outcomes depend on the interrogator, showing the result measures a discrimination task rather than a fixed property of the machine.
+   - Source: Jones and Bergen (2025), arXiv:2503.23674.
+
+7. ELIZA, a simple 1966 pattern-matching script with no model of meaning, still fooled a fifth of interrogators (22–23%), which shows that persuading an observer does not require any internal understanding.
+   - Source: ELIZA scores in Jones and Bergen (2024, 2025); original system: Joseph Weizenbaum (1966), "ELIZA—a computer program for the study of natural language communication between man and machine," *Communications of the ACM* 9(1): 36–45. https://doi.org/10.1145/365153.365168
+
+8. The chatbot "Eugene Goostman" was widely reported in 2014 to have "passed" a Turing test at the University of Reading by convincing 33% of judges over five-minute chats, using a persona of a 13-year-old non-native English speaker to excuse errors — an outcome criticised as gaming the format rather than demonstrating intelligence.
+   - Source: contemporaneous reporting, e.g., The Guardian (9 June 2014), https://www.theguardian.com/technology/2014/jun/09/it-passed-the-turing-test-but-which-eugene-goostman-chatbot ; BBC News (8 June 2014), https://www.bbc.com/news/technology-27762088
+
+## Exact quotes (verified against Turing 1950)
+
+- "I propose to consider the question, 'Can machines think?'"
+- "Instead of attempting such a definition I shall replace the question by another, which is closely related to it and is expressed in relatively unambiguous words."
+- "The new form of the problem can be described in terms of a game which we call the 'imitation game.' It is played with three people, a man (A), a woman (B), and an interrogator (C) who may be of either sex."
+- "These questions replace our original, 'Can machines think?'"
+- "The original question, 'Can machines think?' I believe to be too meaningless to deserve discussion."
+- "I believe that in about fifty years' time it will be possible, to programme computers … to make them play the imitation game so well that an average interrogator will not have more than 70 per cent chance of making the right identification after five minutes of questioning."
+
+## Do not overclaim
+
+- Do not say Turing "defined intelligence" as passing the game. He explicitly replaced the question about thinking with an operational one and declined to defend "Can machines think?" as answerable.
+- Do not say Turing set a "30% pass mark." His 70%/30% figure is a dated prediction about interrogator accuracy, not a stated threshold for "passing."
+- Do not claim the imitation game proves machines cannot think. The argument is narrower: passing does not settle the question either way.
+- Do not treat "passes the Turing test" as a single fixed fact. The result depends on the model, the prompt, the interrogator, the time limit, and whether the design is two-party or three-party.
+- Do not conflate this with the separate "prediction is not understanding" argument or with the psychology of anthropomorphism; keep the focus on indistinguishability as an observer-relative criterion.
+
+## Flags
+
+- The "33% of judges" figure for Eugene Goostman comes from event organisers and press coverage, not a peer-reviewed study; report it as a claimed/reported result, not a controlled finding.
+- The *Mind* volume is 59 (1950); some reproductions mislabel it as 49. The DOI (10.1093/mind/LIX.236.433) and page range 433–460 are correct.
+- Turing's original imitation game (man vs. woman) has contested interpretations among scholars about how much the gender framing matters; I use it only to show the criterion is imitation judged by an observer, which is not in dispute.
+- Weizenbaum's exact ELIZA "fooling" rates in 1966 were anecdotal; the 22–23% figures I cite are from Jones and Bergen's modern controlled runs, not the 1960s.
+
+# Draft
+
+In early 2025, two cognitive scientists at UC San Diego ran a controlled experiment that the field had been waiting on for seventy-five years. Cameron Jones and Benjamin Bergen sat human interrogators in front of two hidden conversational partners at once, one a person and one a machine, gave them five minutes of typed conversation, and asked them to say which was which. When GPT-4.5 was prompted to act like a person, interrogators picked it as the human 73% of the time — more often than they picked the actual human across the table. The headlines wrote themselves: a machine had passed the Turing test. What almost none of them asked is what the test was ever built to measure, and whether "passing" it tells us what we have spent decades assuming it tells us.
+
+Go back to the paper everyone is citing. In 1950 Alan Turing opened "Computing Machinery and Intelligence" with the line, "I propose to consider the question, 'Can machines think?'" He then spent his next paragraph explaining why he would not consider it after all. To answer whether machines can think, he wrote, you would first have to define "machine" and "think," and if you define those words by how people ordinarily use them, you end up settling the matter by something like a Gallup poll of common opinion. Turing found that absurd. So he made a substitution that is easy to skate past: "Instead of attempting such a definition I shall replace the question by another, which is closely related to it and is expressed in relatively unambiguous words." The replacement is the imitation game.
+
+The details of the game matter, because they show what kind of question it is. Turing describes three people: a man, a woman, and an interrogator who communicates with both by typed message and has to work out which is which. In the original setup the man is trying to be mistaken for the woman. Then Turing asks his real question: what happens when a machine takes the man's place and tries to be mistaken for a person? The whole apparatus is built around one observable event, an interrogator's guess, and one measurable outcome, how often that guess is wrong. Turing was explicit that this new arrangement stands in for the old one. "These questions replace our original, 'Can machines think?'" He was not offering a definition of thought. He was changing the subject to something he could actually put numbers on.
+
+That change of subject is the heart of the matter. The imitation game measures indistinguishability in conversation — whether a person, under time pressure and with limited channels, can tell a machine from a human by the text it produces. That is a fact about behavior and about the observer doing the judging. It depends on how the machine writes, and equally on how sharp, suspicious, or well-briefed the interrogator is, on how long they have, and on what they happen to ask. None of those ingredients reaches inside the machine to check whether anything resembling understanding is going on. The test was designed from the start to keep that interior question at arm's length, which is exactly why Turing could treat it as answerable.
+
+The modern results make the observer-dependence hard to miss. In the 2025 study, ELIZA — a pattern-matching script written by Joseph Weizenbaum in 1966 that reflects your sentences back at you with no model of meaning whatsoever — still convinced 23% of interrogators it was human. GPT-4o, a far more capable system, scored 21% with a plain prompt. GPT-4.5 scored 21% or 73% depending only on whether it was told to adopt a human persona. The same underlying model can pass or fail on the strength of a stage direction. A property that swings that wildly with a prompt, an interrogator, and a five-minute clock is a property of a social interaction, not a stable trait of the machine. Jones and Bergen said as much about their earlier work: they found that "stylistic and socio-emotional factors play a larger role in passing the Turing test than traditional notions of intelligence." What wins the game is small talk, plausible hesitation, a willingness to be vague, and a convincing show of not caring too much about getting the arithmetic right.
+
+The result also moves when the human side of the game changes. An interrogator who knows how current chatbots write, who probes for the tells — perfect spelling, tireless helpfulness, reluctance to hold an opinion — will catch a model that sails past someone chatting in good faith. Turing anticipated this when he specified the "average interrogator" and a fixed five minutes, because he understood that the outcome is a joint product of two parties. Change the questioner's skill or the clock, and the same machine crosses from failing to passing without any change to the machine itself. That is the signature of a measurement that is really about a relationship between an observer and a performance, and it is why a single reported win rate says so little on its own.
+
+How did an operational stand-in for an unanswerable question harden into the field's benchmark for intelligence? Part of the answer is Turing's own forecast. He predicted that by around 2000 a computer could play the game well enough that "an average interrogator will not have more than 70 per cent chance of making the right identification after five minutes of questioning." That 70% got flipped into a folk rule that fooling 30% of judges means you have "passed," as though Turing had set a finish line. He had not; he was guessing at a date, not legislating a threshold. But a crisp number is easy to compete over, and competition is what followed. The Loebner Prize turned the game into an annual contest. In 2014 a chatbot called Eugene Goostman was announced to have passed a Turing test at the University of Reading by convincing 33% of judges over five-minute chats. It did so by claiming to be a 13-year-old boy from Ukraine, a persona chosen so that clumsy English and gaps in knowledge would read as youth and a second language rather than as a program. That is the mythology at work: a system optimised to lower the interrogator's expectations gets counted as a step toward machine intelligence, when all it demonstrates is that the discrimination task can be gamed.
+
+Reading the imitation game as an intelligence test smuggles in an assumption Turing was careful to avoid — that producing human-like output is evidence of a human-like process behind it. Turing declined to make that leap, which is why he swapped the question rather than answering it. He even said plainly that he believed the original question, "Can machines think?", to be "too meaningless to deserve discussion." His bet was social and linguistic: that by the end of the century people would simply talk about machines thinking without being contradicted, because usage would drift. That is a prediction about how we would come to speak, not a proof about what machines would come to do. Treating a high win rate in the game as settling the deeper question gets the logic backwards, using a criterion Turing built to sidestep the concept as though it measured the concept directly.
+
+None of this diminishes what the recent studies actually show, which is substantial. Current systems can sustain open-ended conversation well enough that people, given a fair chance to interrogate them, cannot reliably tell them from a person. That is a real and consequential fact about the outputs these models generate and about the limits of human perception. It tells us that text is no longer a trustworthy signal of who or what is on the other end. It does not tell us that the system has beliefs, grasps what it is saying, or does anything we would recognise as understanding if we could see the mechanism. Passing establishes that a system can produce human-like conversation and that humans, under these conditions, cannot catch it out. Those are claims about production and detection, and they leave the question of internal understanding exactly where Turing left it.
+
+The distinction is not a philosopher's quibble once these systems are doing consequential work. Indistinguishability is a poor proxy for competence, because the two come apart precisely where it matters. A model can be indistinguishable from a person in a five-minute chat and still be wrong about a medication interaction, a legal deadline, or which symptoms mean someone should go to an emergency room now rather than next week. Sounding human is easiest to fake in exactly the register — fluent, warm, confident — that also makes a mistake most persuasive. When indistinguishability is treated as a competence certificate, the systems that inspire the most trust will sometimes be the ones producing the most convincing errors. A safety standard worth the name has to measure calibrated judgment against outcomes, which is a harder test to build and a harder one to pass, and it is a different test from the one Turing described.
+
+Turing gave us a clever way to make an unanswerable question tractable by trading it for a measurable one about behavior. Seventy-five years of calling the substitute a test of intelligence has quietly reversed his move, letting a benchmark for passing as human stand in for a verdict on thinking. The 2025 results are a good moment to separate the two again. Machines can now win the imitation game reliably, and that is worth knowing on its own terms, as a fact about the state of conversation and the limits of human judgment. It is a different thing from the question Turing set aside about whether they think, and reading the first as an answer to the second confuses a mirror for a mind.
+
+## Further reading
+
+- A. M. Turing (1950), "Computing Machinery and Intelligence," *Mind* 59(236): 433–460. https://doi.org/10.1093/mind/LIX.236.433
+- Cameron R. Jones, Benjamin K. Bergen (2025), "Large Language Models Pass the Turing Test," arXiv:2503.23674. https://arxiv.org/abs/2503.23674
+- Cameron R. Jones, Benjamin K. Bergen (2024), "People cannot distinguish GPT-4 from a human in a Turing test," arXiv:2405.08007. https://arxiv.org/abs/2405.08007
+- Joseph Weizenbaum (1966), "ELIZA—a computer program for the study of natural language communication between man and machine," *Communications of the ACM* 9(1): 36–45. https://doi.org/10.1145/365153.365168

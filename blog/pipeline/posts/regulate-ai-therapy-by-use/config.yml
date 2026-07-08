@@ -1,0 +1,24 @@
+# Pipeline config for a post. Copy to posts/<slug>/config.yml and edit.
+# Model IDs are the `task` tool model overrides used by the orchestrator.
+
+slug: regulate-ai-therapy-by-use
+
+# Stage 1 (research + draft) and Stage 3 (review): three models, run in parallel.
+# The `label` is the filename stem written under candidates/ and reviews/.
+parallel_models:
+  - label: gemini
+    model: gemini-3.1-pro-preview
+    reasoning_effort: high
+  - label: gpt
+    model: gpt-5.5
+    reasoning_effort: high
+  - label: opus
+    model: claude-opus-4.8
+    reasoning_effort: high
+
+# Stages 2 and 4 (integrate draft, integrate reviews + final rewrite) are done
+# by the editor = the orchestrating CLI session (Opus 4.8). No agent launched.
+editor: claude-opus-4.8
+
+# Target length for the post body.
+target_words: [1600, 2000]

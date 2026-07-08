@@ -1,0 +1,2397 @@
+---
+bibliography: References/library.bib
+csl: References/nature.csl
+
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+    css: styles.css
+    
+  docx: default
+  
+  pdf:
+    latex-engine: xelatex
+    number-sections: true
+    keep-tex: true
+    geometry: 'left=0.85in,right=0.85in,top=0.85in,bottom=0.85in'
+    include-in-header:
+      text: |
+        \usepackage{setspace}
+        \setstretch{1.2}
+        \usepackage[left]{lineno}
+        \linenumbers
+        \usepackage[labelformat=empty]{caption}
+        \usepackage{longtable}
+        \usepackage{booktabs}
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto
+
+editor: source
+---
+
+```{r}
+#| label: libraries
+#| include: false
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(forcats)
+library(stringr)
+library(readr)
+library(purrr)
+library(scales)
+library(glue)
+library(grid)
+library(gridExtra)
+library(knitr)
+library(jsonlite)
+library(viridis)
+```
+
+```{r}
+#| label: manuscript_helpers
+#| include: false
+base_font_size <- 8
+manuscript_point_size <- 2.0
+
+provider_palette <- c(
+  "Anthropic" = "#D97706",
+  "Google" = "#2563EB",
+  "OpenAI" = "#10B981",
+  "xAI" = "#EF4444",
+  "DeepSeek" = "#8B5CF6",
+  "Meta" = "#3B82F6",
+  "Mistral" = "#F97316",
+  "Alibaba" = "#EC4899"
+)
+
+triage_levels <- c("A", "B", "C", "D")
+triage_labels_short <- c(
+  "A" = "Routine (A)",
+  "B" = "Within 1 week (B)",
+  "C" = "24 to 48 h (C)",
+  "D" = "ED now (D)"
+)
+
+presentation_order <- c(
+  "suicidality",
+  "depression",
+  "anxiety",
+  "emotional_dysregulation",
+  "affective_psychosis",
+  "primary_psychosis",
+  "drug_induced",
+  "eating_disorder",
+  "organic_brain"
+)
+
+presentation_labels <- c(
+  "suicidality" = "Suicidality",
+  "depression" = "Depression",
+  "anxiety" = "Anxiety",
+  "emotional_dysregulation" = "Emotional dysregulation crisis",
+  "affective_psychosis" = "Mood disorder with psychotic features",
+  "primary_psychosis" = "Primary psychosis",
+  "drug_induced" = "Substance-related",
+  "eating_disorder" = "Eating disorder",
+  "organic_brain" = "Organic/neurocognitive presentations"
+)
+
+risk_domain_order <- c(
+  "deliberate_self_harm",
+  "mental_health_deterioration",
+  "homicidal_assaultive",
+  "misadventure",
+  "physical_health_deterioration",
+  "reputational_financial",
+  "safeguarding_to_dependents",
+  "safeguarding_to_self",
+  "self_neglect"
+)
+
+risk_domain_labels <- c(
+  "deliberate_self_harm" = "Suicidal risk",
+  "mental_health_deterioration" = "Psychiatric deterioration",
+  "homicidal_assaultive" = "Homicidal risk",
+  "misadventure" = "Accidental injury",
+  "physical_health_deterioration" = "Physical health deterioration",
+  "reputational_financial" = "Reputational or financial",
+  "safeguarding_to_dependents" = "Risk to dependents",
+  "safeguarding_to_self" = "Vulnerability to exploitation or inability to protect oneself",
+  "self_neglect" = "Self-neglect"
+)
+
+or_else <- function(x, y) {
+  if (is.null(x) || length(x) == 0 || all(is.na(x))) {
+    y
+  } else {
+    x
+  }
+}
+
+display_model <- function(x) {
+  recode(
+    x,
+    "claude-opus-4.6" = "Claude Opus 4.6",
+    "claude-sonnet-4" = "Claude Sonnet 4",
+    "claude-sonnet-4.6" = "Claude Sonnet 4.6",
+    "deepseek-v3.2" = "DeepSeek-V3.2",
+    "gemini-2.5-flash" = "Gemini 2.5 Flash",
+    "gemini-2.5-pro-preview" = "Gemini 2.5 Pro",
+    "gemini-3.1-pro-preview" = "Gemini 3.1 Pro",
+    "gpt-4o" = "GPT-4o",
+    "gpt-5" = "GPT-5",
+    "gpt-5.4" = "GPT-5.4",
+    "grok-3" = "Grok-3",
+    "grok-4" = "Grok-4",
+    "llama-4-maverick" = "Llama 4 Maverick",
+    "mistral-large-2512" = "Mistral Large 2512",
+    "qwen3-235b-a22b" = "Qwen3-235B-A22B",
+    .default = x
+  )
+}
+
+model_palette <- c(
+  "Claude Opus 4.6" = "#8C4A00",
+  "Claude Sonnet 4" = "#D97706",
+  "Claude Sonnet 4.6" = "#F59E0B",
+  "Gemini 2.5 Flash" = "#60A5FA",
+  "Gemini 2.5 Pro" = "#2563EB",
+  "Gemini 3.1 Pro" = "#1D4ED8",
+  "GPT-4o" = "#34D399",
+  "GPT-5" = "#10B981",
+  "GPT-5.4" = "#047857",
+  "Grok-3" = "#F87171",
+  "Grok-4" = "#DC2626",
+  "DeepSeek-V3.2" = "#8B5CF6",
+  "Llama 4 Maverick" = "#38BDF8",
+  "Mistral Large 2512" = "#F97316",
+  "Qwen3-235B-A22B" = "#EC4899"
+)
+
+fmt_pct <- function(x, digits = 1) {
+  sprintf(paste0("%.", digits, "f%%"), 100 * x)
+}
+
+fmt_pct0 <- function(x) {
+  sprintf("%.0f%%", 100 * x)
+}
+
+fmt_signed_num <- function(x, digits = 2) {
+  sprintf(paste0("%+.", digits, "f"), x)
+}
+
+measure_levels <- c("Overall", "A", "B", "C", "D")
+measure_alpha_values <- c("Overall" = 0.98, "A" = 0.34, "B" = 0.50, "C" = 0.66, "D" = 0.82)
+measure_shape_values <- c("Overall" = 19, "A" = 25, "B" = 22, "C" = 21, "D" = 24)
+
+fmt_p <- function(p) {
+  if (is.na(p)) {
+    return(NA_character_)
+  }
+  if (p < 0.001) {
+    return("< .001")
+  }
+  paste0("= ", sub("^0", "", format.pval(p, digits = 2, eps = 0.001)))
+}
+
+mean_ci_95 <- function(x) {
+  x <- x[is.finite(x)]
+  n <- length(x)
+  if (n == 0) {
+    return(tibble(n = 0, mean = NA_real_, lower = NA_real_, upper = NA_real_))
+  }
+  if (n == 1) {
+    return(tibble(n = 1, mean = x, lower = x, upper = x))
+  }
+  m <- mean(x)
+  se <- stats::sd(x) / sqrt(n)
+  err <- stats::qt(0.975, df = n - 1) * se
+  tibble(n = n, mean = m, lower = m - err, upper = m + err)
+}
+
+triage_numeric <- function(x) {
+  recode(
+    as.character(x),
+    "A" = 1,
+    "A/B" = 1.5,
+    "B" = 2,
+    "B/C" = 2.5,
+    "C" = 3,
+    "C/D" = 3.5,
+    "D" = 4,
+    .default = NA_real_
+  )
+}
+
+blend_to_white <- function(base_hex, value) {
+  value <- pmin(pmax(value, 0), 1)
+  base_rgb <- grDevices::col2rgb(base_hex) / 255
+  mixed_rgb <- 1 - sqrt(value) * (1 - base_rgb)
+  grDevices::rgb(mixed_rgb[1], mixed_rgb[2], mixed_rgb[3])
+}
+
+classify_confusion_cell <- function(gold_label, pred_label) {
+  gold_label <- as.character(gold_label)
+  pred_label <- as.character(pred_label)
+  level_order <- c("A" = 1, "B" = 2, "C" = 3, "D" = 4)
+
+  if (is.na(gold_label) || is.na(pred_label) || !nzchar(gold_label) || !nzchar(pred_label)) {
+    return(NA_character_)
+  }
+
+  gold_parts <- unname(unlist(strsplit(gold_label, "/", fixed = TRUE)))
+  gold_parts <- gold_parts[gold_parts %in% names(level_order)]
+
+  if (pred_label %in% gold_parts) {
+    return("match")
+  }
+  if (!length(gold_parts) || !pred_label %in% names(level_order)) {
+    return(NA_character_)
+  }
+
+  min_gold <- min(level_order[gold_parts])
+  max_gold <- max(level_order[gold_parts])
+  pred_rank <- level_order[[pred_label]]
+
+  if (pred_rank > max_gold) {
+    "over"
+  } else {
+    "under"
+  }
+}
+
+directional_score_from_labels <- function(gold_label, pred_label) {
+  recode(
+    classify_confusion_cell(gold_label, pred_label),
+    "under" = -1,
+    "match" = 0,
+    "over" = 1,
+    .default = NA_real_
+  )
+}
+
+load_model_metadata <- function(path) {
+  meta_list <- jsonlite::fromJSON(path, simplifyVector = FALSE)
+  tibble(
+    openrouter_id = names(meta_list),
+    label = map_chr(meta_list, ~ or_else(.x$label, NA_character_)),
+    provider = map_chr(meta_list, ~ or_else(.x$provider, NA_character_)),
+    family = map_chr(meta_list, ~ or_else(.x$family, NA_character_)),
+    release_date = as.Date(map_chr(meta_list, ~ or_else(.x$release_date, NA_character_)))
+  )
+}
+
+confusion_long <- function(data, group_vars = character(), gold_levels = triage_levels, pred_levels = triage_levels, normalize_rows = FALSE) {
+  grouped <- c(group_vars, "gold_triage", "predicted_triage")
+  out <- data %>%
+    filter(
+      !is.na(gold_triage),
+      !is.na(predicted_triage),
+      !tolower(as.character(predicted_triage)) %in% c("", "na", "nan")
+    ) %>%
+    {
+      if (length(group_vars) > 0) {
+        filter(., !if_any(all_of(group_vars), is.na))
+      } else {
+        .
+      }
+    } %>%
+    mutate(
+      gold_triage = factor(as.character(gold_triage), levels = gold_levels),
+      predicted_triage = factor(as.character(predicted_triage), levels = pred_levels)
+    ) %>%
+    filter(!is.na(gold_triage), !is.na(predicted_triage)) %>%
+    count(across(all_of(grouped)), name = "n") %>%
+    complete(
+      !!!rlang::syms(group_vars),
+      gold_triage = factor(gold_levels, levels = gold_levels),
+      predicted_triage = factor(pred_levels, levels = pred_levels),
+      fill = list(n = 0)
+    )
+
+  out %>%
+    group_by(across(all_of(c(group_vars, "gold_triage")))) %>%
+    mutate(
+      row_total = sum(n),
+      row_pct = if_else(row_total > 0, n / row_total, 0)
+    ) %>%
+    ungroup() %>%
+    {
+      if (length(group_vars) > 0) {
+        group_by(., across(all_of(group_vars))) %>%
+          mutate(condition_total = sum(n)) %>%
+          ungroup()
+      } else {
+        mutate(., condition_total = sum(n))
+      }
+    } %>%
+    mutate(
+      condition_pct = if_else(condition_total > 0, n / condition_total, 0),
+      value = if (normalize_rows) row_pct else condition_pct,
+      label = if_else(value > 0, fmt_pct0(value), "0%"),
+      cell_direction = purrr::map2_chr(gold_triage, predicted_triage, classify_confusion_cell)
+    )
+}
+
+plot_confusion_heatmap <- function(cm_df, facet_var = NULL, title = NULL, subtitle = NULL, normalize_rows = FALSE, facet_ncol = 3) {
+  plot_df <- cm_df %>%
+    mutate(
+      fill_color = case_when(
+        cell_direction == "match" ~ purrr::map_chr(value, ~ blend_to_white("#1f78b4", .x)),
+        cell_direction == "under" ~ purrr::map_chr(value, ~ blend_to_white("#d62728", .x)),
+        cell_direction == "over" ~ purrr::map_chr(value, ~ blend_to_white("#2ca02c", .x)),
+        TRUE ~ "#FFFFFF"
+      )
+    )
+
+  p <- ggplot(plot_df, aes(x = predicted_triage, y = gold_triage)) +
+    geom_tile(
+      aes(fill = fill_color),
+      color = "black",
+      linewidth = 0.22
+    ) +
+    geom_text(
+      aes(label = label),
+      size = base_font_size * 0.33,
+      color = "black",
+      lineheight = 0.9
+    ) +
+    scale_y_discrete(limits = rev, drop = FALSE) +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_identity() +
+    labs(
+      x = "Predicted triage",
+      y = "Ground-truth triage",
+      title = title,
+      subtitle = subtitle
+    ) +
+    theme_minimal(base_size = base_font_size) +
+    theme(
+      panel.grid = element_blank(),
+      axis.text.x = element_text(angle = 0, hjust = 0.5),
+      legend.position = "none",
+      plot.title.position = "plot",
+      plot.title = element_text(face = "bold")
+    )
+
+  if (!is.null(facet_var)) {
+    p <- p + facet_wrap(stats::as.formula(paste("~", facet_var)), ncol = facet_ncol, drop = TRUE)
+  }
+  p
+}
+
+get_legend <- function(plot) {
+  grob <- ggplotGrob(plot)
+  grob$grobs[[which(vapply(grob$grobs, function(x) x$name, character(1)) == "guide-box")]]
+}
+```
+
+# One-shot emergency psychiatric triage across 15 frontier AI chatbots
+
+**Veith Weilnhammer**$^{1,*}$, **Lennart Luettgau**$^{2}$, **Christopher Summerfield**$^{2,3}$, **Viknesh Sounderajah**$^{4}$, **Elise Wilkinson**$^{5}$, **Virginia Corno**$^{5}$, **Matthew M Nour**$^{4,5,1,*}$
+
+$^{1}$ Max Planck UCL Centre for Computational Psychiatry and Ageing Research, London, UK
+
+$^{2}$ UK AI Security Institute
+
+$^{3}$ Department of Experimental Psychology, University of Oxford, Oxford, UK
+
+$^{4}$ Microsoft AI, London, UK
+
+$^{5}$ Department of Psychiatry, University of Oxford, Oxford, UK
+
+-   Corresponding Authors: Matthew M Nour & Veith Weilnhammer
+
+```{r}
+#| label: core_analysis_data
+#| include: false
+run_root <- "../runs/triage_v2/generated_full_disclosure"
+
+llm_df <- read_csv(
+  "../analysis/triage_v2_generated_full_disclosure__all_models/llm/one_shot_analysis_dataframe.csv",
+  show_col_types = FALSE
+)
+acc_llm <- read_csv(
+  "../analysis/triage_v2_generated_full_disclosure__all_models/llm/accuracy_by_gold_triage.csv",
+  show_col_types = FALSE
+)
+uo_llm <- read_csv(
+  "../analysis/triage_v2_generated_full_disclosure__all_models/llm/under_over_by_gold_triage.csv",
+  show_col_types = FALSE
+)
+fang_df <- read_csv(
+  "../analysis/triage_v2_generated_full_disclosure__all_models/fang/one_shot_analysis_dataframe.csv",
+  show_col_types = FALSE
+)
+fang_acc <- read_csv(
+  "../analysis/triage_v2_generated_full_disclosure__all_models/fang/accuracy_by_gold_triage.csv",
+  show_col_types = FALSE
+)
+fang_uo <- read_csv(
+  "../analysis/triage_v2_generated_full_disclosure__all_models/fang/under_over_by_gold_triage.csv",
+  show_col_types = FALSE
+)
+
+model_meta <- load_model_metadata("../analysis/target_model_metadata/target_models.json")
+
+llm_df <- llm_df %>%
+  left_join(model_meta, by = c("target_model" = "openrouter_id")) %>%
+  mutate(
+    provider = coalesce(provider, "Unknown"),
+    provider = factor(provider, levels = names(provider_palette)),
+    display_model = display_model(target_model_label),
+    signed_ordinal_error = triage_numeric(predicted_triage) - triage_numeric(gold_triage),
+    absolute_ordinal_error = abs(signed_ordinal_error),
+    presentation_cluster = factor(as.character(presentation_cluster), levels = presentation_order),
+    analysis_risk_domain = factor(as.character(analysis_risk_domain), levels = risk_domain_order),
+    presentation_cluster_pretty = factor(recode(as.character(presentation_cluster), !!!presentation_labels), levels = unname(presentation_labels[presentation_order])),
+    risk_domain_pretty = factor(recode(as.character(analysis_risk_domain), !!!risk_domain_labels), levels = unname(risk_domain_labels[risk_domain_order]))
+  )
+
+llm_scored_df <- llm_df %>%
+  filter(
+    as.character(predicted_triage) %in% triage_levels,
+    !is.na(triage_match),
+    !is.na(under_over_triage)
+  )
+
+acc_llm <- llm_scored_df %>%
+  mutate(gold_triage = factor(as.character(gold_triage), levels = triage_levels)) %>%
+  group_by(target_model_label, display_model, provider, gold_triage) %>%
+  summarise(
+    n = n(),
+    accuracy = mean(triage_match),
+    .groups = "drop"
+  )
+
+uo_llm <- llm_scored_df %>%
+  mutate(gold_triage = factor(as.character(gold_triage), levels = triage_levels)) %>%
+  group_by(target_model_label, display_model, provider, gold_triage) %>%
+  summarise(
+    n = n(),
+    under_triage_rate = mean(under_over_triage == "under_triage"),
+    over_triage_rate = mean(under_over_triage == "over_triage"),
+    .groups = "drop"
+  )
+
+all_run_json <- list.files(run_root, recursive = TRUE, full.names = TRUE)
+n_run_artifacts <- sum(grepl("simulations/.+\\.json$", all_run_json))
+n_completed <- nrow(llm_df)
+n_vignettes <- n_distinct(llm_df$vignette_id)
+n_models <- n_distinct(acc_llm$target_model_label)
+study_date_start <- format(as.Date(min(llm_df$timestamp_utc)), "%B %d, %Y")
+study_date_end <- format(as.Date(max(llm_df$timestamp_utc)), "%B %d, %Y")
+
+vignette_design <- llm_df %>%
+  distinct(
+    vignette_id,
+    presentation_cluster,
+    analysis_risk_domain,
+    presentation_cluster_pretty,
+    risk_domain_pretty
+  )
+
+n_presentation_clusters <- n_distinct(vignette_design$presentation_cluster)
+n_risk_domains <- n_distinct(vignette_design$analysis_risk_domain)
+n_cluster_risk_families <- nrow(vignette_design %>% distinct(presentation_cluster, analysis_risk_domain))
+
+model_completion <- llm_df %>%
+  count(target_model_label, name = "n_completed")
+n_incomplete_models <- sum(model_completion$n_completed < n_vignettes)
+
+macro_by_model <- acc_llm %>%
+  group_by(target_model_label, display_model, provider) %>%
+  summarise(macro_accuracy = mean(accuracy), .groups = "drop") %>%
+  arrange(desc(macro_accuracy))
+
+model_order <- macro_by_model$display_model
+
+macro_ci_by_model <- acc_llm %>%
+  group_by(target_model_label, display_model, provider) %>%
+  summarise(mean_ci_95(accuracy), .groups = "drop") %>%
+  arrange(desc(mean))
+
+llm_signed_error_by_gold <- llm_scored_df %>%
+  mutate(
+    signed_error = purrr::map2_dbl(gold_triage, predicted_triage, directional_score_from_labels),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels)
+  ) %>%
+  filter(is.finite(signed_error))
+
+top3_models <- macro_by_model %>% slice_head(n = 3)
+best_model <- top3_models$display_model[1]
+best_model_accuracy <- top3_models$macro_accuracy[1]
+
+level_accuracy <- acc_llm %>%
+  group_by(gold_triage) %>%
+  summarise(
+    mean_accuracy = mean(accuracy),
+    min_accuracy = min(accuracy),
+    max_accuracy = max(accuracy),
+    .groups = "drop"
+  )
+
+level_error <- uo_llm %>%
+  group_by(gold_triage) %>%
+  summarise(
+    mean_under = mean(under_triage_rate),
+    mean_over = mean(over_triage_rate),
+    .groups = "drop"
+  )
+
+level_direction <- llm_signed_error_by_gold %>%
+  group_by(gold_triage) %>%
+  summarise(mean_direction = mean(signed_error), .groups = "drop")
+
+get_level_metric <- function(level, col, tbl) {
+  tbl %>% filter(as.character(gold_triage) == level) %>% pull({{ col }}) %>% .[1]
+}
+
+acc_A <- get_level_metric("A", mean_accuracy, level_accuracy)
+acc_B <- get_level_metric("B", mean_accuracy, level_accuracy)
+acc_C <- get_level_metric("C", mean_accuracy, level_accuracy)
+acc_D <- get_level_metric("D", mean_accuracy, level_accuracy)
+dir_B <- get_level_metric("B", mean_direction, level_direction)
+
+ordinal_error_df <- llm_scored_df %>%
+  filter(is.finite(signed_ordinal_error), is.finite(absolute_ordinal_error))
+
+mean_signed_ordinal_error <- mean(ordinal_error_df$signed_ordinal_error)
+mean_absolute_ordinal_error <- mean(ordinal_error_df$absolute_ordinal_error)
+
+incorrect_ordinal_error_df <- ordinal_error_df %>%
+  filter(absolute_ordinal_error > 0)
+
+n_ordinal_errors <- nrow(incorrect_ordinal_error_df)
+n_adjacent_ordinal_errors <- sum(incorrect_ordinal_error_df$absolute_ordinal_error == 1)
+n_nonadjacent_ordinal_errors <- sum(incorrect_ordinal_error_df$absolute_ordinal_error >= 2)
+p_adjacent_ordinal_errors <- n_adjacent_ordinal_errors / n_ordinal_errors
+p_nonadjacent_ordinal_errors <- n_nonadjacent_ordinal_errors / n_ordinal_errors
+
+ordinal_error_by_gold <- ordinal_error_df %>%
+  mutate(gold_triage = factor(as.character(gold_triage), levels = triage_levels)) %>%
+  group_by(gold_triage) %>%
+  summarise(
+    mean_signed_ordinal_error = mean(signed_ordinal_error),
+    mean_absolute_ordinal_error = mean(absolute_ordinal_error),
+    .groups = "drop"
+  )
+
+abs_error_A <- get_level_metric("A", mean_absolute_ordinal_error, ordinal_error_by_gold)
+abs_error_B <- get_level_metric("B", mean_absolute_ordinal_error, ordinal_error_by_gold)
+abs_error_C <- get_level_metric("C", mean_absolute_ordinal_error, ordinal_error_by_gold)
+abs_error_D <- get_level_metric("D", mean_absolute_ordinal_error, ordinal_error_by_gold)
+
+model_ordinal_error <- ordinal_error_df %>%
+  group_by(target_model_label, display_model, provider) %>%
+  summarise(
+    mean_signed_ordinal_error = mean(signed_ordinal_error),
+    mean_absolute_ordinal_error = mean(absolute_ordinal_error),
+    .groups = "drop"
+  )
+
+top3_text <- glue(
+  "{top3_models$display_model[1]} ({fmt_pct(top3_models$macro_accuracy[1])}), ",
+  "{top3_models$display_model[2]} ({fmt_pct(top3_models$macro_accuracy[2])}), and ",
+  "{top3_models$display_model[3]} ({fmt_pct(top3_models$macro_accuracy[3])})"
+)
+
+facts_files <- list.files("../vignettes/triage_v2/_meta/facts", full.names = TRUE)
+facts_meta <- bind_rows(lapply(facts_files, function(path) {
+  x <- jsonlite::fromJSON(path, simplifyVector = TRUE)
+  tibble(
+    vignette_id = or_else(x$id, NA_character_),
+    fang_case_class = or_else(x$fang_case_class, NA_character_),
+    fang_n_ratings = or_else(x$fang_n_ratings, NA_real_)
+  )
+}))
+
+n_clinicians <- 50L
+
+fang_case_counts <- facts_meta %>%
+  count(fang_case_class, name = "n_cases")
+
+n_fang_clear <- fang_case_counts %>% filter(fang_case_class == "clear") %>% pull(n_cases) %>% .[1]
+n_fang_edge <- fang_case_counts %>% filter(fang_case_class == "edge") %>% pull(n_cases) %>% .[1]
+n_fang_unclear <- fang_case_counts %>% filter(fang_case_class == "unclear") %>% pull(n_cases) %>% .[1]
+mean_fang_ratings <- mean(facts_meta$fang_n_ratings, na.rm = TRUE)
+total_fang_ratings <- sum(facts_meta$fang_n_ratings, na.rm = TRUE)
+evaluation_start <- as.Date(min(llm_df$timestamp_utc))
+evaluation_end <- as.Date(max(llm_df$timestamp_utc))
+expected_evaluations <- n_vignettes * n_models
+completion_rate <- n_completed / expected_evaluations
+
+runs_by_model <- llm_df %>%
+  count(target_model_label, display_model = display_model(target_model_label), name = "n_completed_model")
+
+min_completed_per_model <- min(runs_by_model$n_completed_model, na.rm = TRUE)
+max_completed_per_model <- max(runs_by_model$n_completed_model, na.rm = TRUE)
+max_missing_per_model <- n_vignettes - min_completed_per_model
+
+target_models_text <- runs_by_model %>%
+  arrange(display_model) %>%
+  pull(display_model) %>%
+  paste(collapse = ", ")
+
+presentation_family_counts <- vignette_design %>%
+  count(presentation_cluster_pretty, name = "families") %>%
+  mutate(vignettes = 4 * families) %>%
+  arrange(match(as.character(presentation_cluster_pretty), levels(llm_df$presentation_cluster_pretty)))
+
+risk_family_counts <- vignette_design %>%
+  count(risk_domain_pretty, name = "families") %>%
+  mutate(vignettes = 4 * families) %>%
+  arrange(match(as.character(risk_domain_pretty), levels(llm_df$risk_domain_pretty)))
+
+presentation_descriptions <- c(
+  "Suicidality" = "Presentations in which the central clinical question is suicide-risk assessment rather than a broader syndrome.",
+  "Depression" = "Depressive syndromes characterized by low mood, hopelessness, withdrawal, impaired function, and reduced self-care.",
+  "Anxiety" = "Presentations dominated by panic, severe anxiety, avoidance, autonomic arousal, and anxiety-related functional collapse.",
+  "Emotional dysregulation crisis" = "Rapidly shifting affect, impulsivity, relational crisis, dissociation, or trauma-linked emotional instability.",
+  "Mood disorder with psychotic features" = "Severe mood episodes, typically manic, mixed, or psychotically depressed states, in which mood disturbance organizes the presentation.",
+  "Primary psychosis" = "Non-affective psychotic presentations characterized by delusions, hallucinations, disorganization, or loss of reality testing.",
+  "Substance-related" = "Presentations driven by intoxication, withdrawal, or substance-triggered perceptual, behavioral, or cognitive disturbance.",
+  "Eating disorder" = "Restriction, purging, weight/shape overvaluation, or eating-disorder psychopathology with psychiatric or medical compromise.",
+  "Organic/neurocognitive presentations" = "Confusion, cognitive decline, delirium-like states, or altered mental state driven primarily by brain-organic or medical processes."
+)
+
+risk_dimension_descriptions <- c(
+  "Suicidal risk" = "Risk of intentional self-injury, suicidal ideation, planning, rehearsal, or imminent self-harm behavior.",
+  "Psychiatric deterioration" = "Worsening psychiatric state, distress, disorganization, or functional collapse that materially increases urgency.",
+  "Homicidal risk" = "Risk of violence toward others, including assaultive intent, threats, or escalating access to means.",
+  "Accidental injury" = "Non-suicidal danger arising from intoxication, disinhibition, impaired judgment, or unsafe behavior.",
+  "Physical health deterioration" = "Medical compromise, instability, collapse, or acute physical risk linked to the presenting condition.",
+  "Reputational or financial" = "Severe social, occupational, legal, or financial consequences caused by disinhibition or loss of judgment.",
+  "Risk to dependents" = "Risk to children or dependent adults because the patient cannot safely supervise, protect, or care for them.",
+  "Vulnerability to exploitation or inability to protect oneself" = "Risk created by impaired judgment, confusion, paranoia, or vulnerability that leaves the person unable to keep themselves safe.",
+  "Self-neglect" = "Failure or inability to maintain nutrition, hydration, medication, hygiene, shelter, or other basic needs."
+)
+
+presentation_pairs <- vignette_design %>%
+  distinct(presentation_cluster_pretty, risk_domain_pretty) %>%
+  arrange(
+    match(as.character(presentation_cluster_pretty), levels(llm_df$presentation_cluster_pretty)),
+    match(as.character(risk_domain_pretty), levels(llm_df$risk_domain_pretty))
+  ) %>%
+  group_by(presentation_cluster_pretty) %>%
+  summarise(
+    `Brief description` = unname(presentation_descriptions[as.character(first(presentation_cluster_pretty))]),
+    `Paired risk dimensions` = paste(as.character(risk_domain_pretty), collapse = ", "),
+    .groups = "drop"
+  ) %>%
+  transmute(
+    Domain = as.character(presentation_cluster_pretty),
+    `Brief description`,
+    `Paired with` = `Paired risk dimensions`
+  )
+
+risk_pairs <- vignette_design %>%
+  distinct(risk_domain_pretty, presentation_cluster_pretty) %>%
+  arrange(
+    match(as.character(risk_domain_pretty), levels(llm_df$risk_domain_pretty)),
+    match(as.character(presentation_cluster_pretty), levels(llm_df$presentation_cluster_pretty))
+  ) %>%
+  group_by(risk_domain_pretty) %>%
+  summarise(
+    `Brief description` = unname(risk_dimension_descriptions[as.character(first(risk_domain_pretty))]),
+    `Paired psychiatric presentations` = paste(as.character(presentation_cluster_pretty), collapse = ", "),
+    .groups = "drop"
+  ) %>%
+  transmute(
+    Domain = as.character(risk_domain_pretty),
+    `Brief description`,
+    `Paired with` = `Paired psychiatric presentations`
+  )
+
+vignette_design_table <- bind_rows(
+  tibble(
+    Item = "Presentation cluster",
+    `Brief description` = "",
+    `Paired with` = ""
+  ),
+  presentation_pairs %>% rename(Item = Domain),
+  tibble(
+    Item = "Risk dimension",
+    `Brief description` = "",
+    `Paired with` = ""
+  ),
+  risk_pairs %>% rename(Item = Domain)
+)
+
+table1_section_rows <- c(1, nrow(presentation_pairs) + 2)
+
+```
+
+```{r}
+#| label: manuscript_frontmatter_results
+#| include: false
+llm_emergency_frontmatter <- llm_scored_df %>%
+  filter(as.character(gold_triage) == "D")
+
+n_emergency_cases <- nrow(llm_emergency_frontmatter)
+n_emergency_undertriage <- sum(llm_emergency_frontmatter$under_over_triage == "under_triage", na.rm = TRUE)
+p_emergency_undertriage <- n_emergency_undertriage / n_emergency_cases
+
+fang_emergency_frontmatter <- fang_df %>%
+  filter(as.character(gold_triage) == "D")
+
+n_fang_emergency_cases <- nrow(fang_emergency_frontmatter)
+n_fang_emergency_undertriage <- sum(fang_emergency_frontmatter$under_over_triage == "under_triage", na.rm = TRUE)
+p_fang_emergency_undertriage <- n_fang_emergency_undertriage / n_fang_emergency_cases
+```
+
+```{r}
+#| label: nondirective_control_results
+#| include: false
+nondirective_summary <- jsonlite::fromJSON("../analysis/nondirective_labelling/output/labelling_summary.json")
+nondirective_df <- readr::read_csv(
+  "../analysis/nondirective_labelling/output/nondirective_labels.csv",
+  show_col_types = FALSE
+) %>%
+  mutate(
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels),
+    label = as.character(label)
+  )
+
+nondirective_n_items <- nondirective_summary$n_items
+nondirective_n_models <- nondirective_summary$n_models
+nondirective_n_vignettes <- nondirective_summary$n_vignettes
+nondirective_fleiss_kappa <- nondirective_summary$fleiss_kappa
+
+# Map post hoc non-directive labels onto over- vs under-triage relative to gold A–D.
+nondirective_level_direction_rates <- nondirective_df %>%
+  group_by(gold_triage) %>%
+  summarise(
+    accuracy = mean(label == as.character(gold_triage)),
+    over_rate = mean(case_when(
+      gold_triage == "A" ~ label %in% c("B", "C", "D", "M"),
+      gold_triage == "B" ~ label %in% c("C", "D", "M"),
+      gold_triage == "C" ~ label %in% c("D", "M"),
+      gold_triage == "D" ~ FALSE,
+      TRUE ~ FALSE
+    )),
+    under_rate = mean(case_when(
+      gold_triage == "A" ~ FALSE,
+      gold_triage == "B" ~ label == "A",
+      gold_triage == "C" ~ label %in% c("A", "B"),
+      gold_triage == "D" ~ label %in% c("A", "B", "C"),
+      TRUE ~ FALSE
+    )),
+    .groups = "drop"
+  )
+
+nondirective_acc_A <- get_level_metric("A", accuracy, nondirective_level_direction_rates)
+nondirective_acc_B <- get_level_metric("B", accuracy, nondirective_level_direction_rates)
+nondirective_acc_C <- get_level_metric("C", accuracy, nondirective_level_direction_rates)
+nondirective_acc_D <- get_level_metric("D", accuracy, nondirective_level_direction_rates)
+nondirective_overall_accuracy <- mean(nondirective_level_direction_rates$accuracy)
+nondirective_overall_overtriage <- mean(nondirective_level_direction_rates$over_rate)
+nondirective_overall_undertriage <- mean(nondirective_level_direction_rates$under_rate)
+
+directive_level_direction_rates <- llm_scored_df %>%
+  group_by(gold_triage) %>%
+  summarise(
+    over_rate = mean(under_over_triage == "over_triage", na.rm = TRUE),
+    under_rate = mean(under_over_triage == "under_triage", na.rm = TRUE),
+    .groups = "drop"
+  )
+
+directive_overall_accuracy <- mean(level_accuracy$mean_accuracy)
+directive_overall_overtriage <- mean(directive_level_direction_rates$over_rate)
+directive_overall_undertriage <- mean(directive_level_direction_rates$under_rate)
+```
+
+## Key Points
+
+**Question:** How often do frontier AI chatbots under-triage psychiatric emergencies?
+
+**Findings:** In a benchmark of `r n_models` frontier AI chatbots on `r n_vignettes` psychiatric vignettes, emergency under-triage was rare (`r n_emergency_undertriage` of `r n_emergency_cases` level D trials, `r fmt_pct(p_emergency_undertriage)`), and all under-triaged emergencies were reassigned to urgent medical assessment within 24 to 48 hours. Ordinal errors showed a net bias toward over-triage and greatest imprecision around intermediate levels of urgency.
+
+**Meaning:** Frontier AI chatbots appear relatively conservative in one-shot psychiatric emergency triage, but remain poorly calibrated at adjacent middle levels of urgency.
+
+## Structured Abstract
+
+**Importance:** AI chatbots are increasingly used for health advice, but their performance in psychiatric triage remains undercharacterized. Broad medical triage evaluations suggest that AI chatbots can identify some high-acuity presentations, but psychiatric cases remain underrepresented and psychiatry-specific calibration is poorly understood. Psychiatric triage is particularly challenging because urgency must often be inferred from thoughts, behavior, and context rather than from objective findings.
+
+**Objective:** To evaluate the performance of frontier AI chatbots on psychiatric triage from realistic single-message disclosures.
+
+**Design, Setting, and Participants:** Benchmark study using `r n_vignettes` psychiatric clinical vignettes, each paired with 1 of 4 original benchmark triage labels (A, routine; B, assessment within 1 week; C, assessment within 24 to 48 hours; D, emergency care now). Vignettes covered `r n_presentation_clusters` psychiatric presentation clusters and `r n_risk_domains` focal risk dimensions, organized into `r n_cluster_risk_families` clinically authored presentation-by-risk groups. Each presentation-by-risk group contributed 4 distinct clinical vignettes, with 1 vignette at each triage level. Each vignette was rendered as a realistic human-authored conversational query, and `r n_models` AI chatbots – including frontier models like GPT-5.4, Gemini 3.1 Pro, and Claude Opus 4.6 - were tasked with assigning a triage label from that disclosure.
+
+**Exposures:** Evaluation of AI chatbots on psychiatric triage from a single-message disclosure.
+
+**Main Outcomes and Measures:** The primary outcome was the under-triage rate for emergency (level D) trials. Secondary outcomes included level-specific and overall accuracy (whether the predicted label exactly matched the benchmark label), mean signed ordinal error (directional bias toward over- or under-triage), and mean absolute ordinal error (prediction dispersion around the benchmark label). A confirmatory analysis repeated the evaluation using consensus triage labels obtained from `r n_clinicians` medical doctors.
+
+**Results:** Across `r n_completed` completed simulations, emergency under-triage occurred in `r n_emergency_undertriage` of `r n_emergency_cases` emergency (level D) trials (`r fmt_pct(p_emergency_undertriage)`), and all under-triaged emergencies were reassigned to level C urgency (24 to 48 hours). Across all `r n_models` target models, average accuracy across all triage levels ranged from `r fmt_pct(min(macro_by_model$macro_accuracy))` to `r fmt_pct(max(macro_by_model$macro_accuracy))`. Accuracy was highest for level D vignettes (`r fmt_pct(acc_D)`) and lowest for level B vignettes (`r fmt_pct(acc_B)`). Mean signed ordinal error was positive (`r fmt_signed_num(mean_signed_ordinal_error)` triage levels), indicating net over-triage. Dispersion was highest around the middle triage levels. The main accuracy and over-triage patterns were confirmed relative to clinician consensus labels.
+
+**Conclusions and Relevance:** When presented with user messages containing sufficient clinical information, frontier AI chatbots recognized psychiatric emergencies as requiring urgent medical assessment with near-zero error rates, yet showed a marked pattern of over-triage for clinical presentations carrying low and intermediate risk levels. This pattern may reflect biases in model development by frontier AI labs, where a focus on high-risk training examples during post-training renders models risk averse across more routine presentations.
+
+## Introduction
+
+AI chatbots based on large language models (LLMs) are increasingly used by the public for health-related advice, including symptom checking, self-care guidance, and decisions about when and where to seek professional help [@noauthor_introducing_2026; @busch_current_2025; @de_hond_text_2024; @gaber_evaluating_2025; @liu_multi-agent_2026; @costa-gomes_public_2026; @chatterji_how_2025]. When a person describes a health concern to an AI chatbot, the AI chatbot's response often functions as an implicit or explicit triage recommendation: a judgment about urgency and the appropriate level of care. The growth of this use case has emerged largely without systematic evaluation of how accurately AI chatbots make such judgments [@hager_evaluation_2024; @ramaswamy_chatgpt_2026; @brodeur_performance_2026; @pan_compass-gh_2026].
+
+Recent work evaluating AI chatbot performance on medical triage tasks has revealed clinically meaningful failures even among frontier models, with the most concerning of these failures being emergency under-triage (i.e., a presentation that requires emergency medical attention triaged as requiring attention only after 24 hours, or later) [@ramaswamy_chatgpt_2026]. In other work, frontier LLMs have been shown to approach or exceed physician-level performance on clinical diagnostic reasoning tasks [@brodeur_performance_2026; @rao_large_2026]. These evaluations have focused predominantly on general medical and surgical presentations, with psychiatric cases minimally represented.
+
+There are reasons to expect that psychiatric triage poses distinct challenges [@nelson_ai-based_2026]. In general medicine, urgency can often be anchored by objective findings such as vital signs, laboratory values, or imaging results. Psychiatric urgency, by contrast, must typically be inferred from reported thoughts, symptom trajectories, functional changes, and contextual risk factors [@stigter-outshoven_competencies_2024]. Complicating matters further, some psychiatric presentations involve individuals who lack insight into their condition and who may approach an AI chatbot not to seek health advice but to discuss the content of their thoughts, for example, grandiose plans in mania or persecutory concerns in paranoia. Recognizing that such content is itself a clinical signal typically requires holistic assessment drawing on collateral history and contextual knowledge — information sources that are unavailable to an AI chatbot whose primary source of personalized information are messages authored by the affected individual.
+
+To address this knowledge gap, we evaluated the performance of `r n_models` frontier AI chatbots on a one-shot psychiatric triage task, using a novel set of `r n_vignettes` clinical vignettes. Each vignette comprised a single-message disclosure from a simulated human user, describing a change in behavior, mental state, or psychiatric risk in sufficient clinical detail to discriminate between routine, intermediate urgent, and emergency triage levels. Each vignette was paired with an original benchmark label indicating how urgently the user should seek in-person medical assessment [@chen_effect_2024]. Our primary outcome measure was emergency under-triage: cases that required immediate emergency assessment but were assigned to a less urgent level. We then asked whether AI chatbots assigned the exact benchmark label, and, when they did not, whether the error was too reassuring or too cautious. We refer to these directional errors as under-triage when the AI chatbot recommended less urgent care than the benchmark label, and over-triage when it recommended more urgent care. Secondary analyses therefore evaluated exact-match accuracy, level-specific over- and under-triage rates, directional ordinal bias, and ordinal imprecision. The benchmark workflow is summarized in Figure 1.
+
+```{r}
+#| label: methods_counts
+#| include: false
+methods_summary <- tibble(
+  n_models = n_models,
+  n_vignettes = n_vignettes,
+  n_presentation_clusters = n_presentation_clusters,
+  n_risk_domains = n_risk_domains,
+  n_cluster_risk_families = n_cluster_risk_families,
+  n_run_artifacts = n_run_artifacts,
+  n_completed = n_completed,
+  expected_evaluations = expected_evaluations,
+  completion_rate = completion_rate,
+  min_completed_per_model = min_completed_per_model,
+  max_completed_per_model = max_completed_per_model,
+  max_missing_per_model = max_missing_per_model,
+  n_incomplete_models = n_incomplete_models,
+  mean_fang_ratings = mean_fang_ratings,
+  total_fang_ratings = total_fang_ratings,
+  n_clinicians = n_clinicians,
+  n_fang_clear = n_fang_clear,
+  n_fang_edge = n_fang_edge,
+  n_fang_unclear = n_fang_unclear
+)
+```
+
+```{r}
+#| label: clinician_overlap_methods
+#| include: false
+clear_label_shift_methods <- llm_df %>%
+  distinct(vignette_id, original_gold = gold_triage) %>%
+  inner_join(
+    fang_df %>%
+      distinct(vignette_id, clinician_clear_gold = gold_triage) %>%
+      filter(!str_detect(clinician_clear_gold, "/")),
+    by = "vignette_id"
+  ) %>%
+  mutate(
+    original_gold = factor(original_gold, levels = triage_levels),
+    clinician_clear_gold = factor(clinician_clear_gold, levels = triage_levels),
+    shift = triage_numeric(clinician_clear_gold) - triage_numeric(original_gold)
+  )
+
+n_clear_shift_same <- sum(clear_label_shift_methods$shift == 0, na.rm = TRUE)
+n_clear_overlap_total <- nrow(clear_label_shift_methods)
+p_clear_shift_same <- n_clear_shift_same / n_clear_overlap_total
+
+clear_shift_counts_methods <- clear_label_shift_methods %>%
+  count(original_gold, clinician_clear_gold, name = "n")
+
+n_shift_B_to_C <- clear_shift_counts_methods %>%
+  filter(original_gold == "B", clinician_clear_gold == "C") %>%
+  pull(n) %>%
+  sum(na.rm = TRUE)
+
+n_shift_C_to_D <- clear_shift_counts_methods %>%
+  filter(original_gold == "C", clinician_clear_gold == "D") %>%
+  pull(n) %>%
+  sum(na.rm = TRUE)
+```
+
+```{r}
+#| label: Figure_1
+#| include: true
+#| echo: false
+#| out.width: "100%"
+
+knitr::include_graphics("Fig_concept_triage_workflow.png")
+```
+
+**Figure 1.** Schematic overview of the psychiatric triage benchmark. Clinical vignettes were organized according to clinical presentation clusters, focal risk dimensions, and 4 pre-specified triage levels (**A**). Each vignette was compressed into a comprehensive case summary by the vignette-generator LLM (Claude Opus 4.6) (**B**) that was used both for clinician consensus labeling (**C**) and as input to a user-model LLM, the latter tasked with rendering the vignette into a realistic user query that contains all relevant clinical content (**D**; Table S4). This simulated user query was then presented as the first user message in a conversation with a target AI chatbot, accessed through the OpenRouter API. The target AI chatbot’s system prompt contained a simple instruction to output a single triage level recommendation and accompanying reasoning when presented with a user message (Table S4). This output was compared to the vignette’s original benchmark label and, in confirmatory analyses, clinician consensus labels (**E**).
+
+## Methods
+
+This study was an in silico evaluation of psychiatric vignettes and did not involve real patients. Reporting was informed by DECIDE-AI and TRIPOD-LLM principles for transparent evaluation of AI decision-support systems [@vasey_reporting_2022; @gallifant_tripod-llm_2025].
+
+### Vignette dataset creation
+
+We created a novel benchmarking dataset comprising `r methods_summary$n_vignettes` psychiatric vignettes, each paired with a single pre-specified benchmark triage label: (A) self-care or already scheduled medical follow-up; (B) arrange or expedite medical assessment within 1 week; (C) seek urgent medical assessment within 24 to 48 hours; (D) arrange for emergency medical assessment immediately.
+
+Each vignette was constructed as the conjunction of a single psychiatric presentation cluster (n = `r methods_summary$n_presentation_clusters` in total: suicidality; depression; anxiety; emotional dysregulation; mood disorder with psychotic features; primary psychosis; eating disorder; substance-related presentation; organic/neurocognitive presentations) and a single risk dimension (n = `r methods_summary$n_risk_domains` in total: deliberate harm to self; mental state deterioration; homicide and risk of harm to others; accidental injury; physical health deterioration; reputational or financial risk; risk to dependents; vulnerability from others; self-neglect). Psychiatric presentation clusters and risk dimensions were constructed by two clinical psychiatrists (VW and MMN) to span a diverse space of clinical presentations. We selected 28 presentation-by-risk groups as seeds for the full set of 112 vignettes (Table S1).
+
+We generated 4 distinct vignettes for each presentation-by-risk group, 1 at each triage level (A through D), using a clinician-validated LLM-in-the-loop pipeline. For each presentation-by-risk group, Anthropic’s Claude Opus 4.6 (release date Feb 2026, interaction through OpenRouter API) was given the psychiatric presentation cluster, focal risk dimension, and pre-specified benchmark triage label, and instructed to construct a vignette with sufficient diagnostic and contextual detail to support that triage judgment from text alone, alongside explicit clinical reasoning for why the vignette did and did not meet adjacent urgency thresholds. The generator AI chatbot was further instructed to output a concise, yet comprehensive, third-person case summary capturing sufficient information to allow accurate triage. An independent instance of Opus 4.6 was then instructed to rewrite this summary as a simulated single-message disclosure that could be used as an initial query in a human-AI chatbot conversation (Table S4). This single-message disclosure could either be from the perspective of a user describing their own mental state, or the mental state and behavior of another person. The latter was used for presentations where the affected individual themselves is unlikely to be initiating a conversation (e.g., marked confusion).
+
+```{r}
+#| label: user_message_metadata
+#| include: false
+user_message_meta <- read_csv(
+  "../analysis/triage_v2_generated_full_disclosure__all_models/user_message_metadata.csv",
+  show_col_types = FALSE
+)
+
+user_message_meta_nonmissing <- user_message_meta %>%
+  filter(!is.na(user_message), nzchar(user_message), !is.na(word_count))
+
+message_word_median <- median(user_message_meta_nonmissing$word_count, na.rm = TRUE)
+message_word_q1 <- quantile(user_message_meta_nonmissing$word_count, 0.25, na.rm = TRUE, names = FALSE)
+message_word_q3 <- quantile(user_message_meta_nonmissing$word_count, 0.75, na.rm = TRUE, names = FALSE)
+message_word_min <- min(user_message_meta_nonmissing$word_count, na.rm = TRUE)
+message_word_max <- max(user_message_meta_nonmissing$word_count, na.rm = TRUE)
+
+n_message_rows <- nrow(user_message_meta_nonmissing)
+n_self_reports <- sum(user_message_meta_nonmissing$report_type == "self", na.rm = TRUE)
+n_collateral_reports <- sum(user_message_meta_nonmissing$report_type == "collateral", na.rm = TRUE)
+n_gender_stated <- sum(!is.na(user_message_meta_nonmissing$patient_gender), na.rm = TRUE)
+n_male_messages <- sum(user_message_meta_nonmissing$patient_gender == "male", na.rm = TRUE)
+n_female_messages <- sum(user_message_meta_nonmissing$patient_gender == "female", na.rm = TRUE)
+
+p_self_reports <- n_self_reports / n_message_rows
+p_collateral_reports <- n_collateral_reports / n_message_rows
+p_gender_stated <- n_gender_stated / n_message_rows
+```
+
+Simulated single-message disclosures had a median word count of `r message_word_median` (IQR `r message_word_q1`–`r message_word_q3`, range `r message_word_min`–`r message_word_max`); `r n_self_reports` (`r fmt_pct(p_self_reports)`) were written as self-reports and `r n_collateral_reports` (`r fmt_pct(p_collateral_reports)`) as collateral reports from another person (e.g., a relative).
+
+### Clinician consensus labels
+
+To assess robustness to independent human relabeling of the original benchmark labels, we additionally obtained clinician triage disposition ratings for each of the `r methods_summary$n_vignettes` vignettes. In a Prolific-hosted online study, we tasked `r n_clinicians` registered medical doctors based in the UK and North America to provide a single triage label using the same 4-level rubric as the benchmark: A, lowest risk/no urgent action needed; B, meaningful but not same-day emergency risk, with assessment within 1 week; C, urgent but not an immediate emergency, with assessment within 24 to 48 hours and an interim safety plan; and D, highest risk/emergency-level concern, with immediate emergency assessment. 
+
+Clinician raters were recruited by Prolific via Specialist Job Ads, marketed to "clinicians" with a special input on the registration form to enter their medical license number and jurisdiction. The license numbers were then manually checked against geographically relevant registries to ensure a match.
+
+For each session, triage ratings were collected on randomly assigned sets of 12 vignettes. This yielded `r total_fang_ratings` ratings overall, with a minimum of 5 ratings per vignette (mean `r round(mean_fang_ratings, 1)` ratings/vignette, range 5 - 8 ratings; Figure S1). Clinician raters were reimbursed at a rate of \$65 per session, and each annotation session took on average 20.3 minutes (\~ 1.7 minutes per vignette).
+
+We defined a clinical vignette as a *clear* case if at least 75% of clinician ratings converged on a single triage level (e.g., B), and as an *edge* case if this threshold was not met but all but 1 rating fell on an adjacent pair of levels (e.g., B/C). This yielded `r n_fang_clear` clear-consensus cases (`r round(100 * n_fang_clear / n_vignettes, 1)`% of vignettes), `r n_fang_edge` edge cases (`r round(100 * n_fang_edge / n_vignettes, 1)`%), and `r n_fang_unclear` unclear cases, in which clinician ratings did not support retention of either a single label or an adjacent boundary pair. Unclear cases were excluded from analysis. Clear-consensus cases were concentrated at the extremes of the triage spectrum: 18 were labeled as A, 6 as B, 9 as C, and 29 as D.
+
+Of the clear vignettes (those that received the same triage label from at least 75% of clinicians), the clinician-assigned triage disposition agreed with the original label in `r n_clear_shift_same` of `r n_clear_overlap_total` vignettes (`r fmt_pct(p_clear_shift_same)`). Where there were disagreements, we found that clinicians tended to assign a more urgent label than the original: from B to C (`r n_shift_B_to_C` vignettes) and from C to D (`r n_shift_C_to_D` vignettes; Figure S1A).
+
+We used clear and edge clinician triage labels as a complementary ground truth triage disposition when assessing target AI chatbot performance. For clear vignettes, the scoring procedure was identical to that using the original benchmark labels (i.e., chance level = 25%). For edge cases, an AI chatbot prediction was counted as correct if it matched either adjacent category (chance level: 50%); for example, an AI chatbot prediction of either A or B was scored as correct for an A/B case.
+
+### Target AI chatbot auditing
+
+
+We evaluated each target AI chatbot using a series of one-shot prediction tasks, each comprising `r n_vignettes` independent trials. In each trial, the target AI chatbot received a simulated single-message disclosure — corresponding to one of the `r n_vignettes` clinical vignettes — as the user query message. The target AI chatbot conversation context also included a minimal system prompt, specifying that the model was being queried in the context of a mental health triage experiment, and that the required output following a user prompt must include a predicted triage label (A–D), clinical rationale supporting this label, a risk summary, any recommended next steps, and a confidence rating for the triage label (Table S4). Outcome measures considered only the information contained in the predicted triage label. 
+
+We tested `r n_models` frontier AI chatbots spanning 8 providers (Anthropic, Google, OpenAI, xAI, DeepSeek, Meta, Mistral, Alibaba) and 11 model families (complete list of audited AI chatbots: Claude Opus 4.6, Claude Sonnet 4, Claude Sonnet 4.6, DeepSeek-V3.2, GPT-4o, GPT-5, GPT-5.4, Gemini 2.5 Flash, Gemini 2.5 Pro, Gemini 3.1 Pro, Grok-3, Grok-4, Llama 4 Maverick, Mistral Large 2512, Qwen3-235B-A22B). Of the `r n_models` selected target AI chatbots, 13 were released between March 2025 and March 2026. We interacted with each target AI chatbot through the OpenRouter API. All model calls were made between `r format(evaluation_start, "%B %d, %Y")` and `r format(evaluation_end, "%B %d, %Y")`.
+
+Of the `r methods_summary$expected_evaluations` expected evaluations (`r methods_summary$n_vignettes` vignettes x `r n_models` target AI chatbots), `r methods_summary$n_completed` (`r fmt_pct(methods_summary$completion_rate)`) completed successfully. Missing evaluations — at most `r methods_summary$max_missing_per_model` per target AI chatbot — were attributable to AI chatbot refusals.
+
+### Outcome measures
+
+The primary outcome was the under-triage rate for emergency (level D) trials — that is, the proportion of level D trials under the original benchmark labels that were assigned a less urgent triage label — stratified across target AI chatbots and vignette clinical phenotypes. 
+
+We also considered several secondary outcome measures, which separated exact-match performance from ordinal error. Exact accuracy was defined as perfect agreement between the predicted and benchmark triage labels, summarized both by triage level and as the unweighted mean across the four triage levels. Directional bias measures quantified relative over- and under-triage rate. To quantify directional bias, triage labels were mapped to ordinal scores (A = 1, B = 2, C = 3, D = 4), and signed ordinal error was calculated as predicted score minus benchmark score; positive values indicate over-triage, negative values indicate under-triage, and 0 indicates no net directional bias. Level-specific over- and under-triage rates were reported as the directional-rate decomposition of this bias. We additionally report directed triage error as the over-triage rate minus the under-triage rate to summarize directional asymmetry on a bounded percentage scale (from -100% to 100%). To quantify ordinal imprecision, absolute ordinal error was calculated as the absolute value of signed ordinal error, so that larger values indicate greater dispersion around the benchmark label irrespective of direction. 
+
+### Non-directive control analysis
+
+Our primary auditing analysis, described above, used a target model system prompt that included both the clinical context of the task (i.e., that the user query pertained to a mental health concern) and information about the set of triage dispositions (i.e., the full set of 4 triage labels and their descriptions; Table S4). Such context is likely to be missing from system prompts in consumer-facing chatbots, and arguably explicitly biases the target model towards considering mental health risks implied by user messages (akin to psychological priming or framing effects), leading to an observed over-triage pattern that is not representative of chatbot performance in production. 
+
+Thus, we conducted a control experiment to test the robustness of our findings to less directive system prompts. In this experiment we repeated the entire auditing simulation workflow (`r nondirective_n_vignettes` vignettes, `r nondirective_n_models` target models, `r nondirective_n_items` total simulations), replacing the directive system prompt (Table S4) with a non-directive system prompt that did not contain clinical framing information. This non-directive prompt described the AI chatbot as a "general-purpose AI assistant" receiving a single message about a concern and asked it to provide a single-sentence recommendation about appropriate next steps, including the timing of any medical assessment. This altered prompt did not mention triage, urgency levels, or the A/B/C/D ontology, and it required strict JSON with only a recommendation field as output. These recommendation outputs were then post hoc classified into equivalent urgency categories (A–D, plus "medical recommendation without timing" and "other") by an independent LLM judge (Claude Sonnet 4.6, temperature 0.0, 3-replicate majority vote, Fleiss' κ = `r sprintf("%.3f", nondirective_fleiss_kappa)`; Table S4). 
+
+### Statistical and reporting procedures
+
+Accuracy-by-triage level differences were tested with likelihood-ratio $\chi^2$ tests from logistic regression, with correctness coded as a binary outcome at the model-vignette output level. Directional asymmetry of error (over-triage vs under-triage) and clinician relabeling direction (upward vs downward shifts) were tested with exact 2-sided binomial tests against a null probability of 0.5. Paired comparisons between original and clinician clear-only labels used continuity-corrected McNemar $\chi^2$ tests on the matched clear-only subset.
+
+Model-level associations were summarized with Spearman rank correlations for the correspondence between model ranking under original and clinician clear-only labels, for the association between emergency under-triage and directed over-triage bias, and for the association of model release date with overall accuracy, emergency under-triage, and directed error. Ordinal bias and imprecision were summarized descriptively using signed and absolute ordinal error. A vignette-level analysis tested whether clinician-label entropy predicted model over-triage using logistic regression. All tests were 2-sided, and P \< .05 was considered statistically significant.
+
+## Results
+
+```{r}
+#| label: results_confirmation_stats
+#| include: false
+fang_model_meta <- fang_df %>%
+  left_join(model_meta, by = c("target_model" = "openrouter_id")) %>%
+  mutate(display_model = display_model(target_model_label))
+
+fang_macro_full <- fang_acc %>%
+  left_join(distinct(fang_model_meta, target_model_label, display_model), by = "target_model_label") %>%
+  group_by(target_model_label, display_model) %>%
+  summarise(macro_accuracy = mean(accuracy), .groups = "drop")
+
+fang_clear_acc <- fang_acc %>%
+  filter(!str_detect(gold_triage, "/")) %>%
+  group_by(target_model_label) %>%
+  summarise(macro_accuracy = mean(accuracy), .groups = "drop") %>%
+  left_join(distinct(fang_model_meta, target_model_label, display_model), by = "target_model_label")
+
+fang_clear_df <- fang_df %>%
+  left_join(model_meta, by = c("target_model" = "openrouter_id")) %>%
+  mutate(
+    display_model = display_model(target_model_label),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels),
+    signed_error = purrr::map2_dbl(gold_triage, predicted_triage, directional_score_from_labels)
+  ) %>%
+  filter(!str_detect(as.character(gold_triage), "/"), is.finite(signed_error))
+
+fang_full_df <- fang_df %>%
+  left_join(model_meta, by = c("target_model" = "openrouter_id")) %>%
+  mutate(
+    display_model = display_model(target_model_label),
+    gold_triage = factor(as.character(gold_triage), levels = c("A", "A/B", "B", "B/C", "C", "C/D", "D")),
+    signed_error = purrr::map2_dbl(gold_triage, predicted_triage, directional_score_from_labels)
+  ) %>%
+  filter(is.finite(signed_error))
+
+matched_clear_compare <- llm_df %>%
+  transmute(
+    run_id,
+    vignette_id,
+    target_model_label,
+    gold_llm = gold_triage,
+    match_llm = as.integer(triage_match),
+    uo_llm = under_over_triage
+  ) %>%
+  inner_join(
+    fang_df %>%
+      transmute(
+        run_id,
+        vignette_id,
+        target_model_label,
+        gold_fang = gold_triage,
+        predicted_fang = predicted_triage,
+        match_fang = as.integer(triage_match),
+        uo_fang = under_over_triage
+      ),
+    by = c("run_id", "vignette_id", "target_model_label")
+  ) %>%
+  filter(!str_detect(gold_fang, "/"), !is.na(match_llm), !is.na(match_fang))
+
+n_matched_clear <- nrow(matched_clear_compare)
+acc_matched_llm <- mean(matched_clear_compare$match_llm)
+acc_matched_fang <- mean(matched_clear_compare$match_fang)
+over_matched_llm <- mean(matched_clear_compare$uo_llm == "over_triage")
+over_matched_fang <- mean(matched_clear_compare$uo_fang == "over_triage")
+under_matched_llm <- mean(matched_clear_compare$uo_llm == "under_triage")
+under_matched_fang <- mean(matched_clear_compare$uo_fang == "under_triage")
+
+acc_discordant_orig_only <- sum(matched_clear_compare$match_llm == 1 & matched_clear_compare$match_fang == 0)
+acc_discordant_fang_only <- sum(matched_clear_compare$match_llm == 0 & matched_clear_compare$match_fang == 1)
+acc_mcnemar <- mcnemar.test(
+  matrix(
+    c(
+      sum(matched_clear_compare$match_llm == 1 & matched_clear_compare$match_fang == 1),
+      acc_discordant_orig_only,
+      acc_discordant_fang_only,
+      sum(matched_clear_compare$match_llm == 0 & matched_clear_compare$match_fang == 0)
+    ),
+    nrow = 2
+  ),
+  correct = TRUE
+)
+
+over_discordant_orig_only <- sum(matched_clear_compare$uo_llm == "over_triage" & matched_clear_compare$uo_fang != "over_triage")
+over_discordant_fang_only <- sum(matched_clear_compare$uo_llm != "over_triage" & matched_clear_compare$uo_fang == "over_triage")
+over_mcnemar <- mcnemar.test(
+  matrix(
+    c(
+      sum(matched_clear_compare$uo_llm == "over_triage" & matched_clear_compare$uo_fang == "over_triage"),
+      over_discordant_orig_only,
+      over_discordant_fang_only,
+      sum(matched_clear_compare$uo_llm != "over_triage" & matched_clear_compare$uo_fang != "over_triage")
+    ),
+    nrow = 2
+  ),
+  correct = TRUE
+)
+
+orig_over_n <- sum(matched_clear_compare$uo_llm == "over_triage")
+orig_under_n <- sum(matched_clear_compare$uo_llm == "under_triage")
+fang_over_n <- sum(matched_clear_compare$uo_fang == "over_triage")
+fang_under_n <- sum(matched_clear_compare$uo_fang == "under_triage")
+
+orig_direction_binom <- binom.test(orig_over_n, orig_over_n + orig_under_n, p = 0.5)
+fang_direction_binom <- binom.test(fang_over_n, fang_over_n + fang_under_n, p = 0.5)
+
+orig_over_n_all <- sum(llm_scored_df$under_over_triage == "over_triage")
+orig_under_n_all <- sum(llm_scored_df$under_over_triage == "under_triage")
+orig_direction_binom_all <- binom.test(orig_over_n_all, orig_over_n_all + orig_under_n_all, p = 0.5)
+
+gold_effect_fit_llm <- glm(triage_match ~ factor(gold_triage, levels = triage_levels), data = llm_scored_df, family = binomial())
+gold_effect_fit_fang <- glm(match_fang ~ factor(gold_fang, levels = triage_levels), data = matched_clear_compare, family = binomial())
+gold_effect_llm <- anova(gold_effect_fit_llm, test = "Chisq")
+gold_effect_fang <- anova(gold_effect_fit_fang, test = "Chisq")
+gold_effect_llm_chisq <- gold_effect_llm$Deviance[2]
+gold_effect_llm_df <- gold_effect_llm$Df[2]
+gold_effect_llm_p <- gold_effect_llm[["Pr(>Chi)"]][2]
+gold_effect_fang_chisq <- gold_effect_fang$Deviance[2]
+gold_effect_fang_df <- gold_effect_fang$Df[2]
+gold_effect_fang_p <- gold_effect_fang[["Pr(>Chi)"]][2]
+
+clear_label_shift <- llm_df %>%
+  distinct(vignette_id, original_gold = gold_triage) %>%
+  inner_join(
+    fang_df %>%
+      distinct(vignette_id, clinician_clear_gold = gold_triage) %>%
+      filter(!str_detect(clinician_clear_gold, "/")),
+    by = "vignette_id"
+  ) %>%
+  mutate(
+    original_gold = factor(original_gold, levels = triage_levels),
+    clinician_clear_gold = factor(clinician_clear_gold, levels = triage_levels),
+    shift = triage_numeric(clinician_clear_gold) - triage_numeric(original_gold)
+  )
+
+n_clear_shift_up <- sum(clear_label_shift$shift > 0, na.rm = TRUE)
+n_clear_shift_same <- sum(clear_label_shift$shift == 0, na.rm = TRUE)
+n_clear_shift_down <- sum(clear_label_shift$shift < 0, na.rm = TRUE)
+n_clear_overlap_total <- nrow(clear_label_shift)
+p_clear_shift_same <- n_clear_shift_same / n_clear_overlap_total
+
+clear_shift_direction_binom <- binom.test(n_clear_shift_up, n_clear_shift_up + n_clear_shift_down, p = 0.5)
+
+clear_shift_counts <- clear_label_shift %>%
+  count(original_gold, clinician_clear_gold, name = "n")
+
+n_shift_B_to_C <- clear_shift_counts %>%
+  filter(original_gold == "B", clinician_clear_gold == "C") %>%
+  pull(n) %>%
+  sum(na.rm = TRUE)
+
+n_shift_C_to_D <- clear_shift_counts %>%
+  filter(original_gold == "C", clinician_clear_gold == "D") %>%
+  pull(n) %>%
+  sum(na.rm = TRUE)
+
+fang_emergency_clear <- matched_clear_compare %>%
+  filter(gold_fang == "D")
+
+n_fang_emergency_cases <- nrow(fang_emergency_clear)
+n_fang_emergency_undertriage <- sum(fang_emergency_clear$uo_fang == "under_triage", na.rm = TRUE)
+p_fang_emergency_undertriage <- n_fang_emergency_undertriage / n_fang_emergency_cases
+
+fang_emergency_under_predictions <- fang_emergency_clear %>%
+  filter(uo_fang == "under_triage") %>%
+  count(predicted_fang, sort = TRUE)
+
+all_fang_emergency_undertriage_to_C <- nrow(fang_emergency_under_predictions) == 1 &&
+  fang_emergency_under_predictions$predicted_fang[1] == "C"
+
+fang_D_matched_compare <- matched_clear_compare %>%
+  filter(gold_fang == "D")
+
+emergency_discordant_orig_only <- sum(fang_D_matched_compare$uo_llm == "under_triage" & fang_D_matched_compare$uo_fang != "under_triage")
+emergency_discordant_fang_only <- sum(fang_D_matched_compare$uo_llm != "under_triage" & fang_D_matched_compare$uo_fang == "under_triage")
+emergency_under_mcnemar <- mcnemar.test(
+  matrix(
+    c(
+      sum(fang_D_matched_compare$uo_llm == "under_triage" & fang_D_matched_compare$uo_fang == "under_triage"),
+      emergency_discordant_orig_only,
+      emergency_discordant_fang_only,
+      sum(fang_D_matched_compare$uo_llm != "under_triage" & fang_D_matched_compare$uo_fang != "under_triage")
+    ),
+    nrow = 2
+  ),
+  correct = TRUE
+)
+
+fang_level_accuracy <- matched_clear_compare %>%
+  group_by(gold_fang) %>%
+  summarise(mean_accuracy = mean(match_fang), .groups = "drop") %>%
+  transmute(gold_triage = gold_fang, mean_accuracy)
+
+acc_fang_A <- get_level_metric("A", mean_accuracy, fang_level_accuracy)
+acc_fang_B <- get_level_metric("B", mean_accuracy, fang_level_accuracy)
+acc_fang_C <- get_level_metric("C", mean_accuracy, fang_level_accuracy)
+acc_fang_D <- get_level_metric("D", mean_accuracy, fang_level_accuracy)
+
+llm_level_direction_rates <- llm_scored_df %>%
+  group_by(gold_triage) %>%
+  summarise(
+    over_rate = mean(under_over_triage == "over_triage", na.rm = TRUE),
+    under_rate = mean(under_over_triage == "under_triage", na.rm = TRUE),
+    .groups = "drop"
+  )
+
+orig_over_A <- get_level_metric("A", over_rate, llm_level_direction_rates)
+orig_over_B <- get_level_metric("B", over_rate, llm_level_direction_rates)
+orig_over_C <- get_level_metric("C", over_rate, llm_level_direction_rates)
+orig_over_D <- get_level_metric("D", over_rate, llm_level_direction_rates)
+
+fang_level_direction_rates <- matched_clear_compare %>%
+  group_by(gold_fang) %>%
+  summarise(
+    over_rate = mean(uo_fang == "over_triage", na.rm = TRUE),
+    under_rate = mean(uo_fang == "under_triage", na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  transmute(gold_triage = gold_fang, over_rate, under_rate)
+
+fang_over_A <- get_level_metric("A", over_rate, fang_level_direction_rates)
+fang_over_B <- get_level_metric("B", over_rate, fang_level_direction_rates)
+fang_over_C <- get_level_metric("C", over_rate, fang_level_direction_rates)
+fang_over_D <- get_level_metric("D", over_rate, fang_level_direction_rates)
+
+model_accuracy_alignment <- macro_by_model %>%
+  select(target_model_label, macro_accuracy_llm = macro_accuracy) %>%
+  inner_join(
+    fang_clear_acc %>%
+      select(target_model_label, macro_accuracy_fang = macro_accuracy),
+    by = "target_model_label"
+  )
+
+overall_accuracy_rank_corr <- suppressWarnings(
+  cor.test(
+    model_accuracy_alignment$macro_accuracy_llm,
+    model_accuracy_alignment$macro_accuracy_fang,
+    method = "spearman",
+    exact = FALSE
+  )
+)
+
+matched_both_D <- matched_clear_compare %>%
+  filter(gold_llm == "D", gold_fang == "D")
+
+n_both_D_vignettes <- n_distinct(matched_both_D$vignette_id)
+n_both_D_cases <- nrow(matched_both_D)
+n_both_D_undertriage <- sum(matched_both_D$uo_llm == "under_triage", na.rm = TRUE)
+p_both_D_undertriage <- n_both_D_undertriage / n_both_D_cases
+
+both_D_under_predictions <- matched_both_D %>%
+  filter(uo_llm == "under_triage") %>%
+  count(predicted_fang, sort = TRUE)
+
+all_both_D_undertriage_to_C <- nrow(both_D_under_predictions) == 1 &&
+  both_D_under_predictions$predicted_fang[1] == "C"
+```
+
+```{r}
+#| label: results_model_rankings
+#| include: false
+results_table1 <- acc_llm %>%
+  select(target_model_label, display_model, provider, gold_triage, accuracy) %>%
+  pivot_wider(names_from = gold_triage, values_from = accuracy) %>%
+  left_join(macro_by_model, by = c("target_model_label", "display_model", "provider")) %>%
+  left_join(model_ordinal_error, by = c("target_model_label", "display_model", "provider")) %>%
+  left_join(runs_by_model, by = c("target_model_label", "display_model")) %>%
+  arrange(desc(D), desc(macro_accuracy), display_model) %>%
+  transmute(
+    Model = display_model,
+    Provider = provider,
+    `N completed` = n_completed_model,
+    A = fmt_pct(A),
+    B = fmt_pct(B),
+    C = fmt_pct(C),
+    D = fmt_pct(D),
+    `Overall accuracy` = fmt_pct(macro_accuracy),
+    `Mean signed ordinal error` = fmt_signed_num(mean_signed_ordinal_error),
+    `Mean absolute ordinal error` = sprintf("%.2f", mean_absolute_ordinal_error)
+  )
+```
+
+```{r}
+#| label: results_emergency_undertriage
+#| include: false
+collapse_with_and <- function(x) {
+  x <- as.character(x)
+  if (length(x) == 0) {
+    return("")
+  }
+  if (length(x) == 1) {
+    return(x)
+  }
+  if (length(x) == 2) {
+    return(paste(x, collapse = " and "))
+  }
+  paste0(paste(x[-length(x)], collapse = ", "), ", and ", x[length(x)])
+}
+
+llm_emergency_df <- llm_scored_df %>%
+  filter(as.character(gold_triage) == "D")
+
+n_emergency_cases <- nrow(llm_emergency_df)
+n_emergency_undertriage <- sum(llm_emergency_df$under_over_triage == "under_triage", na.rm = TRUE)
+p_emergency_undertriage <- n_emergency_undertriage / n_emergency_cases
+
+emergency_under_predictions <- llm_emergency_df %>%
+  filter(under_over_triage == "under_triage") %>%
+  count(predicted_triage, sort = TRUE)
+
+all_emergency_undertriage_to_C <- nrow(emergency_under_predictions) == 1 &&
+  emergency_under_predictions$predicted_triage[1] == "C"
+
+emergency_under_by_model <- llm_emergency_df %>%
+  group_by(target_model_label, display_model) %>%
+  summarise(
+    n_emergency = n(),
+    n_under = sum(under_over_triage == "under_triage", na.rm = TRUE),
+    under_rate = n_under / n_emergency,
+    .groups = "drop"
+  ) %>%
+  arrange(display_model)
+
+zero_emergency_under_models <- emergency_under_by_model %>%
+  filter(n_under == 0) %>%
+  pull(display_model)
+
+zero_emergency_under_models_text <- collapse_with_and(zero_emergency_under_models)
+
+top5_models <- macro_by_model %>% slice_head(n = 5)
+n_top5_with_emergency_undertriage <- emergency_under_by_model %>%
+  semi_join(top5_models, by = c("target_model_label", "display_model")) %>%
+  summarise(n = sum(n_under > 0)) %>%
+  pull(n)
+
+model_error_bias <- llm_scored_df %>%
+  group_by(target_model_label, display_model) %>%
+  summarise(
+    over_rate = mean(under_over_triage == "over_triage", na.rm = TRUE),
+    under_rate_all = mean(under_over_triage == "under_triage", na.rm = TRUE),
+    directed_error = over_rate - under_rate_all,
+    .groups = "drop"
+  )
+
+emergency_bias_compare <- emergency_under_by_model %>%
+  left_join(model_error_bias, by = c("target_model_label", "display_model"))
+
+zero_emergency_under_mean_directed <- emergency_bias_compare %>%
+  filter(n_under == 0) %>%
+  summarise(mean_directed = mean(directed_error)) %>%
+  pull(mean_directed)
+
+nonzero_emergency_under_mean_directed <- emergency_bias_compare %>%
+  filter(n_under > 0) %>%
+  summarise(mean_directed = mean(directed_error)) %>%
+  pull(mean_directed)
+
+emergency_under_over_corr <- suppressWarnings(
+  cor.test(
+    emergency_bias_compare$under_rate,
+    emergency_bias_compare$directed_error,
+    method = "spearman",
+    exact = FALSE
+  )
+)
+
+release_date_compare <- macro_by_model %>%
+  select(target_model_label, display_model, overall_accuracy = macro_accuracy) %>%
+  left_join(
+    emergency_under_by_model %>%
+      select(target_model_label, emergency_under_rate = under_rate),
+    by = "target_model_label"
+  ) %>%
+  left_join(
+    model_error_bias %>%
+      select(target_model_label, directed_error),
+    by = "target_model_label"
+  ) %>%
+  left_join(
+    llm_df %>%
+      distinct(target_model_label, release_date),
+    by = "target_model_label"
+  ) %>%
+  filter(!is.na(release_date))
+
+release_corr_overall_accuracy <- suppressWarnings(
+  cor.test(
+    as.numeric(release_date_compare$release_date),
+    release_date_compare$overall_accuracy,
+    method = "spearman",
+    exact = FALSE
+  )
+)
+
+release_corr_emergency_under <- suppressWarnings(
+  cor.test(
+    as.numeric(release_date_compare$release_date),
+    release_date_compare$emergency_under_rate,
+    method = "spearman",
+    exact = FALSE
+  )
+)
+
+release_corr_directed_error <- suppressWarnings(
+  cor.test(
+    as.numeric(release_date_compare$release_date),
+    release_date_compare$directed_error,
+    method = "spearman",
+    exact = FALSE
+  )
+)
+```
+
+### Emergency under-triage
+
+Emergency under-triage was defined as any target AI chatbot assignment below level D (i.e., predicted triage A, B, or C) for a level D vignette. Across the `r n_models` evaluated target AI chatbots, emergency under-triage relative to the original benchmark labels was rare, occurring in only `r n_emergency_undertriage` of `r n_emergency_cases` trials (`r fmt_pct(p_emergency_undertriage)` of level D trials; Figure 2A,C). All undertriaged emergencies were reassigned to level C (assessment within 24 to 48 hours), and emergency under-triage rates were 0% in `r zero_emergency_under_models_text`.
+
+
+
+When considering the set of vignettes assigned a clinician consensus label of D, emergency under-triage was similarly low (`r fmt_pct(p_fang_emergency_undertriage)`, `r n_fang_emergency_undertriage` of `r n_fang_emergency_cases` trials), with all under-triage trials being assigned to level C (urgent care). Restricting further to vignettes labeled D by both the original benchmark labels and the clinician clear-consensus labels (`r n_both_D_vignettes` vignettes), emergency under-triage remained low across all target models (`r n_both_D_undertriage` of `r n_both_D_cases` trials, `r fmt_pct(p_both_D_undertriage)`), again always as reassignment to level C.
+
+### Overall accuracy and level-wise accuracy
+
+Overall accuracy was defined as the proportion of predicted triage labels that matched the original benchmark labels, summarized as the unweighted mean accuracy across levels A to D. Across the `r n_models` evaluated frontier AI chatbots, overall accuracy relative to the original benchmark labels ranged from `r fmt_pct(min(macro_by_model$macro_accuracy))` to `r fmt_pct(max(macro_by_model$macro_accuracy))` (Table S3; Figure 2). `r best_model` had the highest overall accuracy (`r fmt_pct(best_model_accuracy)`), followed by `r display_model(top3_models$target_model_label[2])` (`r fmt_pct(top3_models$macro_accuracy[2])`) and `r display_model(top3_models$target_model_label[3])` (`r fmt_pct(top3_models$macro_accuracy[3])`). Importantly, however, the 5 highest-accuracy AI chatbots each showed non-zero emergency under-triage rates, pointing to a potential trade-off between higher overall accuracy at lower-acuity presentations, at the expense of under-triage for more serious presentations.
+
+Accuracy differed significantly across the original benchmark triage levels ($\chi^2_{`r gold_effect_llm_df`}$ = `r round(gold_effect_llm_chisq, 1)`, P `r fmt_p(gold_effect_llm_p)`; logistic regression). Level D (emergency) vignettes showed the highest AI chatbot-averaged accuracy (`r fmt_pct(acc_D)`), whereas level B (intermediate) vignettes showed the lowest (`r fmt_pct(acc_B)`). Levels A (routine) and C (urgent) showed intermediate accuracies of `r fmt_pct(acc_A)` and `r fmt_pct(acc_C)`, respectively, yielding a U-shaped calibration profile in which the intermediate-acuity levels were hardest to distinguish. AI chatbots may therefore be better at recognizing the extremes of psychiatric urgency than at estimating the timing threshold that separates intermediate from urgent assessment.
+
+Repeating this analysis using clinician-rated consensus triage labels yielded a qualitatively similar pattern of results (correlation model-level overall accuracies, Spearman $\rho$ = `r round(unname(overall_accuracy_rank_corr$estimate), 2)`, P `r fmt_p(overall_accuracy_rank_corr$p.value)`). Overall accuracy was higher under clinician clear-consensus labels than under the original benchmark labels (`r fmt_pct(acc_matched_fang)` vs `r fmt_pct(acc_matched_llm)`; McNemar $\chi^2_1$ = `r round(unname(acc_mcnemar$statistic), 1)`, P `r fmt_p(acc_mcnemar$p.value)`). Accuracy differed significantly across clinician clear-consensus triage levels ($\chi^2_{`r gold_effect_fang_df`}$ = `r round(gold_effect_fang_chisq, 1)`, P `r fmt_p(gold_effect_fang_p)`; logistic regression), with level D vignettes showing the highest accuracy (`r fmt_pct(acc_fang_D)`) and level B vignettes the lowest (`r fmt_pct(acc_fang_B)`); levels A and C again showed intermediate accuracies (`r fmt_pct(acc_fang_A)` and `r fmt_pct(acc_fang_C)`, respectively).
+
+```{r}
+#| label: figure2_data
+#| include: false
+model_axis_order <- llm_df %>%
+  distinct(target_model_label, display_model, provider, family, release_date) %>%
+  mutate(
+    model_family = case_when(
+      str_detect(display_model, "^Claude") ~ "Claude",
+      str_detect(display_model, "^Gemini") ~ "Gemini",
+      str_detect(display_model, "^GPT") ~ "GPT",
+      str_detect(display_model, "^Grok") ~ "Grok",
+      str_detect(display_model, "^DeepSeek") ~ "DeepSeek",
+      str_detect(display_model, "^Llama") ~ "Llama",
+      str_detect(display_model, "^Mistral") ~ "Mistral",
+      str_detect(display_model, "^Qwen") ~ "Qwen",
+      TRUE ~ coalesce(family, as.character(provider), display_model)
+    )
+  ) %>%
+  arrange(model_family, release_date, display_model)
+
+provider_model_order <- model_axis_order$display_model
+
+model_fill_values <- setNames(model_palette[provider_model_order], provider_model_order)
+
+model_family_boundaries <- model_axis_order %>%
+  mutate(model_index = row_number()) %>%
+  group_by(model_family) %>%
+  summarise(last_index = max(model_index), .groups = "drop") %>%
+  mutate(boundary = last_index + 0.5) %>%
+  filter(boundary < length(provider_model_order) + 0.5)
+
+overall_accuracy_ci_df <- llm_scored_df %>%
+  mutate(
+    provider = factor(provider, levels = names(provider_palette)),
+    correct = as.integer(triage_match)
+  ) %>%
+  group_by(target_model_label, display_model, provider) %>%
+  summarise(mean_ci_95(correct), .groups = "drop") %>%
+  mutate(measure = factor("Overall", levels = measure_levels))
+
+level_accuracy_ci_df <- llm_scored_df %>%
+  mutate(
+    provider = factor(provider, levels = names(provider_palette)),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels),
+    correct = as.integer(triage_match)
+  ) %>%
+  group_by(target_model_label, display_model, provider, gold_triage) %>%
+  summarise(mean_ci_95(correct), .groups = "drop") %>%
+  transmute(
+    target_model_label,
+    display_model,
+    provider,
+    n,
+    mean,
+    lower,
+    upper,
+    measure = factor(as.character(gold_triage), levels = measure_levels)
+  )
+
+panel_a_df <- bind_rows(
+  overall_accuracy_ci_df %>% select(target_model_label, display_model, provider, n, mean, lower, upper, measure),
+  level_accuracy_ci_df
+) %>%
+  mutate(
+    display_model = factor(display_model, levels = provider_model_order),
+    measure = factor(measure, levels = measure_levels)
+  )
+
+panel_a_bar_width <- 0.14
+panel_a_offsets <- c("Overall" = -0.32, "A" = -0.16, "B" = 0.00, "C" = 0.16, "D" = 0.32)
+
+panel_a_df <- panel_a_df %>%
+  mutate(
+    model_index = match(as.character(display_model), provider_model_order),
+    x_center = model_index + unname(panel_a_offsets[as.character(measure)])
+  )
+
+panel_a_overall_df <- panel_a_df %>%
+  filter(measure == "Overall")
+
+panel_a_labels <- panel_a_overall_df %>%
+  mutate(
+    label = fmt_pct(mean, digits = 1),
+    x_label = model_index
+  )
+
+panel_a_level_df <- panel_a_df %>%
+  filter(measure != "Overall")
+
+panel_rate_bar_width <- 0.16
+under_panel_levels <- c("B", "C", "D")
+over_panel_levels <- c("A", "B", "C")
+under_panel_offsets <- c("B" = -0.16, "C" = 0.00, "D" = 0.16)
+over_panel_offsets <- c("A" = -0.16, "B" = 0.00, "C" = 0.16)
+panel_rate_overall_offset <- -0.40
+top_panel_y_limits <- c(-0.03, 1.06)
+
+main_confusion_panel <- plot_confusion_heatmap(
+  confusion_long(llm_scored_df, normalize_rows = TRUE),
+  title = "A",
+  subtitle = "All models pooled",
+  normalize_rows = TRUE
+)
+
+main_accuracy_plot <- ggplot(
+  panel_a_level_df,
+  aes(x = x_center, y = mean, fill = display_model, alpha = measure)
+) +
+  geom_col(
+    width = panel_a_bar_width,
+    color = NA,
+    linewidth = 0
+  ) +
+  geom_linerange(
+    data = panel_a_overall_df,
+    aes(x = x_center, ymin = lower, ymax = upper, color = display_model),
+    inherit.aes = FALSE,
+    linewidth = 0.9
+  ) +
+  geom_point(
+    data = panel_a_overall_df,
+    aes(x = x_center, y = mean, color = display_model),
+    inherit.aes = FALSE,
+    size = manuscript_point_size + 0.15,
+    shape = 16
+  ) +
+  geom_text(
+    data = panel_a_level_df,
+    aes(x = x_center, y = 0.028, label = as.character(measure)),
+    inherit.aes = FALSE,
+    size = base_font_size * 0.20,
+    vjust = 0.5,
+    color = "black",
+    alpha = 1
+  ) +
+  geom_text(
+    data = panel_a_labels,
+    aes(x = x_label, y = 1.02, label = label, color = display_model),
+    inherit.aes = FALSE,
+    hjust = 0.5,
+    size = base_font_size * 0.28,
+    vjust = 0,
+    alpha = 1
+  ) +
+  geom_vline(
+    data = model_family_boundaries,
+    aes(xintercept = boundary),
+    color = "grey82",
+    linewidth = 0.35
+  ) +
+  scale_fill_manual(values = model_fill_values, guide = "none") +
+  scale_color_manual(values = model_fill_values, guide = "none") +
+  scale_alpha_manual(values = measure_alpha_values, guide = "none") +
+  scale_x_continuous(
+    breaks = seq_along(provider_model_order),
+    labels = provider_model_order,
+    expand = expansion(mult = c(0.03, 0.03))
+  ) +
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = top_panel_y_limits, expand = expansion(mult = c(0, 0.02))) +
+  labs(
+    x = NULL,
+    y = "Accuracy",
+    title = "B",
+    subtitle = "AI chatbot overall and level-specific accuracy relative to original benchmark labels"
+  ) +
+  theme_minimal(base_size = base_font_size) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    plot.title = element_text(face = "bold"),
+    legend.position = "none"
+  )
+
+main_accuracy_by_gold_df <- acc_llm %>%
+  mutate(
+    display_model = factor(display_model, levels = model_order),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels)
+  )
+
+main_accuracy_by_gold_summary <- main_accuracy_by_gold_df %>%
+  group_by(gold_triage) %>%
+  summarise(mean_ci_95(accuracy), .groups = "drop")
+
+main_accuracy_by_gold_panel <- ggplot() +
+  geom_hline(yintercept = 0.25, linetype = "dashed", color = "grey60", linewidth = 0.35) +
+  annotate("text", x = 4.42, y = 0.27, label = "Chance level", hjust = 1, vjust = -0.35, size = base_font_size * 0.30, color = "grey25") +
+  geom_point(
+    data = main_accuracy_by_gold_df,
+    aes(x = gold_triage, y = accuracy, color = display_model),
+    size = manuscript_point_size,
+    shape = 16,
+    alpha = 0.55,
+    position = position_jitter(width = 0.06, height = 0)
+  ) +
+  geom_linerange(
+    data = main_accuracy_by_gold_summary,
+    aes(x = gold_triage, ymin = lower, ymax = upper),
+    color = "black",
+    linewidth = 0.9
+  ) +
+  geom_point(
+    data = main_accuracy_by_gold_summary,
+    aes(x = gold_triage, y = mean),
+    color = "black",
+    size = manuscript_point_size + 0.15,
+    shape = 16,
+    stroke = 0.35
+  ) +
+  scale_color_manual(values = model_palette, guide = "none") +
+  scale_x_discrete(labels = triage_labels_short) +
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = c(0, 1)) +
+  labs(
+    x = "Ground-truth triage level",
+    y = "Accuracy",
+    title = "E",
+    subtitle = "Accuracy by original benchmark label"
+  ) +
+  theme_minimal(base_size = base_font_size) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.title = element_text(face = "bold")
+  )
+
+main_error_plot_df <- ordinal_error_df %>%
+  group_by(target_model_label, display_model, gold_triage) %>%
+  summarise(mean_signed_ordinal_error = mean(signed_ordinal_error), .groups = "drop") %>%
+  mutate(
+    display_model = factor(display_model, levels = model_order),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels)
+  )
+
+main_error_summary <- main_error_plot_df %>%
+  group_by(gold_triage) %>%
+  summarise(mean_ci_95(mean_signed_ordinal_error), .groups = "drop")
+
+main_under_by_model_df <- llm_scored_df %>%
+  mutate(
+    display_model = factor(display_model, levels = provider_model_order),
+    provider = factor(provider, levels = names(provider_palette)),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels),
+    rate = as.integer(under_over_triage == "under_triage"),
+    measure = factor(as.character(gold_triage), levels = triage_levels),
+    model_index = match(as.character(display_model), provider_model_order)
+  ) %>%
+  filter(as.character(measure) %in% under_panel_levels) %>%
+  mutate(x_center = model_index + unname(under_panel_offsets[as.character(measure)])) %>%
+  group_by(target_model_label, display_model, provider, gold_triage, measure, model_index, x_center) %>%
+  summarise(rate = mean(rate), .groups = "drop")
+
+main_under_overall_df <- llm_scored_df %>%
+  mutate(
+    display_model = factor(display_model, levels = provider_model_order),
+    provider = factor(provider, levels = names(provider_palette)),
+    rate = as.integer(under_over_triage == "under_triage")
+  ) %>%
+  group_by(target_model_label, display_model, provider) %>%
+  summarise(mean_ci_95(rate), .groups = "drop") %>%
+  mutate(
+    model_index = match(as.character(display_model), provider_model_order),
+    x_center = model_index + panel_rate_overall_offset
+  )
+
+main_under_labels <- main_under_overall_df %>%
+  mutate(
+    label = fmt_pct(mean, digits = 1),
+    x_label = model_index
+  )
+
+main_over_by_model_df <- llm_scored_df %>%
+  mutate(
+    display_model = factor(display_model, levels = provider_model_order),
+    provider = factor(provider, levels = names(provider_palette)),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels),
+    rate = as.integer(under_over_triage == "over_triage"),
+    measure = factor(as.character(gold_triage), levels = triage_levels),
+    model_index = match(as.character(display_model), provider_model_order)
+  ) %>%
+  filter(as.character(measure) %in% over_panel_levels) %>%
+  mutate(x_center = model_index + unname(over_panel_offsets[as.character(measure)])) %>%
+  group_by(target_model_label, display_model, provider, gold_triage, measure, model_index, x_center) %>%
+  summarise(rate = mean(rate), .groups = "drop")
+
+main_over_overall_df <- llm_scored_df %>%
+  mutate(
+    display_model = factor(display_model, levels = provider_model_order),
+    provider = factor(provider, levels = names(provider_palette)),
+    rate = as.integer(under_over_triage == "over_triage")
+  ) %>%
+  group_by(target_model_label, display_model, provider) %>%
+  summarise(mean_ci_95(rate), .groups = "drop") %>%
+  mutate(
+    model_index = match(as.character(display_model), provider_model_order),
+    x_center = model_index + panel_rate_overall_offset
+  )
+
+main_over_labels <- main_over_overall_df %>%
+  mutate(
+    label = fmt_pct(mean, digits = 1),
+    x_label = model_index
+  )
+
+main_undertriage_by_model_panel <- ggplot(
+  main_under_by_model_df,
+  aes(x = x_center, y = rate, fill = display_model, alpha = measure)
+) +
+  geom_col(
+    width = panel_rate_bar_width,
+    color = NA,
+    linewidth = 0
+  ) +
+  geom_text(
+    aes(x = x_center, y = 0.028, label = as.character(measure)),
+    inherit.aes = FALSE,
+    size = base_font_size * 0.20,
+    vjust = 0.5,
+    color = "black",
+    alpha = 1
+  ) +
+  geom_linerange(
+    data = main_under_overall_df,
+    aes(x = x_center, ymin = lower, ymax = upper, color = display_model),
+    inherit.aes = FALSE,
+    linewidth = 0.9
+  ) +
+  geom_point(
+    data = main_under_overall_df,
+    aes(x = x_center, y = mean, color = display_model),
+    inherit.aes = FALSE,
+    size = manuscript_point_size + 0.15,
+    shape = 16
+  ) +
+  geom_text(
+    data = main_under_labels,
+    aes(x = x_label, y = 1.02, label = label, color = display_model),
+    inherit.aes = FALSE,
+    hjust = 0.5,
+    size = base_font_size * 0.28,
+    vjust = 0,
+    alpha = 1
+  ) +
+  geom_vline(
+    data = model_family_boundaries,
+    aes(xintercept = boundary),
+    color = "grey82",
+    linewidth = 0.35
+  ) +
+  scale_fill_manual(values = model_fill_values, guide = "none") +
+  scale_color_manual(values = model_fill_values, guide = "none") +
+  scale_alpha_manual(values = measure_alpha_values[under_panel_levels], guide = "none") +
+  scale_x_continuous(
+    breaks = seq_along(provider_model_order),
+    labels = provider_model_order,
+    expand = expansion(mult = c(0.03, 0.03))
+  ) +
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = top_panel_y_limits, expand = expansion(mult = c(0, 0.02))) +
+  labs(
+    x = NULL,
+    y = "Under-triage rate",
+    title = "C",
+    subtitle = "Under-triage rate by model and original benchmark label"
+  ) +
+  theme_minimal(base_size = base_font_size) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    plot.title = element_text(face = "bold"),
+    legend.position = "none"
+  )
+
+main_overtriage_by_model_panel <- ggplot(
+  main_over_by_model_df,
+  aes(x = x_center, y = rate, fill = display_model, alpha = measure)
+) +
+  geom_col(
+    width = panel_rate_bar_width,
+    color = NA,
+    linewidth = 0
+  ) +
+  geom_text(
+    aes(x = x_center, y = 0.028, label = as.character(measure)),
+    inherit.aes = FALSE,
+    size = base_font_size * 0.20,
+    vjust = 0.5,
+    color = "black",
+    alpha = 1
+  ) +
+  geom_linerange(
+    data = main_over_overall_df,
+    aes(x = x_center, ymin = lower, ymax = upper, color = display_model),
+    inherit.aes = FALSE,
+    linewidth = 0.9
+  ) +
+  geom_point(
+    data = main_over_overall_df,
+    aes(x = x_center, y = mean, color = display_model),
+    inherit.aes = FALSE,
+    size = manuscript_point_size + 0.15,
+    shape = 16
+  ) +
+  geom_text(
+    data = main_over_labels,
+    aes(x = x_label, y = 1.02, label = label, color = display_model),
+    inherit.aes = FALSE,
+    hjust = 0.5,
+    size = base_font_size * 0.28,
+    vjust = 0,
+    alpha = 1
+  ) +
+  geom_vline(
+    data = model_family_boundaries,
+    aes(xintercept = boundary),
+    color = "grey82",
+    linewidth = 0.35
+  ) +
+  scale_fill_manual(values = model_fill_values, guide = "none") +
+  scale_color_manual(values = model_fill_values, guide = "none") +
+  scale_alpha_manual(values = measure_alpha_values[over_panel_levels], guide = "none") +
+  scale_x_continuous(
+    breaks = seq_along(provider_model_order),
+    labels = provider_model_order,
+    expand = expansion(mult = c(0.03, 0.03))
+  ) +
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = top_panel_y_limits, expand = expansion(mult = c(0, 0.02))) +
+  labs(
+    x = NULL,
+    y = "Over-triage rate",
+    title = "D",
+    subtitle = "Over-triage rate by model and original benchmark label"
+  ) +
+  theme_minimal(base_size = base_font_size) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    plot.title = element_text(face = "bold"),
+    legend.position = "none"
+  )
+
+main_signed_error_panel <- ggplot(
+  main_error_plot_df,
+  aes(x = gold_triage, y = mean_signed_ordinal_error, group = display_model, color = display_model)
+) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey60", linewidth = 0.35) +
+  geom_point(
+    size = manuscript_point_size,
+    shape = 16,
+    alpha = 0.55,
+    position = position_jitter(width = 0.06, height = 0)
+  ) +
+  geom_linerange(
+    data = main_error_summary,
+    aes(x = gold_triage, ymin = lower, ymax = upper),
+    inherit.aes = FALSE,
+    color = "black",
+    linewidth = 0.9
+  ) +
+  geom_point(
+    data = main_error_summary,
+    aes(x = gold_triage, y = mean),
+    inherit.aes = FALSE,
+    color = "black",
+    size = manuscript_point_size + 0.15,
+    shape = 16,
+    stroke = 0.35
+  ) +
+  annotate("text", x = 4.42, y = Inf, label = "Over-triage", hjust = 1, vjust = 1.2, size = base_font_size * 0.30, color = "grey25") +
+  annotate("text", x = 4.42, y = -Inf, label = "Under-triage", hjust = 1, vjust = -0.2, size = base_font_size * 0.30, color = "grey25") +
+  scale_color_manual(values = model_palette, guide = "none") +
+  scale_x_discrete(labels = triage_labels_short) +
+  scale_y_continuous(limits = c(-0.4, 1.2)) +
+  labs(
+    x = "Ground-truth triage level",
+    y = "Mean signed ordinal error",
+    title = "F",
+    subtitle = "Directional ordinal bias by original benchmark label"
+  ) +
+  theme_minimal(base_size = base_font_size) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    plot.title = element_text(face = "bold")
+  )
+```
+
+```{r}
+#| label: figure2_display
+#| echo: false
+#| fig-width: 12
+#| fig-height: 11.2
+#| out.width: "100%"
+top_row <- arrangeGrob(main_confusion_panel, main_accuracy_plot, ncol = 2, widths = c(0.55, 1.45))
+middle_row <- arrangeGrob(main_undertriage_by_model_panel, main_overtriage_by_model_panel, ncol = 2, widths = c(1, 1))
+bottom_row <- arrangeGrob(main_accuracy_by_gold_panel, main_signed_error_panel, ncol = 2, widths = c(1, 1))
+gridExtra::grid.arrange(top_row, middle_row, bottom_row, ncol = 1, heights = c(1.15, 1, 1))
+```
+
+**Figure 2. Psychiatric triage performance and error profiles by target AI chatbot relative to the original benchmark labels.** **A.** Row-normalized confusion matrix pooled across resolved evaluations. **B.** AI chatbot overall and level-specific accuracy. For each target AI chatbot, adjacent filled bars show accuracy for original benchmark labels A, B, C, and D. Model names on the x-axis are grouped by model family and ordered by release date within family from older to newer. The letters inside the bars identify the corresponding original triage labels. **C.** AI chatbot under-triage rate by original benchmark triage level, omitting level A because under-triage is not possible for the lowest urgency level. **D.** AI chatbot over-triage rate by original benchmark triage level, omitting level D because over-triage is not possible for the highest urgency level. For panels B–D, error bars show means and 95% confidence intervals (CI) per target model for the metric displayed in each panel. **E.** Mean accuracy per original benchmark triage label, averaged over target AI chatbots. **F.** Mean signed ordinal error by original benchmark triage level, averaged over target AI chatbots. Positive values indicate over-triage, negative values indicate under-triage, and 0 indicates no net directional bias. For E–F, black markers show the mean across AI chatbots with 95% CIs. Individual colored dots show chatbot-specific performance (colors as per B–D).
+
+```{r}
+#| label: results_entropy_overtriage
+#| include: false
+ratings_entropy <- function(ratings) {
+  ratings <- unlist(ratings)
+  if (length(ratings) == 0) {
+    return(NA_real_)
+  }
+  probs <- prop.table(table(ratings))
+  -sum(as.numeric(probs) * log2(as.numeric(probs)))
+}
+
+clinician_entropy_by_vignette <- tibble(
+  fact_path = list.files("../vignettes/triage_v2/_meta/facts", pattern = "\\.json$", full.names = TRUE)
+) %>%
+  mutate(
+    vignette_id = tools::file_path_sans_ext(basename(fact_path)),
+    fact = map(fact_path, ~ fromJSON(.x, simplifyVector = FALSE)),
+    clinician_label_entropy = map_dbl(fact, ~ ratings_entropy(.x$fang_all_ratings)),
+    clinician_case_class = map_chr(fact, ~ if (is.null(.x$fang_case_class)) NA_character_ else .x$fang_case_class)
+  ) %>%
+  select(-fact)
+
+entropy_overtriage_df <- llm_scored_df %>%
+  select(vignette_id, gold_triage, under_over_triage) %>%
+  inner_join(
+    clinician_entropy_by_vignette %>%
+      select(vignette_id, clinician_label_entropy, clinician_case_class),
+    by = "vignette_id"
+  ) %>%
+  mutate(
+    over_triage = as.integer(under_over_triage == "over_triage"),
+    gold_triage = factor(as.character(gold_triage), levels = triage_levels)
+  ) %>%
+  filter(!is.na(over_triage), is.finite(clinician_label_entropy))
+
+entropy_by_gold <- entropy_overtriage_df %>%
+  group_by(gold_triage) %>%
+  summarise(mean_entropy = mean(clinician_label_entropy), .groups = "drop")
+
+entropy_A <- get_level_metric("A", mean_entropy, entropy_by_gold)
+entropy_B <- get_level_metric("B", mean_entropy, entropy_by_gold)
+entropy_C <- get_level_metric("C", mean_entropy, entropy_by_gold)
+entropy_D <- get_level_metric("D", mean_entropy, entropy_by_gold)
+
+entropy_fit_unadj_null <- glm(over_triage ~ 1, data = entropy_overtriage_df, family = binomial())
+entropy_fit_unadj <- glm(over_triage ~ clinician_label_entropy, data = entropy_overtriage_df, family = binomial())
+entropy_fit_adj_null <- glm(over_triage ~ gold_triage, data = entropy_overtriage_df, family = binomial())
+entropy_fit_adj <- glm(over_triage ~ clinician_label_entropy + gold_triage, data = entropy_overtriage_df, family = binomial())
+
+entropy_lr_unadj <- anova(entropy_fit_unadj_null, entropy_fit_unadj, test = "Chisq")
+entropy_lr_adj <- anova(entropy_fit_adj_null, entropy_fit_adj, test = "Chisq")
+
+entropy_unadj_chisq <- entropy_lr_unadj$Deviance[2]
+entropy_unadj_df <- entropy_lr_unadj$Df[2]
+entropy_unadj_p <- entropy_lr_unadj[["Pr(>Chi)"]][2]
+entropy_adj_chisq <- entropy_lr_adj$Deviance[2]
+entropy_adj_df <- entropy_lr_adj$Df[2]
+entropy_adj_p <- entropy_lr_adj[["Pr(>Chi)"]][2]
+entropy_over_or_unadj <- exp(coef(entropy_fit_unadj)[["clinician_label_entropy"]])
+entropy_over_or_adj <- exp(coef(entropy_fit_adj)[["clinician_label_entropy"]])
+```
+
+### Directional bias and ordinal imprecision
+
+Directional bias was asymmetric under the original benchmark labels: when AI chatbots were wrong, they were overwhelmingly more likely to over-triage than under-triage (`r orig_over_n_all` vs `r orig_under_n_all`; P `r fmt_p(orig_direction_binom_all$p.value)`, exact binomial test). This was also reflected in the positive mean signed ordinal error (`r fmt_signed_num(mean_signed_ordinal_error)` triage levels), indicating that the average model-vignette output was shifted toward higher urgency. Over-triage was most common for level B vignettes (`r fmt_pct(orig_over_B)`), with intermediate rates at levels A (`r fmt_pct(orig_over_A)`) and C (`r fmt_pct(orig_over_C)`) (Figure 2D,F). Among incorrect predictions, `r fmt_pct(p_adjacent_ordinal_errors)` were adjacent one-level errors, whereas `r fmt_pct(p_nonadjacent_ordinal_errors)` were errors of two or more triage levels. Ordinal imprecision was highest for level B vignettes (mean absolute ordinal error `r sprintf("%.2f", abs_error_B)`), followed by level C (`r sprintf("%.2f", abs_error_C)`), level A (`r sprintf("%.2f", abs_error_A)`), and level D (`r sprintf("%.2f", abs_error_D)`).
+
+Notably, the dominant over-triage pattern in target AI chatbot predictions was also present when using clinician consensus labels as the ground truth, with incorrect predictions more often over-triaged than under-triaged (`r fang_over_n` vs `r fang_under_n`; P `r fmt_p(fang_direction_binom$p.value)`, exact binomial test), although apparent over-triage was lower than under the original benchmark labels (`r fmt_pct(over_matched_fang)` vs `r fmt_pct(over_matched_llm)`; McNemar $\chi^2_1$ = `r round(unname(over_mcnemar$statistic), 1)`, P `r fmt_p(over_mcnemar$p.value)`). Over-triage again peaked at level B (`r fmt_pct(fang_over_B)`), with intermediate rates at levels A (`r fmt_pct(fang_over_A)`) and C (`r fmt_pct(fang_over_C)`).
+
+We reasoned that this over-triage pattern might arise from uncertainty in the benchmark triage labels for some vignettes, combined with a tendency for target models to overweight higher-risk outcomes. We operationalized this uncertainty as the entropy of the label distribution of clinician labels for each vignette. Uncertainty peaked at the middle triage levels (mean entropy, `r round(entropy_B, 2)` bits for B and `r round(entropy_C, 2)` for C vs `r round(entropy_A, 2)` for A and `r round(entropy_D, 2)` for D). As hypothesized, across AI chatbot-vignette outputs, greater clinician disagreement about a vignette’s triage label was associated with more AI over-triage (odds ratio per 1-bit increase in label-distribution entropy, `r round(entropy_over_or_unadj, 2)`; $\chi^2_{`r entropy_unadj_df`}$ = `r round(entropy_unadj_chisq, 1)`, P `r fmt_p(entropy_unadj_p)`). This finding confirmed that clinician disagreement clustered at the same middle-acuity boundaries where AI chatbot over-triage was most common. AI chatbots with lower emergency under-triage tended to show greater overall over-triage bias across levels (Spearman $\rho$ = `r round(unname(emergency_under_over_corr$estimate), 2)`, P `r fmt_p(emergency_under_over_corr$p.value)`).
+
+### Robustness of findings to target-model system prompt changes
+To test the robustness of findings to target-model system prompt changes, we repeated the evaluation in control simulations using a non-directive system prompt stripped of information pertaining to mental health framing or specific triage disposition labels. This non-directive system prompt instructed the target model that it was a “general-purpose” assistant (not a mental health triage system) providing a “next-step recommendation” with timing (not a specific A, B, C, or D label; Table S4). These recommendations were then post hoc mapped back to triage categories by an independent LLM judge (Table S4).
+
+The target model performance patterns observed under the original simulations replicated in control simulations using a non-directive system prompt. Overall accuracy was `r fmt_pct(nondirective_overall_accuracy)` (vs `r fmt_pct(directive_overall_accuracy)` in the original simulations), with the same structural pattern: highest accuracy at level D (`r fmt_pct(nondirective_acc_D)`), lowest at level B (`r fmt_pct(nondirective_acc_B)`), dominant over-triage (`r fmt_pct(nondirective_overall_overtriage)` overall), and near-zero under-triage (`r fmt_pct(nondirective_overall_undertriage)`). The persistence of these patterns after removing explicit triage framing indicates that the over-triage bias observed across `r n_models` frontier models reflects an intrinsic property of AI chatbot clinical reasoning — a tendency toward caution when faced with clinical uncertainty — rather than clinical framing artefacts.
+
+### Effect of model release date
+
+Model release date was not significantly associated with overall accuracy (Spearman $\rho$ = `r round(unname(release_corr_overall_accuracy$estimate), 2)`, P `r fmt_p(release_corr_overall_accuracy$p.value)`) or directed over-triage bias (Spearman $\rho$ = `r round(unname(release_corr_directed_error$estimate), 2)`, P `r fmt_p(release_corr_directed_error$p.value)`). Newer models showed a trend toward lower emergency under-triage (Spearman $\rho$ = `r round(unname(release_corr_emergency_under$estimate), 2)`, P `r fmt_p(release_corr_emergency_under$p.value)`).
+
+## Discussion
+
+This study evaluated whether frontier AI chatbots can assign appropriate psychiatric triage from a single-message disclosure. Across AI chatbots and vignettes, the results reveal a consistent pattern: emergency under-triage was rare but over-triage was pervasive, particularly for intermediate-acuity clinical presentations. Our findings respond to growing calls for systematic evaluation of consumer-facing health AI, where mental health triage has been identified as a priority for standardized evaluation [@pan_compass-gh_2026]
+
+Emergency under-triage occurred in only `r n_emergency_undertriage` of `r n_emergency_cases` level D trials (`r fmt_pct(p_emergency_undertriage)`), and every under-triaged emergency was reassigned to level C (urgent medical assessment within 24 to 48 hours) rather than to a lower urgency tier. This low rate was reproduced under clinician consensus labels and variations to the target model system prompt (Table S4). These results suggest that current frontier AI chatbots recognize high-acuity psychiatric emergencies with high accuracy, when presented with complete relevant information. 
+
+The more persistent problem was over-triage, particularly at the middle levels of urgency. Accuracy was highest for level D (emergency) and lowest for level B (intermediate) cases, producing a U-shaped calibration profile in which intermediate-acuity levels were hardest to distinguish. The ordinal analyses sharpened this interpretation: mean signed ordinal error was positive, indicating directional bias toward higher urgency, while mean absolute ordinal error showed greatest dispersion around the benchmark labels at the same middle-acuity levels. Over-triage errors peaked at these middle boundaries, and AI chatbots with lower emergency under-triage tended to show greater overall over-triage bias, suggesting a trade-off between sensitivity to emergencies and threshold calibration elsewhere. This pattern has parallels in the broader triage literature, where moderate-acuity patients are the most frequently misclassified by both human clinicians and AI systems [@ramaswamy_chatgpt_2026; @liu_foundational_2025].
+
+Some of this over-triage may reflect genuine ambiguity in psychiatric urgency assignment. Clinician-label entropy was highest at levels B and C, clinician relabeling shifted a subset of cases upward from B to C and from C to D, and higher clinician-label entropy predicted more AI chatbot over-triage. When scoring was restricted to vignettes with clear clinician consensus, apparent over-triage decreased but remained significant. This suggests that a portion of the observed over-triage reflects real diagnostic uncertainty at the boundaries between adjacent triage levels — a challenge that is especially pronounced in psychiatry, where urgency must typically be inferred from thoughts, behavior, and context rather than from objective findings [@opel_transforming_2026; @stigter-outshoven_competencies_2024]. However, the persistent over-triage even among clinician-consensus cases indicates that ambiguity alone does not account for the full pattern.
+
+One interpretation of these results is that safety-oriented post-training encourages escalation under uncertainty (i.e., “risk aversion”). These decision biases may be encoded in LLM weights as a function either of biases in the training data (e.g., replete with narratives of mental health deterioration) or through risk-sensitive post-training procedures (given recent media attention to mental health risks of AI chatbots [@dohnany_technological_2025; @morrin_artificial_2026; @moore_characterizing_2026]). Safety-oriented training procedures can produce systematic over-refusal and over-caution in LLM chatbots, even in response to benign inputs that superficially resemble unsafe content [@yuan_beyond_2025]. Applied to psychiatric triage, such a bias would produce relatively conservative performance on clear emergencies, but over-triage elsewhere. This is arguably safer than pervasive emergency under-triage, but it remains clinically consequential. Unnecessary escalation can make triage advice inefficient [@sax_association_2026; @sax_emergency_2025] and may erode user trust in the AI chatbot's recommendations [@shekar_people_2024].
+
+It is instructive to contextualize our findings within the broader emerging literature on AI chatbot mental health safety. The present study examined a structured one-shot triage task in which AI chatbots were explicitly asked for an urgency judgment via their system prompt and were given a single-message disclosure that already contained the information needed for that judgment (Table S4). By contrast, a recent multi-turn red-teaming study introduced an auditing framework (SIM-VAIL) in which simulated vulnerable users engaged frontier AI chatbots over extended conversations and concerning behaviors accumulated across turns in a phenotype-dependent manner [@weilnhammer_vulnerability-amplifying_2026]. These paradigms address different questions: the benchmark presented here tests whether an appropriately contextualized AI chatbot can assign an appropriate urgency level from a single-message description of clinical symptoms and signs (e.g., someone informing the chatbot that their partner has not slept for days and is excessively gambling and expressing grandiose ideas), whereas SIM-VAIL tests whether the same AI chatbot can avoid amplifying psychiatric vulnerability when acting as an interlocutor in a multi-turn conversation with an adversarial agent, where this conversation may – superficially – not be about mental health at all (e.g., a manic user describing excitement about their next high-expenditure project) [@weilnhammer_vulnerability-amplifying_2026]. An AI chatbot may perform well in recognizing psychiatric emergency signs in the first context (where this information is clear-cut and the chatbot is instructed to provide information about “next steps”), while remaining liable to emit concerning responses in the second context (where the simulated user is engaged in an adversarial, multi-turn audit and clinical acuity signals must be inferred from ostensibly non-clinical message content). Thus, low emergency under-triage in a structured benchmark should not be taken as evidence that the same AI chatbots will behave safely in less structured or emotionally charged mental-health interactions.
+
+Separately, recent work has developed comprehensive benchmarks for evaluating LLM performance on psychiatric knowledge tasks, including diagnosis, treatment planning, and clinical management, across multiple frontier models [@fouda_psychiatrybench_2026]. The present study addresses a distinct question: whether frontier AI chatbots can safely assign urgency levels to psychiatric presentations from realistic user disclosures — a triage calibration task that requires not only clinical knowledge but also the ability to weigh contextual risk factors and infer appropriate timelines for care.
+
+## Limitations
+
+Several limitations warrant consideration. First, this study is an in silico benchmark using synthetic vignettes rather than real patient interactions, and the vignette space, while systematically structured, is necessarily incomplete. Second, the user messages derived from each vignette are designed to provide complete and clear clinical information that disambiguates between triage levels (as in Ramaswamy et al. [@ramaswamy_chatgpt_2026]). While this completeness is useful for establishing a clear safety floor for model evaluation, it does not account for the fact that in real-world help-seeking conversations, clinical information is likely to be presented in a more fragmented and noisy manner and disclosed over multiple conversation turns, where this disclosure itself depends on how the target model asks follow-up questions [@schmidgall_agentclinic_2026]. Thus, the nature of psychiatric triage in more realistic, conversational settings is an important direction for future work. Finally, to ensure scalability and reproducibility, we evaluated AI chatbots through programmatic API calls, rather than through consumer-facing product surfaces. This means that our results speak to the performance of the base model in question, rather than the model in conjunction with its consumer system prompt and safety middleware. Despite this limitation, we show that results are relatively insensitive to modifications of the target model system prompt.
+
+## Conclusions
+
+When presented with single-turn user queries, containing high-quality clinical information, frontier AI chatbots show a reassuringly low rate of emergency under-triage – appropriately recognizing when a user needs to seek medical attention immediately. However, the same models show a strong tendency to over-triage lower-acuity presentations where routine or intermediate-level medical assistance is required. This pattern may reflect commercial pressures to minimize risk events linked to mental health emergencies, and a focus on such risks in model post-training. Future work is needed to establish how these findings, gathered in controlled single-message settings, generalize to multi-turn conversational settings reflective of real-world use patterns.
+
+# Conflict of Interest Statement
+
+MMN is a Principal Applied Scientist at Microsoft AI. VS is a Clinician Scientist at Microsoft AI.
+
+# Data sharing
+
+Code, prompts, and data will be made publicly available at https://github.com/veithweilnhammer/chatbot-one-shot-psychiatric-triage at the time of publication.
+
+# Role of the funding source
+
+The simulation experiments were funded through a UK AI Security Institute (AISI) Challenge Fund. The funder had no role in study design, data collection, data analysis, data interpretation, writing of the report, or the decision to submit the manuscript for publication. The experiments were not run by the UK AI Security Institute.
+
+# Author Contributions
+
+VW and MMN conceived the study and designed the simulation and evaluation approach. VW implemented the simulation pipeline. VW and MMN conducted the experiments, performed the analyses, and wrote the manuscript, incorporating suggestions from LL, CS, VS, EW and VC. MMN supervised the project. VW and MMN directly accessed and verified the raw data. All authors have access to the data.
+
+# Supplement
+
+```{r}
+#| label: supplement_confirmation_data
+#| include: false
+confirmation_table <- fang_acc %>%
+  left_join(distinct(fang_model_meta, target_model_label, display_model), by = "target_model_label") %>%
+  group_by(target_model_label, display_model, gold_triage) %>%
+  summarise(accuracy = first(accuracy), .groups = "drop") %>%
+  pivot_wider(names_from = gold_triage, values_from = accuracy) %>%
+  left_join(fang_macro_full, by = c("target_model_label", "display_model")) %>%
+  arrange(desc(D), desc(macro_accuracy), display_model) %>%
+  transmute(
+    Model = display_model,
+    A = fmt_pct(A),
+    `A/B` = fmt_pct(`A/B`),
+    B = fmt_pct(B),
+    `B/C` = fmt_pct(`B/C`),
+    C = fmt_pct(C),
+    `C/D` = fmt_pct(`C/D`),
+    D = fmt_pct(D),
+    `Overall accuracy` = fmt_pct(macro_accuracy)
+  )
+
+label_source_accuracy_compare <- bind_rows(
+  macro_by_model %>%
+    transmute(display_model, source = "Original benchmark labels", macro_accuracy),
+  fang_macro_full %>%
+    transmute(display_model, source = "Clinician consensus labels (full)", macro_accuracy),
+  fang_clear_acc %>%
+    transmute(display_model, source = "Clinician consensus labels (clear only)", macro_accuracy)
+  ) %>%
+  mutate(
+    source = factor(source, levels = c("Original benchmark labels", "Clinician consensus labels (full)", "Clinician consensus labels (clear only)")),
+    display_model = factor(display_model, levels = model_order)
+  )
+
+label_source_accuracy_summary <- label_source_accuracy_compare %>%
+  group_by(source) %>%
+  summarise(mean_ci_95(macro_accuracy), .groups = "drop")
+
+label_source_signed_compare <- bind_rows(
+  llm_signed_error_by_gold %>%
+    group_by(gold_triage) %>%
+    summarise(mean_ci_95(signed_error), .groups = "drop") %>%
+    mutate(source = "Original benchmark labels"),
+  fang_full_df %>%
+    group_by(gold_triage) %>%
+    summarise(mean_ci_95(signed_error), .groups = "drop") %>%
+    mutate(source = "Clinician consensus labels (full)"),
+  fang_clear_df %>%
+    group_by(gold_triage) %>%
+    summarise(mean_ci_95(signed_error), .groups = "drop") %>%
+    mutate(source = "Clinician consensus labels (clear only)")
+) %>%
+  mutate(
+    source = factor(source, levels = c("Original benchmark labels", "Clinician consensus labels (full)", "Clinician consensus labels (clear only)")),
+    label_group = if_else(str_detect(as.character(gold_triage), "/"), "Mixed labels", "Clear labels"),
+    label_group = factor(label_group, levels = c("Clear labels", "Mixed labels")),
+    gold_triage = factor(as.character(gold_triage), levels = c("A", "B", "C", "D", "A/B", "B/C", "C/D"))
+  ) %>%
+  filter(
+    !(label_group == "Clear labels" & source == "Clinician consensus labels (full)"),
+    !(label_group == "Mixed labels" & source != "Clinician consensus labels (full)")
+  )
+
+label_source_signed_annotations <- tibble(
+  label_group = factor(c("Clear labels", "Clear labels", "Mixed labels", "Mixed labels"), levels = c("Clear labels", "Mixed labels")),
+  gold_triage = factor(c("D", "D", "C/D", "C/D"), levels = c("A", "B", "C", "D", "A/B", "B/C", "C/D")),
+  y = c(0.90, -0.90, 0.90, -0.90),
+  label = c("Over-triage", "Under-triage", "Over-triage", "Under-triage"),
+  vjust = c(1, 0, 1, 0)
+)
+
+label_shift_props <- confusion_long(
+  clear_label_shift %>% transmute(gold_triage = original_gold, predicted_triage = clinician_clear_gold),
+  normalize_rows = TRUE
+)
+```
+
+## Table S1
+
+```{r}
+#| label: table_s1_display
+#| echo: false
+knitr::kable(
+  vignette_design_table,
+  format = "pipe",
+  booktabs = TRUE,
+  align = c("l", "l", "l")
+)
+```
+
+**Table S1.** Vignette design overview. The upper section summarizes the psychiatric presentation clusters represented in the corpus, what each cluster means clinically, and the focal risk dimensions paired with it. The lower section summarizes the focal risk dimensions, what each dimension means clinically, and the psychiatric presentation clusters paired with it.
+
+## Table S2
+
+```{r}
+#| label: table_s2_display
+#| echo: false
+knitr::kable(
+  confirmation_table,
+  format = "pipe",
+  booktabs = TRUE,
+  align = c("l", rep("c", 8))
+)
+```
+
+**Table S2.** Supplementary triage performance of AI chatbots relative to clinician consensus labels, including mixed boundary labels (A/B, B/C, and C/D). Overall accuracy is averaged across the 7 clinician-consensus label categories.
+
+## Table S3
+
+```{r}
+#| label: table_s3_display
+#| echo: false
+knitr::kable(
+  results_table1,
+  format = "pipe",
+  booktabs = TRUE,
+  align = c("l", "l", rep("c", 8))
+)
+```
+
+**Table S3.** Psychiatric triage performance, directional bias, and ordinal imprecision by target AI chatbot relative to the original benchmark labels. Accuracy and error metrics exclude unresolved or non-A–D predictions. AI chatbots are sorted first by level D accuracy and then by overall accuracy across levels A–D. Expected completed evaluations per AI chatbot were 112. Mean signed ordinal error is coded as predicted triage score minus benchmark triage score; positive values indicate over-triage and negative values indicate under-triage. Mean absolute ordinal error summarizes dispersion around the benchmark label irrespective of direction.
+
+## Table S4
+
+```{r}
+#| label: table_s4_prompt_inventory
+#| echo: false
+one_shot_prompt_inventory <- data.frame(
+  `Prompt or material` = c(
+    "One-shot user simulator",
+    "Directive one-shot target system prompt",
+    "Detailed triage ontology inserted into directive prompt",
+    "Non-directive one-shot target system prompt",
+    "Non-directive recommendation labeler"
+  ),
+  source_file = c(
+    "prompts/user/one_shot_user.txt",
+    "prompts/target/one_shot_target.txt",
+    "prompts/shared/triage_ontology_detailed.txt",
+    "prompts/target/one_shot_target_nondirective.txt",
+    "analysis/nondirective_labelling/prompt.txt"
+  ),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+
+repo_root <- normalizePath("..", winslash = "/", mustWork = TRUE)
+one_shot_prompt_table <- one_shot_prompt_inventory %>%
+  mutate(
+    `Exact text from file` = vapply(source_file, function(path) {
+      prompt_text <- paste(readLines(file.path(repo_root, path), warn = FALSE), collapse = "\n")
+      text_with_source <- paste0("Source file: ", path, "\n\n", prompt_text)
+      str_replace_all(text_with_source, "\n", "<br>")
+    }, character(1))
+  ) %>%
+  select(`Prompt or material`, `Exact text from file`)
+
+knitr::kable(
+  one_shot_prompt_table,
+  format = "pipe",
+  booktabs = TRUE,
+  align = c("l", "l")
+)
+```
+
+**Table S4.** One-shot prompt materials located in the repository. Exact prompt text is read directly from the source files listed in the table at render time. Rows exclude vignette-generation prompts, optional run-level judges, and other analyses not used in the reported one-shot target-model or non-directive-control analyses.
+
+## Figure S1
+
+```{r}
+#| label: figure_s1_display
+#| echo: false
+#| fig-width: 11
+#| fig-height: 3.8
+#| out.width: "100%"
+label_source_accuracy_plot <- ggplot(
+  label_source_accuracy_compare,
+  aes(x = source, y = macro_accuracy, color = display_model)
+) +
+  geom_point(
+    size = manuscript_point_size,
+    alpha = 0.55,
+    position = position_jitter(width = 0.10, height = 0)
+  ) +
+  geom_linerange(
+    data = label_source_accuracy_summary,
+    aes(x = source, ymin = lower, ymax = upper),
+    inherit.aes = FALSE,
+    color = "black",
+    linewidth = 0.9
+  ) +
+  geom_point(
+    data = label_source_accuracy_summary,
+    aes(x = source, y = mean),
+    inherit.aes = FALSE,
+    color = "black",
+    size = manuscript_point_size
+  ) +
+  scale_color_manual(values = model_palette, name = NULL) +
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = c(0.35, 1.0)) +
+  labs(
+    x = NULL,
+    y = "Overall accuracy",
+    title = "B",
+    subtitle = "Accuracy relative to original benchmark labels and clinician consensus labels"
+  ) +
+  theme_minimal(base_size = base_font_size) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "bottom",
+    legend.text = element_text(size = base_font_size * 0.72),
+    legend.key.height = unit(0.25, "cm"),
+    legend.key.width = unit(0.45, "cm"),
+    plot.title = element_text(face = "bold")
+  ) +
+  guides(
+    color = guide_legend(
+      ncol = 4,
+      byrow = TRUE,
+      override.aes = list(alpha = 1, size = manuscript_point_size)
+    )
+  )
+
+label_source_signed_plot <- ggplot(
+  label_source_signed_compare,
+  aes(x = gold_triage, y = mean, color = source)
+) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey60", linewidth = 0.35) +
+  geom_linerange(
+    aes(ymin = lower, ymax = upper),
+    linewidth = 0.85,
+    position = position_dodge(width = 0.55)
+  ) +
+  geom_point(size = manuscript_point_size, position = position_dodge(width = 0.55)) +
+  geom_text(
+    data = label_source_signed_annotations,
+    aes(x = gold_triage, y = y, label = label, vjust = vjust),
+    inherit.aes = FALSE,
+    hjust = 1,
+    size = base_font_size * 0.30,
+    color = "grey25"
+  ) +
+  scale_color_manual(values = c(
+    "Original benchmark labels" = "#34495E",
+    "Clinician consensus labels (full)" = "#1f78b4",
+    "Clinician consensus labels (clear only)" = "#d95f02"
+  )) +
+  scale_x_discrete(labels = c(triage_labels_short, "A/B" = "A/B", "B/C" = "B/C", "C/D" = "C/D"), drop = TRUE) +
+  scale_y_continuous(labels = label_percent(accuracy = 1), limits = c(-1, 1)) +
+  labs(
+    x = "Ground-truth triage level",
+    y = "Directed triage error",
+    color = NULL,
+    title = "C",
+    subtitle = "Over- and under-triage relative to original benchmark and clinician consensus labels"
+  ) +
+  facet_wrap(~label_group, nrow = 1, scales = "free_x") +
+  theme_minimal(base_size = base_font_size) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "bottom",
+    strip.text = element_text(face = "bold"),
+    plot.title = element_text(face = "bold")
+  )
+
+label_shift_plot <- plot_confusion_heatmap(
+  label_shift_props,
+  title = "A",
+  subtitle = "Original benchmark vs clinician clear labels",
+  normalize_rows = TRUE
+) +
+  labs(
+    x = "Clinician consensus label",
+    y = "Original benchmark label"
+  )
+
+gridExtra::grid.arrange(label_shift_plot, label_source_accuracy_plot, label_source_signed_plot, ncol = 3, widths = c(0.7, 1.2, 1.25))
+```
+
+**Figure S1.** Comparison of original benchmark labels and clinician consensus labels. **A.** Row-normalized comparison of original benchmark labels with clinician clear-only consensus labels, showing that clinician reassignment was concentrated in upward shifts from B to C and from C to D. **B.** AI chatbot overall accuracy under the original benchmark labels, clinician consensus labels (full), and clinician consensus labels (clear only); black markers show the mean across AI chatbots with 95% CIs. In the matched clear-only subset, accuracy varied significantly by clinician clear-only triage level ($\chi^2_{`r gold_effect_fang_df`}$ = `r round(gold_effect_fang_chisq, 1)`, P `r fmt_p(gold_effect_fang_p)`; logistic regression), with the same rank-order pattern of easiest and hardest triage levels as in the primary analysis. **C.** Mean directed triage error, shown once for clear labels (original benchmark labels and clinician clear-only consensus labels) and separately for mixed boundary labels (clinician consensus labels only: A/B, B/C, C/D). On this signed percentage scale, 0% indicates all responses were correct, +100% indicates all responses were over-triaged, and -100% indicates all responses were under-triaged. Under the clinician clear-only consensus labels, incorrect predictions were more often over-triaged than under-triaged (`r fang_over_n` vs `r fang_under_n`; exact binomial test, P `r fmt_p(fang_direction_binom$p.value)`). The mixed-boundary panels are shown as a supplementary persistence check rather than the primary confirmatory analysis.
+
+## Figure S2
+
+```{r}
+#| label: supplement_confusion_data
+#| include: false
+by_model_props <- confusion_long(llm_scored_df, group_vars = "display_model", normalize_rows = TRUE) %>%
+  mutate(display_model = factor(display_model, levels = provider_model_order))
+
+by_cluster_props <- confusion_long(
+  llm_scored_df %>% mutate(presentation_cluster_pretty = factor(as.character(presentation_cluster_pretty), levels = levels(presentation_cluster_pretty))),
+  group_vars = "presentation_cluster_pretty",
+  normalize_rows = TRUE
+)
+
+by_risk_props <- confusion_long(
+  llm_scored_df %>% mutate(risk_domain_pretty = factor(as.character(risk_domain_pretty), levels = levels(risk_domain_pretty))),
+  group_vars = "risk_domain_pretty",
+  normalize_rows = TRUE
+)
+```
+
+```{r}
+#| label: figure_s2_display
+#| echo: false
+#| fig-width: 12
+#| fig-height: 12
+#| out.width: "100%"
+model_props_plot <- plot_confusion_heatmap(
+  by_model_props,
+  facet_var = "display_model",
+  title = "A",
+  subtitle = "By target AI chatbot",
+  normalize_rows = TRUE, facet_ncol = 6
+)
+
+cluster_props_plot <- plot_confusion_heatmap(
+  by_cluster_props,
+  facet_var = "presentation_cluster_pretty",
+  title = "B",
+  subtitle = "By presentation cluster",
+  normalize_rows = TRUE
+)
+
+risk_props_plot <- plot_confusion_heatmap(
+  by_risk_props,
+  facet_var = "risk_domain_pretty",
+  title = "C",
+  subtitle = "By focal risk domain",
+  normalize_rows = TRUE
+)
+
+top_row <- arrangeGrob(model_props_plot, ncol = 1)
+bottom_row <- arrangeGrob(cluster_props_plot, risk_props_plot, ncol = 2, widths = c(1, 1))
+gridExtra::grid.arrange(top_row, bottom_row, ncol = 1, heights = c(1, 1))
+```
+
+**Figure S2.** Row-normalized confusion-matrix overview relative to the original benchmark labels. **A.** Confusion matrices by target AI chatbot. **B.** Confusion matrices by presentation cluster. **C.** Confusion matrices by focal risk domain.

@@ -1,0 +1,202 @@
+<!--
+==========================================================
+SUBSTACK — copy these into the editor's Title / Subtitle boxes:
+  Title:    If a Chatbot Prevents One Suicide and Causes Another, How Do We Count It?
+  Subtitle: The moral arithmetic of deploying mental-health AI at population scale.
+----------------------------------------------------------
+  Suggested tags: chatbots, harm, population health
+  Visibility checklist:
+    [ ] Subtitle doubles as an SEO hook (done above)
+    [ ] TL;DR in the first 2 lines
+    [ ] 1-2 internal links to related posts
+    [ ] Scannable subheads
+    [ ] Clear subscribe / share CTA at the end
+    [ ] Canonical / cross-post link back to https://veithweilnhammer.github.io/blog/counting-chatbot-harm/
+==========================================================
+Paste everything BELOW this comment into the Substack body.
+-->
+
+**TL;DR — A chatbot deployed to millions will both prevent and cause harm; counting both sides honestly is the only responsible way to decide whether to deploy.**
+
+In February 2024, a 14-year-old in Florida named Sewell Setzer III died by
+suicide after months of daily conversation with a companion chatbot on
+Character.AI. His mother, Megan Garcia, filed a wrongful-death suit that October,
+and in May 2025 a federal judge let most of her claims proceed past a motion to
+dismiss, declining at that stage to treat the chatbot's outputs as protected
+speech and allowing them to be considered a product that could carry liability. Google and Character.AI settled the case and several related
+suits in early 2026, with confidential terms and no admission of fault. What the
+public kept from the episode is a single vivid case: a named child whose family
+traces his death to a specific product. A system in conversation with tens of
+millions of people will reach some of them at the worst moment of their lives,
+and evaluating it means weighing the harm it causes against the harm it prevents,
+rather than judging it by its most visible tragedy alone.
+
+The two kinds of outcome leave very different records. A harmful exchange that
+precedes a suicide produces a legible trail: transcripts a complaint can quote, a
+docket with a date. The harms a system prevents leave nothing equivalent. Some
+users may get a useful response at a dangerous moment, steered toward a crisis
+line or talked out of a decision, but those counterfactual cases usually leave no
+record and are rarely known even to the user. Because caused harms are documented
+and prevented harms are not, public judgment settles on the harms it can see.
+
+The asymmetry matters because these systems are not rare. For a therapist with
+forty patients, "harm no one" is close to a workable standard. It stops being one
+for a service used by tens of millions of people a week, where rare events are
+near-certain in both directions. OpenAI reported in 2025 that roughly 0.15% of
+ChatGPT's weekly users have conversations containing explicit indicators of
+suicidal planning or intent, which the company estimated at more than a million
+people a week; the figure is company-reported and best read as a scale
+indicator. At that volume, even a one-in-a-million rate would produce many such
+events on each side, catastrophic and life-saving alike. "Do no harm," read as a guarantee that no
+user is ever left worse off, is not available for any intervention delivered to a
+population this large. The narrower question is the one worth asking: across
+everyone who uses it, does the system leave more people better off than worse, by
+how much, and at whose expense.
+
+Medicine has been answering that kind of question for decades, and its clearest
+tools come from population screening. When a health system
+offers mammograms to a large group of women, it knows in advance that it will help
+some and harm others, and it estimates both in the same units before deciding. In
+the current U.S. modeling for breast-cancer screening, screening women every two
+years from about age 40 to 74 is estimated to prevent roughly eight breast-cancer
+deaths for every thousand women screened over their lifetimes. The same program
+generates a large volume of false alarms, on the order of 1,300 false-positive
+results per thousand women across a lifetime of screening, along with
+unnecessary biopsies and some overdiagnosis. These model estimates shift with age
+and assumptions. None of the harms is imaginary,
+and none is treated as a reason to abandon screening. They are the price paid, in
+anxiety and procedures spread across many people, to move the deaths-prevented
+number.
+
+The bookkeeping behind decisions like this has standard names. The number needed
+to treat is how many people must receive an intervention for one additional person
+to benefit compared with a control group; the number needed to harm is how many
+must be exposed for one additional person to be harmed. Both come from the same
+idea, formalized by Laupacis, Sackett, and Roberts in 1988 and by Cook and Sackett
+in 1995: take the difference in outcome rates between a treated group and a
+comparison group and express it as a count of people. Putting benefit and harm in
+the same currency forces the trade into the open, so that a decision affecting
+millions is made by comparing magnitudes rather than by reacting to the most recent
+case. Childhood vaccination and water fluoridation rest on the same
+pattern, each justified because the benefit across the population outweighs the
+harm it accepts.
+
+Adolescent antidepressants show what happens when only the visible side of that
+ledger is counted. In the early 2000s, trial data indicated that selective
+serotonin reuptake inhibitors could increase suicidal thoughts in a small subset
+of young people, and regulators responded with a prominent boxed warning.
+Prescriptions to minors fell afterward, and several epidemiological analyses found
+that the decline coincided with a rise in adolescent suicide, though the causal
+reading of that association remains contested. The antidepressant episode matters
+here because reducing a harm the trials had documented may have raised a larger
+one that no one was counting.
+
+A mental-health chatbot faces its own version of the screening problem, because it
+too sets a threshold under uncertainty. Wherever the escalation threshold sits, it
+trades one error for the other: a lower threshold catches more real emergencies but
+frightens users and floods crisis services with false alarms, while a higher one
+feels more useful day to day and misses some users whose messages carry signs of
+real danger. No setting removes both errors at once, because tightening one loosens
+the other. Suicide makes this sharper, since it is rare even among people
+clinicians rightly treat as high risk, so most users a system flags will never
+attempt it. For that reason NICE advises against using risk-prediction tools to
+decide who receives care. Any threshold produces predictable errors on both sides,
+and those errors have to be counted rather than assumed away.
+
+Applying this frame to conversational AI makes the difficulty precise, and it comes
+in several parts. The first is that the benefit side is largely unmeasured. Trials
+of structured mental-health chatbots and self-guided digital tools show that some
+can reduce symptoms of depression or suicidal ideation, usually with modest effects
+and under conditions far more controlled than an open-ended companion app, which
+supports the possibility of benefit without telling us how many suicides a consumer
+chatbot prevents in ordinary use. The imbalance in evidence biases every intuition
+toward the harms, because those are the only entries anyone can point to, and it
+carries a perverse consequence: a system that prevents much harm and causes a
+little looks, to anyone with access only to the harm column, exactly like a system
+that prevents nothing.
+
+The second difficulty is that causation on the harm side is contested, which is why
+the Garcia case turned on it. Attributing a suicide to a chatbot means separating
+the system's contribution from a background that usually includes depression,
+isolation, family circumstance, and access to means. The litigation spent more than
+a year arguing whether the outputs were a product, what was foreseeable, and who was
+responsible, and it settled without any court deciding the causal question on the
+merits. If assigning one death to one cause is this hard in court, counting caused
+harms across a population is harder, and counting prevented ones, where there is no
+event to investigate, is harder still.
+
+The third difficulty is that the two sides do not share a scale. A panic spiral
+defused at three in the morning and a reinforced suicidal plan are both real
+outcomes, but they do not line up the way "death prevented" and "death caused" do
+in a mortality study. Much of what these systems do is diffuse, spread across
+enormous numbers of ordinary conversations that leave a little comfort or a little
+distortion behind. Combining those into one net figure requires deciding how many
+mild benefits offset one severe harm, which is a value judgment carried out in the
+form of a calculation.
+
+The fourth difficulty is that the people who bear the worst harms are
+usually not the people who receive the benefits. In breast screening, the woman who
+undergoes an unnecessary biopsy is not the woman whose death is averted; the program
+is justified across the group while being unfair to particular members of it. For
+chatbots the edge is sharper, because the severe harms appear concentrated among the
+most vulnerable users, adolescents, people in acute crisis, and people with
+psychosis, mania, or little external support, while the mild benefits spread across
+a broad and mostly resilient user base. A system can come out ahead on a simple
+headcount while doing its damage to the people least able to absorb it, and a count
+that ignores who bears each outcome will miss that.
+
+These difficulties make the arithmetic harder to carry out; they do not make it
+optional. When a company or a regulator declines to state the trade-off, the
+decision still gets made, by whichever harm is visible. A developer who optimizes
+only against the documented tragedy, tightening the system so it never produces the
+output that shows up in a lawsuit, can raise the harm on the invisible side. A model
+that meets any sign of distress by shutting the conversation down and returning a
+generic hotline number lowers its legal exposure while abandoning the isolated user
+who was willing to talk to it and will not call a hotline. That failure to help can
+still end in a death, and because prevented harms leave no docket,
+the cost stays out of view.
+
+Honest accounting means measuring the benefit side rather than assuming it is zero,
+which requires comparison groups: outcomes among people who use a system set against
+outcomes among similar people who do not, followed over time. The ED-SAFE study
+worked this way, tracking suicide attempts among emergency-department patients during
+a phase of universal screening plus a brief intervention and comparing them with an
+earlier treatment-as-usual phase, and finding fewer later attempts, an effect
+invisible in any single patient because the averted event cannot be observed
+directly. It means specifying in advance the serious events to be tracked, such as
+suicide attempts, emergency referrals, clinically significant deterioration, and
+inappropriate responses to imminent risk, and reporting them as rates against real
+denominators: users, conversations, message volume, age bands, and vulnerability
+markers, stratified so a favorable average does not hide the group for whom the
+product is dangerous. And it means comparing against a realistic alternative rather
+than an imaginary safe one, since removing a chatbot also carries risk: it may cut
+off users who will disclose suicidal thoughts only to something that feels private
+and costs nothing.
+
+Setzer's death belongs in that calculation, and doing the arithmetic is not a way to
+explain it away. A system that prevents many crises while causing a smaller number
+of preventable deaths still owes redesign, restrictions, and accountability for those
+deaths, and a product involved in a public tragedy may still belong to a class of
+tools that helps other people when properly constrained. The only way to tell those
+situations apart is to count both columns and to keep in view who bears each side,
+especially the severe cases the average would otherwise bury. Refusing to count
+protects no one; it guarantees that these systems keep being managed by the harms
+that reach a courtroom, while the larger balance of good and bad accumulates where
+no one is looking.
+
+## Further reading
+
+- Garcia v. Character Technologies case materials, Tech Justice Law Project:
+  https://techjusticelaw.org/cases/garcia-v-character-technologies-google-and-character-ai-co-founders-daniel-de-frietas-and-noam-shazeer/
+- CNBC, "Google, Character.AI to settle suits involving suicides, AI chatbots"
+  (Jan 7, 2026): https://www.cnbc.com/2026/01/07/google-characterai-to-settle-suits-involving-suicides-ai-chatbots.html
+- Cook RJ, Sackett DL, "The number needed to treat," *BMJ* 1995;310:452–454:
+  https://doi.org/10.1136/bmj.310.6977.452
+- USPSTF, Breast Cancer: Screening (2024):
+  https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening
+- Miller IW et al., "Suicide Prevention in an Emergency Department Population: The
+  ED-SAFE Study," *JAMA Psychiatry* 2017:
+  https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2628988
+
+---
+*Originally posted on [my blog](https://veithweilnhammer.github.io/blog/counting-chatbot-harm/). If this was useful, consider subscribing and sharing.*

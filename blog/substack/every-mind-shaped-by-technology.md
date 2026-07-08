@@ -1,0 +1,188 @@
+<!--
+==========================================================
+SUBSTACK — copy these into the editor's Title / Subtitle boxes:
+  Title:    Every Mind That Ever Lived Was Shaped by a Technology
+  Subtitle: The worry that AI will reshape how we think is as old as writing — and history shows the effects are real but rarely the ones predicted.
+----------------------------------------------------------
+  Suggested tags: cognitive offloading, history of technology, memory
+  Visibility checklist:
+    [ ] Subtitle doubles as an SEO hook (done above)
+    [ ] TL;DR in the first 2 lines
+    [ ] 1-2 internal links to related posts
+    [ ] Scannable subheads
+    [ ] Clear subscribe / share CTA at the end
+    [ ] Canonical / cross-post link back to https://veithweilnhammer.github.io/blog/every-mind-shaped-by-technology/
+==========================================================
+Paste everything BELOW this comment into the Substack body.
+-->
+
+**TL;DR — Every dominant technology, from writing to print, has reshaped human cognition; AI continues that long history, so the useful question is which capacities it moves and at what cost.**
+
+Worry about artificial intelligence has settled on a specific fear: that handing
+reading, writing, and remembering to machines will hollow out the mental skills
+those tasks used to build. Students will let a chatbot draft their essays and
+never learn to think in paragraphs; professionals will stop holding facts in
+their heads because a model will always supply them. The same worry appears in
+one of the oldest surviving discussions of writing, a text roughly 2,400 years
+old whose target is writing itself.
+
+In Plato's *Phaedrus*, Socrates tells a story about the Egyptian god Theuth, who
+invents many arts and brings them to King Thamus in the hope they will spread.
+When Theuth presents writing as a cure for poor memory, Thamus refuses the
+praise. Writing, he says, "will create forgetfulness in the learners' souls,
+because they will not use their memories; they will trust to the external written
+characters and not remember of themselves." It offers "an aid not to memory, but
+to reminiscence," and gives students "only the semblance of truth," so that they
+"appear to be omniscient" while knowing nothing. The complaint maps closely onto
+current worries about search engines and language models: a new external medium
+lets people retrieve knowledge without internalizing it, and leaves them looking
+wise while knowing less.
+
+The distance is useful because the outcome is already on record. Thamus
+identified a real mechanism. Cultures that transmitted law, genealogy, and epic
+by word of mouth had built formidable oral memory, supported by rhythm and
+repetition, which is what made long poems memorizable without a text. As writing
+spread, that trained oral memory became less necessary and less cultivated.
+Walter Ong, who studied the shift from oral to literate cultures, argued that
+writing restructures thought rather than simply recording it. Writing did move
+some memory practices outside the body and reduced the need for trained recall.
+The stronger forecast, that literacy would leave people forgetful and only
+apparently wise, did not match its long-run role. Writing let knowledge
+accumulate, allowed ideas to travel across centuries and languages, and made
+possible the philosophy and science that followed, including the work of Plato,
+who preserved the argument by writing it down.
+
+That gap between an accurate mechanism and a mistaken forecast is the pattern
+worth tracking, and it rests on a straightforward point about cognition. There is
+no tool-free baseline mind that a new technology corrupts. People think with
+artifacts around them, and even ordinary thinking leans on arrangements outside
+the skull, such as a written list or a calendar. Psychologists call part of this
+cognitive offloading, the use of action or external structure to reduce the
+mental demands of a task. Philosophers have made a stronger version of the claim,
+arguing that a reliable external tool can function as part of an extended
+cognitive system. The human mind is usually a mind-in-an-environment, and a new
+technology changes the environment in which thought operates. Since every tool
+shapes the mind, the useful question is which parts of thinking a given
+technology reshapes, and at what cost.
+
+The printing press supplies the second instance, and the worry it raised was
+volume rather than memory. Once books could be produced in quantity, scholars
+faced more text than any person could read, and they said so in terms that sound
+modern. The complaint predated print: Seneca, in the first century, had already
+warned that "in reading of many books is distraction" and advised sticking to a
+few master authors rather than drifting among many. In early modern Europe, as
+printed material expanded, the unease spread. Ann Blair, a historian of how
+early-modern scholars coped with the flood of print, documents a period convinced
+it was drowning in books, struggling to manage a sudden volume of text that felt
+repetitive and pulled attention in every direction. The feared outcome was a mind
+unable to hold a coherent body of knowledge under the weight.
+
+The response to overload was reorganization. Readers and scholars built tools for
+managing texts: indexes, tables of contents, and the commonplace book, a personal
+notebook in which readers copied passages under thematic headings for later
+retrieval. These tools helped readers select and retrieve material, letting them
+navigate more than they could memorize, which is exactly the skill a book-rich
+culture requires. Reading shifted from the intensive study of a few core texts
+toward strategic extraction from many. The abundance that had felt like an
+affliction became the ordinary condition of educated life, and the coping tools
+faded into invisible infrastructure. The fear had identified something real,
+since attention is finite and more text does compete for it, but the result was a
+new set of mental habits rather than a ruined generation.
+
+The change in habits is worth stating precisely. Before print was common, a
+scholar read a small number of texts slowly and often knew long passages by
+heart. After print became widespread, a scholar read more texts more quickly and
+relied on an index to return to a passage rather than on memory to hold it. What
+counted as knowing a subject moved from having it in memory toward knowing where
+in the literature it lived and how to get back to it. This is one ordinary way a
+technology changes what counts as knowing something, and it is easy to miss
+because the people who benefit rarely mourn the practice they no longer need.
+
+Psychologists have measured the modern version of Thamus's worry by studying how
+the internet affects memory. In 2011 Betsy Sparrow, Jenny Liu, and Daniel Wegner
+ran experiments on how the expectation of future access changes what people
+remember. Across four studies, people who believed a fact would remain available
+to look up later recalled the fact itself less well and recalled where to find it
+better. Participants who typed statements into a computer and were told the file
+would be saved tended to remember the folder rather than the content. The authors
+framed this as transactive memory, an idea Wegner had developed in the 1980s to
+describe how a couple or a team distributes storage across members, with one
+person keeping the finances while another keeps the calendar. The internet works
+as a nonhuman partner in that system, and the finding entered public conversation
+as the "Google effect," often reported as proof that search engines are eroding
+memory.
+
+The studies support a narrower claim. What they show is a change in strategy, the
+reallocation of effort from storing a fact to knowing how to reach it, which is
+the same move a scholar makes in remembering which reference book holds an answer
+rather than the answer itself. The evidence also asks for caution on its own
+terms. A large preregistered replication effort in 2018, the Social Sciences
+Replication Project, targeted one of the study's experiments, the
+computer-priming result, and did not reproduce it. The direction of the
+offloading effect is better supported than that particular experiment, but the
+episode is a reminder that even the famous demonstrations here are more modest and
+less settled than the headlines suggest. Search can reduce recall for some content
+when people expect later access, while increasing reliance on retrieval cues. The
+cost, when it appears, is specific: less practice storing some content internally,
+and more need to judge whether what comes back is right.
+
+The three cases share the same sequence. A tool changes the task, some
+established practice becomes less central, and new compensating skills develop.
+When writing moved memory outside the body, trained oral recitation faded, and
+literacy went on to expand what minds could do. Print overwhelmed readers with
+volume and fragmented their attention, and the culture answered with search tools
+and grew used to abundance. Digital search has shifted some remembering from the
+content of a fact toward its location, which is a kind of offloading people have
+practiced for a long time. In each case the alarm caught a genuine mechanism and
+then overshot the consequences, predicting collapse where the record shows
+reorganization and trade-off.
+
+The historical pattern still leaves real risks for AI, and it makes no promise
+that the outcome will be benign. It does point to a more productive question than
+whether AI will rot the brain or leave thinking untouched. The better question is
+which capacity is being moved onto the tool, what is gained by moving it, and what
+is lost by no longer practicing the skill. Naming the capacity honestly comes
+first, because offloading a phone number differs from offloading the ability to
+build an argument, and some skills matter only for their result while others
+matter because the practice builds the person who can judge the result. A second
+requirement is that the offload preserve supervision: a calculator is safe when
+the user has enough number sense to catch an impossible answer, and a model is
+safe when the user can evaluate the structure and evidence of what it produces.
+Fluency makes this harder, because well-formed language can hide weak reasoning.
+The third requirement is institutional, because schools, workplaces, and
+platforms decide which forms of dependence become normal, and a society can adopt
+a tool in ways that keep skill alive or in ways that quietly remove the occasions
+for practicing it.
+
+Large language models extend this offloading from storage and retrieval into
+drafting, summarizing, and stretches of reasoning, producing the finished product
+of thought and adjusting it to the user on request. The same feature that makes a
+model useful is what makes the offload deep. It is reasonable to expect, though
+still an open empirical question, that heavy reliance on generated summaries could
+leave a student reading less patiently, or that routine acceptance of generated
+code could leave a programmer with less grip on the structure of a system. These
+are questions about particular tasks and users rather than a single verdict on AI.
+The reasonable expectation is that AI will change how people think in real and
+measurable ways, as writing and print and search did before it. Each of those
+earlier tools reduced the need to practice some skill while making other work
+easier or more valuable, and the mind reorganized around them rather than
+declining. Thamus named the mechanism correctly at the start and misjudged the
+result. Externalizing a mental skill really does change it, and that change has
+repeatedly turned out to be a reorganization of how people think rather than the
+decline he predicted.
+
+## Further reading
+
+- Plato, *Phaedrus* (trans. Benjamin Jowett), 274c–275b:
+  https://classics.mit.edu/Plato/phaedrus.html
+- Ann Blair, *Too Much to Know: Managing Scholarly Information before the Modern
+  Age* (Yale University Press, 2010):
+  https://yalebooks.yale.edu/book/9780300165395/too-much-to-know/
+- Betsy Sparrow, Jenny Liu, Daniel M. Wegner, "Google Effects on Memory,"
+  *Science* (2011): https://doi.org/10.1126/science.1207745
+- Colin F. Camerer et al., "Evaluating the replicability of social science
+  experiments in Nature and Science," *Nature Human Behaviour* (2018):
+  https://doi.org/10.1038/s41562-018-0399-z
+
+---
+*Originally posted on [my blog](https://veithweilnhammer.github.io/blog/every-mind-shaped-by-technology/). If this was useful, consider subscribing and sharing.*
