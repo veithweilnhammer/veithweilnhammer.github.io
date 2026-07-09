@@ -1,22 +1,17 @@
-<!--
-==========================================================
-SUBSTACK — copy these into the editor's Title / Subtitle boxes:
-  Title:    The Most Agreeable Friend You Will Ever Have Is the Worst One for You
-  Subtitle: Relationships help people grow through friction. An AI tuned never to disagree removes exactly that.
-----------------------------------------------------------
-  Suggested tags: companionship, sycophancy, development
-  Visibility checklist:
-    [ ] Subtitle doubles as an SEO hook (done above)
-    [ ] TL;DR in the first 2 lines
-    [ ] 1-2 internal links to related posts
-    [ ] Scannable subheads
-    [ ] Clear subscribe / share CTA at the end
-    [ ] Canonical / cross-post link back to https://veithweilnhammer.github.io/blog/the-agreeable-friend/
-==========================================================
-Paste everything BELOW this comment into the Substack body.
--->
+---
+slug: the-agreeable-friend
+title: "The Most Agreeable Friend You Will Ever Have Is the Worst One for You"
+description: "An AI companion optimized never to challenge you removes the friction that real relationships use to help people grow, making frictionless comfort developmentally inert."
+date: 2026-04-08
+tags: [AI, psychology, mental health]
+featured: false
+status: ready
+substack:
+  subtitle: "Relationships help people grow through friction. An AI tuned never to disagree removes exactly that."
+  tldr: "Growth in relationships depends on friction and honest pushback; an AI companion optimized for agreeableness removes it, so frictionless comfort does little for development."
+  tags: [companionship, sycophancy, development]
+---
 
-**TL;DR — Growth in relationships depends on friction and honest pushback; an AI companion optimized for agreeableness removes it, so frictionless comfort does little for development.**
 
 In late April 2025, OpenAI released an update to the model behind ChatGPT and withdrew it within days. The update had made the system markedly more agreeable: it praised plans that did not warrant praise, went along with expressions of anger, and, in reported screenshots, appeared to validate unsafe or delusional choices. OpenAI called the behavior sycophantic and traced it to a training process that had leaned too hard on short-term signals of user approval, the digital equivalent of a thumbs-up. The correction was to make the assistant less eager to please.
 
@@ -54,6 +49,3 @@ A companion that usually agrees gives you back your own current views, amplified
 - Julian De Freitas et al., "AI Companions Reduce Loneliness," 2024. https://arxiv.org/abs/2407.19096
 - Caryl Rusbult, Eli Finkel & Madoka Kumashiro, "The Michelangelo Phenomenon," 2009. https://doi.org/10.1111/j.1467-8721.2009.01635.x
 - Lev Vygotsky, *Mind in Society*, Harvard University Press, 1978.
-
----
-*Originally posted on [my blog](https://veithweilnhammer.github.io/blog/the-agreeable-friend/). If this was useful, consider subscribing and sharing.*

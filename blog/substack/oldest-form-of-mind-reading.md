@@ -74,17 +74,13 @@ This series begins there. Not with the fantasy of decoding the body once and for
 
 ## References and further reading
 
-- Darwin, Charles. *The Expression of the Emotions in Man and Animals*. London: John Murray, 1872.  
-  Public domain text: https://darwin-online.org.uk/content/frameset?itemID=F1142&viewtype=text
+- Darwin, Charles. *The Expression of the Emotions in Man and Animals*. London: John Murray, 1872. Public domain text: https://darwin-online.org.uk/content/frameset?itemID=F1142&viewtype=text
 
-- James, William. "What Is an Emotion?" *Mind* 9, no. 34 (1884): 188–205.  
-  https://archive.org/details/mindos9birm/page/188/mode/2up
+- James, William. "What Is an Emotion?" *Mind* 9, no. 34 (1884): 188–205. https://archive.org/details/mindos9birm/page/188/mode/2up
 
-- Spinoza, Baruch. *Ethics*, Part III, Proposition 11 and Definitions of the Affects. 1677.  
-  Public domain text (Elwes trans.): https://www.gutenberg.org/ebooks/3800
+- Spinoza, Baruch. *Ethics*, Part III, Proposition 11 and Definitions of the Affects. 1677. Public domain text (Elwes trans.): https://www.gutenberg.org/ebooks/3800
 
-- Parker, Gordon, and Dusan Hadzi-Pavlovic, eds. *Melancholia: A Disorder of Movement and Mood*.  
-  Cambridge: Cambridge University Press, 1996.
+- Parker, Gordon, and Dusan Hadzi-Pavlovic, eds. *Melancholia: A Disorder of Movement and Mood*. Cambridge: Cambridge University Press, 1996.
 
 - Bennabi, Djamila, Pierre Vandel, Emmanuel Papaxanthis-Papaxanthis, Thierry Pozzo, and Emmanuel Haffen. "Psychomotor Retardation in Depression: A Systematic Review of Diagnostic, Pathophysiologic, and Therapeutic Implications." *BioMed Research International* 2013 (2013): 158746. https://doi.org/10.1155/2013/158746
 

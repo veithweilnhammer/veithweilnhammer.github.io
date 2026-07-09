@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: loneliness-is-a-signal
 title: "Loneliness Is a Signal, and AI Companions Are Learning to Silence It"
 description: "Loneliness evolved as an alarm that pushes people back toward others; AI companions are getting good at muting the alarm without meeting the need behind it."
-tags: [loneliness, AI companions, mental health, technology]
-categories:
-giscus_comments: false
 date: 2026-03-11
+tags: [loneliness, AI companions, mental health, technology]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "Loneliness evolved as an alarm that drives us back toward other people, and AI companions are getting good at muting it without meeting the need behind it."
+  tldr: "Loneliness is a biological signal to seek connection. AI companions can quiet the feeling without restoring the relationships it exists to protect — worth watching as they scale."
+  tags: [psychology, mental health, technology]
 ---
+
 
 In 2023 the U.S. Surgeon General issued a formal advisory that treated loneliness and social isolation as a major public-health problem. The advisory drew together evidence that weak social connection raises the risk of premature death by an amount comparable to smoking up to fifteen cigarettes a day, and that it is associated with roughly a 29 percent higher risk of heart disease, a 32 percent higher risk of stroke, and about a 50 percent higher risk of dementia in older adults. Around half of U.S. adults report feeling lonely, with the highest rates among young adults. In the same few years, consumer AI companions such as Replika and Character.AI began offering a kind of social response that is available at any hour, can carry context from earlier conversations, and can be shaped into a friend, confidant, or romantic partner. These systems reliably reduce the feeling of loneliness, which raises a specific question: whether reducing that feeling also restores the social connection the feeling normally signals.
 

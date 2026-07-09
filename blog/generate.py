@@ -1,25 +1,38 @@
 #!/usr/bin/env python3
-"""Generate blog + Substack posts from a single master file (blog.qmd).
+"""Generate blog + Substack posts from per-post source files.
 
-You edit ONE file (blog.qmd). This script reads every POST block in it and
-writes, for each post whose `status` is `ready` or `published`:
+Each post lives in its own file under `content/` with YAML front matter
+followed by the body:
+
+    ---
+    slug: my-post
+    title: "..."
+    date: 2026-01-01
+    status: ready
+    ...
+    ---
+
+    Body text here.
+
+For every post whose `status` is `ready` or `published`, this writes:
 
   * an al-folio Jekyll post  ->  ../_posts/<file_date>-<slug>.md
   * a Substack-ready file    ->  substack/<slug>.md
 
-Posts with status `draft` (or missing status) are skipped, so half-written
-ideas never leak onto the site.
+Posts with status `draft` (or missing status) are skipped, and files whose
+name starts with `_` (e.g. `_template.md`) are ignored entirely.
+
+Shared author + styling live in `config.yml`.
 
 Usage:
     python3 generate.py            # write all ready/published posts
     python3 generate.py --check    # dry run: list what WOULD be written
-    python3 generate.py --source path/to/other.qmd
-
-The master file format is documented at the top of blog.qmd.
+    python3 generate.py --content-dir path/to/content --config path/to/config.yml
 """
 from __future__ import annotations
 
 import argparse
+import glob
 import os
 import re
 import sys
@@ -31,34 +44,26 @@ except ImportError:  # pragma: no cover
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-CONFIG_RE = re.compile(
-    r"<!--\s*BLOG-CONFIG:START\s*-->(.*?)<!--\s*BLOG-CONFIG:END\s*-->",
-    re.DOTALL,
-)
-POST_RE = re.compile(
-    r"<!--\s*POST:START\s*-->(.*?)<!--\s*POST:END\s*-->",
-    re.DOTALL,
-)
-# First fenced ```yaml ... ``` block inside a chunk.
-YAML_FENCE_RE = re.compile(r"```ya?ml\s*\n(.*?)\n```", re.DOTALL)
+# Front matter delimited by a leading `---` line and the next `---` line.
+FRONT_MATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n?(.*)\Z", re.DOTALL)
 
 
-def load_yaml_block(text: str, what: str) -> tuple[dict, str]:
-    """Return (parsed_yaml, remaining_text_after_the_fence)."""
-    m = YAML_FENCE_RE.search(text)
+def split_front_matter(text: str, what: str) -> tuple[dict, str]:
+    """Return (parsed_front_matter, body). Body may contain `---` lines."""
+    m = FRONT_MATTER_RE.match(text)
     if not m:
-        raise ValueError(f"No ```yaml block found in {what}.")
+        raise ValueError(f"No `---` front matter found in {what}.")
     data = yaml.safe_load(m.group(1)) or {}
     if not isinstance(data, dict):
-        raise ValueError(f"YAML block in {what} must be a mapping.")
-    return data, text[m.end():]
+        raise ValueError(f"Front matter in {what} must be a mapping.")
+    return data, m.group(2)
 
 
-def read_config(src: str) -> dict:
-    m = CONFIG_RE.search(src)
-    if not m:
-        raise ValueError("No <!-- BLOG-CONFIG:START/END --> block found.")
-    cfg, _ = load_yaml_block(m.group(1), "BLOG-CONFIG")
+def read_config(path: str) -> dict:
+    with open(path, encoding="utf-8") as fh:
+        cfg = yaml.safe_load(fh.read()) or {}
+    if not isinstance(cfg, dict):
+        raise ValueError(f"{path} must contain a YAML mapping.")
     return cfg
 
 
@@ -167,42 +172,50 @@ def render_substack(meta: dict, body: str, cfg: dict) -> str:
     return "\n".join(parts) + "\n"
 
 
-def parse_posts(src: str) -> list[tuple[dict, str]]:
+def parse_posts(content_dir: str) -> list[tuple[dict, str, str]]:
+    """Read every content/*.md (skipping names starting with `_`).
+
+    Returns a list of (meta, body, source_path), sorted by filename.
+    """
     posts = []
-    for chunk in POST_RE.findall(src):
-        meta, body = load_yaml_block(chunk, "a POST block")
-        posts.append((meta, body))
+    pattern = os.path.join(content_dir, "*.md")
+    for path in sorted(glob.glob(pattern)):
+        name = os.path.basename(path)
+        if name.startswith("_"):
+            continue
+        with open(path, encoding="utf-8") as fh:
+            meta, body = split_front_matter(fh.read(), name)
+        posts.append((meta, body, path))
     return posts
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--source", default=os.path.join(HERE, "blog.qmd"))
+    ap.add_argument("--content-dir", default=os.path.join(HERE, "content"))
+    ap.add_argument("--config", default=os.path.join(HERE, "config.yml"))
     ap.add_argument("--posts-dir", default=os.path.join(HERE, "..", "_posts"))
     ap.add_argument("--substack-dir", default=os.path.join(HERE, "substack"))
     ap.add_argument("--check", action="store_true",
                     help="dry run: show what would be written")
     args = ap.parse_args()
 
-    with open(args.source, encoding="utf-8") as fh:
-        src = fh.read()
-
-    cfg = read_config(src)
-    posts = parse_posts(src)
+    cfg = read_config(args.config)
+    posts = parse_posts(args.content_dir)
 
     generated = 0
     skipped = 0
     seen_slugs: set[str] = set()
 
-    for meta, body in posts:
+    for meta, body, path in posts:
+        name = os.path.basename(path)
         slug = str(meta.get("slug", "")).strip()
         status = str(meta.get("status", "draft")).strip().lower()
 
         if not slug:
-            print("! skipping a POST block with no slug")
+            print(f"! skipping {name}: no slug")
             continue
         if slug in seen_slugs:
-            print(f"! duplicate slug '{slug}' — skipping the second one")
+            print(f"! duplicate slug '{slug}' in {name} — skipping")
             continue
         seen_slugs.add(slug)
 

@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: attention-before-the-economy
 title: "Attention Was a Scientific Concept Before It Was an Economy"
 description: "Long before the attention economy, a century of psychology studied attention as a limited, effortful faculty — and that science names costs the business model ignores."
-tags: [psychology, attention, technology]
-categories:
-giscus_comments: false
 date: 2026-06-17
+tags: [psychology, attention, technology]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "A century of attention research names the cognitive costs the attention economy quietly externalizes."
+  tldr: "Psychology studied attention as a limited, effortful resource long before it became a business model; that science makes the real costs of the attention economy measurable."
+  tags: [attention economy, cognition, history of science]
 ---
+
 
 Attention was a well-studied scientific object long before it became something to buy and sell. It entered modern psychology as a scientific problem in the late nineteenth century, and over the following decades experiments established that it is limited, selective, and costly to sustain. The economic framing came much later: in 1971 Herbert Simon described attention as the scarce counterpart to abundant information, and only in the decades after that did a business model form around capturing and reselling it. The older science still describes what attention is and what happens to a person when it is fragmented, and read against today's business model, it names costs that the model leaves off its books.
 

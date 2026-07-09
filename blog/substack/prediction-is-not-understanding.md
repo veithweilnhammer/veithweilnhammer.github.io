@@ -18,181 +18,38 @@ Paste everything BELOW this comment into the Substack body.
 
 **TL;DR — Ptolemy predicted the planets for centuries with a false model; accurate prediction alone, in brains or AI, does not demonstrate understanding of why.**
 
-For roughly fourteen centuries, astronomers could predict where Mars would appear
-in the night sky months in advance, using a model that misdescribed the physical
-arrangement of the solar system. The system Claudius Ptolemy set out around 150 CE
-placed a motionless Earth at the center of the cosmos and had each planet ride on
-a small circle, the epicycle, whose center moved along a larger circle, the
-deferent. Ptolemy's model also used eccentric centers and the equant, an
-off-center point from which the motion was made to look uniform, and later
-astronomers added further refinements when observations required them. None of
-this machinery corresponds to how the solar system is actually arranged; the
-planets do not loop on nested circles around Earth. The model still reproduced the
-visible positions of the planets, including their occasional backward drift across
-the sky, closely enough to support astronomical tables and calendars, and it
-stayed the standard predictive tool until Kepler's elliptical orbits began to
-replace the circular machinery in the early seventeenth century.
+For roughly fourteen centuries, astronomers could predict where Mars would appear in the night sky months in advance, using a model that misdescribed the physical arrangement of the solar system. The system Claudius Ptolemy set out around 150 CE placed a motionless Earth at the center of the cosmos and had each planet ride on a small circle, the epicycle, whose center moved along a larger circle, the deferent. Ptolemy's model also used eccentric centers and the equant, an off-center point from which the motion was made to look uniform, and later astronomers added further refinements when observations required them. None of this machinery corresponds to how the solar system is actually arranged; the planets do not loop on nested circles around Earth. The model still reproduced the visible positions of the planets, including their occasional backward drift across the sky, closely enough to support astronomical tables and calendars, and it stayed the standard predictive tool until Kepler's elliptical orbits began to replace the circular machinery in the early seventeenth century.
 
-Ptolemaic astronomy shows that a model can forecast what a system will do while
-being wrong about why it does it. Predicting the next observation and
-understanding the causes behind it are separate achievements, and either can occur
-without the other. Predicting well shows only that a system captured some
-regularity in the data; it leaves open whether the system grasped the structure
-that generates the data. Reading accurate prediction as proof of comprehension is
-a specific inferential mistake, and it is worth seeing clearly, because the same
-mistake now appears in arguments about large language models and about the brain.
+Ptolemaic astronomy shows that a model can forecast what a system will do while being wrong about why it does it. Predicting the next observation and understanding the causes behind it are separate achievements, and either can occur without the other. Predicting well shows only that a system captured some regularity in the data; it leaves open whether the system grasped the structure that generates the data. Reading accurate prediction as proof of comprehension is a specific inferential mistake, and it is worth seeing clearly, because the same mistake now appears in arguments about large language models and about the brain.
 
-Prediction, in the sense that matters here, is forecasting the next observation
-from the preceding ones — where Mars will appear, which word comes next, how a
-patient's blood pressure will move over the next hour. Understanding is having a
-grip on the causal or structural reasons those observations take the values they
-do, the kind of grip that lets you say what would happen if the situation were
-changed in some specific way. The two usually travel together, so it is easy to
-treat them as one thing: someone who understands tides can also predict them. But
-the two often diverge. A factory worker can learn to run a machine by rote,
-predicting exactly which lever to pull when a given light comes on, without knowing
-what the machine does internally or why the sequence works. Ptolemy's astronomers
-were in a similar position on a grander scale, fitting a flexible geometric
-description to the appearances without a correct account of the causes. In both
-cases the forecasts are good and the understanding is absent, which is the
-combination that makes predictive success an unreliable guide to comprehension.
+Prediction, in the sense that matters here, is forecasting the next observation from the preceding ones — where Mars will appear, which word comes next, how a patient's blood pressure will move over the next hour. Understanding is having a grip on the causal or structural reasons those observations take the values they do, the kind of grip that lets you say what would happen if the situation were changed in some specific way. The two usually travel together, so it is easy to treat them as one thing: someone who understands tides can also predict them. But the two often diverge. A factory worker can learn to run a machine by rote, predicting exactly which lever to pull when a given light comes on, without knowing what the machine does internally or why the sequence works. Ptolemy's astronomers were in a similar position on a grander scale, fitting a flexible geometric description to the appearances without a correct account of the causes. In both cases the forecasts are good and the understanding is absent, which is the combination that makes predictive success an unreliable guide to comprehension.
 
-The distinction is central to current arguments about language models. The core
-training objective for many large language models is next-token prediction: given
-a stretch of text, the model estimates the probability of the next token, the next
-chunk of characters, and samples from that distribution. Trained across very large
-text corpora, the result is a system that produces fluent, on-topic, frequently
-correct text. Modern chatbots add instruction tuning, reinforcement learning, tool
-use, and retrieval, but the central capability still grows out of that predictive
-objective. The fluency is real, and the open question is what it shows about the
-model's grasp of meaning. One reading, associated with the 2021 "stochastic
-parrots" paper by Emily Bender, Timnit Gebru, and colleagues, treats the fluency
-as sophisticated pattern completion: the model assembles sequences of linguistic
-form according to how often such forms co-occur in training data, without
-grounding those forms in the objects, actions, and social contexts they refer to.
-A competing reading treats the same fluency as a sign that predicting text about
-the world this well requires building some internal representation of the world
-the text describes. Both readings start from fluent behavior and disagree about
-what further evidence would justify attributing understanding.
+The distinction is central to current arguments about language models. The core training objective for many large language models is next-token prediction: given a stretch of text, the model estimates the probability of the next token, the next chunk of characters, and samples from that distribution. Trained across very large text corpora, the result is a system that produces fluent, on-topic, frequently correct text. Modern chatbots add instruction tuning, reinforcement learning, tool use, and retrieval, but the central capability still grows out of that predictive objective. The fluency is real, and the open question is what it shows about the model's grasp of meaning. One reading, associated with the 2021 "stochastic parrots" paper by Emily Bender, Timnit Gebru, and colleagues, treats the fluency as sophisticated pattern completion: the model assembles sequences of linguistic form according to how often such forms co-occur in training data, without grounding those forms in the objects, actions, and social contexts they refer to. A competing reading treats the same fluency as a sign that predicting text about the world this well requires building some internal representation of the world the text describes. Both readings start from fluent behavior and disagree about what further evidence would justify attributing understanding.
 
-Evidence about the internal process bears on that disagreement, because output
-alone leaves several mechanisms possible, and Othello-GPT is a controlled example
-of how to get such evidence. Kenneth Li and colleagues trained a small
-transformer, Othello-GPT, to do nothing but predict legal moves in the board game
-Othello, feeding it only sequences of moves with no picture of the board and no
-rules. A purely correlational solution, learning move-to-move regularities and
-stopping there, was one possible route to good move prediction. Instead, probing
-its internal activations recovered the full state of the eight-by-eight board at
-each step, and a later analysis showed the board is stored in a player-relative
-frame, the squares that are currently the model's own versus the opponent's. The
-stronger evidence came from causal intervention: when the researchers edited that
-internal board representation, flipping a square, the model's move predictions
-changed to match the altered board, as though the game had really gone differently.
-In this controlled setting, next-move prediction produced an internal
-representation that the model used to make its predictions.
+Evidence about the internal process bears on that disagreement, because output alone leaves several mechanisms possible, and Othello-GPT is a controlled example of how to get such evidence. Kenneth Li and colleagues trained a small transformer, Othello-GPT, to do nothing but predict legal moves in the board game Othello, feeding it only sequences of moves with no picture of the board and no rules. A purely correlational solution, learning move-to-move regularities and stopping there, was one possible route to good move prediction. Instead, probing its internal activations recovered the full state of the eight-by-eight board at each step, and a later analysis showed the board is stored in a player-relative frame, the squares that are currently the model's own versus the opponent's. The stronger evidence came from causal intervention: when the researchers edited that internal board representation, flipping a square, the model's move predictions changed to match the altered board, as though the game had really gone differently. In this controlled setting, next-move prediction produced an internal representation that the model used to make its predictions.
 
-The Othello-GPT results support a narrower claim than either side of the parrot
-debate wants. Predictive training can produce usable internal structure, and
-predictive accuracy alone does not show when that has happened. Two systems can
-post identical predictive scores while one carries a structured internal model and
-the other leans on surface shortcuts, and the only way to tell them apart was to
-open the network and intervene. Because identical behavior can arise from
-different internal mechanisms, "it predicts well, therefore it understands" fails
-as an inference: the premise holds for a system that understands and for a system
-that has merely fit the appearances, so it cannot favor either.
+The Othello-GPT results support a narrower claim than either side of the parrot debate wants. Predictive training can produce usable internal structure, and predictive accuracy alone does not show when that has happened. Two systems can post identical predictive scores while one carries a structured internal model and the other leans on surface shortcuts, and the only way to tell them apart was to open the network and intervene. Because identical behavior can arise from different internal mechanisms, "it predicts well, therefore it understands" fails as an inference: the premise holds for a system that understands and for a system that has merely fit the appearances, so it cannot favor either.
 
-The Othello result should not be generalized directly to ordinary chatbots,
-because the game is small, closed, and fully specified, and recovering its board
-is a modest result next to the claim that a language model has internalized the
-structure of the physical and social world. Later work found that Llama-2 encodes
-linear representations of space and time — coordinates for places, dates for
-events — which makes a pure "surface statistics only" story harder to hold. But
-those findings leave the interpretive question open rather than closing it. A
-map-like encoding of cities can help predict text about geography while saying
-nothing about whether the model tracks how transport, borders, and economies
-change when something intervenes. The probing method transfers across these cases;
-the conclusion has to be earned separately in each one.
+The Othello result should not be generalized directly to ordinary chatbots, because the game is small, closed, and fully specified, and recovering its board is a modest result next to the claim that a language model has internalized the structure of the physical and social world. Later work found that Llama-2 encodes linear representations of space and time — coordinates for places, dates for events — which makes a pure "surface statistics only" story harder to hold. But those findings leave the interpretive question open rather than closing it. A map-like encoding of cities can help predict text about geography while saying nothing about whether the model tracks how transport, borders, and economies change when something intervenes. The probing method transfers across these cases; the conclusion has to be earned separately in each one.
 
-A similar caution applies to neuroscience, where predictive processing has become
-an influential framework over the past two decades by recasting perception as
-prediction. On Andy Clark's and Karl Friston's accounts, the brain constantly
-generates top-down guesses about incoming sensory signals and updates on the
-mismatch, the prediction error. The framework earns its keep by explaining a range
-of findings, from perceptual illusions to the way expectation shapes what people
-see. The brain analogy can be run in reverse, to suggest that if the brain is a
-prediction engine, and prediction is shallow, then human grip on the world is
-shallower than it feels. That inference fails for the same reason the Othello case
-gives. Minimizing prediction error is a computational job that can be achieved
-either by building a rich causal model or by exploiting a serviceable correlation,
-and a low prediction error, like a model's low next-token loss, does not say which
-one is at work. Predictive success is the thing that needs explaining in both
-brains and models, and it cannot serve as its own explanation.
+A similar caution applies to neuroscience, where predictive processing has become an influential framework over the past two decades by recasting perception as prediction. On Andy Clark's and Karl Friston's accounts, the brain constantly generates top-down guesses about incoming sensory signals and updates on the mismatch, the prediction error. The framework earns its keep by explaining a range of findings, from perceptual illusions to the way expectation shapes what people see. The brain analogy can be run in reverse, to suggest that if the brain is a prediction engine, and prediction is shallow, then human grip on the world is shallower than it feels. That inference fails for the same reason the Othello case gives. Minimizing prediction error is a computational job that can be achieved either by building a rich causal model or by exploiting a serviceable correlation, and a low prediction error, like a model's low next-token loss, does not say which one is at work. Predictive success is the thing that needs explaining in both brains and models, and it cannot serve as its own explanation.
 
-Judea Pearl's account of causal inference separates three questions that
-prediction runs together: what tends to happen next, what happens if you intervene
-and change a variable, and what would have happened under a different condition.
-Predictive accuracy answers only the first. Generalization, causal intervention,
-and transfer test the other two. Generalization asks whether performance holds up
-on cases drawn from outside the training distribution, where a surface fit would
-break but a causal grip would not. Causal intervention asks whether, when you
-change a variable the system should be tracking, its outputs move the way the
-underlying structure requires, as Othello-GPT's did when its internal board was
-edited. Transfer asks whether what the system learned can be redeployed on a
-genuinely new task that shares the same deep structure but none of the surface
-form. None of these is a perfect test, and each can be gamed, but together they
-probe what predictive accuracy leaves open: what the system does when the
-correlations it memorized stop being available. A false physical model can keep
-forecasting within the regime it was fitted to while failing tests that require
-the correct causal structure, which is where Ptolemy's model, pushed outside the
-range of observations it was tuned on, would have broken down.
+Judea Pearl's account of causal inference separates three questions that prediction runs together: what tends to happen next, what happens if you intervene and change a variable, and what would have happened under a different condition. Predictive accuracy answers only the first. Generalization, causal intervention, and transfer test the other two. Generalization asks whether performance holds up on cases drawn from outside the training distribution, where a surface fit would break but a causal grip would not. Causal intervention asks whether, when you change a variable the system should be tracking, its outputs move the way the underlying structure requires, as Othello-GPT's did when its internal board was edited. Transfer asks whether what the system learned can be redeployed on a genuinely new task that shares the same deep structure but none of the surface form. None of these is a perfect test, and each can be gamed, but together they probe what predictive accuracy leaves open: what the system does when the correlations it memorized stop being available. A false physical model can keep forecasting within the regime it was fitted to while failing tests that require the correct causal structure, which is where Ptolemy's model, pushed outside the range of observations it was tuned on, would have broken down.
 
-The evidence differs by system and by task. Some predictive systems learn genuine
-internal models because a model is the most efficient way to compress and forecast
-their data. Some exploit correlations that collapse once the input drifts out of
-distribution. Many real systems do both at once, carrying real structure in one
-part of a task and a brittle shortcut in another, and the two are invisible to
-anyone who only reads the outputs. The practical job is to find out which case
-applies before relying on the answer.
+The evidence differs by system and by task. Some predictive systems learn genuine internal models because a model is the most efficient way to compress and forecast their data. Some exploit correlations that collapse once the input drifts out of distribution. Many real systems do both at once, carrying real structure in one part of a task and a brittle shortcut in another, and the two are invisible to anyone who only reads the outputs. The practical job is to find out which case applies before relying on the answer.
 
-The distinction matters most when predictive systems are used in high-stakes
-settings. Reading a fluent model's predictions as comprehension feeds the hype
-cycle, in which every benchmark score is announced as a step toward machines that
-understand. It also encourages a more consequential mistake: trusting such a
-system where being right for the wrong reason carries a cost. In medicine, law,
-hiring, and mental-health support, a model can produce text that matches expert
-language while missing the causal structure that makes the expert judgment safe.
-It can recommend a plausible next step because similar cases in its training text
-led there, while failing to track the hidden variable that should change the
-decision. A system that has only fit the appearances of a domain can pass every
-case that was tested and still fail on the one case that falls outside the test
-set, and its fluency gives no warning, because fluency was never evidence about
-the mechanism. Ptolemaic astronomy was a sophisticated, empirically successful
-instrument: it told astronomers where the planets would appear while resting on a
-false account of why they moved. With any predictor that matters, in a model or a
-brain, the task is to find out which of those two things it is doing, and its
-record of correct guesses will not settle that.
+The distinction matters most when predictive systems are used in high-stakes settings. Reading a fluent model's predictions as comprehension feeds the hype cycle, in which every benchmark score is announced as a step toward machines that understand. It also encourages a more consequential mistake: trusting such a system where being right for the wrong reason carries a cost. In medicine, law, hiring, and mental-health support, a model can produce text that matches expert language while missing the causal structure that makes the expert judgment safe. It can recommend a plausible next step because similar cases in its training text led there, while failing to track the hidden variable that should change the decision. A system that has only fit the appearances of a domain can pass every case that was tested and still fail on the one case that falls outside the test set, and its fluency gives no warning, because fluency was never evidence about the mechanism. Ptolemaic astronomy was a sophisticated, empirically successful instrument: it told astronomers where the planets would appear while resting on a false account of why they moved. With any predictor that matters, in a model or a brain, the task is to find out which of those two things it is doing, and its record of correct guesses will not settle that.
 
 ## Further reading
 
-- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, Shmargaret Shmitchell,
-  "On the Dangers of Stochastic Parrots," FAccT 2021.
-  https://doi.org/10.1145/3442188.3445922
-- Kenneth Li et al., "Emergent World Representations," ICLR 2023.
-  https://arxiv.org/abs/2210.13382
-- Neel Nanda, Andrew Lee, Martin Wattenberg, "Emergent Linear Representations in
-  World Models of Self-Supervised Sequence Models," 2023.
-  https://arxiv.org/abs/2309.00941
-- Wes Gurnee, Max Tegmark, "Language Models Represent Space and Time," 2023.
-  https://arxiv.org/abs/2310.02207
-- Andy Clark, "Whatever Next? Predictive Brains, Situated Agents, and the Future
-  of Cognitive Science," *Behavioral and Brain Sciences*, 2013.
-  https://doi.org/10.1017/S0140525X12000477
-- Karl Friston, "The free-energy principle: a unified brain theory?", *Nature
-  Reviews Neuroscience*, 2010. https://doi.org/10.1038/nrn2787
-- Judea Pearl, "The seven tools of causal inference," 2019.
-  https://doi.org/10.1145/3241036
-- Thomas S. Kuhn, *The Copernican Revolution* (1957), on the Ptolemaic system as
-  accurate prediction from a false model.
+- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, Shmargaret Shmitchell, "On the Dangers of Stochastic Parrots," FAccT 2021. https://doi.org/10.1145/3442188.3445922
+- Kenneth Li et al., "Emergent World Representations," ICLR 2023. https://arxiv.org/abs/2210.13382
+- Neel Nanda, Andrew Lee, Martin Wattenberg, "Emergent Linear Representations in World Models of Self-Supervised Sequence Models," 2023. https://arxiv.org/abs/2309.00941
+- Wes Gurnee, Max Tegmark, "Language Models Represent Space and Time," 2023. https://arxiv.org/abs/2310.02207
+- Andy Clark, "Whatever Next? Predictive Brains, Situated Agents, and the Future of Cognitive Science," *Behavioral and Brain Sciences*, 2013. https://doi.org/10.1017/S0140525X12000477
+- Karl Friston, "The free-energy principle: a unified brain theory?", *Nature Reviews Neuroscience*, 2010. https://doi.org/10.1038/nrn2787
+- Judea Pearl, "The seven tools of causal inference," 2019. https://doi.org/10.1145/3241036
+- Thomas S. Kuhn, *The Copernican Revolution* (1957), on the Ptolemaic system as accurate prediction from a false model.
 
 ---
 *Originally posted on [my blog](https://veithweilnhammer.github.io/blog/prediction-is-not-understanding/). If this was useful, consider subscribing and sharing.*

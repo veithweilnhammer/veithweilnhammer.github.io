@@ -1,22 +1,17 @@
-<!--
-==========================================================
-SUBSTACK — copy these into the editor's Title / Subtitle boxes:
-  Title:    Placebo Is a Treatment We Do Not Understand
-  Subtitle: Expectation changes the brain. That makes placebo a treatment to study, not just a baseline to remove.
-----------------------------------------------------------
-  Suggested tags: placebo, expectation, clinical trials
-  Visibility checklist:
-    [ ] Subtitle doubles as an SEO hook (done above)
-    [ ] TL;DR in the first 2 lines
-    [ ] 1-2 internal links to related posts
-    [ ] Scannable subheads
-    [ ] Clear subscribe / share CTA at the end
-    [ ] Canonical / cross-post link back to https://veithweilnhammer.github.io/blog/placebo-we-dont-understand/
-==========================================================
-Paste everything BELOW this comment into the Substack body.
--->
+---
+slug: placebo-we-dont-understand
+title: "Placebo Is a Treatment We Do Not Understand"
+description: "The placebo response in psychiatry is a real biological effect of expectation on the brain — one worth studying rather than subtracting away."
+date: 2026-04-15
+tags: [psychiatry, neuroscience, mental health]
+featured: false
+status: ready
+substack:
+  subtitle: "Expectation changes the brain. That makes placebo a treatment to study, not just a baseline to remove."
+  tldr: "The placebo response is a measurable effect of expectation on brain chemistry; psychiatry should study how it works instead of treating it only as noise to subtract."
+  tags: [placebo, expectation, clinical trials]
+---
 
-**TL;DR — The placebo response is a measurable effect of expectation on brain chemistry; psychiatry should study how it works instead of treating it only as noise to subtract.**
 
 Randomized drug trials are built to remove the placebo response, and in psychiatry that design choice quietly buries something worth studying. Everyone enrolled in an antidepressant trial receives the same surrounding treatment: a diagnostic assessment, repeated contact with a clinician, a pill taken on a fixed schedule, and the expectation that it might help. The trial subtracts the improvement in the placebo arm from the improvement in the drug arm and reports the leftover difference as the effect of the medication. In depression that subtracted portion is large. A review of 75 trials found that about 30% of patients assigned to placebo met response criteria, with individual studies ranging from 12.5% to 51.8%, while the best medication arm averaged about 50%. Meta-analyses that compare effect sizes rather than response rates find that roughly three-quarters of the improvement seen in medication arms also appeared in placebo arms, though that figure is computed differently across analyses and remains contested. These numbers are usually read as evidence that the drugs barely beat an inert pill. They raise a different question, which is what the placebo arm was doing while most of the recovery happened there.
 
@@ -56,6 +51,3 @@ The evidence establishes that the placebo arm of a psychiatric trial contains a 
 - Kaptchuk TJ, et al. (2008), "Components of placebo effect," *BMJ*; and (2010), "Placebos without Deception," *PLoS ONE*.
 - Hróbjartsson A, Gøtzsche PC (2001), "Is the Placebo Powerless?" *NEJM*.
 - Fitzpatrick KK, Darcy A, Vierhile M (2017), automated CBT conversational agent, *JMIR Mental Health*.
-
----
-*Originally posted on [my blog](https://veithweilnhammer.github.io/blog/placebo-we-dont-understand/). If this was useful, consider subscribing and sharing.*

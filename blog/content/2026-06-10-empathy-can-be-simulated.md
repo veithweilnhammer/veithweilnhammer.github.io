@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: empathy-can-be-simulated
 title: "Empathy Can Be Simulated, and That Should Worry Us Less Than We Think"
 description: "Performed empathy is often all a supportive interaction requires, so the real question is where the absence of genuine feeling actually starts to matter."
-tags: [AI, psychology, ethics]
-categories:
-giscus_comments: false
 date: 2026-06-10
+tags: [AI, psychology, ethics]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "Displayed empathy is often enough; the useful question is exactly where felt empathy becomes necessary."
+  tldr: "Empathy has a performable component AI can reproduce, and displayed empathy is often sufficient; what matters is identifying the situations where the absence of real feeling causes harm."
+  tags: [empathy, care, human-AI interaction]
 ---
+
 
 In 2023 a *JAMA Internal Medicine* study compared written answers from physicians and ChatGPT to 195 patient questions posted on Reddit's AskDocs forum. Licensed healthcare professionals, blinded to the source of each answer, rated the chatbot answers as empathetic or very empathetic far more often than the physician answers, 45.1 percent against 4.6 percent. The study was not designed to measure clinical safety, diagnostic accuracy, or long-term outcomes, and it settles none of them. Its narrower result still matters: in a written exchange, a system that feels nothing produced language that trained raters experienced as more empathic than the language written by verified physicians.
 

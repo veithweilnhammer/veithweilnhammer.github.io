@@ -1,8 +1,8 @@
 # Brief: <post title>
 
 Copy this file to `posts/<slug>/brief.md` and fill it in. The orchestrator can
-draft it for you from the shared background notes + the post's POST block in
-`blog.qmd`.
+draft it for you from the shared background notes + the idea backlog in
+`../blog_ideas.md`.
 
 ## Slug
 <slug>

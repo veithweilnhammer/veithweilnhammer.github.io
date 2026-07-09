@@ -1,42 +1,17 @@
 ---
-layout: distill
+slug: oldest-form-of-mind-reading
 title: "The Oldest Form of Mind-Reading"
 description: "Why science still struggles to understand the mind through movement."
-tags: [movement, mind, psychiatry, history, perception]
-categories:
-giscus_comments: false
 date: 2026-07-05
+tags: [movement, mind, psychiatry, history, perception]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-toc:
-  - name: A mouth that cannot speak
-  - name: Darwin's trembling lip
-  - name: How the thread was lost
-  - name: The clinical eye
-  - name: Thinking is a motor act
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "Long before we measured the brain, we read the mind from motion. Then we forgot how."
+  tldr: "Movement has always been a window into mental life — and psychiatry's turn to words and voxels left most of the mind unmeasured."
+  tags: [neuroscience, psychiatry, philosophy of mind, history of science]
 ---
+
 
 ## A mouth that cannot speak
 

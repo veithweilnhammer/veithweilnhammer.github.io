@@ -1,22 +1,17 @@
-<!--
-==========================================================
-SUBSTACK — copy these into the editor's Title / Subtitle boxes:
-  Title:    Why Engineers Are Programming Hesitation Into AI Voices
-  Subtitle: Synthetic pauses and breaths borrow a human trust cue — and can slip past a listener's critical guard.
-----------------------------------------------------------
-  Suggested tags: voice interfaces, trust, design ethics
-  Visibility checklist:
-    [ ] Subtitle doubles as an SEO hook (done above)
-    [ ] TL;DR in the first 2 lines
-    [ ] 1-2 internal links to related posts
-    [ ] Scannable subheads
-    [ ] Clear subscribe / share CTA at the end
-    [ ] Canonical / cross-post link back to https://veithweilnhammer.github.io/blog/engineered-hesitation-in-ai-voices/
-==========================================================
-Paste everything BELOW this comment into the Substack body.
--->
+---
+slug: engineered-hesitation-in-ai-voices
+title: "Why Engineers Are Programming Hesitation Into AI Voices"
+description: "The pauses, breaths, and 'ums' in the newest AI voices are engineered to trigger the social instincts that make listeners trust a speaker."
+date: 2026-05-06
+tags: [AI, speech, psychology]
+featured: false
+status: ready
+substack:
+  subtitle: "Synthetic pauses and breaths borrow a human trust cue — and can slip past a listener's critical guard."
+  tldr: "Disfluencies in new AI voices are deliberately engineered; they exploit social instincts that equate hesitation with sincerity, which raises a real trust concern."
+  tags: [voice interfaces, trust, design ethics]
+---
 
-**TL;DR — Disfluencies in new AI voices are deliberately engineered; they exploit social instincts that equate hesitation with sincerity, which raises a real trust concern.**
 
 In May 2024, OpenAI demonstrated a voice for ChatGPT that draws a breath before a long sentence and pauses in the middle of a clause as though it were searching for the next word. These sounds do not make its answers more accurate, and the underlying system does not need them to produce speech. They are part of a broader push toward natural delivery, and they matter because listeners normally hear breaths and hesitations as signs of a person thinking in real time. The breaths, pauses, and filler sounds engineered into current AI voices reproduce cues that listeners read automatically as effort and presence. Because those cues normally track a real process of thinking and speaking, adding them to a system that has no such process risks lowering the listener's guard at the moments when its claims most deserve scrutiny.
 
@@ -50,6 +45,3 @@ Reading effort and presence in another person's voice helps people judge whom to
 - Schroeder, J., Kardas, M., & Epley, N. (2017). The Humanizing Voice. *Psychological Science*, 28(12). https://doi.org/10.1177/0956797617713798
 - OpenAI (2024). GPT-4o System Card, §5.1 Anthropomorphization and Emotional Reliance. https://arxiv.org/abs/2410.21276
 - OpenAI (2024). Hello GPT-4o. https://openai.com/index/hello-gpt-4o/
-
----
-*Originally posted on [my blog](https://veithweilnhammer.github.io/blog/engineered-hesitation-in-ai-voices/). If this was useful, consider subscribing and sharing.*

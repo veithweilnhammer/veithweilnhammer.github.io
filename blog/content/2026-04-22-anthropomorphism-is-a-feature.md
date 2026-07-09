@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: anthropomorphism-is-a-feature
 title: "Anthropomorphism Is a Feature of Your Brain, Not a Mistake You Are Making"
 description: "Reading minds into things is a built-in reflex of a brain tuned to detect agents. AI designed to feel person-like exploits hardwired machinery rather than fooling the gullible."
-tags: [neuroscience, AI, psychology]
-categories:
-giscus_comments: false
 date: 2026-04-22
+tags: [neuroscience, AI, psychology]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "Seeing minds in things is a built-in reflex, so person-like AI works on everyone — and the design choice is what to scrutinize."
+  tldr: "Anthropomorphism is a normal reflex of an agent-detecting brain, not a failing; that shifts responsibility to the designers who tune products to trigger it."
+  tags: [anthropomorphism, agency detection, design ethics]
 ---
+
 
 People apply human social rules to computers automatically, even while knowing that a computer is not a person. A much-cited experiment in the study of how people use computers makes the point. Participants sat down at a machine, worked through a short tutoring session, and were then told by the computer that it had done a good job. Afterward they rated how well it had performed, and the ratings turned on a detail that should have been irrelevant: whether they answered on the same computer they had just used or on an identical one across the room. Participants who evaluated the computer on its own screen gave it kinder ratings, and were more critical when they rated it on a second machine or a paper form. They were following the ordinary rule that you do not tell a host to their face that the meal was mediocre. The study did not show that anyone believed the computer had feelings; it showed that a social rule shaped behavior despite the knowledge that the machine had none.
 

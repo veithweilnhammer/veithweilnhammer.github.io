@@ -1,22 +1,17 @@
-<!--
-==========================================================
-SUBSTACK — copy these into the editor's Title / Subtitle boxes:
-  Title:    The Turing Test Was Never a Test of Intelligence
-  Subtitle: Turing proposed a test of whether a machine could pass for human in conversation — a social question, not a measure of intelligence.
-----------------------------------------------------------
-  Suggested tags: AI, philosophy, technology
-  Visibility checklist:
-    [ ] Subtitle doubles as an SEO hook (done above)
-    [ ] TL;DR in the first 2 lines
-    [ ] 1-2 internal links to related posts
-    [ ] Scannable subheads
-    [ ] Clear subscribe / share CTA at the end
-    [ ] Canonical / cross-post link back to https://veithweilnhammer.github.io/blog/turing-test-not-intelligence/
-==========================================================
-Paste everything BELOW this comment into the Substack body.
--->
+---
+slug: turing-test-not-intelligence
+title: "The Turing Test Was Never a Test of Intelligence"
+description: "Turing proposed a test of whether a machine could pass for human in conversation — a social question. Seventy years of treating it as a benchmark for intelligence has confused the field."
+date: 2026-04-01
+tags: [AI, Turing test, philosophy of AI, intelligence]
+featured: false
+status: ready
+substack:
+  subtitle: "Turing proposed a test of whether a machine could pass for human in conversation — a social question, not a measure of intelligence."
+  tldr: "The imitation game measures whether a machine can pass for human in conversation, which depends on the judge and the setup. Treating it as a benchmark for intelligence mistakes a social outcome for a mental property."
+  tags: [AI, philosophy, technology]
+---
 
-**TL;DR — The imitation game measures whether a machine can pass for human in conversation, which depends on the judge and the setup. Treating it as a benchmark for intelligence mistakes a social outcome for a mental property.**
 
 In early 2025, the cognitive scientists Cameron Jones and Benjamin Bergen ran a controlled version of Alan Turing's imitation game and reported a result the field had discussed for seventy-five years. Human interrogators held five-minute typed conversations with two hidden partners at once, one a person and one a system, and then judged which was which. When GPT-4.5 was prompted to adopt a humanlike persona, interrogators identified it as the human 73 percent of the time, more often than they picked the actual person it was paired with. Two weaker baselines, a plain configuration of GPT-4o and Joseph Weizenbaum's 1966 script ELIZA, were chosen as human only 21 and 23 percent of the time. Reported as the first case of a machine passing a standard three-party Turing test, the study was widely covered as a sign that a machine had become intelligent. That coverage treats the game as a measure of intelligence, when it was built to measure whether a machine can pass for human in conversation, which is a different thing.
 
@@ -47,6 +42,3 @@ Evaluations should test the specific ability being claimed. A Turing-style exper
 - Cameron R. Jones & Benjamin K. Bergen (2024), "Does GPT-4 pass the Turing test?", *Proceedings of NAACL 2024*. https://doi.org/10.18653/v1/2024.naacl-long.290
 - Graham Oppy & David Dowe, "The Turing Test," *Stanford Encyclopedia of Philosophy*. https://plato.stanford.edu/entries/turing-test/
 - Joseph Weizenbaum (1966), "ELIZA," *Communications of the ACM* 9(1): 36–45. https://doi.org/10.1145/365153.365168
-
----
-*Originally posted on [my blog](https://veithweilnhammer.github.io/blog/turing-test-not-intelligence/). If this was useful, consider subscribing and sharing.*

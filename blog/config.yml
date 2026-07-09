@@ -1,0 +1,23 @@
+# Applied to every generated blog post. Edit once here.
+author:
+  name: Veith Weilnhammer
+  url: "https://veithweilnhammer.github.io"
+  affiliation: UC Berkeley, Helen Wills Neuroscience Institute
+
+# CSS injected into each al-folio post's front matter (kept identical to the
+# existing posts so nothing about the site's look changes).
+styles: |
+  .fake-img {
+    background: #bbb;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+  }
+  .fake-img p {
+    font-family: monospace;
+    color: white;
+    text-align: left;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 14px;
+  }

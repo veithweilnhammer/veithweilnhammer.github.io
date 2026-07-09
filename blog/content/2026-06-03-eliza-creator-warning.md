@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: eliza-creator-warning
 title: "ELIZA's Creator Spent His Life Warning Us About ELIZA"
 description: "Joseph Weizenbaum built the first therapy chatbot in 1966, watched people confide in it knowing it was a trick, and spent the rest of his life arguing against doing this."
-tags: [AI, history, mental health]
-categories:
-giscus_comments: false
 date: 2026-06-03
+tags: [AI, history, mental health]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "The man who built the first chatbot became its most serious critic — and his reasons still apply."
+  tldr: "Joseph Weizenbaum built ELIZA in 1966, was disturbed that people confided in a program they knew was simple, and warned for decades against delegating human care to machines."
+  tags: [ELIZA, Weizenbaum, chatbots]
 ---
+
 
 Joseph Weizenbaum wrote ELIZA at MIT in 1966, an early program that could sustain a typed, therapy-style exchange, and he spent much of his later life arguing that programs like it should not replace people in roles that require care and judgment. He built ELIZA as a demonstration of how little a computer needed in order to keep a conversation going. Ten years later he published a book-length warning against handing human judgment to machines. ELIZA connects the two: his criticism grew out of how people responded to a program whose mechanism he could explain line by line.
 

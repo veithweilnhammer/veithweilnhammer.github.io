@@ -2,7 +2,8 @@
 
 A multi-agent pipeline for producing one blog post. Everything here lives under
 `blog/`, which is excluded from the Jekyll build, so nothing is published until
-the final body is landed into `blog.qmd` and `generate.py` is run.
+the final body is landed as a `content/<date>-<slug>.md` file and `generate.py`
+is run.
 
 ## Roles
 
@@ -18,7 +19,7 @@ twice — once for drafting, once for review.
 | 2. Integrate draft | editor | Opus 4.8 (the CLI) | `posts/<slug>/integrated.md` |
 | 3. Review ×3 | 3 parallel agents | Gemini 3.1 Pro · GPT-5.5 · Opus 4.8 | `posts/<slug>/reviews/{gemini,gpt,opus}.md` |
 | 4. Integrate reviews + rewrite | editor | Opus 4.8 (the CLI) | `posts/<slug>/final.md` |
-| 5. Land | orchestrator | Opus 4.8 (the CLI) | `../blog.qmd` POST block + `generate.py` |
+| 5. Land | orchestrator | Opus 4.8 (the CLI) | `../content/<date>-<slug>.md` via `land.py` + `generate.py` |
 
 Stage 1: each of the three models independently does deep web research **and**
 writes a complete candidate post. Each candidate file has an **evidence** section
@@ -43,8 +44,8 @@ pick the model per agent, and does the two integration stages inline.
 
 ## Authoritative inputs (every agent is given these)
 
-- `../writing_style.md` — the voice. **Overrides** the older "essayistic" voice
-  note in `blog.qmd`. This is the single most important input for stages 1, 3, 4.
+- `../writing_style.md` — the voice. This is the single most important input for
+  stages 1, 3, 4.
 - `../blog_ideas.md` — the full list of planned posts, used only so posts don't
   repeat the same material; posts are standalone and never cross-link.
 - `posts/<slug>/brief.md` — this post's spec: topic, angle, anchors, what it must
@@ -56,7 +57,7 @@ pick the model per agent, and does the two integration stages inline.
    `mkdir -p pipeline/posts/<slug>/{candidates,reviews}`
 2. **Write the brief:** copy `posts/_TEMPLATE_brief.md` to
    `posts/<slug>/brief.md` and fill it in (or ask the orchestrator to draft it
-   from the series bible + the post's POST block in `blog.qmd`).
+   from the series bible + the idea backlog in `../blog_ideas.md`).
 3. **Set models:** copy `posts/_TEMPLATE_config.yml` to `posts/<slug>/config.yml`
    and choose the models for each stage (the three parallel slots + which model
    edits).
@@ -67,7 +68,8 @@ pick the model per agent, and does the two integration stages inline.
    - launch the 3 review agents in parallel (prompt = `prompts/review.md`) →
      `reviews/`,
    - integrate the reviews and rewrite into `final.md`,
-   - land `final.md` into the `blog.qmd` POST block and run `generate.py`.
+   - land `final.md` as a `../content/<date>-<slug>.md` file (via `land.py`) and
+     run `generate.py`.
 5. **Review `final.md` yourself**, then approve landing.
 
 Each stage writes files, so a run can be resumed or re-run stage-by-stage

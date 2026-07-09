@@ -1,22 +1,17 @@
-<!--
-==========================================================
-SUBSTACK — copy these into the editor's Title / Subtitle boxes:
-  Title:    If a Chatbot Prevents One Suicide and Causes Another, How Do We Count It?
-  Subtitle: The moral arithmetic of deploying mental-health AI at population scale.
-----------------------------------------------------------
-  Suggested tags: chatbots, harm, population health
-  Visibility checklist:
-    [ ] Subtitle doubles as an SEO hook (done above)
-    [ ] TL;DR in the first 2 lines
-    [ ] 1-2 internal links to related posts
-    [ ] Scannable subheads
-    [ ] Clear subscribe / share CTA at the end
-    [ ] Canonical / cross-post link back to https://veithweilnhammer.github.io/blog/counting-chatbot-harm/
-==========================================================
-Paste everything BELOW this comment into the Substack body.
--->
+---
+slug: counting-chatbot-harm
+title: "If a Chatbot Prevents One Suicide and Causes Another, How Do We Count It?"
+description: "Deployed to millions, a mental-health chatbot will both prevent and cause harm. Scale forces us to do explicitly the moral arithmetic that medicine usually keeps implicit."
+date: 2026-03-18
+tags: [AI safety, mental health, ethics]
+featured: false
+status: ready
+substack:
+  subtitle: "The moral arithmetic of deploying mental-health AI at population scale."
+  tldr: "A chatbot deployed to millions will both prevent and cause harm; counting both sides honestly is the only responsible way to decide whether to deploy."
+  tags: [chatbots, harm, population health]
+---
 
-**TL;DR — A chatbot deployed to millions will both prevent and cause harm; counting both sides honestly is the only responsible way to decide whether to deploy.**
 
 In February 2024, a 14-year-old in Florida named Sewell Setzer III died by suicide after months of daily conversation with a companion chatbot on Character.AI. His mother, Megan Garcia, filed a wrongful-death suit that October, and in May 2025 a federal judge let most of her claims proceed past a motion to dismiss, declining at that stage to treat the chatbot's outputs as protected speech and allowing them to be considered a product that could carry liability. Google and Character.AI settled the case and several related suits in early 2026, with confidential terms and no admission of fault. What the public kept from the episode is a single vivid case: a named child whose family traces his death to a specific product. A system in conversation with tens of millions of people will reach some of them at the worst moment of their lives, and evaluating it means weighing the harm it causes against the harm it prevents, rather than judging it by its most visible tragedy alone.
 
@@ -53,6 +48,3 @@ Setzer's death belongs in that calculation, and doing the arithmetic is not a wa
 - Cook RJ, Sackett DL, "The number needed to treat," *BMJ* 1995;310:452–454: https://doi.org/10.1136/bmj.310.6977.452
 - USPSTF, Breast Cancer: Screening (2024): https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening
 - Miller IW et al., "Suicide Prevention in an Emergency Department Population: The ED-SAFE Study," *JAMA Psychiatry* 2017: https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2628988
-
----
-*Originally posted on [my blog](https://veithweilnhammer.github.io/blog/counting-chatbot-harm/). If this was useful, consider subscribing and sharing.*

@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: regulate-ai-therapy-by-use
 title: "Regulate AI Therapy by Use, Not by Intent"
 description: "A general-purpose chatbot becomes a mental-health product the moment people use it as one, so rules aimed at the marketing label miss the actual practice."
-tags: [AI regulation, mental health, policy, chatbots]
-categories:
-giscus_comments: false
 date: 2026-03-04
+tags: [AI regulation, mental health, policy, chatbots]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "A general-purpose chatbot becomes a mental-health product the moment people use it as one, so rules aimed at the marketing label miss the actual practice."
+  tldr: "AI therapy rules that trigger on what a product claims to be miss how people actually use general chatbots. Regulating by use, not stated intent, closes the gap."
+  tags: [policy, mental health, technology]
 ---
+
 
 In August 2025 Illinois restricted the use of artificial intelligence in psychotherapy. The Wellness and Oversight for Psychological Resources Act forbids any company from providing, advertising, or offering therapy or psychotherapy in the state unless a licensed human professional carries the clinical judgment, and it sets civil penalties of up to $10,000 for each violation. The law still lets AI handle scheduling, billing, and records, and it stops a licensed therapist from handing the core of treatment to a model. It was written to keep firms from selling an unlicensed chatbot as a stand-in for a clinician, and on those terms it does what it set out to do.
 

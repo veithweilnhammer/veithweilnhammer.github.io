@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: prediction-is-not-understanding
 title: "Prediction Is Not Understanding, in Brains or in Machines"
 description: "A system can forecast what comes next with great accuracy while grasping nothing about why — so accurate prediction, in a brain or a model, is no proof of comprehension."
-tags: [AI, philosophy, neuroscience]
-categories:
-giscus_comments: false
 date: 2026-05-20
+tags: [AI, philosophy, neuroscience]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "Accurate forecasting and genuine understanding are different things, and telling them apart takes evidence about internal process."
+  tldr: "Ptolemy predicted the planets for centuries with a false model; accurate prediction alone, in brains or AI, does not demonstrate understanding of why."
+  tags: [prediction, understanding, interpretability]
 ---
+
 
 For roughly fourteen centuries, astronomers could predict where Mars would appear in the night sky months in advance, using a model that misdescribed the physical arrangement of the solar system. The system Claudius Ptolemy set out around 150 CE placed a motionless Earth at the center of the cosmos and had each planet ride on a small circle, the epicycle, whose center moved along a larger circle, the deferent. Ptolemy's model also used eccentric centers and the equant, an off-center point from which the motion was made to look uniform, and later astronomers added further refinements when observations required them. None of this machinery corresponds to how the solar system is actually arranged; the planets do not loop on nested circles around Earth. The model still reproduced the visible positions of the planets, including their occasional backward drift across the sky, closely enough to support astronomical tables and calendars, and it stayed the standard predictive tool until Kepler's elliptical orbits began to replace the circular machinery in the early seventeenth century.
 

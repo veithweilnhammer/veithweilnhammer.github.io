@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: largest-psychology-experiment
 title: "We Are Running the Largest Psychology Experiment in History With No Control Group"
 description: "Hundreds of millions of people now talk to conversational AI daily, with no baseline and no way to detect its effects at the population level."
-tags: [AI, psychology, public health]
-categories:
-giscus_comments: false
 date: 2026-04-29
+tags: [AI, psychology, public health]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "Mass adoption of conversational AI is an uncontrolled natural experiment in mental influence, and no one set up a way to measure it."
+  tldr: "Conversational AI reached hundreds of millions of users with no baseline and no control group, leaving population-level psychological effects effectively unmeasurable."
+  tags: [population health, measurement, natural experiment]
 ---
+
 
 Conversational AI reached population scale before anyone built the system needed to understand its psychological effects. ChatGPT, the most heavily measured example of a broader class of chat assistants, launched at the end of November 2022. It crossed 200 million weekly active users by August 2024, and by the middle of 2025 it was handling around 700 million weekly users and roughly 18 billion messages a week, about 2.5 billion a day. More than seventy percent of those messages were ordinary life rather than work: asking for advice, drafting a message, working through a decision, checking a fact. In under three years, talking to a computer went from something almost no one did to something a substantial minority of people online now do every week. In epidemiology, an exposure is something a population encounters that might affect its health, and conversational AI arrived as one with no baseline measurement, no control group, and no monitoring system built to detect what it does to people at scale.
 

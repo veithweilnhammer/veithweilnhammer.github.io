@@ -1,35 +1,17 @@
 ---
-layout: distill
+slug: every-mind-shaped-by-technology
 title: "Every Mind That Ever Lived Was Shaped by a Technology"
 description: "The fear that AI will reshape how we think repeats a worry as old as writing itself — and the long record shows the effects are real but rarely the ones the alarmists predict."
-tags: [cognition, technology, history]
-categories:
-giscus_comments: false
 date: 2026-07-01
+tags: [cognition, technology, history]
 featured: false
-
-authors:
-  - name: Veith Weilnhammer
-    url: "https://veithweilnhammer.github.io"
-    affiliations:
-      name: UC Berkeley, Helen Wills Neuroscience Institute
-
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 14px;
-  }
+status: ready
+substack:
+  subtitle: "The worry that AI will reshape how we think is as old as writing — and history shows the effects are real but rarely the ones predicted."
+  tldr: "Every dominant technology, from writing to print, has reshaped human cognition; AI continues that long history, so the useful question is which capacities it moves and at what cost."
+  tags: [cognitive offloading, history of technology, memory]
 ---
+
 
 Worry about artificial intelligence has settled on a specific fear: that handing reading, writing, and remembering to machines will hollow out the mental skills those tasks used to build. Students will let a chatbot draft their essays and never learn to think in paragraphs; professionals will stop holding facts in their heads because a model will always supply them. The same worry appears in one of the oldest surviving discussions of writing, a text roughly 2,400 years old whose target is writing itself.
 
