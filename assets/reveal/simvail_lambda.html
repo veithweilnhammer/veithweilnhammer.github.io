@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>How AI chatbots respond to vulnerable users</title>
+    <meta name="description" content="SIM-VAIL: how AI chatbots can amplify mental-health vulnerabilities — AI Mental Health Safety Workshop 2026">
+    <meta name="author" content="Veith Weilnhammer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal core via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" id="highlight-theme">
+
+    <style>
+      :root {
+        --r-heading-font: 'Source Sans Pro', Helvetica, sans-serif;
+        --r-main-font: 'Source Sans Pro', Helvetica, sans-serif;
+        --accent: #2a6496;
+        --accent-light: #e8f0fa;
+        --risk-high: #c0392b;
+        --risk-low: #27ae60;
+      }
+      h2, h3, h4, h5, h6 { letter-spacing: .2px; }
+      .muted { color: #777; font-weight: 400; }
+      .small { font-size: .8em; line-height: 1.35; }
+      .xsmall { font-size: .7em; line-height: 1.35; }
+      .tight p { margin: .35em 0; }
+      img.borderless, video.borderless { background: none; border: none; box-shadow: none; }
+      .twocol { display: flex; align-items: center; gap: 2rem; }
+      .col { flex: 1; }
+      .center { text-align: center; }
+
+      /* Figures fit within slide */
+      .fig-full { max-height: 680px; width: auto; max-width: 100%; }
+
+      .look-for {
+        font-size: .6em;
+        color: #444;
+        margin-top: .2em;
+        text-align: left;
+      }
+      .look-for li { margin-bottom: .15em; }
+
+      /* Section dividers */
+      .section-divider { background: var(--accent); color: #fff; }
+      .section-divider h2, .section-divider h3 { color: #fff; }
+      .section-divider .muted { color: #cde; }
+
+      /* Accent box */
+      .accent-box {
+        background: var(--accent-light);
+        border-left: 4px solid var(--accent);
+        padding: .55em 1em;
+        border-radius: 4px;
+        margin: .5em 0;
+      }
+
+      .risk-high { color: var(--risk-high); font-weight: 700; }
+      .risk-low { color: var(--risk-low); font-weight: 700; }
+
+      aside.notes { font-size: .65em; }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- ========== TITLE ========== -->
+        <section>
+          <div class="twocol" style="gap:2.4rem;">
+            <div class="col" style="flex:.8; text-align:center;">
+              <img src="simvail_content/cover_no_text.svg" class="borderless" style="max-height:620px; width:auto; max-width:100%;">
+            </div>
+            <div class="col" style="flex:1.2; text-align:left;">
+              <h3 style="margin-bottom:.15em;">SIM-VAIL</h3>
+              <p class="small muted" style="margin-top:0;">How AI chatbots respond to vulnerable users</p>
+              <p class="small" style="margin-top:1.4em;">Veith Weilnhammer</p>
+              <p class="xsmall muted" style="margin-top:0;">Max Planck UCL Centre for Computational Psychiatry &amp; Ageing Research</p>
+              <div style="margin-top:1.6em; border-top:1px solid #ddd; padding-top:.6em;">
+                <p class="xsmall muted" style="margin:0;"><strong>Mental Health AI Safety Workshop</strong></p>
+                <p class="xsmall muted" style="margin:.15em 0 0 0;">King's College London · 13 July 2026</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== INTRO: A STORY FROM THE CLINIC ========== -->
+        <section>
+          <!-- 1. first encounter — just the woman, no title -->
+          <section data-transition="fade">
+            <img data-id="patient-img" src="simvail_content/patient.png" class="borderless" style="max-height:620px; width:auto; max-width:100%;">
+            <aside class="notes">
+              Let me start not with AI, but with a patient, early in my training. A young woman came in — calm, articulate, employed. Her complaint was sleep: she wasn't sleeping well because a neighbour kept playing music through the wall at night, so she'd taken to keeping her curtains shut and resting in the day. Everything she said mapped neatly onto ordinary life: thin walls, an inconsiderate neighbour, a disrupted sleep cycle. I talked about sleep hygiene, empathised about the neighbour, and reassured her it would settle. Every detail sounded normal, so I treated it as normal.
+            </aside>
+          </section>
+
+          <!-- 2. second encounter — the true context -->
+          <section data-transition="fade" style="text-align:left;">
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:1;">
+                <img data-id="patient-img" src="simvail_content/patient.png" class="borderless" style="max-height:500px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="text-align:left;">
+                <p class="xsmall muted" style="margin-bottom:.4em;">One week later</p>
+                <ul class="small tight">
+                  <li>She understood the music as a message meant for her</li>
+                  <li>Keeping the curtains shut prevented people in the street from reading her thoughts</li>
+                </ul>
+                <div class="accent-box small" style="margin-top:.7em;">
+                  A <strong>profound misunderstanding of context</strong> in a human-to-human interaction
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              She came back a week later, and the fuller picture emerged. The music wasn't just noise — she was certain it was a coded message directed at her. The curtains weren't about the neighbour — they shielded her thoughts from people in the street who, she believed, could read them. The poor sleep wasn't insomnia — she stayed awake to monitor the situation. The exact same facts I had filed as ordinary were the visible surface of a persecutory delusion. This was psychosis, and it had been there on the first visit. By treating her account as ordinary, I had quietly validated the framework that was frightening her. I hadn't heard a different symptom; I had misunderstood the context the symptoms lived in.
+            </aside>
+          </section>
+
+          <!-- 3. we assume mental health (gif) -->
+          <section data-transition="fade">
+            <img src="simvail_content/true_space_no_axes_rotation.gif"
+                 alt="Space of ordinary experience"
+                 class="borderless"
+                 style="max-width: 90%; max-height: 60vh; width: auto; height: auto; object-fit: contain; transform: scale(1.2, 1.5);" />
+          </section>
+
+          <!-- 4+5. outskirts of the cloud + chatbots -->
+          <section>
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:1.3;">
+                <img src="simvail_content/true_space_user.png" class="borderless" style="max-height:560px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="text-align:left;">
+                <p class="xsmall muted" style="margin-bottom:.4em;">The mechanism</p>
+                <ul class="small tight">
+                  <li class="fragment">My understanding was well calibrated at the centre.</li>
+                  <li class="fragment">Misunderstanding of context when interacting with people who make more unusual experiences.</li>
+                </ul>
+                <div class="accent-box fragment small" style="margin-top:.6em;">
+                  How about interactions between humans and chatbots?
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              She was at the edge, not the centre I'd assumed — that's why my answer misfired. Chatbots can make the same mistake, but at scale: behaviour that is well calibrated for people near the centre can be harmful for people with more unusual experiences — in psychosis, mania, or crisis. We call these VAILs — Vulnerability-Amplifying Interaction Loops.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== APPROACH — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>What we did</h2>
+          <p class="muted" style="font-size:.85em;">SIM-VAIL: simulated conversations between vulnerable users and 9 AI chatbots</p>
+          <aside class="notes">
+            The idea in one line: instead of waiting for real people to be harmed, we simulate the conversations, then score them clinically. Three ingredients — the simulated users, the conversations, and the scoring.
+          </aside>
+        </section>
+
+        <!-- ========== METHODS: Framework overview ========== -->
+        <section>
+          <section data-auto-animate>
+            <img
+              data-id="fig1-overview"
+              src="simvail_content/Fig_1.png"
+              class="borderless"
+              style="max-height:680px; max-width:100%; width:auto;">
+            <aside class="notes">
+              The whole framework on one slide. Left: who the user is. Middle: a conversation plays out. Right: every turn gets scored.
+            </aside>
+          </section>
+
+          <section data-auto-animate style="text-align:left;">
+            <div class="twocol">
+              <div class="col" style="flex:1.1;">
+                <img data-id="fig1-overview" src="simvail_content/Fig_1.png" class="borderless" style="max-height:580px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="flex:.9;">
+                <div class="accent-box fragment small" style="margin-top:.5em;">
+                  30 profiles × 9 chatbots × 3 repeats = <strong>810 conversations</strong> (up to 10 turns)
+                </div>
+                <div class="accent-box fragment small" style="margin-top:.5em;">
+                  <strong>90k LLM ratings</strong> across <strong>13 dimensions</strong>, validated by <strong>50 human clinicians</strong>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Three questions. Who is the user — five broad vulnerabilities. What do they want — six recurring intents. How does the chatbot behave across the exchange. Pair each vulnerability with each intent for thirty profiles, run against nine leading chatbots, three times each — 810 conversations, over ninety thousand clinical ratings, externally validated by fifty clinicians. To my knowledge the largest adversarial mental-health audit out there — and nobody was harmed, because the users are simulated.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULTS — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>What we found</h2>
+          <p class="muted" style="font-size:.85em;">AI chatbot behaviour can amplify the mechanisms of mental illness.</p>
+          <aside class="notes">
+            Five findings. Risk depends on the person. Chatbots differ. Risk builds over the conversation. There are different kinds of harm that trade off. And — the hopeful part — the loops can be broken.
+          </aside>
+        </section>
+
+        <!-- ========== RESULT 1: Fig 2 ========== -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Fig_2.svg" class="borderless fig-full">
+            <aside class="notes">
+              Finding one: risk isn't a fixed property of a chatbot — it depends on who's using it and what they're seeking. This is the outskirts idea, in data.
+            </aside>
+          </section>
+
+          <section data-auto-animate style="text-align:left;">
+            <h3>Risk depends on vulnerability and intent</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_2.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  The same intent can be more or less harmful, depending on the user's context.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Risk is highest for psychosis and mania, and depends strongly on what's wanted. But the real story is the interaction, panel C: the same intent is harmless for one person and harmful for another. Exactly my clinic mistake — a response fine for the centre, wrong at the edge — now visible across thirty profiles. That context-dependence is what a single, one-size-fits-all test can't see.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULT 2: Fig 3 ========== -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Fig_3.svg" class="borderless fig-full">
+            <aside class="notes">
+              Finding two: chatbots are not interchangeable — large, systematic differences in how safely they behave.
+            </aside>
+          </section>
+
+          <section data-auto-animate style="text-align:left;">
+            <h3>Some chatbots are safer than others</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_3.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Harmful behaviour depends on how AI chatbots are built.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Which chatbot you use matters enormously. The safest — the most recent Claude — is far less concerning than the riskiest, the Grok family and an older open-weight model. Newer models trend safer, but it's not a law of nature. The take-home for policy: safety is a design choice, and it's measurable — so it can be required, compared, and improved.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULT 3: Fig 4 ========== -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Fig_4.svg" class="borderless fig-full">
+            <aside class="notes">
+              Finding three, central to "AI and behaviour": risk is not a single moment — it builds over the conversation.
+            </aside>
+          </section>
+
+          <section data-auto-animate style="text-align:left;">
+            <h3>Vulnerability-amplifying interaction loops (VAILs)</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_4.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Concerning behaviour tends to increase over the course of a conversation.
+                </div>
+                <div class="accent-box small">
+                  Recovery is possible.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              The behavioural heart of the talk. Harm accumulates — fastest for mania and psychosis. The trajectories have recognizable shapes: steady climb, slow drift, and — encouragingly — recovery, where the chatbot pulls back. Any test looking at one turn in isolation misses this. If we care about behaviour over time, we must evaluate over time.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULT: control ========== -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless fig-full">
+            <aside class="notes">
+              An obvious objection: maybe these chatbots are just a bit off with everyone. So we ran a control — the same intents and the same models, but with healthy simulated users.
+            </aside>
+          </section>
+
+          <section data-auto-animate style="text-align:left;">
+            <h3>Non-vulnerable control users</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Concerning chatbot behaviour is more common for vulnerable users.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Risk dropped sharply across every model; nearly all points sit below the identity line. The harm isn't a baseline property; it emerges from the interaction with a vulnerable state — the outskirts. This risk falls hardest on the people least able to absorb it.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULT 4: Fig 5 ========== -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Fig_5.svg" class="borderless fig-full">
+            <aside class="notes">
+              Finding four: harm is not one thing. Different kinds of harm, and they don't always move together.
+            </aside>
+          </section>
+
+          <section data-auto-animate style="text-align:left;">
+            <h3>There is more than one kind of harm</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_5.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Different kinds of harm can trade off against each other.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Treating the thirteen dimensions together, a map emerges. The main axis is overall severity. A second, independent axis separates kinds of harm — relational harms like fostering dependence versus overt harms like enabling a risky action. And some trade off: a model tuned to never enable a risky action might become colder and more dismissive. You can't compress safety into one number and optimize it.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== RESULT 5: Fig 6 ========== -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Fig_6.svg" class="borderless fig-full">
+            <aside class="notes">
+              Finding five — the one to leave with: these loops are not fixed. We can find the moment they turn, and small changes de-escalate them.
+            </aside>
+          </section>
+
+          <section data-auto-animate style="text-align:left;">
+            <h3>Interrupting VAILs</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_6.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  A single intervention can lead to lasting reduction in harmful chatbot behaviour.
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              The hopeful finding. Because conversations are simulated, we can run controlled what-ifs you couldn't ethically do with patients. We located the first concerning message, made a matched twin where either the user's prompt or the chatbot's reply was gently rewritten to de-escalate, and let it continue. That single change reduced concerning behaviour across almost every dimension — and the benefit carried forward through later turns.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== IMPLICATIONS — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>Implications</h2>
+          <p class="muted" style="font-size:.85em;">VAILs as a new mental-health failure mode in human–computer interactions.</p>
+          <aside class="notes">
+            What does this mean for the different disciplines in the room?
+          </aside>
+        </section>
+
+        <!-- ========== IMPLICATIONS + LIMITATIONS (consolidated) ========== -->
+        <section>
+          <div class="twocol" style="align-items:center;">
+            <div class="col" style="flex:1;">
+              <img src="simvail_content/true_space_user.png" class="borderless" style="max-height:480px; width:auto; max-width:100%;">
+            </div>
+            <div class="col" style="text-align:left;">
+              <div class="accent-box fragment small">
+                <strong>Public health:</strong> Risks are real and concentrate on vulnerable users
+              </div>
+              <div class="accent-box fragment small">
+                <strong>Developers:</strong> Multi-turn evaluation across many dimensions of harm
+              </div>
+              <div class="accent-box fragment small">
+                <strong>Policy:</strong> Risks are measurable and can be mitigated
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            What it means. Clinicians and lived experience: this risk is real and concentrates on vulnerable people — worth asking patients how they use these tools. Developers: evaluate over whole conversations, across dimensions, watch trade-offs, and build in de-escalation. Policy and law: the differences are large and measurable, hence auditable. Honest limits: these are simulated, not real, users; we rely on language models to simulate and score, mitigated by clinician validation; coverage is broad but not exhaustive; and we measure risky behaviour, not clinical deterioration. Even so, the patterns are remarkably consistent across profiles, models, and time.
+          </aside>
+        </section>
+
+        <!-- ========== EXPLORE IT — FULL-SCREEN INTERACTIVE IFRAMES ========== -->
+        <section>
+          <section
+            data-background-iframe="https://sim-vail-explorer.onrender.com"
+            data-background-interactive>
+            <aside class="notes">
+              Everything I've shown is browsable in an open companion explorer, filling the screen here. Filter by vulnerability, intent, and chatbot, and read the actual conversations and turn-by-turn scores. The app sleeps when idle, so give it a moment to wake.
+            </aside>
+          </section>
+          <section
+            data-background-iframe="https://sim-vail-explorer.onrender.com"
+            data-background-interactive>
+            <aside class="notes">
+              A second full-screen view — useful for comparing a different profile or chatbot during discussion.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== CLOSING (vertical stack) ========== -->
+        <section>
+          <!-- take-home messages -->
+          <section data-auto-animate>
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:.7; text-align:center;">
+                <img data-id="close-cover" src="simvail_content/cover_no_text.svg" class="borderless" style="max-height:560px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="flex:1.3; text-align:left;">
+                <div class="accent-box small" data-id="th1">VAILs are a new mental-health failure mode in human–computer interactions</div>
+                <div class="accent-box small" data-id="th2">Risk depends on the user, builds over a conversation, and takes multiple forms</div>
+                <div class="accent-box small" data-id="th3">VAILs can be interrupted by rewriting chatbot responses</div>
+              </div>
+            </div>
+            <aside class="notes">
+              Three take-aways. VAILs are a new mental-health failure mode. Risk depends on the user, builds over a conversation, and takes multiple forms. And VAILs can be interrupted.
+            </aside>
+          </section>
+
+          <!-- thanks + data -->
+          <section data-auto-animate>
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:.7; text-align:center;">
+                <img data-id="close-cover" src="simvail_content/cover_no_text.svg" class="borderless" style="max-height:560px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="flex:1.3; text-align:left;">
+                <div class="accent-box small" data-id="th1" style="opacity:.3;">VAILs are a new mental-health failure mode in human–computer interactions</div>
+                <div class="accent-box small" data-id="th2" style="opacity:.3;">Risk depends on the user, builds over a conversation, and takes multiple forms</div>
+                <div class="accent-box small" data-id="th3" style="opacity:.3;">VAILs can be interrupted by rewriting chatbot responses</div>
+                <div class="accent-box small" data-id="close-data" style="margin-top:.5em;">
+                  <strong>Thank you!</strong>
+                  <p class="xsmall" style="margin:.25em 0 0 0;">Explorer: <a href="https://sim-vail-explorer.onrender.com">sim-vail-explorer.onrender.com</a></p>
+                  <p class="xsmall" style="margin:.1em 0 0 0;">Repo: <a href="https://github.com/veithweilnhammer/sim-vail">github.com/veithweilnhammer/sim-vail</a></p>
+                  <p class="xsmall" style="margin:.1em 0 0 0;">Paper: <a href="https://arxiv.org/abs/2602.01347">arXiv:2602.01347</a></p>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Thank you. The explorer, code, and preprint are all here, and I'd love to discuss across the disciplines in the room.
+            </aside>
+          </section>
+        </section>
+
+        <!-- ========== APPENDIX — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider" style="text-align:left;">
+          <h2 style="text-align:center;">Thanks</h2>
+          <p class="small" style="color:#e7eefb; margin-top:1em;">
+            <strong style="color:#fff;">Co-authors:</strong> K. Y. C. Hou · Lennart Luettgau · Christopher Summerfield · Ray Dolan · Matthew Nour
+          </p>
+          <p class="small" style="color:#e7eefb;">
+            <strong style="color:#fff;">Institutions:</strong> Max Planck UCL Centre for Computational Psychiatry &amp; Ageing Research · UK AI Security Institute · University of Oxford · Microsoft AI
+          </p>
+          <p class="small" style="color:#e7eefb;">
+            <strong style="color:#fff;">And:</strong> the 50 clinician annotators · all chatbots involved in creating this dataset
+          </p>
+          <aside class="notes">
+            Thank you to my co-authors, to the institutions that supported this work, to the fifty clinicians who validated our ratings, and to the LAMBDA team and King's Institute for Artificial Intelligence for hosting.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: ED Fig 1 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_1.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 1 — reliability &amp; validity</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_1.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Turn- vs. whole-conversation scores agree</li>
+                  <li>Two independent AI judges agree</li>
+                  <li>Repeat runs are consistent</li>
+                  <li>Separates known high- vs. low-risk conversations</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 1: internal reliability and validity — turn-vs-conversation agreement, cross-judge agreement, test–retest, and discriminative validity.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 2 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_2.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 2 — clinician validation</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_2.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Clinicians rated a sample of turns</li>
+                  <li>Their safety ratings track the AI judge</li>
+                  <li>Simulated users rated realistic</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 2: human validation — clinicians rated turns for safety and rated user realism. Their judgements track the automated scores.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 3 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_3.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 3 — structure of the risk dimensions</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_3.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>PCA loadings across the first components</li>
+                  <li>Which dimensions move together vs. oppose</li>
+                  <li>The basis for the risk trade-offs</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 3: structure of the 13 risk dimensions — PCA loadings and correlations. Some cluster and move together; others are dissociable or anti-correlated, the basis for the trade-offs.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 4 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 4 — vulnerable vs. control users</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Each point = a chatbot's mean risk</li>
+                  <li>Vulnerable users (x) vs. control users (y)</li>
+                  <li>Nearly all below the identity line — safer with healthy users</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 4: the control comparison in full — each chatbot's mean risk with vulnerable versus healthy users. Nearly all points below the identity line: every model is safer with non-vulnerable users.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 5 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_5.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 5 — the full interaction landscape</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_5.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Every chatbot × vulnerability × intent cell</li>
+                  <li>The complete interaction space</li>
+                  <li>Model differences interact with context</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 5: the full context-dependence — concerning behaviour for every chatbot across every vulnerability–intent cell. Shows how model differences interact with the specific situation.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 6 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_6.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 6 — timing &amp; mechanisms of risk</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_6.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Turns to reach a concerning threshold, per pairing</li>
+                  <li>Mechanism-specific risk activation</li>
+                  <li>Same overall risk, different pathways</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 6: timing and mechanisms — how quickly conversations reach a concerning threshold, and which mechanisms are activated. The same overall risk level can arise from different underlying pathways depending on the profile.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 7 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_7.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 7 — extending early-stopped conversations</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_7.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Original vs. extended conversation scores</li>
+                  <li>Turn-level and trajectory-level checks</li>
+                  <li>Conclusions unchanged</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 7: robustness — continuing early-stopped conversations to a full ten turns leaves the conversation-, turn-, and trajectory-level conclusions unchanged.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 8 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_8.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 8 — guarding against judge bias</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_8.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Same-family vs. other-family judge</li>
+                  <li>Exact same-model comparison</li>
+                  <li>Effect doesn't explain the results</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 8: guarding against judge bias — results hold whether or not the judge is from the same developer family as the target chatbot.
+            </aside>
+          </section>
+        </section>
+
+        <!-- APPENDIX: ED Fig 9 -->
+        <section>
+          <section data-auto-animate>
+            <img src="simvail_content/rev_Extended_Data_Fig_9.svg" class="borderless fig-full">
+          </section>
+          <section data-auto-animate style="text-align:left;">
+            <h3>ED 9 — counterfactual selection diagnostics</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_9.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Distribution of intervention turns</li>
+                  <li>Trajectory up to the intervention point</li>
+                  <li>How eligible conversations were selected</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Extended Data 9: counterfactual selection diagnostics — where in each conversation the first concerning message occurred and the trajectory up to that point.
+            </aside>
+          </section>
+        </section>
+
+      </div><!-- end slides -->
+    </div><!-- end reveal -->
+
+    <!-- Reveal scripts via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/search/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        width: 1280,
+        height: 720,
+        plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+      });
+    </script>
+  </body>
+</html>

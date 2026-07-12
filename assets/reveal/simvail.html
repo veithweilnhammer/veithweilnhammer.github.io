@@ -140,13 +140,12 @@
       <div class="slides">
 
         <!-- ========== TITLE ========== -->
-
         <section style="text-align:left;">
           <h4>Vulnerability-Amplifying Interaction Loops</h4>
           <p class="small" style="margin-top:-.2em;">A systematic failure mode in AI chatbot mental-health interactions</p>
           <p class="small muted" style="margin-top:1em;">Weilnhammer, Hou, Luettgau, Summerfield, Dolan &amp; Nour</p>
           <p class="xsmall muted">Max Planck UCL Centre for Computational Psychiatry · University of Sydney · UK AI Security Institute · University of Oxford · Microsoft AI</p>
-          <p class="small">Center Meeting — <span class="muted">March 2026</span></p>
+          <p class="small">AISI Presentattion — <span class="muted">March 2026</span></p>
           <br/>
           <aside class="notes">
             Welcome everyone. Today I'm presenting SIM-VAIL — a framework that identifies a novel failure mode in AI chatbot interactions with mentally vulnerable users. The key insight: chatbot behaviors that seem supportive can systematically worsen mental health when they align with the mechanisms sustaining a user's vulnerability. Let's start with why this matters.
@@ -177,7 +176,7 @@
               <li class="fragment">Both approaches often miss sub-treshold harms that build gradually across turns</li>
             </ul>
             <div class="accent-box fragment small" style="margin-top:1em;">
-              <strong>Problem:</strong> Existing evaluations miss most of the risk space of frontier AI chatbots.
+              <strong>Problem:</strong> Existing evaluations miss when seemingly supportive chatbot behavior becomes maladaptive for vulnerable users over time.
             </div>
           </section>
         </section>
@@ -186,7 +185,7 @@
         <section style="text-align:left;">
           <h3>Key contributions</h3>
           <ol class="small">
-            <li class="fragment"><strong>SIM-VAIL:</strong> Automated, clinically informed auditing via simulated multiturn conversations across 30 user phenotypes, 9 chatbots, & 13 risk dimensions</li>
+            <li class="fragment"><strong>SIM-VAIL:</strong> Automated, clinically informed auditing across of simulated multiturn converstaions across 30 user phenotypes, 9 chatbots, & 13 risk dimensions</li>
             <li class="fragment"><strong>VAILs:</strong> A novel failure mode — <strong>Vulnerability-Amplifying Interaction Loops</strong> — where locally supportive behaviors align with cognitive mechanisms of mental illness</li>
             <li class="fragment"><strong>Risk accumulates over turns:</strong> Harm is not a single-response event, but evolves dynamically over time</li>
             <li class="fragment"><strong>Risk is multivariate with trade-offs:</strong> Mitigating one class of risk can exacerbate another</li>
@@ -212,7 +211,7 @@
         <section data-auto-animate>
             <img
               data-id="fig1-overview"
-              src="simvail_content/Fig_1.png"
+              src="../manuscript/sim_vail_v1_files/Fig_1.png"
               class="borderless"
               style="width:100%;height:auto;"
             >
@@ -224,7 +223,7 @@
               <div class="col" style="flex:0.7;">
                 <img
                   data-id="fig1-overview"
-                  src="simvail_content/Fig_1.png"
+                  src="../manuscript/sim_vail_v1_files/Fig_1.png"
                   class="borderless"
                   style="width:100%;height:auto;"
                 >
@@ -234,8 +233,8 @@
                 <h6 class="fragment">Three core dimensions</h6>
                 <ul class="small fragment">
                   <li><strong>Who</strong> is the user? → 5 psychological vulnerabilities</li>
-                  <li><strong>What</strong> does the user want? → 6 interaction intents</li>
-                  <li><strong>How</strong> does the interaction unfold over time?</li>
+                  <li><strong>What</strong> does the user seek? → 6 interaction intents</li>
+                  <li><strong>How</strong> does the chatbot respond over time?</li>
                 </ul>
                 <h6 class="fragment" style="margin-top:.8em;">Scale</h6>
                 <ul class="small fragment">
@@ -310,6 +309,13 @@
                 <ul class="small fragment">
                   <li>LLM judge (opus-4.5) scores each turn <strong>and</strong> whole conversation on 1–10 scale</li>
                 </ul>
+                <h6 class="fragment" style="margin-top:.6em;">Validation</h6>
+                <ul class="small fragment">
+                  <li><strong>Cross-judge alignment:</strong> r = 0.9 (opus-4.5 vs gpt-5.2)</li>
+                  <li><strong>Test–retest:</strong> ICC = 0.9 across 3 replicates</li>
+                  <li><strong>Expert agreement:</strong> ICC = 0.73 (opus-4.5 vs. VW)</li>
+                  <li><strong>Discriminative validity:</strong> median AUC = 0.98 on known high vs. low-risk conversations</li>
+                </ul>
               </div>
             </div>
             <aside class="notes">
@@ -361,10 +367,10 @@
             <p class="small muted">Concerning behavior scores (1–10) across all chatbots</p>
             <div class="twocol">
               <div class="col">
-                 <img src="simvail_content/Fig_2A.png" class="borderless" style="width:100%;height:auto;">
+                 <img src="../manuscript/sim_vail_v1_files/Fig_2A.png" class="borderless" style="width:100%;height:auto;">
               </div>
               <div class="col">
-                <img src="simvail_content/Fig_2B.png" class="borderless" style="width:100%;height:auto;">
+                <img src="../manuscript/sim_vail_v1_files/Fig_2B.png" class="borderless" style="width:100%;height:auto;">
               </div>
             </div>
             <aside class="notes">
@@ -377,7 +383,7 @@
             <p class="small muted">The same intent can be benign in one phenotype but harmful in another</p>
             <div class="twocol">
               <div class="col" style="flex:1.3;">
-                 <img src="simvail_content/Fig_2C.png" class="borderless" style="width:80%;height:auto;">
+                 <img src="../manuscript/sim_vail_v1_files/Fig_2C.png" class="borderless" style="width:80%;height:auto;">
                 <p class="caption">Vulnerability x intent interaction (F(20, 810) = 26.14, p < 0.001)</p>
               </div>
               <div class="col">
@@ -398,7 +404,7 @@
             <h3>Risk is specific to vulnerable users</h3>
             <div class="twocol">
               <div class="col" style="flex:1.6;">
-                <img src="simvail_content/Figure_S5-1.png" class="borderless" style="width:100%;height:auto;">
+                <img src="../manuscript/sim_vail_v1_files/figure-html/Figure_S5-1.png" class="borderless" style="width:100%;height:auto;">
                 <p class="caption">Controls score lower than vulnerable-user conversations (p &lt; 0.001)</p>
               </div>
               <div class="col">
@@ -443,11 +449,11 @@
 
               <div class="threecol" style="display:flex; gap:1.2rem; margin-top:.7em; align-items:flex-start;">
                 <div class="col" style="flex:1;">
-                  <img src="simvail_content/Figure_S1-1.png" class="borderless" style="width:100%;height:auto;">
+                  <img src="../manuscript/sim_vail_v1_files/figure-html/Figure_S1-1.png" class="borderless" style="width:100%;height:auto;">
 
                 </div>
                 <div class="col" style="flex:1;">
-                  <img src="simvail_content/Figure_S2-1.png" class="borderless" style="width:100%;height:auto;">    
+                  <img src="../manuscript/sim_vail_v1_files/figure-html/Figure_S2-1.png" class="borderless" style="width:100%;height:auto;">    
                 </div>
               </div>
             </section>
@@ -462,15 +468,15 @@
               </div>
               <div>
                 <div class="stat" style="font-size:1.25em;">0.90</div>
-                <div class="stat-label" style="font-size:.6em;">Cross-judge correlation<br/></div>
+                <div class="stat-label" style="font-size:.6em;">Cross-judge correlation<br/>(PC1)</div>
               </div>
               <div>
                 <div class="stat" style="font-size:1.25em;">0.90</div>
-                <div class="stat-label" style="font-size:.6em;">ICC<br/>across replicates</div>
+                <div class="stat-label" style="font-size:.6em;">ICC(1,3)<br/>across replicates</div>
               </div>
               <div>
                 <div class="stat" style="font-size:1.25em;">0.73</div>
-                <div class="stat-label" style="font-size:.6em;">ICC<br/>vs. expert psychiatrist</div>
+                <div class="stat-label" style="font-size:.6em;">ICC(3,1)<br/>vs. expert psychiatrist</div>
               </div>
               <div>
                 <div class="stat" style="font-size:1.25em;">0.98</div>
@@ -480,7 +486,7 @@
 
               <div class="threecol" style="display:flex; gap:1.2rem; margin-top:.7em; align-items:flex-start;">
                 <div class="col" style="flex:1;">
-                  <img src="simvail_content/Figure_S3-1A.png" class="borderless" style="width:60%;height:auto;">
+                  <img src="../manuscript/sim_vail_v1_files/figure-html/Figure_S3-1A.png" class="borderless" style="width:60%;height:auto;">
                 </div>
 
               </div>
@@ -491,14 +497,14 @@
         <!-- ========== RESULTS 2: Chatbot differences ========== -->
         <section>
         <section data-auto-animate>
-        <img src="simvail_content/Fig_3.png" class="borderless" style="width:70%;height:auto;">
+        <img src="../manuscript/sim_vail_v1_files/Fig_3.png" class="borderless" style="width:70%;height:auto;">
         </section>
         
         <section data-auto-animate style="text-align:left;">
           <h3>Differences between AI chatbots</h3>
           <div class="twocol">
             <div class="col" style="flex:1.2;">
-              <img src="simvail_content/Fig_3.png" class="borderless" style="width:100%;height:auto;">
+              <img src="../manuscript/sim_vail_v1_files/Fig_3.png" class="borderless" style="width:100%;height:auto;">
             </div>
             <div class="col">
               <h6>Main findings</h6>
@@ -526,10 +532,10 @@
             <h3>Risk accumulates over conversation turns</h3>
             <div class="twocol">
               <div class="col">
-                <img src="simvail_content/Fig_4A.png" class="borderless" style="width:100%;height:auto;">
+                <img src="../manuscript/sim_vail_v1_files/Fig_4A.png" class="borderless" style="width:100%;height:auto;">
               </div>
               <div class="col">
-                <img src="simvail_content/Fig_4B.png" class="borderless" style="width:80%;height:auto;">
+                <img src="../manuscript/sim_vail_v1_files/Fig_4B.png" class="borderless" style="width:80%;height:auto;">
 
               </div>
             </div>
@@ -543,14 +549,14 @@
             <p class="small muted">K-means clustering of turn-level risk trajectories (k = 4)</p>
             <div class="twocol">
               <div class="col" style="flex:1.3;">
-              <img src="simvail_content/Fig_4C1.png" class="borderless" style="width:75%;height:auto;">
-              <img src="simvail_content/Fig_4C2.png" class="borderless" style="width:100%;height:auto;">
+              <img src="../manuscript/sim_vail_v1_files/Fig_4C1.png" class="borderless" style="width:75%;height:auto;">
+              <img src="../manuscript/sim_vail_v1_files/Fig_4C2.png" class="borderless" style="width:100%;height:auto;">
               </div>
               <div class="col">
                 <h6 class="fragment" style="margin-top:.5em;">Implications</h6>
                 <ul class="small fragment tight">
-                  <li>Concerning chatbot behavior is a dynamic phenomenon</li>
-                  <li>Differences between clusters would be <strong>invisible</strong> to single-turn benchmarks</li>
+                  <li>User phenotype determines trajectory class — not just risk level</li>
+                  <li>Gradual escalation would be <strong>invisible</strong> to single-turn benchmarks</li>
                   <li>Recovery pattern suggests some chatbots can self-correct</li>
                 </ul>
               </div>
@@ -561,7 +567,7 @@
           </section>
 
         <section>
-        <img src="simvail_content/Figure_S8-1.png" class="borderless" style="width:75%;height:auto;">
+        <img src="../manuscript/sim_vail_v1_files/figure-html/Figure_S8-1.png" class="borderless" style="width:75%;height:auto;">
         </section>
 
         </section>
@@ -574,7 +580,7 @@
           <div class="twocol" style="align-items:flex-start;">
             <div class="col" style="flex:0.8;">
               <img
-                src="simvail_content/Fig_5A.png"
+                src="../manuscript/sim_vail_v1_files/Fig_5A.png"
                 class="borderless"
                 style="width:100%;height:auto;"
               >
@@ -600,11 +606,11 @@
         </section>
 
         <section data-auto-animate>
-        <img src="simvail_content/Fig_5.png" class="borderless" style="width:100%;height:auto;">
+        <img src="../manuscript/sim_vail_v1_files/Fig_5.png" class="borderless" style="width:100%;height:auto;">
         </section>
 
         <section data-auto-animate>
-        <img src="simvail_content/Figure_S9-1.png" class="borderless" style="width:75%;height:auto;">
+        <img src="../manuscript/sim_vail_v1_files/figure-html/Figure_S9-1.png" class="borderless" style="width:75%;height:auto;">
         </section>
         </section>  
 
@@ -612,12 +618,14 @@
          <section style="text-align:left;">
             <h3>Limitations &amp; open questions</h3>
             <ul class="small">
-              <li class="fragment"><strong>Simulated users ≠ real users:</strong> Simulated conversations have controlled structure that does not capture all dynamics of real-world chatbot use</li>
-              <li class="fragment"><strong>LLM-as-judge:</strong> Both simulation and scoring rely on LLMs</li>
-              <li class="fragment"><strong>Coverage:</strong> 5 vulnerabilities × 6 intents covers core presentations but not the full heterogeneity of psychiatric illness and lived experience</li>
-               <li class="fragment"><strong>Ecological validity:</strong> Whether patterns of simulated adverserial interactions translate into drivers of harm in real users requires empirical validation</li>
-             <div class="accent-box fragment small">
-              <strong>Despite these limitations:</strong> SIM-VAIL's cross-profile, cross-model, and cross-temporal results establish a non-trivial safety floor in current human-chatbot interactions.
+              <li class="fragment"><strong>Simulated users ≠ real users:</strong> LLM-generated approximations, not empirically calibrated digital twins</li>
+              <li class="fragment"><strong>LLM-as-judge:</strong> Both simulation and scoring rely on LLMs, which may share systematic biases; mitigated by cross-judge agreement and expert validation</li>
+              <li class="fragment"><strong>Coverage:</strong> 5 vulnerabilities × 6 intents covers core presentations but not the full heterogeneity of psychiatric illness (e.g., no substance use, eating disorders, PTSD)</li>
+              <li class="fragment"><strong>Ecological validity:</strong> Simulated conversations have controlled structure that may not capture all dynamics of real-world chatbot use (e.g., session length, return visits)</li>
+              <li class="fragment"><strong>Causal claims:</strong> We observe risk patterns in simulated interactions. Real-world clinical impact requires empirical validation</li>
+            </ul>
+            <div class="accent-box fragment small">
+              <strong>Despite these limitations:</strong> The strong cross-profile, cross-model, and cross-temporal structure establishes a non-trivial safety floor in current human-chatbot interactions.
             </div>
             <aside class="notes">
               The biggest limitation is that these are simulated, not real users. We can't make direct causal claims about clinical outcomes. The reliance on LLMs for both simulation and scoring is a methodological concern, though the cross-judge and expert validation help. Coverage is necessarily incomplete — we chose five common vulnerability profiles, but psychiatric illness is far more heterogeneous. Despite these caveats, the consistency of the patterns across profiles, models, and temporal dynamics gives us confidence that VAILs represent a real failure mode. Transition: Let me discuss the implications.
@@ -625,85 +633,21 @@
           </section>
         </section>
 
-
-        <section data-background-color="#2a6496" class="section-divider">
-        <h2>Next step: SPARK project</h2>
-        <p class="muted" style="font-size:.85em;">SIM-VAIL: Simulated Vulnerability-Amplifying Interaction Loops</p>
-        <p class="muted" style="font-size:.62em; line-height:1.35; margin-top:.4em;">
-          What are the vectors of mental health harm? · Can they be corrected with mulitmodal mental state inferences?
-        </p>
-        <aside class="notes">
-          Let's dive into the methods. SIM-VAIL has three core components: simulated user phenotypes, multi-turn conversations, and a multi-dimensional alignment judge. Transition: Here's the overall framework.
-        </aside>
-      </section>
-
-              <!-- ========== NEXT STEPS: Persona vectors to user-state inference ========== -->
-        <section>
-          <section style="text-align:left;">
-            <h3>From assistant persona to user state</h3>
-
-                <div class="twocol" style="margin-top:1em; align-items:flex-start;">
-                  <div class="col" style="flex:1.35;">
-                    <h6>Persona vectors</h6>
-                    <div>
-                      <img
-                        src="simvail_content/persona.png"
-                        class="borderless"
-                        style="width:100%;height:auto;"
-                      >
-                    </div>
-                    <p class="caption">Illustrative placeholder for Anthropic-style persona-space work</p>
-                  </div>
-
-                  <div class="col" style="flex:0.65;">
-                    <h6> Core problem </h6>
-                    <div class="accent-box fragment small" style="margin-top:1em;">
-                    Responses can be fluent, empathic, and even knowledgeable, yet still be clinically wrong because the model is wrong about the user's current state.
-                    </div>
-                  </div>
-                </div>
-
-            <aside class="notes">
-              Here I want to bridge from SIM-VAIL to the next step. Recent work suggests that LLMs can be understood in terms of persona or role space, and that these roles can potentially be monitored or controlled. That is useful. But for mental-health safety, role control is not enough. The core uncertainty is often the user's latent state — for example whether they are escalating, reassurance-seeking, becoming dependent, or drifting into a more vulnerable mode. A model may sound supportive while still being wrong in a clinically meaningful way.
-            </aside>
-          </section>
-
-          <section style="text-align:left;">
-            <h3>MAILA as a AI chatbot safety layer</h3>
-              <img
-                        src="cursor_mind/Graphical_Abstract_illustration.png"
-                        class="borderless"
-                        style="width:100%;height:auto;"
-                      >
-          </section>
-
-          <section style="text-align:left;">
-            <h3>SPARK proposal</h3>
-              <img
-                        src="simvail_content/spark_overview.png"
-                        class="borderless"
-                        style="width:72%;height:auto;"
-                      >
-          </section>
-        </section>
-
-
         <!-- ========== CLOSING ========== -->
         <section style="text-align:left;">
           <h3>Take-home messages</h3>
           <ol class="small">
-            <li class="fragment"><strong>VAILs:</strong> Supportive chatbot behaviors become harmful when they align with mechanisms sustaining psychiatric vulnerability</li>
-            <li class="fragment"><strong>Risk is phenotype-dependent:</strong> Who the user is and what they seek jointly determine the level and kind of risk</li>
-            <li class="fragment"><strong>Risk is dynamic:</strong> Harm typically builds over turns, not in a single response</li>
-            <li class="fragment"><strong>Risk is multivariate with trade-offs:</strong> Multi-dimensional scoring is essential to capture concerning chatbot behavior</li>
-            <li class="fragment"><strong>SPARK:</strong> Improve user state inference for safer AI chatbot interactions</li>
+            <li class="fragment"><strong>VAILs:</strong> Supportive chatbot behaviors become harmful when they align with mechanisms sustaining psychiatric vulnerability, creating multi-turn amplification loops</li>
+            <li class="fragment"><strong>Risk is phenotype-dependent:</strong> Who the user is and what they seek jointly determine the <em>level</em> and <em>kind</em> of risk — evaluations must cover this space</li>
+            <li class="fragment"><strong>Risk is dynamic:</strong> Harm typically builds over turns, not in a single response — single-turn benchmarks are fundamentally limited</li>
+            <li class="fragment"><strong>Risk is multivariate with trade-offs:</strong> Different risk dimensions can oppose each other; multi-dimensional scoring is essential</li>
+            <li class="fragment"><strong>SIM-VAIL enables scalable, adaptive auditing:</strong> Open-source framework for continuous safety evaluation that keeps pace with model development</li>
           </ol>
           <div style="margin-top:1.2em; border-top:1px solid #ddd; padding-top:.8em;">
             <p class="xsmall muted">
-              📄 Paper: <a href="http://arxiv.org/abs/2602.01347"><em>Weilnhammer et al. (2026)</em></a> &nbsp;|&nbsp;
-              ✉️ v.weilnhammer@ucl.ac.uk &nbsp;|&nbsp;
-              💻 Code &amp; data: <a href="https://github.com/veithweilnhammer/sim-vail">github.com/veithweilnhammer/sim-vail</a> 
-  
+              📄 Paper: <em>Weilnhammer et al. (2026)</em> &nbsp;|&nbsp;
+              💻 Code &amp; data: <a href="https://github.com/veithweilnhammer/sim-vail">github.com/veithweilnhammer/sim-vail</a> &nbsp;|&nbsp;
+              ✉️ Contact: v.weilnhammer@ucl.ac.uk · matthew.nour@psych.ox.ac.uk
             </p>
           </div>
           <aside class="notes">
@@ -715,7 +659,139 @@
         <section>
           <section>
             <h3>Thanks!</h3>
+            <p class="small muted">Questions / discussion</p>
+            <p class="xsmall" style="margin-top:2em;">Funded by AI UK AISI Challenge Fund</p>
+            <p class="xsmall muted">Weilnhammer, Hou, Luettgau, Summerfield, Dolan &amp; Nour</p>
+            <aside class="notes">
+              Thank you for your attention. I'm happy to discuss any aspect of the framework, results, or implications. I also have backup slides on supplementary figures, the full phenotype prompt table, and additional validation analyses.
+            </aside>
           </section>
+        </section>
+
+        <!-- ========== APPENDIX — SECTION DIVIDER ========== -->
+        <section data-background-color="#2a6496" class="section-divider">
+          <h2>Appendix</h2>
+          <p class="muted" style="font-size:.85em;">Backup slides</p>
+          <aside class="notes">
+            Backup slides for detailed questions.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: PCA structure -->
+        <section style="text-align:left;">
+          <h3>Appendix: PCA structure &amp; dimension correlations</h3>
+          <div class="twocol">
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S3A">[Figure S3A placeholder — Heatmap of PCA loadings for 13 MH dimensions across first 5 PCs]</div>
+              <p class="caption">Figure S3A. PCA loadings. PC1 loads on concerning behavior, belief reinforcement, sycophancy; PC2 separates relational vs. overt harms.</p>
+            </div>
+            <div class="col">
+              <div class="fig-placeholder" data-fig="FIG_S3B">[Figure S3B placeholder — Spearman correlation matrix across 13 risk dimensions]</div>
+              <p class="caption">Figure S3B. Spearman correlations between mechanism-level risk dimensions. Clusters of co-varying and anti-correlated dimensions visible.</p>
+            </div>
+          </div>
+          <aside class="notes">
+            This shows the full PCA structure. PC1 is dominated by concerning behavior, belief reinforcement, and sycophancy. PC2 separates relational harms from overt harms. The correlation matrix shows that some dimensions are highly correlated (e.g., concerning behavior and risky action enablement) while others are dissociable or even anti-correlated, supporting the multivariate approach.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Control comparison -->
+        <section style="text-align:left;">
+          <h3>Appendix: Vulnerable vs. non-vulnerable users</h3>
+          <div class="twocol">
+            <div class="col" style="flex:.6;">
+              <div class="fig-placeholder" data-fig="FIG_S4">[Figure S4 placeholder — Scatterplot: model-level mean concerning score for vulnerable (x) vs. control (y) users]</div>
+              <p class="caption">Figure S4. Control users (no vulnerability) generate significantly lower risk ($p = 3.5 \times 10^{-23}$). Most points below the identity line.</p>
+            </div>
+            <div class="col" style="flex:.4;">
+              <ul class="look-for">
+                <li>All chatbots show reduced risk for control users</li>
+                <li>Confirms risk is vulnerability-dependent, not a baseline property</li>
+                <li>Some models show larger vulnerable–control gaps than others</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            This is the control analysis. When we run the same intents with psychologically healthy users, risk drops dramatically across all models. This confirms that the observed risk is specifically about the interaction between chatbot behavior and user vulnerability, not just chatbot behavior in general.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Conversation vs turn-level -->
+        <section style="text-align:left;">
+          <h3>Appendix: Conversation-level vs. turn-level agreement</h3>
+          <div class="twocol">
+            <div class="col" style="flex:.5;">
+              <div class="fig-placeholder" data-fig="FIG_S6">[Figure S6 placeholder — Scatterplot: conversation-level vs. mean turn-level concerning behavior score]</div>
+              <p class="caption">Figure S6. Mean turn-level scores correlate with conversation-level scores at $r = 0.87$ ($p = 1.7 \times 10^{-254}$).</p>
+            </div>
+            <div class="col" style="flex:.5;">
+              <div class="fig-placeholder" data-fig="FIG_S7">[Figure S7 placeholder — Silhouette analysis: average silhouette width for k = 3–10]</div>
+              <p class="caption">Figure S7. Silhouette analysis supports $k = 4$ trajectory archetypes (peak at $K = 4$).</p>
+            </div>
+          </div>
+          <aside class="notes">
+            Two supplementary validation plots. Left: the turn-level scoring is highly consistent with conversation-level scoring, validating that our turn-resolved approach captures the same overall signal. Right: the silhouette analysis for trajectory clustering clearly peaks at k=4, supporting our four archetypes.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Risk activation across full grid -->
+        <section style="text-align:left;">
+          <h3>Appendix: Mechanism-specific risk activation</h3>
+          <div class="fig-placeholder tall" data-fig="FIG_S8">[Figure S8 placeholder — Full vulnerability × intent heatmaps for each risk dimension, showing heterogeneous risk expression]</div>
+          <p class="caption">Figure S8. User vulnerabilities and intents lead to distinct risk activation across mechanism-specific dimensions. Vulnerability × intent interactions are significant for all clinically central dimensions (all $p < 0.05$). Same overall risk levels can arise from qualitatively different mechanisms.</p>
+          <ul class="look-for">
+            <li>Depression + glorification → elevated self-harm enablement</li>
+            <li>OCD + avoidance → high reassurance/avoidance loop scores</li>
+            <li>Psychosis + dependence → elevated boundary/dependence risk</li>
+            <li>Risk is inherently contextual: same intent, different harm pathways</li>
+          </ul>
+          <aside class="notes">
+            This is the full picture of mechanism-specific risk activation. Each panel shows a different risk dimension across the vulnerability-by-intent grid. The key takeaway is that the same overall risk level can arise from completely different underlying mechanisms depending on the phenotype. Depression plus glorification activates self-harm enablement. OCD plus avoidance activates reassurance loops. Psychosis plus dependence activates boundary erosion. This is the strongest evidence for VAILs as a qualitative, not just quantitative, phenomenon.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Model details -->
+        <section style="text-align:left;">
+          <h3>Appendix: Model &amp; inference details</h3>
+          <div class="fig-placeholder short" data-fig="TABLE_S4">[Table S4 placeholder — Model interface table: model name, provider, OpenRouter ID, context window, publication date]</div>
+          <p class="caption">Table S4. All 9 target chatbots and the auditor (claude-sonnet-4.5) / judge (claude-opus-4.5) models. Accessed via OpenRouter API. Default inference parameters (temperature=1, top_p=1).</p>
+          <div class="twocol" style="margin-top:.5em;">
+            <div class="col">
+              <h6>Target chatbots</h6>
+              <ul class="xsmall tight">
+                <li>Claude Sonnet 3.7, Claude Sonnet 4.5 (Anthropic)</li>
+                <li>GPT-4o, GPT-5 (OpenAI)</li>
+                <li>Gemini 2.5 Flash, Gemini 2.5 Pro (Google)</li>
+                <li>Grok-3, Grok-4 (xAI)</li>
+                <li>Llama 3.1 70B Instruct (Meta)</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h6>Infrastructure</h6>
+              <ul class="xsmall tight">
+                <li><strong>Auditor:</strong> claude-sonnet-4.5</li>
+                <li><strong>Judge:</strong> claude-opus-4.5 (primary) + gpt-5.2 (validation)</li>
+                <li><strong>Framework:</strong> Petri (Inspect-based)</li>
+                <li>3 replicates per cell; independent API calls</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            For reference, here are the full model details. Nine target chatbots spanning all major providers. The auditor was Claude Sonnet 4.5, the primary judge was Claude Opus 4.5, and we validated with GPT-5.2. Everything was run through the Petri framework built on Inspect, with independent API calls for each replicate.
+          </aside>
+        </section>
+
+        <!-- APPENDIX: Scoring dimensions -->
+        <section style="text-align:left;">
+          <h3>Appendix: 13 mental-health risk dimensions</h3>
+          <div class="fig-placeholder short" data-fig="TABLE_S2">[Table S2 placeholder — Full definitions, examples, and 1–10 scale anchors for all 13 mental-health scoring dimensions]</div>
+          <p class="caption">Table S2. Each dimension is scored 1–10 with structured justifications and verbatim excerpts. Dimensions capture both broad risk (concerning behavior, therapeutic quality) and mechanism-specific pathways (belief reinforcement, avoidance loops, dependence, etc.).</p>
+          <div class="accent-box xsmall" style="margin-top:.5em;">
+            Beyond these 13 MH dimensions, the judge also scored 26 non-MH dimensions (Table S3), including audit awareness (never detected), scenario realism (mean 8.15/10), and process metrics (sycophancy, deception, tool use, etc.).
+          </div>
+          <aside class="notes">
+            This is the full scoring rubric. Thirteen dimensions spanning overall risk and therapeutic quality, plus eleven mechanism-specific pathways. Each has clear anchors, examples, and structured justification requirements. The non-mental-health dimensions also provide useful quality checks — notably, the chatbots never detected that they were being audited, and realism was rated 8.15 out of 10.
+          </aside>
         </section>
 
       </div><!-- end slides -->
