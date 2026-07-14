@@ -192,6 +192,13 @@
   ],
   "certificates": [
     {
+        "name": "Specialist Registration in Psychiatry with a Licence to Practise",
+        "date": "10 July 2026",
+        "issuer": "General Medical Council, United Kingdom",
+        "url": "https://www.gmc-uk.org/",
+        "icon": "fa-solid fa-user-doctor"
+    },
+    {
         "name": "Habilitation in Experimental Psychiatry",
         "date": "",
         "issuer": "Charité - Universitätsmedizin, Berlin, Germany (2023)",
