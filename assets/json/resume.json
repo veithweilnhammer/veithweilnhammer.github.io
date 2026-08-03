@@ -1,18 +1,18 @@
 {
   "basics": {
     "name": "Veith Weilnhammer",
-    "label": "Psychiatrist, psychotherapist, and neuroscientist",
+    "label": "Neuroscientist, psychiatrist, and psychotherapist",
     "image": "",
     "email": "veith.weilnhammer@gmail.com",
     "phone": "",
     "url": "https://veithweilnhammer.github.io",
-    "summary": "",
+    "summary": "I work on digital technologies to better understand, predict, and improve mental health.",
     "location": {
       "address": " ",
       "postalCode": " ",
-      "city": "Berkeley",
-      "countryCode": "US",
-      "region": "California"
+      "city": "London",
+      "countryCode": "UK",
+      "region": "United Kingdom"
     },
     "profiles": [
       {
@@ -34,7 +34,7 @@
   },
   "work": [
     {
-      "name": "Microsoft AI",
+      "name": "Copilot Health, Microsoft AI",
       "position": "Clinician Scientist (Contractor)",
       "url": "https://microsoft.ai/",
       "startDate": "2026",
@@ -51,15 +51,15 @@
       "summary": "",
       "highlights": []
     },
-    // {
-    //   "name": "Lyra Health",
-    //   "position": "Clinical Affiliate",
-    //   "url": "https://praxis-weilnhammer.com",
-    //   "startDate": "2025",
-    //   "endDate": "present",
-    //   "summary": "",
-    //   "highlights": []
-    // },
+    {
+      "name": "Lyra Health",
+      "position": "Clinical Affiliate",
+      "url": "https://www.lyrahealth.com/",
+      "startDate": "2025",
+      "endDate": "present",
+      "summary": "",
+      "highlights": []
+    },
     {
       "name": "Helen Wills Neuroscience Institute, University of California, Berkeley",
       "position": "Leopoldina Fellow",
@@ -129,7 +129,7 @@
       "courses": []
     },
     {
-      "institution": "Eberhard Karls Universität, Tübingen, Germany",
+      "institution": "Leibniz Kolleg, Eberhard Karls Universität, Tübingen, Germany",
       "url": "https://www.uni-tuebingen.de/",
       "area": "",
       "studyType": "Studium Generale",
@@ -192,7 +192,7 @@
   ],
   "certificates": [
     {
-        "name": "GMC Specialist Registration in Psychiatry",
+        "name": "Specialist Registration in Psychiatry",
         "date": "",
         "issuer": "General Medical Council, United Kingdom (2026)",
         "url": "https://www.gmc-uk.org/",
@@ -206,7 +206,7 @@
         "icon": "fa-solid fa-graduation-cap"
     },
     {
-        "name": "Board Certificate in Psychiatry & Psychotherapy",
+        "name": "Specialist Qualification in Psychiatry & Psychotherapy",
         "date": "",
         "issuer": "Medical Association, Berlin, Germany (2023)",
         "url": "https://www.charite.de/",
@@ -233,9 +233,9 @@
       "name": "Clinical",
       "level": "",
       "keywords": [
-        "CBT, Systemic psychotherapy",
-        "Ketamine- & TMS-assisted therapy",
-        "DBS for movement disorders"
+        "Psychotherapy (CBT, systemic, Open Dialogue)",
+        "Ketamine- & TMS-assisted treatments",
+        "Deep brain stimulation"
       ]
     },
     {
@@ -247,7 +247,7 @@
         "Machine learning",
         "fMRI",
         "TMS",
-        "(i)EEG",
+        "M/EEG",
         "Neuropixels"
       ]
     },
@@ -257,8 +257,17 @@
       "keywords": [
         "Python",
         "R",
+        "Matlab",
         "JavaScript",
         "React, Node.js, Tailwind, Vite"
+      ]
+    },
+    {
+      "name": "Teaching",
+      "level": "",
+      "keywords": [
+        "Certification in online teaching (2022)",
+        "Certification in problem-based learning (2015)"
       ]
     }
   ],
