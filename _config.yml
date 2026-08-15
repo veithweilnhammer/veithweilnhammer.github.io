@@ -226,6 +226,7 @@ kramdown:
 include: ["_pages"]
 exclude:
   - blog/
+  - strategy/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
