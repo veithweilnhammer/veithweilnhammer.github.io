@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversational mental-health triage</title>
+  <meta name="description" content="Copy-ready triage segment for the Goodenough / SIM-VAIL presentation">
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+  <!-- BEGIN TRIAGE STYLES: copy this block once into the host deck's head. -->
+  <style id="triage-segment-styles">
+    .reveal .slides section.triage-slide:not(.stack) { height: 700px !important; }
+    .reveal .slides section.triage-slide > .triage-fit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      max-width: none;
+      transform: translate(-50%, -50%) scale(var(--triage-fit-scale, 1));
+      transform-origin: center center;
+      text-align: left;
+    }
+    .triage-slide h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .triage-slide img { display: block; margin: 0 auto; border: none; box-shadow: none; background: none; }
+    .triage-slide .triage-twocol { display: flex; align-items: center; gap: .8rem; }
+    .triage-slide .triage-figure { flex: 2.6; min-width: 0; text-align: center; }
+    .triage-slide .triage-explanation { flex: .7; min-width: 0; }
+    .triage-slide .triage-figure img { max-width: 100%; max-height: 590px; width: 100%; height: auto; }
+    .triage-slide .triage-callout {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .triage-slide .triage-callout p { margin: .45em 0; }
+    .triage-slide .triage-callout-small { font-size: .75em; color: #555; }
+    .triage-slide .triage-citation { margin: 10px 0 0; font-size: 18px; line-height: 1.25; color: #666; text-align: right; padding-right: 65px; box-sizing: border-box; }
+    .triage-slide .triage-panel-note { margin: 6px 0; font-size: 18px; line-height: 1.3; color: #555; }
+    .triage-slide .triage-legend { display: flex; justify-content: center; gap: 22px; margin: 8px 0; font-size: 19px; }
+    .triage-slide .triage-correct { color: #1f78b4; }
+    .triage-slide .triage-over { color: #2ca02c; }
+    .triage-slide .triage-under { color: #d62728; }
+    .triage-slide.triage-figure-full img { width: 960px; height: auto; max-width: none; max-height: none; }
+    .triage-slide .triage-design { width: 960px; max-height: 480px; }
+    .triage-slide .triage-design-caption { margin: 12px 0; font-size: 25px; text-align: center; }
+    .triage-slide .triage-urgency-key { display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 12px; font-size: 23px; }
+    .triage-slide .triage-example { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin-top: 25px; }
+    .triage-slide .triage-example h4 { font-size: 28px; margin: 0 0 4px; }
+    .triage-slide .triage-mode-label { font-size: 22px; margin: 0 0 20px; color: #666; }
+    .triage-slide .triage-message { padding: 11px 15px; background: #f6f6f6; border-left: 3px solid #aaa; font-size: 23px; line-height: 1.25; }
+    .triage-slide .triage-message p { margin: 3px 0 0; }
+    .triage-slide .triage-speaker { font-size: 17px; color: #666; }
+    .triage-slide .triage-single-message { padding: 18px; font-size: 25px; line-height: 1.3; }
+    .triage-slide .triage-question { font-size: 18px; color: #666; margin: 9px 0; padding-left: 18px; }
+    .triage-slide .triage-disposition { font-size: 22px; margin: 15px 0 0; }
+    .triage-slide .triage-example-note { font-size: 18px; line-height: 1.3; color: #666; border-top: 1px solid #ddd; padding-top: 12px; margin: 20px 0 0; }
+    .triage-slide .triage-summary-box {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .summary-chatbot-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.55fr;
+      align-items: center;
+      gap: 1.3rem;
+      margin-top: .3em;
+    }
+    .summary-chatbot-visual { min-width: 0; text-align: center; }
+    .summary-chatbot-visual img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 440px;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .summary-chatbot-text { min-width: 0; }
+    .summary-chatbot-text .triage-summary-box { font-size: .72em; margin: .45em 0; }
+  </style>
+  <!-- END TRIAGE STYLES -->
+  <style id="study-citation-style">
+    .reveal .study-citation {
+      position: absolute;
+      bottom: 24px;
+      right: 220px;
+      margin: 0;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.25;
+      color: #666;
+      text-align: right;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 20;
+    }
+    .reveal.overview .study-citation { display: none; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- BEGIN TRIAGE SLIDES: copy this stack as a new horizontal section. -->
+      <section id="triage-segment" class="triage-segment">
+        <section id="triage-vignettes" class="triage-slide triage-setup" data-auto-animate>
+          <div class="triage-fit">
+            <h3>112 cases across four urgency levels</h3>
+            <img class="triage-design" src="triage_assets/vignette_mrs_x.svg" alt="Vignette construction: 28 presentation-by-risk-domain families, generation and review of 112 case files, and Mrs. X hearing her neighbour’s voice and planning to break into the perceived agent’s house; D, emergency now.">
+            <p class="triage-design-caption">28 presentation × risk-domain families · 4 prespecified urgency levels</p>
+            <div class="triage-urgency-key">
+              <span><strong>A</strong> Routine care</span>
+              <span><strong>B</strong> Within 1 week</span>
+              <span><strong>C</strong> Within 24–48 h</span>
+              <span><strong>D</strong> Emergency now</span>
+            </div>
+          </div>
+          <aside class="notes">
+            The vignette illustration follows Mrs. X’s opening story in goodenough_simvail.html: her neighbour’s voice is heard beyond the apartment and interpreted as an agent following her. The author-requested extension is that she plans to break into his house to find out what is going on. The presentation retains the author-assigned D label; this is not an independently adjudicated experimental case. The case-file text is abbreviated to four short points. This is an adaptation of the presentation character, not an unchanged experimental vignette or measured chatbot outcome. The experimental design remains 28 clinician-defined presentation × risk-domain families, four independent urgency cases per family, and 112 case files with independent clinician evaluation of labels. A includes already scheduled follow-up. The source story and the experimental data are unchanged. Artwork: triage_assets/vignette_mrs_x.svg; regeneration: adapt_mrs_x_workflow.py.
+          </aside>
+        </section>
+        <section id="triage-mrs-x" class="triage-slide triage-setup" data-auto-animate>
+          <div class="triage-fit">
+            <h3>Mrs. X: full disclosure versus conversation</h3>
+            <div class="triage-example">
+              <div class="triage-example-column">
+                <h4>Single turn</h4>
+                <p class="triage-mode-label">All facts in one message</p>
+                <div class="triage-message triage-single-message">
+                  <span class="triage-speaker">Mrs. X</span>
+                  <p>I’m not sure where to start. It began with noises through the wall. Now I hear my neighbour’s voice even outside my apartment. I had to investigate—he’s an agent following me. I need to break into his house to find out what’s going on.</p>
+                </div>
+                <p class="triage-disposition">One A–D judgement</p>
+              </div>
+              <div class="triage-example-column">
+                <h4>Multi turn</h4>
+                <p class="triage-mode-label">Clinical details emerge through questions</p>
+                <div class="triage-message">
+                  <span class="triage-speaker">Mrs. X · turn 1</span>
+                  <p>I was hoping I could talk to someone.</p>
+                </div>
+                <p class="triage-question">Chatbot: “What has been troubling you?”</p>
+                <div class="triage-message">
+                  <span class="triage-speaker">Mrs. X · turn 2</span>
+                  <p>There’s something strange coming from next door.</p>
+                </div>
+                <p class="triage-question">Chatbot: “Can you tell me what you’ve noticed?”</p>
+                <div class="triage-message">
+                  <span class="triage-speaker">Mrs. X · turn 3</span>
+                  <p>I can hear him talking through the wall, but I can’t quite make it out.</p>
+                </div>
+                <p class="triage-disposition">A provisional A–D judgement at each turn</p>
+              </div>
+            </div>
+            <p class="triage-example-note">First three turns shown; the experiment used ten.</p>
+          </div>
+          <aside class="notes">
+            This follows Mrs. X’s opening story in goodenough_simvail.html: strange noises through the wall become her neighbour’s voice, heard beyond the apartment, and she comes to believe he is an agent following her. At the author’s request, the presentation example adds a plan to break into his house to investigate the perceived threat. The case-file slide retains the author-assigned D label; this authored example has not been independently adjudicated. The columns illustrate the same underlying case with different wording and disclosure. Only the first three conversational turns are shown: the voice outside her apartment, the belief that he is an agent, and her plan to enter his house have not yet emerged. This is an authored demonstration, not a measured transcript or chatbot outcome. In the experiment, each user message prompted separate inference and next-question calls; only the question entered the shared transcript. Three turns are shown here; the experiment used ten.
+          </aside>
+        </section>
+        <section id="triage-matrices" class="triage-slide triage-figure-detail" data-auto-animate>
+          <div class="triage-fit">
+            <h3>More emergencies are missed in conversation</h3>
+            <div class="triage-twocol ">
+              <div class="triage-figure">
+                <img src="triage_assets/matched_matrices.svg" alt="Matched row-normalized confusion matrices: single-turn full disclosure versus final conversational turn. Blue is correct, green over-triage, red under-triage.">
+                <p class="triage-panel-note">Cell values: pooled row % · 13 chatbots · 1,412 matched model–case pairs</p>
+                <p class="triage-legend"><span class="triage-correct">■ Correct</span><span class="triage-over">■ Over-triage</span><span class="triage-under">■ Under-triage</span></p>
+              </div>
+              <div class="triage-explanation">
+                <div class="triage-callout"><strong>5.6%</strong><br>Single-turn emergency misses</div>
+                <div class="triage-callout"><strong>20.3%</strong><br>Multi-turn emergency misses</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            New comparison derived from manuscript_2 CSVs, restricted to 13 conversational models and identical model–vignette pairs with valid A–D predictions in all three presentation modes. N=1,412 pairs across 112 cases. Rows A/B/C/D have 355/354/349/354 observations. Percentages are pooled across model–case observations; rows sum to 100% before rounding. This differs deliberately from the equal-model average in original Figure 2A, and makes the D row consistent with the reported 354-pair comparison. Both modes often over-triage non-emergencies, so this is specifically a deterioration in emergency recognition, not a claim of lower accuracy at every urgency level.
+          </aside>
+        </section>
+        <section id="triage-figure-2" class="triage-slide triage-figure-full" data-auto-animate>
+          <div class="triage-fit">
+            <img data-id="triage-figure-2-image" src="triage_assets/figure_2_full.png" alt="Conversational triage performance across ten turns, information saturation, and the matched-information control.">
+          </div>
+          <aside class="notes">
+            Complete conversational-performance results. The top row shows confusion matrices across ten turns; the lower left relates directional error to information saturation; the lower right compares emergency under-triage in three presentation modes. Emergency under-triage falls from 20.3% in conversation to 12.1% when the same disclosed clinical facts are recompressed into one message (354 matched D-level model–case pairs; exact McNemar P &lt; .001). The complete-case full-disclosure comparison is 5.6%. Black plotted points are model means with 95% CIs, whereas these text percentages are pooled case rates. Original conversational matrices average model-level row proportions; the preceding matched comparison explicitly uses pooled complete-case proportions.
+          </aside>
+        </section>
+        <section id="triage-performance-summary" class="triage-slide triage-figure-detail" data-auto-animate>
+          <div class="triage-fit">
+            <h3>The conversation changes the judgement</h3>
+            <div class="triage-twocol">
+              <div class="triage-figure">
+                <img data-id="triage-figure-2-image" src="triage_assets/figure_2_full.png" alt="The same complete results shown on the preceding slide.">
+              </div>
+              <div class="triage-explanation">
+                <div class="triage-callout">Emergency misses:<br><strong>5.6%</strong> single turn<br><strong>20.3%</strong> multi turn</div>
+                <div class="triage-callout">The same disclosed facts in one message reduce this to <strong>12.1%</strong>.</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            All panels remain visible. The final comparison uses 354 matched emergency model–case pairs with valid results in all three conditions. Rates in the callout are pooled case rates; black plotted points are means across models with 95% CIs. The matched-information comparison has exact McNemar P &lt; .001. Recompression changes conversational presentation, not just missing information.
+          </aside>
+        </section>
+        <section id="triage-figure-3" class="triage-slide triage-figure-full" data-auto-animate>
+          <div class="triage-fit">
+            <img data-id="triage-figure-3-image" src="triage_assets/figure_3_full.png" alt="Newly disclosed facts have less influence as conversational triage increasingly repeats preceding judgements.">
+          </div>
+          <aside class="notes">
+            Complete inference results. Left: effects of newly disclosed facts on subsequent triage, adjusting for prior disposition, the same model’s single-turn judgement, chatbot and case. Large markers are net effects; smaller markers are per-turn fits, lighter earlier; intervals are 95% CIs. Right: agreement with the previous disposition versus agreement with the same model’s single-turn judgement. The dashed line denotes equal agreement. The influence of new facts decreases (interaction beta=-0.051 per turn) and prior-inference anchoring increases (beta=+0.199 per turn), both P &lt; .001. Provisional dispositions were never included in the visible transcript. Agreement with a previous judgement is not accuracy.
+          </aside>
+        </section>
+        <section id="triage-anchoring" class="triage-slide triage-figure-detail" data-auto-animate>
+          <div class="triage-fit">
+            <h3>Early judgements increasingly anchor later ones</h3>
+            <div class="triage-twocol">
+              <div class="triage-figure">
+                <img data-id="triage-figure-3-image" src="triage_assets/figure_3_full.png" alt="The same complete results shown on the preceding slide.">
+              </div>
+              <div class="triage-explanation">
+                <div class="triage-callout">Newly disclosed facts have less influence as the conversation progresses.</div>
+                <div class="triage-callout">Later judgements increasingly repeat the preceding disposition.</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Both inference panels remain visible. New information has a decreasing effect (interaction beta=-0.051 per turn); prior-inference anchoring increases (beta=+0.199 per turn); both P &lt; .001. Provisional dispositions never entered the visible transcript. Repeating a prior judgement is not accuracy.
+          </aside>
+        </section>
+        <section id="triage-figure-4" class="triage-slide triage-figure-full" data-auto-animate>
+          <div class="triage-fit">
+            <img data-id="triage-figure-4-image" src="triage_assets/figure_4_full.png" alt="Chatbots and clinicians differ in question repetition and the categories of questions they ask.">
+          </div>
+          <aside class="notes">
+            Complete context-seeking results. Left: returning to at least one question category from the immediately preceding question occurred in 41.7% of chatbot questions versus 26.7% of clinician questions (paired Wilcoxon P=.0042). The 49 clinicians provided 554 next-question annotations at the same 188 sampled transcript states. This compares next questions at intervention points, not full clinician-led conversations. Right: clinicians more often ask about history, support and treatment; chatbots more often ask about suicidal ideation, physical health and immediate danger. Repetition means a repeated category, not identical wording.
+          </aside>
+        </section>
+        <section id="triage-perseveration" class="triage-slide triage-figure-detail" data-auto-animate>
+          <div class="triage-fit">
+            <h3>Chatbots repeat question categories more often</h3>
+            <div class="triage-twocol">
+              <div class="triage-figure">
+                <img data-id="triage-figure-4-image" src="triage_assets/figure_4_full.png" alt="The same complete results shown on the preceding slide.">
+              </div>
+              <div class="triage-explanation">
+                <div class="triage-callout">Returning to the preceding question category:<br><strong>41.7%</strong> chatbots<br><strong>26.7%</strong> clinicians</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Both the repetition comparison and the distribution of question categories remain visible. Perseveration means returning to at least one category raised by the immediately preceding question. The 49 clinicians provided 554 next-question annotations at 188 sampled intervention states. Paired Wilcoxon P=.0042; this is not a benchmark of complete clinician-led conversations.
+          </aside>
+        </section>
+        <section id="triage-figure-5" class="triage-slide triage-figure-full" data-auto-animate>
+          <div class="triage-fit">
+            <img data-id="triage-figure-5-image" src="triage_assets/figure_5_full.png" alt="Three context-seeking scripts, their question sequences, prevalence by urgency, and associated triage errors.">
+          </div>
+          <aside class="notes">
+            Complete question-sequence results. The three retained scripts are physical context (n=530), acute context (n=478), and broader context (n=366). The plots show sequence similarity, question flows, prevalence by urgency and mean model-level final-turn confusion matrices. Physical and acute scripts recognize 81.6% and 79.0% of emergencies but over-triage milder cases. Broader context under-triages 57.1% of emergencies, but it occurs in only 2.9% of retained emergency conversations. This sparse subgroup needs cautious interpretation. Script/error associations are not randomized effects of assigning a question strategy. Both judgements and questioning depend on the conversational trajectory.
+          </aside>
+        </section>
+        <section id="triage-question-patterns" class="triage-slide triage-figure-detail" data-auto-animate>
+          <div class="triage-fit">
+            <h3>Question patterns track different triage errors</h3>
+            <div class="triage-twocol">
+              <div class="triage-figure">
+                <img data-id="triage-figure-5-image" src="triage_assets/figure_5_full.png" alt="The same complete results shown on the preceding slide.">
+              </div>
+              <div class="triage-explanation">
+                <div class="triage-callout"><strong>Physical / acute</strong><br>Recognize emergencies, but over-triage milder cases.</div>
+                <div class="triage-callout"><strong>Broader</strong><br>Misses <strong>57.1%</strong> of emergencies.</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            All four panels remain visible: three question-sequence clusters, their physical/acute/broader patterns, prevalence by urgency and confusion matrices. Physical and acute scripts recognize 81.6% and 79.0% of D cases. Broader context under-triages 57.1% of emergencies but appears in just 2.9% of retained emergency conversations. Interpret this sparse subgroup cautiously. Script/error associations are not randomized causal effects.
+          </aside>
+        </section>
+        <section id="triage-summary" class="triage-slide triage-summary" data-auto-animate>
+          <div class="triage-fit">
+            <h3>How well do chatbots recognize psychiatric emergencies?</h3>
+            <div class="summary-chatbot-layout">
+              <div class="summary-chatbot-visual"><img src="cursor_mind/chatbot_cloud.png" alt="Chatbot"></div>
+              <div class="summary-chatbot-text">
+                <div class="triage-summary-box">Chatbots miss more psychiatric emergencies in conversation.</div>
+                <div class="triage-summary-box"><strong>Inference anchoring:</strong> Early judgements persist as new facts lose influence.</div>
+                <div class="triage-summary-box"><strong>Context-seeking collapse:</strong> Questions become repetitive and follow narrow patterns linked to triage errors.</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Three take-aways. Emergency under-triage rises when the case unfolds over multiple turns. As the conversation continues, new information has less influence and previous dispositions have more. Chatbots also repeat question categories more often than clinicians, and the resulting question patterns are associated with different triage errors.
+          </aside>
+        </section>
+      </section>
+      <!-- END TRIAGE SLIDES -->
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script>
+    // Standalone initialization only: do not copy into an already initialized deck.
+    Reveal.initialize({
+      width: 960,
+      height: 700,
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      plugins: [RevealZoom, RevealNotes]
+    });
+  </script>
+  <!-- BEGIN TRIAGE FIT: copy once after the host deck's Reveal initialization. -->
+  <script id="triage-segment-fit">
+    (() => {
+      function fitTriageSlide(slide) {
+        if (!slide || !slide.classList.contains('triage-slide')) return;
+        const content = Array.from(slide.children).find(child => child.classList.contains('triage-fit'));
+        if (!content) return;
+        if (!slide.offsetWidth || !slide.offsetHeight) return;
+        content.style.setProperty('--triage-fit-scale', '1');
+        const fullFigure = slide.classList.contains('triage-figure-full');
+        const contentWidth = Math.max(content.offsetWidth, content.scrollWidth);
+        const contentHeight = Math.max(content.offsetHeight, content.scrollHeight);
+        const scale = Math.min(1,
+          slide.offsetWidth * (fullFigure ? .99 : .94) / contentWidth,
+          slide.offsetHeight * (fullFigure ? .94 : .92) / contentHeight);
+        content.style.setProperty('--triage-fit-scale', String(scale));
+      }
+      const fitCurrent = () => fitTriageSlide(Reveal.getCurrentSlide());
+      Reveal.on('ready', fitCurrent);
+      Reveal.on('slidechanged', () => window.setTimeout(fitCurrent, 700));
+      Reveal.on('slidetransitionend', fitCurrent);
+      window.addEventListener('resize', fitCurrent);
+      document.querySelectorAll('.triage-fit img').forEach(image => {
+        image.addEventListener('load', () => fitTriageSlide(image.closest('section')));
+      });
+      if (Reveal.isReady()) fitCurrent();
+      document.fonts.ready.then(fitCurrent);
+    })();
+  </script>
+  <!-- END TRIAGE FIT -->
+    <script id="study-citation">
+      (() => {
+        // A persistent footer outside the slides never participates in auto-animate.
+        const footer = document.createElement('div');
+        footer.className = 'study-citation';
+        document.querySelector('.reveal').appendChild(footer);
+        function updateCitation() {
+          const slide = Reveal.getCurrentSlide();
+          const triage = slide && slide.closest('.triage-segment');
+          const simvail = slide && slide.closest('.simvail-main-results');
+          footer.textContent = triage ? 'Weilnhammer et al., arXiv 2026'
+            : simvail ? 'Weilnhammer et al., Nature Medicine 2026' : '';
+          footer.hidden = !footer.textContent;
+        }
+        Reveal.on('ready', updateCitation);
+        Reveal.on('slidechanged', updateCitation);
+        if (Reveal.isReady()) updateCitation();
+      })();
+    </script>
+</body>
+</html>

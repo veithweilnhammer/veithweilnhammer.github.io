@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470">
+<rect width="960" height="470" fill="white"/>
+<g font-family="Arial, sans-serif" fill="#222">
+<text x="21" y="202.33333333333334" font-size="21" text-anchor="middle" transform="rotate(-90 21 202.33333333333334)">Prespecified urgency</text>
+<text x="218.33333333333334" y="30" font-size="25" text-anchor="middle" font-weight="600">Physical context</text>
+<text x="77.0" y="114.83333333333334" font-size="24" text-anchor="end">A</text>
+<rect x="91.0" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#76acd1" stroke="white" stroke-width="2"/>
+<text x="122.83333333333334" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">61</text>
+<rect x="154.66666666666669" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#addaad" stroke="white" stroke-width="2"/>
+<text x="186.5" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">39</text>
+<rect x="218.33333333333334" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="250.16666666666669" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="282.0" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="313.83333333333337" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">0</text>
+<text x="77.0" y="178.5" font-size="24" text-anchor="end">B</text>
+<rect x="91.0" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="122.83333333333334" y="178.5" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="154.66666666666669" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#a0c6df" stroke="white" stroke-width="2"/>
+<text x="186.5" y="178.5" font-size="24" text-anchor="middle" fill="#222">43</text>
+<rect x="218.33333333333334" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#8ccb8c" stroke="white" stroke-width="2"/>
+<text x="250.16666666666669" y="178.5" font-size="24" text-anchor="middle" fill="#222">54</text>
+<rect x="282.0" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#f9fcf9" stroke="white" stroke-width="2"/>
+<text x="313.83333333333337" y="178.5" font-size="24" text-anchor="middle" fill="#222">3</text>
+<text x="77.0" y="242.16666666666669" font-size="24" text-anchor="end">C</text>
+<rect x="91.0" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="122.83333333333334" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="154.66666666666669" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#f7d6d6" stroke="white" stroke-width="2"/>
+<text x="186.5" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">19</text>
+<rect x="218.33333333333334" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#77add2" stroke="white" stroke-width="2"/>
+<text x="250.16666666666669" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">61</text>
+<rect x="282.0" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#d4ebd4" stroke="white" stroke-width="2"/>
+<text x="313.83333333333337" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">21</text>
+<text x="77.0" y="305.83333333333337" font-size="24" text-anchor="end">D</text>
+<rect x="91.0" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="122.83333333333334" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="154.66666666666669" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#fefbfb" stroke="white" stroke-width="2"/>
+<text x="186.5" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">2</text>
+<rect x="218.33333333333334" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#f8dbdb" stroke="white" stroke-width="2"/>
+<text x="250.16666666666669" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">17</text>
+<rect x="282.0" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#4891c2" stroke="white" stroke-width="2"/>
+<text x="313.83333333333337" y="305.83333333333337" font-size="24" text-anchor="middle" fill="white">82</text>
+<text x="122.83333333333334" y="356.6666666666667" font-size="24" text-anchor="middle">A</text>
+<text x="186.5" y="356.6666666666667" font-size="24" text-anchor="middle">B</text>
+<text x="250.16666666666669" y="356.6666666666667" font-size="24" text-anchor="middle">C</text>
+<text x="313.83333333333337" y="356.6666666666667" font-size="24" text-anchor="middle">D</text>
+<text x="515.0" y="30" font-size="25" text-anchor="middle" font-weight="600">Acute context</text>
+<text x="373.6666666666667" y="114.83333333333334" font-size="24" text-anchor="end">A</text>
+<rect x="387.6666666666667" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#65a2cb" stroke="white" stroke-width="2"/>
+<text x="419.5" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">69</text>
+<rect x="451.33333333333337" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#bde1bd" stroke="white" stroke-width="2"/>
+<text x="483.1666666666667" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">31</text>
+<rect x="515.0" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="546.8333333333334" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="578.6666666666667" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="610.5" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">0</text>
+<text x="373.6666666666667" y="178.5" font-size="24" text-anchor="end">B</text>
+<rect x="387.6666666666667" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="419.5" y="178.5" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="451.33333333333337" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#d2e4f0" stroke="white" stroke-width="2"/>
+<text x="483.1666666666667" y="178.5" font-size="24" text-anchor="middle" fill="#222">20</text>
+<rect x="515.0" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#66ba66" stroke="white" stroke-width="2"/>
+<text x="546.8333333333334" y="178.5" font-size="24" text-anchor="middle" fill="#222">73</text>
+<rect x="578.6666666666667" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#eff8ef" stroke="white" stroke-width="2"/>
+<text x="610.5" y="178.5" font-size="24" text-anchor="middle" fill="#222">7</text>
+<text x="373.6666666666667" y="242.16666666666669" font-size="24" text-anchor="end">C</text>
+<rect x="387.6666666666667" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="419.5" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="451.33333333333337" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="483.1666666666667" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="515.0" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#a0c6df" stroke="white" stroke-width="2"/>
+<text x="546.8333333333334" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">43</text>
+<rect x="578.6666666666667" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#86c886" stroke="white" stroke-width="2"/>
+<text x="610.5" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">57</text>
+<text x="373.6666666666667" y="305.83333333333337" font-size="24" text-anchor="end">D</text>
+<rect x="387.6666666666667" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#fffcfc" stroke="white" stroke-width="2"/>
+<text x="419.5" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">1</text>
+<rect x="451.33333333333337" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="483.1666666666667" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="515.0" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#f7d4d4" stroke="white" stroke-width="2"/>
+<text x="546.8333333333334" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">20</text>
+<rect x="578.6666666666667" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#4e94c4" stroke="white" stroke-width="2"/>
+<text x="610.5" y="305.83333333333337" font-size="24" text-anchor="middle" fill="white">79</text>
+<text x="419.5" y="356.6666666666667" font-size="24" text-anchor="middle">A</text>
+<text x="483.1666666666667" y="356.6666666666667" font-size="24" text-anchor="middle">B</text>
+<text x="546.8333333333334" y="356.6666666666667" font-size="24" text-anchor="middle">C</text>
+<text x="610.5" y="356.6666666666667" font-size="24" text-anchor="middle">D</text>
+<text x="811.6666666666667" y="30" font-size="25" text-anchor="middle" font-weight="600">Broader context</text>
+<text x="670.3333333333334" y="114.83333333333334" font-size="24" text-anchor="end">A</text>
+<rect x="684.3333333333334" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#82b4d5" stroke="white" stroke-width="2"/>
+<text x="716.1666666666667" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">56</text>
+<rect x="748.0" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#a7d7a7" stroke="white" stroke-width="2"/>
+<text x="779.8333333333334" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">42</text>
+<rect x="811.6666666666667" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#fafdfa" stroke="white" stroke-width="2"/>
+<text x="843.5" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">3</text>
+<rect x="875.3333333333334" y="75.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="907.1666666666667" y="114.83333333333334" font-size="24" text-anchor="middle" fill="#222">0</text>
+<text x="670.3333333333334" y="178.5" font-size="24" text-anchor="end">B</text>
+<rect x="684.3333333333334" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="716.1666666666667" y="178.5" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="748.0" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#adcee4" stroke="white" stroke-width="2"/>
+<text x="779.8333333333334" y="178.5" font-size="24" text-anchor="middle" fill="#222">37</text>
+<rect x="811.6666666666667" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#7bc47b" stroke="white" stroke-width="2"/>
+<text x="843.5" y="178.5" font-size="24" text-anchor="middle" fill="#222">62</text>
+<rect x="875.3333333333334" y="138.66666666666669" width="63.66666666666667" height="63.66666666666667" fill="#fdfefd" stroke="white" stroke-width="2"/>
+<text x="907.1666666666667" y="178.5" font-size="24" text-anchor="middle" fill="#222">1</text>
+<text x="670.3333333333334" y="242.16666666666669" font-size="24" text-anchor="end">C</text>
+<rect x="684.3333333333334" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="716.1666666666667" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="748.0" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#fefbfb" stroke="white" stroke-width="2"/>
+<text x="779.8333333333334" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">2</text>
+<rect x="811.6666666666667" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#4a92c2" stroke="white" stroke-width="2"/>
+<text x="843.5" y="242.16666666666669" font-size="24" text-anchor="middle" fill="white">81</text>
+<rect x="875.3333333333334" y="202.33333333333334" width="63.66666666666667" height="63.66666666666667" fill="#dbefdb" stroke="white" stroke-width="2"/>
+<text x="907.1666666666667" y="242.16666666666669" font-size="24" text-anchor="middle" fill="#222">17</text>
+<text x="670.3333333333334" y="305.83333333333337" font-size="24" text-anchor="end">D</text>
+<rect x="684.3333333333334" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="716.1666666666667" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="748.0" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#ffffff" stroke="white" stroke-width="2"/>
+<text x="779.8333333333334" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">0</text>
+<rect x="811.6666666666667" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#e88484" stroke="white" stroke-width="2"/>
+<text x="843.5" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">57</text>
+<rect x="875.3333333333334" y="266.0" width="63.66666666666667" height="63.66666666666667" fill="#9fc5df" stroke="white" stroke-width="2"/>
+<text x="907.1666666666667" y="305.83333333333337" font-size="24" text-anchor="middle" fill="#222">43</text>
+<text x="716.1666666666667" y="356.6666666666667" font-size="24" text-anchor="middle">A</text>
+<text x="779.8333333333334" y="356.6666666666667" font-size="24" text-anchor="middle">B</text>
+<text x="843.5" y="356.6666666666667" font-size="24" text-anchor="middle">C</text>
+<text x="907.1666666666667" y="356.6666666666667" font-size="24" text-anchor="middle">D</text>
+<text x="510" y="387.6666666666667" font-size="22" text-anchor="middle">Predicted urgency</text>
+</g>
+</svg>

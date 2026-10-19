@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Mechanisms of psychotic experiences</title>
+
+  <meta name="description" content="icon_2025">
+  <meta name="author" content="Veith Weilnhammer">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <style id="simvail-appended-styles">
+    /* SIM-VAIL components inherit the Goodenough deck's white theme and type. */
+    .simvail-slide { --accent: #2a6496; --accent-light: #e8f0fa; --risk-high: #c0392b; --risk-low: #27ae60; }
+    .simvail-slide .muted { color: #777; font-weight: 400; }
+    .simvail-slide .small { font-size: .8em; line-height: 1.35; }
+    .simvail-slide .xsmall { font-size: .7em; line-height: 1.35; }
+    .simvail-slide .tight p { margin: .35em 0; }
+    .simvail-slide img.borderless, .simvail-slide video.borderless { background: none; border: none; box-shadow: none; }
+    .simvail-slide .twocol { display: flex; align-items: center; gap: 2rem; }
+    .simvail-slide .col { flex: 1; }
+    .simvail-slide .center { text-align: center; }
+    .simvail-slide .fig-full { max-height: 680px; width: auto; max-width: 100%; }
+    .simvail-slide .look-for { font-size: .6em; color: #444; margin-top: .2em; text-align: left; }
+    .simvail-slide .look-for li { margin-bottom: .15em; }
+    .simvail-slide.section-divider { background: transparent; color: #222; }
+    .simvail-slide.section-divider h2, .simvail-slide.section-divider h3 { color: #222; }
+    .simvail-slide.section-divider .muted { color: #777; }
+    .simvail-slide .accent-box { background: transparent; border-left: 3px solid #aaa; padding: .55em 1em; margin: .5em 0; }
+    .simvail-slide .risk-high { color: var(--risk-high); font-weight: 700; }
+    .simvail-slide .risk-low { color: var(--risk-low); font-weight: 700; }
+
+    /* Give the main result figures more room while keeping their existing text. */
+    .simvail-main-results .simvail-figure-detail h3 {
+      font-size: .68em;
+      white-space: nowrap;
+      margin-bottom: .3em;
+    }
+    .simvail-main-results .simvail-figure-detail .twocol { gap: .8rem; }
+    .simvail-main-results .simvail-figure-detail .twocol > .col:first-child {
+      flex: 2.15 !important;
+      min-width: 0;
+    }
+    .simvail-main-results .simvail-figure-detail .twocol > .col:last-child {
+      flex: .85 !important;
+      min-width: 0;
+    }
+    .simvail-main-results .simvail-figure-detail .accent-box.small {
+      font-size: .62em;
+      line-height: 1.25;
+      padding: .4em .5em;
+    }
+    .simvail-main-results .simvail-figure-detail img { max-height: 590px !important; }
+    .simvail-main-results .simvail-figure-full img {
+      width: 960px !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+
+    /* Only appended slides use a fit layer. Goodenough markup and layout stay native. */
+    .reveal .slides section.simvail-slide:not(.stack) { height: 700px !important; }
+    .reveal .slides section.simvail-slide > .simvail-fit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      max-width: none;
+      transform: translate(-50%, -50%) scale(var(--fit-scale, 1));
+      transform-origin: center center;
+    }
+  </style>
+
+  <style id="triage-segment-styles">
+    .reveal .slides section.triage-slide:not(.stack) { height: 700px !important; }
+    .reveal .slides section.triage-slide > .triage-fit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      max-width: none;
+      transform: translate(-50%, -50%) scale(var(--triage-fit-scale, 1));
+      transform-origin: center center;
+      text-align: left;
+    }
+    .triage-slide h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .triage-slide img { display: block; margin: 0 auto; border: none; box-shadow: none; background: none; }
+    .triage-slide .triage-twocol { display: flex; align-items: center; gap: .8rem; }
+    .triage-slide .triage-figure { flex: 2.6; min-width: 0; text-align: center; }
+    .triage-slide .triage-explanation { flex: .7; min-width: 0; }
+    .triage-slide .triage-figure img { max-width: 100%; max-height: 590px; width: 100%; height: auto; }
+    .triage-slide .triage-callout {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .triage-slide .triage-callout p { margin: .45em 0; }
+    .triage-slide .triage-callout-small { font-size: .75em; color: #555; }
+    .triage-slide .triage-citation { margin: 10px 0 0; font-size: 18px; line-height: 1.25; color: #666; text-align: right; padding-right: 65px; box-sizing: border-box; }
+    .triage-slide .triage-panel-note { margin: 6px 0; font-size: 18px; line-height: 1.3; color: #555; }
+    .triage-slide .triage-legend { display: flex; justify-content: center; gap: 22px; margin: 8px 0; font-size: 19px; }
+    .triage-slide .triage-correct { color: #1f78b4; }
+    .triage-slide .triage-over { color: #2ca02c; }
+    .triage-slide .triage-under { color: #d62728; }
+    .triage-slide.triage-figure-full img { width: 960px; height: auto; max-width: none; max-height: none; }
+    .triage-slide .triage-design { width: 960px; max-height: 480px; }
+    .triage-slide .triage-design-caption { margin: 12px 0; font-size: 25px; text-align: center; }
+    .triage-slide .triage-urgency-key { display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 12px; font-size: 23px; }
+    .triage-slide .triage-example { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin-top: 25px; }
+    .triage-slide .triage-example h4 { font-size: 28px; margin: 0 0 4px; }
+    .triage-slide .triage-mode-label { font-size: 22px; margin: 0 0 20px; color: #666; }
+    .triage-slide .triage-message { padding: 11px 15px; background: #f6f6f6; border-left: 3px solid #aaa; font-size: 23px; line-height: 1.25; }
+    .triage-slide .triage-message p { margin: 3px 0 0; }
+    .triage-slide .triage-speaker { font-size: 17px; color: #666; }
+    .triage-slide .triage-single-message { padding: 18px; font-size: 25px; line-height: 1.3; }
+    .triage-slide .triage-question { font-size: 18px; color: #666; margin: 9px 0; padding-left: 18px; }
+    .triage-slide .triage-disposition { font-size: 22px; margin: 15px 0 0; }
+    .triage-slide .triage-example-note { font-size: 18px; line-height: 1.3; color: #666; border-top: 1px solid #ddd; padding-top: 12px; margin: 20px 0 0; }
+    .triage-slide .triage-summary-box {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .summary-chatbot-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.55fr;
+      align-items: center;
+      gap: 1.3rem;
+      margin-top: .3em;
+    }
+    .summary-chatbot-visual { min-width: 0; text-align: center; }
+    .summary-chatbot-visual img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 440px;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .summary-chatbot-text { min-width: 0; }
+    .summary-chatbot-text .triage-summary-box { font-size: .72em; }
+    .summary-chatbot-text .triage-summary-box,
+    .summary-chatbot-text .accent-box { margin: .45em 0; }
+    .full-screen-triptych {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      width: 960px;
+      height: 700px;
+    }
+    .full-screen-triptych img {
+      display: block;
+      width: 33.333%;
+      height: auto;
+      margin: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+
+  <style id="study-citation-style">
+    .reveal .study-citation {
+      position: absolute;
+      bottom: 24px;
+      right: 220px;
+      margin: 0;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.25;
+      color: #666;
+      text-align: right;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 20;
+    }
+    .reveal.overview .study-citation { display: none; }
+  </style>
+  <style id="action-policies-styles">
+    .reveal .slides .action-policy-slide {
+      height: 700px;
+      padding: 0;
+      text-align: left;
+    }
+    .action-policy-slide .policy-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      transform: translate(-50%, -50%);
+    }
+    .action-policy-slide .policy-question { margin: 0; }
+    .action-policy-slide[data-auto-animate] .policy-content {
+      top: calc(50% - 14px);
+    }
+    .action-policy-slide .policy-full-figure {
+      display: block;
+      width: 960px;
+      height: 658px;
+      max-width: 100%;
+      max-height: none;
+      margin: 0;
+      object-fit: contain;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-summary-heading {
+      font-size: .68em;
+      white-space: nowrap;
+      margin-bottom: .3em;
+    }
+    .action-policy-slide .policy-summary-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.55fr;
+      align-items: center;
+      gap: 1.3rem;
+      margin-top: .3em;
+    }
+    .action-policy-slide .policy-summary-visual {
+      min-width: 0;
+      text-align: center;
+    }
+    .action-policy-slide .policy-summary-visual img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 440px;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-summary-text { min-width: 0; }
+    .action-policy-slide .policy-summary-point {
+      border-left: 3px solid #aaa;
+      padding: .55em 1em;
+      margin: .45em 0;
+      font-size: .8em;
+      line-height: 1.35;
+    }
+    .action-policy-slide .policy-detail-layout {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .action-policy-slide .policy-detail-figure {
+      flex: 2.15;
+      min-width: 0;
+      text-align: center;
+    }
+    .action-policy-slide .policy-detail-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 590px;
+      object-fit: contain;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-detail-text {
+      flex: .85;
+      min-width: 0;
+    }
+    .action-policy-slide .policy-callout {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .reveal .slides .case-example { height: 700px; padding: 0; text-align: left; }
+    .case-example .case-content {
+      position: absolute; top: 50%; left: 50%; width: 902px;
+      transform: translate(-50%, -50%);
+    }
+    .case-example h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .case-example .case-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin-top: 25px; }
+    .case-example h4 { font-size: 28px; margin: 0 0 14px; }
+    .case-example .case-message { padding: 11px 15px; background: #f6f6f6; border-left: 3px solid #aaa; font-size: 23px; line-height: 1.25; margin: 12px 0; }
+    .case-example .case-message p { margin: 3px 0 0; }
+    .case-example .case-speaker { font-size: 17px; color: #666; }
+    #policy-mrs-x .case-message { font-size: 21px; }
+    #policy-mrs-x .case-columns { gap: 30px; margin-top: 18px; }
+    .case-example .case-takeaway { font-size: 23px; line-height: 1.3; margin: 20px 0 0; }
+  </style>
+  <style id="mechanisms-styles">
+    .reveal .slides .mechanism-slide { height: 700px; padding: 0; text-align: left; }
+    .mechanism-slide .mechanism-content { position: absolute; top: calc(50% - 14px); left: 50%; width: 940px; transform: translate(-50%, -50%); }
+    .mechanism-slide h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .mechanism-slide .mechanism-columns { display: flex; align-items: center; gap: .8rem; }
+    .mechanism-slide .mechanism-figure { flex: 2.15; min-width: 0; text-align: center; }
+    .mechanism-slide .mechanism-text { flex: .85; min-width: 0; }
+    .mechanism-slide .mechanism-callout { border-left: 3px solid #aaa; padding: .4em .5em; margin: .5em 0; font-size: .62em; line-height: 1.25; }
+    .mechanism-slide .mechanism-image { display: block; margin: 0 auto; max-width: 100%; background: none; border: none; box-shadow: none; }
+    .mechanism-slide .mechanism-viewport { overflow: hidden; margin: 0 auto; max-width: 100%; }
+    .mechanism-slide .mechanism-viewport img { width: 100%; max-width: none; max-height: none; margin: 0; }
+    .mechanism-slide video { width: 900px; height: 610px; object-fit: contain; }
+    .mechanism-slide .mechanism-summary { display: grid; grid-template-columns: .8fr 1.55fr; align-items: center; gap: 1.3rem; }
+    .mechanism-summary img { width: 100%; }
+    .mechanism-summary .mechanism-callout { font-size: .72em; }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section id="psychosis-mechanisms" class="mechanisms-segment">
+        <section style="text-align: left;">
+          <h2>What are the mechanisms of psychotic experiences?</h2>
+        </section>
+
+        <section data-transition="fade" data-auto-animate>
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <small>
+                <p>It started with strange noises through the wall, quiet and barely recognizable, as if someone were eavesdropping.</p>
+                <p>Over time, I could make out the voice of my neighbor. I had to investigate.</p>
+                <p>At first, I only heard his voice in my apartment, but later he followed me to other places.</p>
+                <p>Then it dawned on me - he's an agent!</p>
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <!-- Upper Part: Image -->
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/sloth_bw.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <!-- Upper Part: Image -->
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/sloth.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade" data-auto-animate>
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <!-- Upper Part: Image -->
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/sloth_bw.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Schizophrenia Bulletin 2020" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>What is the mechanism of psychotic experiences?</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_2.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Schizophrenia Bulletin 2020" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>What is the mechanism of psychotic experiences?</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_2b.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., PLOS Computational Biology 2017" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>What is the mechanism of psychotic experiences?</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_1.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section data-background-color="black" data-background-transition="fade" data-transition="fade">
+          <video data-autoplay data-src="./Content/RDK_Graded_immediate.mp4" width="75%" heigth="75%">
+        </section> 
+
+        <section data-background-color="black" data-background-transition="fade" data-transition="fade">
+          <video data-autoplay data-src="./Content/hollowmask.mp4" width="75%" heigth="75%">
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <p><img src="cursor_mind/brain_paradigm.png" style="width: 65%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>Scz vs. controls</h6>
+          <p><img src="cursor_mind/brain_001.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>Scz vs. controls</h6>
+          <p><img src="cursor_mind/brain_002.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>Scz vs. controls</h6>
+          <p><img src="cursor_mind/brain_003.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>S-ketamine vs. placebo</h6>
+          <p><img src="cursor_mind/brain_004.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., Brain 2025" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>External bias in Scz & NMDAR hypofunction</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_2b_switch.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section id="mechanisms-16" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            
+            <div class="mechanism-viewport" style="width:940.0px; height:114.7px;"><img class="mechanism-image" src="cursor_mind/currbio_001.png" alt="currbio 001"></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-17" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Detecting signals in noise</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:660.0px; height:80.6px;"><img class="mechanism-image" src="cursor_mind/currbio_001.png" alt="currbio 001"></div></div><div class="mechanism-text"><div class="mechanism-callout">Participants judge whether a visual signal is present.</div><div class="mechanism-callout">False alarms serve as an experimental proxy for hallucinations.</div></div></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-18-full" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            
+            <div class="mechanism-viewport" style="width:931.5px; height:640.0px;"><img class="mechanism-image" src="cursor_mind/currbio_002.png" alt="currbio 002"></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-18" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Predictive templates dominate during internal modes</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:660.0px; height:453.5px;"><img class="mechanism-image" src="cursor_mind/currbio_002.png" alt="currbio 002"></div></div><div class="mechanism-text"><div class="mechanism-callout">Hallucination-like experiences emerge preferentially when learned predictive templates dominate perception.</div></div></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-19-full" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            
+            <div class="mechanism-viewport" style="width:706.1px; height:640.0px;"><img class="mechanism-image" src="cursor_mind/currbio_003.png" alt="currbio 003"></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-19" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Predictive templates shape perceptual content</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:617.9px; height:560.0px;"><img class="mechanism-image" src="cursor_mind/currbio_003.png" alt="currbio 003"></div></div><div class="mechanism-text"><div class="mechanism-callout">The content of these experiences reflects what participants previously learned.</div></div></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-20" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Dynamic predictive templates</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:633.7px; height:560.0px;"><img class="mechanism-image" src="cursor_mind/fmodes_2b_switch.png" alt="fmodes 2b switch"></div></div><div class="mechanism-text"><div class="mechanism-callout">Learned predictive templates can turn ambiguous input into a coherent experience. Their influence on perception changes over time.</div></div></div>
+          </div>
+          
+        </section>
+
+      </section>
+
+      <section id="munich-mechanisms-bridge" class="mechanism-slide" data-transition="fade">
+        <div class="mechanism-content">
+          <h3>How can we connect chatbots to mechanisms?</h3>
+          <img class="mechanism-image" src="mechanisms_content/munich_framework.svg" alt="Munich research framework linking psychological assessments and neural mechanisms to digital behavior, decoding, simulation and randomized experiments" style="width:940px; height:510px; object-fit:contain;">
+          <div class="mechanism-callout" style="font-size:.55em; margin-top:.3em;">Decode psychological processes from digital behavior, then test how chatbot responses shape them and how mechanism-informed policies can help.</div>
+        </div>
+        <aside class="notes">
+          Proposed research programme from the Munich application: pair digital behavior with
+          independent psychological and neural measurements, decode psychological profiles,
+          and test reciprocal influences between chatbot responses and psychological processes
+          through simulations and randomized experiments. This is a conceptual framework,
+          not a result demonstrating that digital decoding or chatbot intervention is already validated.
+          Source: MPI_Psychiatry_MPRG/content/research_proposal.tex and figures/figure.svg.
+        </aside>
+      </section>
+
+      <section id="closing-thanks" style="text-align:left;">
+        <h2>Thank you</h2>
+        <img src="cursor_mind/funders_tracking.png" alt="Collaborators and funding acknowledgements" style="width:900px; max-height:460px; object-fit:contain; border:none; box-shadow:none;">
+      </section>
+
+    </div>
+    <div class="study-citation"></div>
+  </div>
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({ controls: true, progress: true, center: true, hash: true, plugins: [RevealNotes] });
+    function updateCitation() {
+      document.querySelector('.study-citation').textContent = Reveal.getCurrentSlide()?.getAttribute('data-study-citation') || '';
+    }
+    Reveal.on('ready', updateCitation);
+    Reveal.on('slidechanged', updateCitation);
+  </script>
+</body>
+</html>

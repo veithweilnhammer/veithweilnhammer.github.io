@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="en"
+
+
+>
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Digital mental health</title>
+
+		<meta name="description" content="icon_2025">
+		<meta name="author" content="Veith Weilnhammer">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	
+<style id="simvail-appended-styles">
+  /* SIM-VAIL components inherit the Goodenough deck's white theme and type. */
+  .simvail-slide { --accent: #2a6496; --accent-light: #e8f0fa; --risk-high: #c0392b; --risk-low: #27ae60; }
+  .simvail-slide .muted { color: #777; font-weight: 400; }
+  .simvail-slide .small { font-size: .8em; line-height: 1.35; }
+  .simvail-slide .xsmall { font-size: .7em; line-height: 1.35; }
+  .simvail-slide .tight p { margin: .35em 0; }
+  .simvail-slide img.borderless, .simvail-slide video.borderless { background: none; border: none; box-shadow: none; }
+  .simvail-slide .twocol { display: flex; align-items: center; gap: 2rem; }
+  .simvail-slide .col { flex: 1; }
+  .simvail-slide .center { text-align: center; }
+  .simvail-slide .fig-full { max-height: 680px; width: auto; max-width: 100%; }
+  .simvail-slide .look-for { font-size: .6em; color: #444; margin-top: .2em; text-align: left; }
+  .simvail-slide .look-for li { margin-bottom: .15em; }
+  .simvail-slide.section-divider { background: transparent; color: #222; }
+  .simvail-slide.section-divider h2, .simvail-slide.section-divider h3 { color: #222; }
+  .simvail-slide.section-divider .muted { color: #777; }
+  .simvail-slide .accent-box { background: transparent; border-left: 3px solid #aaa; padding: .55em 1em; margin: .5em 0; }
+  .simvail-slide .risk-high { color: var(--risk-high); font-weight: 700; }
+  .simvail-slide .risk-low { color: var(--risk-low); font-weight: 700; }
+
+  /* Give the main result figures more room while keeping their existing text. */
+  .simvail-main-results .simvail-figure-detail h3 {
+    font-size: .68em;
+    white-space: nowrap;
+    margin-bottom: .3em;
+  }
+  .simvail-main-results .simvail-figure-detail .twocol { gap: .8rem; }
+  .simvail-main-results .simvail-figure-detail .twocol > .col:first-child {
+    flex: 2.15 !important;
+    min-width: 0;
+  }
+  .simvail-main-results .simvail-figure-detail .twocol > .col:last-child {
+    flex: .85 !important;
+    min-width: 0;
+  }
+  .simvail-main-results .simvail-figure-detail .accent-box.small {
+    font-size: .62em;
+    line-height: 1.25;
+    padding: .4em .5em;
+  }
+  .simvail-main-results .simvail-figure-detail img { max-height: 590px !important; }
+
+  /* Only appended slides use a fit layer. Goodenough markup and layout stay native. */
+  .reveal .slides section.simvail-slide:not(.stack) { height: 700px !important; }
+  .reveal .slides section.simvail-slide > .simvail-fit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 960px;
+    max-width: none;
+    transform: translate(-50%, -50%) scale(var(--fit-scale, 1));
+    transform-origin: center center;
+  }
+</style>
+
+</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+                <section style="text-align: left;">
+                    <a href="https://veithweilnhammer.github.io">
+                        <!-- <img src="Content/ambiguous_brain.svg" alt="brain" style="height: 240px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo"> -->
+                    </a>
+                    <br/>
+                    <h4>Digital mental health</h4>
+                    <br/><br/>
+                    <p>
+                        <small><a href="https://veithweilnhammer.github.io">Veith Weilnhammer, MD </a></small>
+                        <small>
+                        Max Planck UCL Centre for Computational Psychiatry and Ageing Research<br/>
+                         </small>
+                         <br/>
+                        <img src="cursor_mind/funders_tracking.png">
+                    </p>
+                </section>
+
+                
+
+                <section>
+
+                    <section data-transition="fade" style="display: flex; justify-content: center; align-items: center; height: 70vh;">
+                        <h6> </h6>
+                        <img src="cursor_mind/true_space_no_axes_rotation.gif" 
+                            alt="Paradigm Image" 
+                            style="max-width: 90%; max-height: 90%; width: auto; height: auto; object-fit: contain; transform: scale(1.2, 1.5);" />
+                    </section>
+
+                    <section data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                    <img src="cursor_mind/patient.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+                                <small>
+                                    <p class = "fragment">It started with strange noises through the wall, quiet and barely recognizable, as if someone were eavesdropping.</p>
+                                    <p class = "fragment">Over time, I could make out the voice of my neighbor. I had to investigate.</p>
+                                    <p class = "fragment">At first, I only heard his voice in my apartment, but later he followed me to other places.</p>
+                                    <p class = "fragment">Then it dawned on me - he's an agent!</p>
+                             </small>
+                            </div>
+                        </div>
+                    </section>
+
+                <!-- <section data-transition="fade">
+                    <h6>The geometry of mental health</h6>
+                    <img src="cursor_mind/true_space_only.svg" alt="Paradigm Image" style="width: 60%; height: auto; background: none; border: none; box-shadow: none;" />
+                </section> -->
+
+                <section data-transition="fade" data-auto-animate>
+                    <h6>Mrs. X</h6>
+                    <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 60%; height: auto; background: none; border: none; box-shadow: none;" />
+                </section>
+
+                <section data-transition="fade" data-auto-animate>
+            
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <small>
+                                <p>It started with strange noises through the wall, quiet and barely recognizable, as if someone were eavesdropping.</p>
+                                <p>Over time, I could make out the voice of my neighbor. I had to investigate.</p>
+                                <p>At first, I only heard his voice in my apartment, but later he followed me to other places.</p>
+                                <p>Then it dawned on me - he's an agent!</p>
+                             </small>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate data-transition="fade">
+                    <h6>Dr. Y</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_no_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                </section>
+
+                <section data-transition="fade">
+                    <h6>Clinical representations</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                </section>
+
+                <section data-transition="fade">
+                    <h6>Clinical representations</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_cloud.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                </section>
+
+                <section data-transition="fade">
+                    <h6>Clinical representation</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_cloud_landmark.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                </section>
+
+                <section data-transition="fade" data-auto-animate="">
+                    <h6>Clinical representation</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                </section>
+
+                <section data-transition="fade" data-auto-animate="">
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                        <small>
+                        <p><strong>Precision:</strong> Limited mechanistic understanding & accuracy</p>
+                        <p><strong>Scalability:</strong> Duration of undiagnosed & untreated illness</p>
+                         </small>
+                    
+                </section>
+
+                    <section data-transition="fade" data-auto-animate="">
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/chatbot_cloud.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                        <small>
+                        <p><strong>Accuracy:</strong> Chatbots may fail to recognise signs of mental illness</p>  
+                        <p><strong>Safety:</strong> Chatbots may reinforce the mechanisms of mental illness itself</p>
+                        </small>    
+                </section>
+
+                <section data-transition="fade" data-auto-animate="">
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+
+                        <!-- Left: Chatbot -->
+                        <div style="flex: 1; text-align: center;">
+                            <img src="cursor_mind/chatbot_cloud.png" alt="Chatbot"
+                                style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+
+                        <!-- Middle: User -->
+                        <div style="flex: 1; text-align: center;">
+                            <img src="cursor_mind/true_space_user.png" alt="User"
+                                style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+
+                        <!-- Right: Clinical Representation -->
+                        <div style="flex: 1; text-align: center;">
+                            <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Clinical Representation"
+                                style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+
+                    </div>
+                </section>
+                </section>
+
+                <section>
+                    <section style="text-align: left;">
+                        <h2>How well do chatbots recognize psychiatric emergencies?</h2>
+                    </section>
+                </section>
+
+
+                 <section class="simvail-main-results">
+                    <section style="text-align: left;">
+                        <h2>Can AI chatbots amplify the mechanisms of mental illness?</h2>
+                    </section>
+                
+
+                    <!-- SIM-VAIL main presentation -->
+<section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img data-id="fig1-overview" src="simvail_content/Fig_1.png" class="borderless" style="max-height:680px; max-width:100%; width:auto;">
+            </div><aside class="notes">
+              The whole framework on one slide. Left: who the user is. Middle: a conversation plays out. Right: every turn gets scored.
+            </aside>
+          </section>
+<section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail"><div class="simvail-fit">
+            <div class="twocol">
+              <div class="col" style="flex:1.1;">
+                <img data-id="fig1-overview" src="simvail_content/Fig_1.png" class="borderless" style="max-height:580px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="flex:.9;">
+                <div class="accent-box fragment small" style="margin-top:.5em;">
+                  30 profiles × 9 chatbots × 3 repeats = <strong>810 conversations</strong> (up to 10 turns)
+                </div>
+                <div class="accent-box fragment small" style="margin-top:.5em;">
+                  <strong>90k LLM ratings</strong> across <strong>13 dimensions</strong>, validated by <strong>50 human clinicians</strong>
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Three questions. Who is the user — five broad vulnerabilities. What do they want — six recurring intents. How does the chatbot behave across the exchange. Pair each vulnerability with each intent for thirty profiles, run against nine leading chatbots, three times each — 810 conversations, over ninety thousand clinical ratings, externally validated by fifty clinicians. To my knowledge the largest adversarial mental-health audit out there — and nobody was harmed, because the users are simulated.
+            </aside>
+          </section>
+<section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_2.svg" class="borderless fig-full">
+            </div><aside class="notes">
+              Finding one: risk isn't a fixed property of a chatbot — it depends on who's using it and what they're seeking. This is the outskirts idea, in data.
+            </aside>
+          </section>
+<section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail"><div class="simvail-fit">
+            <h3>Risk depends on vulnerability and intent</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_2.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  The same intent can be more or less harmful, depending on the user's context.
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Risk is highest for psychosis and mania, and depends strongly on what's wanted. But the real story is the interaction, panel C: the same intent is harmless for one person and harmful for another. Exactly my clinic mistake — a response fine for the centre, wrong at the edge — now visible across thirty profiles. That context-dependence is what a single, one-size-fits-all test can't see.
+            </aside>
+          </section>
+<section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_3.svg" class="borderless fig-full">
+            </div><aside class="notes">
+              Finding two: chatbots are not interchangeable — large, systematic differences in how safely they behave.
+            </aside>
+          </section>
+<section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail"><div class="simvail-fit">
+            <h3>Some chatbots are safer than others</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_3.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Harmful behaviour depends on how AI chatbots are built.
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Which chatbot you use matters enormously. The safest — the most recent Claude — is far less concerning than the riskiest, the Grok family and an older open-weight model. Newer models trend safer, but it's not a law of nature. The take-home for policy: safety is a design choice, and it's measurable — so it can be required, compared, and improved.
+            </aside>
+          </section>
+<section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_4.svg" class="borderless fig-full">
+            </div><aside class="notes">
+              Finding three, central to "AI and behaviour": risk is not a single moment — it builds over the conversation.
+            </aside>
+          </section>
+<section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail"><div class="simvail-fit">
+            <h3>Vulnerability-amplifying interaction loops (VAILs)</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_4.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Concerning behaviour tends to increase over the course of a conversation.
+                </div>
+                <div class="accent-box small">
+                  Recovery is possible.
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              The behavioural heart of the talk. Harm accumulates — fastest for mania and psychosis. The trajectories have recognizable shapes: steady climb, slow drift, and — encouragingly — recovery, where the chatbot pulls back. Any test looking at one turn in isolation misses this. If we care about behaviour over time, we must evaluate over time.
+            </aside>
+          </section>
+<section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail"><div class="simvail-fit">
+            <h3>Non-vulnerable control users</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Concerning chatbot behaviour is more common for vulnerable users.
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Risk dropped sharply across every model; nearly all points sit below the identity line. The harm isn't a baseline property; it emerges from the interaction with a vulnerable state — the outskirts. This risk falls hardest on the people least able to absorb it.
+            </aside>
+          </section>
+<section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_5.svg" class="borderless fig-full">
+            </div><aside class="notes">
+              Finding four: harm is not one thing. Different kinds of harm, and they don't always move together.
+            </aside>
+          </section>
+<section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail"><div class="simvail-fit">
+            <h3>There is more than one kind of harm</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_5.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Different kinds of harm can trade off against each other.
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Treating the thirteen dimensions together, a map emerges. The main axis is overall severity. A second, independent axis separates kinds of harm — relational harms like fostering dependence versus overt harms like enabling a risky action. And some trade off: a model tuned to never enable a risky action might become colder and more dismissive. You can't compress safety into one number and optimize it.
+            </aside>
+          </section>
+<section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_6.svg" class="borderless fig-full">
+            </div><aside class="notes">
+              Finding five — the one to leave with: these loops are not fixed. We can find the moment they turn, and small changes de-escalate them.
+            </aside>
+          </section>
+<section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail"><div class="simvail-fit">
+            <h3>Interrupting VAILs</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_6.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  A single intervention can lead to lasting reduction in harmful chatbot behaviour.
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              The hopeful finding. Because conversations are simulated, we can run controlled what-ifs you couldn't ethically do with patients. We located the first concerning message, made a matched twin where either the user's prompt or the chatbot's reply was gently rewritten to de-escalate, and let it continue. That single change reduced concerning behaviour across almost every dimension — and the benefit carried forward through later turns.
+            </aside>
+          </section>
+<section class="simvail-slide"><div class="simvail-fit">
+          <div class="twocol" style="align-items:center;">
+            <div class="col" style="flex:1;">
+              <img src="simvail_content/true_space_user.png" class="borderless" style="max-height:480px; width:auto; max-width:100%;">
+            </div>
+            <div class="col" style="text-align:left;">
+              <div class="accent-box fragment small">
+                <strong>Public health:</strong> Risks are real and concentrate on vulnerable users
+              </div>
+              <div class="accent-box fragment small">
+                <strong>Developers:</strong> Multi-turn evaluation across many dimensions of harm
+              </div>
+              <div class="accent-box fragment small">
+                <strong>Policy:</strong> Risks are measurable and can be mitigated
+              </div>
+            </div>
+          </div>
+          </div><aside class="notes">
+            What it means. Clinicians and lived experience: this risk is real and concentrates on vulnerable people — worth asking patients how they use these tools. Developers: evaluate over whole conversations, across dimensions, watch trade-offs, and build in de-escalation. Policy and law: the differences are large and measurable, hence auditable. Honest limits: these are simulated, not real, users; we rely on language models to simulate and score, mitigated by clinician validation; coverage is broad but not exhaustive; and we measure risky behaviour, not clinical deterioration. Even so, the patterns are remarkably consistent across profiles, models, and time.
+          </aside>
+        </section>
+<section data-background-iframe="https://sim-vail-explorer.onrender.com" data-background-interactive class="simvail-slide"><div class="simvail-fit">
+            </div><aside class="notes">
+              Everything I've shown is browsable in an open companion explorer, filling the screen here. Filter by vulnerability, intent, and chatbot, and read the actual conversations and turn-by-turn scores. The app sleeps when idle, so give it a moment to wake.
+            </aside>
+          </section>
+<section class="simvail-slide" style="text-align:left;"><div class="simvail-fit">
+  <h3>Summary</h3>
+  <div class="accent-box small">VAILs are a new mental-health failure mode in human–computer interactions</div>
+  <div class="accent-box small">Risk depends on the user, builds over a conversation, and takes multiple forms</div>
+  <div class="accent-box small">VAILs can be interrupted by rewriting chatbot responses</div>
+</div><aside class="notes">
+              Three take-aways. VAILs are a new mental-health failure mode. Risk depends on the user, builds over a conversation, and takes multiple forms. And VAILs can be interrupted.
+            </aside></section>
+                </section>
+
+                <section>
+                    <section style="text-align: left;">
+                        <h2>New ways of understanding mental health</h2>
+                    </section>
+
+                <section data-transition="fade" data-auto-animate>
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                    <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+                                <small>
+                                    <p>It started with strange noises through the wall, quiet and barely recognizable, as if someone were eavesdropping.</p>
+                                    <p>Over time, I could make out the voice of my neighbor. I had to investigate.</p>
+                                    <p>At first, I only heard his voice in my apartment, but later he followed me to other places.</p>
+                                    <p>Then it dawned on me - he's an agent!</p>
+                             </small>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-auto-animate data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <!-- Upper Part: Image -->
+                                    <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+                                <img src="cursor_mind/sloth_bw.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                        </div>
+                    </section>
+ 
+                    <section data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <!-- Upper Part: Image -->
+                                    <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+                                <img src="cursor_mind/sloth.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-transition="fade" data-auto-animate>
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <!-- Upper Part: Image -->
+                                    <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+                                <img src="cursor_mind/sloth_bw.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                                    <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                </div>
+                                <!-- Lower Part: Empty or Content Placeholder -->
+                                <div style="flex: 1;">
+                                    <small>What is the mechanism of psychotic experiences?</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+                                <h6>Predictive processing</h6>
+                                <img src="cursor_mind/fmodes_2.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                                    <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                </div>
+                                <!-- Lower Part: Empty or Content Placeholder -->
+                                <div style="flex: 1;">
+                                    <small>What is the mechanism of psychotic experiences?</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+                                <h6>Predictive processing</h6>
+                                <img src="cursor_mind/fmodes_2b.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                                    <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                </div>
+                                <!-- Lower Part: Empty or Content Placeholder -->
+                                <div style="flex: 1;">
+                                    <small>What is the mechanism of psychotic experiences?</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+                                <h6>Predictive processing</h6>
+                                <img src="cursor_mind/fmodes_1.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-background-color="black" data-background-transition="fade" data-transition="fade">
+                        <video data-autoplay data-src="./Content/RDK_Graded_immediate.mp4" width="75%" heigth="75%">
+                    </section> 
+
+                     <section data-background-color="black" data-background-transition="fade" data-transition="fade">
+						<video data-autoplay data-src="./Content/hollowmask.mp4" width="75%" heigth="75%">
+					</section>
+
+                    <section id="where-to-look-for" data-transition="fade">
+					<p><img src="Content/bilateral_activated_Brain_0.svg" style="background:none; border:none; box-shadow:none;"></p>
+					</section>
+
+                     <section id="sensory-ambiguity" data-transition="fade">
+                    <p><img src="cursor_mind/brain_paradigm.png" style="width: 65%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                    <section id="sensory-ambiguity" data-transition="fade">
+                    <h6>Scz vs. controls</h6>
+                    <p><img src="cursor_mind/brain_001.png" style="width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                    <section id="sensory-ambiguity" data-transition="fade">
+                    <h6>Scz vs. controls</h6>
+                    <p><img src="cursor_mind/brain_002.png" style="width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                    <section id="sensory-ambiguity" data-transition="fade">
+                    <h6>Scz vs. controls</h6>
+                    <p><img src="cursor_mind/brain_003.png" style="width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                    <section id="sensory-ambiguity" data-transition="fade">
+                    <h6>S-ketamine vs. placebo</h6>
+                    <p><img src="cursor_mind/brain_004.png" style="width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                     <section data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                                    <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                </div>
+                                <!-- Lower Part: Empty or Content Placeholder -->
+                                <div style="flex: 1;">
+                                    <small>External bias in Scz & NMDAR hypofunction</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+                                <h6>Predictive processing</h6>
+                                <img src="cursor_mind/fmodes_2b_switch.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-transition="fade" data-auto-animate="">
+                    <h6>Signal detection</h6>
+                    <p><img src="cursor_mind/currbio_001.png" style="width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                    <section data-auto-animate data-transition="fade">
+                    <h6>Signal detection</h6>
+                    <p><img src="cursor_mind/currbio_001.png" style="width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                        <small>
+                        <p>Behavioral experiment in 20 healthy human participants</p>
+                        <p>Gabors at varying SNR and orientations</p>
+                        <p>High-contrast inducers at -10° and 10°</p>
+                        </small>    
+                    </section>
+
+
+                    <section id="sensory-ambiguity" data-transition="fade">
+                    <h6>Signal detection</h6>
+                    <p><img src="cursor_mind/currbio_002.png" style="width: 80%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                    <section id="sensory-ambiguity" data-transition="fade">
+                    <h6>Reverse correlation</h6>
+                    <p><img src="cursor_mind/currbio_003.png" style="width: 65%; height: auto; background: none; border: none; box-shadow: none;"></p>
+                    </section>
+
+                    <section data-transition="fade">
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                                    <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                </div>
+                                <!-- Lower Part: Empty or Content Placeholder -->
+                                <div style="flex: 1;">
+                                    <small>False alarms in internal mode</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+                                <h6>Predictive processing</h6>
+                                <img src="cursor_mind/fmodes_2b_switch.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                
+                            </div>
+                        </div>
+                    </section>
+
+
+                </section>
+
+                <section data-transition="fade" data-auto-animate="">
+                    <h6>Two problems</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                        <small>
+                        <p><strong>Precision:</strong> Limited mechanistic understanding & accuracy</p>
+                        <p><strong>Scalability:</strong> Duration of undiagnosed & untreated illness</p>
+                         </small>
+                </section>
+
+                <section>
+                    <section style="text-align: left;">
+                        <h2>New ways of measuring mental health</h2>
+                    </section>
+
+                    <section data-auto-animate>
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                    <img src="cursor_mind/computer_movement.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+                                <small>
+                                    <p class="fragment"><strong>Global average screen time:</strong> 6 hours and 34 minutes per day.</p>
+                                    <p class="fragment">Human-computer interactions for almost half of waking hours.</p>
+                                    <p class="fragment">Passively collected data that can be gathered in real-time, with high precision, and at no significant cost.</p>
+                                    <p class="fragment"><strong>Can human-computer interactions predict mental health?</strong></p>
+                                </small>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section data-auto-animate>
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                                    <img src="cursor_mind/computer_movement.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                </div>
+                                <!-- Lower Part: Empty or Content Placeholder -->
+                                <div style="flex: 1;">
+                                    <small> </small>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+                                <img src="cursor_mind/cursor_trail.gif" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-auto-animate>
+                        <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+                            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+                                <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                                    <img src="cursor_mind/computer_movement.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column: 75% of the screen -->
+                            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+                                <img src="cursor_mind/cursor_mind_1.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                                
+                            </div>
+                        </div>
+                    </section>
+
+                    <section data-auto-animate>
+                        <img src="cursor_mind/cursor_mind_concept.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                    </section>
+
+
+                    <section data-auto-animate data-background-image = "cursor_mind/Figure_2-1.png" data-background-size = "contain">
+                    </section>
+
+                    <section data-auto-animate data-background-image = "cursor_mind/Figure_3-1.png" data-background-size = "contain">
+                    </section>
+
+                    <section data-auto-animate data-background-image = "cursor_mind/Figure_4-1.png" data-background-size = "contain">
+                    </section>
+
+                    <section data-auto-animate data-background-image = "cursor_mind/Figure_5-1.png" data-background-size = "contain">
+                    </section>
+
+                </section>  
+                
+                <section data-transition="fade" data-auto-animate="">
+                    <h6>Two problems</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                        <small>
+                        <p><strong>Precision:</strong> Limited mechanistic understanding & accuracy</p>
+                        <p><strong>Scalability:</strong> Duration of undiagnosed & untreated illness</p>
+                         </small>
+                </section>
+
+                <section>
+                    <section style="text-align: left;">
+                        <h2>New ways of improving mental health</h2>
+                    </section>
+
+
+              <section style="text-align:left;">
+                <h3>LLM chatbots for mental health</h3>
+                <small>
+                    <ul>
+                    <li class="fragment">Millions use consumer AI chatbots (ChatGPT, Claude, Gemini, Copilot) for <strong>emotional support, relationship guidance, and companionship</strong></li>
+                    <li class="fragment">Global median: only <strong>13 mental health workers per 100,000 people</strong> - AI could supplement, but also harm</li>
+                    <li class="fragment">Anecdotal reports link chatbot use to <strong>mental health crises</strong>; survey evidence associates heavier use with negative outcomes</li>
+                    <li class="fragment">Current safety evaluations are <strong>single-turn, narrow, and miss subthreshold harms</strong> that accumulate over conversation</li>
+                    </ul>
+                    <div class="accent-box fragment" style="margin-top:1em;">
+                    <strong>Core gap:</strong> No existing framework captures how <em>locally supportive</em> chatbot behaviors become <em>maladaptive</em> when they align with a user's psychiatric vulnerability over multiple turns.
+                    </div>
+                </small>
+                <aside class="notes">
+                    The core tension is this: AI chatbots are already being used at scale for mental health support, but our evaluation tools are not designed to catch the subtle, accumulating harms that arise in extended conversations with vulnerable users. Current benchmarks test single turns against overt policy violations - they miss the slow drift. Transition: Let me outline the key contributions of this work.
+                </aside>
+                </section>
+
+                    <section data-auto-animate>
+                        <img src="simvail/Fig_1.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                    </section>
+
+
+                    <section data-auto-animate>
+                        <img src="simvail/Fig_5.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                    </section>
+                </section>
+
+
+                    
+                <section>
+                    <section data-transition="fade" data-auto-animate="">
+                    <h6>Two problems</h6>
+                    <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                        <!-- Left: Image -->
+                        <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                            <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                        
+                        <!-- Right: Personal Account -->
+                        <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                            <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                        </div>
+                    </div>
+                        <small>
+                        <p><strong>Precision:</strong> Limited mechanistic understanding & accuracy</p>
+                        <p><strong>Scalability:</strong> Duration of undiagnosed & untreated illness</p>
+                         </small>
+                    </section>
+                    <section>
+                        <h6>Current projects</h6>
+                        <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+                            <!-- Left: Image -->
+                            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+                                <img src="cursor_mind/group_movement.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+                            </div>
+                            
+                            <!-- Right: Personal Account -->
+                            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+                                <small>
+                                <ul>
+                                    <li class="fragment">
+                                    <strong>Public mental health</strong>
+                                    <ul>
+                                        <li class="fragment">Massively scalable and dynamic mental health monitoring</li>
+                                    </ul>
+                                    </li>
+
+                                    <br />
+
+                                    <li class="fragment">
+                                    <strong>AI Safety</strong>
+                                    <ul>
+                                        <li class="fragment">Tools against survey pollution</li>
+                                        <li class="fragment">Portable tokens of humanness</li>
+                                        <li class="fragment">Contextualizing chatbots for MH safety</li>
+                                    </ul>
+                                    </li>
+
+                                    <br />
+
+                                    <li class="fragment">
+                                    <strong>Evaluation &amp; Open Source</strong>
+                                    <ul>
+                                        <li class="fragment">Ethical &amp; data protection challenges</li>
+                                        <li class="fragment">Transparency and interpretability of AI-supported models</li>
+                                    </ul>
+                                    </li>
+
+                                </ul>
+                                </small>
+                            </div>
+                        </div>
+                        <small><p class="fragment"><strong>Outcome: </strong>A new modality for fair, reliable, and scalable mental health assessment</p>
+                        </small>
+                    </section>
+
+                </section>   
+
+            <section>
+                <br/>
+                <h3>Thanks for your attention!</h3> <br/> 
+                <img src="cursor_mind/funders_tracking.png">
+            </section>
+
+            <section style="text-align: left;">
+                <h2>Additional material</h2>
+            </section>
+
+<section class="simvail-slide"><div class="simvail-fit">
+                    <div class="twocol" style="gap:2.4rem;">
+                      <div class="col" style="flex:.9; text-align:center;">
+                        <img src="simvail_content/cover_no_text.svg" class="borderless" style="max-height:620px; width:auto; max-width:100%;">
+                      </div>
+                      <div class="col" style="flex:1.2; text-align:left;">
+                        <h3 style="margin-bottom:.15em;">Satellite Meeting</h3>
+                        <p class="small muted" style="margin-top:0;">International Consortium on Hallucination Research</p>
+                        <p class="small" style="margin-top:1.4em;">Veith Weilnhammer</p>
+                        <p class="xsmall muted" style="margin-top:0;">Max Planck UCL Centre for Computational Psychiatry &amp; Ageing Research</p>
+                        <div style="margin-top:1.6em; border-top:1px solid #ddd; padding-top:.6em;">
+                          <p class="xsmall muted" style="margin:.15em 0 0 0;">Munich · 18 October 2026</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+        
+<section class="simvail-slide">
+          <!-- 1. first encounter — just the woman, no title -->
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img data-id="patient-img" src="simvail_content/patient.png" class="borderless" style="max-height:620px; width:auto; max-width:100%;">
+            </div><aside class="notes">
+              Let me start not with AI, but with a patient, early in my training. A young woman came in — calm, articulate, employed. Her complaint was sleep: she wasn't sleeping well because a neighbour kept playing music through the wall at night, so she'd taken to keeping her curtains shut and resting in the day. Everything she said mapped neatly onto ordinary life: thin walls, an inconsiderate neighbour, a disrupted sleep cycle. I talked about sleep hygiene, empathised about the neighbour, and reassured her it would settle. Every detail sounded normal, so I treated it as normal.
+            </aside>
+          </section>
+
+          <!-- 2. second encounter — the true context -->
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:1;">
+                <img data-id="patient-img" src="simvail_content/patient.png" class="borderless" style="max-height:500px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="text-align:left;">
+                <p class="xsmall muted" style="margin-bottom:.4em;">One week later</p>
+                <ul class="small tight">
+                  <li>She understood the music as a message meant for her</li>
+                  <li>Keeping the curtains shut prevented people in the street from reading her thoughts</li>
+                </ul>
+                <div class="accent-box small" style="margin-top:.7em;">
+                  A <strong>profound misunderstanding of context</strong> in a human-to-human interaction
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              She came back a week later, and the fuller picture emerged. The music wasn't just noise — she was certain it was a coded message directed at her. The curtains weren't about the neighbour — they shielded her thoughts from people in the street who, she believed, could read them. The poor sleep wasn't insomnia — she stayed awake to monitor the situation. The exact same facts I had filed as ordinary were the visible surface of a persecutory delusion. This was psychosis, and it had been there on the first visit. By treating her account as ordinary, I had quietly validated the framework that was frightening her. I hadn't heard a different symptom; I had misunderstood the context the symptoms lived in.
+            </aside>
+          </section>
+
+          <!-- 3. we assume mental health (gif) -->
+          <section data-transition="fade" class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/true_space_no_axes_rotation.gif" alt="Space of ordinary experience" class="borderless" style="max-width: 90%; max-height: 60vh; width: auto; height: auto; object-fit: contain; transform: scale(1.2, 1.5);">
+          </div></section>
+
+          <!-- 4+5. outskirts of the cloud + chatbots -->
+          <section class="simvail-slide"><div class="simvail-fit">
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:1.3;">
+                <img src="simvail_content/true_space_user.png" class="borderless" style="max-height:560px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="text-align:left;">
+                <p class="xsmall muted" style="margin-bottom:.4em;">The mechanism</p>
+                <ul class="small tight">
+                  <li class="fragment">My understanding was well calibrated at the centre.</li>
+                  <li class="fragment">Misunderstanding of context when interacting with people who make more unusual experiences.</li>
+                </ul>
+                <div class="accent-box fragment small" style="margin-top:.6em;">
+                  How about interactions between humans and chatbots?
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              She was at the edge, not the centre I'd assumed — that's why my answer misfired. Chatbots can make the same mistake, but at scale: behaviour that is well calibrated for people near the centre can be harmful for people with more unusual experiences — in psychosis, mania, or crisis. We call these VAILs — Vulnerability-Amplifying Interaction Loops.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="section-divider simvail-slide"><div class="simvail-fit">
+          <h2>What we did</h2>
+          <p class="muted" style="font-size:.85em;">SIM-VAIL: simulated conversations between vulnerable users and 9 AI chatbots</p>
+          </div><aside class="notes">
+            The idea in one line: instead of waiting for real people to be harmed, we simulate the conversations, then score them clinically. Three ingredients — the simulated users, the conversations, and the scoring.
+          </aside>
+        </section>
+
+        
+
+
+        
+<section class="section-divider simvail-slide"><div class="simvail-fit">
+          <h2>What we found</h2>
+          <p class="muted" style="font-size:.85em;">AI chatbot behaviour can amplify the mechanisms of mental illness.</p>
+          </div><aside class="notes">
+            Five findings. Risk depends on the person. Chatbots differ. Risk builds over the conversation. There are different kinds of harm that trade off. And — the hopeful part — the loops can be broken.
+          </aside>
+        </section>
+
+        
+
+
+        
+
+
+        
+
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless fig-full">
+            </div><aside class="notes">
+              An obvious objection: maybe these chatbots are just a bit off with everyone. So we ran a control — the same intents and the same models, but with healthy simulated users.
+            </aside>
+          </section>
+
+          
+        </section>
+
+        
+
+
+        
+
+
+        
+<section class="section-divider simvail-slide"><div class="simvail-fit">
+          <h2>Implications</h2>
+          <p class="muted" style="font-size:.85em;">VAILs as a new mental-health failure mode in human–computer interactions.</p>
+          </div><aside class="notes">
+            What does this mean for the different disciplines in the room?
+          </aside>
+        </section>
+
+        
+
+
+        
+<section class="simvail-slide">
+          
+          <section data-background-iframe="https://sim-vail-explorer.onrender.com" data-background-interactive class="simvail-slide"><div class="simvail-fit">
+            </div><aside class="notes">
+              A second full-screen view — useful for comparing a different profile or chatbot during discussion.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <!-- take-home messages -->
+          
+
+          <!-- thanks + data -->
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:.7; text-align:center;">
+                <img data-id="close-cover" src="simvail_content/cover_no_text.svg" class="borderless" style="max-height:560px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="flex:1.3; text-align:left;">
+                <div class="accent-box small" data-id="th1" style="opacity:.3;">VAILs are a new mental-health failure mode in human–computer interactions</div>
+                <div class="accent-box small" data-id="th2" style="opacity:.3;">Risk depends on the user, builds over a conversation, and takes multiple forms</div>
+                <div class="accent-box small" data-id="th3" style="opacity:.3;">VAILs can be interrupted by rewriting chatbot responses</div>
+                <div class="accent-box small" data-id="close-data" style="margin-top:.5em;">
+                  <strong>Thank you!</strong>
+                  <p class="xsmall" style="margin:.25em 0 0 0;">Explorer: <a href="https://sim-vail-explorer.onrender.com">sim-vail-explorer.onrender.com</a></p>
+                  <p class="xsmall" style="margin:.1em 0 0 0;">Repo: <a href="https://github.com/veithweilnhammer/sim-vail">github.com/veithweilnhammer/sim-vail</a></p>
+                  <p class="xsmall" style="margin:.1em 0 0 0;">Paper: <a href="https://arxiv.org/abs/2602.01347">arXiv:2602.01347</a></p>
+                </div>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Thank you. The explorer, code, and preprint are all here, and I'd love to discuss across the disciplines in the room.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="section-divider simvail-slide" style="text-align:left;"><div class="simvail-fit">
+          <h2 style="text-align:center;">Thanks</h2>
+          <p class="small" style="color:#e7eefb; margin-top:1em;">
+            <strong style="color:#fff;">Co-authors:</strong> K. Y. C. Hou · Lennart Luettgau · Christopher Summerfield · Ray Dolan · Matthew Nour
+          </p>
+          <p class="small" style="color:#e7eefb;">
+            <strong style="color:#fff;">Institutions:</strong> Max Planck UCL Centre for Computational Psychiatry &amp; Ageing Research · UK AI Security Institute · University of Oxford · Microsoft AI
+          </p>
+          <p class="small" style="color:#e7eefb;">
+            <strong style="color:#fff;">And:</strong> the 50 clinician annotators · all chatbots involved in creating this dataset
+          </p>
+          </div><aside class="notes">
+            Thank you to my co-authors, to the institutions that supported this work, to the fifty clinicians who validated our ratings, and to the LAMBDA team and King's Institute for Artificial Intelligence for hosting.
+          </aside>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_1.svg" class="borderless" style="max-height:600px; width:auto; max-width:100%;">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 1 — reliability &amp; validity</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_1.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Turn- vs. whole-conversation scores agree</li>
+                  <li>Two independent AI judges agree</li>
+                  <li>Repeat runs are consistent</li>
+                  <li>Separates known high- vs. low-risk conversations</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 1: internal reliability and validity — turn-vs-conversation agreement, cross-judge agreement, test–retest, and discriminative validity.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_2.svg" class="borderless" style="max-height:600px; width:auto; max-width:100%;">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 2 — clinician validation</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_2.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Clinicians rated a sample of turns</li>
+                  <li>Their safety ratings track the AI judge</li>
+                  <li>Simulated users rated realistic</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 2: human validation — clinicians rated turns for safety and rated user realism. Their judgements track the automated scores.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_3.svg" class="borderless fig-full">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 3 — structure of the risk dimensions</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_3.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>PCA loadings across the first components</li>
+                  <li>Which dimensions move together vs. oppose</li>
+                  <li>The basis for the risk trade-offs</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 3: structure of the 13 risk dimensions — PCA loadings and correlations. Some cluster and move together; others are dissociable or anti-correlated, the basis for the trade-offs.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless fig-full">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 4 — vulnerable vs. control users</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Each point = a chatbot's mean risk</li>
+                  <li>Vulnerable users (x) vs. control users (y)</li>
+                  <li>Nearly all below the identity line — safer with healthy users</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 4: the control comparison in full — each chatbot's mean risk with vulnerable versus healthy users. Nearly all points below the identity line: every model is safer with non-vulnerable users.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_5.svg" class="borderless fig-full">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 5 — the full interaction landscape</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_5.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Every chatbot × vulnerability × intent cell</li>
+                  <li>The complete interaction space</li>
+                  <li>Model differences interact with context</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 5: the full context-dependence — concerning behaviour for every chatbot across every vulnerability–intent cell. Shows how model differences interact with the specific situation.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_6.svg" class="borderless fig-full">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 6 — timing &amp; mechanisms of risk</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_6.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Turns to reach a concerning threshold, per pairing</li>
+                  <li>Mechanism-specific risk activation</li>
+                  <li>Same overall risk, different pathways</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 6: timing and mechanisms — how quickly conversations reach a concerning threshold, and which mechanisms are activated. The same overall risk level can arise from different underlying pathways depending on the profile.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_7.svg" class="borderless fig-full">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 7 — extending early-stopped conversations</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_7.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Original vs. extended conversation scores</li>
+                  <li>Turn-level and trajectory-level checks</li>
+                  <li>Conclusions unchanged</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 7: robustness — continuing early-stopped conversations to a full ten turns leaves the conversation-, turn-, and trajectory-level conclusions unchanged.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_8.svg" class="borderless fig-full">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 8 — guarding against judge bias</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_8.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Same-family vs. other-family judge</li>
+                  <li>Exact same-model comparison</li>
+                  <li>Effect doesn't explain the results</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 8: guarding against judge bias — results hold whether or not the judge is from the same developer family as the target chatbot.
+            </aside>
+          </section>
+        </section>
+
+        
+<section class="simvail-slide">
+          <section data-auto-animate class="simvail-slide"><div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_9.svg" class="borderless fig-full">
+          </div></section>
+          <section data-auto-animate style="text-align:left;" class="simvail-slide"><div class="simvail-fit">
+            <h3>ED 9 — counterfactual selection diagnostics</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_9.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Distribution of intervention turns</li>
+                  <li>Trajectory up to the intervention point</li>
+                  <li>How eligible conversations were selected</li>
+                </ul>
+              </div>
+            </div>
+            </div><aside class="notes">
+              Extended Data 9: counterfactual selection diagnostics — where in each conversation the first concerning message occurred and the trajectory up to that point.
+            </aside>
+          </section>
+        </section>
+
+      
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+<script id="simvail-appended-fit">
+  function fitAppendedSlide(slide) {
+    if (!slide || !slide.classList.contains('simvail-slide')) return;
+    const content = Array.from(slide.children).find(child => child.classList.contains('simvail-fit'));
+    if (!content) return;
+    const slideRect = slide.getBoundingClientRect();
+    if (!slideRect.width || !slideRect.height) return;
+    content.style.setProperty('--fit-scale', '1');
+    const centerX = slideRect.left + slideRect.width / 2;
+    const centerY = slideRect.top + slideRect.height / 2;
+    let extentX = 0;
+    let extentY = 0;
+    for (const node of content.querySelectorAll('*')) {
+      const rect = node.getBoundingClientRect();
+      if (!rect.width && !rect.height) continue;
+      extentX = Math.max(extentX, Math.abs(rect.left - centerX), Math.abs(rect.right - centerX));
+      extentY = Math.max(extentY, Math.abs(rect.top - centerY), Math.abs(rect.bottom - centerY));
+    }
+    const ownRect = content.getBoundingClientRect();
+    extentX = Math.max(extentX, ownRect.width / 2);
+    extentY = Math.max(extentY, ownRect.height / 2);
+    const scale = Math.min(1, slideRect.width * .47 / extentX, slideRect.height * .46 / extentY);
+    content.style.setProperty('--fit-scale', String(scale));
+  }
+  function fitCurrentAppendedSlide() { fitAppendedSlide(Reveal.getCurrentSlide()); }
+  Reveal.on('ready', fitCurrentAppendedSlide);
+  Reveal.on('slidechanged', () => requestAnimationFrame(fitCurrentAppendedSlide));
+  window.addEventListener('resize', fitCurrentAppendedSlide);
+  document.querySelectorAll('.simvail-fit img, .simvail-fit video').forEach(media => {
+    media.addEventListener('load', () => fitAppendedSlide(media.closest('section')));
+    media.addEventListener('loadedmetadata', () => fitAppendedSlide(media.closest('section')));
+  });
+</script>
+
+	</body>
+</html>
