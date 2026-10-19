@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" width="1180" height="640" viewBox="610 0 590 320" role="img" aria-labelledby="title desc" version="1.1" id="svg138" ns1:docname="workflow_overview_v13.svg" ns2:version="1.4.4 (dcaf3e7, 2026-05-05)">
+  <ns1:namedview id="namedview138" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" ns2:showpageshadow="2" ns2:pageopacity="0.0" ns2:pagecheckerboard="0" ns2:deskcolor="#d1d1d1" ns2:zoom="0.4" ns2:cx="731.25001" ns2:cy="735.00001" ns2:window-width="1920" ns2:window-height="1063" ns2:window-x="0" ns2:window-y="30" ns2:window-maximized="0" ns2:current-layer="svg138" />
+  <ns0:title id="title">Conversational mental-health triage benchmark</ns0:title>
+  <ns0:desc id="desc">Four-panel schematic showing path-dependent triage, construction of a structured vignette corpus, branch-separated conversational simulation, and an illustrative conversation grounded in a depression and dependent-safeguarding case.</ns0:desc>
+  <ns0:defs id="defs8">
+    <ns0:style id="style1">
+      text { font-family: Arial, sans-serif; fill: #1a1a1a; }
+      .panel { font-size: 20px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #4d4d4d; }
+      .section { font-size: 12px; font-weight: 700; fill: #737373; letter-spacing: 1px; }
+      .title { font-size: 14px; font-weight: 700; }
+      .body { font-size: 11px; fill: #4d4d4d; }
+      .small { font-size: 10px; fill: #4d4d4d; }
+      .micro { font-size: 9px; fill: #5f5f5f; }
+      .box { fill: #fff; stroke: #bfbfbf; stroke-width: 1.2; }
+      .soft { fill: #fafafa; stroke: #d1d1d1; stroke-width: 1.2; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.5; }
+      .orange { fill: #fef7ed; stroke: #d97706; stroke-width: 1.5; }
+      .green { fill: #f0fdfa; stroke: #0f766e; stroke-width: 1.5; }
+      .purple { fill: #f6f0fb; stroke: #8250ad; stroke-width: 1.3; }
+      .rule { stroke: #d9d9d9; stroke-width: 1.2; }
+      .arrow { fill: none; stroke: #737373; stroke-width: 1.8; marker-end: url(#arrow); }
+      .arrow-blue { fill: none; stroke: #2563eb; stroke-width: 2.2; marker-end: url(#arrow-blue); }
+      .arrow-orange { fill: none; stroke: #d97706; stroke-width: 2.2; marker-end: url(#arrow-orange); }
+      .arrow-green { fill: none; stroke: #0f766e; stroke-width: 2.2; marker-end: url(#arrow-green); }
+    </ns0:style>
+    <ns0:marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto" preserveAspectRatio="xMidYMid">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#737373" id="path1" />
+    </ns0:marker>
+    <ns0:marker id="arrow-blue" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#2563eb" id="path2" />
+    </ns0:marker>
+    <ns0:marker id="arrow-orange" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#d97706" id="path3" />
+    </ns0:marker>
+    <ns0:marker id="arrow-green" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto" preserveAspectRatio="xMidYMid">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#0f766e" id="path4" />
+    </ns0:marker>
+    <ns0:pattern id="grid-dots" width="15" height="15" patternUnits="userSpaceOnUse">
+      <ns0:circle cx="7.5" cy="7.5" r="1.8" fill="#dfe4ea" id="circle4" />
+    </ns0:pattern>
+    <ns0:g id="occupied-cell">
+      <ns0:rect x="-5" y="-5" width="10" height="10" rx="2" fill="#f1f4f7" id="rect4" />
+      <ns0:circle cx="-2.3" cy="-2.3" r="1.65" fill="#2f7d5d" id="circle5" />
+      <ns0:circle cx="2.3" cy="-2.3" r="1.65" fill="#c9992e" id="circle6" />
+      <ns0:circle cx="-2.3" cy="2.3" r="1.65" fill="#d9713f" id="circle7" />
+      <ns0:circle cx="2.3" cy="2.3" r="1.65" fill="#b3352c" id="circle8" />
+    </ns0:g>
+    <ns0:marker id="arrow-blue-0" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <ns0:path d="M 0,0 8,4 0,8 Z" fill="#2563eb" id="path2-1" />
+    </ns0:marker>
+    <ns0:marker id="arrow-8" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto" preserveAspectRatio="xMidYMid">
+      <ns0:path d="M 0,0 8,4 0,8 Z" fill="#737373" id="path1-4" />
+    </ns0:marker>
+  </ns0:defs>
+  <ns0:rect width="1200" height="1040" fill="#ffffff" id="rect8" />
+  
+  <ns0:text class="panel" x="20" y="28" id="text8">A</ns0:text>
+  <ns0:text class="subtitle" x="20" y="52" id="text9">Path-dependent conversational triage</ns0:text>
+  <ns0:rect class="blue" x="42" y="92" width="190" height="76" rx="7" id="rect9" />
+  <ns0:text class="section" x="137" y="116" text-anchor="middle" id="text10">INFERENCE</ns0:text>
+  <ns0:text class="title" x="137" y="143" text-anchor="middle" id="text11">Running triage disposition</ns0:text>
+  <ns0:rect class="orange" x="340" y="92" width="190" height="76" rx="7" id="rect11" />
+  <ns0:text class="section" x="435" y="116" text-anchor="middle" id="text12">CONTEXT-SEEKING</ns0:text>
+  <ns0:text class="title" x="435" y="143" text-anchor="middle" id="text13">Next chatbot question</ns0:text>
+  <ns0:rect class="green" x="340" y="205" width="190" height="76" rx="7" id="rect13" />
+  <ns0:text class="section" x="435" y="229" text-anchor="middle" id="text14">DISCLOSURE</ns0:text>
+  <ns0:text class="title" x="435" y="256" text-anchor="middle" id="text15">New user message</ns0:text>
+  <ns0:rect class="soft" x="42" y="205" width="190" height="76" rx="7" id="rect15" />
+  <ns0:text class="section" x="137" y="229" text-anchor="middle" id="text16">VISIBLE CONTEXT</ns0:text>
+  <ns0:text class="title" x="137" y="256" text-anchor="middle" id="text17">Updated transcript</ns0:text>
+  <ns0:path class="arrow-orange" d="M242 130 H326" id="path17" />
+  <ns0:path class="arrow-green" d="M435 174 V194" id="path18" />
+  <ns0:path class="arrow-green" d="m 328.65,243 h -86" id="path19" />
+  <ns0:path class="arrow-blue" d="M 137,195.47019 V 175.8298" id="path20-4" style="fill:none;stroke:#2563eb;stroke-width:2.2;marker-end:url(#arrow-blue-0)" ns2:transform-center-x="59.999995" ns2:transform-center-y="-10.425" ns1:nodetypes="cc" />
+  
+  <ns0:text class="panel" x="620" y="28" id="text21">B</ns0:text>
+  <ns0:text class="subtitle" x="620" y="52" id="text22">Design space and vignette construction</ns0:text>
+  <ns0:text class="micro" x="632" y="184" transform="rotate(-90 632 184)" text-anchor="middle" id="text24">RISK DOMAINS</ns0:text>
+  <ns0:g transform="translate(654 96)" id="g51">
+    <ns0:rect x="0" y="0" width="135" height="135" rx="5" fill="url(#grid-dots)" stroke="#d1d1d1" id="rect24" />
+    
+    <ns0:use href="#occupied-cell" transform="translate(7.5 7.5)" id="use24" />
+    <ns0:use href="#occupied-cell" transform="translate(7.5 22.5)" id="use25" />
+    <ns0:use href="#occupied-cell" transform="translate(7.5 82.5)" id="use26" />
+    <ns0:use href="#occupied-cell" transform="translate(7.5 97.5)" id="use27" />
+    <ns0:use href="#occupied-cell" transform="translate(22.5 37.5)" id="use28" />
+    <ns0:use href="#occupied-cell" transform="translate(37.5 7.5)" id="use29" />
+    <ns0:use href="#occupied-cell" transform="translate(37.5 37.5)" id="use30" />
+    <ns0:use href="#occupied-cell" transform="translate(37.5 97.5)" id="use31" />
+    <ns0:use href="#occupied-cell" transform="translate(37.5 127.5)" id="use32" />
+    <ns0:use href="#occupied-cell" transform="translate(52.5 7.5)" id="use33" />
+    <ns0:use href="#occupied-cell" transform="translate(52.5 37.5)" id="use34" />
+    <ns0:use href="#occupied-cell" transform="translate(52.5 52.5)" id="use35" />
+    <ns0:use href="#occupied-cell" transform="translate(52.5 67.5)" id="use36" />
+    <ns0:use href="#occupied-cell" transform="translate(67.5 37.5)" id="use37" />
+    <ns0:use href="#occupied-cell" transform="translate(67.5 67.5)" id="use38" />
+    <ns0:use href="#occupied-cell" transform="translate(82.5 7.5)" id="use39" />
+    <ns0:use href="#occupied-cell" transform="translate(82.5 22.5)" id="use40" />
+    <ns0:use href="#occupied-cell" transform="translate(82.5 37.5)" id="use41" />
+    <ns0:use href="#occupied-cell" transform="translate(82.5 97.5)" id="use42" />
+    <ns0:use href="#occupied-cell" transform="translate(97.5 37.5)" id="use43" />
+    <ns0:use href="#occupied-cell" transform="translate(97.5 67.5)" id="use44" />
+    <ns0:use href="#occupied-cell" transform="translate(97.5 112.5)" id="use45" />
+    <ns0:use href="#occupied-cell" transform="translate(97.5 127.5)" id="use46" />
+    <ns0:use href="#occupied-cell" transform="translate(112.5 7.5)" id="use47" />
+    <ns0:use href="#occupied-cell" transform="translate(112.5 22.5)" id="use48" />
+    <ns0:use href="#occupied-cell" transform="translate(112.5 37.5)" id="use49" />
+    <ns0:use href="#occupied-cell" transform="translate(112.5 112.5)" id="use50" />
+    <ns0:use href="#occupied-cell" transform="translate(127.5 7.5)" id="use51" />
+    <ns0:rect x="30.5" y="90.5" width="14" height="14" rx="3" fill="none" stroke="#b8322a" stroke-width="2.2" id="rect51" style="stroke:#737373" />
+  </ns0:g>
+  <ns0:text class="micro" x="721.5" y="246" text-anchor="middle" id="text51">PRESENTATION CLUSTERS</ns0:text>
+  <ns0:circle cx="670" cy="272" r="4" fill="#2a7f62" id="circle51" />
+  <ns0:text class="micro" x="679" y="275" id="text52">A</ns0:text>
+  <ns0:circle cx="701" cy="272" r="4" fill="#d39a20" id="circle52" />
+  <ns0:text class="micro" x="710" y="275" id="text53">B</ns0:text>
+  <ns0:circle cx="732" cy="272" r="4" fill="#dc6b35" id="circle53" />
+  <ns0:text class="micro" x="741" y="275" id="text54">C</ns0:text>
+  <ns0:circle cx="763" cy="272" r="4" fill="#b8322a" id="circle54" />
+  <ns0:text class="micro" x="772" y="275" id="text55">D</ns0:text>
+  <ns0:path class="arrow" d="M806 168 H830" id="path55" />
+  <ns0:rect class="orange" x="840" y="112" width="118" height="111" rx="7" id="rect55" />
+  <ns0:text class="section" x="899" y="137" text-anchor="middle" id="text56">LLM-ASSISTED</ns0:text>
+  <ns0:text class="title" x="899" y="161" text-anchor="middle" id="text57">Generate</ns0:text>
+  <ns0:text class="small" x="899" y="180" text-anchor="middle" id="text58">and review</ns0:text>
+  <ns0:line class="rule" x1="858" y1="191" x2="940" y2="191" id="line58" />
+  <ns0:text class="micro" x="899" y="208" text-anchor="middle" id="text59">112 case files</ns0:text>
+  <ns0:path class="arrow" d="M968 168 H984" id="path59" />
+  <ns0:g transform="translate(994 78)" id="g72">
+    <ns0:rect class="box" x="9" y="9" width="177" height="216" rx="7" id="rect59" />
+    <ns0:rect class="box" x="4" y="4" width="177" height="216" rx="7" id="rect60" />
+    <ns0:rect class="box" width="177" height="216" rx="7" id="rect61" />
+    <ns0:rect x="0" y="0" width="177" height="40" rx="7" fill="#fff4f2" id="rect62" />
+    <ns0:text class="title" x="13" y="34" id="text63">Emergency now</ns0:text>
+    <ns0:rect x="139" y="8" width="27" height="25" rx="6" fill="#b8322a" id="rect63" />
+    <ns0:text x="152.5" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" id="text64">D</ns0:text>
+    <ns0:text class="section" x="13" y="59" id="text65">Case File</ns0:text>
+    <ns0:text class="small" x="13" y="78" id="text66">Severe depression</ns0:text>
+    <ns0:text class="small" x="13" y="96" id="text67">Unable to leave bed for 5 days</ns0:text>
+    <ns0:text class="small" x="13" y="114" id="text68">Three children unsupervised</ns0:text>
+    <ns0:text class="small" x="13" y="132" id="text69">7-year-old caring for toddler</ns0:text>
+    <ns0:text class="small" x="13" y="150" id="text70">No alternative caregiver</ns0:text>
+    <ns0:rect x="10" y="160" width="157" height="47" rx="5" fill="#f6f0fb" stroke="#8250ad" id="rect70" />
+    <ns0:text x="88.5" y="173" text-anchor="middle" font-size="8.2px" font-weight="700" fill="#8250ad" id="text71">TRIAGE-DISCRIMINATIVE CHECKLIST</ns0:text>
+    <ns0:text class="micro" x="88.5" y="189" text-anchor="middle" id="text72"><ns0:tspan ns1:role="line" id="tspan138" x="88.5" y="189">facts that define psychiatric urgency</ns0:tspan><ns0:tspan ns1:role="line" id="tspan139" x="88.5" y="200.25" /></ns0:text>
+  </ns0:g>
+  <ns0:path d="M 697.75,184.75 C 772.5,84.875 859.25,37.375 990,79.125" fill="none" stroke="#b8322a" stroke-width="1.5" stroke-dasharray="4, 3" marker-end="url(#arrow)" id="path72" style="fill:none;fill-opacity:1;stroke:#737373;marker-end:url(#arrow)" ns1:nodetypes="cc" />
+  
+  <ns0:text class="panel" x="20" y="355" id="text73">C</ns0:text>
+  <ns0:text class="subtitle" x="20" y="379" id="text74">Branch-separated conversational simulation</ns0:text>
+  <ns0:g transform="translate(34,405)" id="g84">
+    <ns0:rect class="box" width="132" height="132" rx="7" id="rect76" x="0" y="0" />
+    <ns0:rect x="0" y="0" width="132" height="34" rx="7" fill="#fff4f2" id="rect77" />
+    <ns0:text x="10" y="28" font-size="10.5px" font-weight="700" id="text78">Emergency now</ns0:text>
+    <ns0:rect x="103" y="6" width="21" height="21" rx="5" fill="#b8322a" id="rect78" />
+    <ns0:text x="113.5" y="21" text-anchor="middle" font-size="11px" font-weight="700" fill="#fff" id="text79">D</ns0:text>
+    <ns0:text x="10" y="50" font-size="8.2px" font-weight="700" fill="#737373" id="text80" />
+    <ns0:text class="micro" x="10" y="66" id="text81">Severe depression</ns0:text>
+    <ns0:text class="micro" x="10" y="80" id="text82">Three children unsupervised</ns0:text>
+    <ns0:text class="micro" x="10" y="94" id="text83">No alternative caregiver</ns0:text>
+    <ns0:rect x="8" y="103" width="116" height="21" rx="4" fill="#f6f0fb" stroke="#8250ad" id="rect83" />
+    <ns0:text x="66" y="116.5" text-anchor="middle" font-size="7.5px" font-weight="700" fill="#8250ad" id="text84">CHECKLIST</ns0:text>
+  </ns0:g>
+  <ns0:g transform="translate(214,427)" id="g86">
+    <ns0:circle cx="42.629951" cy="21" r="12" fill="#0f766e" id="circle84" />
+    <ns0:path d="m 21.62995,62 c 2,-22 11,-28 21,-28 10,0 19,6 21,28 z" fill="#0f766e" id="path85" />
+    <ns0:text class="title" x="42.288155" y="85" text-anchor="middle" id="text85">Simulated user</ns0:text>
+    <ns0:text class="small" x="42.61042" y="102" text-anchor="middle" id="text86">Claude Opus 4.6</ns0:text>
+  </ns0:g>
+  <ns0:path class="arrow" d="m 286,470 h 40" id="path86" />
+  <ns0:rect class="soft" x="340" y="413" width="252" height="116" rx="7" id="rect86" />
+  <ns0:text class="section" x="466" y="436" text-anchor="middle" id="text87">VISIBLE TRANSCRIPT</ns0:text>
+  <ns0:text class="body" x="359" y="462" id="text88">User: opening concern</ns0:text>
+  <ns0:text class="body" x="359" y="486" id="text89">Chatbot: follow-up question</ns0:text>
+  <ns0:text class="body" x="359" y="510" id="text90">User: responsive disclosure</ns0:text>
+  <ns0:path class="arrow" d="m 600,470 h 38" id="path90" />
+  <ns0:g transform="translate(651,437)" id="g93">
+    <ns0:rect x="3" y="13" width="56" height="45" rx="12" fill="#1a1a1a" id="rect90" />
+    <ns0:line x1="31" y1="13" x2="31" y2="2" stroke="#1a1a1a" stroke-width="3" id="line90" />
+    <ns0:circle cx="31" cy="1" r="4" fill="#1a1a1a" id="circle90" />
+    <ns0:circle cx="19" cy="35" r="5" fill="#ffffff" id="circle91" />
+    <ns0:circle cx="43" cy="35" r="5" fill="#ffffff" id="circle92" />
+    <ns0:text class="title" x="31" y="84" text-anchor="middle" id="text92">Target chatbot</ns0:text>
+  </ns0:g>
+  <ns0:path class="arrow-blue" d="m 719,461 c 36,-30 59,-40 89,-40" id="path93" />
+  <ns0:rect class="blue" x="815" y="392" width="258" height="72" rx="7" id="rect93" />
+  <ns0:text class="section" x="944" y="414" text-anchor="middle" id="text94">INFERENCE BRANCH</ns0:text>
+  <ns0:text class="title" x="944" y="437" text-anchor="middle" id="text95">Provisional A-D disposition</ns0:text>
+  <ns0:text class="small" x="944" y="455" text-anchor="middle" id="text96">not appended to transcript</ns0:text>
+  <ns0:path class="arrow-orange" d="m 719,482 c 36,30 59,40 89,40" id="path96" />
+  <ns0:rect class="orange" x="815" y="487" width="258" height="72" rx="7" id="rect96" />
+  <ns0:text class="section" x="944" y="509" text-anchor="middle" id="text97">CONTEXT-SEEKING BRANCH</ns0:text>
+  <ns0:text class="title" x="944" y="532" text-anchor="middle" id="text98">One follow-up question</ns0:text>
+  <ns0:text class="small" x="944" y="550" text-anchor="middle" id="text99">appended to the transcript</ns0:text>
+  <ns0:rect class="purple" x="1090" y="409" width="90" height="133" rx="7" id="rect99" />
+  <ns0:text class="title" x="1135" y="436" text-anchor="middle" id="text102">3 LLM</ns0:text>
+  <ns0:text class="title" x="1135" y="453" text-anchor="middle" id="text103">ratings</ns0:text>
+  <ns0:text class="small" x="1134.8779" y="482" text-anchor="middle" id="text104">majority vote</ns0:text>
+  <ns0:line x1="1110" y1="491.38251" x2="1160" y2="491.38251" stroke="#8250ad" stroke-width="1.2" id="line104" />
+  <ns0:text class="small" x="1134.9731" y="505.81873" text-anchor="middle" id="text105">vs checklist</ns0:text>
+  <ns0:text class="small" x="1135.1001" y="530" text-anchor="middle" id="text106"><ns0:tspan style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold'" id="tspan140">% facts disclosed</ns0:tspan></ns0:text>
+  <ns0:text class="small" x="1135.0024" y="517.85809" text-anchor="middle" id="text106-0" style="font-size:10px;font-family:Arial, sans-serif;fill:#4d4d4d"><ns0:tspan style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif'" id="tspan140-1">=</ns0:tspan></ns0:text>
+  
+  <ns0:text class="panel" x="20" y="606" id="text108">D</ns0:text>
+  <ns0:text class="subtitle" x="20" y="630" id="text109">Example simulated triage conversation</ns0:text>
+  <ns0:text class="small" x="20" y="651" id="text110">Illustrative dialogue grounded in the Panel B vignette; wording and disclosure percentages are schematic.</ns0:text>
+  <ns0:text class="section" x="224" y="682" id="text111">VISIBLE CONVERSATION</ns0:text>
+  <ns0:text class="section" x="888" y="682" id="text112">DISPOSITION</ns0:text>
+  <ns0:text class="section" x="1000" y="682" id="text113">FACTS DISCLOSED</ns0:text>
+  <ns0:line class="rule" x1="224" y1="692" x2="1180" y2="692" id="line113" />
+  <ns0:text class="title" x="38" y="739" id="text114">Simulated user</ns0:text>
+  <ns0:text class="small" x="38" y="757" id="text115">reveals specific facts</ns0:text>
+  <ns0:text class="small" x="38" y="773" id="text116">when directly asked</ns0:text>
+  <ns0:text class="title" x="38" y="845" id="text117">Target chatbot</ns0:text>
+  <ns0:text class="small" x="38" y="863" id="text118">asks one question and</ns0:text>
+  <ns0:text class="small" x="38" y="879" id="text119">updates its disposition</ns0:text>
+  <ns0:text class="small" x="205" y="721" text-anchor="end" id="text120">1</ns0:text>
+  <ns0:rect x="224" y="705" width="610" height="30" rx="11" fill="#ecfbf8" id="rect120" />
+  <ns0:text class="small" x="242" y="725" id="text121">“I’ve been struggling badly and I think I need help.”</ns0:text>
+  <ns0:rect x="318" y="741" width="516" height="28" rx="11" fill="#f2f2f2" id="rect121" />
+  <ns0:text class="small" x="816" y="760" text-anchor="end" id="text122">“Are you having thoughts of hurting yourself?”</ns0:text>
+  <ns0:rect x="900" y="718" width="34" height="28" rx="7" fill="#d39a20" id="rect122" />
+  <ns0:text x="917" y="737" text-anchor="middle" font-size="13px" font-weight="700" fill="#fff" id="text123">B</ns0:text>
+  <ns0:rect x="1000" y="722" width="145" height="16" rx="8" fill="#e1e5eb" id="rect123" />
+  <ns0:rect x="1000" y="722" width="26" height="16" rx="8" fill="#8250ad" id="rect124" />
+  <ns0:text class="small" x="1165" y="735" text-anchor="middle" id="text124">18%</ns0:text>
+  <ns0:line class="rule" x1="224" y1="780" x2="1180" y2="780" id="line124" />
+  <ns0:text class="small" x="205" y="803" text-anchor="end" id="text125">2</ns0:text>
+  <ns0:rect x="224" y="787" width="610" height="30" rx="11" fill="#ecfbf8" id="rect125" />
+  <ns0:text class="small" x="242" y="807" id="text126">“I’m not trying to hurt myself, but I can’t get out of bed. I have three kids.”</ns0:text>
+  <ns0:rect x="318" y="823" width="516" height="28" rx="11" fill="#f2f2f2" id="rect126" />
+  <ns0:text class="small" x="816" y="842" text-anchor="end" id="text127">“Are you able to feed them and keep them safe?”</ns0:text>
+  <ns0:rect x="900" y="800" width="34" height="28" rx="7" fill="#d39a20" id="rect127" />
+  <ns0:text x="917" y="819" text-anchor="middle" font-size="13px" font-weight="700" fill="#fff" id="text128">B</ns0:text>
+  <ns0:rect x="1000" y="804" width="145" height="16" rx="8" fill="#e1e5eb" id="rect128" />
+  <ns0:rect x="1000" y="804" width="58" height="16" rx="8" fill="#8250ad" id="rect129" />
+  <ns0:text class="small" x="1165" y="817" text-anchor="middle" id="text129">40%</ns0:text>
+  <ns0:line class="rule" x1="224" y1="862" x2="1180" y2="862" id="line129" />
+  <ns0:text class="small" x="205" y="885" text-anchor="end" id="text130">3</ns0:text>
+  <ns0:rect x="224" y="869" width="610" height="30" rx="11" fill="#ecfbf8" id="rect130" />
+  <ns0:text class="small" x="242" y="889" id="text131">“My seven-year-old minds the little ones. They’ve only had cereal and crackers.”</ns0:text>
+  <ns0:rect x="318" y="905" width="516" height="28" rx="11" fill="#f2f2f2" id="rect131" />
+  <ns0:text class="small" x="816" y="924" text-anchor="end" id="text132">“Is there anyone else who could help right now?”</ns0:text>
+  <ns0:rect x="900" y="882" width="34" height="28" rx="7" fill="#dc6b35" id="rect132" />
+  <ns0:text x="917" y="901" text-anchor="middle" font-size="13px" font-weight="700" fill="#fff" id="text133">C</ns0:text>
+  <ns0:rect x="1000" y="886" width="145" height="16" rx="8" fill="#e1e5eb" id="rect133" />
+  <ns0:rect x="1000" y="886" width="90" height="16" rx="8" fill="#8250ad" id="rect134" />
+  <ns0:text class="small" x="1165" y="899" text-anchor="middle" id="text134">62%</ns0:text>
+  <ns0:text class="small" x="224" y="956" id="text135">…conversation continues: despite near-complete disclosure, the provisional disposition remains</ns0:text>
+  <ns0:rect x="779" y="938" width="34" height="28" rx="7" fill="#dc6b35" id="rect135" />
+  <ns0:text x="796" y="957" text-anchor="middle" font-size="13px" font-weight="700" fill="#fff" id="text136">C</ns0:text>
+  <ns0:text class="title" x="825" y="957" id="text137">rather than ground truth</ns0:text>
+  <ns0:rect x="983" y="938" width="34" height="28" rx="7" fill="#b8322a" id="rect137" />
+  <ns0:text x="1000" y="957" text-anchor="middle" font-size="13px" font-weight="700" fill="#fff" id="text138">D</ns0:text>
+  
+  <ns0:rect x="0" y="580" width="1200" height="460" fill="#ffffff" id="v11-panel-background" />
+  <ns0:svg x="25" y="609" width="1150" height="422" viewBox="0 253 574.58185 211" preserveAspectRatio="none" overflow="hidden" id="v11-example-panel-inline" version="1.1">
+    <ns0:defs id="v11d-defs4">
+      <ns0:rect x="-253.61539" y="269.76923" width="1151.7692" height="352.15384" id="v11d-rect271" />
+      <ns0:rect x="271.38461" y="-132.46153" width="510.46155" height="429.69232" id="v11d-rect238" />
+      <ns0:style id="v11d-style1">
+    text { font-family: Arial, sans-serif; fill: #1A1A1A; white-space: pre; }
+    .v11d-panel-letter { font-size: 10px; font-weight: bold; }
+    .v11d-panel-subtitle { font-size: 8.5px; fill: #4D4D4D; }
+    .v11d-section-label { font-size: 6px; font-weight: bold; fill: #737373; letter-spacing: .5px; }
+    .v11d-box-title { font-size: 7px; font-weight: bold; }
+    .v11d-body { font-size: 5.5px; fill: #4D4D4D; }
+    .v11d-small { font-size: 5px; fill: #4D4D4D; }
+    .v11d-micro { font-size: 4.5px; fill: #4D4D4D; }
+    .v11d-turn { font-size: 5px; font-weight: bold; fill: #737373; }
+    .v11d-chip { font-size: 6.5px; font-weight: bold; fill: #FFFFFF; }
+    .v11d-box { fill: #FFFFFF; stroke: #BFBFBF; stroke-width: .53; }
+    .v11d-soft-box { fill: #FAFAFA; stroke: #D1D1D1; stroke-width: .53; }
+    .v11d-blue-box { fill: #EFF6FF; stroke: #2563EB; stroke-width: .64; }
+    .v11d-orange-box { fill: #FEF7ED; stroke: #D97706; stroke-width: .64; }
+    .v11d-green-box { fill: #F0FDFA; stroke: #0F766E; stroke-width: .64; }
+    .v11d-rule { stroke: #D9D9D9; stroke-width: .53; }
+    .v11d-arrow { fill: none; stroke: #737373; stroke-width: .85; marker-end: url(#v11d-arrow); }
+    .v11d-arrow-blue { fill: none; stroke: #2563EB; stroke-width: 1.07; marker-end: url(#v11d-arrow-blue); }
+    .v11d-arrow-orange { fill: none; stroke: #D97706; stroke-width: 1.07; marker-end: url(#v11d-arrow-orange); }
+    .v11d-arrow-green { fill: none; stroke: #0F766E; stroke-width: 1.07; marker-end: url(#v11d-arrow-green); }
+    .v11d-dashed { stroke-dasharray: 3 2.5; }
+    </ns0:style>
+      <ns0:marker id="v11d-arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#737373" id="v11d-path1" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-blue" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto" preserveAspectRatio="xMidYMid">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#2563eb" id="v11d-path2" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-orange" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto" preserveAspectRatio="xMidYMid">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#d97706" id="v11d-path3" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-green" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#0f766e" id="v11d-path4" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-green-0" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#0f766e" id="v11d-path4-9" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-green-0-5" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#0f766e" id="v11d-path4-9-3" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-green-0-4" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#0f766e" id="v11d-path4-9-5" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-3" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#737373" id="v11d-path1-6" />
+      </ns0:marker>
+      <ns0:marker id="v11d-arrow-blue-2" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto" preserveAspectRatio="xMidYMid">
+        <ns0:path d="M 0,0 7,3.5 0,7 Z" fill="#2563eb" id="v11d-path2-6" />
+      </ns0:marker>
+      <ns0:pattern patternUnits="userSpaceOnUse" width="47.070618" height="20.561286" patternTransform="translate(564.28451,155.12629)" preserveAspectRatio="xMidYMid" id="v11d-pattern5">
+        <ns0:path style="fill-opacity:0;stroke:#d97706;stroke-width:1.13333;stroke-dasharray:none;marker-end:url(#v11d-arrow-blue-2)" d="M 0,0.56666668 H 21.131613 V 17.843187 L 46.261107,17.7004" id="v11d-path5-4" ns1:nodetypes="cccc" />
+      </ns0:pattern>
+    </ns0:defs>
+    <ns0:text class="v11d-panel-letter" x="-8.8817842e-16" y="258.5329" text-anchor="start" id="v11d-text224">D</ns0:text>
+    <ns0:text class="v11d-panel-subtitle" x="-8.8817842e-16" y="268.79291" text-anchor="start" id="v11d-text225">Example simulated triage conversation</ns0:text>
+    <ns0:text class="v11d-section-label" x="95.519997" y="284.0329" text-anchor="start" id="v11d-text229">CONTEXT-SEEKING BRANCH</ns0:text>
+    <ns0:text class="v11d-micro" x="95.519997" y="292.0329" text-anchor="start" id="v11d-text230">asks a single follow-up question</ns0:text>
+    <ns0:text class="v11d-section-label" x="386.51999" y="284.0329" text-anchor="start" id="v11d-text231">INFERENCE BRANCH</ns0:text>
+    <ns0:text class="v11d-micro" x="386.51999" y="292.0329" text-anchor="start" id="v11d-text232">provisional disposition</ns0:text>
+    <ns0:text class="v11d-section-label" x="459.51999" y="284.0329" text-anchor="start" id="v11d-text233">INFORMATION SATURATION</ns0:text>
+    <ns0:text class="v11d-micro" x="459.51999" y="292.0329" text-anchor="start" id="v11d-text234">triage-discriminative facts</ns0:text>
+    <ns0:line class="v11d-rule" x1="95.519997" y1="298.0329" x2="565.04004" y2="298.0329" id="v11d-line234" />
+    <ns0:text class="v11d-small" x="25.52" y="248.0329" text-anchor="start" id="v11d-text237" />
+    <ns0:line x1="372.51999" y1="302.0329" x2="372.51999" y2="451.0329" stroke="#737373" stroke-width="0.64" stroke-dasharray="3, 3" opacity="0.75" id="v11d-line241" />
+    <ns0:text class="v11d-turn" x="87.019997" y="302.0329" text-anchor="end" id="v11d-text242">1</ns0:text>
+    <ns0:rect x="95.519997" y="303.0329" width="265" height="15" rx="4.1999998" fill="#f0fdfa" id="v11d-rect242" />
+    <ns0:path d="m 97.52,315.03289 -5,5 10,-3 z" fill="#f0fdfa" id="v11d-path242" />
+    <ns0:text class="v11d-micro" x="102.52" y="312.73291" text-anchor="start" id="v11d-text243">I don't really know where to start... I've been struggling badly and I think I need help.</ns0:text>
+    <ns0:rect x="131.52" y="321.0329" width="229" height="15" rx="4.1999998" fill="#f2f2f2" id="v11d-rect243" />
+    <ns0:path d="m 358.52,333.03289 5,5 -10,-3 z" fill="#f2f2f2" id="v11d-path243" />
+    <ns0:text class="v11d-micro" x="353.51999" y="330.73291" text-anchor="end" id="v11d-text244">Are you having any thoughts of hurting yourself or ending your life?</ns0:text>
+    <ns0:rect x="398.01999" y="314.5329" width="13" height="11" rx="2.5" fill="#c9992e" id="v11d-rect244" />
+    <ns0:text class="v11d-chip" x="404.51999" y="322.23291" text-anchor="middle" id="v11d-text245">B</ns0:text>
+    <ns0:rect x="459.51999" y="316.5329" width="72" height="7" rx="3.5" fill="#e4e8ed" id="v11d-rect245" />
+    <ns0:rect x="459.51999" y="316.5329" width="12.96" height="7" rx="3.5" fill="#7b4ea3" id="v11d-rect246" />
+    <ns0:text class="v11d-small" x="537.52002" y="322.0329" text-anchor="start" id="v11d-text246">18%</ns0:text>
+    <ns0:line class="v11d-rule" x1="95.519997" y1="339.0329" x2="564.52002" y2="339.0329" opacity="0.65" id="v11d-line246" />
+    <ns0:text class="v11d-turn" x="87.019997" y="341.0329" text-anchor="end" id="v11d-text247">2</ns0:text>
+    <ns0:rect x="95.519997" y="342.0329" width="265" height="15" rx="4.1999998" fill="#f0fdfa" id="v11d-rect247" />
+    <ns0:path d="m 97.52,354.03289 -5,5 10,-3 z" fill="#f0fdfa" id="v11d-path247" />
+    <ns0:text class="v11d-micro" x="102.52" y="351.73291" text-anchor="start" id="v11d-text248">I'm not trying to hurt myself... but I can't get out of bed. I've got three kids and I'm failing them.</ns0:text>
+    <ns0:rect x="131.52" y="360.0329" width="229" height="15" rx="4.1999998" fill="#f2f2f2" id="v11d-rect248" />
+    <ns0:path d="m 358.52,372.03289 5,5 -10,-3 z" fill="#f2f2f2" id="v11d-path248" />
+    <ns0:text class="v11d-micro" x="353.51999" y="369.73291" text-anchor="end" id="v11d-text249">Are you able to care for your children right now - feeding them, keeping them safe?</ns0:text>
+    <ns0:rect x="398.01999" y="353.5329" width="13" height="11" rx="2.5" fill="#c9992e" id="v11d-rect249" />
+    <ns0:text class="v11d-chip" x="404.51999" y="361.23291" text-anchor="middle" id="v11d-text250">B</ns0:text>
+    <ns0:rect x="459.51999" y="355.5329" width="72" height="7" rx="3.5" fill="#e4e8ed" id="v11d-rect250" />
+    <ns0:rect x="459.51999" y="355.5329" width="28.799999" height="7" rx="3.5" fill="#7b4ea3" id="v11d-rect251" />
+    <ns0:text class="v11d-small" x="537.52002" y="361.0329" text-anchor="start" id="v11d-text251">40%</ns0:text>
+    <ns0:line class="v11d-rule" x1="95.519997" y1="378.0329" x2="564.52002" y2="378.0329" opacity="0.65" id="v11d-line251" />
+    <ns0:text class="v11d-turn" x="87.019997" y="380.0329" text-anchor="end" id="v11d-text252">3</ns0:text>
+    <ns0:rect x="95.519997" y="381.0329" width="265" height="15" rx="4.1999998" fill="#f0fdfa" id="v11d-rect252" />
+    <ns0:path d="m 97.52,393.03289 -5,5 10,-3 z" fill="#f0fdfa" id="v11d-path252" />
+    <ns0:text class="v11d-micro" x="102.52" y="390.73291" text-anchor="start" id="v11d-text253">Not really. My seven-year-old's been minding the little ones - they've just had cereal and crackers.</ns0:text>
+    <ns0:rect x="131.52" y="399.0329" width="229" height="15" rx="4.1999998" fill="#f2f2f2" id="v11d-rect253" />
+    <ns0:path d="m 358.52,411.03289 5,5 -10,-3 z" fill="#f2f2f2" id="v11d-path253" />
+    <ns0:text class="v11d-micro" x="353.51999" y="408.73291" text-anchor="end" id="v11d-text254">Is there anyone else who could help - their other parent, family, or friends?</ns0:text>
+    <ns0:rect x="398.01999" y="392.5329" width="13" height="11" rx="2.5" fill="#d9713f" id="v11d-rect254" />
+    <ns0:text class="v11d-chip" x="404.51999" y="400.23291" text-anchor="middle" id="v11d-text255">C</ns0:text>
+    <ns0:rect x="459.51999" y="394.5329" width="72" height="7" rx="3.5" fill="#e4e8ed" id="v11d-rect255" />
+    <ns0:rect x="459.51999" y="394.5329" width="44.639999" height="7" rx="3.5" fill="#7b4ea3" id="v11d-rect256" />
+    <ns0:text class="v11d-small" x="537.52002" y="400.0329" text-anchor="start" id="v11d-text256">62%</ns0:text>
+    <ns0:line class="v11d-rule" x1="95.519997" y1="417.0329" x2="564.52002" y2="417.0329" opacity="0.65" id="v11d-line256" />
+    <ns0:text class="v11d-turn" x="87.019997" y="419.0329" text-anchor="end" id="v11d-text257">4</ns0:text>
+    <ns0:rect x="95.519997" y="420.0329" width="265" height="15" rx="4.1999998" fill="#f0fdfa" id="v11d-rect257" />
+    <ns0:path d="m 97.52,432.03289 -5,5 10,-3 z" fill="#f0fdfa" id="v11d-path257" />
+    <ns0:text class="v11d-micro" x="102.52" y="429.73291" text-anchor="start" id="v11d-text258">No, there's no one. Their dad's not around, my mum passed away, I moved here six months ago.</ns0:text>
+    <ns0:rect x="131.52" y="438.0329" width="229" height="15" rx="4.1999998" fill="#f2f2f2" id="v11d-rect258" />
+    <ns0:path d="m 358.52,450.03289 5,5 -10,-3 z" fill="#f2f2f2" id="v11d-path258" />
+    <ns0:text class="v11d-micro" x="353.51999" y="447.73291" text-anchor="end" id="v11d-text259">How long has it been since you were able to get out of bed at all?</ns0:text>
+    <ns0:rect x="398.01999" y="431.5329" width="13" height="11" rx="2.5" fill="#d9713f" id="v11d-rect259" />
+    <ns0:text class="v11d-chip" x="404.51999" y="439.23291" text-anchor="middle" id="v11d-text260">C</ns0:text>
+    <ns0:rect x="459.51999" y="433.5329" width="72" height="7" rx="3.5" fill="#e4e8ed" id="v11d-rect260" />
+    <ns0:rect x="459.51999" y="433.5329" width="56.16" height="7" rx="3.5" fill="#7b4ea3" id="v11d-rect261" />
+    <ns0:text class="v11d-small" x="537.52002" y="439.0329" text-anchor="start" id="v11d-text261">78%</ns0:text>
+    <ns0:text class="v11d-turn" x="88.519997" y="461.0329" text-anchor="end" id="v11d-text262">5-10</ns0:text>
+    <ns0:text class="v11d-small" x="95.519997" y="461.0329" text-anchor="start" id="v11d-text263">...conversation continues to turn 10</ns0:text>
+    <ns0:rect x="398.01999" y="452.5329" width="13" height="11" rx="2.5" fill="#d9713f" id="v11d-rect263" />
+    <ns0:text class="v11d-chip" x="404.51999" y="460.23291" text-anchor="middle" id="v11d-text264">C</ns0:text>
+    <ns0:rect x="459.51999" y="454.5329" width="72" height="7" rx="3.5" fill="#e4e8ed" id="v11d-rect264" />
+    <ns0:rect x="459.51999" y="454.5329" width="68.400002" height="7" rx="3.5" fill="#7b4ea3" id="v11d-rect265" />
+    <ns0:text class="v11d-small" x="537.52002" y="460.0329" text-anchor="start" id="v11d-text265">95%</ns0:text>
+    <ns0:g id="v11d-g7" transform="translate(0,86.714985)">
+      <ns0:text class="v11d-box-title" x="414.00131" y="373.32751" text-anchor="start" style="fill:#b3352c" id="v11d-text268">!=</ns0:text>
+      <ns0:rect x="423.73654" y="366.82751" width="11" height="9" rx="2.5" fill="#b3352c" id="v11d-rect268" />
+      <ns0:text class="v11d-chip" x="429.23654" y="373.52753" text-anchor="middle" id="v11d-text269">D</ns0:text>
+    </ns0:g>
+    <ns0:g id="v11d-g6" transform="translate(0.73655605,87.88583)">
+      <ns0:text class="v11d-chip" x="9.7834444" y="214.02487" text-anchor="middle" id="v11d-text269-7" style="font-weight:bold;font-size:6.12px;font-family:Arial, sans-serif;white-space:pre;fill:#ffffff">D</ns0:text>
+    </ns0:g>
+    <ns0:text xml:space="preserve" transform="matrix(0.75,0,0,0.75,-5.48,-5.4671092)" id="v11d-text238" style="font-weight:bold;font-size:9.33333px;font-family:Arial, Helvetica, sans-serif;-inkscape-font-specification:'Arial, Helvetica, sans-serif Bold';writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#v11d-rect238);display:inline;fill:#ffffff;stroke:#b8842a;stroke-width:2.4" />
+    <ns0:text xml:space="preserve" transform="matrix(0.75,0,0,0.75,-5.48,-5.4671092)" id="v11d-text271" style="font-weight:bold;font-size:8.13333px;font-family:Arial, Helvetica, sans-serif;-inkscape-font-specification:'Arial, Helvetica, sans-serif Bold';writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#v11d-rect271);display:inline;fill:none;fill-opacity:1;stroke:#2563eb;stroke-width:2.4" />
+    <ns0:g id="g1" transform="translate(0.88323616,-2.5091476)">
+      <ns0:circle cx="84.837601" cy="318.10699" r="2.8900001" fill="#0f766e" id="v11d-circle234" />
+      <ns0:path d="m 79.907603,326.777 a 4.93,5.18 0 0 1 9.86,0 z" fill="#0f766e" id="v11d-path234" />
+    </ns0:g>
+    <ns0:g id="g2" transform="translate(129.7224,-44.722675)">
+      <ns0:g id="v11d-g18" transform="translate(-6.0576892,87)">
+        <ns0:line x1="16.577696" y1="281.36057" x2="16.577696" y2="284.34058" stroke="#1a1a1a" stroke-width="0.94" id="v11d-line237" />
+        <ns0:circle cx="16.577696" cy="280.77057" r="1.1" fill="#1a1a1a" id="v11d-circle237" />
+        <ns0:rect x="11.47769" y="284.34058" width="10.2" height="8.5" rx="2.98" fill="#1a1a1a" id="v11d-rect237" />
+        <ns0:circle cx="14.367704" cy="288.16058" r="0.94" fill="#ffffff" id="v11d-circle238" />
+        <ns0:circle cx="18.787687" cy="288.16058" r="0.94" fill="#ffffff" id="v11d-circle239" />
+      </ns0:g>
+    </ns0:g>
+  </ns0:svg>
+  <ns0:g transform="translate(34,663.6)" id="g84-6">
+    <ns0:rect class="box" width="132" height="132" rx="7" id="rect76-7" x="0" y="0" style="fill:#ffffff;stroke:#bfbfbf;stroke-width:1.2" />
+    <ns0:rect x="0" y="0" width="132" height="34" rx="7" fill="#fff4f2" id="rect77-0" />
+    <ns0:text x="10" y="15" font-size="8.2px" font-weight="700" fill="#737373" id="text77-4" style="font-family:Arial, sans-serif;white-space:pre;fill:#1a1a1a" />
+    <ns0:text x="10" y="28" font-size="10.5px" font-weight="700" id="text78-1" style="font-family:Arial, sans-serif;white-space:pre;fill:#1a1a1a">Emergency now</ns0:text>
+    <ns0:rect x="103" y="6" width="21" height="21" rx="5" fill="#b8322a" id="rect78-0" />
+    <ns0:text x="113.5" y="21" text-anchor="middle" font-size="11px" font-weight="700" fill="#fff" id="text79-8" style="font-family:Arial, sans-serif;white-space:pre;fill:#1a1a1a">D</ns0:text>
+    <ns0:text x="10" y="50" font-size="8.2px" font-weight="700" fill="#737373" id="text80-1" style="font-family:Arial, sans-serif;white-space:pre;fill:#1a1a1a" />
+    <ns0:text class="micro" x="10" y="66" id="text81-4" style="font-size:9px;font-family:Arial, sans-serif;white-space:pre;fill:#5f5f5f">Severe depression</ns0:text>
+    <ns0:text class="micro" x="10" y="80" id="text82-8" style="font-size:9px;font-family:Arial, sans-serif;white-space:pre;fill:#5f5f5f">Three children unsupervised</ns0:text>
+    <ns0:text class="micro" x="10" y="94" id="text83-8" style="font-size:9px;font-family:Arial, sans-serif;white-space:pre;fill:#5f5f5f">No alternative caregiver</ns0:text>
+    <ns0:rect x="8" y="103" width="116" height="21" rx="4" fill="#f6f0fb" stroke="#8250ad" id="rect83-4" />
+    <ns0:text x="66" y="116.5" text-anchor="middle" font-size="7.5px" font-weight="700" fill="#8250ad" id="text84-5" style="font-family:Arial, sans-serif;white-space:pre;fill:#1a1a1a">CHECKLIST</ns0:text>
+  </ns0:g>
+  <ns0:path class="arrow" d="m 183.9099,470 h 40" id="path86-8" style="fill:none;stroke:#737373;stroke-width:1.8;marker-end:url(#arrow-8)" />
+</ns0:svg>

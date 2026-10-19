@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mechanism-informed action policies</title>
+  <meta name="description" content="Psychological mechanisms and safer chatbot responses">
+  <meta name="author" content="Veith Weilnhammer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <!-- Copy this scoped style block with the action-policies stack when integrating. -->
+  <style id="action-policies-styles">
+    .reveal .slides .action-policy-slide {
+      height: 700px;
+      padding: 0;
+      text-align: left;
+    }
+    .action-policy-slide .policy-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      transform: translate(-50%, -50%);
+    }
+    .action-policy-slide .policy-question { margin: 0; }
+    .action-policy-slide[data-auto-animate] .policy-content {
+      top: calc(50% - 14px);
+    }
+    .action-policy-slide .policy-full-figure {
+      display: block;
+      width: 960px;
+      height: 658px;
+      max-width: 100%;
+      max-height: none;
+      margin: 0;
+      object-fit: contain;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-summary-heading {
+      font-size: .68em;
+      white-space: nowrap;
+      margin-bottom: .3em;
+    }
+    .action-policy-slide .policy-summary-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.55fr;
+      align-items: center;
+      gap: 1.3rem;
+      margin-top: .3em;
+    }
+    .action-policy-slide .policy-summary-visual {
+      min-width: 0;
+      text-align: center;
+    }
+    .action-policy-slide .policy-summary-visual img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 440px;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-summary-text { min-width: 0; }
+    .action-policy-slide .policy-summary-point {
+      border-left: 3px solid #aaa;
+      padding: .55em 1em;
+      margin: .45em 0;
+      font-size: .8em;
+      line-height: 1.35;
+    }
+    .action-policy-slide .policy-detail-layout {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .action-policy-slide .policy-detail-figure {
+      flex: 2.15;
+      min-width: 0;
+      text-align: center;
+    }
+    .action-policy-slide .policy-detail-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 590px;
+      object-fit: contain;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-detail-text {
+      flex: .85;
+      min-width: 0;
+    }
+    .action-policy-slide .policy-callout {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .reveal .slides .case-example { height: 700px; padding: 0; text-align: left; }
+    .case-example .case-content {
+      position: absolute; top: 50%; left: 50%; width: 902px;
+      transform: translate(-50%, -50%);
+    }
+    .case-example h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .case-example .case-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin-top: 25px; }
+    .case-example h4 { font-size: 28px; margin: 0 0 14px; }
+    .case-example .case-message { padding: 11px 15px; background: #f6f6f6; border-left: 3px solid #aaa; font-size: 23px; line-height: 1.25; margin: 12px 0; }
+    .case-example .case-message p { margin: 3px 0 0; }
+    .case-example .case-speaker { font-size: 17px; color: #666; }
+    #policy-mrs-x .case-message { font-size: 21px; }
+    #policy-mrs-x .case-columns { gap: 30px; margin-top: 18px; }
+    .case-example .case-takeaway { font-size: 23px; line-height: 1.3; margin: 20px 0 0; }
+    .reveal .study-citation {
+      position: absolute;
+      bottom: 24px;
+      right: 220px;
+      margin: 0;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.25;
+      color: #666;
+      text-align: right;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 20;
+    }
+    .reveal.overview .study-citation { display: none; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- BEGIN ACTION POLICIES: one portable vertical stack. -->
+      <section id="action-policies" class="action-policies-segment">
+        <section id="policy-question" class="action-policy-slide">
+          <div class="policy-content">
+            <h2 class="policy-question">Can psychological mechanisms guide safer chatbot responses?</h2>
+          </div>
+        </section>
+
+        <section id="policy-mrs-x" class="case-example" data-transition="fade">
+          <div class="case-content">
+            <h3>Mrs. X: a mechanism-informed action policy</h3>
+              <div class="case-message">
+                <span class="case-speaker">Mrs. X</span>
+                <p>I hear his voice wherever I go. He must be following me. I need to get into his house to find out.</p>
+              </div>
+            <div class="case-columns">
+              <div>
+                <h4>Personalized action policy</h4>
+              <div class="case-message">
+                <span class="case-speaker">Maintaining mechanism</span>
+                <p>Overweighting of prior expectations biases ambiguous sensory information towards hearing a voice. The belief that the neighbour is an agent further shapes perception, reinforcing the persecutory interpretation.</p>
+              </div>
+              <div class="case-message">
+                <span class="case-speaker">Response guidance</span>
+                <p>Validate distress without reinforcing the persecutory belief. Introduce uncertainty about the source and interpretation of the experience, discourage further investigation, and encourage clinical support.</p>
+              </div>
+              </div>
+              <div>
+                <h4>Chatbot response</h4>
+              <div class="case-message">
+                <span class="case-speaker">Chatbot</span>
+                <p><em>“That sounds frightening, especially when the voice seems to follow you. Hearing it in different places doesn’t necessarily mean your neighbour is following you. There may be other explanations for what you’re experiencing. Rather than investigating him, could we think about how to help you feel safe and get some support?”</em></p>
+              </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Authored illustration adapted to Mrs. X, not an experimental transcript or measured response.
+            The policy targets the proposed interaction between prior expectations, ambiguous sensory information and persecutory interpretation.
+            Results concern chatbot behavior in simulations, not demonstrated clinical effects in users.
+          </aside>
+        </section>
+
+        <section id="policy-design" class="action-policy-slide" data-auto-animate data-transition="fade" aria-label="Experimental design">
+          <div class="policy-content">
+            <img class="policy-full-figure" src="action_policies_content/overview_state_policy_hybrid.svg" alt="Complete experimental design: vulnerability-amplifying interaction loops, four state-policy conditions, illustrative responses, and independent audits">
+          </div>
+          <aside class="notes">
+            Four conditions: helpful–harmless–honest baseline; user state only;
+            user state plus a general action policy; user state plus a personalized,
+            mechanism-informed action policy. The user description is identical
+            across the three added-context conditions. Conversations are simulated.
+            Source: mental_health_context.qmd, Figure 1; Weilnhammer et al., in preparation.
+          </aside>
+        </section>
+
+        <section id="policy-design-summary" class="action-policy-slide" data-auto-animate data-transition="fade">
+          <div class="policy-content">
+            <h3 class="policy-summary-heading">Mechanisms can inform action policies</h3>
+            <div class="policy-detail-layout">
+              <div class="policy-detail-figure">
+                <img src="action_policies_content/overview_state_policy_hybrid.svg" alt="Complete manuscript figure: mechanisms can inform action policies">
+              </div>
+              <div class="policy-detail-text">
+                <div class="policy-callout">The same user description is paired with general or personalized response guidance.</div>
+                <div class="policy-callout">Personalized policies target the mechanisms maintaining the user’s difficulties.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="policy-results" class="action-policy-slide" data-auto-animate data-transition="fade" aria-label="Main results">
+          <div class="policy-content">
+            <img class="policy-full-figure" src="action_policies_content/risk-headline-1.svg" alt="Complete main results: concerning behavior, therapeutic quality, specific risk dimensions, and user severity across policy conditions">
+          </div>
+          <aside class="notes">
+            User-state information alone does not reliably improve safety.
+            General action policies reduce concerning behavior and improve
+            therapeutic quality. Personalized policies provide additional benefit.
+            These outcomes describe judged chatbot behavior in simulated conversations,
+            not demonstrated changes in human mental health.
+            Source: mental_health_context.qmd, Figure 2; Weilnhammer et al., in preparation.
+          </aside>
+        </section>
+
+        <section id="policy-results-summary" class="action-policy-slide" data-auto-animate data-transition="fade">
+          <div class="policy-content">
+            <h3 class="policy-summary-heading">Action policies reduce harmful behavior</h3>
+            <div class="policy-detail-layout">
+              <div class="policy-detail-figure">
+                <img src="action_policies_content/risk-headline-1.svg" alt="Complete manuscript figure: action policies reduce harmful behavior">
+              </div>
+              <div class="policy-detail-text">
+                <div class="policy-callout">Personalized action policies reduce harmful behavior across multiple forms of risk.</div>
+                <div class="policy-callout">Therapeutic quality also improves, with added benefit beyond general guidance.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section id="policy-summary" class="action-policy-slide">
+          <div class="policy-content">
+            <h3 class="policy-summary-heading">Can psychological mechanisms guide safer chatbot responses?</h3>
+            <div class="policy-summary-layout">
+              <div class="policy-summary-visual">
+                <img src="cursor_mind/chatbot_cloud.png" alt="Chatbot">
+              </div>
+              <div class="policy-summary-text">
+                <div class="policy-summary-point">Personalized action policies reduce harm and improve therapeutic quality</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- END ACTION POLICIES -->
+    </div>
+    <!-- Persistent footer outside the animated slide tree. -->
+    <div class="study-citation" hidden>Weilnhammer et al., in preparation</div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/search/search.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // Match Goodenough's dimensions (Reveal defaults: 960 × 700),
+    // centering, controls, and default auto-animate timing.
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+    // When integrating, add the segment condition to the host's existing footer.
+    (() => {
+      const footer = document.querySelector('.study-citation');
+      function updateCitation() {
+        const slide = Reveal.getCurrentSlide();
+        footer.hidden = !slide || !slide.closest('.action-policies-segment')
+          || slide.id === 'policy-question';
+      }
+      Reveal.on('ready', updateCitation);
+      Reveal.on('slidechanged', updateCitation);
+      if (Reveal.isReady()) updateCitation();
+    })();
+  </script>
+</body>
+</html>

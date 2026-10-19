@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" width="1180" height="556" viewBox="610 35 590 278" role="img" aria-labelledby="title desc" version="1.1" id="svg138" ns1:docname="workflow_overview_v13.svg" ns2:version="1.4.4 (dcaf3e7, 2026-05-05)">
+  <ns0:title id="title">Vignette construction with a Mrs. X psychosis example</ns0:title>
+  <ns0:desc id="desc">Presentation by risk-domain families feed LLM-assisted generation and review of 112 case files. The example depicts Mrs. X hearing her neighbour’s voice beyond the apartment, believing he is an agent following her, and planning to break into his house to find out what is going on. The case is labelled D, emergency now.</ns0:desc>
+  <ns0:defs id="defs8">
+    <ns0:style id="style1">
+      text { font-family: Arial, sans-serif; fill: #1a1a1a; }
+      .panel { font-size: 20px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #4d4d4d; }
+      .section { font-size: 12px; font-weight: 700; fill: #737373; letter-spacing: 1px; }
+      .title { font-size: 14px; font-weight: 700; }
+      .body { font-size: 11px; fill: #4d4d4d; }
+      .small { font-size: 10px; fill: #4d4d4d; }
+      .micro { font-size: 9px; fill: #5f5f5f; }
+      .box { fill: #fff; stroke: #bfbfbf; stroke-width: 1.2; }
+      .soft { fill: #fafafa; stroke: #d1d1d1; stroke-width: 1.2; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.5; }
+      .orange { fill: #fef7ed; stroke: #d97706; stroke-width: 1.5; }
+      .green { fill: #f0fdfa; stroke: #0f766e; stroke-width: 1.5; }
+      .purple { fill: #f6f0fb; stroke: #8250ad; stroke-width: 1.3; }
+      .rule { stroke: #d9d9d9; stroke-width: 1.2; }
+      .arrow { fill: none; stroke: #737373; stroke-width: 1.8; marker-end: url(#arrow); }
+      .arrow-blue { fill: none; stroke: #2563eb; stroke-width: 2.2; marker-end: url(#arrow-blue); }
+      .arrow-orange { fill: none; stroke: #d97706; stroke-width: 2.2; marker-end: url(#arrow-orange); }
+      .arrow-green { fill: none; stroke: #0f766e; stroke-width: 2.2; marker-end: url(#arrow-green); }
+    </ns0:style>
+    <ns0:marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto" preserveAspectRatio="xMidYMid">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#737373" id="path1"/>
+    </ns0:marker>
+    <ns0:marker id="arrow-blue" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#2563eb" id="path2"/>
+    </ns0:marker>
+    <ns0:marker id="arrow-orange" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#d97706" id="path3"/>
+    </ns0:marker>
+    <ns0:marker id="arrow-green" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto" preserveAspectRatio="xMidYMid">
+      <ns0:path d="M0 0 L8 4 L0 8 Z" fill="#0f766e" id="path4"/>
+    </ns0:marker>
+    <ns0:pattern id="grid-dots" width="15" height="15" patternUnits="userSpaceOnUse">
+      <ns0:circle cx="7.5" cy="7.5" r="1.8" fill="#dfe4ea" id="circle4"/>
+    </ns0:pattern>
+    <ns0:g id="occupied-cell">
+      <ns0:rect x="-5" y="-5" width="10" height="10" rx="2" fill="#f1f4f7" id="rect4"/>
+      <ns0:circle cx="-2.3" cy="-2.3" r="1.65" fill="#2f7d5d" id="circle5"/>
+      <ns0:circle cx="2.3" cy="-2.3" r="1.65" fill="#c9992e" id="circle6"/>
+      <ns0:circle cx="-2.3" cy="2.3" r="1.65" fill="#d9713f" id="circle7"/>
+      <ns0:circle cx="2.3" cy="2.3" r="1.65" fill="#b3352c" id="circle8"/>
+    </ns0:g>
+    <ns0:marker id="arrow-blue-0" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <ns0:path d="M 0,0 8,4 0,8 Z" fill="#2563eb" id="path2-1"/>
+    </ns0:marker>
+    <ns0:marker id="arrow-8" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto" preserveAspectRatio="xMidYMid">
+      <ns0:path d="M 0,0 8,4 0,8 Z" fill="#737373" id="path1-4"/>
+    </ns0:marker>
+  </ns0:defs>
+  <ns0:text class="subtitle" x="620" y="52" id="text22">Design space and vignette construction</ns0:text>
+  <ns0:text class="micro" x="632" y="184" transform="rotate(-90 632 184)" text-anchor="middle" id="text24">RISK DOMAINS</ns0:text>
+  <ns0:g transform="translate(654 96)" id="g51">
+    <ns0:rect x="0" y="0" width="135" height="135" rx="5" fill="url(#grid-dots)" stroke="#d1d1d1" id="rect24"/>
+    
+    <ns0:use href="#occupied-cell" transform="translate(7.5 7.5)" id="use24"/>
+    <ns0:use href="#occupied-cell" transform="translate(7.5 22.5)" id="use25"/>
+    <ns0:use href="#occupied-cell" transform="translate(7.5 82.5)" id="use26"/>
+    <ns0:use href="#occupied-cell" transform="translate(7.5 97.5)" id="use27"/>
+    <ns0:use href="#occupied-cell" transform="translate(22.5 37.5)" id="use28"/>
+    <ns0:use href="#occupied-cell" transform="translate(37.5 7.5)" id="use29"/>
+    <ns0:use href="#occupied-cell" transform="translate(37.5 37.5)" id="use30"/>
+    <ns0:use href="#occupied-cell" transform="translate(37.5 97.5)" id="use31"/>
+    <ns0:use href="#occupied-cell" transform="translate(37.5 127.5)" id="use32"/>
+    <ns0:use href="#occupied-cell" transform="translate(52.5 7.5)" id="use33"/>
+    <ns0:use href="#occupied-cell" transform="translate(52.5 37.5)" id="use34"/>
+    <ns0:use href="#occupied-cell" transform="translate(52.5 52.5)" id="use35"/>
+    <ns0:use href="#occupied-cell" transform="translate(52.5 67.5)" id="use36"/>
+    <ns0:use href="#occupied-cell" transform="translate(67.5 37.5)" id="use37"/>
+    <ns0:use href="#occupied-cell" transform="translate(67.5 67.5)" id="use38"/>
+    <ns0:use href="#occupied-cell" transform="translate(82.5 7.5)" id="use39"/>
+    <ns0:use href="#occupied-cell" transform="translate(82.5 22.5)" id="use40"/>
+    <ns0:use href="#occupied-cell" transform="translate(82.5 37.5)" id="use41"/>
+    <ns0:use href="#occupied-cell" transform="translate(82.5 97.5)" id="use42"/>
+    <ns0:use href="#occupied-cell" transform="translate(97.5 37.5)" id="use43"/>
+    <ns0:use href="#occupied-cell" transform="translate(97.5 67.5)" id="use44"/>
+    <ns0:use href="#occupied-cell" transform="translate(97.5 112.5)" id="use45"/>
+    <ns0:use href="#occupied-cell" transform="translate(97.5 127.5)" id="use46"/>
+    <ns0:use href="#occupied-cell" transform="translate(112.5 7.5)" id="use47"/>
+    <ns0:use href="#occupied-cell" transform="translate(112.5 22.5)" id="use48"/>
+    <ns0:use href="#occupied-cell" transform="translate(112.5 37.5)" id="use49"/>
+    <ns0:use href="#occupied-cell" transform="translate(112.5 112.5)" id="use50"/>
+    <ns0:use href="#occupied-cell" transform="translate(127.5 7.5)" id="use51"/>
+    </ns0:g>
+  <ns0:text class="micro" x="721.5" y="246" text-anchor="middle" id="text51">PRESENTATION CLUSTERS</ns0:text>
+  <ns0:circle cx="670" cy="272" r="4" fill="#2a7f62" id="circle51"/>
+  <ns0:text class="micro" x="679" y="275" id="text52">A</ns0:text>
+  <ns0:circle cx="701" cy="272" r="4" fill="#d39a20" id="circle52"/>
+  <ns0:text class="micro" x="710" y="275" id="text53">B</ns0:text>
+  <ns0:circle cx="732" cy="272" r="4" fill="#dc6b35" id="circle53"/>
+  <ns0:text class="micro" x="741" y="275" id="text54">C</ns0:text>
+  <ns0:circle cx="763" cy="272" r="4" fill="#b8322a" id="circle54"/>
+  <ns0:text class="micro" x="772" y="275" id="text55">D</ns0:text>
+  <ns0:path class="arrow" d="M806 168 H830" id="path55"/>
+  <ns0:rect class="orange" x="840" y="112" width="118" height="111" rx="7" id="rect55"/>
+  <ns0:text class="section" x="899" y="137" text-anchor="middle" id="text56">LLM-ASSISTED</ns0:text>
+  <ns0:text class="title" x="899" y="161" text-anchor="middle" id="text57">Generate</ns0:text>
+  <ns0:text class="small" x="899" y="180" text-anchor="middle" id="text58">and review</ns0:text>
+  <ns0:line class="rule" x1="858" y1="191" x2="940" y2="191" id="line58"/>
+  <ns0:text class="micro" x="899" y="208" text-anchor="middle" id="text59">112 case files</ns0:text>
+  <ns0:path class="arrow" d="M968 168 H984" id="path59"/>
+  <ns0:g transform="translate(994 78)" id="g72">
+    <ns0:rect class="box" x="9" y="9" width="177" height="216" rx="7" id="rect59"/>
+    <ns0:rect class="box" x="4" y="4" width="177" height="216" rx="7" id="rect60"/>
+    <ns0:rect class="box" width="177" height="216" rx="7" id="rect61"/>
+    <ns0:rect x="0" y="0" width="177" height="40" rx="7" fill="#fff4f2" id="rect62"/>
+    <ns0:text class="title" x="13" y="34" id="text63">Emergency now</ns0:text>
+    <ns0:rect x="139" y="8" width="27" height="25" rx="6" fill="#b8322a" id="rect63"/>
+    <ns0:text x="152.5" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" id="text64" style="fill:#fff">D</ns0:text>
+    <ns0:text class="section" x="13" y="59" id="text65" style="font-size:11px;letter-spacing:.4px">Mrs. X · psychosis</ns0:text>
+    <ns0:text class="small" x="13" y="78" id="text66" style="font-size:10px">Neighbour’s voice</ns0:text>
+    <ns0:text class="small" x="13" y="96" id="text67" style="font-size:10px">Heard beyond the apartment</ns0:text>
+    <ns0:text class="small" x="13" y="114" id="text68" style="font-size:10px">Convinced he is an agent</ns0:text>
+    <ns0:text class="small" x="13" y="132" id="text69" style="font-size:10px;font-weight:700;fill:#b8322a">Plans to break into his house</ns0:text>
+    <ns0:rect x="10" y="160" width="157" height="47" rx="5" fill="#f6f0fb" stroke="#8250ad" id="rect70"/>
+    <ns0:text x="88.5" y="173" text-anchor="middle" font-size="8.2px" font-weight="700" fill="#8250ad" id="text71">TRIAGE-DISCRIMINATIVE CHECKLIST</ns0:text>
+    <ns0:text class="micro" x="88.5" y="189" text-anchor="middle" id="text72"><ns0:tspan ns1:role="line" id="tspan138" x="88.5" y="189">facts that define psychiatric urgency</ns0:tspan><ns0:tspan ns1:role="line" id="tspan139" x="88.5" y="200.25"/></ns0:text>
+  </ns0:g>
+  </ns0:svg>

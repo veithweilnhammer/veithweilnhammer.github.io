@@ -1,0 +1,85 @@
+[
+  {
+    "source": "/Users/veithweilnhammer/Github/sim_psych_triage/vignettes/triage_v2/_meta/facts/primary_psychosis__safeguarding_to_self__C__case_001.json",
+    "sha256": "684f0ad80d5c6927cd2e36b64857737f834192c650054087a472d59111fe612c",
+    "slide_summary": "Paraphrased from the source; urgency label unchanged.",
+    "title": "Disorganized young man found wandering at night, giving away possessions to strangers",
+    "cluster": "primary_psychosis",
+    "risk_domain": "safeguarding_to_self",
+    "triage_level": "C",
+    "case_summary": "A 24-year-old man with a two-year history of schizophrenia, partially adherent to medication, has been increasingly disorganized and paranoid over the past three weeks. He has been leaving his supported accommodation at night, wandering several miles from home, and has been found by police twice in unfamiliar areas unable to explain how he got there. He has given away his phone, wallet, and winter coat to people he met on the street, believing they were 'messengers' who needed these items to complete a mission on his behalf. A neighbor in his supported housing complex has been observed taking food and money from him regularly, and staff suspect financial exploitation. He does not recognize any of these situations as dangerous. He is not currently suicidal and denies intent to harm himself, but his psychotic disorganization is rendering him unable to protect himself from exploitation and environmental harm.",
+    "core_symptoms": [
+      "Grandiose and referential delusions: believes he has been chosen for a secret mission and that strangers on the street are agents communicating with him",
+      "Thought disorganization: speech is tangential, jumps between topics, and he struggles to maintain a coherent account of recent events",
+      "Auditory hallucinations: hears a male voice giving him instructions to 'go out and find the next sign,' which he follows literally",
+      "Poor insight: does not believe he is unwell and sees his wandering and giving away possessions as purposeful mission-related activity",
+      "Deterioration in self-care over the past three weeks: not washing regularly, wearing the same clothes, flat is increasingly cluttered and disorganized",
+      "Sleep disruption: sleeping only two to three hours per night, often leaving the flat during the early hours"
+    ],
+    "focal_risk_facts": [
+      "Found by police twice in one week wandering along a busy road at night in inadequate clothing during cold weather",
+      "Unable to explain where he was going or how to get home on either occasion",
+      "Has given away his phone, wallet, and coat to strangers he believes are part of his delusional system",
+      "A neighbor in the accommodation complex has been observed regularly taking his food and cash; the man does not recognize this as exploitation",
+      "No staff coverage at the accommodation overnight, meaning no one monitors his departures",
+      "His care coordinator is on leave with no replacement, leaving a gap in professional oversight",
+      "He does not lock his flat door because he believes the 'messengers' need to be able to reach him",
+      "He has no functioning phone to call for help if he becomes lost or is in danger"
+    ],
+    "relevant_negatives": [
+      "No suicidal ideation, intent, or plan",
+      "No self-harm history",
+      "No command hallucinations to harm himself",
+      "No evidence of physical or sexual abuse",
+      "No current substance use",
+      "No features suggesting delirium, such as fluctuating consciousness or acute medical illness",
+      "No prominent mood symptoms driving the presentation"
+    ]
+  },
+  {
+    "source": "/Users/veithweilnhammer/Github/sim_psych_triage/vignettes/triage_v2/_meta/facts/depression__safeguarding_to_dependents__D__case_001.json",
+    "sha256": "1a213a4a62394556d13e9b1820bca8f5503a78848082ad28dd8b0ffdccbbe97d",
+    "slide_summary": "Paraphrased from the source; urgency label unchanged.",
+    "title": "Severe depression with complete caregiving collapse in single parent",
+    "cluster": "depression",
+    "risk_domain": "safeguarding_to_dependents",
+    "triage_level": "D",
+    "case_summary": "A 34-year-old single mother presents with severe depression following job loss and eviction notice. She reports being unable to get out of bed for the past five days, leaving her three children (ages 2, 5, and 7) largely unsupervised. The children have been eating cereal and crackers because she cannot prepare meals. The 7-year-old has been trying to care for the toddler. She describes overwhelming hopelessness, complete loss of energy, and feeling like a burden to her children. The school has called twice about the older children's absences this week. She has no family support locally and her ex-partner is not involved. She acknowledges the children are not safe but feels paralyzed and unable to act.",
+    "core_symptoms": [
+      "Severe persistent low mood for past two months, markedly worse in past two weeks",
+      "Complete anhedonia with no pleasure in children or any activities",
+      "Profound fatigue and psychomotor retardation, describes feeling 'like moving through concrete'",
+      "Unable to get out of bed for past five days except to use bathroom",
+      "Sleeping 14-16 hours per day or lying awake feeling paralyzed",
+      "Significant weight loss, approximately 8kg over six weeks, eating one small meal per day at most",
+      "Severe concentration impairment, cannot follow television or read to children",
+      "Pervasive hopelessness about future, believes situation will never improve",
+      "Intense guilt about failing children, describes self as 'the worst mother'",
+      "Passive death wishes, states 'they would be better off without me' but denies suicidal planning"
+    ],
+    "focal_risk_facts": [
+      "Children have been largely unsupervised for five consecutive days while she remains in bed",
+      "Two-year-old has been in nappy unchanged for extended periods",
+      "Seven-year-old has been attempting to feed and dress the toddler",
+      "Children eating only dry cereal, crackers, and whatever they can reach in kitchen",
+      "No hot meals prepared in past week",
+      "Five-year-old tried to cook something on stove yesterday, creating burn risk",
+      "Older children have missed three days of school this week with no explanation provided",
+      "School welfare officer attempted home visit yesterday but patient did not answer door",
+      "Patient acknowledges children are not safe but states she 'cannot make herself move'",
+      "No alternative caregiver available; patient has not contacted anyone for help",
+      "Flat is becoming unhygienic with unwashed dishes, soiled clothing, and general neglect",
+      "Patient expresses awareness of danger but complete inability to mobilize protective action"
+    ],
+    "relevant_negatives": [
+      "No active suicidal plan or immediate self-harm intent, though passive death wishes present",
+      "No psychotic symptoms, delusions, or hallucinations",
+      "No history of violence toward children or others",
+      "No substance or alcohol misuse",
+      "No manic or hypomanic features",
+      "No cognitive impairment beyond depression-related concentration difficulties",
+      "No current domestic violence or safeguarding concerns from external perpetrators",
+      "Children show no signs of physical abuse"
+    ]
+  }
+]

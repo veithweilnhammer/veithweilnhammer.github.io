@@ -23,15 +23,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="1.1142289"
-     inkscape:cx="420.91891"
-     inkscape:cy="257.1285"
+     inkscape:zoom="0.78787881"
+     inkscape:cx="224.01922"
+     inkscape:cy="147.86538"
      inkscape:window-width="1920"
-     inkscape:window-height="1200"
+     inkscape:window-height="1064"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="30"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg1023" />
+     inkscape:current-layer="g1022" />
   <g
      class="svglite"
      id="g1023">
@@ -6274,139 +6274,105 @@
          textLength="57.95px"
          lengthAdjust="spacingAndGlyphs"
          id="text985">Concerning (1–10)</text>
-      <circle
-         cx="358.25"
-         cy="377.69"
-         r="1.50"
-         style="stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.18;"
-         id="circle985" />
-      <circle
-         cx="358.25"
-         cy="377.69"
-         r="1.50"
-         style="stroke-width: 0.71;"
-         id="circle986" />
-      <circle
-         cx="385.62"
-         cy="377.69"
-         r="3.20"
-         style="stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.18;"
-         id="circle987" />
-      <circle
-         cx="385.62"
-         cy="377.69"
-         r="3.20"
-         style="stroke-width: 0.71;"
-         id="circle988" />
-      <circle
-         cx="412.98"
-         cy="377.69"
-         r="5.03"
-         style="stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.18;"
-         id="circle989" />
-      <circle
-         cx="412.98"
-         cy="377.69"
-         r="5.03"
-         style="stroke-width: 0.71;"
-         id="circle990" />
-      <circle
-         cx="440.45"
-         cy="377.69"
-         r="6.93"
-         style="stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.18;"
-         id="circle991" />
-      <circle
-         cx="440.45"
-         cy="377.69"
-         r="6.93"
-         style="stroke-width: 0.71;"
-         id="circle992" />
-      <circle
-         cx="470.61"
-         cy="377.69"
-         r="8.89"
-         style="stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.18;"
-         id="circle993" />
-      <circle
-         cx="470.61"
-         cy="377.69"
-         r="8.89"
-         style="stroke-width: 0.71;"
-         id="circle994" />
-      <circle
-         cx="503.38"
-         cy="377.69"
-         r="8.89"
-         style="stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.18;"
-         id="circle995" />
-      <circle
-         cx="503.38"
-         cy="377.69"
-         r="8.89"
-         style="stroke-width: 0.71;"
-         id="circle996" />
-      <circle
-         cx="536.14"
-         cy="377.69"
-         r="8.89"
-         style="stroke-width: 0.71; stroke: #000000; stroke-opacity: 0.18;"
-         id="circle997" />
-      <circle
-         cx="536.14"
-         cy="377.69"
-         r="8.89"
-         style="stroke-width: 0.71;"
-         id="circle998" />
-      <text
-         x="370.37"
-         y="379.69"
-         style="font-size: 5.60px; font-family: &quot;Arial&quot;;"
-         textLength="3.11px"
-         lengthAdjust="spacingAndGlyphs"
-         id="text998">2</text>
-      <text
-         x="397.74"
-         y="379.69"
-         style="font-size: 5.60px; font-family: &quot;Arial&quot;;"
-         textLength="3.11px"
-         lengthAdjust="spacingAndGlyphs"
-         id="text999">3</text>
-      <text
-         x="425.11"
-         y="379.69"
-         style="font-size: 5.60px; font-family: &quot;Arial&quot;;"
-         textLength="3.11px"
-         lengthAdjust="spacingAndGlyphs"
-         id="text1000">4</text>
-      <text
-         x="452.67"
-         y="379.69"
-         style="font-size: 5.60px; font-family: &quot;Arial&quot;;"
-         textLength="3.11px"
-         lengthAdjust="spacingAndGlyphs"
-         id="text1001">5</text>
-      <text
-         x="485.44"
-         y="379.69"
-         style="font-size: 5.60px; font-family: &quot;Arial&quot;;"
-         textLength="3.11px"
-         lengthAdjust="spacingAndGlyphs"
-         id="text1002">6</text>
-      <text
-         x="518.20"
-         y="379.69"
-         style="font-size: 5.60px; font-family: &quot;Arial&quot;;"
-         textLength="3.11px"
-         lengthAdjust="spacingAndGlyphs"
-         id="text1003">6</text>
-      <text
-         x="550.97"
-         y="379.69"
-         style="font-size: 5.60px; font-family: &quot;Arial&quot;;"
-         textLength="3.11px"
-         lengthAdjust="spacingAndGlyphs"
-         id="text1004">6</text>
+      <g
+         id="g1"
+         transform="translate(29.553665)">
+        <circle
+           cx="358.25"
+           cy="377.69"
+           r="1.5"
+           style="stroke:#000000;stroke-width:0.71;stroke-opacity:0.18"
+           id="circle985" />
+        <circle
+           cx="358.25"
+           cy="377.69"
+           r="1.5"
+           style="stroke-width:0.71"
+           id="circle986" />
+        <circle
+           cx="385.62"
+           cy="377.69"
+           r="3.2"
+           style="stroke:#000000;stroke-width:0.71;stroke-opacity:0.18"
+           id="circle987" />
+        <circle
+           cx="385.62"
+           cy="377.69"
+           r="3.2"
+           style="stroke-width:0.71"
+           id="circle988" />
+        <circle
+           cx="412.98001"
+           cy="377.69"
+           r="5.0300002"
+           style="stroke:#000000;stroke-width:0.71;stroke-opacity:0.18"
+           id="circle989" />
+        <circle
+           cx="412.98001"
+           cy="377.69"
+           r="5.0300002"
+           style="stroke-width:0.71"
+           id="circle990" />
+        <circle
+           cx="440.45001"
+           cy="377.69"
+           r="6.9299998"
+           style="stroke:#000000;stroke-width:0.71;stroke-opacity:0.18"
+           id="circle991" />
+        <circle
+           cx="440.45001"
+           cy="377.69"
+           r="6.9299998"
+           style="stroke-width:0.71"
+           id="circle992" />
+        <circle
+           cx="470.60999"
+           cy="377.69"
+           r="8.8900003"
+           style="stroke:#000000;stroke-width:0.71;stroke-opacity:0.18"
+           id="circle993" />
+        <circle
+           cx="470.60999"
+           cy="377.69"
+           r="8.8900003"
+           style="stroke-width:0.71"
+           id="circle994" />
+        <text
+           x="370.37"
+           y="379.69"
+           style="font-size:5.6px;font-family:Arial"
+           textLength="3.1099999"
+           lengthAdjust="spacingAndGlyphs"
+           id="text998">2</text>
+        <text
+           x="397.73999"
+           y="379.69"
+           style="font-size:5.6px;font-family:Arial"
+           textLength="3.1099999"
+           lengthAdjust="spacingAndGlyphs"
+           id="text999">3</text>
+        <text
+           x="425.10999"
+           y="379.69"
+           style="font-size:5.6px;font-family:Arial"
+           textLength="3.1099999"
+           lengthAdjust="spacingAndGlyphs"
+           id="text1000">4</text>
+        <text
+           x="452.67001"
+           y="379.69"
+           style="font-size:5.6px;font-family:Arial"
+           textLength="3.1099999"
+           lengthAdjust="spacingAndGlyphs"
+           id="text1001">5</text>
+        <text
+           x="485.44"
+           y="379.69"
+           style="font-size:5.6px;font-family:Arial"
+           textLength="3.1099999"
+           lengthAdjust="spacingAndGlyphs"
+           id="text1002">6</text>
+      </g>
       <text
          x="259.18"
          y="19.76"
