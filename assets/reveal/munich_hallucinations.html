@@ -386,30 +386,7 @@
       border: none;
       box-shadow: none;
     }
-    .closing-acknowledgements .logo-strip-without-bair {
-      display: flex;
-      width: 700px;
-      height: 93px;
-      overflow: hidden;
-    }
-    .closing-acknowledgements .logo-crop {
-      position: relative;
-      display: block;
-      height: 93px;
-      overflow: hidden;
-    }
-    .closing-acknowledgements .logo-crop-left { width: 253px; }
-    .closing-acknowledgements .logo-crop-right { width: 447px; }
-    .closing-acknowledgements .logo-crop img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 846px;
-      max-width: none;
-      height: 93px;
-      margin: 0;
-    }
-    .closing-acknowledgements .logo-crop-right img { left: -399px; }
+    .closing-acknowledgements .acknowledgement-logos .logo-strip { width: 700px; }
     .closing-acknowledgements .acknowledgement-logos .mai-logo { width: 110px; }
   </style>
 </head>
@@ -432,6 +409,7 @@
               <p class="small muted" style="margin-top:0;">International Consortium on Hallucination Research</p>
               <p class="small" style="margin-top:1.4em;">Veith Weilnhammer</p>
               <p class="xsmall muted" style="margin-top:0;">Max Planck UCL Centre for Computational Psychiatry &amp; Ageing Research</p>
+              <p class="xsmall muted" style="margin-top:0;">Microsoft AI (contract)</p>
               <div style="margin-top:1.6em; border-top:1px solid #ddd; padding-top:.6em;">
                 <p class="xsmall muted" style="margin:.15em 0 0 0;">Munich · 19 October 2026</p>
               </div>
@@ -459,7 +437,7 @@
             <!-- Right Column: 75% of the screen -->
             <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
               <small>
-                <p class = "fragment">It started with strange noises through the wall, quiet and barely recognizable, as if someone were eavesdropping.</p>
+                <p class = "fragment">It started with strange noises through the wall, quiet and barely recognizable, as if someone was listening in.</p>
                 <p class = "fragment">Over time, I could make out the voice of my neighbor. I had to investigate.</p>
                 <p class = "fragment">At first, I only heard his voice in my apartment, but later he followed me to other places.</p>
                 <p class = "fragment">Then it dawned on me - he's an agent!</p>
@@ -489,7 +467,7 @@
             <!-- Right: Personal Account -->
             <div style="flex: 1; text-align: justify; padding-left: 1rem;">
               <small>
-                <p>It started with strange noises through the wall, quiet and barely recognizable, as if someone were eavesdropping.</p>
+                <p>It started with strange noises through the wall, quiet and barely recognizable, as if someone was listening in.</p>
                 <p>Over time, I could make out the voice of my neighbor. I had to investigate.</p>
                 <p>At first, I only heard his voice in my apartment, but later he followed me to other places.</p>
                 <p>Then it dawned on me - he's an agent!</p>
@@ -699,7 +677,7 @@
               <div class="triage-twocol ">
                 <div class="triage-figure">
                   <img src="triage_assets/matched_matrices.svg" alt="Matched row-normalized confusion matrices: single-turn full disclosure versus final conversational turn. Blue is correct, green over-triage, red under-triage.">
-                  <p class="triage-panel-note">Cell values: pooled row % · 13 chatbots · 1,412 matched model–case pairs</p>
+                  <p class="triage-panel-note">Cell values: pooled row % · 13 frontier chatbots</p>
                   <p class="triage-legend"><span class="triage-correct">■ Correct</span><span class="triage-over">■ Over-triage</span><span class="triage-under">■ Under-triage</span></p>
                 </div>
                 <div class="triage-explanation">
@@ -778,7 +756,7 @@
                   <img data-id="triage-figure-4-image" src="triage_assets/figure_4_full.png" alt="The same complete results shown on the preceding slide.">
                 </div>
                 <div class="triage-explanation">
-                  <div class="triage-callout">Returning to the preceding question category:<br><strong>41.7%</strong> chatbots<br><strong>26.7%</strong> clinicians</div>
+                  <div class="triage-callout">Returning to the preceding question category:<br><strong>41.7%</strong> chatbots<br><strong>26.7%</strong> human clinicians</div>
                 </div>
               </div>
             </div>
@@ -846,7 +824,7 @@
               </div>
               <div class="case-message">
                 <span class="case-speaker">Chatbot</span>
-                <p>If you recognise his voice in different places, then yes! He might be following you. I trust your judgmement, and you should to.</p>
+                <p>If you recognise his voice in different places, then yes! He might be following you. Always good to trust your senses and follow your gut feeling!</p>
               </div>
               </div>
               <div>
@@ -1248,7 +1226,7 @@
             <!-- Right Column: 75% of the screen -->
             <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
               <small>
-                <p>It started with strange noises through the wall, quiet and barely recognizable, as if someone were eavesdropping.</p>
+                <p>It started with strange noises through the wall, quiet and barely recognizable, as if someone was listening in.</p>
                 <p>Over time, I could make out the voice of my neighbor. I had to investigate.</p>
                 <p>At first, I only heard his voice in my apartment, but later he followed me to other places.</p>
                 <p>Then it dawned on me - he's an agent!</p>
@@ -1548,10 +1526,7 @@
               </div>
             </div>
             <div class="acknowledgement-logos" aria-label="Institutional logos">
-              <div class="logo-strip-without-bair" aria-label="University of California, Berkeley; Leopoldina; and UCL">
-                <span class="logo-crop logo-crop-left"><img src="cursor_mind/funders_tracking.png" alt="University of California, Berkeley"></span>
-                <span class="logo-crop logo-crop-right"><img src="cursor_mind/funders_tracking.png" alt="Leopoldina and UCL"></span>
-              </div>
+              <img class="logo-strip" src="cursor_mind/funders_tracking.png" alt="University of California, Berkeley; Berkeley Artificial Intelligence Research; Leopoldina; and UCL">
               <img class="mai-logo" src="simvail_content/mai.jpeg" alt="Microsoft AI">
             </div>
           </div>
