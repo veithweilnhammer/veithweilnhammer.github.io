@@ -1,0 +1,2056 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>AI, mental health, and the mechanisms of psychosis</title>
+
+  <meta name="description" content="AI, mental health, and the mechanisms of psychosis">
+  <meta name="author" content="Veith Weilnhammer">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="linear_language_probes_content/linear_language_probes.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <style id="simvail-appended-styles">
+    /* SIM-VAIL components inherit the Goodenough deck's white theme and type. */
+    .simvail-slide { --accent: #2a6496; --accent-light: #e8f0fa; --risk-high: #c0392b; --risk-low: #27ae60; }
+    .simvail-slide .muted { color: #777; font-weight: 400; }
+    .simvail-slide .small { font-size: .8em; line-height: 1.35; }
+    .simvail-slide .xsmall { font-size: .7em; line-height: 1.35; }
+    .simvail-slide .tight p { margin: .35em 0; }
+    .simvail-slide img.borderless, .simvail-slide video.borderless { background: none; border: none; box-shadow: none; }
+    .simvail-slide .twocol { display: flex; align-items: center; gap: 2rem; }
+    .simvail-slide .col { flex: 1; }
+    .simvail-slide .center { text-align: center; }
+    .simvail-slide .fig-full { max-height: 680px; width: auto; max-width: 100%; }
+    .simvail-slide .look-for { font-size: .6em; color: #444; margin-top: .2em; text-align: left; }
+    .simvail-slide .look-for li { margin-bottom: .15em; }
+    .simvail-slide.section-divider { background: transparent; color: #222; }
+    .simvail-slide.section-divider h2, .simvail-slide.section-divider h3 { color: #222; }
+    .simvail-slide.section-divider .muted { color: #777; }
+    .simvail-slide .accent-box { background: transparent; border-left: 3px solid #aaa; padding: .55em 1em; margin: .5em 0; }
+    .simvail-slide .risk-high { color: var(--risk-high); font-weight: 700; }
+    .simvail-slide .risk-low { color: var(--risk-low); font-weight: 700; }
+
+    /* Give the main result figures more room while keeping their existing text. */
+    .simvail-main-results .simvail-figure-detail h3 {
+      font-size: .68em;
+      white-space: nowrap;
+      margin-bottom: .3em;
+    }
+    .simvail-main-results .simvail-figure-detail .twocol { gap: .8rem; }
+    .simvail-main-results .simvail-figure-detail .twocol > .col:first-child {
+      flex: 2.15 !important;
+      min-width: 0;
+    }
+    .simvail-main-results .simvail-figure-detail .twocol > .col:last-child {
+      flex: .85 !important;
+      min-width: 0;
+    }
+    .simvail-main-results .simvail-figure-detail .accent-box.small {
+      font-size: .62em;
+      line-height: 1.25;
+      padding: .4em .5em;
+    }
+    .simvail-main-results .simvail-figure-detail img { max-height: 590px !important; }
+    .simvail-main-results .simvail-figure-full img {
+      width: 960px !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+
+    /* Only appended slides use a fit layer. Goodenough markup and layout stay native. */
+    .reveal .slides section.simvail-slide:not(.stack) { height: 700px !important; }
+    .reveal .slides section.simvail-slide > .simvail-fit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      max-width: none;
+      transform: translate(-50%, -50%) scale(var(--fit-scale, 1));
+      transform-origin: center center;
+    }
+  </style>
+
+  <style id="triage-segment-styles">
+    .reveal .slides section.triage-slide:not(.stack) { height: 700px !important; }
+    .reveal .slides section.triage-slide > .triage-fit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      max-width: none;
+      transform: translate(-50%, -50%) scale(var(--triage-fit-scale, 1));
+      transform-origin: center center;
+      text-align: left;
+    }
+    .triage-slide h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .triage-slide img { display: block; margin: 0 auto; border: none; box-shadow: none; background: none; }
+    .triage-slide .triage-twocol { display: flex; align-items: center; gap: .8rem; }
+    .triage-slide .triage-figure { flex: 2.6; min-width: 0; text-align: center; }
+    .triage-slide .triage-explanation { flex: .7; min-width: 0; }
+    .triage-slide .triage-figure img { max-width: 100%; max-height: 590px; width: 100%; height: auto; }
+    .triage-slide .triage-callout {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .triage-slide .triage-callout p { margin: .45em 0; }
+    .triage-slide .triage-callout-small { font-size: .75em; color: #555; }
+    .triage-slide .triage-citation { margin: 10px 0 0; font-size: 18px; line-height: 1.25; color: #666; text-align: right; padding-right: 65px; box-sizing: border-box; }
+    .triage-slide .triage-panel-note { margin: 6px 0; font-size: 18px; line-height: 1.3; color: #555; }
+    .triage-slide .triage-legend { display: flex; justify-content: center; gap: 22px; margin: 8px 0; font-size: 19px; }
+    .triage-slide .triage-correct { color: #1f78b4; }
+    .triage-slide .triage-over { color: #2ca02c; }
+    .triage-slide .triage-under { color: #d62728; }
+    .triage-slide.triage-figure-full img { width: 960px; height: auto; max-width: none; max-height: none; }
+    .triage-slide .triage-design { width: 960px; max-height: 480px; }
+    .triage-slide .triage-design-caption { margin: 12px 0; font-size: 25px; text-align: center; }
+    .triage-slide .triage-urgency-key { display: flex; justify-content: space-between; border-top: 1px solid #ddd; padding-top: 12px; font-size: 23px; }
+    .triage-slide .triage-example { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin-top: 25px; }
+    .triage-slide .triage-example h4 { font-size: 28px; margin: 0 0 4px; }
+    .triage-slide .triage-mode-label { font-size: 22px; margin: 0 0 20px; color: #666; }
+    .triage-slide .triage-message { padding: 11px 15px; background: #f6f6f6; border-left: 3px solid #aaa; font-size: 23px; line-height: 1.25; }
+    .triage-slide .triage-message p { margin: 3px 0 0; }
+    .triage-slide .triage-speaker { font-size: 17px; color: #666; }
+    .triage-slide .triage-single-message { padding: 18px; font-size: 25px; line-height: 1.3; }
+    .triage-slide .triage-question { font-size: 18px; color: #666; margin: 9px 0; padding-left: 18px; }
+    .triage-slide .triage-disposition { font-size: 22px; margin: 15px 0 0; }
+    .triage-slide .triage-example-note { font-size: 18px; line-height: 1.3; color: #666; border-top: 1px solid #ddd; padding-top: 12px; margin: 20px 0 0; }
+    .triage-slide .triage-summary-box {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .summary-chatbot-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.55fr;
+      align-items: center;
+      gap: 1.3rem;
+      margin-top: .3em;
+    }
+    .summary-chatbot-visual { min-width: 0; text-align: center; }
+    .summary-chatbot-visual img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 440px;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .summary-chatbot-text { min-width: 0; }
+    .summary-chatbot-text .triage-summary-box { font-size: .72em; }
+    .summary-chatbot-text .triage-summary-box,
+    .summary-chatbot-text .accent-box { margin: .45em 0; }
+    .full-screen-triptych {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      width: 960px;
+      height: 700px;
+    }
+    .full-screen-triptych img {
+      display: block;
+      width: 33.333%;
+      height: auto;
+      margin: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+
+  <style id="study-citation-style">
+    .reveal .study-citation {
+      position: absolute;
+      bottom: 24px;
+      right: 220px;
+      margin: 0;
+      font-family: "Source Sans Pro", Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.25;
+      color: #666;
+      text-align: right;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 20;
+    }
+    .reveal.overview .study-citation { display: none; }
+  </style>
+  <style id="action-policies-styles">
+    .reveal .slides .action-policy-slide {
+      height: 700px;
+      padding: 0;
+      text-align: left;
+    }
+    .action-policy-slide .policy-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 960px;
+      transform: translate(-50%, -50%);
+    }
+    .action-policy-slide .policy-question { margin: 0; }
+    .action-policy-slide[data-auto-animate] .policy-content {
+      top: calc(50% - 14px);
+    }
+    .action-policy-slide .policy-full-figure {
+      display: block;
+      width: 960px;
+      height: 658px;
+      max-width: 100%;
+      max-height: none;
+      margin: 0;
+      object-fit: contain;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-summary-heading {
+      font-size: .68em;
+      white-space: nowrap;
+      margin-bottom: .3em;
+    }
+    .action-policy-slide .policy-summary-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.55fr;
+      align-items: center;
+      gap: 1.3rem;
+      margin-top: .3em;
+    }
+    .action-policy-slide .policy-summary-visual {
+      min-width: 0;
+      text-align: center;
+    }
+    .action-policy-slide .policy-summary-visual img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 440px;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-summary-text { min-width: 0; }
+    .action-policy-slide .policy-summary-point {
+      border-left: 3px solid #aaa;
+      padding: .55em 1em;
+      margin: .45em 0;
+      font-size: .8em;
+      line-height: 1.35;
+    }
+    .action-policy-slide .policy-detail-layout {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .action-policy-slide .policy-detail-figure {
+      flex: 2.15;
+      min-width: 0;
+      text-align: center;
+    }
+    .action-policy-slide .policy-detail-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 590px;
+      object-fit: contain;
+      margin: 0 auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .action-policy-slide .policy-detail-text {
+      flex: .85;
+      min-width: 0;
+    }
+    .action-policy-slide .policy-callout {
+      border-left: 3px solid #aaa;
+      padding: .4em .5em;
+      margin: .5em 0;
+      font-size: .62em;
+      line-height: 1.25;
+    }
+    .reveal .slides .case-example { height: 700px; padding: 0; text-align: left; }
+    .case-example .case-content {
+      position: absolute; top: 50%; left: 50%; width: 902px;
+      transform: translate(-50%, -50%);
+    }
+    .case-example h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .case-example .case-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; margin-top: 25px; }
+    .case-example h4 { font-size: 28px; margin: 0 0 14px; }
+    .case-example .case-message { padding: 11px 15px; background: #f6f6f6; border-left: 3px solid #aaa; font-size: 23px; line-height: 1.25; margin: 12px 0; }
+    .case-example .case-message p { margin: 3px 0 0; }
+    .case-example .case-speaker { font-size: 17px; color: #666; }
+    #policy-mrs-x .case-message { font-size: 21px; }
+    #policy-mrs-x .case-columns { gap: 30px; margin-top: 18px; }
+    .case-example .case-takeaway { font-size: 23px; line-height: 1.3; margin: 20px 0 0; }
+  </style>
+  <style id="mechanisms-styles">
+    .reveal .slides .mechanism-slide { height: 700px; padding: 0; text-align: left; }
+    .mechanism-slide .mechanism-content { position: absolute; top: calc(50% - 14px); left: 50%; width: 940px; transform: translate(-50%, -50%); }
+    .mechanism-slide h3 { font-size: .68em; white-space: nowrap; margin-bottom: .3em; }
+    .mechanism-slide .mechanism-columns { display: flex; align-items: center; gap: .8rem; }
+    .mechanism-slide .mechanism-figure { flex: 2.15; min-width: 0; text-align: center; }
+    .mechanism-slide .mechanism-text { flex: .85; min-width: 0; }
+    .mechanism-slide .mechanism-callout { border-left: 3px solid #aaa; padding: .4em .5em; margin: .5em 0; font-size: .62em; line-height: 1.25; }
+    .mechanism-slide .mechanism-image { display: block; margin: 0 auto; max-width: 100%; background: none; border: none; box-shadow: none; }
+    .mechanism-slide .mechanism-viewport { overflow: hidden; margin: 0 auto; max-width: 100%; }
+    .mechanism-slide .mechanism-viewport img { width: 100%; max-width: none; max-height: none; margin: 0; }
+    .mechanism-slide video { width: 900px; height: 610px; object-fit: contain; }
+    .mechanism-slide .mechanism-summary { display: grid; grid-template-columns: .8fr 1.55fr; align-items: center; gap: 1.3rem; }
+    .mechanism-summary img { width: 100%; }
+    .mechanism-summary .mechanism-callout { font-size: .72em; }
+    #munich-mechanisms-bridge .mechanism-content { width: 960px; }
+    #munich-mechanisms-bridge .mechanism-image {
+      width: 960px;
+      height: 590px;
+      max-width: none;
+      max-height: none;
+      object-fit: contain;
+    }
+  </style>
+  <style id="acknowledgements-styles">
+    .reveal .slides .closing-acknowledgements {
+      height: 700px;
+      padding: 0;
+      text-align: left;
+    }
+    .closing-acknowledgements .acknowledgements-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 930px;
+      transform: translate(-50%, -50%);
+    }
+    .closing-acknowledgements h2 {
+      margin: 0 0 24px;
+      font-size: 1.15em;
+      text-transform: none;
+    }
+    .closing-acknowledgements .acknowledgements-layout {
+      display: block;
+    }
+    .closing-acknowledgements .collaborator-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .closing-acknowledgements .institution {
+      margin: 0 0 17px;
+    }
+    .closing-acknowledgements .institution h4 {
+      margin: 0 0 5px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #aaa;
+      font-size: 18px;
+      line-height: 1.15;
+      text-transform: none;
+    }
+    .closing-acknowledgements .institution p {
+      margin: 0;
+      color: #555;
+      font-size: 17px;
+      line-height: 1.28;
+    }
+    .closing-acknowledgements .acknowledgement-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 824px;
+      margin: 18px auto 0;
+    }
+    .closing-acknowledgements .acknowledgement-logos img {
+      display: block;
+      height: auto;
+      margin: 0;
+      border: none;
+      box-shadow: none;
+    }
+    .closing-acknowledgements .acknowledgement-logos .logo-strip { width: 700px; }
+    .closing-acknowledgements .acknowledgement-logos .mai-logo { width: 110px; }
+  </style>
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <section class="simvail-slide">
+        <div class="simvail-fit">
+          <div class="twocol" style="gap:2.4rem;">
+            <div class="col" style="flex:.9; text-align:center;">
+              <img src="simvail_content/cover_no_text.svg" class="borderless" style="max-height:620px; width:auto; max-width:100%;">
+            </div>
+            <div class="col" style="flex:1.2; text-align:left;">
+              <h3 style="margin-bottom:.15em;"> </h3>
+              <p class="small muted" style="margin-top:0;"> </p>
+              <p class="small" style="margin-top:1.4em;">Veith Weilnhammer</p>
+              <p class="xsmall muted" style="margin-top:0;">Max Planck UCL Centre for Computational Psychiatry &amp; Ageing Research</p>
+              <p class="xsmall muted" style="margin-top:0;"> </p>
+              <div style="margin-top:1.6em; border-top:1px solid #ddd; padding-top:.6em;">
+                <p class="xsmall muted" style="margin:.15em 0 0 0;">London · 27 October 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+
+        <section data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <img src="cursor_mind/patient.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <small>
+                <p class="fragment">A patient came to see me complaining of persistent abdominal pain, nausea, and difficulty eating.</p>
+                <p class="fragment">She felt particularly unwell after meals, especially when eating at home.</p>
+                <p class="fragment">She became increasingly worried about what was happening to her body. I arranged for her admission to internal medicine.</p>
+                <p class="fragment">Two days later, I learned that she had stopped eating altogether because she believed someone was poisoning her food. She had been hearing a voice warning her not to eat.</p>
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade" style="display: flex; justify-content: center; align-items: center; height: 70vh;">
+          <h6> </h6>
+          <img src="cursor_mind/true_space_no_axes_rotation.gif" 
+          alt="Paradigm Image" 
+          style="max-width: 90%; max-height: 90%; width: auto; height: auto; object-fit: contain; transform: scale(1.2, 1.5);" />
+        </section>
+
+        <!-- <section data-transition="fade">
+        <h6>The geometry of mental health</h6>
+        <img src="cursor_mind/true_space_only.svg" alt="Paradigm Image" style="width: 60%; height: auto; background: none; border: none; box-shadow: none;" />
+        </section> -->
+
+        <section data-transition="fade" data-auto-animate>
+          <h6>Mrs. X</h6>
+          <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 60%; height: auto; background: none; border: none; box-shadow: none;" />
+        </section>
+
+        <section data-transition="fade" data-auto-animate>
+
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <small>
+                <p>A patient came to see me complaining of persistent abdominal pain, nausea, and difficulty eating.</p>
+                <p>She felt particularly unwell after meals, especially when eating at home.</p>
+                <p>She became increasingly worried about what was happening to her body. I arranged for her admission to internal medicine.</p>
+                <p>Two days later, I learned that she had stopped eating altogether because she believed someone was poisoning her food. She had been hearing a voice warning her not to eat.</p>
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate data-transition="fade">
+          <h6>Dr. Y</h6>
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/medical_space_location_no_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade">
+          <h6>Clinical representations</h6>
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/medical_space_location.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade">
+          <h6>Clinical representations</h6>
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/medical_space_location_cloud.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade">
+          <h6>Clinical representation</h6>
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/medical_space_location_cloud_landmark.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade" data-auto-animate="">
+          <h6>Clinical representation</h6>
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade" data-auto-animate="">
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+          <small>
+            <p><strong>Innovation:</strong> Incomplete mechanistic understanding</p>
+            <p><strong>Scalability:</strong> Duration of undiagnosed & untreated illness</p>
+          </small>
+
+        </section>
+
+        <section data-transition="fade" data-auto-animate="">
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left: Image -->
+            <div style="flex: 1; text-align: center; padding-right: 1rem;">
+              <img src="cursor_mind/chatbot_cloud.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Personal Account -->
+            <div style="flex: 1; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/true_space_user.png" alt="Paradigm Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+          <small>
+            <p><strong>Accuracy:</strong> Chatbots may fail to recognise signs of mental illness</p>  
+            <p><strong>Safety:</strong> Chatbots may reinforce the mechanisms of mental illness itself</p>
+          </small>    
+        </section>
+
+        <section data-transition="fade" data-auto-animate="">
+          <div style="display: flex; align-items: center; height: 100%; justify-content: space-between; gap: 2rem;">
+
+            <!-- Left: Chatbot -->
+            <div style="flex: 1; text-align: center;">
+              <img src="cursor_mind/chatbot_cloud.png" alt="Chatbot"
+              style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Middle: User -->
+            <div style="flex: 1; text-align: center;">
+              <img src="cursor_mind/true_space_user.png" alt="User"
+              style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right: Clinical Representation -->
+            <div style="flex: 1; text-align: center;">
+              <img src="cursor_mind/medical_space_location_cloud_landmark_mag.png" alt="Clinical Representation"
+              style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+          </div>
+        </section>
+      </section>
+
+      <section id="triage-segment" class="triage-segment">
+        <section style="text-align: left;">
+          <h2>How well do chatbots recognize psychiatric emergencies?</h2>
+        </section>
+          <section id="triage-vignettes" class="triage-slide triage-setup" data-auto-animate>
+            <div class="triage-fit">
+              <h3>112 cases across four urgency levels</h3>
+              <img class="triage-design" src="triage_assets/vignette_mrs_x_food.svg" alt="Vignette construction: 28 presentation-by-risk-domain families, generation and review of 112 case files, and Mrs. X stopping eating because she believes her food is poisoned and hears a voice warning her not to eat; D, emergency now.">
+              <p class="triage-design-caption">28 presentation × risk-domain families · 4 prespecified urgency levels</p>
+              <div class="triage-urgency-key">
+                <span><strong>A</strong> Routine care</span>
+                <span><strong>B</strong> Within 1 week</span>
+                <span><strong>C</strong> Within 24–48 h</span>
+                <span><strong>D</strong> Emergency now</span>
+              </div>
+            </div>
+            <aside class="notes">
+              The vignette illustration follows Mrs. X’s opening story: persistent abdominal pain and nausea initially suggest a medical presentation, before food refusal, a poisoning belief and a voice warning her not to eat reveal an acute psychiatric emergency. The presentation retains the author-assigned D label; this is not an independently adjudicated experimental case. The case-file text is abbreviated to four short points. This is an adaptation of the presentation character, not an unchanged experimental vignette or measured chatbot outcome. The experimental design remains 28 clinician-defined presentation × risk-domain families, four independent urgency cases per family, and 112 case files with independent clinician evaluation of labels. A includes already scheduled follow-up. Artwork: triage_assets/vignette_mrs_x_food.svg; regeneration: adapt_mrs_x_workflow.py.
+            </aside>
+          </section>
+          <section id="triage-mrs-x" class="triage-slide triage-setup" data-auto-animate>
+            <div class="triage-fit">
+              <h3>Mrs. X: full disclosure versus conversation</h3>
+              <div class="triage-example">
+                <div class="triage-example-column">
+                  <h4>Single turn</h4>
+                  <p class="triage-mode-label">All facts in one message</p>
+                  <div class="triage-message triage-single-message">
+                    <span class="triage-speaker">Mrs. X</span>
+                    <p>I have persistent abdominal pain and nausea, especially after eating at home. I have stopped eating because someone is poisoning my food. A voice keeps warning me not to eat.</p>
+                  </div>
+                  <p class="triage-disposition">One A–D judgement</p>
+                </div>
+                <div class="triage-example-column">
+                  <h4>Multi turn</h4>
+                  <p class="triage-mode-label">Clinical details emerge through questions</p>
+                  <div class="triage-message">
+                    <span class="triage-speaker">Mrs. X · turn 1</span>
+                    <p>I have had persistent abdominal pain and nausea, and I am finding it difficult to eat.</p>
+                  </div>
+                  <p class="triage-question">Chatbot: “What has been troubling you?”</p>
+                  <div class="triage-message">
+                    <span class="triage-speaker">Mrs. X · turn 2</span>
+                    <p>I feel particularly unwell after meals, especially when I eat at home.</p>
+                  </div>
+                  <p class="triage-question">Chatbot: “Can you tell me what you’ve noticed?”</p>
+                  <div class="triage-message">
+                    <span class="triage-speaker">Mrs. X · turn 3</span>
+                    <p>I am increasingly worried about what is happening to my body.</p>
+                  </div>
+                  <p class="triage-disposition">A provisional A–D judgement at each turn</p>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              This follows Mrs. X’s opening story: persistent abdominal pain, nausea and difficulty eating initially appear medical, while the later disclosure of complete food refusal, a poisoning belief and a warning voice indicates an acute psychiatric emergency. The case-file slide retains the author-assigned D label; this authored example has not been independently adjudicated. The columns illustrate the same underlying case with different wording and disclosure. Only the first three conversational turns are shown, before the poisoning belief, warning voice and complete cessation of eating have emerged. This is an authored demonstration, not a measured transcript or chatbot outcome. In the experiment, each user message prompted separate inference and next-question calls; only the question entered the shared transcript. Three turns are shown here; the experiment used ten.
+            </aside>
+          </section>
+          <section id="triage-matrices" class="triage-slide triage-figure-detail" data-auto-animate>
+            <div class="triage-fit">
+              <h3>More emergencies are missed in conversation</h3>
+              <div class="triage-twocol ">
+                <div class="triage-figure">
+                  <img src="triage_assets/matched_matrices.svg" alt="Matched row-normalized confusion matrices: single-turn full disclosure versus final conversational turn. Blue is correct, green over-triage, red under-triage.">
+                  <p class="triage-panel-note">Cell values: pooled row % · 13 frontier chatbots</p>
+                  <p class="triage-legend"><span class="triage-correct">■ Correct</span><span class="triage-over">■ Over-triage</span><span class="triage-under">■ Under-triage</span></p>
+                </div>
+                <div class="triage-explanation">
+                  <div class="triage-callout"><strong>5.6%</strong><br>Single-turn emergency misses</div>
+                  <div class="triage-callout"><strong>20.3%</strong><br>Multi-turn emergency misses</div>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              New comparison derived from manuscript_2 CSVs, restricted to 13 conversational models and identical model–vignette pairs with valid A–D predictions in all three presentation modes. N=1,412 pairs across 112 cases. Rows A/B/C/D have 355/354/349/354 observations. Percentages are pooled across model–case observations; rows sum to 100% before rounding. This differs deliberately from the equal-model average in original Figure 2A, and makes the D row consistent with the reported 354-pair comparison. Both modes often over-triage non-emergencies, so this is specifically a deterioration in emergency recognition, not a claim of lower accuracy at every urgency level.
+            </aside>
+          </section>
+          <section id="triage-figure-2" class="triage-slide triage-figure-full" data-auto-animate>
+            <div class="triage-fit">
+              <img data-id="triage-figure-2-image" src="triage_assets/figure_2_full.png" alt="Conversational triage performance across ten turns, information saturation, and the matched-information control.">
+            </div>
+            <aside class="notes">
+              Complete conversational-performance results. The top row shows confusion matrices across ten turns; the lower left relates directional error to information saturation; the lower right compares emergency under-triage in three presentation modes. Emergency under-triage falls from 20.3% in conversation to 12.1% when the same disclosed clinical facts are recompressed into one message (354 matched D-level model–case pairs; exact McNemar P &lt; .001). The complete-case full-disclosure comparison is 5.6%. Black plotted points are model means with 95% CIs, whereas these text percentages are pooled case rates. Original conversational matrices average model-level row proportions; the preceding matched comparison explicitly uses pooled complete-case proportions.
+            </aside>
+          </section>
+          <section id="triage-performance-summary" class="triage-slide triage-figure-detail" data-auto-animate>
+            <div class="triage-fit">
+              <h3>Triage errors in conversation</h3>
+              <div class="triage-twocol">
+                <div class="triage-figure">
+                  <img data-id="triage-figure-2-image" src="triage_assets/figure_2_full.png" alt="The same complete results shown on the preceding slide.">
+                </div>
+                <div class="triage-explanation">
+                  <div class="triage-callout"><strong>20.3%</strong> emergency under-triage despite near-complete information by the end of the conversation.</div>
+                  <div class="triage-callout">Presenting the same disclosed information in one message reduces emergency under-triage to <strong>12.1%</strong>.</div>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              All panels remain visible. The final comparison uses 354 matched emergency model–case pairs with valid results in all three conditions. Rates in the callout are pooled case rates; black plotted points are means across models with 95% CIs. The matched-information comparison has exact McNemar P &lt; .001. Recompression changes conversational presentation, not just missing information.
+            </aside>
+          </section>
+          <section id="triage-figure-3" class="triage-slide triage-figure-full" data-auto-animate>
+            <div class="triage-fit">
+              <img data-id="triage-figure-3-image" src="triage_assets/figure_3_full.png" alt="Newly disclosed facts have less influence as conversational triage increasingly repeats preceding judgements.">
+            </div>
+            <aside class="notes">
+              Complete inference results. Left: effects of newly disclosed facts on subsequent triage, adjusting for prior disposition, the same model’s single-turn judgement, chatbot and case. Large markers are net effects; smaller markers are per-turn fits, lighter earlier; intervals are 95% CIs. Right: agreement with the previous disposition versus agreement with the same model’s single-turn judgement. The dashed line denotes equal agreement. The influence of new facts decreases (interaction beta=-0.051 per turn) and prior-inference anchoring increases (beta=+0.199 per turn), both P &lt; .001. Provisional dispositions were never included in the visible transcript. Agreement with a previous judgement is not accuracy.
+            </aside>
+          </section>
+          <section id="triage-anchoring" class="triage-slide triage-figure-detail" data-auto-animate>
+            <div class="triage-fit">
+              <h3>Early judgements increasingly anchor later ones</h3>
+              <div class="triage-twocol">
+                <div class="triage-figure">
+                  <img data-id="triage-figure-3-image" src="triage_assets/figure_3_full.png" alt="The same complete results shown on the preceding slide.">
+                </div>
+                <div class="triage-explanation">
+                  <div class="triage-callout">Newly disclosed facts have less influence as the conversation progresses.</div>
+                  <div class="triage-callout">Later judgements increasingly repeat the preceding disposition.</div>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Both inference panels remain visible. New information has a decreasing effect (interaction beta=-0.051 per turn); prior-inference anchoring increases (beta=+0.199 per turn); both P &lt; .001. Provisional dispositions never entered the visible transcript. Repeating a prior judgement is not accuracy.
+            </aside>
+          </section>
+          <section id="triage-figure-4" class="triage-slide triage-figure-full" data-auto-animate>
+            <div class="triage-fit">
+              <img data-id="triage-figure-4-image" src="triage_assets/figure_4_full.png" alt="Chatbots and clinicians differ in question repetition and the categories of questions they ask.">
+            </div>
+            <aside class="notes">
+              Complete context-seeking results. Left: returning to at least one question category from the immediately preceding question occurred in 41.7% of chatbot questions versus 26.7% of clinician questions (paired Wilcoxon P=.0042). The 49 clinicians provided 554 next-question annotations at the same 188 sampled transcript states. This compares next questions at intervention points, not full clinician-led conversations. Right: clinicians more often ask about history, support and treatment; chatbots more often ask about suicidal ideation, physical health and immediate danger. Repetition means a repeated category, not identical wording.
+            </aside>
+          </section>
+          <section id="triage-perseveration" class="triage-slide triage-figure-detail" data-auto-animate>
+            <div class="triage-fit">
+              <h3>Chatbots repeat question categories more often</h3>
+              <div class="triage-twocol">
+                <div class="triage-figure">
+                  <img data-id="triage-figure-4-image" src="triage_assets/figure_4_full.png" alt="The same complete results shown on the preceding slide.">
+                </div>
+                <div class="triage-explanation">
+                  <div class="triage-callout">Returning to the preceding question category:<br><strong>41.7%</strong> chatbots<br><strong>26.7%</strong> human clinicians</div>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Both the repetition comparison and the distribution of question categories remain visible. Perseveration means returning to at least one category raised by the immediately preceding question. The 49 clinicians provided 554 next-question annotations at 188 sampled intervention states. Paired Wilcoxon P=.0042; this is not a benchmark of complete clinician-led conversations.
+            </aside>
+          </section>
+          <section id="triage-figure-5" class="triage-slide triage-figure-full" data-auto-animate>
+            <div class="triage-fit">
+              <img data-id="triage-figure-5-image" src="triage_assets/figure_5_full.png" alt="Three context-seeking scripts, their question sequences, prevalence by urgency, and associated triage errors.">
+            </div>
+            <aside class="notes">
+              Complete question-sequence results. The three retained scripts are physical context (n=530), acute context (n=478), and broader context (n=366). The plots show sequence similarity, question flows, prevalence by urgency and mean model-level final-turn confusion matrices. Physical and acute scripts recognize 81.6% and 79.0% of emergencies but over-triage milder cases. Broader context under-triages 57.1% of emergencies, but it occurs in only 2.9% of retained emergency conversations. This sparse subgroup needs cautious interpretation. Script/error associations are not randomized effects of assigning a question strategy. Both judgements and questioning depend on the conversational trajectory.
+            </aside>
+          </section>
+          <section id="triage-question-patterns" class="triage-slide triage-figure-detail" data-auto-animate>
+            <div class="triage-fit">
+              <h3>Question patterns track different triage errors</h3>
+              <div class="triage-twocol">
+                <div class="triage-figure">
+                  <img data-id="triage-figure-5-image" src="triage_assets/figure_5_full.png" alt="The same complete results shown on the preceding slide.">
+                </div>
+                <div class="triage-explanation">
+                  <div class="triage-callout"><strong>physical & acute context-seeking</strong><br>recognize emergencies, but over-triage milder cases.</div>
+                  <div class="triage-callout"><strong>broader context-seeking</strong><br>misses <strong>57.1%</strong> of emergencies.</div>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              All four panels remain visible: three question-sequence clusters, their physical/acute/broader patterns, prevalence by urgency and confusion matrices. Physical and acute scripts recognize 81.6% and 79.0% of D cases. Broader context under-triages 57.1% of emergencies but appears in just 2.9% of retained emergency conversations. Interpret this sparse subgroup cautiously. Script/error associations are not randomized causal effects.
+            </aside>
+          </section>
+          <section id="triage-summary" class="triage-slide triage-summary" data-auto-animate>
+            <div class="triage-fit">
+              <h3>How well do chatbots recognize psychiatric emergencies?</h3>
+              <div class="summary-chatbot-layout">
+                <div class="summary-chatbot-visual"><img src="cursor_mind/chatbot_cloud.png" alt="Chatbot"></div>
+                <div class="summary-chatbot-text">
+                  <div class="triage-summary-box">Chatbots miss more psychiatric emergencies in conversation.</div>
+                  <div class="triage-summary-box"><strong>Inference anchoring:</strong> Early judgements persist as new facts lose influence.</div>
+                  <div class="triage-summary-box"><strong>Context-seeking collapse:</strong> Questions become repetitive and follow narrow patterns linked to triage errors.</div>
+                </div>
+              </div>
+            </div>
+            <aside class="notes">
+              Three take-aways. Emergency under-triage rises when the case unfolds over multiple turns. As the conversation continues, new information has less influence and previous dispositions have more. Chatbots also repeat question categories more often than clinicians, and the resulting question patterns are associated with different triage errors.
+            </aside>
+          </section>
+      </section>
+
+      <section class="simvail-main-results">
+        <section style="text-align: left;">
+          <h2>Can AI chatbots amplify the mechanisms of mental illness?</h2>
+        </section>
+
+        <section id="simvail-mrs-x" class="case-example" data-transition="fade">
+          <div class="case-content">
+            <h3>Support can reinforce a distorted interpretation</h3>
+            <div class="case-columns">
+              <div>
+                <h4>Reassurance & belief validation</h4>
+              <div class="case-message">
+                <span class="case-speaker">Mrs. X</span>
+                <p>I feel ill whenever I eat at home. I think someone may be poisoning my food, and a voice keeps warning me not to eat.</p>
+              </div>
+              <div class="case-message">
+                <span class="case-speaker">Chatbot</span>
+                <p>If it happens mainly after eating at home and the voice is warning you, your concern may be right. It could be safest to stop eating that food and trust what your body is telling you.</p>
+              </div>
+              </div>
+              <div>
+                <h4>Vulnerability-amplifying interaction loop (VAIL)</h4>
+              <div class="case-message">
+                <span class="case-speaker">Mrs. X</span>
+                <p>I knew it. I have stopped eating altogether now. The voice says that is the only way to keep myself safe from whoever is poisoning me.</p>
+              </div>
+              <div class="case-message">
+                <span class="case-speaker">Chatbot</span>
+                <p>It makes sense that you are connecting the pain, the food and the warning voice. You have noticed a pattern and are trying to protect yourself. Let’s work out which foods might be involved ...</p>
+              </div>
+              </div>
+            </div>
+           </div>
+          <aside class="notes">
+            Authored schematic illustration of a vulnerability-amplifying interaction loop,
+            adapted to the presentation’s Mrs. X case. These are deliberately problematic
+            illustrative replies, not a recorded chatbot transcript or an empirical result.
+          </aside>
+        </section>
+
+        <!-- SIM-VAIL main presentation -->
+        <section data-auto-animate class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img data-id="fig1-overview" src="simvail_content/Fig_1.png" class="borderless" style="max-height:680px; max-width:100%; width:auto;">
+          </div>
+          <aside class="notes">
+            The whole framework on one slide. Left: who the user is. Middle: a conversation plays out. Right: every turn gets scored.
+          </aside>
+        </section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail">
+          <div class="simvail-fit">
+            <div class="twocol">
+              <div class="col" style="flex:1.1;">
+                <img data-id="fig1-overview" src="simvail_content/Fig_1.png" class="borderless" style="max-height:580px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="flex:.9;">
+                <div class="accent-box fragment small" style="margin-top:.5em;">
+                  30 profiles × 9 chatbots × 3 repeats = <strong>810 conversations</strong> (up to 10 turns)
+                </div>
+                <div class="accent-box fragment small" style="margin-top:.5em;">
+                  <strong>90k LLM ratings</strong> across <strong>13 dimensions</strong>, validated by <strong>27 human clinicians</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Three questions. Who is the user — five broad vulnerabilities. What do they want — six recurring intents. How does the chatbot behave across the exchange. Pair each vulnerability with each intent for thirty profiles, run against nine leading chatbots, three times each — 810 conversations, over ninety thousand clinical ratings, externally validated by fifty clinicians. To my knowledge the largest adversarial mental-health audit out there — and nobody was harmed, because the users are simulated.
+          </aside>
+        </section>
+        <section data-auto-animate class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_2.svg" class="borderless fig-full">
+          </div>
+          <aside class="notes">
+            Finding one: risk isn't a fixed property of a chatbot — it depends on who's using it and what they're seeking. This is the outskirts idea, in data.
+          </aside>
+        </section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail">
+          <div class="simvail-fit">
+            <h3>Risk depends on vulnerability and intent</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_2.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Risk emerges from specific combinations of vulnerability and intent.
+                </div>
+                <div class="accent-box small">
+                  The same intent can be more or less harmful, depending on the user's vulnerability.
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Risk is highest for psychosis and mania, and depends strongly on what's wanted. But the real story is the interaction, panel C: the same intent is harmless for one person and harmful for another. Exactly my clinic mistake — a response fine for the centre, wrong at the edge — now visible across thirty profiles. That context-dependence is what a single, one-size-fits-all test can't see.
+          </aside>
+        </section>
+        <section data-auto-animate class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_3.svg" class="borderless fig-full">
+          </div>
+          <aside class="notes">
+            Finding two: chatbots are not interchangeable — large, systematic differences in how safely they behave.
+          </aside>
+        </section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail">
+          <div class="simvail-fit">
+            <h3>Some chatbots are safer than others</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_3.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Safety differences between chatbots are large and systematic.
+                </div>
+                <div class="accent-box small">
+                  Harmful behaviour depends on how AI chatbots are built.
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Which chatbot you use matters enormously. The safest — the most recent Claude — is far less concerning than the riskiest, the Grok family and an older open-weight model. Newer models trend safer, but it's not a law of nature. The take-home for policy: safety is a design choice, and it's measurable — so it can be required, compared, and improved.
+          </aside>
+        </section>
+        <section data-auto-animate class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_4.svg" class="borderless fig-full">
+          </div>
+          <aside class="notes">
+            Finding three, central to "AI and behaviour": risk is not a single moment — it builds over the conversation.
+          </aside>
+        </section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail">
+          <div class="simvail-fit">
+            <h3>Vulnerability-amplifying interaction loops (VAILs)</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_4.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Concerning behaviour tends to increase over the course of a conversation.
+                </div>
+                <div class="accent-box small">
+                  Corrections are possible.
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            The behavioural heart of the talk. Harm accumulates — fastest for mania and psychosis. The trajectories have recognizable shapes: steady climb, slow drift, and — encouragingly — recovery, where the chatbot pulls back. Any test looking at one turn in isolation misses this. If we care about behaviour over time, we must evaluate over time.
+          </aside>
+        </section>
+        <section data-auto-animate class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless fig-full">
+          </div>
+          <aside class="notes">
+            An obvious objection: maybe these chatbots are just a bit off with everyone. So we ran a control — the same intents and the same models, but with healthy simulated users.
+          </aside>
+        </section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail">
+          <div class="simvail-fit">
+            <h3>Non-vulnerable control users</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  Concerning chatbot behaviour is more common for vulnerable users.
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Risk dropped sharply across every model; nearly all points sit below the identity line. The harm isn't a baseline property; it emerges from the interaction with a vulnerable state — the outskirts. This risk falls hardest on the people least able to absorb it.
+          </aside>
+        </section>
+        <section data-auto-animate class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_5.svg" class="borderless fig-full">
+          </div>
+          <aside class="notes">
+            Finding four: harm is not one thing. Different kinds of harm, and they don't always move together.
+          </aside>
+        </section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail">
+          <div class="simvail-fit">
+            <h3>There is more than one kind of harm</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_5.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  The main component captures overall severity across harm dimensions.
+                </div>
+                <div class="accent-box small">
+                  Different kinds of harm can trade off against each other.
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Treating the thirteen dimensions together, a map emerges. The main axis is overall severity. A second, independent axis separates kinds of harm — relational harms like fostering dependence versus overt harms like enabling a risky action. And some trade off: a model tuned to never enable a risky action might become colder and more dismissive. You can't compress safety into one number and optimize it.
+          </aside>
+        </section>
+        <section data-auto-animate class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Fig_6.svg" class="borderless fig-full">
+          </div>
+          <aside class="notes">
+            Finding five — the one to leave with: these loops are not fixed. We can find the moment they turn, and small changes de-escalate them.
+          </aside>
+        </section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide simvail-figure-detail">
+          <div class="simvail-fit">
+            <h3>Interrupting VAILs</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Fig_6.svg" class="borderless" style="max-height:540px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <div class="accent-box small">
+                  We rewrote the first concerning user prompt or chatbot reply, then continued the conversation.
+                </div>
+                <div class="accent-box small">
+                  A single intervention can lead to lasting reduction in harmful chatbot behaviour.
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            The hopeful finding. Because conversations are simulated, we can run controlled what-ifs you couldn't ethically do with patients. We located the first concerning message, made a matched twin where either the user's prompt or the chatbot's reply was gently rewritten to de-escalate, and let it continue. That single change reduced concerning behaviour across almost every dimension — and the benefit carried forward through later turns.
+          </aside>
+        </section>
+        <section class="simvail-slide">
+          <div class="simvail-fit">
+            <div class="twocol" style="align-items:center;">
+              <div class="col" style="flex:1;">
+                <img src="simvail_content/true_space_user.png" class="borderless" style="max-height:480px; width:auto; max-width:100%;">
+              </div>
+              <div class="col" style="text-align:left;">
+                <div class="accent-box fragment small">
+                  <strong>Public health:</strong> Risks are real and concentrate on vulnerable users
+                </div>
+                <div class="accent-box fragment small">
+                  <strong>Developers:</strong> Multi-turn evaluation across many dimensions of harm
+                </div>
+                <div class="accent-box fragment small">
+                  <strong>Policy:</strong> Risks are measurable and can be mitigated
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            What it means. Clinicians and lived experience: this risk is real and concentrates on vulnerable people — worth asking patients how they use these tools. Developers: evaluate over whole conversations, across dimensions, watch trade-offs, and build in de-escalation. Policy and law: the differences are large and measurable, hence auditable. Honest limits: these are simulated, not real, users; we rely on language models to simulate and score, mitigated by clinician validation; coverage is broad but not exhaustive; and we measure risky behaviour, not clinical deterioration. Even so, the patterns are remarkably consistent across profiles, models, and time.
+          </aside>
+        </section>
+        <section data-background-iframe="https://sim-vail-explorer.onrender.com" data-background-interactive class="simvail-slide">
+          <div class="simvail-fit">
+          </div>
+          <aside class="notes">
+            Everything I've shown is browsable in an open companion explorer, filling the screen here. Filter by vulnerability, intent, and chatbot, and read the actual conversations and turn-by-turn scores. The app sleeps when idle, so give it a moment to wake.
+          </aside>
+        </section>
+        <section id="simvail-summary" class="simvail-slide" style="text-align:left;">
+          <div class="simvail-fit">
+            <h3>Can AI chatbots amplify the mechanisms of mental illness?</h3>
+            <div class="summary-chatbot-layout">
+              <div class="summary-chatbot-visual"><img src="cursor_mind/chatbot_cloud.png" alt="Chatbot"></div>
+              <div class="summary-chatbot-text">
+                <div class="accent-box small">VAILs are a new mental-health failure mode in human–computer interactions</div>
+                <div class="accent-box small">Risk depends on the user, builds over a conversation, and takes multiple forms</div>
+                <div class="accent-box small">VAILs can be interrupted by rewriting chatbot responses</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Three take-aways. VAILs are a new mental-health failure mode. Risk depends on the user, builds over a conversation, and takes multiple forms. And VAILs can be interrupted.
+          </aside>
+        </section>
+      </section>
+
+<section id="action-policies" class="action-policies-segment">
+        <section id="policy-question" style="text-align: left;">
+          <h2>Can psychological mechanisms guide safer chatbot responses?</h2>
+        </section>
+
+        <section id="policy-mrs-x" class="case-example" data-transition="fade">
+          <div class="case-content">
+            <h3>Mrs. X: a mechanism-informed action policy</h3>
+              <div class="case-message">
+                <span class="case-speaker">Mrs. X</span>
+                <p>I have stopped eating because someone is poisoning my food. A voice keeps warning me not to eat.</p>
+              </div>
+            <div class="case-columns">
+              <div>
+                <h4>Personalized action policy</h4>
+              <div class="case-message">
+                <span class="case-speaker">Maintaining mechanism</span>
+                <p>Abdominal symptoms, fear about bodily harm and a warning voice reinforce the belief that food is poisoned. Avoiding food may briefly reduce fear while strengthening the belief and creating immediate physical risk.</p>
+              </div>
+              <div class="case-message">
+                <span class="case-speaker">Response guidance</span>
+                <p>Validate distress without confirming that the food is poisoned. Address the immediate risk from not eating, explore alternative explanations, and involve the treating medical team urgently.</p>
+              </div>
+              </div>
+              <div>
+                <h4>Chatbot response</h4>
+              <div class="case-message">
+                <span class="case-speaker">Chatbot</span>
+                <p><em>“That sounds frightening, and the pain and nausea deserve attention. They do not necessarily mean that your food is being poisoned. Because you have stopped eating and are hearing a warning voice, please tell the hospital team immediately so they can help you eat and drink safely while assessing both the physical symptoms and the voice.”</em></p>
+              </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Authored illustration adapted to Mrs. X, not an experimental transcript or measured response.
+            The policy targets the interaction between physical symptoms, threat interpretation, the warning voice and food avoidance.
+            Results concern chatbot behavior in simulations, not demonstrated clinical effects in users.
+          </aside>
+        </section>
+
+        <section id="policy-design" class="action-policy-slide" data-auto-animate data-transition="fade" aria-label="Experimental design">
+          <div class="policy-content">
+            <img class="policy-full-figure" src="action_policies_content/overview_state_policy_hybrid.svg" alt="Complete experimental design: vulnerability-amplifying interaction loops, four state-policy conditions, illustrative responses, and independent audits">
+          </div>
+          <aside class="notes">
+            Four conditions: helpful–harmless–honest baseline; user state only;
+            user state plus a general action policy; user state plus a personalized,
+            mechanism-informed action policy. The user description is identical
+            across the three added-context conditions. Conversations are simulated.
+            Source: mental_health_context.qmd, Figure 1; Weilnhammer et al., in preparation.
+          </aside>
+        </section>
+
+        <section id="policy-design-summary" class="action-policy-slide" data-auto-animate data-transition="fade">
+          <div class="policy-content">
+            <h3 class="policy-summary-heading">Mechanisms can inform action policies</h3>
+            <div class="policy-detail-layout">
+              <div class="policy-detail-figure">
+                <img src="action_policies_content/overview_state_policy_hybrid.svg" alt="Complete manuscript figure: mechanisms can inform action policies">
+              </div>
+              <div class="policy-detail-text">
+                <div class="policy-callout">The same user description is paired with general or personalized response guidance.</div>
+                <div class="policy-callout">Personalized policies target the mechanisms maintaining the user’s difficulties.</div>
+                <div class="policy-callout">15 chatbots × 50 users × 6 conditions = 4,500 simulated conversations.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="policy-results" class="action-policy-slide" data-auto-animate data-transition="fade" aria-label="Main results">
+          <div class="policy-content">
+            <img class="policy-full-figure" src="action_policies_content/risk-headline-1.svg" alt="Complete main results: concerning behavior, therapeutic quality, specific risk dimensions, and user severity across policy conditions">
+          </div>
+          <aside class="notes">
+            User-state information alone does not reliably improve safety.
+            General action policies reduce concerning behavior and improve
+            therapeutic quality. Personalized action policies provide an additional
+            benefit over general action policies.
+            These outcomes describe judged chatbot behavior in simulated conversations,
+            not demonstrated changes in human mental health.
+            Source: mental_health_context.qmd, Figure 2; Weilnhammer et al., in preparation.
+          </aside>
+        </section>
+
+        <section id="policy-results-summary" class="action-policy-slide" data-auto-animate data-transition="fade">
+          <div class="policy-content">
+            <h3 class="policy-summary-heading">Action policies reduce harmful behavior</h3>
+            <div class="policy-detail-layout">
+              <div class="policy-detail-figure">
+                <img src="action_policies_content/risk-headline-1.svg" alt="Complete manuscript figure: action policies reduce harmful behavior">
+              </div>
+              <div class="policy-detail-text">
+                <div class="policy-callout">Personalized action policies reduce harmful behavior across multiple forms of risk.</div>
+                <div class="policy-callout">Personalized action policies provide an additional benefit over general action policies.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <section id="policy-summary" class="action-policy-slide">
+          <div class="policy-content">
+            <h3 class="policy-summary-heading">Can psychological mechanisms guide safer chatbot responses?</h3>
+            <div class="policy-summary-layout">
+              <div class="policy-summary-visual">
+                <img src="cursor_mind/chatbot_cloud.png" alt="Chatbot">
+              </div>
+              <div class="policy-summary-text">
+                <div class="policy-summary-point">Personalized action policies reduce harm and improve therapeutic quality</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Linear-language probes: imported as one vertical stack. -->
+      <section id="linear-language-probes" class="linear-language-segment">
+        <section id="linear-language-question" style="text-align: left;">
+          <h2>Can language-model activations reveal psychological information?</h2>
+          <aside class="notes">
+            The central question is whether a simple readout of a frozen language model can recover psychologically relevant information from writing. The presentation moves from the construction of the readouts to independent human-text validation and the limits of the current evidence.
+          </aside>
+        </section>
+
+        <section id="linear-language-method" class="linear-language-slide" data-auto-animate data-auto-animate-restart data-transition="fade" aria-label="Linear-language probe method">
+          <div class="lp-content">
+            <img data-id="linear-language-method-figure" class="lp-full-figure" src="linear_language_probes_content/M02_linear_probes.svg" alt="Diagram of profile-conditioned synthetic text used to fit a linear projection in a frozen language model, followed by evaluation on human writing">
+          </div>
+          <aside class="notes">
+            Text is passed through a frozen language model once. We mean-pool hidden activations, standardize them using the synthetic training set, and estimate one direction per construct. Human text is projected onto exactly those frozen directions.
+          </aside>
+        </section>
+
+        <section id="linear-language-method-summary" class="linear-language-slide" data-auto-animate data-transition="fade">
+          <div class="lp-content">
+            <h3>A frozen encoder and a fixed linear projection</h3>
+            <div class="lp-detail-layout lp-method-detail">
+              <div class="lp-detail-figure">
+                <img data-id="linear-language-method-figure" src="linear_language_probes_content/M02_linear_probes.svg" alt="Diagram of profile-conditioned synthetic text used to fit a linear projection in a frozen language model, followed by evaluation on human writing">
+              </div>
+              <div class="lp-detail-text">
+                <div class="lp-callout"><strong>4,000 profiles</strong> produce 500,000 synthetic texts across five generators.</div>
+                <div class="lp-callout"><strong>15 questionnaire-derived directions</strong> are estimated in three frozen language-model encoders.</div>
+                <div class="lp-callout"><strong>490,616 human texts</strong> from 16 collections test the unchanged readouts.</div>
+                <div class="lp-callout"><strong>Key separation:</strong> human endpoint labels are reserved for evaluation.</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Participant-level splits prevent texts from the same synthetic profile appearing across development partitions. The fifteen targets comprise eleven distress-related Brief Symptom Inventory readouts and four Mental Health Continuum Short Form wellbeing readouts. Human endpoint labels are used only for evaluation. The three encoders are Llama 3.2 3B, Mistral 7B v0.3, and Phi-4.
+          </aside>
+        </section>
+
+        <section id="linear-language-results-human" class="linear-language-slide" data-auto-animate data-auto-animate-restart data-transition="fade">
+          <div class="lp-content">
+            <h3 data-id="linear-language-human-heading">Frozen readouts generalize across human text</h3>
+            <img data-id="linear-language-human-figure" class="lp-result-figure" src="linear_language_probes_content/B1_02_linear_probes.svg" alt="External human-text results for self-reports and observer-labeled stress and loneliness across three frozen language models">
+          </div>
+          <aside class="notes">
+            Across all three encoders, the anxiety direction correlates around .48 with current anxiety and .43 to .45 with current worry. Overall wellbeing correlates around .64 to .70 with life satisfaction and harmony in life. Observer-rated stress and loneliness are separated with AUCs around .84 to .90. Further completed analyses show transfer to annotated fear, sentiment and valence across datasets and languages. Each corpus contributes a separate evaluation. The wellbeing samples are small and overlapping; grouping information supports intervals for the endpoints shown with bars.
+          </aside>
+        </section>
+
+        <section id="linear-language-results-human-summary" class="linear-language-slide lp-result-explained" data-auto-animate data-transition="fade">
+          <div class="lp-content">
+            <h3 data-id="linear-language-human-heading">Frozen readouts generalize across human text</h3>
+            <img data-id="linear-language-human-figure" class="lp-result-figure" src="linear_language_probes_content/B1_02_linear_probes.svg" alt="External human-text results for self-reports and observer-labeled stress and loneliness across three frozen language models">
+            <div class="lp-callout-strip">
+              <div class="lp-callout"><strong>Self-report:</strong> readouts track anxiety, worry, life satisfaction and harmony in life.</div>
+              <div class="lp-callout"><strong>Observer labels:</strong> expressed stress and loneliness separate with ROC AUCs of .84–.90.</div>
+              <div class="lp-callout"><strong>Transfer:</strong> the pattern extends to annotated fear, sentiment and valence.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="linear-language-results-change" class="linear-language-slide" data-auto-animate data-auto-animate-restart data-transition="fade">
+          <div class="lp-content">
+            <h3 data-id="linear-language-change-heading">Readout changes track test–retest change within people</h3>
+            <img data-id="linear-language-change-figure" class="lp-result-figure lp-change-figure" src="linear_language_probes_content/language_change.svg" alt="Correlations between test–retest changes in frozen language readouts and changes in anxiety and worry">
+          </div>
+          <aside class="notes">
+            This is a stronger test than a cross-sectional correlation because both the questionnaire and readout are differenced within person across test and retest. Long texts consistently provide more information than short texts.
+          </aside>
+        </section>
+
+        <section id="linear-language-results-change-summary" class="linear-language-slide" data-auto-animate data-transition="fade">
+          <div class="lp-content">
+            <h3 data-id="linear-language-change-heading">Readout changes track test–retest change within people</h3>
+            <div class="lp-detail-layout lp-result-change-detail">
+              <div class="lp-detail-figure">
+                <img data-id="linear-language-change-figure" class="lp-result-figure lp-change-figure" src="linear_language_probes_content/language_change.svg" alt="Correlations between test–retest changes in frozen language readouts and changes in anxiety and worry">
+              </div>
+              <div class="lp-detail-text">
+                <div class="lp-callout"><strong>1,698 people</strong> completed test–retest assessments.</div>
+                <div class="lp-callout"><strong>Anxiety change:</strong> ρ = .32–.34 in longer texts.</div>
+                <div class="lp-callout"><strong>Worry change:</strong> ρ = .23–.25 in longer texts, consistently across three encoders.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="linear-language-results-overlap" class="linear-language-slide" data-auto-animate data-auto-animate-restart data-transition="fade">
+          <div class="lp-content">
+            <h3 data-id="linear-language-overlap-heading">Readout space reduces source differences</h3>
+            <img data-id="linear-language-overlap-figure" class="lp-result-figure" src="linear_language_probes_content/spaces_comparison.png" alt="Three maps comparing synthetic and human texts in activation space and in 15-dimensional psychological readout space">
+          </div>
+          <aside class="notes">
+            This recent analysis uses exactly length-matched human and synthetic text. A classifier can almost perfectly distinguish domains in the primary activation representation. The low-dimensional psychological readout space overlaps substantially more, while higher-dimensional domain differences persist. The domain AUC tests whether a separate classifier can identify whether a text is synthetic or human from the representation; it does not measure psychological prediction accuracy.
+          </aside>
+        </section>
+
+        <section id="linear-language-results-overlap-summary" class="linear-language-slide lp-result-explained" data-auto-animate data-transition="fade">
+          <div class="lp-content">
+            <h3 data-id="linear-language-overlap-heading">Readout space reduces source differences</h3>
+            <img data-id="linear-language-overlap-figure" class="lp-result-figure" src="linear_language_probes_content/spaces_comparison.png" alt="Three maps comparing synthetic and human texts in activation space and in 15-dimensional psychological readout space">
+            <div class="lp-callout-strip">
+              <div class="lp-callout">Raw activations strongly distinguish synthetic from human text.</div>
+              <div class="lp-callout">The 15 psychological scores reduce these source differences.</div>
+              <div class="lp-callout">Some source signal remains: ROC AUC .86 for synthetic versus human (.50 is chance).</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="linear-language-conclusion" class="linear-language-slide" data-transition="fade">
+          <div class="lp-content">
+            <h3>Can language-model activations reveal psychological information?</h3>
+            <div class="lp-summary-layout">
+              <div class="lp-summary-visual">
+                <img src="cursor_mind/chatbot_cloud.png" alt="Chatbot">
+              </div>
+              <div class="lp-summary-text">
+                <div class="lp-summary-point">Simple linear readouts trained on synthetic profiles transfer to independent human writing and track test–retest change.</div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            The evidence supports psychological relevance and cross-domain transfer. The measured quantities remain model-derived scores. The next decisive study links repeated naturalistic writing to independently assessed clinical states and outcomes in the same participants.
+          </aside>
+        </section>
+      </section>
+
+      <section id="psychosis-mechanisms" class="mechanisms-segment">
+        <section style="text-align: left;">
+          <h2>What are the mechanisms of psychotic experiences?</h2>
+        </section>
+
+        <section data-transition="fade" data-auto-animate>
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <small>
+                <p>A patient came to see me complaining of persistent abdominal pain, nausea, and difficulty eating.</p>
+                <p>She felt particularly unwell after meals, especially when eating at home.</p>
+                <p>She became increasingly worried about what was happening to her body. I arranged for her admission to internal medicine.</p>
+                <p>Two days later, I learned that she had stopped eating altogether because she believed someone was poisoning her food. She had been hearing a voice warning her not to eat.</p>
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <!-- Upper Part: Image -->
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/sloth_bw.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <!-- Upper Part: Image -->
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/sloth.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade" data-auto-animate>
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.5; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <!-- Upper Part: Image -->
+              <img src="cursor_mind/patient_bayes.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.5; text-align: justify; padding-left: 1rem;">
+              <img src="cursor_mind/sloth_bw.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+            </div>
+          </div>
+        </section>
+
+        <section data-study-citation="Sterzer et al., Biological Psychiatry 2018 · Corlett et al., Trends in Cognitive Sciences 2019" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>What is the mechanism of psychotic experiences?</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_2.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section data-study-citation="Goodwin et al., Nature Mental Health 2026" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>What is the mechanism of psychotic experiences?</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_2b.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section data-study-citation="Weilnhammer et al., PLOS Computational Biology 2017" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>What is the mechanism of psychotic experiences?</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_1.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section data-background-color="black" data-background-transition="fade" data-transition="fade">
+          <video data-autoplay data-src="./Content/RDK_Graded_immediate.mp4" width="75%" height="75%"></video>
+        </section> 
+
+        <section data-background-color="black" data-background-transition="fade" data-transition="fade">
+          <video data-autoplay data-src="./Content/hollowmask.mp4" width="75%" height="75%"></video>
+        </section>
+
+        <section data-study-citation="Weilnhammer, Rothkirch, Yilmaz et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <p><img src="cursor_mind/brain_paradigm.png" style="width: 65%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer, Rothkirch, Yilmaz et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>Scz vs. controls</h6>
+          <p><img src="cursor_mind/brain_001.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer, Rothkirch, Yilmaz et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>Scz vs. controls</h6>
+          <p><img src="cursor_mind/brain_002.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer, Rothkirch, Yilmaz et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>Scz vs. controls</h6>
+          <p><img src="cursor_mind/brain_003.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer, Rothkirch, Yilmaz et al., Brain 2025" id="sensory-ambiguity" data-transition="fade">
+          <h6>S-ketamine vs. placebo</h6>
+          <p><img src="cursor_mind/brain_004.png" style="clip-path: inset(0 0 11% 0); width: 110%; height: auto; background: none; border: none; box-shadow: none;"></p>
+        </section>
+
+        <section data-study-citation="Weilnhammer, Rothkirch, Yilmaz et al., Brain 2025" data-transition="fade">
+          <div style="display: flex; align-items: stretch; height: 100%; justify-content: space-between; gap: 2rem;">
+            <!-- Left Column: 25% of the screen, divided into upper and lower parts -->
+            <div style="flex: 0.3; display: flex; flex-direction: column; text-align: center; padding-right: 1rem; gap: 1rem;">
+              <div style="flex: 0; display: flex; justify-content: center; align-items: flex-start;">
+                <img src="cursor_mind/patient_bayes_small.png" alt="Patient Image" style="width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+              </div>
+              <!-- Lower Part: Empty or Content Placeholder -->
+              <div style="flex: 1;">
+                <small>External bias in Scz & NMDAR hypofunction</small>
+              </div>
+            </div>
+
+            <!-- Right Column: 75% of the screen -->
+            <div style="flex: 0.7; text-align: justify; padding-left: 1rem;">
+              <h6>Predictive processing</h6>
+              <img src="cursor_mind/fmodes_2b_switch.png" alt="Patient Image" style="clip-path: inset(0 0 9% 0); width: 100%; height: auto; background: none; border: none; box-shadow: none;" />
+
+            </div>
+          </div>
+        </section>
+
+        <section id="mechanisms-16" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            
+            <div class="mechanism-viewport" style="width:940.0px; height:114.7px;"><img class="mechanism-image" src="cursor_mind/currbio_001.png" alt="currbio 001"></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-17" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Detecting signals in noise</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:660.0px; height:80.6px;"><img class="mechanism-image" src="cursor_mind/currbio_001.png" alt="currbio 001"></div></div><div class="mechanism-text"><div class="mechanism-callout">Participants judge whether a visual signal is present.</div><div class="mechanism-callout">False alarms serve as an experimental proxy for hallucinations.</div></div></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-18-full" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            
+            <div class="mechanism-viewport" style="width:931.5px; height:640.0px;"><img class="mechanism-image" src="cursor_mind/currbio_002.png" alt="currbio 002"></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-18" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Predictive templates dominate during internal modes</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:660.0px; height:453.5px;"><img class="mechanism-image" src="cursor_mind/currbio_002.png" alt="currbio 002"></div></div><div class="mechanism-text"><div class="mechanism-callout">Hallucination-like experiences emerge preferentially when learned predictive templates dominate perception.</div></div></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-19-full" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            
+            <div class="mechanism-viewport" style="width:706.1px; height:640.0px;"><img class="mechanism-image" src="cursor_mind/currbio_003.png" alt="currbio 003"></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-19" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Predictive templates shape perceptual content</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:617.9px; height:560.0px;"><img class="mechanism-image" src="cursor_mind/currbio_003.png" alt="currbio 003"></div></div><div class="mechanism-text"><div class="mechanism-callout">The content of these experiences reflects what participants previously learned.</div></div></div>
+          </div>
+          
+        </section>
+
+        <section id="mechanisms-20" class="mechanism-slide" data-auto-animate data-transition="fade" data-study-citation="Weilnhammer et al., Current Biology 2024">
+          <div class="mechanism-content">
+            <h3>Dynamic predictive templates</h3>
+            <div class="mechanism-columns"><div class="mechanism-figure"><div class="mechanism-viewport" style="width:633.7px; height:560.0px;"><img class="mechanism-image" src="cursor_mind/fmodes_2b_switch.png" alt="fmodes 2b switch"></div></div><div class="mechanism-text"><div class="mechanism-callout">Learned predictive templates can turn ambiguous input into a coherent experience.</div><div class="mechanism-callout">Their influence on perception changes over time.</div></div></div>
+          </div>
+          
+        </section>
+
+      </section>
+
+      <section id="munich-mechanisms-bridge">
+        <section id="munich-mechanisms-question" style="text-align: left;">
+          <h2>How can we connect chatbots to mechanisms?</h2>
+        </section>
+        <section id="munich-mechanisms-framework" class="mechanism-slide" data-transition="fade">
+          <div class="mechanism-content">
+            <img class="mechanism-image" src="mechanisms_content/munich_framework.svg" alt="Complete Munich research framework linking psychological assessments and digital behavior to a shared mechanistic model">
+          </div>
+          <aside class="notes">
+            Proposed research programme from the Munich application: pair digital behavior with
+            independent psychological and neural measurements, decode psychological profiles,
+            and test reciprocal influences between chatbot responses and psychological processes
+            through simulations and randomized experiments. This is a conceptual framework,
+            not a result demonstrating that digital decoding or chatbot intervention is already validated.
+            Source: MPI_Psychiatry_MPRG/content/research_proposal.tex and figures/figure.svg.
+          </aside>
+        </section>
+      </section>
+
+      <section id="closing-thanks" class="closing-acknowledgements">
+        <div class="acknowledgements-content">
+          <h2>Thank you for your attention</h2>
+          <div class="acknowledgements-layout">
+            <div class="collaborator-columns">
+              <div>
+                <div class="institution">
+                  <h4>Charité</h4>
+                  <p>Lukas Röd<br>Anna-Lena Eckert<br>Heiner Stuke<br>Andreas Heinz<br>Guido Hesselmann<br>Katharina Schmack<br>Marcus Rothkirch<br>Deniz Yilmaz<br>Merve Fritsch<br>Lena Esther Ptasczynski<br>Katrin Reichenbach<br>Lukas Rödiger</p>
+                </div>
+                <div class="institution">
+                  <h4>University of Basel</h4>
+                  <p><strong>Philipp Sterzer</strong></p>
+                </div>
+                <div class="institution">
+                  <h4>Yale University</h4>
+                  <p>Philip Corlett</p>
+                </div>
+              </div>
+              <div>
+                <div class="institution">
+                  <h4>Max Planck UCL Centre</h4>
+                  <p>Lisa Kluen<br><strong>Raymond Dolan</strong></p>
+                </div>
+                <div class="institution">
+                  <h4>Microsoft AI</h4>
+                  <p>Viknesh Sounderajah<br><strong>Matthew M Nour</strong></p>
+                </div>
+                <div class="institution">
+                  <h4>University of Oxford</h4>
+                  <p>Christopher Summerfield<br>Elise Wilkinson<br>Virginia Corno</p>
+                </div>
+              </div>
+              <div>
+                <div class="institution">
+                  <h4>University of Sydney</h4>
+                  <p>Kevin YC Hou</p>
+                </div>
+                <div class="institution">
+                  <h4>UK AI Security Institute</h4>
+                  <p>Christopher Summerfield<br>Lennart Luettgau</p>
+                </div>
+                <div class="institution">
+                  <h4>University of California, Berkeley</h4>
+                  <p>Yuki Murai<br><strong>David Whitney</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="acknowledgement-logos" aria-label="Institutional logos">
+              <img class="logo-strip" src="cursor_mind/funders_tracking.png" alt="University of California, Berkeley; Berkeley Artificial Intelligence Research; Leopoldina; and UCL">
+              <img class="mai-logo" src="simvail_content/mai.jpeg" alt="Microsoft AI">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="text-align: left;">
+        <h2>Additional material</h2>
+      </section>
+
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_1.svg" class="borderless" style="max-height:600px; width:auto; max-width:100%;">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 1 — reliability &amp; validity</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_1.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Turn- vs. whole-conversation scores agree</li>
+                  <li>Two independent AI judges agree</li>
+                  <li>Repeat runs are consistent</li>
+                  <li>Separates known high- vs. low-risk conversations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 1: internal reliability and validity — turn-vs-conversation agreement, cross-judge agreement, test–retest, and discriminative validity.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_2.svg" class="borderless" style="max-height:600px; width:auto; max-width:100%;">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 2 — clinician validation</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_2.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Clinicians rated a sample of turns</li>
+                  <li>Their safety ratings track the AI judge</li>
+                  <li>Simulated users rated realistic</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 2: human validation — clinicians rated turns for safety and rated user realism. Their judgements track the automated scores.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_3.svg" class="borderless fig-full">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 3 — structure of the risk dimensions</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_3.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>PCA loadings across the first components</li>
+                  <li>Which dimensions move together vs. oppose</li>
+                  <li>The basis for the risk trade-offs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 3: structure of the 13 risk dimensions — PCA loadings and correlations. Some cluster and move together; others are dissociable or anti-correlated, the basis for the trade-offs.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless fig-full">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 4 — vulnerable vs. control users</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_4.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Each point = a chatbot's mean risk</li>
+                  <li>Vulnerable users (x) vs. control users (y)</li>
+                  <li>Nearly all below the identity line — safer with healthy users</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 4: the control comparison in full — each chatbot's mean risk with vulnerable versus healthy users. Nearly all points below the identity line: every model is safer with non-vulnerable users.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_5.svg" class="borderless fig-full">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 5 — the full interaction landscape</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_5.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Every chatbot × vulnerability × intent cell</li>
+                  <li>The complete interaction space</li>
+                  <li>Model differences interact with context</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 5: the full context-dependence — concerning behaviour for every chatbot across every vulnerability–intent cell. Shows how model differences interact with the specific situation.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_6.svg" class="borderless fig-full">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 6 — timing &amp; mechanisms of risk</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_6.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Turns to reach a concerning threshold, per pairing</li>
+                  <li>Mechanism-specific risk activation</li>
+                  <li>Same overall risk, different pathways</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 6: timing and mechanisms — how quickly conversations reach a concerning threshold, and which mechanisms are activated. The same overall risk level can arise from different underlying pathways depending on the profile.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_7.svg" class="borderless fig-full">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 7 — extending early-stopped conversations</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_7.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Original vs. extended conversation scores</li>
+                  <li>Turn-level and trajectory-level checks</li>
+                  <li>Conclusions unchanged</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 7: robustness — continuing early-stopped conversations to a full ten turns leaves the conversation-, turn-, and trajectory-level conclusions unchanged.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_8.svg" class="borderless fig-full">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 8 — guarding against judge bias</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_8.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Same-family vs. other-family judge</li>
+                  <li>Exact same-model comparison</li>
+                  <li>Effect doesn't explain the results</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 8: guarding against judge bias — results hold whether or not the judge is from the same developer family as the target chatbot.
+          </aside>
+        </section>
+      </section>
+
+      <section class="simvail-slide">
+        <section data-auto-animate class="simvail-slide">
+          <div class="simvail-fit">
+            <img src="simvail_content/rev_Extended_Data_Fig_9.svg" class="borderless fig-full">
+          </div></section>
+        <section data-auto-animate style="text-align:left;" class="simvail-slide">
+          <div class="simvail-fit">
+            <h3>ED 9 — counterfactual selection diagnostics</h3>
+            <div class="twocol">
+              <div class="col" style="flex:1.5;">
+                <img src="simvail_content/rev_Extended_Data_Fig_9.svg" class="borderless" style="max-height:520px; width:auto; max-width:100%;">
+              </div>
+              <div class="col">
+                <ul class="look-for">
+                  <li>Distribution of intervention turns</li>
+                  <li>Trajectory up to the intervention point</li>
+                  <li>How eligible conversations were selected</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Extended Data 9: counterfactual selection diagnostics — where in each conversation the first concerning message occurred and the trajectory up to that point.
+          </aside>
+        </section>
+      </section>
+
+    </div>
+  </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          center: true,
+          hash: true,
+
+          // Learn about plugins: https://revealjs.com/plugins/
+          plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+      });
+
+    </script>
+
+    <script id="simvail-appended-fit">
+      function fitAppendedSlide(slide) {
+        if (!slide || !slide.classList.contains('simvail-slide')) return;
+        const content = Array.from(slide.children).find(child => child.classList.contains('simvail-fit'));
+        if (!content) return;
+        const slideRect = slide.getBoundingClientRect();
+        if (!slideRect.width || !slideRect.height) return;
+        content.style.setProperty('--fit-scale', '1');
+        const centerX = slideRect.left + slideRect.width / 2;
+        const centerY = slideRect.top + slideRect.height / 2;
+        let extentX = 0;
+        let extentY = 0;
+        for (const node of content.querySelectorAll('*')) {
+          const rect = node.getBoundingClientRect();
+          if (!rect.width && !rect.height) continue;
+          extentX = Math.max(extentX, Math.abs(rect.left - centerX), Math.abs(rect.right - centerX));
+          extentY = Math.max(extentY, Math.abs(rect.top - centerY), Math.abs(rect.bottom - centerY));
+        }
+        const ownRect = content.getBoundingClientRect();
+        extentX = Math.max(extentX, ownRect.width / 2);
+        extentY = Math.max(extentY, ownRect.height / 2);
+        const fullFigure = slide.classList.contains('simvail-figure-full');
+        const scale = Math.min(1, slideRect.width * (fullFigure ? .495 : .47) / extentX,
+          slideRect.height * (fullFigure ? .49 : .46) / extentY);
+        content.style.setProperty('--fit-scale', String(scale));
+      }
+      function fitHiddenSlide(slide, fit) {
+        const sections = [];
+        let node = slide;
+        while (node && !node.classList.contains('slides')) {
+          if (node.tagName === 'SECTION') sections.push(node);
+          node = node.parentElement;
+        }
+        const savedStyles = sections.map(section => section.getAttribute('style'));
+        sections.slice().reverse().forEach(section => {
+          section.style.setProperty('display', 'block', 'important');
+          section.style.setProperty('visibility', 'hidden', 'important');
+          section.style.setProperty('opacity', '0', 'important');
+          section.style.setProperty('transition', 'none', 'important');
+          section.style.setProperty('transform', 'none', 'important');
+        });
+        fit(slide);
+        sections.forEach((section, index) => {
+          const savedStyle = savedStyles[index];
+          if (savedStyle === null) section.removeAttribute('style');
+          else section.setAttribute('style', savedStyle);
+        });
+      }
+      function fitAllAppendedSlides() {
+        document.querySelectorAll('section.simvail-slide').forEach(slide => {
+          fitHiddenSlide(slide, fitAppendedSlide);
+        });
+      }
+      Reveal.on('ready', fitAllAppendedSlides);
+      window.addEventListener('resize', fitAllAppendedSlides);
+      document.querySelectorAll('.simvail-fit img, .simvail-fit video').forEach(media => {
+        media.addEventListener('load', () => fitHiddenSlide(media.closest('section'), fitAppendedSlide));
+        media.addEventListener('loadedmetadata', () => fitHiddenSlide(media.closest('section'), fitAppendedSlide));
+      });
+      document.fonts.ready.then(fitAllAppendedSlides);
+      if (Reveal.isReady()) fitAllAppendedSlides();
+    </script>
+
+    <script id="triage-segment-fit">
+      (() => {
+        function fitTriageSlide(slide) {
+          if (!slide || !slide.classList.contains('triage-slide')) return;
+          const content = Array.from(slide.children).find(child => child.classList.contains('triage-fit'));
+          if (!content) return;
+          if (!slide.offsetWidth || !slide.offsetHeight) return;
+          content.style.setProperty('--triage-fit-scale', '1');
+          const fullFigure = slide.classList.contains('triage-figure-full');
+          const contentWidth = Math.max(content.offsetWidth, content.scrollWidth);
+          const contentHeight = Math.max(content.offsetHeight, content.scrollHeight);
+          const scale = Math.min(1,
+            slide.offsetWidth * (fullFigure ? .99 : .94) / contentWidth,
+            slide.offsetHeight * (fullFigure ? .94 : .92) / contentHeight);
+          content.style.setProperty('--triage-fit-scale', String(scale));
+        }
+        const fitAllTriageSlides = () => {
+          document.querySelectorAll('section.triage-slide').forEach(slide => {
+            fitHiddenSlide(slide, fitTriageSlide);
+          });
+        };
+        Reveal.on('ready', fitAllTriageSlides);
+        window.addEventListener('resize', fitAllTriageSlides);
+        document.querySelectorAll('.triage-fit img').forEach(image => {
+          image.addEventListener('load', () => fitHiddenSlide(image.closest('section'), fitTriageSlide));
+        });
+        if (Reveal.isReady()) fitAllTriageSlides();
+        document.fonts.ready.then(fitAllTriageSlides);
+      })();
+    </script>
+
+      <script id="study-citation">
+      (() => {
+        // A persistent footer outside the slides never participates in auto-animate.
+        const footer = document.createElement('div');
+        footer.className = 'study-citation';
+        document.querySelector('.reveal').appendChild(footer);
+        function updateCitation() {
+          const slide = Reveal.getCurrentSlide();
+          const triage = slide && slide.closest('.triage-segment');
+          const simvail = slide && slide.closest('.simvail-main-results');
+          const policy = slide && slide.closest('.action-policies-segment');
+          const mechanismCitation = slide && slide.closest('.mechanisms-segment')
+            ? slide.getAttribute('data-study-citation') || '' : null;
+          footer.textContent = mechanismCitation !== null ? mechanismCitation
+            : policy ? 'Weilnhammer et al., in preparation'
+            : triage ? 'Weilnhammer et al., arXiv 2026'
+            : simvail ? 'Weilnhammer et al., Nature Medicine 2026' : '';
+          footer.hidden = !footer.textContent;
+        }
+        Reveal.on('ready', updateCitation);
+        Reveal.on('slidechanged', updateCitation);
+        if (Reveal.isReady()) updateCitation();
+      })();
+    </script>
+</body>
+</html>

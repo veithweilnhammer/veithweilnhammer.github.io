@@ -1,0 +1,200 @@
+/* Linear-language segment: follow the native white theme and appended-slide layouts. */
+.reveal .slides section.linear-language-slide:not(.stack) {
+  height: 700px;
+  padding: 0;
+  text-align: left;
+}
+
+.linear-language-slide .lp-content {
+  position: absolute;
+  top: calc(50% - 14px);
+  left: 50%;
+  width: 960px;
+  max-width: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Detail headings deliberately inherit the deck's font, weight and uppercase treatment. */
+.linear-language-slide h3 {
+  margin-bottom: .3em;
+  font-size: .68em;
+  white-space: nowrap;
+}
+
+.linear-language-slide img {
+  display: block;
+  margin: 0 auto;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.linear-language-slide .lp-full-figure {
+  width: 960px;
+  height: 658px;
+  max-width: 100%;
+  max-height: none;
+  object-fit: contain;
+}
+
+.linear-language-slide .lp-detail-layout {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.linear-language-slide .lp-detail-figure {
+  flex: 2.15;
+  min-width: 0;
+  text-align: center;
+}
+
+.linear-language-slide .lp-detail-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 590px;
+  object-fit: contain;
+}
+
+.linear-language-slide .lp-detail-text {
+  flex: .85;
+  min-width: 0;
+}
+
+.linear-language-slide .lp-callout {
+  margin: .5em 0;
+  padding: .4em .5em;
+  border-left: 3px solid #aaa;
+  font-size: .62em;
+  line-height: 1.25;
+}
+
+.linear-language-slide .lp-callout strong { color: #222; }
+.linear-language-slide .lp-muted { color: #666; }
+.linear-language-slide .lp-method-detail .lp-detail-figure { flex: 1.75; }
+.linear-language-slide .lp-method-detail .lp-detail-text { flex: 1.25; }
+.linear-language-slide .lp-method-detail .lp-detail-figure img { max-height: 555px; }
+.linear-language-slide .lp-result-figure {
+  width: 100%;
+  height: auto;
+  max-height: 590px;
+  object-fit: contain;
+}
+.linear-language-slide.lp-result-explained .lp-result-figure { max-height: 430px; }
+.linear-language-slide .lp-change-figure { width: 100%; max-width: 100%; }
+.linear-language-slide .lp-callout-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  margin-top: .55em;
+}
+.linear-language-slide .lp-callout-strip .lp-callout {
+  margin: 0;
+  font-size: .52em;
+}
+.linear-language-slide .lp-result-change-detail .lp-detail-figure { flex: 2.15; }
+.linear-language-slide .lp-result-change-detail .lp-detail-text { flex: .85; }
+.linear-language-slide .lp-result-change-detail .lp-detail-figure img { max-height: 570px; }
+.linear-language-slide .lp-result-overlap .lp-detail-figure img { max-height: 450px; }
+.linear-language-slide .lp-caption {
+  margin: .4em 0 0;
+  color: #666;
+  font-size: .42em;
+  line-height: 1.25;
+}
+
+.linear-language-slide .lp-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.linear-language-slide .lp-summary-column {
+  padding: .55em .7em;
+  border-left: 3px solid #aaa;
+}
+
+.linear-language-slide .lp-summary-column h4 {
+  margin: 0 0 .3em;
+  font-size: .68em;
+}
+
+.linear-language-slide .lp-summary-column p,
+.linear-language-slide .lp-summary-column li {
+  font-size: .62em;
+  line-height: 1.3;
+}
+
+.linear-language-slide .lp-bottom-line {
+  margin-top: .8em;
+  padding: .55em 1em;
+  border-left: 3px solid #aaa;
+  font-size: .72em;
+  line-height: 1.3;
+}
+
+.linear-language-slide .lp-summary-point {
+  margin: .45em 0;
+  padding: .55em 1em;
+  border-left: 3px solid #aaa;
+  font-size: .8em;
+  line-height: 1.35;
+}
+
+.linear-language-slide .lp-summary-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.55fr;
+  align-items: center;
+  gap: 1.3rem;
+  margin-top: .3em;
+}
+.linear-language-slide .lp-summary-visual,
+.linear-language-slide .lp-summary-text { min-width: 0; }
+.linear-language-slide .lp-summary-visual { text-align: center; }
+.linear-language-slide .lp-summary-visual img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 440px;
+}
+
+/* The copied standalone deck keeps its extra material but uses this deck's typography. */
+.linear-language-standalone .reveal .slides section.linear-language-slide:not(.stack) {
+  height: auto;
+  padding: 20px;
+}
+.linear-language-standalone .linear-language-slide h1,
+.linear-language-standalone .linear-language-slide h2,
+.linear-language-standalone .linear-language-slide h3 {
+  color: #222;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+.linear-language-standalone .linear-language-slide h2 {
+  margin-bottom: .3em;
+  font-size: .68em;
+  white-space: nowrap;
+}
+.linear-language-standalone .linear-language-slide.title-slide h2 {
+  font-size: 1.6em;
+  line-height: 1.2;
+  white-space: normal;
+}
+.linear-language-standalone .linear-language-slide.title-slide::before { content: none; }
+.linear-language-standalone .linear-language-slide .eyebrow { display: none; }
+.linear-language-standalone .linear-language-slide .accent,
+.linear-language-standalone .linear-language-slide .teal,
+.linear-language-standalone .linear-language-slide .number { color: #222; }
+.linear-language-standalone .linear-language-slide .title-rule { background: #aaa; }
+.linear-language-standalone .linear-language-slide .panel,
+.linear-language-standalone .linear-language-slide .pipeline .step {
+  background: #f6f6f6;
+  border-color: #aaa;
+}
+.linear-language-standalone .linear-language-slide .takeaway {
+  background: transparent;
+  border-color: #aaa;
+}
+.linear-language-standalone .linear-language-slide .stat-cell { border-color: #aaa; }
+.linear-language-standalone .linear-language-slide .stat-cell strong { color: #222; }
