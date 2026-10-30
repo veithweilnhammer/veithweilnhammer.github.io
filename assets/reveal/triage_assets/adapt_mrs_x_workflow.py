@@ -1,7 +1,8 @@
 """Adapt the editable workflow illustration to the presentation's Mrs. X example.
 
 This changes the illustrated case, not the experimental case library or results.
-The author-requested D label is retained for this authored example: she plans to break into the perceived agent’s house.
+The author-requested D label is retained for this authored example: she stops
+eating because she believes her food is poisoned and hears a warning voice.
 """
 from pathlib import Path
 from lxml import etree
@@ -27,10 +28,10 @@ updates = {
     'text22': 'Design space and vignette construction',
     'text63': 'Emergency now',
     'text65': 'Mrs. X · psychosis',
-    'text66': 'Neighbour’s voice',
-    'text67': 'Heard beyond the apartment',
-    'text68': 'Convinced he is an agent',
-    'text69': 'Plans to break into his house',
+    'text66': 'Abdominal pain and nausea',
+    'text67': 'Worse after meals at home',
+    'text68': 'Believes food is poisoned',
+    'text69': 'Voice warns her not to eat',
 }
 for identifier, text in updates.items():
     by_id(identifier).text = text
@@ -43,8 +44,8 @@ by_id('text69').set('style', 'font-size:10px;font-weight:700;fill:#b8322a')
 by_id('text63').set('y', '34')
 # Retain the author-assigned D badge for Mrs. X’s presentation example.
 by_id('title').text = 'Vignette construction with a Mrs. X psychosis example'
-by_id('desc').text = 'Presentation by risk-domain families feed LLM-assisted generation and review of 112 case files. The example depicts Mrs. X hearing her neighbour’s voice beyond the apartment, believing he is an agent following her, and planning to break into his house to find out what is going on. The case is labelled D, emergency now.'
+by_id('desc').text = 'Presentation by risk-domain families feed LLM-assisted generation and review of 112 case files. The example depicts Mrs. X with abdominal pain and nausea who stops eating because she believes her food is poisoned and hears a voice warning her not to eat. The case is labelled D, emergency now.'
 root.set('viewBox', '610 35 590 278')
 root.set('width', '1180')
 root.set('height', '556')
-svg.write(str(folder / 'vignette_mrs_x.svg'), encoding='utf-8', xml_declaration=True, pretty_print=True)
+svg.write(str(folder / 'vignette_mrs_x_food.svg'), encoding='utf-8', xml_declaration=True, pretty_print=True)

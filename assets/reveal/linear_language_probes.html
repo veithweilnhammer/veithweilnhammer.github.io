@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Linear language probes</title>
+    <meta name="description" content="Linear readouts of psychological information from language-model activations">
+    <meta name="author" content="Veith Weilnhammer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+    <style>
+      :root {
+        --r-main-font: "Helvetica Neue", Helvetica, sans-serif;
+        --r-heading-font: "Helvetica Neue", Helvetica, sans-serif;
+        --ink: #263948;
+        --muted: #607383;
+        --blue: #2b68a6;
+        --teal: #07888a;
+        --orange: #b96a1e;
+        --paper: #fbfcfd;
+        --panel: #f1f5f8;
+        --line: #d6e0e7;
+      }
+
+      .reveal { color: var(--ink); }
+      .reveal .slides { text-align: left; }
+      .reveal h1, .reveal h2, .reveal h3 {
+        color: var(--ink);
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+      .reveal h1 { font-size: 2.25em; line-height: 1.04; }
+      .reveal h2 { font-size: 1.45em; margin-bottom: .55em; }
+      .reveal h3 { font-size: .88em; color: var(--blue); }
+      .reveal p, .reveal li { font-size: .72em; line-height: 1.42; }
+      .reveal li { margin: .26em 0; }
+      .reveal strong { color: var(--ink); }
+      .reveal .muted { color: var(--muted); }
+      .reveal .eyebrow {
+        color: var(--blue);
+        font-size: .48em;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      .reveal .lede { font-size: .88em; line-height: 1.34; max-width: 950px; }
+      .reveal .small { font-size: .58em; line-height: 1.38; }
+      .reveal .tiny { font-size: .44em; line-height: 1.35; }
+      .reveal .accent { color: var(--blue); }
+      .reveal .teal { color: var(--teal); }
+
+      .title-slide::before {
+        content: "";
+        position: absolute;
+        inset: -120px -180px auto auto;
+        width: 620px;
+        height: 620px;
+        border: 74px solid #e6f0f4;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      .title-rule { width: 116px; height: 7px; background: var(--teal); margin: 1.1em 0; }
+
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.15em; align-items: center; }
+      .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: .65em; }
+      .panel {
+        background: var(--panel);
+        border-top: 5px solid var(--blue);
+        padding: .65em .8em;
+        min-height: 150px;
+      }
+      .panel.teal-border { border-color: var(--teal); }
+      .panel.orange-border { border-color: var(--orange); }
+      .validation-panel h3 { margin: 0 0 .35em; }
+      .validation-panel p { margin: .25em 0; }
+      .validation-panel { font-size: .82em; }
+      .number {
+        display: block;
+        color: var(--blue);
+        font-size: 1.45em;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: .12em;
+      }
+      .pipeline {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        align-items: stretch;
+        gap: .35em;
+        margin: .8em 0;
+      }
+      .pipeline .step {
+        background: var(--panel);
+        border-bottom: 4px solid var(--blue);
+        padding: .62em .55em;
+        text-align: center;
+        font-size: .6em;
+        line-height: 1.3;
+      }
+      .pipeline .arrow { align-self: center; color: var(--muted); font-size: 1.25em; }
+      .takeaway {
+        background: #eaf3f6;
+        border-left: 6px solid var(--teal);
+        padding: .55em .75em;
+        font-size: .68em;
+        line-height: 1.35;
+        margin-top: .7em;
+      }
+      .figure {
+        display: block;
+        width: 100%;
+        max-height: 545px;
+        object-fit: contain;
+        margin: 0 auto;
+        border: 0;
+        box-shadow: none;
+      }
+      .figure.method { max-height: 455px; }
+      .figure.wide { max-height: 500px; }
+      .figure.panel-only { max-height: 340px; }
+      .figure.overlap { max-height: 265px; }
+      .figure.trajectory { max-height: 475px; }
+      .caption { color: var(--muted); font-size: .4em; line-height: 1.3; margin-top: .35em; }
+      .stat-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: .5em;
+        margin: .65em 0;
+      }
+      .stat-cell { border-left: 3px solid var(--line); padding-left: .45em; }
+      .stat-cell strong { display: block; color: var(--blue); font-size: 1.05em; }
+      .stat-cell span { color: var(--muted); font-size: .46em; line-height: 1.25; display: block; }
+      .limit-list li::marker { color: var(--orange); }
+      .footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -25px;
+        border-top: 1px solid var(--line);
+        padding-top: 8px;
+        color: var(--muted);
+        font-size: .34em;
+      }
+    </style>
+    <link rel="stylesheet" href="linear_language_probes_content/linear_language_probes.css">
+  </head>
+  <body class="linear-language-standalone">
+    <div class="reveal">
+      <div class="slides">
+
+        <section class="linear-language-slide title-slide" data-auto-animate data-auto-animate-restart data-transition="fade">
+          <p class="eyebrow">Language, representations, psychological measurement</p>
+          <h2>Reading psychological information<br>from language-model activations</h2>
+          <div class="title-rule"></div>
+          <p class="lede fragment fade-up">Linear readouts trained on profile-conditioned synthetic text and evaluated on independent human writing</p>
+          <p class="small muted fragment fade-up" style="margin-top:2.2em;">Veith Weilnhammer · October 2026</p>
+          <aside class="notes">
+            The central question is whether a simple readout of a frozen language model can recover psychologically relevant information from writing. The presentation moves from the construction of the readouts to independent human-text validation and the limits of the current evidence.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Question</p>
+          <h2>Can synthetic profiles teach us how to read human writing?</h2>
+          <div class="pipeline">
+            <div class="step fragment fade-up" data-fragment-index="0"><strong>Specify</strong><br>15 psychological dimensions</div>
+            <div class="arrow fragment fade-in" data-fragment-index="1">→</div>
+            <div class="step fragment fade-up" data-fragment-index="1"><strong>Generate</strong><br>diverse profile-conditioned text</div>
+            <div class="arrow fragment fade-in" data-fragment-index="2">→</div>
+            <div class="step fragment fade-up" data-fragment-index="2"><strong>Test</strong><br>unchanged readouts on human text</div>
+          </div>
+          <div class="grid-3" style="margin-top:1.1em;">
+            <div class="panel fragment fade-up" data-fragment-index="3">
+              <span class="number">1</span>
+              <h3>Readable?</h3>
+              <p class="small">Do frozen activations carry information about the specified profile?</p>
+            </div>
+            <div class="panel teal-border fragment fade-up" data-fragment-index="4">
+              <span class="number">2</span>
+              <h3>Generalizable?</h3>
+              <p class="small">Do directions learned from synthetic text predict independent human measures?</p>
+            </div>
+            <div class="panel orange-border fragment fade-up" data-fragment-index="5">
+              <span class="number">3</span>
+              <h3>Dynamic?</h3>
+              <p class="small">Do score changes track change within the same person?</p>
+            </div>
+          </div>
+          <aside class="notes">
+            The design deliberately separates probe construction from human evaluation. The strongest question is generalization: the readout must remain unchanged when it reaches human writing.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Method</p>
+          <h2>A frozen encoder and a fixed linear projection</h2>
+          <img class="figure method fragment fade-in" src="linear_language_probes_content/M02_linear_probes.svg" alt="Diagram of profile-conditioned synthetic text used to fit a linear projection in a frozen language model, followed by evaluation on human writing">
+          <aside class="notes">
+            Text is passed through a frozen language model once. We mean-pool hidden activations, standardize them using the synthetic training set, and estimate one direction per construct. Human text is projected onto exactly those frozen directions.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Design</p>
+          <h2>Scale, separation and evaluation</h2>
+          <div class="stat-strip">
+            <div class="stat-cell fragment fade-up" data-fragment-index="0"><strong>4,000</strong><span>specified profiles</span></div>
+            <div class="stat-cell fragment fade-up" data-fragment-index="1"><strong>500,000</strong><span>synthetic texts</span></div>
+            <div class="stat-cell fragment fade-up" data-fragment-index="2"><strong>5</strong><span>text generators</span></div>
+            <div class="stat-cell fragment fade-up" data-fragment-index="3"><strong>3</strong><span>frozen encoders</span></div>
+          </div>
+          <div class="grid-2" style="margin-top:.75em;">
+            <div>
+              <h3>Fit on synthetic profiles</h3>
+              <ul>
+                <li>15 distress and wellbeing dimensions</li>
+                <li>Profiles split 70% / 15% / 15%</li>
+                <li>Top 20% minus bottom 20% activation direction</li>
+                <li>One prespecified layer per encoder</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Evaluate on human writing</h3>
+              <ul>
+                <li>490,616 unique texts from 16 annotated collections</li>
+                <li>Native self-reports and observer labels</li>
+                <li>Spearman correlation or ROC AUC</li>
+                <li>Human endpoint labels reserved for evaluation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="takeaway"><strong>Key separation:</strong> synthetic development data determine the directions, layers and score signs before human evaluation.</div>
+          <aside class="notes">
+            Participant-level splits prevent texts from the same synthetic profile appearing across development partitions. Human endpoint labels are used only for evaluation. The three encoders are Llama 3.2 3B, Mistral 7B v0.3, and Phi-4.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Measurement targets</p>
+          <h2>Fifteen questionnaire-derived readouts</h2>
+          <div class="grid-2" style="grid-template-columns:1.35fr .65fr; align-items:stretch;">
+            <div class="panel orange-border fragment fade-up">
+              <h3>Brief Symptom Inventory · 11 readouts</h3>
+              <p class="small"><strong>Overall distress</strong></p>
+              <p class="small">Anxiety · Somatization · Psychoticism · Paranoid ideation · Obsession-compulsion · Hostility · Phobic anxiety · Depression · Interpersonal sensitivity</p>
+              <p class="small"><strong>Clinically important signs:</strong> sleep-onset difficulty, poor appetite, guilt, and thoughts of death</p>
+            </div>
+            <div class="panel teal-border fragment fade-up">
+              <h3 class="teal">MHC-SF · 4 readouts</h3>
+              <p class="small"><strong>Overall wellbeing</strong></p>
+              <p class="small">Emotional wellbeing</p>
+              <p class="small">Social wellbeing</p>
+              <p class="small">Psychological wellbeing</p>
+            </div>
+          </div>
+          <div class="takeaway fragment fade-up"><strong>Training labels:</strong> participant-level questionnaire profiles. <strong>Model outputs:</strong> calibrated projections onto the 15 frozen directions.</div>
+          <aside class="notes">
+            Eleven targets derive from the Brief Symptom Inventory: nine symptom dimensions, the clinically important signs summary, and overall distress. Four derive from the Mental Health Continuum Short Form: emotional, social, psychological, and overall wellbeing.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Results I</p>
+          <h2>Frozen readouts generalize across human text</h2>
+          <div class="grid-2" style="grid-template-columns:1.45fr .55fr; align-items:center;">
+            <div>
+              <img class="figure wide fragment fade-in" style="max-height:420px;" src="linear_language_probes_content/B1_02_linear_probes.svg" alt="External human-text results for self-reports and observer-labeled stress and loneliness across three frozen language models">
+            </div>
+            <div class="panel teal-border validation-panel fragment fade-up" style="padding:.5em .6em;">
+              <h3 class="teal">Further labeled results</h3>
+              <p class="tiny muted">Range across Llama, Mistral and Phi</p>
+              <p class="tiny"><strong>GoEmotions fear</strong><br>ROC AUC .77–.80</p>
+              <p class="tiny"><strong>EmpatheticDialogues recalled fear</strong><br>ROC AUC .74–.85</p>
+              <p class="tiny"><strong>IndoNLU fear</strong><br>ROC AUC .71–.78</p>
+              <p class="tiny"><strong>TweetEval sentiment</strong><br>ROC AUC .72–.76</p>
+              <p class="tiny"><strong>EmoBank valence</strong><br>Spearman ρ .26–.48</p>
+            </div>
+          </div>
+          <aside class="notes">
+            Across all three encoders, the anxiety direction correlates around .48 with current anxiety and .43 to .45 with current worry. Overall wellbeing correlates around .64 to .70 with life satisfaction and harmony in life. Observer-rated stress and loneliness are separated with AUCs around .84 to .90. Further completed analyses show transfer to annotated fear, sentiment and valence across datasets and languages. Each corpus contributes a separate evaluation. The wellbeing samples are small and overlapping; grouping information supports intervals for the endpoints shown with bars.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Results II</p>
+          <h2>Readout changes track test–retest change within people</h2>
+          <div class="grid-2" style="grid-template-columns:1.25fr .75fr;">
+            <div>
+              <img class="figure panel-only fragment fade-in" src="linear_language_probes_content/language_change.svg" alt="Correlations between test–retest changes in frozen language readouts and changes in anxiety and worry">
+            </div>
+            <div>
+              <span class="number">1,698</span>
+              <p class="small muted">people with test–retest assessments</p>
+              <ul class="small">
+                <li>Anxiety change, long text: ρ = .32–.34</li>
+                <li>Worry change, long text: ρ = .23–.25</li>
+                <li>Short texts carry weaker signals</li>
+                <li>Pattern replicates across all three encoders</li>
+              </ul>
+            </div>
+          </div>
+          <div class="takeaway fragment fade-up">The result supports sensitivity to within-person psychological change across test and retest.</div>
+          <aside class="notes">
+            This is a stronger test than a cross-sectional correlation because both the questionnaire and readout are differenced within person. Long texts consistently provide more information than short texts.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Results III</p>
+          <h2>Psychological readout space reduces—but does not erase—source differences</h2>
+          <img class="figure overlap fragment fade-in" src="linear_language_probes_content/spaces_comparison.png" alt="Three maps comparing synthetic and human texts in activation space and in 15-dimensional psychological readout space">
+          <div class="takeaway fragment fade-up"><strong>Interpretation:</strong> the 15 psychological scores remove much of the information that distinguishes synthetic from human text, but not all of it.</div>
+          <p class="caption">Phi-4; 2,000 exactly word-count-matched texts per domain. A classifier using only the 15 scores distinguishes synthetic from human text with ROC AUC .86 (.50 = chance).</p>
+          <aside class="notes">
+            This recent analysis uses exactly length-matched human and synthetic text. A classifier can almost perfectly distinguish domains in the primary activation representation. The low-dimensional psychological readout space overlaps substantially more, while higher-dimensional domain differences persist. The domain AUC tests whether a separate classifier can identify whether a text is synthetic or human; it does not measure psychological prediction accuracy. The preceding external benchmarks test criterion validity.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Illustration</p>
+          <h2>WildChat paths through readout space</h2>
+          <img class="figure trajectory fragment fade-in" src="linear_language_probes_content/user_pca_pair_1_with_vectors.svg" alt="Two public WildChat user trajectories and the 15 questionnaire-derived readout vectors in a shared Phi-4 principal-component space">
+          <aside class="notes">
+            Each path follows the user's language through one public WildChat conversation. The readouts are calculated in overlapping 30-word windows and smoothed for display. The correlation circle projects all 15 frozen readouts into the same PCA. PC1 largely separates distress from wellbeing, while PC2 adds a smaller pattern. Linked repeated assessments provide the design for testing corresponding psychological change.
+          </aside>
+        </section>
+
+        <section class="linear-language-slide" data-auto-animate data-transition="fade">
+          <p class="eyebrow">Conclusion</p>
+          <h2>What the analysis establishes</h2>
+          <div class="grid-2">
+            <div>
+              <h3 class="teal">Evidence</h3>
+              <ul>
+                <li>Psychological information is linearly readable from frozen activations.</li>
+                <li>Synthetic-trained directions transfer to human self-reports and observer labels.</li>
+                <li>Readout changes track test–retest changes within people.</li>
+                <li>The pattern is consistent across three encoder families.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Current limits</h3>
+              <ul class="limit-list">
+                <li>Clinical interpretation requires independent psychological assessment.</li>
+                <li>Constructs share variance and remain partly entangled.</li>
+                <li>Performance depends on text length and the writing distribution.</li>
+                <li>Prospective clinical validation in the same people is still needed.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="takeaway fragment fade-up" style="margin-top:1em;"><strong>Bottom line:</strong> simple frozen readouts provide a scalable proof of principle for measuring psychologically relevant information in human writing.</div>
+          <div class="footer">Linear language probes · Veith Weilnhammer · October 2026</div>
+          <aside class="notes">
+            The evidence supports psychological relevance and cross-domain transfer. The measured quantities remain model-derived scores. The next decisive study links repeated naturalistic writing to independently assessed clinical states and outcomes in the same participants.
+          </aside>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        slideNumber: "c/t",
+        width: 1280,
+        height: 720,
+        margin: 0.06,
+        transition: "fade",
+        backgroundTransition: "fade",
+        plugins: [RevealZoom, RevealNotes, RevealSearch]
+      });
+    </script>
+  </body>
+</html>

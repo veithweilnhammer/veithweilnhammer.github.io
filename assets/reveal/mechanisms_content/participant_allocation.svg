@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Domain-specific imaging linked to shared cognitive and digital assessments</title>
+  <desc id="desc">Approximately 160 healthy participants form four groups of approximately 40, one per cognitive domain. Each group completes domain-specific fMRI and MEG. A selected subset receives neuronavigated TMS. Every imaging participant also completes the shared battery covering all four domains and contributes everyday digital behaviour. Larger community and clinical cohorts complete comparable cognitive and digital assessments; their sizes are unspecified.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10" fill="#538c7e"/></marker></defs>
+  <rect width="960" height="540" fill="white"/>
+  <g font-family="Source Sans Pro, Helvetica, Arial, sans-serif" fill="#303030" text-anchor="middle">
+    <text x="480" y="34" font-size="28" font-weight="600">Healthy imaging cohort · ~160 participants</text>
+    <g font-size="24">
+      <text x="126" y="91"><tspan x="126">Perception and</tspan><tspan x="126" dy="28">confidence</tspan></text>
+      <text x="362" y="91"><tspan x="362">Learning under</tspan><tspan x="362" dy="28">uncertainty</tspan></text>
+      <text x="598" y="91"><tspan x="598">Information-seeking</tspan><tspan x="598" dy="28">and exploration</tspan></text>
+      <text x="834" y="105">Social inference</text>
+    </g>
+    <g font-size="25" font-weight="600" fill="#358a79">
+      <text x="126" y="155">~40</text><text x="362" y="155">~40</text><text x="598" y="155">~40</text><text x="834" y="155">~40</text>
+    </g>
+    <path d="M126 170V181H834V170 M362 170V181 M598 170V181" fill="none" stroke="#aaa" stroke-width="2"/>
+    <text x="480" y="215" font-size="24">Each group: domain-specific fMRI + MEG</text>
+    <text x="480" y="246" font-size="21" fill="#666">Selected subset: neuronavigated TMS</text>
+    <path d="M480 259V294" stroke="#538c7e" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="501" y="281" font-size="20" text-anchor="start" fill="#358a79">All ~160 also contribute</text>
+    <rect x="30" y="306" width="900" height="113" rx="5" fill="#edf4f1"/>
+    <text x="480" y="339" font-size="27" font-weight="600">Shared assessments in the same people</text>
+    <text x="265" y="378" font-size="24">Behavioural battery: all four domains</text>
+    <text x="486" y="378" font-size="27" fill="#538c7e">↔</text>
+    <text x="714" y="378" font-size="24">Everyday digital behaviour</text>
+    <text x="480" y="404" font-size="19" fill="#666">Comparable cognitive + digital measurements across all three populations</text>
+    <path d="M244 455V431" stroke="#538c7e" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M716 455V431" stroke="#538c7e" stroke-width="3" marker-end="url(#arrow)"/>
+    <g font-size="27" font-weight="600">
+      <text x="244" y="485">Larger community cohort</text>
+      <text x="716" y="485">Clinical populations</text>
+    </g>
+    <g font-size="21" fill="#666">
+      <text x="244" y="518">Individual differences at scale · no imaging</text>
+      <text x="716" y="518">Generalisation to symptoms and patients</text>
+    </g>
+  </g>
+</svg>

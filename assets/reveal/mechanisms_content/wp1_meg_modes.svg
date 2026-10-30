@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" role="img" aria-labelledby="title desc">
+  <title id="title">Proposed MEG investigation of processing modes</title>
+  <desc id="desc">A conceptual state sequence, internal to external to internal, above illustrative ongoing neural traces. Dashed lines identify transitions. No frequency, amplitude or waveform difference is asserted between modes.</desc>
+  <rect width="600" height="420" fill="white"/>
+  <g font-family="Source Sans Pro, Helvetica, Arial, sans-serif" fill="#333">
+    <text x="300" y="30" font-size="26" text-anchor="middle">Conceptual · proposed MEG</text>
+    <rect x="15" y="60" width="190" height="252" fill="#e8f3ef"/>
+    <rect x="205" y="60" width="200" height="252" fill="#f8eee6"/>
+    <rect x="405" y="60" width="180" height="252" fill="#e8f3ef"/>
+    <g font-size="28" text-anchor="middle">
+      <text x="110" y="99" fill="#358a79">Internal</text>
+      <text x="305" y="99" fill="#986248">External</text>
+      <text x="495" y="99" fill="#358a79">Internal</text>
+    </g>
+    <path d="M205 111V312 M405 111V312" stroke="#888" stroke-width="2" stroke-dasharray="6 6"/>
+    <g fill="none" stroke="#555" stroke-width="3" stroke-linejoin="round">
+      <path d="M20 173l12 -7 10 18 12 -34 12 43 12 -24 12 5 10 -17 12 27 12 -19 10 -5 12 21 12 -38 12 30 12 -6 12 12 12 -25 12 8 12 14 12 -31 12 37 12 -15 12 -3 12 15 12 -30 12 21 12 -9 12 18 12 -27 12 6 12 19 12 -37 12 30 12 -10 12 19 12 -34 12 25 12 -12 12 21 12 -27 12 11 12 -8 12 14 12 -5 12 7 12 -18"/>
+      <path d="M20 244l12 9 10 -21 12 32 12 -39 12 25 12 -8 10 18 12 -28 12 18 10 7 12 -20 12 32 12 -28 12 9 12 -10 12 23 12 -9 12 -12 12 28 12 -31 12 12 12 7 12 -16 12 28 12 -23 12 7 12 -16 12 30 12 -9 12 -21 12 34 12 -26 12 13 12 -21 12 30 12 -21 12 9 12 -19 12 29 12 -13 12 9 12 -15 12 7 12 -9 12 18"/>
+    </g>
+    <path d="M20 333H580m-10 -7 10 7 -10 7" stroke="#666" stroke-width="2" fill="none"/>
+    <text x="300" y="367" font-size="27" text-anchor="middle">Emergence · maintenance · transitions</text>
+    <text x="300" y="404" font-size="23" fill="#666" text-anchor="middle">Ongoing activity over time · illustrative traces</text>
+  </g>
+</svg>

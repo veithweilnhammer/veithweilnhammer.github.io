@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300" role="img" aria-labelledby="title desc">
+<title id="title">Proposed causal experiment</title><desc id="desc">Individual MRI and fMRI inform neuronavigation. Counterbalanced active and control sessions test effects on mode dynamics and task behaviour.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#333;font-size:24px}.small{font-size:20px}.accent{fill:#248b79}</style>
+<text x="0" y="34" class="accent">Individual MRI + fMRI</text><text x="0" y="68" class="small">Candidate cortical target</text>
+<path d="M310 47H360" stroke="#555" stroke-width="2"/><text x="390" y="34" class="accent">Neuronavigation</text><text x="390" y="68" class="small">Localise the target in each participant</text>
+<path d="M460 92v29M200 121h520M200 121v25M720 121v25" fill="none" stroke="#999" stroke-width="2"/>
+<text x="200" y="181" text-anchor="middle">Active stimulation</text><text x="720" y="181" text-anchor="middle">Control condition</text>
+<text x="460" y="222" text-anchor="middle" class="small">Within-person crossover · counterbalanced order</text>
+<path d="M200 237v16h520v-16M460 253v16" fill="none" stroke="#999" stroke-width="2"/>
+<text x="460" y="294" text-anchor="middle" class="accent">Compare mode dynamics and computational behaviour</text></svg>
