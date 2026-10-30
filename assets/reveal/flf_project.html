@@ -363,6 +363,53 @@
     #munich-mechanisms-bridge .programme-measurement-figures .programme-mapping { width:415px; height:165px; }
     #munich-mechanisms-bridge .programme-measurement-figures .programme-trajectories { width:415px; height:225px; margin-top:8px; }
 </style>
+  <style id="programme-outcome-table-styles">
+    #munich-mechanisms-bridge .programme-outcome-table .programme-outcome-detail {
+      top: 48px;
+    }
+    #munich-mechanisms-bridge .programme-outcome-table .programme-outcome-prompt {
+      margin: 0 0 6px;
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 600;
+      text-transform: none;
+    }
+    #munich-mechanisms-bridge .programme-outcome-table table {
+      width: 910px;
+      height: 392px;
+      margin: 0;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 15px;
+      line-height: 1.16;
+    }
+    #munich-mechanisms-bridge .programme-outcome-table col:first-child { width: 24%; }
+    #munich-mechanisms-bridge .programme-outcome-table col:nth-child(2),
+    #munich-mechanisms-bridge .programme-outcome-table col:nth-child(3) { width: 38%; }
+    #munich-mechanisms-bridge .programme-outcome-table th,
+    #munich-mechanisms-bridge .programme-outcome-table td {
+      padding: 5px 8px;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      vertical-align: middle;
+      overflow-wrap: break-word;
+    }
+    #munich-mechanisms-bridge .programme-outcome-table th {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-top: 1px solid #bbb;
+      border-bottom-color: #bbb;
+      font-weight: 600;
+    }
+    #munich-mechanisms-bridge .programme-outcome-table tbody tr:last-child td {
+      border-bottom-color: #bbb;
+    }
+    #munich-mechanisms-bridge .programme-outcome-table th:first-child,
+    #munich-mechanisms-bridge .programme-outcome-table td:first-child { padding-left: 0; }
+    #munich-mechanisms-bridge .programme-outcome-table th:last-child,
+    #munich-mechanisms-bridge .programme-outcome-table td:last-child { padding-right: 0; }
+  </style>
   <style id="acknowledgements-styles">
     .reveal .slides .closing-acknowledgements {
       height: 700px;
@@ -546,7 +593,7 @@
             <div class="col" style="flex:1.2; text-align:left;">
               <h4 style="margin-bottom:.15em;">Understanding the Changing Mind through Everyday Digital Behavior</h4>
               <p class="small muted" style="margin-top:0;"> </p>
-              <p class="small" style="margin-top:1.4em;">Veith Weilnhammer</p>
+              <p class="small" style="margin-top:1.4em;">Veith Weilnhammer | PI: Ray Dolan</p>
               <p class="xsmall muted" style="margin-top:0;">Max Planck UCL Centre for Computational Psychiatry &amp; Ageing Research</p>
               <p class="xsmall muted" style="margin-top:0;"> </p>
               <div style="margin-top:1.6em; border-top:1px solid #ddd; padding-top:.6em;">
@@ -571,7 +618,7 @@
               <small>
                 <p class="fragment">Mr. X reported persistent abdominal pain, nausea, and difficulty eating.</p>
                 <p class="fragment">She felt particularly unwell after meals, especially when eating at home.</p>
-                <p class="fragment">She became increasingly worried about what was happening to her body. I arranged for her admission to internal medicine.</p>
+                <p class="fragment">She became increasingly worried about what was happening to her body.</p>
                 <p class="fragment">Two days later, I learned that she believed someone was poisoning her food. She had been hearing a voice warning her not to eat.</p>
               </small>
             </div>
@@ -844,6 +891,15 @@
           </aside>
         </section>
 
+        <section data-study-citation="Weilnhammer et al., Nature Medicine 2026" class="simvail-slide simvail-figure-full">
+          <div class="simvail-fit">
+            <img src="simvail_content/Fig_1.webp" class="borderless fig-full" alt="SIM-VAIL framework: simulated user vulnerabilities and interaction intents are combined in chatbot conversations and evaluated across clinical risk dimensions">
+          </div>
+          <aside class="notes">
+            The SIM-VAIL concept and study design. Simulated users combine five broad vulnerabilities with six interaction intents. Their conversations with leading chatbots are evaluated turn by turn across clinically relevant dimensions before the result figures are introduced.
+          </aside>
+        </section>
+
         <section data-study-citation="Weilnhammer et al., Nature Medicine 2026" data-auto-animate class="simvail-slide simvail-figure-full">
           <div class="simvail-fit">
             <img src="simvail_content/rev_Fig_2.svg" class="borderless fig-full">
@@ -1012,7 +1068,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1040,7 +1096,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1059,15 +1115,13 @@
       <h4 data-id="programme-heading-3"><span>Applications</span></h4>
       <p class="programme-compact-summary">Generalisation and human–AI interactions</p>
     </div>
-  <div class="programme-citations"><div><a href="https://doi.org/10.1038/nature17637">Huth et al. · Nature 2016</a> — meaning in natural language<br><a href="https://doi.org/10.64898/2025.12.16.694742">Zhang, Meschke &amp; Gallant · Nature Neuroscience, in press (2026)</a></div></div>
-  <aside class="notes">fMRI focuses on neural representations during naturalistic behaviour. Participants play an MRI-compatible research game involving navigation, decision-making, information-seeking, cognitive tasks, and NPC interactions and conversations. Use a shared feature-extraction framework across participants, then fit participant-specific voxelwise encoding models to predict fMRI activity. Evaluate performance on held-out gameplay data. Investigate which features explain neural activity and whether their cortical organisation is consistent across participants. Huth et al., Natural speech reveals the semantic maps that tile human cerebral cortex, Nature 532, 453–458 (2016), doi:10.1038/nature17637, motivates encoding models for meaning in natural language. Zhang, Meschke and Gallant, A map of the cortical functional network mediating naturalistic navigation, motivates encoding models for information represented during naturalistic gameplay. The Gallant lab publication list identifies it as Nature Neuroscience, in press (2026), checked 30 October 2026; its public 2025 preprint is doi:10.64898/2025.12.16.694742. The supporting image is the original preprint Figure 2B cortical navigation-preference result, used instead of the global paradigm figure at the user's request. Our proposed extension concerns cognitive variables such as beliefs, uncertainty, goals and prediction errors: these are not all established findings of those studies. The game image is the isolated original research-game component from the B1 overview, not the Gallant driving game. No claim is made about reconstructing complete psychological embeddings from brain activity. The game and cortical result are shown successively at the same location and image size as the expanded WP1 patient illustration, with fMRI highlighted.</aside>
-</section>
+  <div class="programme-citations"><div><a href="https://doi.org/10.1038/nature17637">Huth et al. · Nature 2016</a> — Semantic encoding<br><a href="https://doi.org/10.64898/2025.12.16.694742">Zhang et al. · Nature Neuroscience 2026</a> — Gameplay encoding</div></div></section>
 
 <section id="munich-wp1-fmri-result" class="programme-overview programme-expanded programme-experiment" data-auto-animate data-auto-animate-id="research-programme" data-auto-animate-duration="0.7" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="true" data-transition="none" data-study-citation="">
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1075,7 +1129,7 @@
           <p class="programme-imaging"><span class="method-active">fMRI</span> and <span class="">MEG</span></p>
           <p class="programme-stimulation"><span class="">Neuronavigated TMS</span></p>
         </div>
-        <figure class="programme-evidence programme-fmri-evidence"><figcaption>Neural representations during gameplay</figcaption><img src="programme_content/zhang_navigation_cortex.svg" alt="Zhang, Meschke and Gallant cortical navigation result, Figure 2B"></figure>
+        <figure class="programme-evidence programme-fmri-evidence"><figcaption>Neural representations during gameplay</figcaption><img src="programme_content/zhang_navigation_figure2.webp" alt="Complete Zhang, Meschke and Gallant Figure 2, showing joint-model performance and the cortical navigation-preference network"></figure>
       </div>
     </div>
     <div class="programme-row programme-row-compact" style="top:550px;height:44px"><div class="programme-rule" data-id="programme-rule-2" aria-hidden="true"></div>
@@ -1086,15 +1140,15 @@
       <h4 data-id="programme-heading-3"><span>Applications</span></h4>
       <p class="programme-compact-summary">Generalisation and human–AI interactions</p>
     </div>
-  <div class="programme-citations"><div><a href="https://doi.org/10.1038/nature17637">Huth et al. · Nature 2016</a> — meaning in natural language<br><a href="https://doi.org/10.64898/2025.12.16.694742">Zhang, Meschke &amp; Gallant · Nature Neuroscience, in press (2026)</a></div></div>
-  <aside class="notes">fMRI focuses on neural representations during naturalistic behaviour. Participants play an MRI-compatible research game involving navigation, decision-making, information-seeking, cognitive tasks, and NPC interactions and conversations. Use a shared feature-extraction framework across participants, then fit participant-specific voxelwise encoding models to predict fMRI activity. Evaluate performance on held-out gameplay data. Investigate which features explain neural activity and whether their cortical organisation is consistent across participants. Huth et al., Natural speech reveals the semantic maps that tile human cerebral cortex, Nature 532, 453–458 (2016), doi:10.1038/nature17637, motivates encoding models for meaning in natural language. Zhang, Meschke and Gallant, A map of the cortical functional network mediating naturalistic navigation, motivates encoding models for information represented during naturalistic gameplay. The Gallant lab publication list identifies it as Nature Neuroscience, in press (2026), checked 30 October 2026; its public 2025 preprint is doi:10.64898/2025.12.16.694742. The supporting image is the original preprint Figure 2B cortical navigation-preference result, used instead of the global paradigm figure at the user's request. Our proposed extension concerns cognitive variables such as beliefs, uncertainty, goals and prediction errors: these are not all established findings of those studies. The game image is the isolated original research-game component from the B1 overview, not the Gallant driving game. No claim is made about reconstructing complete psychological embeddings from brain activity. The game and cortical result are shown successively at the same location and image size as the expanded WP1 patient illustration, with fMRI highlighted.</aside>
+  <div class="programme-citations"><div><a href="https://doi.org/10.1038/nature17637">Huth et al. · Nature 2016</a> — Semantic encoding<br><a href="https://doi.org/10.64898/2025.12.16.694742">Zhang et al. · Nature Neuroscience 2026</a> — Gameplay encoding</div></div>
+  <aside class="notes">fMRI focuses on neural representations during naturalistic behaviour. Participants play an MRI-compatible research game involving navigation, decision-making, information-seeking, cognitive tasks, and NPC interactions and conversations. Use a shared feature-extraction framework across participants, then fit participant-specific voxelwise encoding models to predict fMRI activity. Evaluate performance on held-out gameplay data. Investigate which features explain neural activity and whether their cortical organisation is consistent across participants. Huth et al., Natural speech reveals the semantic maps that tile human cerebral cortex, Nature 532, 453–458 (2016), doi:10.1038/nature17637, motivates encoding models for meaning in natural language. Zhang, Meschke and Gallant, A map of the cortical functional network mediating naturalistic navigation, motivates encoding models for information represented during naturalistic gameplay. The Gallant lab publication list identifies it as Nature Neuroscience, in press (2026), checked 30 October 2026; its public 2025 preprint is doi:10.64898/2025.12.16.694742. The supporting image is the complete original preprint Figure 2, showing both joint-model performance and the cortical navigation-preference result, used instead of the global paradigm figure at the user's request. Our proposed extension concerns cognitive variables such as beliefs, uncertainty, goals and prediction errors: these are not all established findings of those studies. The game image is the isolated original research-game component from the B1 overview, not the Gallant driving game. No claim is made about reconstructing complete psychological embeddings from brain activity. The game and cortical result are shown successively at the same location and image size as the expanded WP1 patient illustration, with fMRI highlighted.</aside>
 </section>
 
 <section id="munich-wp1-meg" class="programme-overview programme-expanded programme-experiment" data-auto-animate data-auto-animate-id="research-programme" data-auto-animate-duration="0.7" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="true" data-transition="none" data-study-citation="">
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1121,7 +1175,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1148,7 +1202,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1175,7 +1229,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1202,7 +1256,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1229,7 +1283,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1256,7 +1310,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1283,7 +1337,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1310,7 +1364,7 @@
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
       <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
-      <div class="programme-explanation programme-mechanisms programme-mechanism-layout">
+      <div class="programme-explanation programme-mechanisms programme-mechanism-layout" data-id="programme-mechanisms-layout">
         <div>
           <p>Understand predictive world models with <strong>Bayesian models</strong> and <strong>disentangled RNNs</strong>.</p>
           <p class="programme-domain-text">Across perception and confidence, attention, learning under uncertainty, information-seeking and exploration, and social inference.</p>
@@ -1318,7 +1372,7 @@
           <p class="programme-imaging"><span class="">fMRI</span> and <span class="">MEG</span></p>
           <p class="programme-stimulation"><span class="method-active">Neuronavigated TMS</span></p>
         </div>
-        <div class="programme-tms-text"><p><strong>Can we causally change cognitive processing?</strong></p><p>Perturb candidate cortical regions and measure changes in cognition and behaviour.</p><p class="programme-domain-text">Hypothesis-led targets and tasks, with control conditions.</p></div>
+        <div class="programme-tms-text"><p><strong>Perturb candidate cortical regions and measure changes in cognition and behaviour.</strong></p><p>Offline theta-burst TMS</p><p class="programme-domain-text">Hypothesis-led targets and tasks, with control conditions.</p></div>
       </div>
     </div>
     <div class="programme-row programme-row-compact" style="top:550px;height:44px"><div class="programme-rule" data-id="programme-rule-2" aria-hidden="true"></div>
@@ -1331,6 +1385,37 @@
     </div>
   <div class="programme-citations"><div>Weilnhammer et al. · <a href="https://doi.org/10.1016/j.cub.2021.04.043">Current Biology 2021</a><br><a href="https://doi.org/10.1523/JNEUROSCI.1418-13.2013">Journal of Neuroscience 2013</a> · <a href="https://doi.org/10.1523/JNEUROSCI.2901-17.2018">2018</a></div></div>
   <aside class="notes">TMS focuses on causal mechanisms. Identify candidate cortical regions from specific mechanistic hypotheses, prior research and, where appropriate, the proposed MEG and fMRI findings. Apply neuronavigated TMS with appropriate control conditions and analyse changes in behaviour using computational models. Candidate outcomes include perception, confidence, belief updating, attention and decision-making; the precise targets and tasks follow the hypothesis, and not all domains will necessarily be tested. Weilnhammer et al., An active role of inferior frontal cortex in conscious experience, Current Biology 31, 2868–2880.e8 (2021), doi:10.1016/j.cub.2021.04.043, combined computational modelling and fMRI with TMS perturbation of inferior frontal cortex, which slowed perceptual updating. These were transient TMS-induced “virtual lesions”, not a study of patients with structural lesions. This prior causal finding motivates the proposed experiment; it does not establish the effects of new stimulation targets, tasks or cognitive-mode transitions. Additional mechanistic precedents: Frontoparietal Cortex Mediates Perceptual Transitions in Bistable Perception, Journal of Neuroscience 2013, doi:10.1523/JNEUROSCI.1418-13.2013; The Neural Correlates of Hierarchical Predictions for Perceptual Decisions, Journal of Neuroscience 2018, doi:10.1523/JNEUROSCI.2901-17.2018. Across the three experiments, dynamics, representations and causal tests are principal questions, not exclusive capabilities of each method. This state intentionally has no illustration.</aside>
+</section>
+
+<section id="munich-mechanisms-outcomes" class="programme-overview programme-expanded programme-outcome-table" data-auto-animate data-auto-animate-id="research-programme" data-auto-animate-duration="0.7" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="true" data-transition="none" data-study-citation="">
+  <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
+  <div class="programme-row programme-row-active" style="top:70px;height:480px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
+    <div class="programme-explanation programme-outcome-detail">
+      <h5 class="programme-outcome-prompt">What will we learn?</h5>
+      <table aria-label="Mechanisms outcomes">
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr><th>Mechanism / experiment</th><th>What we will measure</th><th>Scientific contribution</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Computational mechanisms</td><td>Bayesian models and disentangled RNNs fitted to experimental behaviour across cognitive domains</td><td>Individualised computational representations of cognitive processes</td></tr>
+          <tr><td>Representational geometry (fMRI)</td><td>Similarity structure of neural responses to different gameplay states</td><td>Differences in how cognitive states or experiences are differentiated</td></tr>
+          <tr><td>Representational stability (fMRI)</td><td>How consistently neural representations are maintained or updated across time</td><td>Differences in the stability or flexibility of internal representations</td></tr>
+          <tr><td>Neural-state dynamics (MEG)</td><td>Occupancy and transition probabilities between recurring neural states</td><td>Differences in how flexibly individuals move between cognitive modes</td></tr>
+          <tr><td>Causal mechanisms (TMS)</td><td>Effects of targeted cortical perturbation on cognition and behaviour</td><td>Probe causal effects of neural representation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="programme-row programme-row-compact" style="top:550px;height:44px"><div class="programme-rule" data-id="programme-rule-2" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-2"><span>Measurement</span></h4>
+    <p class="programme-compact-summary">Psychological embeddings from everyday behaviour</p>
+  </div>
+  <div class="programme-row programme-row-compact" style="top:594px;height:44px"><div class="programme-rule" data-id="programme-rule-3" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-3"><span>Applications</span></h4>
+    <p class="programme-compact-summary">Generalisation and human–AI interactions</p>
+  </div>
 </section>
 
 <section id="munich-programme-wp2" class="programme-overview programme-expanded" data-auto-animate data-auto-animate-id="research-programme" data-auto-animate-duration="0.7" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="true" data-transition="none" data-study-citation="">
@@ -1433,6 +1518,35 @@
   <aside class="notes">The second of two consecutive MAILA evidence slides shows valence and arousal conditions. The preceding slide shows psychological embedding trajectories over the day, labelled 8h, 16h and 24h in PC1/PC2 space. This slide: high/low arousal and valence conditions in that space, retaining plotted means, error bars and distress/wellbeing directions. These results motivate further validation of within-person measurement; they do not establish all proposed cognitive readouts. Sources: B1 Figure 3 and B2 Figure 4 from manifest_B1_B2.qmd, reused from erc_daily_change.svg and erc_mood_data.svg. The overview viewports and text styling are harmonised. Both SVG headlines are removed; the darker zero-reference gridline in the time-of-day panel is omitted. Data paths, values, points and error bars remain unchanged. Reference: Weilnhammer, Ortega and Whitney, arXiv:2511.20179.</aside>
 </section>
 
+<section id="munich-measurement-outcomes" class="programme-overview programme-expanded programme-outcome-table" data-auto-animate data-auto-animate-id="research-programme" data-auto-animate-duration="0.7" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="true" data-transition="none" data-study-citation="">
+  <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
+  <div class="programme-row programme-row-compact" style="top:70px;height:44px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
+    <p class="programme-compact-summary">Computational and neural mechanisms</p>
+  </div>
+  <div class="programme-row programme-row-active" style="top:114px;height:480px"><div class="programme-rule" data-id="programme-rule-2" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-2"><span>Measurement</span></h4>
+    <div class="programme-explanation programme-outcome-detail">
+      <h5 class="programme-outcome-prompt">What will we learn?</h5>
+      <table aria-label="Measurement outcomes">
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr><th>Research objective</th><th>What we will measure or model</th><th>Expected outcome</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Digital signatures of cognition</td><td>Relationships between computational model parameters, experimental behaviour, and naturalistic digital interactions</td><td>Identify which cognitive processes are expressed in everyday digital behaviour</td></tr>
+          <tr><td>Scalable psychological measurement</td><td>Decode cognitive and psychological characteristics from language, cursor movements, typing, and touch interactions</td><td>Infer psychological profiles without requiring extensive experimental assessments</td></tr>
+          <tr><td>Reliability and generalisation</td><td>Test representations across individuals, activities, devices, and time</td><td>Establish the reliability and generalisability of digital psychological measurement</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="programme-row programme-row-compact" style="top:594px;height:44px"><div class="programme-rule" data-id="programme-rule-3" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-3"><span>Applications</span></h4>
+    <p class="programme-compact-summary">Generalisation and human–AI interactions</p>
+  </div>
+</section>
+
 <section id="munich-programme-wp3" class="programme-overview programme-expanded" data-auto-animate data-auto-animate-id="research-programme" data-auto-animate-duration="0.7" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="true" data-transition="none" data-study-citation="">
   <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
     <div class="programme-row programme-row-compact" style="top:70px;height:44px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
@@ -1454,6 +1568,37 @@
   <div class="programme-citations"><div>Weilnhammer et al. · <a href="https://doi.org/10.1038/s41591-026-04577-2">Nature Medicine 2026</a> · SIM-VAIL<br>Weilnhammer et al. · Personalised action policies · arXiv 2026</div></div>
   <aside class="notes">First test whether psychological embeddings generalise to stable clinical outpatients and community participants. Then run repeated, randomised human–AI conversations. The four conditions provide no added embedding, a decoded embedding, an assessed embedding or a population-average embedding. All use the same chatbot, history rules, response instructions and safeguards. Primary comparison: helpfulness with a decoded embedding versus history only. Other outcomes include understanding, trust, immediate mood and longer-term psychological changes. Psychological embeddings vary while action policies stay fixed. Earlier simulation results do not establish benefit in people. Source: manifest_B1_B2.qmd, clinical generalisation and human–AI experiments. References: Nature Medicine 2026, doi:10.1038/s41591-026-04577-2; personalised action policies, arXiv 2026, as confirmed by the author.</aside>
 </section>
+
+<section id="munich-applications-outcomes" class="programme-overview programme-expanded programme-outcome-table" data-auto-animate data-auto-animate-id="research-programme" data-auto-animate-duration="0.7" data-auto-animate-easing="ease-in-out" data-auto-animate-unmatched="true" data-transition="none" data-study-citation="">
+  <h3 class="programme-title" data-id="programme-title">From understanding cognition to improving mental health</h3>
+  <div class="programme-row programme-row-compact" style="top:70px;height:44px"><div class="programme-rule" data-id="programme-rule-1" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-1"><span>Mechanisms</span></h4>
+    <p class="programme-compact-summary">Computational and neural mechanisms</p>
+  </div>
+  <div class="programme-row programme-row-compact" style="top:114px;height:44px"><div class="programme-rule" data-id="programme-rule-2" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-2"><span>Measurement</span></h4>
+    <p class="programme-compact-summary">Psychological embeddings from everyday behaviour</p>
+  </div>
+  <div class="programme-row programme-row-active" style="top:158px;height:480px"><div class="programme-rule" data-id="programme-rule-3" aria-hidden="true"></div>
+    <h4 data-id="programme-heading-3"><span>Applications</span></h4>
+    <div class="programme-explanation programme-outcome-detail">
+      <h5 class="programme-outcome-prompt">What will we learn?</h5>
+      <table aria-label="Applications outcomes">
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr><th>Research objective</th><th>What we will test</th><th>Expected outcome</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Clinical generalisation</td><td>Whether psychological representations derived from digital behaviour generalise across community and clinical populations</td><td>Establish their validity across different levels of psychiatric symptoms</td></tr>
+          <tr><td>Individualised AI representations</td><td>Whether AI models can use inferred psychological profiles to simulate individual differences in cognition and behaviour</td><td>Develop and validate psychologically informed simulations of individuals</td></tr>
+          <tr><td>Personalised human–AI interactions</td><td>Whether providing AI systems with psychological information and corresponding action policies improves interactions</td><td>Determine whether psychological personalisation improves helpfulness, understanding, and safety</td></tr>
+          <tr><td>Individual differences in response</td><td>Whether the effects of personalisation depend on psychological characteristics</td><td>Identify which individuals benefit from different forms of AI personalisation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <section id="munich-programme-outcome" data-transition="fade" data-study-citation="Weilnhammer et al., Nature Medicine 2026">
   <h3>Towards more helpful human–AI interactions</h3>
   <img src="programme_content/programme_outcome.webp" alt="Decoding and user simulation connect psychological embeddings to human–AI interactions. The lower plot illustrates targeted simulations and a proposed shift towards more helpful interactions.">
